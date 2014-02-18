@@ -1,0 +1,129 @@
+POLICY - SPACE & COORDINATE
+===========================
+
+
+
+
+
+
+
+OpenGL is very flexible system, so we can do whatever we want.
+But supporting all the freedom is too expensive, so we fix some
+options to get efficient.
+
+
+
+
+
+
+
+
+Texture
+-------
+We need to define texture coordination semantics in OpenGL because that's not defined implicitly, and
+can easily be ambiguous.
+
+This is default texture coordination space. (UV)
+
+
+
+				(0,1)						(1,1)
+
+					+-----+-----+-----+-----+
+					|						|
+					|						|
+					+						+
+					|						|
+					|						|
+					+						+
+					|						|
+					|						|
+					+						+
+					|						|
+					|						|
+					+-----+-----+-----+-----+
+					
+				(0,0)						(1,0)
+				
+				
+The orientations are defined as it shown in above.
+
+
+
+							    up
+				(0,1)						(1,1)
+
+					+-----+-----+-----+-----+
+					|						|
+					|						|
+					+						+
+					|						|
+					|						|
+			 left 	+						+   right
+					|						|
+					|						|
+					+						+
+					|						|
+					|						|
+					+-----+-----+-----+-----+
+					
+				(0,0)						(1,0)
+
+							   down
+							  
+
+Because default GL screen space is defined as below.
+
+
+							    up
+				(-1,+1)						(+1,+1)
+
+					+-----+-----+-----+-----+
+					|			|			|
+					|			|			|
+					+			+			+
+					|			|			|
+					|			| (0,0)		|
+			 left 	+-----+-----+-----+-----+   right
+					|			|			|
+					|			|			|
+					+			+			+
+					|			|			|
+					|			|			|
+					+-----+-----+-----+-----+
+					
+				(-1,-1)						(+1,-1)
+
+							   down
+
+
+The orientations are equal to default screen orientation, 
+so we don't need extra transform.
+
+Anyway, this is Y-flipped coordination when compared to 
+regular pixel based images. So you need to flip them before
+using.
+
+**ALL** the textures will be aligned by the orientation
+defined above unless it require some exceptional coordination.
+And iin that case, the orientation will be defined explicitly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

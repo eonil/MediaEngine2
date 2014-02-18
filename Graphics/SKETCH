@@ -1,0 +1,111 @@
+SKETCH
+======
+2013/06/12
+Hoon H.
+
+
+
+These are just sketches, and doesn't mean supported in engine.
+
+
+
+
+Forms Summary
+-------------
+Here're CPU based drawing which are mostly static to GPU.
+Names are chosen to feel like static object.
+
+-	**Figure**, skeletal/skinning deformed object.
+-	**Cluster**, a collection of different static objects.
+	-	`shouldFaceToCamera()`
+-	**Cloud**, massive small particle of single duplicated shape.
+	-	`shouldIgnoreRotation()`
+
+GPU based drawing means performing most calculations in GPU.
+This pipeline is not considered in this release. Anyway usually GPU-only pipeline needs 
+special design and handling, so it should be programmed in dedicated design.
+Here're some examples of them.
+Names are chosen to feel like dynamic object.
+
+-	Crowd, Hardware instancing of skeletal/skinned animated objects.
+-	Fluid. Voxel field based fluid simulator. Not defined yet. Only name is preserved.
+	Can represent realistic dust, spark, smoke... and etc. This is 100% GPU only particles.
+
+
+
+
+
+Form - Crowd
+------------
+Crowd is an abstraction of hardware instancing. This is designed on top
+of hardware instancing support. Single mesh and single draw call can draw multiple
+instances at once without state changes.
+
+To do that, these parameters for rendering should be resolved within only VRAM.
+
+-	Transform
+-	Animation samples
+-	Animation time
+-	Any other shader parameters.
+
+These can be stored in texture, and should be able to be accessed from vertex
+program. If GPU is advanced enough, each parameters can be resolved dynamically
+fully in GPU. Game scene related parameters can be passed via shader parameters 
+or dynamic texture dispatch, but of course, quietly limited.
+
+Also hardware should support this feature.
+
+-	Instance ID
+
+Of course, crowds have limitations.
+
+-	Cannot change graphics state over instances including vertexes and textures.
+	So basically all the shapes will have similar look except varies by shader
+	parameters.
+	
+If user hardware doesn't support instancing, crowd will fall back to *figure*
+drawing which is a lot less efficient. You can query hardware support thought
+the `Crowd` class. Adjust amount of usage by querying it.
+
+
+
+
+
+
+
+
+
+Compositor
+----------
+A look of modern game cannot be generated with only simple rendering.
+It usually needs post-processing and composition of many small pieces.
+
+Configuring and managing those composition is painful. So I need to develop
+a declarative way to do that. And that, is the *composition graph*.
+
+The basic idea of composition graph is resolving and rendering compositing
+sources on-demand. For example, imagine a bloom effect. Abstracted procedure
+should look like this.
+
+1	Render actual scene to final render-buffer.
+2.	Render emissive objects to a texture.
+3.	Post-process(blur) the texture.
+4	Draw the texture to final render-buffer over the scene.
+
+Composition graph should look like this.
+
+-	Composition
+	-	Final shot
+		-	Layers
+			1.	Render: whole scene
+			2.	Render: a texture
+				-	Source: generate dynamically
+					-	Render: emissive objects
+					
+Now let's see the compositor. Compositor will perform tolpologic sort to resolve
+dependencies. Because each node can be shared over graph. (so composition graph is
+not DAG) And then, resolves all prerequiresites. Final resolution will become root
+node which is final composition. 
+
+Furthermore, compositor can perform extra optimization by sorting nodes by GL states.
+

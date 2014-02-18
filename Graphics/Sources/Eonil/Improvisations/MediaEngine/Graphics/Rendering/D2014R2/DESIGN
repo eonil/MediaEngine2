@@ -1,0 +1,123 @@
+Design of Graphics Rendering - D2014R2
+======================================
+
+
+
+
+
+Drawable Shape Classification
+------------------------------
+
+A *shape* is a set of triangle in 3D space.
+
+A *sprite* is a textured quad.
+
+A *particle* is a sprite with these restrictions.
+
+-	Small. Maximum size is limited by hardwares. (up to 32px in many mobile GPU)
+-	Always facing screen. No rotation in any axis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Image Synthesizer Architecture
+------------------------------
+
+The major units of synthesizer is;
+
+-	Drawer.
+-	Renderer.
+-	Compositor.
+
+A drawer is responsible to draw an object. It can be batched for efficiency, but 
+fundamentally, it's just about an object.
+
+A renderer is responsible to render a frame image. Renderer internally uses drawers
+to draw each objects, and generates a full-frame image. Anyway this frame doesn't 
+have to be same sized, and some images can be generated for composition source.
+
+A compositor is responsible to composite all the frame images. This can be though
+as a kind of renderer, but this doesn't handle any object level drawing, and performs
+only frame level images. Anyway operation coordinate system is not limited to color
+or screen space. It can do operations in any space such as depth space.
+There're multiple kind of compositors which performs verious different operations.
+
+
+
+
+
+
+
+
+
+//Graph Builder
+//-------------
+//Synthesizer components are designed to build a processing graph. And client is expected
+//to do this manually. Anyway combination of these components can be very error-prone.
+//Graph-builder is provided to help building of a synthesizing graph by minimizing errors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//Explanation
+//-----------
+//Some shaders are pretty generic, but most of them are very specialized for performance.
+//That means a shader can consume only specific form of data. There's no such universal data
+//which can be rendered by multiple shaders. (except very carefully designed case)
+//
+

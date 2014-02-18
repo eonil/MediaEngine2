@@ -1,0 +1,100 @@
+ANTI-PATTERNS
+=============
+
+
+
+
+
+
+
+
+
+
+-	Shared ownership.
+
+	Avoid shared ownership as much as possible.
+	It makes resource management unclear, so harder. It takes more resources, brings a sort of 
+	locking so bad for multi-threading.
+	
+	Instead, use unique ownership and move semantics.
+	
+	*	I am currently working on refactoring whole `Graphics::Server` namespace for this...
+
+
+
+
+
+
+
+
+
+
+
+-	Examination pattern.
+
+	Store debugging-only data within the object. Do not store them in a separated container.
+	That breaks code locality so makes maintainance a lot harder.
+	
+	Also do not make any type only for debugging-only data set.
+	Just store them as a part of the class with prefix of `_dbg_`.
+	
+	Anyway if the class must be exactly sized (such as `Vector4` class), those classes may be 
+	exceptions. Anyway this is a lot harder to debug, so avoid this as much as possible.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Project Management
+------------------
+
+
+
+-	Solution based dependency.
+
+	Always add referencing projects as a projects.
+	Do not refer them without adding as subprojects.
+	
+	Xcode solutions supports automatic referring of projects if the project is placed in same
+	solution. But this is based on absolute path resolution, so will be broken if you move the 
+	project location. Even worse, the absolute path will be stored in the project file. This is
+	unacceptable.
+	
+
+
+-	Aggregation Xcode project.
+
+	Do not try to make a aggregation Xcode project.
+	Large scale project needs script based automated configuration management. Xcode supports
+	.xcconfig files, but that is too weak to do required operations. It doesn't support multi-
+	line spanning of a setting item.
+
+	MediaEngine is a large project, and divided into several subprojects. These projects needs
+	to be merged ultimately. Anyway it must be done with a script file rather than Xcode project.
+	Consider Julia script.
+
+
+
+
+
+
+
+
+
+
+
+
+

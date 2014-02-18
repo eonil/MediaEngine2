@@ -1,0 +1,391 @@
+DESIGN
+======
+2013/06/12
+Hoon H.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Brief
+-----
+
+Overall design is based on functional style. Pass all the informations needed to draw
+a single frame, and passed data is fully immutable from renderer side. Renderer just 
+sees what is passing-in, cannot modify them at all.
+
+Anyway, as OpenGL machine works totally differently, we need special trick. *Passing
+the program.* When I render something using a shading program, we have to modify some
+shader uniform parameters. This kind of mutations will be abstracted with a wrapper 
+object *drawer*.
+
+
+
+
+
+
+
+
+
+
+Goal
+----
+
+-	Provide platform-agnostic visual rendering output facility.
+-	Platform-agnostic master rendering loop helper.
+
+
+Why Non-Goal?
+-------------
+
+-	Platform-agnostic master application controller.
+
+	Each platform needs platform specific handling of master application control, and
+	those really cannot be abstracted into single logic. For example, OS X needs full-
+	screen handling, and iOS needs background deactivation handling. But not vice versa.
+	Any other platforms will have something similar.
+	
+	Even I provide something, that must be diverged into several execution mode, and 
+	that just increases complexity.
+	
+	Rendering loop helper is enough, and it's better to make users to write thier own
+	application controller code themselves.
+
+	Anyway platform-**specific** application-control may be provided later.
+
+
+
+
+
+
+
+
+
+
+
+Separation of Animation
+-----------------------
+Animation is separated from forms.
+Forms support only deformation, not animation. Animation should be performed in game logic
+level, and resolved deformation parameter should be passed to forms to present specific state.
+
+
+
+
+
+
+Axioms
+------
+Assumes hardware is supporting only one texture unit at once.
+Default triangle winding direction is *counter-clockwise*.
+
+In object space, each axis will have these aliases.
+
+	+X		Right
+	-X		Left
+	
+	+Y		Up
+	-Y		Down
+	
+	+Z		Front
+	-Z		Back
+
+In world space, each axis will have these aliases.
+
+	+X		East
+	-X		West
+	
+	+Y		North
+	-Y		South
+	
+	+Z		High
+	-Z		Low
+
+These direction terms effectively refer corresponding axis.
+
+
+
+
+
+
+
+
+
+
+Resource/Instance/Renderer Combination
+--------------------------------------
+Conceptually, graphics is done by renderer. Anyway renderer needs some input to draw.
+The input is whole graphics data at first. For example, a mesh, whole mesh vertexes and related textures
+should be passed to renderer. Each object to be drawn should have independent, its own graphics resources.
+Object 1 has its own vertexes and textures, and object 2 also has its own vertexes and textures. Even they
+have same vertexes.
+
+Of course this is inefficient. So optimization goes on. First, graphics data divided into two parts;
+resources and instances. Resources are duplicated, repeating part between each drawing, and instances are
+different part. Duplicated means, it can be immutable, which can be shared very efficiently.
+
+So, here are list of combinations for each drawing types.
+
+-	Skinned mesh drawing.
+	-	DeformingMesh (resource)
+		-	Each subsesion can contain PlanarTexture.
+	-	Figure (instance)
+	-	DrawFigure function (renderer)
+	
+-	Sprite in 3D space including billboard.
+	-	Sprite (resource)
+		-	All each subsections shares same PlanarTexture.
+	-	Cluster (instances, only in collection form for efficiency)
+	-	DrawCluster function (renderer)
+
+-	Small massive particles.
+	-	Only one PlanarTexture. (resource)
+	-	Cloud (instance, only in collection form for efficiency)
+	-	DrawCloud function (renderer)
+
+**Note** Renderers are just an algorithm, so that they don't have to be an object (or class) form, and may
+be exist just a function form.
+
+Resources(any reusable data) are all immutable so that can be shared freely without any validation.
+Also resources are all passive data store, doesn't perform any active actions such as drawing. All drawings 
+will be done by renderers.
+
+Here're list of resources.
+
+-	Mesh
+	-	StaticMesh
+	-	DeformingMesh
+-	Sprite
+-	Shader
+-	Animation
+-	Node
+-	Model
+
+**Note** Resources are different with server proxy objects which is usually mutable for maximum efficiency.
+Resources are a kind of a wrapper which abstracts the graphics server layer.
+
+Specialized renderers are all hidden within Renderer class. So they won't be visible.
+
+
+
+
+
+
+Forms
+-----
+A form is an independent object which represents a specific visual.
+
+Conceptually all each form contains its own data. Copying form means copying everything of the
+form. Two copied forms are completely separated, and nothing related.
+
+In practice, forms may have some shared data for efficiency. But, it is strictly limited to
+immutable data to prevent side-effects. So still, each forms safely can be treated as just 
+indenpendent objects. Shared part is all implementation detail, so client code should not care
+on it.
+
+A form is usually designed to be drawn at once, but not nessacerily. For example, figures
+can be drawn over multiple times if it's too heavy.
+
+Currently we have three forms, and can be increased later.
+
+-	Figure
+-	Cluster
+-	Cloud
+
+
+
+
+
+
+
+
+
+Form - Figure
+-------------
+Figure is a smoothly deformable object. (a.k.a skinned animation) Figures will share immutable
+data as much as possible between instances. Such as mesh vertexes, animation samples, shaders 
+and textures. Selected deformation parameters (animation and time) are instance specific, so 
+they need to be copied, instead of being shared.
+
+Figure is most generic, and feature-rich, but also slowest. Because only one figure can 
+be draw at once. So there's no limitation of GPU state changes. Each figures can have
+different vertexes, textures, shaders and etc. freely.
+
+Renderer will sort all figures by shader program, vertexes and textures. Sorting order 
+may be changed by needs.
+
+**Note**
+
+Vertex shader uniform count is main bottleneck in current mobile GPUs. So optimizing for
+any other state doesn't seem to save rendering cost.
+
+If a figure has too many bones, it may fail to be drawn. OpenGL actually allows drawing it
+by fallback to software emulation, but this should be avoided because this is not guaranteed.
+
+In this case, a figure needs to be splitted into multiple subfigures. This can be processed
+automatically, but must be granted specified explicitly because this is very expensive 
+operation. If splitting is not allowed, debug build will assert for too many bones which 
+overflows hardware limit.
+
+
+
+
+
+
+Form - Cluster
+--------------
+Cluster is a collection of different static visual object. This is primarily designed to
+render multiple simple objects at once. So all items in a cluster should be able to be 
+rendered at once. For this, there're several limitations.
+
+-	All objects should share same graphics state except vertexes.
+	-	Texture set, shader program, blending, depth, stencil...etc.
+	-	Vertexes will be transformed and merged dynamically and dispatched to GPU to save
+		drawing call. So they don't need to be shared, but should be very simple enough.
+	-	These limitations are forced by assertions in debug mode.
+
+Because vertexes can be vary, you can make different texturing for each items within same
+texture set.
+	
+No deformation is supported.
+
+There's a performance tweaking parameter.
+
+-	`shouldFaceToCamera()`
+
+	Default Value: `false`
+
+If the flag is set to true, cluster will be drawn in `+Z` axis will face to camera.
+This adjustment is done in vertex program. This effectively makes all the items into
+billboards if `Z==0` of all the vertexes.
+
+
+
+Form - Cloud
+------------
+Cloud is abstraction of point-sprite. This is primarily designed to render billboards more
+efficiently. So these limitations are set.
+
+-	Only single texture is supported over all particles.
+-	Texture coordinate cannot be adjusted. You always use whole texture for particles.
+-	No 3D transformation is supported.
+	-	You can set only uniform scaling.
+	-	Rotation around screen-Z is supported with limitation.
+-	Maximum size is limited.
+	-	Defined by hardware, so it's not predictable. (but known as about 32)
+	-	Set it small enough and do test on actual target device.
+	-	If point size is bigger than limitation, result undefined.
+	-	Debug buid will assert for point size which is out of supported range.
+-	Image should have enough empty space (transparent pixels) to rotate itself within texure
+	rectangle. Because the texels are sampled within the texture rectangle. Or you may see cut
+	corners. 
+	-	Debug build will assert this situation by analyzing transparency of pixels at each corners.
+
+There's a performance tweaking parameter.
+
+-	`shouldIgnoreRotation()`
+
+	Defaut value: `false`.
+
+Rotation support adds extra operations in vertex and fragment program, and this
+is on by default.
+
+Because cloud particles are usually massive in amount, this little addition may hurt
+performance a lot. You can force to ignore rotation by cloud parameter if you're sure
+that your particles don't use rotation at all. Then cloud will use non-rotating
+shader program which is somewhat faster by removing texture UV transform.
+
+I am not sure that all the hardwares will support rotations. I don't know the good way to
+detect this support. If hardware doesn't support feature for rotation, result undefned.
+
+*	<http://www.opengl.org/discussion_boards/showthread.php/147120-point-sprites-vs-quads>
+*	<http://gamedev.stackexchange.com/questions/49877/point-sprites-vs-textured-quads-in-open-gles-2-0>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Forms Drawing with Shaders
+--------------------------
+Form has specific attributes to be used in specific way. The specific way means how to 
+draw, and that just means the shaders. Ultimately, a form can be drawn with specific shaders.
+It cannot be freely drawn with any shaders, so a form always have a dedicated shader for itself.
+
+Of course, shaders can be shared between multiple forms just like in manner of shape resources
+such as meshes, and this is possible because shaders are immutable object. To use shader you 
+need to instantiate is as a *material* which specifies shader parameters. Take care the material
+is also an immutable object, so you need to set all the parameters when you creating a form.
+
+
+
+
+Mutation by Sequence of States
+------------------------------
+Don't forget these rendering graph is all about a single frame, and mutations are being represented
+as a sequence of rendering graph. Conceptually, you always create a new form, transform and material
+for each frame. But anyway, copying object logic is heavily optimized to maximize sharing of any 
+immutable object.
+
+Because you don't actually change all the resources every frame, and most resources are just immutable,
+those resources just will be shared implicitly, and details are completely hidden to reduce complexity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

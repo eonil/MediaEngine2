@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'EonilGL' target in the 'EonilGL' project
+//
+
+
+#ifdef		__cplusplus
+#include	"Sources/Eonil/Improvisations/MediaEngine/Graphics/Common.h"
+#endif
+

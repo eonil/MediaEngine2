@@ -1,0 +1,32 @@
+DEBUGGING
+=========
+
+
+
+
+
+
+
+This library contains several debugging aids.
+
+
+
+-	Virtual reference counting.
+
+	All the server-side object proxy does unique ownrship. Anyway they references each other
+	and this dependency shouldn't be broken while a resource is being used.
+	
+	So, for the debug build, I used a specially designed pointer object. This counts references,
+	but does not perform lifecycle management. It just counts references, and checks early 
+	resource deallocation. If once an early resource deallocation detected, then this it will
+	be notified to users via an exception.
+	
+	This checks are very heavy, so enabled only in debug version.
+
+	See these classes for the details.
+
+		...::Foundation::D2014R1::TrackableObject
+		...::Foundation::D2014R1::UnknownTypeObjectTrackingPointerSlot
+		...::Foundation::D2014R1::GenericObjectTrackingPointerSlot<T>
+		
+		

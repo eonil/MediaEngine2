@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		453B3D2F18A6E52200B2BEA8 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453B3D2D18A6E52200B2BEA8 /* Common.cpp */; };
+		453B3D3018A6E52200B2BEA8 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453B3D2D18A6E52200B2BEA8 /* Common.cpp */; };
+		453B3D3118A6E52200B2BEA8 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 453B3D2E18A6E52200B2BEA8 /* Common.h */; };
+		453B3D3418A6E52A00B2BEA8 /* Transcoding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453B3D3218A6E52A00B2BEA8 /* Transcoding.cpp */; };
+		453B3D3518A6E52A00B2BEA8 /* Transcoding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453B3D3218A6E52A00B2BEA8 /* Transcoding.cpp */; };
+		453B3D3618A6E52A00B2BEA8 /* Transcoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 453B3D3318A6E52A00B2BEA8 /* Transcoding.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45F3D0C418A78A1A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45F0374C175C359E00C469FD;
+			remoteInfo = "Foundation - OSX Static Library";
+		};
+		45F3D0C618A78A1A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45F03729175C353F00C469FD;
+			remoteInfo = "Foundation - iOS Static Library";
+		};
+		45F3D0C818A78A1A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 453BFBFA18A2424D007E514B;
+			remoteInfo = "OSX Test";
+		};
+		45F3D0CF18A78A2400F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D3CB79173BC83E0011D992;
+			remoteInfo = "Graphics - OSX Static Library";
+		};
+		45F3D0D118A78A2400F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D3CB66173BC8280011D992;
+			remoteInfo = "Graphics - iOS Static Library";
+		};
+		45F3D0DA18A78A2E00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45150A2618A69EB40007BE6B;
+			remoteInfo = "Mathematics - Static Library - OSX";
+		};
+		45F3D0DC18A78A2E00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 451509FB18A69EAA0007BE6B;
+			remoteInfo = "Mathematics - Static Library - iOS";
+		};
+		45F3D0DE18A78A2E00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45150A6A18A69EE80007BE6B;
+			remoteInfo = "Mathematics - Running Test - OSX";
+		};
+		45F3D0E018A78A2E00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45150A3B18A69EDE0007BE6B;
+			remoteInfo = "Mathematics - Running Test - iOS";
+		};
+		45F3D0E918A78A7A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 452ACBF71854FAAC00447731;
+			remoteInfo = "CommonUtility - OSX";
+		};
+		45F3D0EB18A78A7A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 458F7EC618A243DA00409ED4;
+			remoteInfo = "CommonUtility - iOS";
+		};
+		45F3D0ED18A78A7A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 452ACC4D1855077600447731;
+			remoteInfo = RunningTester;
+		};
+		45F3D0EF18A78A7A00F05D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4534234B18A265CB0074B957;
+			remoteInfo = Tests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		453B3CA918A6E3E000B2BEA8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		453B3CAB18A6E3E000B2BEA8 /* libEonilImprovisationsMediaEngineTranscoding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineTranscoding.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		453B3CD618A6E3EC00B2BEA8 /* libEonilImprovisationsMediaEngineTranscoding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineTranscoding.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		453B3D1C18A6E45C00B2BEA8 /* Trash */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Trash; sourceTree = "<group>"; };
+		453B3D2D18A6E52200B2BEA8 /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		453B3D2E18A6E52200B2BEA8 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		453B3D3218A6E52A00B2BEA8 /* Transcoding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transcoding.cpp; sourceTree = "<group>"; };
+		453B3D3318A6E52A00B2BEA8 /* Transcoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transcoding.h; sourceTree = "<group>"; };
+		45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
+		45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Graphics.xcodeproj; path = ../../Graphics/Graphics.xcodeproj; sourceTree = "<group>"; };
+		45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mathematics.xcodeproj; path = ../../Mathematics/Mathematics.xcodeproj; sourceTree = "<group>"; };
+		45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtility.xcodeproj; path = ../../../CommonUtility/CommonUtility.xcodeproj; sourceTree = "<group>"; };
+		45F3D18A18A7A4E200F05D97 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		453B3CA818A6E3E000B2BEA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		453B3CD318A6E3EC00B2BEA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		453B3CA018A6E3C700B2BEA8 = {
+			isa = PBXGroup;
+			children = (
+				453B3D1618A6E45300B2BEA8 /* Dependencies */,
+				453B3D1718A6E45300B2BEA8 /* Sources */,
+				45F3D18718A7A4D800F05D97 /* Targets */,
+				453B3D1C18A6E45C00B2BEA8 /* Trash */,
+				453B3CAC18A6E3E000B2BEA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		453B3CAC18A6E3E000B2BEA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				453B3CAB18A6E3E000B2BEA8 /* libEonilImprovisationsMediaEngineTranscoding.a */,
+				453B3CD618A6E3EC00B2BEA8 /* libEonilImprovisationsMediaEngineTranscoding.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		453B3D1618A6E45300B2BEA8 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */,
+				45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */,
+				45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */,
+				45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		453B3D1718A6E45300B2BEA8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				453B3D1818A6E45300B2BEA8 /* Eonil */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		453B3D1818A6E45300B2BEA8 /* Eonil */ = {
+			isa = PBXGroup;
+			children = (
+				453B3D1918A6E45300B2BEA8 /* Improvisations */,
+			);
+			path = Eonil;
+			sourceTree = "<group>";
+		};
+		453B3D1918A6E45300B2BEA8 /* Improvisations */ = {
+			isa = PBXGroup;
+			children = (
+				453B3D1A18A6E45300B2BEA8 /* MediaEngine */,
+			);
+			path = Improvisations;
+			sourceTree = "<group>";
+		};
+		453B3D1A18A6E45300B2BEA8 /* MediaEngine */ = {
+			isa = PBXGroup;
+			children = (
+				453B3D1B18A6E45300B2BEA8 /* Transcoding */,
+			);
+			path = MediaEngine;
+			sourceTree = "<group>";
+		};
+		453B3D1B18A6E45300B2BEA8 /* Transcoding */ = {
+			isa = PBXGroup;
+			children = (
+				453C03C418A9B208008EDC23 /* _Legacy2013 */,
+				453B3D2D18A6E52200B2BEA8 /* Common.cpp */,
+				453B3D2E18A6E52200B2BEA8 /* Common.h */,
+				453B3D3218A6E52A00B2BEA8 /* Transcoding.cpp */,
+				453B3D3318A6E52A00B2BEA8 /* Transcoding.h */,
+			);
+			path = Transcoding;
+			sourceTree = "<group>";
+		};
+		453C03C418A9B208008EDC23 /* _Legacy2013 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = _Legacy2013;
+			sourceTree = "<group>";
+		};
+		45F3D0BF18A78A1A00F05D97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D0C518A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */,
+				45F3D0C718A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */,
+				45F3D0C918A78A1A00F05D97 /* OSX Test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45F3D0CB18A78A2400F05D97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D0D018A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */,
+				45F3D0D218A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45F3D0D418A78A2E00F05D97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D0DB18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */,
+				45F3D0DD18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */,
+				45F3D0DF18A78A2E00F05D97 /* Mathematics - Running Test - OSX */,
+				45F3D0E118A78A2E00F05D97 /* Mathematics - Running Test - iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45F3D0E318A78A7A00F05D97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D0EA18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */,
+				45F3D0EC18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */,
+				45F3D0EE18A78A7A00F05D97 /* RunningTester */,
+				45F3D0F018A78A7A00F05D97 /* Tests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45F3D18718A7A4D800F05D97 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				45F3D18A18A7A4E200F05D97 /* Prefix.pch */,
+				45F3D18818A7A4D800F05D97 /* iOS */,
+				45F3D18918A7A4D800F05D97 /* OSX */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		45F3D18818A7A4D800F05D97 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		45F3D18918A7A4D800F05D97 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		453B3CD418A6E3EC00B2BEA8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				453B3D3118A6E52200B2BEA8 /* Common.h in Headers */,
+				453B3D3618A6E52A00B2BEA8 /* Transcoding.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		453B3CAA18A6E3E000B2BEA8 /* MediaEngine Transcoding - iOS Static Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 453B3CCC18A6E3E000B2BEA8 /* Build configuration list for PBXNativeTarget "MediaEngine Transcoding - iOS Static Library" */;
+			buildPhases = (
+				453B3CA718A6E3E000B2BEA8 /* Sources */,
+				453B3CA818A6E3E000B2BEA8 /* Frameworks */,
+				453B3CA918A6E3E000B2BEA8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MediaEngine Transcoding - iOS Static Library";
+			productName = "MediaEngine Transcoding - iOS Static Library";
+			productReference = 453B3CAB18A6E3E000B2BEA8 /* libEonilImprovisationsMediaEngineTranscoding.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		453B3CD518A6E3EC00B2BEA8 /* MediaEngine Transcoding - OSX Static Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 453B3CD718A6E3EC00B2BEA8 /* Build configuration list for PBXNativeTarget "MediaEngine Transcoding - OSX Static Library" */;
+			buildPhases = (
+				453B3CD218A6E3EC00B2BEA8 /* Sources */,
+				453B3CD318A6E3EC00B2BEA8 /* Frameworks */,
+				453B3CD418A6E3EC00B2BEA8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MediaEngine Transcoding - OSX Static Library";
+			productName = "MediaEngine Transcoding - OSX Static Library";
+			productReference = 453B3CD618A6E3EC00B2BEA8 /* libEonilImprovisationsMediaEngineTranscoding.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		453B3CA118A6E3C700B2BEA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 453B3CA418A6E3C700B2BEA8 /* Build configuration list for PBXProject "Transcoding" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 453B3CA018A6E3C700B2BEA8;
+			productRefGroup = 453B3CAC18A6E3E000B2BEA8 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 45F3D0E318A78A7A00F05D97 /* Products */;
+					ProjectRef = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
+				},
+				{
+					ProductGroup = 45F3D0BF18A78A1A00F05D97 /* Products */;
+					ProjectRef = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
+				},
+				{
+					ProductGroup = 45F3D0CB18A78A2400F05D97 /* Products */;
+					ProjectRef = 45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */;
+				},
+				{
+					ProductGroup = 45F3D0D418A78A2E00F05D97 /* Products */;
+					ProjectRef = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				453B3CD518A6E3EC00B2BEA8 /* MediaEngine Transcoding - OSX Static Library */,
+				453B3CAA18A6E3E000B2BEA8 /* MediaEngine Transcoding - iOS Static Library */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		45F3D0C518A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsMediaEngineFoundation.a;
+			remoteRef = 45F3D0C418A78A1A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0C718A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsMediaEngineFoundation.a;
+			remoteRef = 45F3D0C618A78A1A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0C918A78A1A00F05D97 /* OSX Test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "OSX Test";
+			remoteRef = 45F3D0C818A78A1A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0D018A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsMediaEngineGraphics.a;
+			remoteRef = 45F3D0CF18A78A2400F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0D218A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsMediaEngineGraphics.a;
+			remoteRef = 45F3D0D118A78A2400F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0DB18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsMediaEngineMathematics.a;
+			remoteRef = 45F3D0DA18A78A2E00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0DD18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsMediaEngineMathematics.a;
+			remoteRef = 45F3D0DC18A78A2E00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0DF18A78A2E00F05D97 /* Mathematics - Running Test - OSX */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Mathematics - Running Test - OSX";
+			remoteRef = 45F3D0DE18A78A2E00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0E118A78A2E00F05D97 /* Mathematics - Running Test - iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Mathematics - Running Test - iOS.app";
+			remoteRef = 45F3D0E018A78A2E00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0EA18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsCommonUtility.a;
+			remoteRef = 45F3D0E918A78A7A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0EC18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilImprovisationsCommonUtility.a;
+			remoteRef = 45F3D0EB18A78A7A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0EE18A78A7A00F05D97 /* RunningTester */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = RunningTester;
+			remoteRef = 45F3D0ED18A78A7A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F3D0F018A78A7A00F05D97 /* Tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Tests;
+			remoteRef = 45F3D0EF18A78A7A00F05D97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		453B3CA718A6E3E000B2BEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				453B3D2F18A6E52200B2BEA8 /* Common.cpp in Sources */,
+				453B3D3418A6E52A00B2BEA8 /* Transcoding.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		453B3CD218A6E3EC00B2BEA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				453B3D3518A6E52A00B2BEA8 /* Transcoding.cpp in Sources */,
+				453B3D3018A6E52200B2BEA8 /* Common.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		453B3CA518A6E3C700B2BEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Targets/Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$SRCROOT\"/../../CommonUtility/Source",
+					"\"$SRCROOT\"/../Foundation/Sources",
+					"\"$SRCROOT\"/../Mathematics/Sources",
+					"\"$SRCROOT\"/../Graphics/Sources",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "EonilImprovisationsMediaEngine$(PROJECT_NAME)";
+			};
+			name = Debug;
+		};
+		453B3CA618A6E3C700B2BEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Targets/Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$SRCROOT\"/../../CommonUtility/Source",
+					"\"$SRCROOT\"/../Foundation/Sources",
+					"\"$SRCROOT\"/../Mathematics/Sources",
+					"\"$SRCROOT\"/../Graphics/Sources",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "EonilImprovisationsMediaEngine$(PROJECT_NAME)";
+			};
+			name = Release;
+		};
+		453B3CCD18A6E3E000B2BEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = "/tmp/MediaEngine_Transcoding___iOS_Static_Library.dst";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		453B3CCE18A6E3E000B2BEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = "/tmp/MediaEngine_Transcoding___iOS_Static_Library.dst";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		453B3CD818A6E3EC00B2BEA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		453B3CD918A6E3EC00B2BEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		453B3CA418A6E3C700B2BEA8 /* Build configuration list for PBXProject "Transcoding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				453B3CA518A6E3C700B2BEA8 /* Debug */,
+				453B3CA618A6E3C700B2BEA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		453B3CCC18A6E3E000B2BEA8 /* Build configuration list for PBXNativeTarget "MediaEngine Transcoding - iOS Static Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				453B3CCD18A6E3E000B2BEA8 /* Debug */,
+				453B3CCE18A6E3E000B2BEA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		453B3CD718A6E3EC00B2BEA8 /* Build configuration list for PBXNativeTarget "MediaEngine Transcoding - OSX Static Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				453B3CD818A6E3EC00B2BEA8 /* Debug */,
+				453B3CD918A6E3EC00B2BEA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 453B3CA118A6E3C700B2BEA8 /* Project object */;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:README">
+   </FileRef>
+   <FileRef
+      location = "group:ANTI-PATTERNS">
+   </FileRef>
+   <FileRef
+      location = "group:DEBUGGING">
+   </FileRef>
+   <FileRef
+      location = "group:../CommonUtility/CommonUtility.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Foundation/Foundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Mathematics/Mathematics.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PlatformAdapters/PlatformAdapters.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Graphics/Graphics.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Physics/Physics.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Transcoding/Transcoding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TTCA/TTCA.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Testers/Testers.xcodeproj">
+   </FileRef>
+</Workspace>

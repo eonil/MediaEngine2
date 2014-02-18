@@ -1,0 +1,44 @@
+Media Engine
+============
+2014/02/03
+Hoon H.
+
+
+
+Brief
+-----
+This is a renewal of legacy Eonil Game Engine which written in 2013.
+
+
+Implementation Guidelines
+-------------------------
+-	Remove all the unnecessary code and projects from legacy.
+-	Move all the code from legacy as much as possible.
+	-	EonilGraphics -> EonilImprovisationsGraphics.
+-	Some project need to be re-written. Keep the legacy, and port
+	gradually. Initial code may directly refer legacy.
+-	Legacy code is a copied one. It can be edited freely. Original
+	legacy code is kept in separate space.
+
+
+
+
+
+
+External Components
+-------------------
+
+-	GLM	0.9.5.1
+
+	Completely embedded, and no API will be exposed to user code.
+	
+	
+	
+	
+	
+	
+	
+	
+Library Separation
+------------------
+Libraries are separated to mark clear dependency. No any other practical reason.

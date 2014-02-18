@@ -1,0 +1,13 @@
+DEVNOTE for Graphics Server
+===========================
+
+All the server-side objects are proxied with corresponding proxy object.
+This is very thin wrapper around OpenGL API, and follows its bare-bone 
+lifetime management. In other words, it does not perform any management.
+
+You usually passes several resources (buffers, textures and programs) into
+several objects, and the objects will not claim any ownership of them. 
+Anyway still they're referencing the resources, so the resource objects
+must be alive when the components are accessing them. And the that's users'
+responsibility to keep them alive.
+

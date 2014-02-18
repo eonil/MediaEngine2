@@ -1,0 +1,146 @@
+POLICY
+======
+
+
+
+
+
+
+Unstable Code
+-------------
+It is very hard to get ideal (or best) design at once. So, we need to
+put some classes with temporary designs, and these classes needs to be
+separated from other - those designs are fixed - classes.
+
+First, I use seasonal release namespace. Each unstable features will be
+collected a subnamespace named in manner of `D2014R1` - which means 
+*Distribution at 2014 Release 1st*.
+
+Second, I name the classes with version number. For example, `_Renderer_v1`.
+
+
+
+	namespace
+	Rendering
+	{
+		namespace
+		D2014R1
+		{
+			class
+			_Renderer_v1
+			{
+			};
+		}
+	}
+
+
+
+If it becomes stable, then move or alias them to regular namespace.
+
+
+	namespace
+	Rendering
+	{
+		namespace
+		D2014R1
+		{
+			class
+			_Renderer_v1
+			{
+			};
+		}
+		
+		using	Renderer		=	_Renderer_v1;
+	}
+
+
+finally,
+
+
+	namespace
+	Rendering
+	{
+		class
+		Renderer
+		{
+		};
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Another Way to Manage Unstable Code
+-----------------------------------
+This is another way of management poliy can be considered.
+
+First, put all unstable classes in `_unstable_` namespace.
+
+Second, I name the classes with version number. For example, `_Renderer_v1`,
+and alias them *within the subnamespace*.
+
+
+
+	namespace
+	Rendering
+	{
+		namespace
+		_unstable_
+		{
+			class
+			_Renderer_v1
+			{
+			};
+			
+			using	Renderer		=	_Renderer_v1;
+		}
+	}
+
+
+
+If I believe the design is stable, then the class will moved to stable-
+feature subnamespace, and to be aliased. This stable-feature subnamespace
+is inlined, so we can refer them without intermediate namespace part.
+
+
+
+	namespace
+	Rendering
+	{
+		inline namespace
+		_stable_
+		{
+			class
+			Renderer
+			{
+			};
+		}
+
+		namespace
+		_unstable_
+		{
+			using	Renderer		=	StableFeatures::Renderer;
+			using	_Renderer_v1	=	Renderer;
+		}
+
+	}
+
+
+
+Aliases in unstable namespace will be removed eventually as soon as refactoring
+of all existing code done.
+
+
+
