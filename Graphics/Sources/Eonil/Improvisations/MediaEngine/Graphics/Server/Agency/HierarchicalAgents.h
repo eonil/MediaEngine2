@@ -9,7 +9,7 @@
 //#ifndef __Graphics__HierarchicalAgents__
 //#define __Graphics__HierarchicalAgents__
 //
-//#include "VertexDescriptor.h"
+//#include "VertexLayoutDescriptor.h"
 //
 //namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 //	
@@ -72,10 +72,10 @@
 //			GeometryAgent
 //			{
 //				ProgrammingAgent*	_programming_agent	{};
-//				VertexDescriptor	_format				{};
+//				VertexLayoutDescriptor	_format				{};
 //				void const*			_vertexes			{};
 //
-//				GeometryAgent(ProgrammingAgent* const p, VertexDescriptor const& format, void const* vertexes);
+//				GeometryAgent(ProgrammingAgent* const p, VertexLayoutDescriptor const& format, void const* vertexes);
 //
 //			public:
 //				~GeometryAgent();
@@ -102,7 +102,7 @@
 //				~ProgrammingAgent();
 //
 //			public:
-//				auto	gemortry(VertexDescriptor const& format, void const* vertexes) const -> GeometryAgent const&;
+//				auto	gemortry(VertexLayoutDescriptor const& format, void const* vertexes) const -> GeometryAgent const&;
 //			};
 //
 //

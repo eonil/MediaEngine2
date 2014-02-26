@@ -25,7 +25,7 @@
 //		Agency
 //		{
 //			
-//			class	VertexDescriptor;
+//			class	VertexLayoutDescriptor;
 //			
 //			
 //			
@@ -54,7 +54,7 @@
 //			class
 //			ShadingAlgorithm
 //			{
-//				friend	auto					draw(Rendering::D2014R2::DisplayScreenFrame const& frame, ShadingAlgorithm const& shading, VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
+//				friend	auto					draw(Rendering::D2014R2::DisplayScreenFrame const& frame, ShadingAlgorithm const& shading, VertexLayoutDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
 //				
 //				Program*						_program_ptr	{nullptr};
 //				vec<UniformProgramParameter>	_parameters		{};

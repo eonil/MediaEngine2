@@ -31,7 +31,7 @@
 //				}
 //				
 //				static inline auto
-//				setAllVertexChannelings(void const* const vertexes, VertexDescriptor const& format) -> Size		//	Returns number of all channels.
+//				setAllVertexChannelings(void const* const vertexes, VertexLayoutDescriptor const& format) -> Size		//	Returns number of all channels.
 //				{
 //					Size	chidx	=	0;
 //					for (auto const& ch: format.channelComponents())
@@ -198,7 +198,7 @@
 //			
 //			
 //			auto
-//			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+//			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexLayoutDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
 //			{
 //				Size	num_ch	=
 //				setAllVertexChannelings(vertexes, format);
@@ -219,7 +219,7 @@
 //			}
 //			
 //			auto
-//			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void
+//			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexLayoutDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void
 //			{
 //				Size	num_ch	=
 //				setAllVertexChannelings(vertexes, format);
@@ -238,7 +238,7 @@
 //			
 //			
 ////			auto
-////			draw(Program const& program, VertexDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+////			draw(Program const& program, VertexLayoutDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
 ////			{
 ////				EONIL_DEBUG_ASSERT_WITH_MESSAGE(false, "Not yet implemented.");
 ////			}
@@ -268,7 +268,7 @@
 ////			
 ////			
 ////			auto
-////			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+////			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexLayoutDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
 ////			{
 ////				Size	num_ch	=
 ////				setAllVertexChannelings(vertexes, format);
@@ -289,7 +289,7 @@
 ////			}
 ////			
 ////			auto
-////			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void
+////			draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexLayoutDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void
 ////			{
 ////				Size	num_ch	=
 ////				setAllVertexChannelings(vertexes, format);

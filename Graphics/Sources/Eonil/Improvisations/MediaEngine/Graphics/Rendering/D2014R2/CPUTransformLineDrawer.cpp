@@ -8,10 +8,13 @@
 
 #include "CPUTransformLineDrawer.h"
 
+
 #include "../../Server/Symbols.h"
 #include "../../Server/Texture.h"
 #include "../../Server/Machine.h"
-#include "../../Server/Utility/VertexDescriptor.h"
+#include "../../Server/Machinery/VertexAttributeChannel.h"
+#include "../../Server/Utility/VertexLayoutDescriptor.h"
+#include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
 
 
@@ -63,6 +66,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					return	Machine::machine();
 				}
 				
+				static inline auto
+				make_program() -> Program
+				{
+					VertexShader::NameChannelMap	ncmap{};
+					
+					VertexShader	vs	{VERTEX_SHADER_CODE, VertexShader::NameChannelMap{}};
+					FragmentShader	fs	{FRAGMENT_SHADER_CODE};
+
+					return	{vs, fs};
+				}
+				
 				enum
 				VERTEX_CHANNEL_INDEXES : Size
 				{
@@ -71,11 +85,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				};
 				
 				static inline auto
-				make_vertex_format() -> VertexDescriptor
+				make_vertex_format() -> VertexLayoutDescriptor
 				{
-					VertexDescriptor	f{};
-					f.appendScalarVectorChannel(4);				//	LOCATION_COORDINATE
-					f.appendScalarVectorChannel(4);				//	COMPOSITION_COLOR
+					VertexLayoutDescriptor	f{};
+					f.appendScalarVectorChannel("locationCoordinateV", 4);				//	LOCATION_COORDINATE
+					f.appendScalarVectorChannel("compositionColorV", 4);				//	COMPOSITION_COLOR
 					
 					return	f;
 				}
@@ -83,17 +97,46 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			struct
+			CPUTransformLineDrawer::Core
+			{
+				Program			program							{{VERTEX_SHADER_CODE, VertexShader::NameChannelMap{}}, {FRAGMENT_SHADER_CODE}};
+				Size			transformUniformIndex			{program.indexOfUniformValueSlotForName("localToWorldTransformP")};
+				
+				VertexLayoutDescriptor				layout		{make_vertex_format()};
+				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
+			};
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			CPUTransformLineDrawer::CPUTransformLineDrawer()
 			{
-				VertexShader::NameChannelMap	ncmap{};
-				ncmap.insert({"locationCoordinateV", &M().vertexAttributeChannelAtIndex(LOCATION_COORDINATE)});
-				ncmap.insert({"compositionColorV", &M().vertexAttributeChannelAtIndex(COMPOSITION_COLOR)});
-				
-				VertexShader	vs	{VERTEX_SHADER_CODE, VertexShader::NameChannelMap{}};
-				FragmentShader	fs	{FRAGMENT_SHADER_CODE};
-				
-				_program_ptr	=	uptr<Program>{new Program{vs, fs}};
-				_transform_idx	=	_program_ptr->indexOfUniformValueSlotForName("localToWorldTransformP");
+				_core_ptr		=	uptr<Core>{new Core{}};
 			}
 			CPUTransformLineDrawer::~CPUTransformLineDrawer()
 			{
@@ -108,10 +151,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					EONIL_DEBUG_ASSERT(i.destination.location.w == 1);
 				}
 				
-				Machine::machine().useProgram(*_program_ptr);
+				Machine::machine().useProgram(_core_ptr->program);
 				{
-					_program_ptr->uniformValueSlotAtIndex(_transform_idx).setValue(worldToScreenTransform);
-					draw(make_vertex_format(), instances.data(), DrawingMode::LINES, Range::fromAdvancement(0, instances.size() * 2));
+					_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex).setValue(worldToScreenTransform);
+					draw(instances.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::LINES, Range::fromAdvancement(0, instances.size() * 2));
 				}
 				Machine::machine().unuseProgram();
 			}

@@ -19,7 +19,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		using namespace Stub;
 		
 		
-		
+		VertexShader::VertexShader(str const& sourceCode) : _name(eeglCreateShader(GL_VERTEX_SHADER)), _mapping()
+		{
+			eeglShaderSourceString(_name, sourceCode);
+			eeglCompileShader(_name);
+		}
 		VertexShader::VertexShader(str const& sourceCode, NameChannelMap const& mapping) : _name(eeglCreateShader(GL_VERTEX_SHADER)), _mapping(mapping)
 		{
 			eeglShaderSourceString(_name, sourceCode);

@@ -29,8 +29,8 @@ main()
 	compositionColorF	=	compositionColorV;
 	textureCoordinateF	=	textureCoordinateV;
 	
-	//	Debug...
-	compositionColorF	=	vec4(textureCoordinateV.x,textureCoordinateV.y,0,1);
+//	//	Debug...
+//	compositionColorF	=	vec4(textureCoordinateV.x,textureCoordinateV.y,0,1);
 }
 
 

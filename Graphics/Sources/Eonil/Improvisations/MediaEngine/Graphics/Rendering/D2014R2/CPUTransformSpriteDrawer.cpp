@@ -11,8 +11,10 @@
 #include "../../Server/Symbols.h"
 #include "../../Server/Texture.h"
 #include "../../Server/Machine.h"
-#include "../../Server/Utility/VertexDescriptor.h"
+#include "../../Server/Machinery/VertexAttributeChannel.h"
+#include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/UniformProgramParameter.h"
+#include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
 
 /*!
@@ -58,6 +60,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 				
+				
+				
+				
 				static inline auto
 				M() -> Machine&
 				{
@@ -73,30 +78,61 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				};
 				
 				static inline auto
-				make_vertex_format() -> VertexDescriptor
+				make_vertex_format() -> VertexLayoutDescriptor
 				{
-					VertexDescriptor	f{};
-					f.appendScalarVectorChannel(2);				//	POSITION_COORDINATE.
-					f.appendScalarVectorChannel(2);				//	TEXTURE UV.
-					f.appendScalarVectorChannel(4);				//	COMPOSITION_COLOR.
+					VertexLayoutDescriptor	f{};
+					f.appendScalarVectorChannel("positionCoordinateV", 2);
+					f.appendScalarVectorChannel("textureCoordinateV", 2);
+					f.appendScalarVectorChannel("compositionColorV", 4);
 					
 					return	f;
 				}
 			}
 			
-			////
 			
-			CPUTransformSpriteDrawer::CPUTransformSpriteDrawer()
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			struct
+			CPUTransformSpriteDrawer::Core
 			{
-				VertexShader::NameChannelMap	ncmap{};
-				ncmap.insert({"positionCoordinateV", &M().vertexAttributeChannelAtIndex(POSITION_COORDINATE)});
-				ncmap.insert({"textureCoordinateV", &M().vertexAttributeChannelAtIndex(COLOR_COORDINATE)});
-				ncmap.insert({"compositionColorV", &M().vertexAttributeChannelAtIndex(COMPOSITION_COLOR)});
-				
-				VertexShader	vs	{VERTEX_SHADER_CODE, VertexShader::NameChannelMap{}};
-				FragmentShader	fs	{FRAGMENT_SHADER_CODE};
-				
-				_program_ptr	=	uptr<Program>{new Program{vs, fs}};
+				Program								program			{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
+				VertexLayoutDescriptor				layout			{make_vertex_format()};
+				ProgramVertexChannelingDescriptor	channeling		{ProgramVertexChannelingDescriptor::analyze(layout, program)};
+	
+			};
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			CPUTransformSpriteDrawer::CPUTransformSpriteDrawer() : _core_ptr(new Core())
+			{
 			}
 			CPUTransformSpriteDrawer::~CPUTransformSpriteDrawer()
 			{
@@ -168,8 +204,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				////
 				
-				Machine::machine().useProgram(*_program_ptr);
-				draw(make_vertex_format(), vs.data(), colorTexture, DrawingMode::TRIANGLES, Range::fromAdvancement(0,instances.size() * 6));
+				Machine::machine().useProgram(_core_ptr->program);
+				draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, colorTexture, DrawingMode::TRIANGLES, Range::fromAdvancement(0,instances.size() * 6));
 				Machine::machine().unuseProgram();
 			}
 

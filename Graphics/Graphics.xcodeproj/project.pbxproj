@@ -163,9 +163,6 @@
 		45BC4E3B18BDADA6005AC223 /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BC4E3918BDADA6005AC223 /* Functions.cpp */; };
 		45BC4E3C18BDADA6005AC223 /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BC4E3918BDADA6005AC223 /* Functions.cpp */; };
 		45BC4E3D18BDADA6005AC223 /* Functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BC4E3A18BDADA6005AC223 /* Functions.h */; };
-		45BC4E4018BDADCE005AC223 /* VertexDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BC4E3E18BDADCE005AC223 /* VertexDescriptor.cpp */; };
-		45BC4E4118BDADCE005AC223 /* VertexDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BC4E3E18BDADCE005AC223 /* VertexDescriptor.cpp */; };
-		45BC4E4218BDADCE005AC223 /* VertexDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BC4E3F18BDADCE005AC223 /* VertexDescriptor.h */; };
 		45BC4E4518BDAFD6005AC223 /* UniformProgramParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BC4E4318BDAFD6005AC223 /* UniformProgramParameter.cpp */; };
 		45BC4E4618BDAFD6005AC223 /* UniformProgramParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BC4E4318BDAFD6005AC223 /* UniformProgramParameter.cpp */; };
 		45BC4E4718BDAFD6005AC223 /* UniformProgramParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BC4E4418BDAFD6005AC223 /* UniformProgramParameter.h */; };
@@ -223,6 +220,12 @@
 		45D3CBD8173BC9B50011D992 /* TriangleStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB41173BC7450011D992 /* TriangleStrip.cpp */; };
 		45D3CBE4173BC9B50011D992 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB58173BC7450011D992 /* Transform.cpp */; };
 		45D3CBEA173BC9C90011D992 /* iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB0E173BC7450011D992 /* iOS.mm */; };
+		45DB480B18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DB480918BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp */; };
+		45DB480C18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DB480918BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp */; };
+		45DB480D18BE0B7E004A10E0 /* VertexLayoutDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DB480A18BE0B7E004A10E0 /* VertexLayoutDescriptor.h */; };
+		45DB481018BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DB480E18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp */; };
+		45DB481118BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DB480E18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp */; };
+		45DB481218BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DB480F18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.h */; };
 		45DC09CB18A4287D00E724A6 /* ServerObjectProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DC09C918A4287D00E724A6 /* ServerObjectProxy.cpp */; };
 		45DC09CC18A4287D00E724A6 /* ServerObjectProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DC09C918A4287D00E724A6 /* ServerObjectProxy.cpp */; };
 		45DFCED717A420200013FE5E /* _ModelImporter_v2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DFCED517A420200013FE5E /* _ModelImporter_v2.cpp */; };
@@ -422,8 +425,6 @@
 		45B2B201176EF27300FC36F7 /* Atlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas.h; sourceTree = "<group>"; };
 		45BC4E3918BDADA6005AC223 /* Functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Functions.cpp; sourceTree = "<group>"; };
 		45BC4E3A18BDADA6005AC223 /* Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
-		45BC4E3E18BDADCE005AC223 /* VertexDescriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexDescriptor.cpp; sourceTree = "<group>"; };
-		45BC4E3F18BDADCE005AC223 /* VertexDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexDescriptor.h; sourceTree = "<group>"; };
 		45BC4E4318BDAFD6005AC223 /* UniformProgramParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UniformProgramParameter.cpp; sourceTree = "<group>"; };
 		45BC4E4418BDAFD6005AC223 /* UniformProgramParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniformProgramParameter.h; sourceTree = "<group>"; };
 		45C0CA9418B101A800575703 /* EEGraphicsDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEGraphicsDrawableView.h; sourceTree = "<group>"; };
@@ -496,6 +497,10 @@
 		45D3CB66173BC8280011D992 /* libEonilImprovisationsMediaEngineGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D3CB69173BC82A0011D992 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45D3CB79173BC83E0011D992 /* libEonilImprovisationsMediaEngineGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45DB480918BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexLayoutDescriptor.cpp; sourceTree = "<group>"; };
+		45DB480A18BE0B7E004A10E0 /* VertexLayoutDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexLayoutDescriptor.h; sourceTree = "<group>"; };
+		45DB480E18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgramVertexChannelingDescriptor.cpp; sourceTree = "<group>"; };
+		45DB480F18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramVertexChannelingDescriptor.h; sourceTree = "<group>"; };
 		45DC09C918A4287D00E724A6 /* ServerObjectProxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerObjectProxy.cpp; sourceTree = "<group>"; };
 		45DC09CA18A4287D00E724A6 /* ServerObjectProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObjectProxy.h; sourceTree = "<group>"; };
 		45DFCED517A420200013FE5E /* _ModelImporter_v2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _ModelImporter_v2.cpp; sourceTree = "<group>"; };
@@ -883,8 +888,10 @@
 		45BC4E3818BDADA1005AC223 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				45BC4E3E18BDADCE005AC223 /* VertexDescriptor.cpp */,
-				45BC4E3F18BDADCE005AC223 /* VertexDescriptor.h */,
+				45DB480918BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp */,
+				45DB480A18BE0B7E004A10E0 /* VertexLayoutDescriptor.h */,
+				45DB480E18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp */,
+				45DB480F18BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.h */,
 				45BC4E4318BDAFD6005AC223 /* UniformProgramParameter.cpp */,
 				45BC4E4418BDAFD6005AC223 /* UniformProgramParameter.h */,
 				45BC4E3918BDADA6005AC223 /* Functions.cpp */,
@@ -1238,9 +1245,11 @@
 			files = (
 				45E494A418B145E600195E5F /* _PlanarRGBAImageProxy_Core_using_Apple_CoreGraphics.h in Headers */,
 				4585178A18B0206D0074DBC1 /* _Regulator_v2.h in Headers */,
+				45DB481218BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.h in Headers */,
 				45485FA818B965B2005981DA /* DisplayScreenFrame.h in Headers */,
 				453A738618B1EEFE008E65FA /* RenderingFrame.h in Headers */,
 				4585178718B0206D0074DBC1 /* _Display_v1.h in Headers */,
+				45DB480D18BE0B7E004A10E0 /* VertexLayoutDescriptor.h in Headers */,
 				45E494BC18B147B000195E5F /* _FontProxy_Core_using_Apple_UIKit.h in Headers */,
 				45E494AE18B1472E00195E5F /* FontProxy.h in Headers */,
 				4585178418B0206C0074DBC1 /* _Camera_v1.h in Headers */,
@@ -1269,7 +1278,6 @@
 				4585179318B0206D0074DBC1 /* _TriangleListMeshForm_v2.h in Headers */,
 				45F14E4A18B2D25F005F4A4C /* BloomFilter.h in Headers */,
 				45BC4E4718BDAFD6005AC223 /* UniformProgramParameter.h in Headers */,
-				45BC4E4218BDADCE005AC223 /* VertexDescriptor.h in Headers */,
 				45E4950418B1AAEE00195E5F /* Scene.h in Headers */,
 				45400D8518B4046F00DF19AB /* Drawer.h in Headers */,
 				457E3B2118B988CF00327EB8 /* ShadingAlgorithm.h in Headers */,
@@ -1447,6 +1455,7 @@
 				452847611769D82E00133320 /* VertexTranscoder.cpp in Sources */,
 				45284779176A23EB00133320 /* Animation.cpp in Sources */,
 				457FAB631772A6C600F088DA /* GLNumbers.cpp in Sources */,
+				45DB481118BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp in Sources */,
 				4585178318B0206C0074DBC1 /* _Camera_v1.cpp in Sources */,
 				453A736818A2198500C01AAC /* ImplementationCommon.cpp in Sources */,
 				45E4950F18B1B01700195E5F /* PolylineDrawer.cpp in Sources */,
@@ -1456,12 +1465,12 @@
 				4528479D176B70B400133320 /* Tick.cpp in Sources */,
 				4511FB6A18A43031000A4617 /* _Legacy2013Compat.cpp in Sources */,
 				452847A6176C095400133320 /* TransformationQueue.cpp in Sources */,
+				45DB480C18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
 				452847A9176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
 				452847B2176C9C6F00133320 /* Node.cpp in Sources */,
 				45B2B202176EF27300FC36F7 /* Atlas.cpp in Sources */,
 				454DD9951798FCED000A815F /* Color.cpp in Sources */,
 				451402AB176F813B008B5DF1 /* IndexUnitChannel.cpp in Sources */,
-				45BC4E4118BDADCE005AC223 /* VertexDescriptor.cpp in Sources */,
 				45A12A23179B77F8008FA8A3 /* TextureCoreUtil-Internal.mm in Sources */,
 				457E3B2018B988CF00327EB8 /* ShadingAlgorithm.cpp in Sources */,
 				45BC4E3C18BDADA6005AC223 /* Functions.cpp in Sources */,
@@ -1569,6 +1578,7 @@
 				452847621769D82E00133320 /* VertexTranscoder.cpp in Sources */,
 				4585174918AE6DA00074DBC1 /* Aliases.cpp in Sources */,
 				4528477A176A23EB00133320 /* Animation.cpp in Sources */,
+				45DB481018BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp in Sources */,
 				457FAB641772A6C700F088DA /* GLNumbers.cpp in Sources */,
 				453A736918A2198500C01AAC /* ImplementationCommon.cpp in Sources */,
 				45E4950E18B1B01700195E5F /* PolylineDrawer.cpp in Sources */,
@@ -1578,12 +1588,12 @@
 				4528479E176B70B400133320 /* Tick.cpp in Sources */,
 				4511FB6B18A43031000A4617 /* _Legacy2013Compat.cpp in Sources */,
 				452847A7176C095400133320 /* TransformationQueue.cpp in Sources */,
+				45DB480B18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
 				452847AA176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
 				452847B3176C9C6F00133320 /* Node.cpp in Sources */,
 				45B2B203176EF27300FC36F7 /* Atlas.cpp in Sources */,
 				454DD9961798FCED000A815F /* Color.cpp in Sources */,
 				451402AC176F813B008B5DF1 /* IndexUnitChannel.cpp in Sources */,
-				45BC4E4018BDADCE005AC223 /* VertexDescriptor.cpp in Sources */,
 				45A12A24179B77F8008FA8A3 /* TextureCoreUtil-Internal.mm in Sources */,
 				457E3B1F18B988CF00327EB8 /* ShadingAlgorithm.cpp in Sources */,
 				45BC4E3B18BDADA6005AC223 /* Functions.cpp in Sources */,

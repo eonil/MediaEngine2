@@ -10,7 +10,7 @@
 //#define __Graphics__Agent__
 //
 //#include "../../Common.h"
-//#include "VertexDescriptor.h"
+//#include "VertexLayoutDescriptor.h"
 //
 //namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 //	
@@ -71,9 +71,9 @@
 //								You must have a defined viewport to draw something.
 //			 */
 //			
-//			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
+//			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexLayoutDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
 //			
-//			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
+//			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, VertexLayoutDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
 //			
 //			
 //			
@@ -97,9 +97,9 @@
 ////								You must have a defined viewport to draw something.
 ////			 */
 ////			
-////			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
+////			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexLayoutDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
 ////			
-////			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
+////			auto				draw(Rendering::D2014R2::DisplayScreenFrame const& frame, Program& program, vec<UniformProgramParameter> const& parameters, VertexLayoutDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
 ////			
 ////			
 ////			
@@ -121,7 +121,7 @@
 ////			/*!
 ////			 Draws with geometry data placed in server-side memory.
 ////			 */
-////			auto	draw(Program const& program, VertexDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
+////			auto	draw(Program const& program, VertexLayoutDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
 //
 //			
 //			

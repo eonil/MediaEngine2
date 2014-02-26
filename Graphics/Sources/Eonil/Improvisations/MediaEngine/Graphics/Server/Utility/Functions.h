@@ -30,7 +30,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		Utility
 		{
 			
-			class	VertexDescriptor;
+			class	VertexLayoutDescriptor;
+			class	ProgramVertexChannelingDescriptor;
 			
 			
 			
@@ -82,10 +83,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 
 			 */
 			
-			auto				draw(VertexDescriptor const& format, void const* const vertexes, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void;
-			auto				draw(VertexDescriptor const& format, void const* const vertexes, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void;
-			auto				draw(VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
-			auto				draw(VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void;
+			auto				draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void;
+			auto				draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void;
+			auto				draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
+			auto				draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void;
 			
 			
 		};

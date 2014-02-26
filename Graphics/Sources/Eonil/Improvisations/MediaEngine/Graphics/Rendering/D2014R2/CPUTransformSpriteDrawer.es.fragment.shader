@@ -21,7 +21,9 @@ void
 main()
 {
 	gl_FragColor	=	compositionColorF * texture2D(colorTextureSamplerU, textureCoordinateF);
-	//	gl_FragColor	=	vec4(1,1,1,1);
+	
+//	//	Debugging...
+//	gl_FragColor	=	compositionColorF;
 }
 
 

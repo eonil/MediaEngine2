@@ -10,7 +10,6 @@
 #define __Graphics__CPUTransformSpriteDrawer__
 
 #include "../../Common.h"
-#include "../../Server/Machinery/VertexAttributeChannel.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -35,7 +34,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			CPUTransformSpriteDrawer
 			{
-				uptr<Program>	_program_ptr	{nullptr};
+				struct	Core;
+				
+				uptr<Core>		_core_ptr	{};
 				
 			public:
 				struct

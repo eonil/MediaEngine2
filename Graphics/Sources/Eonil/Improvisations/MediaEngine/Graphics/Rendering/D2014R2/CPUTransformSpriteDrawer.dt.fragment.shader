@@ -20,11 +20,10 @@ varying vec2			textureCoordinateF;
 void
 main()
 {
-//	gl_FragColor	=	compositionColorF * texture2D(colorTextureSamplerU, textureCoordinateF);
-//	gl_FragColor	=	vec4(1,1,1,1);
+	gl_FragColor	=	compositionColorF * texture2D(colorTextureSamplerU, textureCoordinateF);
 	
-	//	Debug
-	gl_FragColor	=	compositionColorF;
+//	//	Debugging...
+//	gl_FragColor	=	compositionColorF;
 }
 
 

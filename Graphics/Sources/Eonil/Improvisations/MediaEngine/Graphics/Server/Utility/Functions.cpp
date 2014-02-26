@@ -8,7 +8,8 @@
 
 #include "Functions.h"
 
-#include "VertexDescriptor.h"
+#include "VertexLayoutDescriptor.h"
+#include "ProgramVertexChannelingDescriptor.h"
 #include "UniformProgramParameter.h"
 #include "../Machine.h"
 #include "../../Stub/GL-Common.h"
@@ -51,29 +52,29 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				}
 				
 				static inline auto
-				setAllVertexChannelings(void const* const vertexes, VertexDescriptor const& format) -> Size		//	Returns number of all channels.
+				setAllVertexChannelings(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling) -> void
 				{
-					Size	chidx	=	0;
-					for (auto const& ch: format.channelComponents())
+					for (Size i=0; i<layout.channelComponents().size(); i++)
 					{
+						auto const& ch	=	layout.channelComponents().at(i);
+						
 						Machinery::VertexAttributeChannel::Format	f{};
 						f.componentCount	=	Machinery::VertexAttributeChannel::ComponentSize(ch.count);
 						f.componentType		=	ch.type;
 						f.dataOffset		=	ch.offset;
 						f.normalization		=	GL_FALSE;
-						f.strideSizeInBytes	=	Stub::toGLsizei(format.strideSize());
+						f.strideSizeInBytes	=	Stub::toGLsizei(layout.strideSize());
 						
+						Size	chidx	=	channeling.channelIndexForComponentIndex(i);
 						M().vertexAttributeChannelAtIndex(chidx).linkWithClientMemory(vertexes, f);
-						chidx++;
 					}
-					return	chidx;
 				}
 				static inline auto
-				unsetAllVertexChannelings(Size const& count) -> void
+				unsetAllVertexChannelings(ProgramVertexChannelingDescriptor const& channeling) -> void
 				{
-					for (Size i=0; i<count; i++)
+					for (auto const& chidx: channeling.allChannelIndexes())
 					{
-						M().vertexAttributeChannelAtIndex(i).unlink();
+						M().vertexAttributeChannelAtIndex(chidx).unlink();
 					}
 				}
 				
@@ -169,10 +170,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			auto
-			draw(VertexDescriptor const& format, void const* const vertexes, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
 			{
-				Size	num_ch	=
-				setAllVertexChannelings(vertexes, format);
+				setAllVertexChannelings(vertexes, layout, channeling);
 				{
 					for (Size i=0; i<textures.size(); i++)
 					{
@@ -186,31 +186,31 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						M().textureUnitAtIndex(i).unsetTexture();
 					}
 				}
-				unsetAllVertexChannelings(num_ch);
+				unsetAllVertexChannelings(channeling);
 			}
 			
 			auto
-			draw(VertexDescriptor const& format, void const* const vertexes, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void
 			{
-				draw(format, vertexes, GenericMemoryRange<PlanarTexture const>{textures.data(), textures.size()}, mode, range);
+				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{textures.data(), textures.size()}, mode, range);
 			}
 			
 			auto
-			draw(VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
 			{
-				draw(format, vertexes, GenericMemoryRange<PlanarTexture const>{&texture, 1}, mode, range);
+				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{&texture, 1}, mode, range);
 			}
 			
 			auto
-			draw(VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void
 			{
-				draw(format, vertexes, GenericMemoryRange<PlanarTexture const>{}, mode, range);
+				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{}, mode, range);
 			}
 			
 			
 			
 //			auto
-//			draw(Program const& program, VertexDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+//			draw(Program const& program, VertexLayoutDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
 //			{
 //				EONIL_DEBUG_ASSERT_WITH_MESSAGE(false, "Not yet implemented.");
 //			}

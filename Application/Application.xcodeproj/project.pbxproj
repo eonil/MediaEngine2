@@ -39,8 +39,6 @@
 		4577C99318B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053518B6A59A00FCFCBD /* ApplicationController.mm */; };
 		4577C99418B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053318B6A59300FCFCBD /* ApplicationController.mm */; };
 		4577C99518B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053518B6A59A00FCFCBD /* ApplicationController.mm */; };
-		4595B3D218BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D018BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp */; };
-		4595B3D318BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D018BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp */; };
 		4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
@@ -791,7 +789,6 @@
 				45C49E9218B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
 				4577C99518B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				4577C99418B6ABCB0078033C /* ApplicationController.mm in Sources */,
-				4595B3D218BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp in Sources */,
 				45C49E9718B75A6100544108 /* TestRendering1.cpp in Sources */,
 				4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */,
 				4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
@@ -810,7 +807,6 @@
 				45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
 				4577C99218B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */,
-				4595B3D318BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp in Sources */,
 				45C49E9818B75A6100544108 /* TestRendering1.cpp in Sources */,
 				4577C99318B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,

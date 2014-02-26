@@ -10,7 +10,6 @@
 #define __Graphics__CPUTransformLineDrawer__
 
 #include "../../Common.h"
-#include "../../Server/Machinery/VertexAttributeChannel.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -30,8 +29,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			CPUTransformLineDrawer
 			{
-				uptr<Program>	_program_ptr		{nullptr};
-				Size			_transform_idx	{0};
+				struct	Core;
+				
+				uptr<Core>	_core_ptr{};
 				
 			public:
 				struct

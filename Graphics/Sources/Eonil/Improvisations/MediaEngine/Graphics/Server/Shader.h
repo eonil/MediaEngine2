@@ -38,6 +38,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			/*!
 			 This does not retain any input resources, so you can freely free them all.
 			 */
+			VertexShader(str const& sourceCode);
 			VertexShader(str const& sourceCode, NameChannelMap const& attributeNamesForChannelsMapping);
 			VertexShader(VertexShader const&) = delete;
 			~VertexShader();
