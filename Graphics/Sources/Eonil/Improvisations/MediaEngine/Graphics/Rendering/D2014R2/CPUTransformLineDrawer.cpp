@@ -71,7 +71,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				{
 					VertexShader::NameChannelMap	ncmap{};
 					
-					VertexShader	vs	{VERTEX_SHADER_CODE, VertexShader::NameChannelMap{}};
+					VertexShader	vs	{VERTEX_SHADER_CODE};
 					FragmentShader	fs	{FRAGMENT_SHADER_CODE};
 
 					return	{vs, fs};
@@ -116,7 +116,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			struct
 			CPUTransformLineDrawer::Core
 			{
-				Program			program							{{VERTEX_SHADER_CODE, VertexShader::NameChannelMap{}}, {FRAGMENT_SHADER_CODE}};
+				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				Size			transformUniformIndex			{program.indexOfUniformValueSlotForName("localToWorldTransformP")};
 				
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
