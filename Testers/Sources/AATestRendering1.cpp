@@ -9,8 +9,8 @@
 #include "AATestRendering1.h"
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine.h>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine_DEV_.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
@@ -122,8 +122,8 @@ TestRendering1RenderingWithTransform()
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexPosition", Machine::machine().vertexAttributeChannelAtIndex(0)));
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexColor", Machine::machine().vertexAttributeChannelAtIndex(1)));
+	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 
 	Program					p		{VertexShader(TestVertexShaderProgram, chmap), FragmentShader(TestFragmentShaderProgram)};
 	printf("program = %s\n", Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::describe(p).c_str());
@@ -135,14 +135,14 @@ TestRendering1RenderingWithTransform()
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
-	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f0.normalization		=	false;
 	f0.strideSizeInBytes	=	sizeof(TestVertex);
 	
 	f1.dataOffset			=	sizeof(Vector4);
-	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
@@ -157,7 +157,7 @@ TestRendering1RenderingWithTransform()
 		Matrix4		tran		=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle(Vector3(0,0,1), c));
 		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotForName("objectTransform")).setValue(tran);
 		
-		Machine::machine().drawElements(Machine::DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 	};
 	Machine::machine().unuseProgram();
 	Machine::machine().indexUnitChannel().unlink();

@@ -21,15 +21,22 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		/*!
 		 
-		 @classdesign	Uniform search by name is limited as read-only to discourage use of name-based search
-						in client code. Client must cache the index and should use the index. Index for the name
-						won't be changed while program alive.
+		 @classdesign	Uniform search by name is discouraged to reduce lookup cost from client code. Client must 
+						cache the index and should use the index. Index for the name won't be changed while program 
+						alive.
+		 
+						This class does not support free-binding of vertex attribute location. All the version 
+						attribute locations must be pre-bound before creating program object, and once created 
+						binding cannot be changed later. In other words, vertex attribute location binding is 
+						immutable. This has advatages when you are using VAO (which fixes vertex locations).
+		 
+						
 
 		 @discussion	Parameter-less constructor creates an empty object which is invalid for any operation. Use 
 						it only for nil-state marker.
 		 
 						A program object accepts a vertex and a fragment shaders, and copies thier contents into
-						program object. You can delete the shaders after creating a linked program freely.
+						program object when linking them. You can freely delete the shaders after creating a program.
 		 
 		 @ref			http://www.khronos.org/opengles/sdk/docs/man/xhtml/glLinkProgram.xml
 		 
@@ -40,12 +47,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						>	information log or the program that is part of the program object.
 		 
 		 
+		 
 		 @note			You must bind program to a `Machine` to set parameters. Debug build asserts for invalid
 						program binding.
 		 
-		 @note			OpenGL ES 2.0 API is designed to query location of a uniform substructure like struct field
-						or array element. Anyway, this functionality is not supported in this library to simplify 
-						design and implementation.
+		 
+		 
+		 @note			OpenGL ES 2.0 API provides a way to query location of a uniform substructure like struct field
+						or array element. This functionality is not supported in this library to simplify design and 
+						implementation.
 		 
 						@ref	http://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetUniformLocation.xml
 		 
@@ -54,11 +64,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						request.
 		 
 		 
+		 
 		 @discussion
 		 The destructor is not virtual by default. Subclassing this class might be dangerous.
 		 */
 		class
-		Program final
+		Program final : public TrackableObject
 		{
 			using						VAC		=	Machinery::VertexAttributeChannel;
 			
@@ -67,7 +78,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			vec<UniformValueSlot>		_uniformValueSlots{};
 			vec<VertexAttributeSlot>	_vertexAttributeSlots{};
 			
-			map<str, VAC>				_vertexChannelsForAttributesMapping{};
+			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			
 			////
 			
@@ -84,6 +95,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	operator==(Program const& other) const -> bool;
 			auto	operator!=(Program const& other) const -> bool;
 			
+			auto	empty() const -> bool;
 			auto	name() const -> GLuint;
 			
 //			struct
@@ -115,6 +127,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlot const&;
 			auto	vertexAttributeSlotAtIndex(Size const index)					->	VertexAttributeSlot&;
 			auto	indexOfVertexAttributeSlotForName(std::string const name) const	->	Size;
+			
+			auto	vertexAttributeSlotForName(str const& name) const				->	VertexAttributeSlot const&;
 			
 			
 //		public:

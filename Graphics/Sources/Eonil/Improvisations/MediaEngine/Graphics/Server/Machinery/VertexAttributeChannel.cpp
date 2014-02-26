@@ -26,20 +26,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+
 			
 			
+						
 			
 			
-			
-			
-			
-			
-			
-//				auto
-//				VertexAttributeChannel::Format::Utility::floatVector1() -> Format const		{ return	Format {}; }
-//				{
-//					return
-//				}
 			
 			
 			
@@ -56,11 +48,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			
-			
 			auto
 			VertexAttributeChannel::linkWithClientMemory(const void *const memory, const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format format) -> void
 			{
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(GLint(format.componentCount) >= 1, "Vertex channel's component count must be >=1.");
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(GLint(format.componentCount) <= 4, "Vertex channel's component count must be <=4.");
 				EEGL_ASSERT(memory != NULL);
 				
 				uint8_t const*	ptr		=	(uint8_t const* const)memory;
@@ -68,13 +60,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				//					EEGL_ASSERT(format.dataLengthInBytes() == format.memoryLength);
 				eeglEnableVertexAttribArray(_idx);
-				eeglVertexAttribPointer(_idx, format.componentCount, format.componentType, format.normalization, format.strideSizeInBytes, ptr2);
+				eeglVertexAttribPointer(_idx, GLint(format.componentCount), GLenum(format.componentType), format.normalization, format.strideSizeInBytes, ptr2);
 				
 				_validity	=	true;
 			}
 			auto
 			VertexAttributeChannel::linkWithServerBuffer(const Eonil::Improvisations::MediaEngine::Graphics::Server::ArrayBuffer &buffer, const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format format) -> void
 			{
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(GLint(format.componentCount) >= 1, "Vertex channel's component count must be >=1.");
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(GLint(format.componentCount) <= 4, "Vertex channel's component count must be <=4.");
 				EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_cur_ab_ptr = &buffer);
 				
 				/*!
@@ -92,7 +86,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				uint8_t const*	ptr2	=	ptr + format.dataOffset;
 				
 				eeglBindBuffer(GL_ARRAY_BUFFER, buffer.name());
-				eeglVertexAttribPointer(_idx, format.componentCount, format.componentType, format.normalization, format.strideSizeInBytes, ptr2);
+				eeglVertexAttribPointer(_idx, GLint(format.componentCount), GLenum(format.componentType), format.normalization, format.strideSizeInBytes, ptr2);
 				eeglEnableVertexAttribArray(_idx);
 				eeglUnbindBufer(GL_ARRAY_BUFFER);
 				

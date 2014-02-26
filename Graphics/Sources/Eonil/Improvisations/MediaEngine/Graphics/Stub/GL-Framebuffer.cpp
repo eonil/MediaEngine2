@@ -20,27 +20,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGenFramebuffers(GLsizei const n, GLuint* const framebuffers)
 		{
 			glGenFramebuffers(n, framebuffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteFramebuffers(GLsizei const n, GLuint const* const framebuffers)
 		{
 			glDeleteFramebuffers(n, framebuffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE GLuint const
+		EEGL_STUB_API_DECO GLuint const
 		eeglGenFramebuffer()
 		{
 			GLuint	n;
 			eeglGenFramebuffers(1, &n);
 			return	n;
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteFramebuffer(GLuint const framebuffer)
 		{
 			eeglDeleteFramebuffers(1, &framebuffer);
@@ -56,7 +56,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBindFramebuffer(GLenum const target, GLuint const framebuffer)
 		{
 			EEGL_ASSERT(target == GL_FRAMEBUFFER);
@@ -66,7 +66,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUnbindFramebuffer(GLenum const target)
 		{
 			EEGL_ASSERT(target == GL_FRAMEBUFFER);
@@ -76,7 +76,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglFramebufferTexture2D(GLenum const target, GLenum const attachment, GLenum const textarget, GLuint const texture, GLint const level)
 		{
 			EEGL_ASSERT(target == GL_FRAMEBUFFER);
@@ -94,7 +94,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glFramebufferTexture2D(target, attachment, textarget, texture, level);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglFramebufferRenderbuffer(GLenum const target, GLenum const attachment, GLenum const renderbuffertarget, GLuint const renderbuffer)
 		{
 			EEGL_ASSERT(target == GL_FRAMEBUFFER);
@@ -122,7 +122,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE GLenum const
+		EEGL_STUB_API_DECO GLenum const
 		eeglCheckFramebufferStatus(GLenum const target)
 		{
 			EEGL_ASSERT(target == GL_FRAMEBUFFER);

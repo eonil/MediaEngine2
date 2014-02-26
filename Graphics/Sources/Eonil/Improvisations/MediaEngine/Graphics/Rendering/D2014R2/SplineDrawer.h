@@ -33,13 +33,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			SplineDrawer
 			{
-				uptr<Server::Program>				_shader		{};
-				
-			public:
-				SplineDrawer();
-				~SplineDrawer();
-				
-				auto	drawInstances() const -> void;
 			};
 			
 			

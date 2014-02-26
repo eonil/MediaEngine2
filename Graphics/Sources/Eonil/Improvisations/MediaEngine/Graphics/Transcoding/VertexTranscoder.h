@@ -31,11 +31,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				enum
 				CODE : GLenum
 				{
-					UINT8	=	Server::Machinery::VertexAttributeChannel::ComponentType::UBYTE,
-					SINT8	=	Server::Machinery::VertexAttributeChannel::ComponentType::BYTE,
-					UINT16	=	Server::Machinery::VertexAttributeChannel::ComponentType::USHORT,
-					SINT16	=	Server::Machinery::VertexAttributeChannel::ComponentType::SHORT,
-					FLOAT	=	Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT,
+					UINT8	=	GLenum(Server::Machinery::VertexAttributeChannel::ComponentType::UBYTE),
+					SINT8	=	GLenum(Server::Machinery::VertexAttributeChannel::ComponentType::BYTE),
+					UINT16	=	GLenum(Server::Machinery::VertexAttributeChannel::ComponentType::USHORT),
+					SINT16	=	GLenum(Server::Machinery::VertexAttributeChannel::ComponentType::SHORT),
+					FLOAT	=	GLenum(Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT),
 				};
 			};
 			

@@ -230,6 +230,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			bool const	operator==(V const& other) const;
 			bool const	operator!=(V const& other) const;
 			
+			V const		operator+() const;
 			V const		operator-() const;
 			
 			V const		operator+(V const& other) const;	//	Per-component operation.

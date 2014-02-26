@@ -27,23 +27,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 	namespace
 	Value
 	{
+		using	Scalar	=	EEScalar;
+		
 		struct	Vector4;
 		struct	Matrix4;
 	}
 	
 	using namespace	Eonil::Improvisations::MediaEngine::Foundation;
 	using namespace	Eonil::Improvisations::MediaEngine::Foundation::D2014R1;
-	
-//	using		Size				=	Eonil::Improvisations::MediaEngine::Foundation::Size;
-	
-	typedef		EEScalar			Scalar;
-//	typedef		glm::vec4			Vector;
-//	typedef		glm::mat4			Matrix;
-	
-//	using Vector3					=	glm::vec3;
-//	using Vector4					=	glm::vec4;
-//	using Matrix4					=	glm::mat4;
-//	using Matrix4					=	glm::mat4;
 	
 }}}}
 

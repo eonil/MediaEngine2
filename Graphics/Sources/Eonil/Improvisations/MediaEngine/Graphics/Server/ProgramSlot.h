@@ -25,7 +25,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		ProgramSlot 
+		ProgramSlot : public NoCopyButMoveObject
 		{
 		public:
 			GLuint const			index() const;
@@ -37,7 +37,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		protected:
 			ProgramSlot();
 			
-			GLuint					_pname;
+			GLuint					_pname;			//	Name of program which owns this slot.
 			
 			GLuint					_idx;
 			std::string				_name;
@@ -59,10 +59,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		UniformValueSlot : public ProgramSlot
+		UniformValueSlot final : public ProgramSlot
 		{
-		public:
+			friend class	Program;
+			
 			UniformValueSlot(GLuint const programName, GLuint const slotIndex);
+			
+		public:
 			
 //			void					setValue(GLfloat const value);
 //			void					setValue(GLint const value);
@@ -106,10 +109,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		VertexAttributeSlot : public ProgramSlot
+		VertexAttributeSlot final : public ProgramSlot
 		{
-		public:
+			friend class	Program;
+			
 			VertexAttributeSlot(GLuint const programName, GLuint const slotIndex);
+			
+		public:
 			
 //				void					setVertexAttributeChannel(Machinery::VertexAttributeChannel const channel);
 		};

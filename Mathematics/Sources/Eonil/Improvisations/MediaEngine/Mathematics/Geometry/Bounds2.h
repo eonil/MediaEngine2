@@ -48,6 +48,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			 Creates null-state. (all-NAN).
 			 */
 			Bounds2();
+			/*!
+			 Creates zero-sized bounding box.
+			 */
 			Bounds2(Scalar const x, Scalar const y);
 			Bounds2(Vector2 const minimum, Vector2 const maximum);
 			Bounds2(Scalar const minX, Scalar const minY, Scalar const maxX, Scalar const maxY);

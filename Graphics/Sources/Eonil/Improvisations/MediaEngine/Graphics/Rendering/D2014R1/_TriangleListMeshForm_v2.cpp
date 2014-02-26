@@ -112,11 +112,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					std::string const	fsc1	=	Debugging::Doctor::doesPlatformSupportShaderPrecision() ? fsc : Program::Utility::shaderCodeForLegacyPlatformsWhichDoNotSupportPrecision(fsc);
 					
 					VertexShader::NameChannelMap	nmap;
-					nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vlocation", m.vertexAttributeChannelAtIndex(0)));
-					nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vcolor", m.vertexAttributeChannelAtIndex(1)));
-					nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vmapping", m.vertexAttributeChannelAtIndex(2)));
-					nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vcolor_scale", m.vertexAttributeChannelAtIndex(3)));
-					nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vmapping_scale", m.vertexAttributeChannelAtIndex(4)));
+					nmap.insert({"vlocation", &m.vertexAttributeChannelAtIndex(0)});
+					nmap.insert({"vcolor", &m.vertexAttributeChannelAtIndex(1)});
+					nmap.insert({"vmapping", &m.vertexAttributeChannelAtIndex(2)});
+					nmap.insert({"vcolor_scale", &m.vertexAttributeChannelAtIndex(3)});
+					nmap.insert({"vmapping_scale", &m.vertexAttributeChannelAtIndex(4)});
 					
 					return	_Legacy2013_SharingBox<Program>(new Program(VertexShader(vsc, nmap), FragmentShader(fsc1)));
 				}
@@ -324,32 +324,32 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				using namespace Server::Machinery;
 				
 				VertexAttributeChannel::Format	f0;
-				f0.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f0.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+				f0.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f0.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 				f0.dataOffset			=	0;
 				f0.strideSizeInBytes	=	sizeof(Vertex);
 				
 				VertexAttributeChannel::Format	f1;
-				f1.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f1.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+				f1.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f1.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 				f1.dataOffset			=	sizeof(Scalar) * (4);
 				f1.strideSizeInBytes	=	sizeof(Vertex);
 				
 				VertexAttributeChannel::Format	f2;
-				f2.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f2.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::TWO;
+				f2.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f2.componentCount		=	VertexAttributeChannel::ComponentSize::TWO;
 				f2.dataOffset			=	sizeof(Scalar) * (4+4);
 				f2.strideSizeInBytes	=	sizeof(Vertex);
 				
 				VertexAttributeChannel::Format	f3;
-				f3.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f3.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::ONE;
+				f3.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f3.componentCount		=	VertexAttributeChannel::ComponentSize::ONE;
 				f3.dataOffset			=	sizeof(Scalar) * (4+4+2);
 				f3.strideSizeInBytes	=	sizeof(Vertex);
 				
 				VertexAttributeChannel::Format	f4;
-				f4.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f4.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::ONE;
+				f4.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f4.componentCount		=	VertexAttributeChannel::ComponentSize::ONE;
 				f4.dataOffset			=	sizeof(Scalar) * (4+4+2+1);
 				f4.strideSizeInBytes	=	sizeof(Vertex);
 				
@@ -380,7 +380,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						m.vertexAttributeChannelAtIndex(3).linkWithClientMemory(f.faces[0].scalars, f3);
 						m.vertexAttributeChannelAtIndex(4).linkWithClientMemory(f.faces[0].scalars, f4);
 						{
-							m.drawArrays(Machine::DrawingMode::TRIANGLES, 0, f.faces.size() * 3);
+							m.drawArrays(DrawingMode::TRIANGLES, 0, f.faces.size() * 3);
 						}
 						m.vertexAttributeChannelAtIndex(0).unlink();
 						m.vertexAttributeChannelAtIndex(1).unlink();

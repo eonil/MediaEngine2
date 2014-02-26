@@ -17,24 +17,24 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{
-		EEGL_INLINE void			eeglGetBufferParameteriv(GLenum const target, GLenum const pname, GLint* const params);
-		EEGL_INLINE GLint const		eeglGetBufferParameteri(GLenum const target, GLenum const pname);
+		EEGL_STUB_API_DECO void			eeglGetBufferParameteriv(GLenum const target, GLenum const pname, GLint* const params);
+		EEGL_STUB_API_DECO GLint const		eeglGetBufferParameteri(GLenum const target, GLenum const pname);
 		
 		
 		
 		
 		////
 		
-		EEGL_INLINE void			eeglGenBuffers(GLsizei const n, GLuint* const buffers);
-		EEGL_INLINE GLuint const	eeglGenBuffer();
-		EEGL_INLINE void			eeglDeleteBuffers(GLsizei const n, GLuint const* const buffers);
-		EEGL_INLINE void			eeglDeleteBuffer(GLuint const name);
+		EEGL_STUB_API_DECO void			eeglGenBuffers(GLsizei const n, GLuint* const buffers);
+		EEGL_STUB_API_DECO GLuint const	eeglGenBuffer();
+		EEGL_STUB_API_DECO void			eeglDeleteBuffers(GLsizei const n, GLuint const* const buffers);
+		EEGL_STUB_API_DECO void			eeglDeleteBuffer(GLuint const name);
 		
-		EEGL_INLINE void			eeglBindBuffer(GLenum const target, GLuint const buffer);
-		EEGL_INLINE void			eeglUnbindBufer(GLenum const target);
+		EEGL_STUB_API_DECO void			eeglBindBuffer(GLenum const target, GLuint const buffer);
+		EEGL_STUB_API_DECO void			eeglUnbindBufer(GLenum const target);
 		
-		EEGL_INLINE void			eeglBufferData(GLenum const target, GLsizeiptr const size, GLvoid const * const data, GLenum const usage);
-		EEGL_INLINE void			eeglBufferSubData(GLenum const target, GLintptr const offset, GLsizeiptr const size, GLvoid const * const data);
+		EEGL_STUB_API_DECO void			eeglBufferData(GLenum const target, GLsizeiptr const size, GLvoid const * const data, GLenum const usage);
+		EEGL_STUB_API_DECO void			eeglBufferSubData(GLenum const target, GLintptr const offset, GLsizeiptr const size, GLvoid const * const data);
 		
 
 		

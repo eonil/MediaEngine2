@@ -20,22 +20,42 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		using namespace Eonil::Improvisations::MediaEngine::Graphics::Debugging;
 		
-		EEGL_INLINE void			eeglGetBooleanv(GLenum const pname, GLboolean * const params);
-		EEGL_INLINE void			eeglGetFloatv(GLenum const pname, GLfloat * const params);
-		EEGL_INLINE void			eeglGetIntegerv(GLenum const pname, GLint * const params);
+		EEGL_STUB_API_DECO void			eeglGetBooleanv(GLenum const pname, GLboolean * const params);
+		EEGL_STUB_API_DECO void			eeglGetFloatv(GLenum const pname, GLfloat * const params);
+		EEGL_STUB_API_DECO void			eeglGetIntegerv(GLenum const pname, GLint * const params);
 		
-		EEGL_INLINE GLboolean const			eeglGetBoolean(GLenum const pname);
-		EEGL_INLINE GLboolean const			eeglGetFloat(GLenum const pname);
-		EEGL_INLINE GLint const				eeglGetInteger(GLenum const pname);
-		
-		
+		EEGL_STUB_API_DECO GLboolean const			eeglGetBoolean(GLenum const pname);
+		EEGL_STUB_API_DECO GLboolean const			eeglGetFloat(GLenum const pname);
+		EEGL_STUB_API_DECO GLint const				eeglGetInteger(GLenum const pname);
 		
 		
-		EEGL_INLINE void					eeglGetFramebufferAttachmentParameteriv(GLenum const target, GLenum const attachment, GLenum const pname, GLint* const params);
-		EEGL_INLINE GLint const				eeglGetFramebufferAttachmentParameteri(GLenum const target, GLenum const attachment, GLenum const pname);
 		
-		EEGL_INLINE void					eeglGetRenderbufferParameteriv(GLenum const target, GLenum const pname, GLint* const params);
-		EEGL_INLINE GLint const				eeglGetRenderbufferParameteri(GLenum const target, GLenum const pname);
+		
+		EEGL_STUB_API_DECO void					eeglGetFramebufferAttachmentParameteriv(GLenum const target, GLenum const attachment, GLenum const pname, GLint* const params);
+		EEGL_STUB_API_DECO GLint const			eeglGetFramebufferAttachmentParameteri(GLenum const target, GLenum const attachment, GLenum const pname);
+		
+		EEGL_STUB_API_DECO void					eeglGetRenderbufferParameteriv(GLenum const target, GLenum const pname, GLint* const params);
+		EEGL_STUB_API_DECO GLint const			eeglGetRenderbufferParameteri(GLenum const target, GLenum const pname);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
 	}
 	
 }}}}

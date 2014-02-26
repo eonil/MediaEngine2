@@ -21,14 +21,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 GL Shader is ref-counted obejct.
 		 */
 
-		EEGL_INLINE GLboolean const	eeglIsShader(GLuint const shader);
+		EEGL_STUB_API_DECO GLboolean const	eeglIsShader(GLuint const shader);
 		
-		EEGL_INLINE void			eeglGetShaderiv(GLuint const shader, GLenum const pname, GLint * const params);
-		EEGL_INLINE GLint const	eeglGetShaderi(GLuint const shader, GLenum const pname);
+		EEGL_STUB_API_DECO void			eeglGetShaderiv(GLuint const shader, GLenum const pname, GLint * const params);
+		EEGL_STUB_API_DECO GLint const	eeglGetShaderi(GLuint const shader, GLenum const pname);
 		
-		EEGL_INLINE void			eeglGetShaderSource(GLuint const shader, GLsizei const bufsize, GLsizei * const length, GLchar * const source);
+		EEGL_STUB_API_DECO void			eeglGetShaderSource(GLuint const shader, GLsizei const bufsize, GLsizei * const length, GLchar * const source);
 		
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglGetShaderPrecisionFormat(GLenum shadertype, GLenum precisiontype, GLint *range, GLint *precision)
 //			{
 //				glGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
@@ -36,26 +36,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			}
 		
 		
-		EEGL_INLINE void			eeglGetShaderInfoLog(GLuint shader, GLsizei bufsize, GLsizei *length, GLchar *infolog);
+		EEGL_STUB_API_DECO void			eeglGetShaderInfoLog(GLuint shader, GLsizei bufsize, GLsizei *length, GLchar *infolog);
 		
 		////
 		
-		EEGL_INLINE GLuint const		eeglCreateShader(GLenum const type);
-		EEGL_INLINE void				eeglDeleteShader(GLuint const shader);
+		EEGL_STUB_API_DECO GLuint const		eeglCreateShader(GLenum const type);
+		EEGL_STUB_API_DECO void				eeglDeleteShader(GLuint const shader);
 		
 		////
 		
-		EEGL_INLINE void			eeglShaderSource(GLuint const shader, GLsizei const count, GLchar const * * const string, GLint const * const length);
-		EEGL_INLINE void			eeglCompileShader(GLuint const shader);
-		EEGL_INLINE void			eeglReleaseShaderCompiler(void);
+		EEGL_STUB_API_DECO void			eeglShaderSource(GLuint const shader, GLsizei const count, GLchar const * * const string, GLint const * const length);
+		EEGL_STUB_API_DECO void			eeglCompileShader(GLuint const shader);
+		EEGL_STUB_API_DECO void			eeglReleaseShaderCompiler(void);
 		
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglShaderBinary(GLsizei n, const GLuint *shaders, GLenum binaryformat, const GLvoid *binary, GLsizei length)
 //			{
 //				glShaderBinary(n, shaders, binaryformat, binary, length);
 //				EEGL_ASSERT_NO_GL_ERROR();
 //			}
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglShaderBinary(GLuint const shader, GLenum const binaryFormat, GLvoid const * const binary, GLsizei const length)
 //			{
 //				eeglShaderBinary(1, &shader, binaryFormat, binary, length);
@@ -75,9 +75,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 #ifdef		__cplusplus
-		EEGL_INLINE void							eeglShaderSourceString(GLuint const shader, std::string const string);
-		EEGL_INLINE std::string const			eeglGetShaderSourceString(GLuint const shader);
-		EEGL_INLINE std::string const			eeglGetShaderInfoLogString(GLuint const shader);
+		EEGL_STUB_API_DECO void							eeglShaderSourceString(GLuint const shader, std::string const string);
+		EEGL_STUB_API_DECO std::string const			eeglGetShaderSourceString(GLuint const shader);
+		EEGL_STUB_API_DECO std::string const			eeglGetShaderInfoLogString(GLuint const shader);
 #endif
 	}
 	

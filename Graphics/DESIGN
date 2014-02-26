@@ -43,32 +43,6 @@ object *drawer*.
 
 
 
-Goal
-----
-
--	Provide platform-agnostic visual rendering output facility.
--	Platform-agnostic master rendering loop helper.
-
-
-Why Non-Goal?
--------------
-
--	Platform-agnostic master application controller.
-
-	Each platform needs platform specific handling of master application control, and
-	those really cannot be abstracted into single logic. For example, OS X needs full-
-	screen handling, and iOS needs background deactivation handling. But not vice versa.
-	Any other platforms will have something similar.
-	
-	Even I provide something, that must be diverged into several execution mode, and 
-	that just increases complexity.
-	
-	Rendering loop helper is enough, and it's better to make users to write thier own
-	application controller code themselves.
-
-	Anyway platform-**specific** application-control may be provided later.
-
-
 
 
 
@@ -99,8 +73,8 @@ In object space, each axis will have these aliases.
 	+X		Right
 	-X		Left
 	
-	+Y		Up
-	-Y		Down
+	+Y		Up/Top
+	-Y		Down/Bottom
 	
 	+Z		Front
 	-Z		Back

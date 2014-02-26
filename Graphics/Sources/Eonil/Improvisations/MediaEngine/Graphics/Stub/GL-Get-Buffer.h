@@ -17,7 +17,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{
-		EEGL_INLINE GLint const			eeglGet_ARRAY_BUFFER_BINDING();
+		EEGL_STUB_API_DECO GLint const			eeglGet_ARRAY_BUFFER_BINDING();
 	}
 	
 }}}}

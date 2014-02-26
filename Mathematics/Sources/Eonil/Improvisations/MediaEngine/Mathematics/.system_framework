@@ -1,0 +1,7 @@
+PLACEHOLDER
+===========
+
+This file will make Clang to recognize the library as system framework to 
+suppress extra warnings.
+
+Content written to prevent Git's ignoring-empty-file-behavior.

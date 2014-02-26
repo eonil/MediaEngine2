@@ -138,7 +138,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				struct
 				{
 					_TriangleListMeshForm_v2::CommonResource		for_TriangleListMeshForm_v2;
-					_Legacy2013_SharingBox<Program>		for_SkinnedForm_v2;
+					_Legacy2013_SharingBox<Program>					for_SkinnedForm_v2;
 				}
 				_cache;
 				

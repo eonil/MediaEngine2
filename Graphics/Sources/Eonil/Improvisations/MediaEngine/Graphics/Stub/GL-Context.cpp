@@ -20,7 +20,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglViewport(GLint const x, GLint const y, GLsizei const width, GLsizei const height)
 		{
 			EEGL_ASSERT(x >= 0);
@@ -41,7 +41,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglScissor(GLint const x, GLint const y, GLsizei const width, GLsizei const height)
 		{
 			EEGL_ASSERT(x >= 0);
@@ -104,7 +104,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	std::find(vec.begin(), vec.end(), v) != vec.end();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglEnable(GLenum const cap)
 		{
 			EEGL_ASSERT(DoesVectorContainValue(GL_VALID_CAPS(), cap));
@@ -112,7 +112,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glEnable(cap);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDisable(GLenum const cap)
 		{
 			EEGL_ASSERT(DoesVectorContainValue(GL_VALID_CAPS(), cap));
@@ -121,7 +121,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE GLboolean const
+		EEGL_STUB_API_DECO GLboolean const
 		eeglIsEnabled(GLenum const cap)
 		{
 			EEGL_ASSERT(DoesVectorContainValue(GL_VALID_CAPS(), cap));
@@ -208,7 +208,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			;
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBlendFunc(GLenum const sfactor, GLenum const dfactor)
 		{
 			EEGL_ASSERT(IS_VALID_BLEND_SOURCE(sfactor));
@@ -217,7 +217,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBlendFunc(sfactor, dfactor);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBlendEquation(GLenum const mode)
 		{
 			EEGL_ASSERT(IS_VALID_BLEND_MODE(mode));
@@ -225,7 +225,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBlendEquation(mode);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBlendColor(GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha)
 		{
 			EEGL_ASSERT(red >= 0.0f and red <= 1.0f);
@@ -236,7 +236,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBlendColor(red, green, blue, alpha);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBlendEquationSeparate(GLenum const modeRGB, GLenum const modeAlpha)
 		{
 			EEGL_ASSERT(IS_VALID_BLEND_MODE(modeRGB));
@@ -245,7 +245,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBlendEquationSeparate(modeRGB, modeAlpha);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBlendFuncSeparate(GLenum const srcRGB, GLenum const dstRGB, GLenum const srcAlpha, GLenum const dstAlpha)
 		{
 			EEGL_ASSERT(IS_VALID_BLEND_SOURCE(srcRGB));
@@ -259,7 +259,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDepthFunc(GLenum const func)
 		{
 			EEGL_ASSERT(func == GL_NEVER or
@@ -275,7 +275,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glDepthFunc(func);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal)
 		{
 			glDepthRangef(nearVal, farVal);
@@ -306,7 +306,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		////	Texturing.
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglActiveTexture(GLenum const texture)
 		{
 			EEGL_ASSERT(texture >= GL_TEXTURE0 && texture < (GL_TEXTURE0 + eeglGetInteger(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS)));
@@ -319,14 +319,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		////	Vertex channeling.
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglEnableVertexAttribArray(GLuint const index)
 		{
 			EEGL_ASSERT(index < eeglGetInteger(GL_MAX_VERTEX_ATTRIBS));
 			glEnableVertexAttribArray(index);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDisableVertexAttribArray(GLuint const index)
 		{
 			EEGL_ASSERT(index < eeglGetInteger(GL_MAX_VERTEX_ATTRIBS));
@@ -334,7 +334,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglVertexAttribPointer(GLuint const indx, GLint const size, GLenum const type, GLboolean const normalized, GLsizei const stride, GLvoid const * const ptr)
 		{
 			EEGL_ASSERT((size == 1) or
@@ -379,7 +379,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		////	Drawing.
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglClear (GLbitfield const mask)
 		{
 			EEGL_ASSERT(((mask & GL_COLOR_BUFFER_BIT) +
@@ -389,15 +389,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglClearDepthf(GLclampf depth)
 		{
 			EEGL_ASSERT(depth >=0 and depth <= 1);
+#if	EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+			glClearDepth(depth);
+#else
 			glClearDepthf(depth);
+#endif
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglClearColor (GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha)
 		{
 			EEGL_ASSERT(red >= 0.0f && red <=1.0f);
@@ -407,8 +411,45 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glClearColor(red, green, blue, alpha);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
+		EEGL_STUB_API_DECO void
+		eeglClearStencil(GLint const s)
+		{
+#if	EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
+			/*
+			 I don't know why but desktop OpenGL 3.0+ doesn't support `GL_STENCIL_BITS` symbol.
+			 So this marked as conditional only for OpenGL ES 2.0.
+			 */
+			EEGL_RUN_AS_ASSERTION
+			({
+				GLint	stencil_bits	=	eeglGetInteger(GL_STENCIL_BITS);
+//				if (stencil_bits >= 64)
+//				{
+//					EEGL_ASSERT(s <= std::numeric_limits<int64_t>::max());
+//				}
+				if (stencil_bits >= 32)
+				{
+					EEGL_ASSERT(s <= std::numeric_limits<int32_t>::max());
+				}
+				if (stencil_bits >= 16)
+				{
+					EEGL_ASSERT(s <= std::numeric_limits<int16_t>::max());
+				}
+				if (stencil_bits >= 8)
+				{
+					EEGL_ASSERT(s <= std::numeric_limits<int8_t>::max());
+				}
+				if (stencil_bits >= 4)
+				{
+					EEGL_ASSERT(s <= (2*2*2*2));
+				}
+			});
+#endif
+			
+			glClearStencil(s);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDrawArrays(GLenum const mode, GLint const first, GLsizei const count)
 		{
 			EEGL_ASSERT((mode == GL_POINTS) or
@@ -449,7 +490,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDrawElement(GLenum const mode, GLsizei const count, GLenum const type, GLvoid const * const indices)
 		{
 			EEGL_ASSERT((mode == GL_POINTS) or

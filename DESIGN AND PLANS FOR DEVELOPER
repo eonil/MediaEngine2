@@ -1,0 +1,73 @@
+Design & Plans for Developer
+============================
+
+
+
+
+
+Library Component Separation
+----------------------------
+
+Currently, this is the list of component.
+
+-	`Founation`
+-	`Mathematics`
+-	`Graphics`
+-	`Physics`
+-	`Transcoding`
+-	`Application`
+
+`Foundation` contains fully common features. Mostly about platform
+determination and debugging support.
+
+`Mathematics` contains common mathematics support. Main purpose of
+this library is providing abstraction with my taste. Most of 
+features will be provided using proven existing code such as GLM
+or GLKit. This also provides abstracted conversion between several
+vector/matrix types among different libraries. For example, we 
+have at least 3 different vector/matric types on GLM, GLKit and 
+Bullet. Anyway they uses identical memory layout, so they can be 
+converted without any cost, and this library provides abstracted 
+way. Anyway I can't sure on quaternions, so conversion support for 
+quaternion won't be available or will have noticeable cost.
+
+`Graphics` component is mearly a wrapper of OpenGL ES 2.0 API.
+But sometimes employs platform-specific features for faster 
+implementation. For example, text drawing logic will be done in 
+platform specific way.
+
+`Physics` *is* just a wrapper of BulletPhysics. Currently, there's
+no extra abstraction. This library is provided to avoid building
+hardness on mobile platform.
+
+`Transcoding` is currently empty library. This will be filled with
+resource serialization features. And the classes may be adapted 
+by ResourceTreeMetaCompiler to provide convenient resource linking.
+Currently, I don't have high demand on this feature, so I don't 
+implement this.
+
+`Application` provides higher-level convenient utility features.
+For example, building main application event loop and OpenGL context
+is repeating, boring but still difficult work. This library provides
+pre-built assembly which does all the stuffs. This is a kind of all-
+in-one solution, but of course, not highly customizable. If you want
+fully customized event logic and OpenGL context handling, then you
+have to write them yourself. *Optional* or *cutomizable* 
+implementation usually makes maintenance too hard, so I explicitly 
+prohibits the cutomizable design.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

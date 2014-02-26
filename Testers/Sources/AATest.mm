@@ -17,7 +17,7 @@
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 
-#include <Eonil/Improvisations/MediaEngine/MediaEngine.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
 
 

@@ -66,6 +66,7 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 
 - (void)prepareGraphicsContext
 {
+	
 }
 - (void)cleanupGraphicsContext
 {

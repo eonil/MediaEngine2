@@ -1,5 +1,5 @@
-GUIDE
-=====
+USER MANUAL - NAMESPACE SUMMARY
+===============================
 
 
 
@@ -92,25 +92,6 @@ they are organized in namespaces.
 This library also contains some Objective-C classes for extra feature.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Resource Loading
-----------------
-`EonilGraphics` library depends on `EonilResource` library for resource loading.
-The resource library offers base framework of resource management system.
-
-Also Space+Time toolset will automatically compile metadata of resource into C-code
-for easier access and better dependency check.
 
 
 

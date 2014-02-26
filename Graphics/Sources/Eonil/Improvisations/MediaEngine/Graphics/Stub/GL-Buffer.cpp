@@ -15,7 +15,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetBufferParameteriv(GLenum const target, GLenum const pname, GLint* const params)
 		{
 			EEGL_ASSERT(target == GL_ARRAY_BUFFER || target == GL_ELEMENT_ARRAY_BUFFER);
@@ -25,7 +25,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetBufferParameteri(GLenum const target, GLenum const pname)
 		{
 			GLint	param;
@@ -46,13 +46,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGenBuffers(GLsizei const n, GLuint* const buffers)
 		{
 			glGenBuffers(n, buffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE GLuint const
+		EEGL_STUB_API_DECO GLuint const
 		eeglGenBuffer()
 		{
 			GLuint	name	=	0;
@@ -61,7 +61,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(name != 0);
 			return	name;
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteBuffers(GLsizei const n, GLuint const* const buffers)
 		{
 			if (Doctor::useStateValidation())
@@ -74,7 +74,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glDeleteBuffers(n, buffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteBuffer(GLuint const name)
 		{
 			eeglDeleteBuffers(1, &name);
@@ -84,7 +84,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBindBuffer(GLenum const target, GLuint const buffer)
 		{
 			if (Doctor::useStateValidation())
@@ -95,7 +95,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBindBuffer(target, buffer);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUnbindBufer(GLenum const target)
 		{
 			if (Doctor::useStateValidation())
@@ -116,7 +116,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBufferData(GLenum const target, GLsizeiptr const size, GLvoid const * const data, GLenum const usage)
 		{
 			EEGL_ASSERT(target == GL_ARRAY_BUFFER || target == GL_ELEMENT_ARRAY_BUFFER);
@@ -128,7 +128,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(eeglGetBufferParameteri(GL_ARRAY_BUFFER, GL_BUFFER_SIZE) == size);
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBufferSubData(GLenum const target, GLintptr const offset, GLsizeiptr const size, GLvoid const * const data)
 		{
 			EEGL_ASSERT(target == GL_ARRAY_BUFFER || target == GL_ELEMENT_ARRAY_BUFFER);

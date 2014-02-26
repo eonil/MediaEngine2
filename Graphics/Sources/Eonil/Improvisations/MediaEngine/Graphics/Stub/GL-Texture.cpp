@@ -16,7 +16,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		namespace
 		ASSERTION
 		{
-			EEGL_INLINE void
+			EEGL_STUB_API_DECO void
 			EEGL_ASSERT_TEX_IMAGE_2D_INTERNAL_FORMAT_ENUM_CHECK(GLint const internalformat)
 			{
 				#if	EONIL_MEDIA_ENGINE_TARGET_MINIMUM
@@ -29,7 +29,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 		}
 		
-		EEGL_INLINE GLboolean const
+		EEGL_STUB_API_DECO GLboolean const
 		eeglIsTexture(GLuint const texture)
 		{
 			GLboolean const	value	=	glIsTexture(texture);
@@ -37,7 +37,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	value;
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetTexParameterfv(GLenum const target, GLenum const pname, GLfloat* const params)
 		{
 			EEGL_ASSERT((target == GL_TEXTURE_2D && eeglGetInteger(GL_TEXTURE_BINDING_2D) != 0) || (target == GL_TEXTURE_CUBE_MAP && eeglGetInteger(GL_TEXTURE_BINDING_CUBE_MAP) != 0));
@@ -48,7 +48,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glGetTexParameterfv(target, pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetTexParameteriv(GLenum const target, GLenum const pname, GLint* const params)
 		{
 			EEGL_ASSERT((target == GL_TEXTURE_2D && eeglGetInteger(GL_TEXTURE_BINDING_2D) != 0) || (target == GL_TEXTURE_CUBE_MAP && eeglGetInteger(GL_TEXTURE_BINDING_CUBE_MAP) != 0));
@@ -58,14 +58,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glGetTexParameteriv(target, pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE GLfloat const
+		EEGL_STUB_API_DECO GLfloat const
 		eeglGetTexParameterf(GLenum const target, GLenum const pname)
 		{
 			GLfloat	value;
 			eeglGetTexParameterfv(target, pname, &value);
 			return	value;
 		}
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetTexParameteri(GLenum const target, GLenum const pname)
 		{
 			GLint	value;
@@ -78,7 +78,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGenTextures(GLsizei const n, GLuint* const textures)
 		{
 			glGenTextures(n, textures);
@@ -90,7 +90,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 		}
 		
-		EEGL_INLINE GLuint const
+		EEGL_STUB_API_DECO GLuint const
 		eeglGenTexture()
 		{
 			GLuint	name;
@@ -98,14 +98,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	name;
 		}
 
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteTextures(GLsizei const n, GLuint const * const textures)
 		{
 			glDeleteTextures(n, textures);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteTexture(GLuint const name)
 		{
 			EEGL_ASSERT(name != 0);
@@ -116,7 +116,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBindTexture(GLenum const target, GLuint const texture)
 		{
 			EEGL_ASSERT_NO_GL_ERROR();
@@ -127,7 +127,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glBindTexture(target, texture);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUnbindTexture(GLenum const target)
 		{
 			EEGL_ASSERT_NO_GL_ERROR();
@@ -147,7 +147,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglTexParameterf(GLenum const target, GLenum const pname, GLfloat const param)
 		{
 			EEGL_ASSERT(target == GL_TEXTURE_2D || target == GL_TEXTURE_CUBE_MAP);
@@ -171,7 +171,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglTexParameteri(GLenum const target, GLenum const pname, GLint const param)
 		{
 			EEGL_ASSERT(target == GL_TEXTURE_2D || target == GL_TEXTURE_CUBE_MAP);
@@ -195,7 +195,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglTexParameterfv(GLenum const target, GLenum const pname, GLfloat const * params)
 //			{
 //				EEGL_ASSERT(target == GL_TEXTURE_2D || target == GL_TEXTURE_CUBE_MAP);
@@ -204,7 +204,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				glTexParameterfv(target, pname, params);
 //				EEGL_ASSERT_NO_GL_ERROR();
 //			}
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglTexParameteriv(GLenum const target, GLenum const pname, GLint const * params)
 //			{
 //				EEGL_ASSERT(target == GL_TEXTURE_2D || target == GL_TEXTURE_CUBE_MAP);
@@ -216,7 +216,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglTexImage2D(GLenum const target, GLint const level, GLint const internalformat, GLsizei const width, GLsizei const height, GLint const border, GLenum const format, GLenum const type, const GLvoid * const pixels)
 		{
 			EEGL_ASSERT((target == GL_TEXTURE_2D && eeglGetInteger(GL_TEXTURE_BINDING_2D) != 0) || (target == GL_TEXTURE_CUBE_MAP && eeglGetInteger(GL_TEXTURE_BINDING_CUBE_MAP) != 0));
@@ -238,7 +238,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels)
 		{
 			if (Doctor::useStateValidation())

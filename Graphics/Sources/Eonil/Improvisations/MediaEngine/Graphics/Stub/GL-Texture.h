@@ -17,27 +17,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{			
-		EEGL_INLINE GLboolean const	eeglIsTexture(GLuint const texture);
+		EEGL_STUB_API_DECO GLboolean const	eeglIsTexture(GLuint const texture);
 		
-		EEGL_INLINE void				eeglGetTexParameterfv(GLenum const target, GLenum const pname, GLfloat* const params);
-		EEGL_INLINE void				eeglGetTexParameteriv(GLenum const target, GLenum const pname, GLint* const params);
-		EEGL_INLINE GLfloat const	eeglGetTexParameterf(GLenum const target, GLenum const pname);
-		EEGL_INLINE GLint const		eeglGetTexParameteri(GLenum const target, GLenum const pname);
+		EEGL_STUB_API_DECO void				eeglGetTexParameterfv(GLenum const target, GLenum const pname, GLfloat* const params);
+		EEGL_STUB_API_DECO void				eeglGetTexParameteriv(GLenum const target, GLenum const pname, GLint* const params);
+		EEGL_STUB_API_DECO GLfloat const	eeglGetTexParameterf(GLenum const target, GLenum const pname);
+		EEGL_STUB_API_DECO GLint const		eeglGetTexParameteri(GLenum const target, GLenum const pname);
 		////
 		
-		EEGL_INLINE void			eeglGenTextures(GLsizei const n, GLuint* const textures);
-		EEGL_INLINE GLuint const	eeglGenTexture();
-		EEGL_INLINE void			eeglDeleteTextures(GLsizei const n, GLuint const * const textures);
-		EEGL_INLINE void			eeglDeleteTexture(GLuint const name);
-		EEGL_INLINE void			eeglBindTexture(GLenum const target, GLuint const texture);
-		EEGL_INLINE void			eeglUnbindTexture(GLenum const target);
+		EEGL_STUB_API_DECO void			eeglGenTextures(GLsizei const n, GLuint* const textures);
+		EEGL_STUB_API_DECO GLuint const	eeglGenTexture();
+		EEGL_STUB_API_DECO void			eeglDeleteTextures(GLsizei const n, GLuint const * const textures);
+		EEGL_STUB_API_DECO void			eeglDeleteTexture(GLuint const name);
+		EEGL_STUB_API_DECO void			eeglBindTexture(GLenum const target, GLuint const texture);
+		EEGL_STUB_API_DECO void			eeglUnbindTexture(GLenum const target);
 
 		////
 		
-		EEGL_INLINE void			eeglTexParameterf(GLenum const target, GLenum const pname, GLfloat const param);
-		EEGL_INLINE void			eeglTexParameteri(GLenum const target, GLenum const pname, GLint const param);
+		EEGL_STUB_API_DECO void			eeglTexParameterf(GLenum const target, GLenum const pname, GLfloat const param);
+		EEGL_STUB_API_DECO void			eeglTexParameteri(GLenum const target, GLenum const pname, GLint const param);
 		
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglTexParameterfv(GLenum const target, GLenum const pname, GLfloat const * params)
 //			{
 //				EEGL_ASSERT(target == GL_TEXTURE_2D || target == GL_TEXTURE_CUBE_MAP);
@@ -46,7 +46,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				glTexParameterfv(target, pname, params);
 //				EEGL_ASSERT_NO_GL_ERROR();
 //			}
-//			EEGL_INLINE void
+//			EEGL_STUB_API_DECO void
 //			eeglTexParameteriv(GLenum const target, GLenum const pname, GLint const * params)
 //			{
 //				EEGL_ASSERT(target == GL_TEXTURE_2D || target == GL_TEXTURE_CUBE_MAP);
@@ -58,8 +58,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void			eeglTexImage2D(GLenum const target, GLint const level, GLint const internalformat, GLsizei const width, GLsizei const height, GLint const border, GLenum const format, GLenum const type, const GLvoid * const pixels);
-		EEGL_INLINE void			eeglTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels);
+		EEGL_STUB_API_DECO void			eeglTexImage2D(GLenum const target, GLint const level, GLint const internalformat, GLsizei const width, GLsizei const height, GLint const border, GLenum const format, GLenum const type, const GLvoid * const pixels);
+		EEGL_STUB_API_DECO void			eeglTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels);
 		
 		
 		

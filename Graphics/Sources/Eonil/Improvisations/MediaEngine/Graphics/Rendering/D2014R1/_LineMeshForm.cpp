@@ -249,8 +249,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				std::string const	fsc1	=	Debugging::Doctor::doesPlatformSupportShaderPrecision() ? fsc : Program::Utility::shaderCodeForLegacyPlatformsWhichDoNotSupportPrecision(fsc);
 				
 				VertexShader::NameChannelMap	nmap;
-				nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vlocation", m.vertexAttributeChannelAtIndex(0)));
-				nmap.insert(std::pair<std::string, VertexAttributeChannel const&>("vcolor", m.vertexAttributeChannelAtIndex(1)));
+				nmap.insert({"vlocation", &m.vertexAttributeChannelAtIndex(0)});
+				nmap.insert({"vcolor", &m.vertexAttributeChannelAtIndex(1)});
 				return	_Legacy2013_SharingBox<Program>(new Program(VertexShader(vsc, nmap), FragmentShader(fsc1)));
 			}
 			
@@ -261,14 +261,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				using namespace Server::Machinery;
 				
 				VertexAttributeChannel::Format	f0;
-				f0.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f0.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+				f0.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f0.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 				f0.dataOffset			=	0;
 				f0.strideSizeInBytes	=	sizeof(Vertex);
 				
 				VertexAttributeChannel::Format	f1;
-				f1.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-				f1.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+				f1.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+				f1.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 				f1.dataOffset			=	sizeof(Vector4);
 				f1.strideSizeInBytes	=	sizeof(Vertex);
 				
@@ -295,7 +295,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						m.vertexAttributeChannelAtIndex(0).linkWithClientMemory(f.lines()[0].scalars, f0);
 						m.vertexAttributeChannelAtIndex(1).linkWithClientMemory(f.lines()[0].scalars, f1);
 						{
-							m.drawArrays(Machine::DrawingMode::LINES, 0, f.lines().size() * 2);
+							m.drawArrays(DrawingMode::LINES, 0, f.lines().size() * 2);
 						}
 						m.vertexAttributeChannelAtIndex(0).unlink();
 						m.vertexAttributeChannelAtIndex(1).unlink();

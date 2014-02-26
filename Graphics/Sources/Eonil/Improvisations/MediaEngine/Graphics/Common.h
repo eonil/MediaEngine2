@@ -37,7 +37,7 @@
 #include <OpenGL/gl3ext.h>
 #endif
 
-#if	EONIL_MEDIA_ENGINE_TARGET_ANDROID		//	Treat using of Apportable.
+#if	EONIL_MEDIA_ENGINE_TARGET_APPORTABLE		//	Treat using of Apportable.
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
 #undef	EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
@@ -53,20 +53,19 @@
 
 
 
-#define 	EEGL_INLINE 		
 
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 //	struct
-//	NoCopyOrMoveObject
+//	NoCopyNoMoveObject
 //	{
-//		NoCopyOrMoveObject() = default;
+//		NoCopyNoMoveObject() = default;
 //		
-//		NoCopyOrMoveObject(NoCopyOrMoveObject const&) = delete;
-//		NoCopyOrMoveObject(NoCopyOrMoveObject&) = delete;
-//		NoCopyOrMoveObject(NoCopyOrMoveObject const&&) = delete;
-//		NoCopyOrMoveObject(NoCopyOrMoveObject&&) = delete;
+//		NoCopyNoMoveObject(NoCopyNoMoveObject const&) = delete;
+//		NoCopyNoMoveObject(NoCopyNoMoveObject&) = delete;
+//		NoCopyNoMoveObject(NoCopyNoMoveObject const&&) = delete;
+//		NoCopyNoMoveObject(NoCopyNoMoveObject&&) = delete;
 //	};
 	
 	struct
@@ -78,8 +77,56 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //		NoCopyButMoveObject(NoCopyButMoveObject&) = delete;
 		
 //		NoCopyButMoveObject(NoCopyButMoveObject const&&) = delete;
-		NoCopyButMoveObject(NoCopyButMoveObject&&) {};
+		NoCopyButMoveObject(NoCopyButMoveObject&&) = default;
 	};
+
+	
+	
+	
+	
+//	/*!
+//	 Dense, sequential, contiguous array of element T.
+//	 All the elements will be default-constructed at first. So T must 
+//	 be default constructible.
+//	 
+//	 No copy or move operations are used.
+//	 */
+//	template <typename T>
+//	class
+//	DynamicArray final
+//	{
+//		T*		_elements	{nullptr};
+//		Size	_count		{0};
+//		
+//	public:
+//		DynamicArray() = default;
+//		DynamicArray(Size const count) : _elements(new T[count])
+//		{
+//		}
+//		~DynamicArray()
+//		{
+//			delete[]	_elements;
+//		}
+//		
+//		auto
+//		size() const -> Size
+//		{
+//			return	_count;
+//		}
+//		auto
+//		at(Size index) const -> T const&
+//		{
+//			EONIL_DEBUG_ASSERTION(index < _count);
+//			return	_elements[index];
+//		}
+//		auto
+//		at(Size index) -> T&
+//		{
+//			EONIL_DEBUG_ASSERTION(index < _count);
+//			return	_elements[index];
+//		}
+//	};
+	
 	
 }}}}
 
@@ -91,13 +138,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	
 //	using		UniqueByteMemoryBlock				=	Foundation::D2014R1::UniqueByteMemoryBlock;
 	
-	
-	
-	template <typename T>
-	using	sptr	=	std::shared_ptr<T>;
-	
-	template <typename T>
-	using	uptr	=	std::unique_ptr<T>;
 	
 	using namespace Eonil::Improvisations::CommonUtility;
 	using namespace	Eonil::Improvisations::MediaEngine::Foundation;
@@ -115,6 +155,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Server
 	{
+		enum class	DrawingMode : GLenum;
+		enum class	BlendingMode : GLenum;
+		
 		class	Machine;
 		
 		class	Renderbuffer;
@@ -129,15 +172,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class	VertexShader;
 		class	FragmentShader;
 		
+		namespace
+		Machinery
+		{
+			class	TextureSampler;
+		}
 	}
 
 	namespace
 	Rendering
 	{
-		class	FrameChannelImage;
-		class	RenderingFrame;
-		class	ColorDepthStencilRenderingPass;
-		class	BloomEffectPass;
+		namespace
+		D2014R2
+		{
+			class	DisplayScreenFrame;
+		}
+		
+//		class	FrameChannelImage;
+//		class	RenderingFrame;
+//		class	ColorDepthStencilRenderingPass;
+//		class	BloomEffectPass;
 	}
 	
 	

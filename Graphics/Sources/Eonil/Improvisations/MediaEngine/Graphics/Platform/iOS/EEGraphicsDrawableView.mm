@@ -85,7 +85,7 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
 	_rbcolor	=	eeglGenRenderbuffer();
 	eeglBindRenderbuffer(GL_RENDERBUFFER, _rbcolor);
 	BOOL	ok	=	[_ctx renderbufferStorage:GL_RENDERBUFFER fromDrawable:_layer2];
-	assert(ok);
+	EONIL_DEBUG_ASSERT_WITH_MESSAGE(ok, "Cannot initialize system-provided OpenGL ES 2.0 render-buffer storage.");
 	eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _rbcolor);
 	eeglUnbindRenderbuffer(GL_RENDERBUFFER);
 	
@@ -94,7 +94,6 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
 	eeglRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
 	eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _rbdepth);
 	eeglUnbindRenderbuffer(GL_RENDERBUFFER);
-	
 }
 - (void)cleanupGraphicsContext
 {
@@ -108,7 +107,7 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
 	
 	eeglBindRenderbuffer(GL_RENDERBUFFER, _rbcolor);
 	BOOL	ok	=	[_ctx renderbufferStorage:GL_RENDERBUFFER fromDrawable:nil];
-	assert(ok);
+	EONIL_DEBUG_ASSERT_WITH_MESSAGE(ok, "Cannot cleanup system-provided OpenGL ES 2.0 render-buffer storage.");
 	eeglDeleteRenderbuffers(1, &_rbcolor);
 	eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, 0);
 //	eeglUnbindRenderbuffer(GL_RENDERBUFFER);

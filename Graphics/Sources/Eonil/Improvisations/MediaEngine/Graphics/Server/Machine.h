@@ -9,6 +9,7 @@
 #ifndef __EonilGraphics__Machine__
 #define __EonilGraphics__Machine__
 
+#include "Symbols.h"
 #include "Program.h"
 #include "Shader.h"
 #include "Texture.h"
@@ -50,39 +51,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			Machine(Machine const& origin);					//	Copy prohibited.
 			
 		public:
-			
-			enum class
-			DrawingMode : GLenum
-			{
-				POINTS			=	GL_POINTS,
-				LINE_STRIP		=	GL_LINE_STRIP,
-				LINE_LOOP		=	GL_LINE_LOOP,
-				LINES			=	GL_LINES,
-				TRIANGLE_STRIP	=	GL_TRIANGLE_STRIP,
-				TRIANGLE_FAN	=	GL_TRIANGLE_FAN,
-				TRIANGLES		=	GL_TRIANGLES,
-			};
-			enum class
-			BlendingMode : GLenum
-			{
-				ZERO						=	GL_ZERO,
-				ONE							=	GL_ONE,
-				SOURCE_COLOR				=	GL_SRC_COLOR,
-				DESTINATION_COLOR			=	GL_DST_COLOR,
-				SOURCE_ALPHA				=	GL_SRC_ALPHA,
-				DESTINATION_ALPHA			=	GL_DST_ALPHA,
-				ONE_MINUS_SOURCE_COLOR		=	GL_ONE_MINUS_SRC_COLOR,
-				ONE_MINUS_DESTINATION_COLOR	=	GL_ONE_MINUS_DST_COLOR,
-				ONE_MINUS_SOURCE_ALPHA		=	GL_ONE_MINUS_SRC_ALPHA,
-				ONE_MINUS_DESTINATION_ALPHA	=	GL_ONE_MINUS_DST_ALPHA,
-				ONE_MINUS_CONSTANT_COLOR	=	GL_ONE_MINUS_CONSTANT_COLOR,
-				ONE_MINUS_CONSTANT_ALPHA	=	GL_ONE_MINUS_CONSTANT_ALPHA,
-				CONSTANT_COLOR				=	GL_CONSTANT_COLOR,
-				CONSTANT_ALPHA				=	GL_CONSTANT_ALPHA,
-				SOURCE_ALPHA_SATURATE		=	GL_SRC_ALPHA_SATURATE,			//	This is the only value which is not supported as destination blending.
-			};
-			
-		public:
 			static Machine&						machine();
 			
 		public:
@@ -100,10 +68,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			TextureSampler const&				textureUnitAtIndex(Size const index) const;
 			TextureSampler&						textureUnitAtIndex(Size const index);
 			
-//			void								linkAllVertexAttributeChannelsWithClientMemory(void const* memory, VertexAttributeComponentSize const size, VertexAttributeComponentType const type, Size const stride, bool const normalization = false);
-//			void								linkAllVertexAttributeChannelsWithServerBuffer(ArrayBuffer const buffer, Size const offset, VertexAttributeComponentSize const size, VertexAttributeComponentType const type, Size const stride, bool const normalization = false);
-//			void								unlinkAllVertexAttributeChannel();
-			
 			auto								useProgram(Program const& program) -> void;
 			auto								unuseProgram() -> void;
 			
@@ -115,19 +79,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			void								setScissor(Bounds2 const bounds);		//!	Bounds in client windows coordinate space.
 			void								unsetScissor();
 			
-//			void								drawArrays();																		//	Draws all data as triangle strip.
-//			void								drawArrays(Size const index, Size const count);										//	Draws as triangle strip.
-//			void								drawArrays(DrawingMode const mode);
+//			void	drawArrays();																		//	Draws all data as triangle strip.
+//			void	drawArrays(Size const index, Size const count);										//	Draws as triangle strip.
+//			void	drawArrays(DrawingMode const mode);
 			
 			/*!
+			 @param	index		Index of first vertex to start drawing. Not a byte offset.
+			 
 			 @param	count		Number of vertexes to be used for drawing.
 								Ultimately this decides number of point/line/triangles to be drawn.
 			 */
-			void
-			drawArrays(DrawingMode const mode, Size const index, Size const count);
-			
-			void								drawElements(DrawingMode const mode, Size const index, Size const count);
-//			void								drawElements(DrawingMode const mode, Size const count, Size const offset);
+			auto	drawArrays(DrawingMode const mode, Size const index, Size const count) -> void;
+			auto	drawElements(DrawingMode const mode, Size const index, Size const count) -> void;
+//			void	drawElements(DrawingMode const mode, Size const count, Size const offset);
 			
 
 			
@@ -153,7 +117,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 		private:
 			bool	_validity_of_viewport			=	false;
-			bool	_has_scissor					=	false;
+			bool	_dbg_has_scissor				=	false;
 //			bool	_validity_vertex_sourcing		=	false;		//	False if vertex source is not configured well.
 //			bool	_validity_index_sourcing		=	false;		//	False if index source is not configured well.
 			bool	_validity_program_designation	=	false;

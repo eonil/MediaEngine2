@@ -1,0 +1,244 @@
+//
+//  Functions.cpp
+//  Graphics
+//
+//  Created by Hoon H. on 2/26/14.
+//
+//
+
+#include "Functions.h"
+
+#include "VertexDescriptor.h"
+#include "UniformProgramParameter.h"
+#include "../Machine.h"
+#include "../../Stub/GL-Common.h"
+#include "../../Stub/GL-Context.h"
+
+namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+	
+	namespace
+	Server
+	{
+		
+		
+	
+		
+		
+		namespace
+		Utility
+		{
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			namespace
+			{
+				static inline auto
+				M() -> Machine&
+				{
+					return	Machine::machine();
+				}
+				
+				static inline auto
+				setAllVertexChannelings(void const* const vertexes, VertexDescriptor const& format) -> Size		//	Returns number of all channels.
+				{
+					Size	chidx	=	0;
+					for (auto const& ch: format.channelComponents())
+					{
+						Machinery::VertexAttributeChannel::Format	f{};
+						f.componentCount	=	Machinery::VertexAttributeChannel::ComponentSize(ch.count);
+						f.componentType		=	ch.type;
+						f.dataOffset		=	ch.offset;
+						f.normalization		=	GL_FALSE;
+						f.strideSizeInBytes	=	Stub::toGLsizei(format.strideSize());
+						
+						M().vertexAttributeChannelAtIndex(chidx).linkWithClientMemory(vertexes, f);
+						chidx++;
+					}
+					return	chidx;
+				}
+				static inline auto
+				unsetAllVertexChannelings(Size const& count) -> void
+				{
+					for (Size i=0; i<count; i++)
+					{
+						M().vertexAttributeChannelAtIndex(i).unlink();
+					}
+				}
+				
+				
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			static inline auto
+			clearColor(Vector4 const& color) -> void
+			{
+				Stub::eeglClearColor(color.x, color.y, color.z, color.w);
+				Stub::eeglClear(GL_COLOR_BUFFER_BIT);
+			}
+			static inline auto
+			clearDepth(Scalar const& depth) -> void
+			{
+				Stub::eeglClearDepthf(depth);
+				Stub::eeglClear(GL_DEPTH_BUFFER_BIT);
+			}
+			static inline auto
+			clearStencil(Size const& stencil) -> void
+			{
+				GLint	s	=	Stub::toGLint(stencil);
+				Stub::eeglClearStencil(s);
+				Stub::eeglClear(GL_STENCIL_BUFFER_BIT);
+			}
+			auto
+			clear(Vector4 const& color, Scalar const& depth, Size const& stencil) -> void
+			{
+				clearColor(color);
+				clearDepth(depth);
+				clearStencil(stencil);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			auto
+			draw(VertexDescriptor const& format, void const* const vertexes, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
+			{
+				Size	num_ch	=
+				setAllVertexChannelings(vertexes, format);
+				{
+					for (Size i=0; i<textures.size(); i++)
+					{
+						M().textureUnitAtIndex(i).setTexture(textures.at(i));
+					}
+					{
+						M().drawArrays(mode, range.location(), range.length());
+					}
+					for (Size i=0; i<textures.size(); i++)
+					{
+						M().textureUnitAtIndex(i).unsetTexture();
+					}
+				}
+				unsetAllVertexChannelings(num_ch);
+			}
+			
+			auto
+			draw(VertexDescriptor const& format, void const* const vertexes, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void
+			{
+				draw(format, vertexes, GenericMemoryRange<PlanarTexture const>{textures.data(), textures.size()}, mode, range);
+			}
+			
+			auto
+			draw(VertexDescriptor const& format, void const* const vertexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+			{
+				draw(format, vertexes, GenericMemoryRange<PlanarTexture const>{&texture, 1}, mode, range);
+			}
+			
+			auto
+			draw(VertexDescriptor const& format, void const* const vertexes, DrawingMode const& mode, Range const& range) -> void
+			{
+				draw(format, vertexes, GenericMemoryRange<PlanarTexture const>{}, mode, range);
+			}
+			
+			
+			
+//			auto
+//			draw(Program const& program, VertexDescriptor const& format, ArrayBuffer const& vertexes, ElementArrayBuffer const& indexes, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+//			{
+//				EONIL_DEBUG_ASSERT_WITH_MESSAGE(false, "Not yet implemented.");
+//			}
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+
+
+
+
+
+
+
+	}
+
+}}}}

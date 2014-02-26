@@ -25,3 +25,81 @@ ROADMAP & PLAN
 UI and Text Rendering
 ---------------------
 Suspended. Use just UIKit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Building
+--------
+
+This library primarily supports iOS and Apportable for Android.
+On those primary targets, it will be built without any additional work.
+
+-	iOS: Just open Xcode project and build it.
+-	Apportable for Android: Run `apportable` tool to build.
+-	You need Clang 3.3+ at least.
+
+If you need to port this source code into any other platforms, it would
+probably painful because of no consideration. Anyway all source codes are
+strictly following C99/C++11 syntax, so it would work on any standard 
+conforming compilers. Here're my porting guide.
+
+
+-	You need C99/C++11 support. I strongly recommend to use Clang 3.3+.
+	Also, Objective-C support is required. Core game rendering and logics 
+	are	written in C/C++, but any others - such as data-layer - are written
+	in Objective-C for productivity. Currently Clang is the only compiler
+	which support enough level of Objective-C support. Or you should rewrite
+	all the codes in the parts.
+	
+	**OS X, Apportable for Android**: Just works.
+
+	**Android**: Should work well with Clang compiler, but not tested.
+
+	**HTML5**: Try Emscripten or Mandreel. Nothing is predictable currently.
+
+	**Windows**: Use Clang if possible. Or use C99/C++11 supporting compilers
+	such as ICC. I don't think MSVC has enough level of C99/C++11 support.
+	
+	Also you may need to strip off GCC extensions.
+
+-	You will experience some issue due to lack of `GLKit`. GLKit is used
+	only for optimization of vector/matrix operations. You can fallback to 
+	`GLM` based code. This fallback will be added later, but not yet exist
+	currently.
+
+-	You need support for OpenGL ES 2.0 compatibility. Also GLSL ES 1.2(?)
+	compatibility. On the desktop OpenGL, you can use Angle project to 
+	translate GLSL programs.
+
+	**OS X, Apportable for Android**: Just works.
+	
+	**Android**: Should work well with Clang compiler, but not tested.
+	Some devices may report wrong GPU capabilities, and those cases are not
+	considered.
+
+	**HTML5**: Try Emscripten or Mandreel. Nothing is predictable currently.
+
+	**Windows**: You may have trouble due to lack of enough level of OpenGL
+	support. Try some OpenGL wrapper libraries such as [ANGLE][1].
+
+	[1]:	http://code.google.com/p/angleproject/
+
+
+
+
+

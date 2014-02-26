@@ -181,8 +181,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				{
 //					printf("machine = %s", Machine::machine().description().c_str());
 ////					p.mutableVertexAttributeSlotAtIndex(0).setVertexAttributeChannel(Machine::machine().vertexAttributeChannelAtIndex(0));
-////					Machine::machine().drawArrays(Machine::DrawingMode::TRIANGLE_STRIP, 0, m.vertexes().size());
-//					Machine::machine().drawArrays(Machine::DrawingMode::TRIANGLE_STRIP, 0, vs.size());
+////					Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, m.vertexes().size());
+//					Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 //				}
 //				Machine::machine().unsetVertexSourcingParameters();
 //			});

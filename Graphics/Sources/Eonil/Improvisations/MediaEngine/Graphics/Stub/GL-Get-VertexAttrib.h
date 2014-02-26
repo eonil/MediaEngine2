@@ -19,13 +19,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		using namespace Debugging;
 		
-		EEGL_INLINE void				eeglGetVertexAttribfv(GLuint const index, GLenum const pname, GLfloat * const params);
-		EEGL_INLINE void				eeglGetVertexAttribiv(GLuint const index, GLenum const pname, GLint * const params);
-		EEGL_INLINE GLfloat const		eeglGetVertexAttribf(GLuint const index, GLenum const pname);
-		EEGL_INLINE GLint const			eeglGetVertexAttribi(GLuint const index, GLenum const pname);
+		EEGL_STUB_API_DECO void				eeglGetVertexAttribfv(GLuint const index, GLenum const pname, GLfloat * const params);
+		EEGL_STUB_API_DECO void				eeglGetVertexAttribiv(GLuint const index, GLenum const pname, GLint * const params);
+		EEGL_STUB_API_DECO GLfloat const		eeglGetVertexAttribf(GLuint const index, GLenum const pname);
+		EEGL_STUB_API_DECO GLint const			eeglGetVertexAttribi(GLuint const index, GLenum const pname);
 		
-		EEGL_INLINE void				eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname, GLvoid** const pointer);
-		EEGL_INLINE GLvoid* const		eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname);
+		EEGL_STUB_API_DECO void				eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname, GLvoid** const pointer);
+		EEGL_STUB_API_DECO GLvoid* const		eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname);
 		
 #ifdef	__cplusplus
 #endif

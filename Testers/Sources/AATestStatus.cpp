@@ -14,8 +14,8 @@
 
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine.h>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine_DEV_.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;

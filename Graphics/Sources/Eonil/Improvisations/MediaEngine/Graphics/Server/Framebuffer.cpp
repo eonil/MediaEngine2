@@ -56,8 +56,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			eeglBindRenderbuffer(GL_RENDERBUFFER, _name);
 
-			GLsizei	w	=	toGL(width);
-			GLsizei	h	=	toGL(height);
+			GLsizei	w	=	toGLsizei(width);
+			GLsizei	h	=	toGLsizei(height);
 			eeglRenderbufferStorage(GL_RENDERBUFFER, GLenum(format), w, h);
 			eeglUnbindRenderbuffer(GL_RENDERBUFFER);
 		}

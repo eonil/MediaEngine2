@@ -11,6 +11,10 @@
 
 
 #include "../../Common.h"
+#include "../D2014R1/_Regulator_v2.h"
+#include "../D2014R1/_Display_v1.h"
+#include "../D2014R1/_Viewport_v1.h"
+#include "../D2014R1/_Camera_v1.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -20,7 +24,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		namespace
 		D2014R2
 		{
-			
+			using	Regulator	=	D2014R1::_Regulator_v2;
+			using	Display		=	D2014R1::_Display_v1;
+			using	Viewport	=	D2014R1::_Viewport_v1;
+			using	Camera		=	D2014R1::_Camera_v1;
 			
 			
 			/*!
@@ -29,7 +36,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			Scene
 			{
-			public:
+				Display		display		{};
+				Camera		camera		{};
+				
+				
 			};
 			
 			

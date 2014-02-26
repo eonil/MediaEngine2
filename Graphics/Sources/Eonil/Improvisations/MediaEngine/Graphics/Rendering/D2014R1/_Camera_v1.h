@@ -46,6 +46,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	//		 Also, you can create identity camera - which is same with no camera transform - by creating 
 	//		 orthographic camera with all paramters to 1. And because you can utilize identity camera, 
 	//		 renderer will not provide camera-less rendering mode.
+			 
+			 @note
+			 If you employ the concept of RSS(regular screen space), then you should treat the *frame* 
+			 space as RSS rather then NDC. You need to multiply `Regulator` matrix to get final NDC 
+			 coordinates.
 			 */
 			struct
 			_Camera_v1
@@ -58,12 +63,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					{
 						struct
 						{
-							Scalar		left;
-							Scalar		right;
-							Scalar		bottom;
-							Scalar		top;
-							Scalar		near;
-							Scalar		far;
+							Scalar		left;			//	-X
+							Scalar		right;			//	+X
+							Scalar		bottom;			//	-Y
+							Scalar		top;			//	+Y
+							Scalar		near;			//	-Z
+							Scalar		far;			//	+Z
 						};
 					};
 				};

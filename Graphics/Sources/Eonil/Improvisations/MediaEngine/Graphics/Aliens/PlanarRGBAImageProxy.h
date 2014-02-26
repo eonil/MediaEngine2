@@ -10,7 +10,7 @@
 #define __Graphics__PlanarRGBAImageProxy__
 
 
-#include "Common.h"
+#include "../Common.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	

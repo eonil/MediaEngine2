@@ -144,3 +144,73 @@ of all existing code done.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tester Targets Must Be in Same Project
+--------------------------------------
+Xcode 5.x doesn't show errors in different project. (or I set something wrong, or it's a bug)
+It's pretty hard to debug targets within different project. So put the tester targets
+in the same project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -30,24 +30,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			PolylineDrawer
 			{
-				uptr<Server::Program>				_shader		{};
-				
-			public:
-				template <typename T>
-				struct
-				Resolver
-				{
-					using	Solve	=	std::function<T(Size const& index)>;
-					
-					Size		count{0};
-					Solve		solver{nullptr};
-				};
-				
-			public:
-				PolylineDrawer();
-				~PolylineDrawer();
-				
-				auto	drawInstances(Resolver<Matrix4> const& transforms, Resolver<Vector4> const& colors) const -> void;
 			};
 			
 			

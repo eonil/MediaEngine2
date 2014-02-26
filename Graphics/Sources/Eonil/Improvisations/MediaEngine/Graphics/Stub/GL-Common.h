@@ -9,6 +9,7 @@
 #ifndef __EonilGraphics__GL_Common__
 #define __EonilGraphics__GL_Common__
 
+#define 	EEGL_STUB_API_DECO
 
 /*!
  The issue about Apportable known to been fixed by the developers.
@@ -41,9 +42,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 Why do we need this? To be notified on bad(overflow, underflow...)
 		 operations.
 		 */
-		auto	toGL(Size const& v) -> GLsizei;
-		auto	fromGL(GLsizei const& v) -> Size;
+		auto	toGLsizei(Size const& v) -> GLsizei;
+		auto	fromGLsizei(GLsizei const& v) -> Size;
 		
+		
+		auto	toGLint(Size const& v) -> GLint;
+		auto	fromGLint(GLint const& v) -> Size;
 		
 		
 		

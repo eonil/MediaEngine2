@@ -255,6 +255,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		}
 		
 		template<Size C, typename V> auto
+		SimpleVectorAbstraction<C, V>::operator+() const -> V const
+		{
+			return	EE((GLK(*this)));
+		}
+		template<Size C, typename V> auto
 		SimpleVectorAbstraction<C, V>::operator-() const -> V const
 		{
 			return	EE(Ops<C>::negate(GLK(*this)));

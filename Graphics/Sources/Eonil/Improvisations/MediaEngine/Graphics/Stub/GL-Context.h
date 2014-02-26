@@ -20,57 +20,58 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{
-		EEGL_INLINE void			eeglViewport(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
-		EEGL_INLINE void			eeglScissor(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
+		EEGL_STUB_API_DECO void			eeglViewport(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
+		EEGL_STUB_API_DECO void			eeglScissor(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
 
 		
 		
 		////	Capability.
 		
-		EEGL_INLINE void			eeglEnable(GLenum const cap);
-		EEGL_INLINE void			eeglDisable(GLenum const cap);
-		EEGL_INLINE GLboolean const	eeglIsEnabled(GLenum const cap);
+		EEGL_STUB_API_DECO void			eeglEnable(GLenum const cap);
+		EEGL_STUB_API_DECO void			eeglDisable(GLenum const cap);
+		EEGL_STUB_API_DECO GLboolean const	eeglIsEnabled(GLenum const cap);
 		
 		
 		
 		////	State
 		
-		EEGL_INLINE void			eeglBlendFunc(GLenum const sfactor, GLenum const dfactor);
-		EEGL_INLINE void			eeglBlendEquation(GLenum const mode);
-		EEGL_INLINE void			eeglBlendColor(GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha);
-		EEGL_INLINE void			eeglBlendEquationSeparate(GLenum const modeRGB, GLenum const modeAlpha);
-		EEGL_INLINE void			eeglBlendFuncSeparate(GLenum const srcRGB, GLenum const dstRGB, GLenum const srcAlpha, GLenum const dstAlpha);
+		EEGL_STUB_API_DECO void			eeglBlendFunc(GLenum const sfactor, GLenum const dfactor);
+		EEGL_STUB_API_DECO void			eeglBlendEquation(GLenum const mode);
+		EEGL_STUB_API_DECO void			eeglBlendColor(GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha);
+		EEGL_STUB_API_DECO void			eeglBlendEquationSeparate(GLenum const modeRGB, GLenum const modeAlpha);
+		EEGL_STUB_API_DECO void			eeglBlendFuncSeparate(GLenum const srcRGB, GLenum const dstRGB, GLenum const srcAlpha, GLenum const dstAlpha);
 		
-		EEGL_INLINE void			eeglDepthFunc(GLenum const func);
-		EEGL_INLINE void			eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal);
+		EEGL_STUB_API_DECO void			eeglDepthFunc(GLenum const func);
+		EEGL_STUB_API_DECO void			eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal);
 		
 		/*!
 		 TODO: Implement stencil and depth operation function stubs.
 		 */
-//			EEGL_INLINE void			eeglStencilFunc(GLenum const func, GLint const ref, GLuint const mask);
+//			EEGL_STUB_API_DECO void			eeglStencilFunc(GLenum const func, GLint const ref, GLuint const mask);
 		
 		////	Texturing.
 		
-		EEGL_INLINE void			eeglActiveTexture(GLenum const texture);
+		EEGL_STUB_API_DECO void			eeglActiveTexture(GLenum const texture);
 		
 		
 		
 		////	Vertex channeling.
 		
-		EEGL_INLINE void			eeglEnableVertexAttribArray(GLuint const index);
-		EEGL_INLINE void			eeglDisableVertexAttribArray(GLuint const index);
-		EEGL_INLINE void			eeglVertexAttribPointer(GLuint const indx, GLint const size, GLenum const type, GLboolean const normalized, GLsizei const stride, GLvoid const * const ptr);
+		EEGL_STUB_API_DECO void			eeglEnableVertexAttribArray(GLuint const index);
+		EEGL_STUB_API_DECO void			eeglDisableVertexAttribArray(GLuint const index);
+		EEGL_STUB_API_DECO void			eeglVertexAttribPointer(GLuint const indx, GLint const size, GLenum const type, GLboolean const normalized, GLsizei const stride, GLvoid const * const ptr);
 		
 		
 		
 		
 		////	Drawing.
 		
-		EEGL_INLINE void			eeglClear(GLbitfield const mask);
-		EEGL_INLINE void			eeglClearDepthf(GLclampf depth);
-		EEGL_INLINE void			eeglClearColor(GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha);
-		EEGL_INLINE void			eeglDrawArrays(GLenum const mode, GLint const first, GLsizei const count);
-		EEGL_INLINE void			eeglDrawElement(GLenum const mode, GLsizei const count, GLenum const type, GLvoid const * const indices);
+		EEGL_STUB_API_DECO void			eeglClear(GLbitfield const mask);
+		EEGL_STUB_API_DECO void			eeglClearDepthf(GLclampf depth);
+		EEGL_STUB_API_DECO void			eeglClearColor(GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha);
+		EEGL_STUB_API_DECO void			eeglClearStencil(GLint const s);
+		EEGL_STUB_API_DECO void			eeglDrawArrays(GLenum const mode, GLint const first, GLsizei const count);
+		EEGL_STUB_API_DECO void			eeglDrawElement(GLenum const mode, GLsizei const count, GLenum const type, GLvoid const * const indices);
 		
 	}	
 	

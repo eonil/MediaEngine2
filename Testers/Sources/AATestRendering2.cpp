@@ -21,8 +21,8 @@
 
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine.h>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine_DEV_.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
@@ -163,8 +163,8 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexPosition", Machine::machine().vertexAttributeChannelAtIndex(0)));
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexTexture", Machine::machine().vertexAttributeChannelAtIndex(1)));
+	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert({"vertexTexture", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	
 //	_Legacy2013_SharingBox<VertexShader> const				vp	=	;
 //	_Legacy2013_SharingBox<FragmentShader> const			fp	=	_Legacy2013_SharingBox<FragmentShader>(new FragmentShader(TestFragmentShaderProgram));
@@ -180,14 +180,14 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
-	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f0.normalization		=	false;
 	f0.strideSizeInBytes	=	sizeof(TestVertex);
 	
 	f1.dataOffset			=	sizeof(Vector4);
-	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::TWO;
-	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::TWO;
+	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
@@ -205,7 +205,7 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 		Machine::machine().textureUnitAtIndex(0).setTexture(texture);
 		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotForName("textureSampler")).setSampler(Machine::machine().textureUnitAtIndex(0));
 		
-		Machine::machine().drawElements(Machine::DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 		
 		Machine::machine().textureUnitAtIndex(0).unsetTexture();
 	};

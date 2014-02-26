@@ -10,8 +10,8 @@
 
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine.h>
-#include <Eonil/Improvisations/MediaEngine/MediaEngine_DEV_.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
@@ -144,8 +144,8 @@ TestRenderingWithOnlyVertexesInClientMemory()
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexPosition", Machine::machine().vertexAttributeChannelAtIndex(0)));
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexColor", Machine::machine().vertexAttributeChannelAtIndex(1)));
+	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	
 	VertexShader			vp	{TestVertexShaderProgram, chmap};
 	FragmentShader			fp	{TestFragmentShaderProgram};
@@ -155,14 +155,14 @@ TestRenderingWithOnlyVertexesInClientMemory()
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
-	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f0.normalization		=	false;
 	f0.strideSizeInBytes	=	sizeof(TestVertex);
 	
 	f1.dataOffset			=	sizeof(Vector4);
-	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
@@ -171,7 +171,7 @@ TestRenderingWithOnlyVertexesInClientMemory()
 	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithClientMemory(&vs[0], f1);
 	Machine::machine().executeBlockWithProgram(p,[vs]
 	{
-		Machine::machine().drawArrays(Machine::DrawingMode::TRIANGLE_STRIP, 0, vs.size());
+		Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 	});
 	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
 	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
@@ -198,8 +198,8 @@ TestRenderingWithOnlyVertexesInServerMemory()
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexPosition", Machine::machine().vertexAttributeChannelAtIndex(0)));
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexColor", Machine::machine().vertexAttributeChannelAtIndex(1)));
+	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	
 	VertexShader const				vp	{TestVertexShaderProgram, chmap};
 	FragmentShader const			fp	{TestFragmentShaderProgram};
@@ -210,14 +210,14 @@ TestRenderingWithOnlyVertexesInServerMemory()
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
-	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f0.normalization		=	false;
 	f0.strideSizeInBytes	=	sizeof(TestVertex);
 	
 	f1.dataOffset			=	sizeof(Vector4);
-	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
@@ -226,7 +226,7 @@ TestRenderingWithOnlyVertexesInServerMemory()
 	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithServerBuffer(vb, f1);
 	Machine::machine().executeBlockWithProgram(p,[vs]
 	{
-		Machine::machine().drawArrays(Machine::DrawingMode::TRIANGLE_STRIP, 0, vs.size());
+		Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 	});
 	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
 	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
@@ -268,8 +268,8 @@ TestRenderingWithVertexesAndIndexesInClientMemory()
 	
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexPosition", Machine::machine().vertexAttributeChannelAtIndex(0)));
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexColor", Machine::machine().vertexAttributeChannelAtIndex(1)));
+	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	VertexShader			vp	{TestVertexShaderProgram, chmap};
 	FragmentShader			fp	{TestFragmentShaderProgram};
 	Program					p	{vp, fp};
@@ -278,14 +278,14 @@ TestRenderingWithVertexesAndIndexesInClientMemory()
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
-	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f0.normalization		=	false;
 	f0.strideSizeInBytes	=	sizeof(TestVertex);
 	
 	f1.dataOffset			=	sizeof(Vector4);
-	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
@@ -295,7 +295,7 @@ TestRenderingWithVertexesAndIndexesInClientMemory()
 	Machine::machine().indexUnitChannel().linkWithClientMemory(Legacy2013SharedMemory::Factory::memoryByCopyingRange(&is[0], sizeof(uint16_t) * is.size()), IndexUnitChannel::UnitType::UINT16);
 	Machine::machine().executeBlockWithProgram(p,[vs, is]
 	{
-		Machine::machine().drawElements(Machine::DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 	});
 	Machine::machine().indexUnitChannel().unlink();
 	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
@@ -321,8 +321,8 @@ TestRenderingWithVertexesAndIndexesInServerMemory()
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexPosition", Machine::machine().vertexAttributeChannelAtIndex(0)));
-	chmap.insert(std::pair<std::string, VertexAttributeChannel>("vertexColor", Machine::machine().vertexAttributeChannelAtIndex(1)));
+	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	Program							p	{VertexShader(TestVertexShaderProgram, chmap), FragmentShader(TestFragmentShaderProgram)};
 	
 	//	Perform rendering.
@@ -332,14 +332,14 @@ TestRenderingWithVertexesAndIndexesInServerMemory()
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
-	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f0.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f0.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f0.normalization		=	false;
 	f0.strideSizeInBytes	=	sizeof(TestVertex);
 	
 	f1.dataOffset			=	sizeof(Vector4);
-	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::CODE::FOUR;
-	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::CODE::FLOAT;
+	f1.componentCount		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentSize::FOUR;
+	f1.componentType		=	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::ComponentType::FLOAT;
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
@@ -349,7 +349,7 @@ TestRenderingWithVertexesAndIndexesInServerMemory()
 	Machine::machine().indexUnitChannel().linkWithServerBuffer(ib, 0, IndexUnitChannel::UnitType::CODE::UINT16);
 	Machine::machine().executeBlockWithProgram(p,[vs,is]
 	{
-		Machine::machine().drawElements(Machine::DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 	});
 	Machine::machine().indexUnitChannel().unlink();
 	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();

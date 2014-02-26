@@ -122,8 +122,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 //			Machine::machine().setVertexSourcingParameters(VertexSourcingWithServerBuffer(mesh.vertexes()));
 		
-//			Machine::machine().drawArrays(Machine::DrawingMode::TRIANGLES, 0, <#const Size count#>)
-//			Machine::machine().drawElementsUsingServerBuffer(Machine::DrawingMode::TRIANGLE_STRIP, unit_count, Machine::IndexType::CODE::UINT16, <#const Eonil::Improvisations::MediaEngine::Graphics::Server::ElementArrayBuffer buffer#>, <#const Size offset#>)
+//			Machine::machine().drawArrays(DrawingMode::TRIANGLES, 0, <#const Size count#>)
+//			Machine::machine().drawElementsUsingServerBuffer(DrawingMode::TRIANGLE_STRIP, unit_count, Machine::IndexType::CODE::UINT16, <#const Eonil::Improvisations::MediaEngine::Graphics::Server::ElementArrayBuffer buffer#>, <#const Size offset#>)
 	}
 	
 	

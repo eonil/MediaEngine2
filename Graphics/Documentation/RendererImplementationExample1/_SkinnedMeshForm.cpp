@@ -116,26 +116,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			using namespace Server::Machinery;
 			
 			VertexAttributeChannel::Format	f0;
-			f0.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-			f0.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+			f0.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+			f0.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 			f0.dataOffset			=	sizeof(Vector4)*0;
 			f0.strideSizeInBytes	=	sizeof(Mesh::Vertex);
 
 			VertexAttributeChannel::Format	f1;
-			f1.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-			f1.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+			f1.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+			f1.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 			f1.dataOffset			=	sizeof(Vector4)*1;
 			f1.strideSizeInBytes	=	sizeof(Mesh::Vertex);
 			
 			VertexAttributeChannel::Format	f2;
-			f2.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-			f2.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+			f2.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+			f2.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 			f2.dataOffset			=	sizeof(Vector4)*2;
 			f2.strideSizeInBytes	=	sizeof(Mesh::Vertex);
 			
 			VertexAttributeChannel::Format	f3;
-			f3.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-			f3.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::TWO;
+			f3.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+			f3.componentCount		=	VertexAttributeChannel::ComponentSize::TWO;
 			f3.dataOffset			=	sizeof(Vector4)*3;
 			f3.strideSizeInBytes	=	sizeof(Mesh::Vertex);
 			
@@ -161,7 +161,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					m.vertexAttributeChannelAtIndex(2).linkWithServerBuffer(vb, f2);
 					m.vertexAttributeChannelAtIndex(3).linkWithServerBuffer(vb, f3);
 					{
-						m.drawArrays(Machine::DrawingMode::TRIANGLES, 0, f.mesh.faces.size() * 3);
+						m.drawArrays(DrawingMode::TRIANGLES, 0, f.mesh.faces.size() * 3);
 					}
 					m.vertexAttributeChannelAtIndex(0).unlink();
 					m.vertexAttributeChannelAtIndex(1).unlink();

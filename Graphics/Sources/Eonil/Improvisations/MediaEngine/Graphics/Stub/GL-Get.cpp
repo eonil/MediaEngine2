@@ -15,19 +15,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		using namespace Eonil::Improvisations::MediaEngine::Graphics::Debugging;
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetBooleanv(GLenum const pname, GLboolean * const params)
 		{
 			glGetBooleanv(pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetFloatv(GLenum const pname, GLfloat * const params)
 		{
 			glGetFloatv(pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetIntegerv(GLenum const pname, GLint * const params)
 		{
 			glGetIntegerv(pname, params);
@@ -37,7 +37,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE GLboolean const
+		EEGL_STUB_API_DECO GLboolean const
 		eeglGetBoolean(GLenum const pname)
 		{
 			GLboolean	value;
@@ -45,7 +45,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return		value;
 		}
 		
-		EEGL_INLINE GLboolean const
+		EEGL_STUB_API_DECO GLboolean const
 		eeglGetFloat(GLenum const pname)
 		{
 			GLfloat		value;
@@ -53,7 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return		value;
 		}
 		
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetInteger(GLenum const pname)
 		{
 			GLint		value;
@@ -72,7 +72,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetFramebufferAttachmentParameteriv(GLenum const target, GLenum const attachment, GLenum const pname, GLint* const params)
 		{
 			EEGL_ASSERT(target == GL_FRAMEBUFFER);
@@ -92,7 +92,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetFramebufferAttachmentParameteri(GLenum const target, GLenum const attachment, GLenum const pname)
 		{
 			GLint	v;
@@ -102,7 +102,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetRenderbufferParameteriv(GLenum const target, GLenum const pname, GLint* const params)
 		{
 			EEGL_ASSERT(target == GL_RENDERBUFFER);
@@ -119,7 +119,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glGetRenderbufferParameteriv(target, pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetRenderbufferParameteri(GLenum const target, GLenum const pname)
 		{
 			GLint	v;

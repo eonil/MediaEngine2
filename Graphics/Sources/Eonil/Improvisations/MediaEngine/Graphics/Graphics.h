@@ -34,6 +34,10 @@
 #include "Rendering/D2014R1/_TriangleListMeshForm_v2.h"
 #include "Rendering/D2014R1/_SkinnedForm_v2.h"
 
+#include "Rendering/D2014R2/DisplayScreenFrame.h"
+#include "Rendering/D2014R2/DebuggingInformationOverlayDrawer.h"
+#include "Rendering/D2014R2/SpriteDrawer.h"
+
 #endif
 
 

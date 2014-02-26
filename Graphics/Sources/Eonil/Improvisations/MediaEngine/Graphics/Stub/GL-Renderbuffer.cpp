@@ -17,27 +17,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGenRenderbuffers(GLsizei const n, GLuint* const renderbuffers)
 		{
 			glGenRenderbuffers(n, renderbuffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteRenderbuffers(GLsizei const n, GLuint const* const renderbuffers)
 		{
 			glDeleteRenderbuffers(n, renderbuffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE GLuint const
+		EEGL_STUB_API_DECO GLuint const
 		eeglGenRenderbuffer()
 		{
 			GLuint	n;
 			eeglGenRenderbuffers(1, &n);
 			return	n;
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteRenderbuffer(GLuint const renderbuffer)
 		{
 			eeglDeleteRenderbuffers(1, &renderbuffer);
@@ -47,7 +47,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBindRenderbuffer(GLenum const target, GLuint const renderbuffer)
 		{
 			EEGL_ASSERT(target == GL_RENDERBUFFER);
@@ -58,7 +58,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUnbindRenderbuffer(GLenum const target)
 		{
 			EEGL_ASSERT(target == GL_RENDERBUFFER);
@@ -73,7 +73,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglRenderbufferStorage(GLenum const target, GLenum const internalformat, GLsizei const width, GLsizei const height)
 		{
 			EEGL_ASSERT(target == GL_RENDERBUFFER);
@@ -109,7 +109,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE GLboolean const
+		EEGL_STUB_API_DECO GLboolean const
 		eeglIsRenderbuffer(GLuint const renderbuffer)
 		{
 			GLboolean const	r	=	glIsRenderbuffer(renderbuffer);

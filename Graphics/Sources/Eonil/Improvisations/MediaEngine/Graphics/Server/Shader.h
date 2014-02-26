@@ -19,7 +19,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	Server
 	{
 		/*!
-		 
 		 @discussion
 		 The destructor is not virtual by default. Subclassing this class might be dangerous.
 		 */
@@ -27,7 +26,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		VertexShader final
 		{
 		public:
-			using	NameChannelMap	=	map<str, Machinery::VertexAttributeChannel const&>;
+			using	NameChannelMap	=	map<str, Machinery::VertexAttributeChannel const*>;
 			
 		private:
 			GLuint						_name		{NULL_GL_NAME()};

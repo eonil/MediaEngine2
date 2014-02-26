@@ -14,11 +14,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	Stub
 	{
 #ifdef 	__cplusplus
-		EEGL_INLINE std::vector<GLuint> const		eeglGetAttachedShadersVector(GLuint const program);
+		EEGL_STUB_API_DECO std::vector<GLuint> const		eeglGetAttachedShadersVector(GLuint const program);
 #endif
 		
-		EEGL_INLINE GLboolean const				eeglIsProgram(GLuint const program);
-		EEGL_INLINE GLint const					eeglGetProgrami(GLuint const program, GLenum const pname);
+		EEGL_STUB_API_DECO GLboolean const				eeglIsProgram(GLuint const program);
+		EEGL_STUB_API_DECO GLint const					eeglGetProgrami(GLuint const program, GLenum const pname);
 		
 		static void EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(GLuint const program)
 		{
@@ -41,14 +41,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE GLboolean const
+		EEGL_STUB_API_DECO GLboolean const
 		eeglIsProgram(GLuint const program)
 		{
 			GLboolean const	value	=	glIsProgram(program);
 			EEGL_ASSERT_NO_GL_ERROR();
 			return	value;
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetProgramiv(GLuint const program, GLenum const pname, GLint * const params)
 		{
 			EEGL_ASSERT((pname == GL_DELETE_STATUS) ||
@@ -64,7 +64,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glGetProgramiv(program, pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetProgrami(GLuint const program, GLenum const pname)
 		{
 			GLint	value;
@@ -75,7 +75,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetActiveUniform(GLuint const program, GLuint const index, GLsizei const bufsize, GLsizei * const length, GLint * const size, GLenum * const type, GLchar * const name)
 		{
 			EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(program);
@@ -83,7 +83,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glGetActiveUniform(program, index, bufsize, length, size, type, name);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetActiveAttrib(GLuint const program, GLuint const index, GLsizei const bufsize, GLsizei * const length, GLint * const size, GLenum * const type, GLchar * const name)
 		{
 			EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(program);
@@ -93,7 +93,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetUniformLocation(GLuint const program, GLchar const * const name)
 		{
 			EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(program);
@@ -101,7 +101,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 			return	loc;
 		}
-		EEGL_INLINE GLint const
+		EEGL_STUB_API_DECO GLint const
 		eeglGetAttribLocation(GLuint const program, GLchar const * const name)
 		{
 			EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(program);
@@ -110,19 +110,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	loc;
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetUniformfv(GLuint const program, GLint const location, GLfloat * const params)
 		{
 			glGetUniformfv(program, location, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetUniformiv(GLuint const program, GLint const location, GLint * const params)
 		{
 			glGetUniformiv(program, location, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetProgramInfoLog(GLuint const program, GLsizei const bufsize, GLsizei * const length, GLchar * const infolog)
 		{
 			EEGL_ASSERT(eeglGetProgrami(program, GL_DELETE_STATUS) == GL_FALSE);
@@ -132,7 +132,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglGetAttachedShaders(GLuint const program, GLsizei const maxcount, GLsizei * const count, GLuint * const shaders)
 		{
 			EEGL_ASSERT(eeglGetProgrami(program, GL_DELETE_STATUS) == GL_FALSE);
@@ -165,7 +165,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE GLuint
+		EEGL_STUB_API_DECO GLuint
 		eeglCreateProgram()
 		{
 			GLuint const	pn	=	glCreateProgram();
@@ -175,7 +175,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	pn;
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDeleteProgram(GLuint const name)
 		{
 			EEGL_ASSERT(eeglGetProgrami(name, GL_DELETE_STATUS) == GL_FALSE);
@@ -190,7 +190,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		////
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglAttachShader(GLuint const program, GLuint const shader)
 		{
 			EEGL_ASSERT(eeglGetProgrami(program, GL_DELETE_STATUS) == GL_FALSE);
@@ -199,7 +199,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glAttachShader(program, shader);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglDetachShader(GLuint program, GLuint shader)
 		{
 			EEGL_ASSERT(eeglGetProgrami(program, GL_DELETE_STATUS) == GL_FALSE);
@@ -209,7 +209,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglLinkProgram(GLuint const program)
 		{
 			EEGL_ASSERT(eeglIsProgram(program));
@@ -228,7 +228,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(eeglGetProgrami(program, GL_LINK_STATUS) == GL_TRUE);		//	The program must be linked before using.
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglValidateProgram(GLuint program)
 		{
 			EEGL_ASSERT(eeglIsProgram(program));
@@ -241,7 +241,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		////
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglBindAttribLocation(GLuint const program, GLuint const index, GLchar const * name)
 		{
 			if (Doctor::useResourceCleansing())
@@ -257,7 +257,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUseProgram(GLuint const name)
 		{
 			EEGL_ASSERT(name != 0);
@@ -276,7 +276,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 		}
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUnuseProgram()
 		{
 			if (Doctor::useResourceCleansing())
@@ -293,7 +293,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		////
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform1f(GLint const location, GLfloat const v0)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -301,7 +301,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1f(location, v0);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform2f(GLint const location, GLfloat const v0, GLfloat const v1)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -309,7 +309,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform2f(location, v0, v1);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform3f(GLint const location, GLfloat const v0, GLfloat const v1, GLfloat const v2)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -317,7 +317,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform3f(location, v0, v1,v2);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform4f(GLint const location, GLfloat const v0, GLfloat const v1, GLfloat const v2, GLfloat const v3)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -327,7 +327,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform1i(GLint const location, GLint const v0)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -335,7 +335,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1i(location, v0);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform2i(GLint const location, GLint const v0, GLint const v1)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -343,7 +343,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform2i(location, v0, v1);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform3i(GLint const location, GLint const v0, GLint const v1, GLint const v2)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -351,7 +351,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform3i(location, v0, v1,v2);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform4i(GLint const location, GLint const v0, GLint const v1, GLint const v2, GLint const v3)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -361,7 +361,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform1fv(GLint const location, GLsizei const count, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -369,7 +369,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1fv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform2fv(GLint const location, GLsizei const count, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -377,7 +377,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1fv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform3fv(GLint const location, GLsizei const count, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -385,7 +385,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1fv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform4fv(GLint const location, GLsizei const count, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -396,7 +396,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform1iv(GLint const location, GLsizei const count, GLint const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -404,7 +404,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1iv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform2iv(GLint const location, GLsizei const count, GLint const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -412,7 +412,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1iv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform3iv(GLint const location, GLsizei const count, GLint const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -420,7 +420,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniform1iv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniform4iv(GLint const location, GLsizei const count, GLint const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -430,7 +430,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniformMatrix2fv(GLint const location, GLsizei const count, GLboolean const transpose, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -439,7 +439,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniformMatrix2fv(location, count, transpose, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniformMatrix3fv(GLint const location, GLsizei const count, GLboolean const transpose, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -448,7 +448,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glUniformMatrix3fv(location, count, transpose, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_INLINE void
+		EEGL_STUB_API_DECO void
 		eeglUniformMatrix4fv(GLint const location, GLsizei const count, GLboolean const transpose, GLfloat const * const value)
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
@@ -469,7 +469,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 #ifdef __cplusplus
-		EEGL_INLINE std::string const
+		EEGL_STUB_API_DECO std::string const
 		eeglGetProgramInfoLogString(GLuint program)
 		{
 			GLint const	len	=	eeglGetProgrami(program, GL_INFO_LOG_LENGTH);
@@ -483,7 +483,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	std::string(buf);
 		}
 		
-		EEGL_INLINE std::vector<GLuint> const
+		EEGL_STUB_API_DECO std::vector<GLuint> const
 		eeglGetAttachedShadersVector(GLuint const program)
 		{
 			GLsizei const	maxcount	=	eeglGetProgrami(program, GL_ATTACHED_SHADERS);

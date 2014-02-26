@@ -43,7 +43,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			void
 			IndexUnitChannel::linkWithClientMemory(Legacy2013SharedMemory const memory, const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::IndexUnitChannel::UnitType::CODE type)
-			{
+			{				
 //					EEGL_ASSERT(_idx_ch_linkage._idx_type == UnitType::CODE::NONE);
 //					EEGL_ASSERT(_idx_ch_linkage._offset_or_memptr == nullptr);
 //					EEGL_ASSERT(_validity == false);

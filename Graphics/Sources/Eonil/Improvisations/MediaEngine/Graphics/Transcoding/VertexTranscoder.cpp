@@ -105,8 +105,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			for(Size i=0; i<_comps.size(); i++)
 			{
 				fs[i].dataOffset		=	offsets[i];
-				fs[i].componentCount	=	(VertexAttributeChannel::ComponentSize::CODE)_comps[i].count;
-				fs[i].componentType		=	(VertexAttributeChannel::ComponentType::CODE)_comps[i].type;
+				fs[i].componentCount	=	(VertexAttributeChannel::ComponentSize)_comps[i].count;
+				fs[i].componentType		=	(VertexAttributeChannel::ComponentType)_comps[i].type;
 				fs[i].normalization		=	GL_FALSE;
 				fs[i].strideSizeInBytes	=	countedSize;
 				

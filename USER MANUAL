@@ -1,0 +1,111 @@
+USER MANUAL
+===========
+2014/02/21
+Hoon H.
+
+
+
+
+
+
+
+
+
+
+Getting Started
+---------------
+
+	class 
+	FooAppDelegate1
+	{
+		auto	step() -> void;		//!	This method will be called for each frame.
+	};
+	
+	
+	int main(int, char**)
+	{
+		auto	step	=	[]()
+		{
+			printf("Hello World!");
+		};
+
+		Eonil::Improvisations::MediaEngine::Application::run(step);
+	}
+
+
+
+
+
+
+
+
+
+Explanation and `Application` class
+-----------------------------------
+MediaEngine library is passive library, and doesn't require your main
+application loop. So basically, you have to setup your application loop,
+prepare OpenGL drawable surface, and call rendering method yourself. But
+that's repeating and boring work, so I prepared convenient helper class
+`Application`.
+
+The code will perform every platform specific operations for you. If the platform
+support program exit, then this will return grafully by user interaction. If the
+platform doesn't support exit, then this will not return. All the application 
+events such as foreground, background or hybernation will be handled correctly.
+
+Anyway the class doesn't dispose any OpenGL server-side objects. On iOS this may
+cause some problem. Because the OS may kill your process if graphics memory (VRAM)
+becomes insufficient when your app is in background. Usually this doesn't matter 
+because this is very natural behavior of all iOS apps. But if you want extreme
+optimization, then you have to manage them yourself. For that, the `Application`
+class will provide several event handlers which can be provided by you for this 
+kind of common OS events. But if you want to handle some special OS event, then
+you have to build application event loop yourself. 
+
+You can see source code of `Application` class to get idea of how to implement 
+application even loop for each platforms. Anyway the implementation of 
+`Application` isn't fixed, so can be changed at any time.
+
+
+
+Note for OS X Application Xcode Project 
+---------------------------------------
+When you create OS X application project in Xcode 5, it will create default NIB
+configuration for you. It contains pre-configured application-delegate, and that
+will override application-delegate set by this `Application` class. So you have
+to delete application-delegate configuration from the NIB file to make the 
+`Application` class to work correctly. To do this, simply delete any NIB file
+created by Xcode project template, and re-create whatever NIB your want.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Threading Note
+--------------
+OpenGL is designed in manner of server-client architecture. OpenGL is just
+an API to access features on remote server, and there is no benefit to be
+multi-threaded on client-side.
+
+Consequently, all OpenGL functions are is designed to be single-threaded.
+And naturally, `MediaEngine::Graphics` library became single-thread only 
+API.
+
+Anyway, there's an exception - the resource loading. You can load resources
+parallelly using OpenGL API. But this require secondary GL context and shared
+resource group feature. And controlling its operation is too complex, so I do
+not support this feature now. Even if I do support this feature, it requires 
+complete control on secondary thread, so there will be no general multi-
+threading support.
+
+
+

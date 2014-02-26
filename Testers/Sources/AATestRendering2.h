@@ -10,7 +10,7 @@
 #define __EonilGraphicsRunningTester__AATestRendering2__
 
 
-#include <Eonil/Improvisations/MediaEngine/MediaEngine.h>
+#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
 
 void	TestRendering2RenderingWithTexture(Eonil::Improvisations::MediaEngine::Graphics::Server::PlanarTexture const& texture);
 //void	TestRendering2RenderingWithTexture(char const* filepath);

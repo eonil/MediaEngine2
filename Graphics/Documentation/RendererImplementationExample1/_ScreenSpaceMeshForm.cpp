@@ -169,14 +169,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				if (f.vertexes.size() > 0)
 				{
 					VertexAttributeChannel::Format	f0;
-					f0.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-					f0.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+					f0.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+					f0.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 					f0.dataOffset			=	0;
 					f0.strideSizeInBytes	=	sizeof(_ScreenSpaceMeshForm::Vertex);
 					
 					VertexAttributeChannel::Format	f1;
-					f1.componentType		=	VertexAttributeChannel::ComponentType::CODE::FLOAT;
-					f1.componentCount		=	VertexAttributeChannel::ComponentSize::CODE::FOUR;
+					f1.componentType		=	VertexAttributeChannel::ComponentType::FLOAT;
+					f1.componentCount		=	VertexAttributeChannel::ComponentSize::FOUR;
 					f1.dataOffset			=	sizeof(Vector4);
 					f1.strideSizeInBytes	=	sizeof(_ScreenSpaceMeshForm::Vertex);
 					
@@ -184,7 +184,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					m.vertexAttributeChannelAtIndex(0).linkWithServerBuffer(vb, f0);
 					m.vertexAttributeChannelAtIndex(1).linkWithServerBuffer(vb, f1);
 					{
-						m.drawArrays(Machine::DrawingMode::TRIANGLES, 0, f.vertexes.size());
+						m.drawArrays(DrawingMode::TRIANGLES, 0, f.vertexes.size());
 					}
 					m.vertexAttributeChannelAtIndex(0).unlink();
 					m.vertexAttributeChannelAtIndex(1).unlink();

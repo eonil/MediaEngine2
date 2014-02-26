@@ -32,9 +32,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			//	Prebind all the vertex-channels(generic vertex attribute indexes) to program's vertex attribute slots.
 			{
-				for (std::pair<std::string, Machinery::VertexAttributeChannel> const& mapping : vertexShader.attributeNamesForChannelsMapping())
+				for (auto const& mapping : vertexShader.attributeNamesForChannelsMapping())
 				{
-					eeglBindAttribLocation(name(), mapping.second.index(), mapping.first.c_str());
+					eeglBindAttribLocation(name(), mapping.second->index(), mapping.first.c_str());
 					_vertexChannelsForAttributesMapping.insert(mapping);
 				}
 			};
@@ -104,7 +104,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
+		auto Program::
+		empty() const -> bool
+		{
+			return	_name == NULL_GL_NAME();
+		}
 		auto Program::
 		name() const -> GLuint
 		{

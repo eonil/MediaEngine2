@@ -270,14 +270,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT(not bounds.isNaN());
 			EEGL_ASSERT(bounds != Bounds2::Utility::infinity());
-			EEGL_ASSERT(not _has_scissor);
+			EEGL_ASSERT(not _dbg_has_scissor);
 			Vector2	sz	=	bounds.size();
 			eeglEnable(GL_SCISSOR_TEST);
 			eeglScissor(bounds.minimum.x, bounds.minimum.y, sz.x, sz.y);
 			
 			if (Doctor::useStateValidation())
 			{
-				_has_scissor	=	true;
+				_dbg_has_scissor	=	true;
 			}
 		}
 		void
@@ -285,8 +285,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			if (Doctor::useStateValidation())
 			{
-				EEGL_ASSERT(_has_scissor);
-				_has_scissor	=	false;
+				EEGL_ASSERT(_dbg_has_scissor);
+				_dbg_has_scissor	=	false;
 			}
 			
 			eeglDisable(GL_SCISSOR_TEST);
@@ -299,6 +299,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		void
 		Machine::drawArrays(const DrawingMode mode, const Size index, const Size count)
 		{
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE((mode != DrawingMode::TRIANGLES) or (count % 3 == 0), "If the drawing-mode is TRIANGLES, then selected vertex count must be multiplication of 3.");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE((mode != DrawingMode::TRIANGLE_STRIP) or (count > 3), "If the drawing-mode is TRIANGLE_STRIP, then selected vertex count must be equal or larger then 3.");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE((mode != DrawingMode::LINES) or (count % 2 == 0), "If the drawing-mode is LINES, then selected vertex count must be even number.");
+			
 			Doctor::assertForUnsignedNumericRange<Size, GLint>(index);
 			Doctor::assertForUnsignedNumericRange<Size, GLsizei>(count);
 			EEGL_ASSERT_WITH_REASON(_validity_of_viewport == true, "Viewport must be set before perform any drawing.");
@@ -332,6 +336,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		void
 		Machine::drawElements(const DrawingMode mode, const Size index, const Size count)
 		{
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE((mode != DrawingMode::TRIANGLES) or (count % 3 == 0), "If the drawing-mode is TRIANGLES, then selected vertex count must be multiplication of 3.");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE((mode != DrawingMode::TRIANGLE_STRIP) or (count > 3), "If the drawing-mode is TRIANGLE_STRIP, then selected vertex count must be equal or larger then 3.");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE((mode != DrawingMode::LINES) or (count % 2 == 0), "If the drawing-mode is LINES, then selected vertex count must be even number.");
+
 			Doctor::assertForUnsignedNumericRange<Size, GLuint>(count);
 			EEGL_ASSERT_WITH_REASON(_validity_of_viewport == true, "Viewport must be set before perform any drawing.");
 			EEGL_ASSERT(_idxch._is_ready_for_drawing());

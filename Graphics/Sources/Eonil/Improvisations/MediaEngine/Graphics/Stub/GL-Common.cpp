@@ -22,13 +22,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 operations.
 		 */
 		auto
-		toGL(Size const& v) -> GLsizei
+		toGLsizei(Size const& v) -> GLsizei
 		{
 			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<GLsizei>::max());
 			return	GLsizei(v);
 		}
 		auto
-		fromGL(GLsizei const& v) -> Size
+		fromGLsizei(GLsizei const& v) -> Size
 		{
 			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<Size>::max());
 			return	Size(v);
@@ -36,6 +36,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		auto
+		toGLint(Size const& v) -> GLint
+		{
+			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<GLint>::max());
+			return	GLint(v);
+		}
+		auto
+		fromGLint(GLint const& v) -> Size
+		{
+			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<Size>::max());
+			return	Size(v);
+		}
 		
 		
 	}
