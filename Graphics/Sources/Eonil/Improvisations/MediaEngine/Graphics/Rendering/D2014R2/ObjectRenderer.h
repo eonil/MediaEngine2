@@ -10,6 +10,7 @@
 #define __Graphics__ObjectRenderer__
 
 #include "../../Common.h"
+#include "../../Server/Declarations.h"
 #include "Scene.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {

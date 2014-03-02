@@ -44,7 +44,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			DisplayScreenFrame
 			{
-				Bounds2		_bounds		{};
+				struct	Core;
+				
+				uptr<Core>	_core_ptr	{};
+
 				
 			public:
 				/*!
@@ -53,6 +56,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 */
 				DisplayScreenFrame(Bounds2 const& bounds);
 				~DisplayScreenFrame();
+				
+				/*!
+				 Creates a matrix which transforms points in RSS into NDC.
+				 If you draw 1x1 square with this transform, it will become biggest filling square in the screen.
+				 If the screen is non-square shape, then longer side will have paddings.
+				 */
+				auto	regulationTransformMatrix() const -> Matrix4;
 			};
 			
 			

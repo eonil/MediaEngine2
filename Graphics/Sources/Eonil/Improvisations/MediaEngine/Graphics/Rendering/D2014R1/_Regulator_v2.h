@@ -122,7 +122,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				_Regulator_v2(Scalar const aspectRatio, Scalar const frameScale = 1);
 				
 				Scalar const	aspectRatio() const;
-				Matrix4 const	aspectRatioCompensationTransformMatrix() const;		//!	Transforms point in RSS into NDC.
+				Matrix4 const	aspectRatioCompensationTransformMatrix() const;			//!	Creates a matrix which transforms points in RSS into NDC.
 				
 				Bounds2 const	boundsOfViewportInRegularScreenSpace() const;
 				Vector2 const	volumeOfViewportInRegularScreenSpace() const;
@@ -132,7 +132,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 				
-				Vector4 const	projectPoint(Vector4 const pointInRSS) const;		//!	Project a point from regular screen space into NDC.
+				Vector4 const	projectPoint(Vector4 const pointInRSS) const;			//!	Project a point from regular screen space into NDC.
 				Vector4 const	unprojectPoint(Vector4 const pointInNDC) const;
 				
 				Bounds2 const	projectBounds(Bounds2 const boundsInRSS) const;

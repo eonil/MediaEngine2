@@ -13,16 +13,16 @@ int main(int argc, char * argv[])
 {
 	using namespace	Eonil::Improvisations::MediaEngine::Application;
 	
-	TestRendering1	r1{};
+//	TestRendering1	r1{};
+//	
+//	STEP
+//	step	=	[&r1](Stepping const& s)
+//	{
+//		r1.step();
+//		r1.render(s);
+//	};
 	
-	STEP
-	step	=	[&r1](Stepping const& s)
-	{
-		r1.step();
-		r1.render(s);
-	};
-	
-	Eonil::Improvisations::MediaEngine::Application::run(argc, argv, step);
+	Eonil::Improvisations::MediaEngine::Application::run<TestRendering1>(argc, argv);
 }
 
 

@@ -17,6 +17,167 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	Stub
 	{
 		
+		namespace
+		{
+			template<typename T>
+			static inline auto
+			contains_target_in_samples(T const& target, vec<T> const& samples) -> bool
+			{
+				return	std::find(samples.begin(), samples.end(), target) != samples.end();
+			}
+			
+			static inline auto
+			is_valid_face(GLenum const face) -> bool
+			{
+				return
+				contains_target_in_samples(face,
+										   {
+											   GL_FRONT,
+											   GL_BACK,
+											   GL_FRONT_AND_BACK,
+										   });
+			}
+			
+			static inline auto
+			is_valid_func(GLenum const func) -> bool
+			{
+				return
+				contains_target_in_samples(func,
+										   {
+											   GL_NEVER,
+											   GL_LESS,
+											   GL_LEQUAL,
+											   GL_GREATER,
+											   GL_GEQUAL,
+											   GL_EQUAL,
+											   GL_NOTEQUAL,
+											   GL_ALWAYS,
+										   });
+			}
+			
+			static inline auto
+			is_valid_stencil_test_op(GLenum const op) -> bool
+			{
+				return
+				contains_target_in_samples(op,
+										   {
+											   GL_KEEP,
+											   GL_ZERO,
+											   GL_REPLACE,
+											   GL_INCR,
+											   GL_INCR_WRAP,
+											   GL_DECR,
+											   GL_DECR_WRAP,
+											   GL_INVERT,
+										   });
+			}
+			
+			
+			static bool const
+			IS_VALID_BLEND_SOURCE(GLenum const sfactor)
+			{
+				return
+				sfactor == GL_ZERO or
+				sfactor == GL_ONE or
+				sfactor == GL_SRC_COLOR or
+				sfactor == GL_ONE_MINUS_SRC_COLOR or
+				sfactor == GL_DST_COLOR or
+				sfactor == GL_ONE_MINUS_DST_COLOR or
+				sfactor == GL_SRC_ALPHA or
+				sfactor == GL_ONE_MINUS_SRC_ALPHA or
+				sfactor == GL_DST_ALPHA or
+				sfactor == GL_ONE_MINUS_DST_ALPHA or
+				sfactor == GL_CONSTANT_COLOR or
+				sfactor == GL_ONE_MINUS_CONSTANT_COLOR or
+				sfactor == GL_CONSTANT_ALPHA or
+				sfactor == GL_ONE_MINUS_CONSTANT_ALPHA or
+				sfactor == GL_SRC_ALPHA_SATURATE
+				;
+			}
+			static bool const
+			IS_VALID_BLEND_DESTINATION(GLenum const dfactor)
+			{
+				return
+				dfactor == GL_ZERO or
+				dfactor == GL_ONE or
+				dfactor == GL_SRC_COLOR or
+				dfactor == GL_ONE_MINUS_SRC_COLOR or
+				dfactor == GL_DST_COLOR or
+				dfactor == GL_ONE_MINUS_DST_COLOR or
+				dfactor == GL_SRC_ALPHA or
+				dfactor == GL_ONE_MINUS_SRC_ALPHA or
+				dfactor == GL_DST_ALPHA or
+				dfactor == GL_ONE_MINUS_DST_ALPHA or
+				dfactor == GL_CONSTANT_COLOR or
+				dfactor == GL_ONE_MINUS_CONSTANT_COLOR or
+				dfactor == GL_CONSTANT_ALPHA or
+				dfactor == GL_ONE_MINUS_CONSTANT_ALPHA
+//				dfactor == GL_SRC_ALPHA_SATURATE			//	Not supported as destination.
+				;
+			}
+			static bool const
+			IS_VALID_BLEND_MODE(GLenum const mode)
+			{
+				return
+				mode == GL_FUNC_ADD or
+				mode == GL_FUNC_SUBTRACT or
+				mode == GL_FUNC_REVERSE_SUBTRACT
+				;
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -154,59 +315,80 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		////	State
 		
-		static bool const
-		IS_VALID_BLEND_SOURCE(GLenum const sfactor)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+#pragma mark	-	Per-Fragment Operations
+		
+		
+		
+		EEGL_STUB_API_DECO void
+		eeglStencilFuncSeparate(GLenum const face, GLenum const func, GLint const ref, GLuint const mask)
 		{
-			return
-			sfactor == GL_ZERO or
-			sfactor == GL_ONE or
-			sfactor == GL_SRC_COLOR or
-			sfactor == GL_ONE_MINUS_SRC_COLOR or
-			sfactor == GL_DST_COLOR or
-			sfactor == GL_ONE_MINUS_DST_COLOR or
-			sfactor == GL_SRC_ALPHA or
-			sfactor == GL_ONE_MINUS_SRC_ALPHA or
-			sfactor == GL_DST_ALPHA or
-			sfactor == GL_ONE_MINUS_DST_ALPHA or
-			sfactor == GL_CONSTANT_COLOR or
-			sfactor == GL_ONE_MINUS_CONSTANT_COLOR or
-			sfactor == GL_CONSTANT_ALPHA or
-			sfactor == GL_ONE_MINUS_CONSTANT_ALPHA or
-			sfactor == GL_SRC_ALPHA_SATURATE
-			;
+			EEGL_ASSERT(is_valid_face(face));
+			EEGL_ASSERT(is_valid_func(func));
+			EEGL_ASSERT(ref > 0);
+			{
+				glStencilFuncSeparate(face, func, ref, mask);
+			}
+			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		static bool const
-		IS_VALID_BLEND_DESTINATION(GLenum const dfactor)
+		
+		EEGL_STUB_API_DECO void
+		eeglStencilOpSeparate(GLenum const face, GLenum const sfail, GLenum const dpfail, GLenum const dppass)
 		{
-			return
-			dfactor == GL_ZERO or
-			dfactor == GL_ONE or
-			dfactor == GL_SRC_COLOR or
-			dfactor == GL_ONE_MINUS_SRC_COLOR or
-			dfactor == GL_DST_COLOR or
-			dfactor == GL_ONE_MINUS_DST_COLOR or
-			dfactor == GL_SRC_ALPHA or
-			dfactor == GL_ONE_MINUS_SRC_ALPHA or
-			dfactor == GL_DST_ALPHA or
-			dfactor == GL_ONE_MINUS_DST_ALPHA or
-			dfactor == GL_CONSTANT_COLOR or
-			dfactor == GL_ONE_MINUS_CONSTANT_COLOR or
-			dfactor == GL_CONSTANT_ALPHA or
-			dfactor == GL_ONE_MINUS_CONSTANT_ALPHA
-//				dfactor == GL_SRC_ALPHA_SATURATE			//	Not supported as destination.
-			;
+			EEGL_ASSERT(is_valid_face(face));
+			EEGL_ASSERT(is_valid_stencil_test_op(sfail));
+			EEGL_ASSERT(is_valid_stencil_test_op(dpfail));
+			EEGL_ASSERT(is_valid_stencil_test_op(dppass));
+			{
+				glStencilOpSeparate(face, sfail, dpfail, dppass);
+			}
+			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		static bool const
-		IS_VALID_BLEND_MODE(GLenum const mode)
+		
+		
+		
+		
+		
+		
+		
+		EEGL_STUB_API_DECO void
+		eeglDepthFunc(GLenum const func)
 		{
-			return
-			mode == GL_FUNC_ADD or
-			mode == GL_FUNC_SUBTRACT or
-			mode == GL_FUNC_REVERSE_SUBTRACT
-			;
+			EEGL_ASSERT(is_valid_func(func));
+			{
+				glDepthFunc(func);
+			}
+			EEGL_ASSERT_NO_GL_ERROR();
 		}
+		EEGL_STUB_API_DECO void
+		eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal)
+		{
+			glDepthRangef(nearVal, farVal);
+//			glDepthRange(nearVal, farVal);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		EEGL_STUB_API_DECO void
 		eeglBlendFunc(GLenum const sfactor, GLenum const dfactor)
@@ -258,30 +440,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
-		
-		EEGL_STUB_API_DECO void
-		eeglDepthFunc(GLenum const func)
-		{
-			EEGL_ASSERT(func == GL_NEVER or
-								  func == GL_LESS or
-								  func == GL_EQUAL or
-								  func == GL_LEQUAL or
-								  func == GL_GREATER or
-								  func == GL_NOTEQUAL or
-								  func == GL_GEQUAL or
-								  func == GL_ALWAYS
-								  );
-			
-			glDepthFunc(func);
-			EEGL_ASSERT_NO_GL_ERROR();
-		}
-		EEGL_STUB_API_DECO void
-		eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal)
-		{
-			glDepthRangef(nearVal, farVal);
-//				glDepthRange(nearVal, farVal);
-			EEGL_ASSERT_NO_GL_ERROR();
-		}
 		
 		
 		
@@ -383,9 +541,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		eeglClear (GLbitfield const mask)
 		{
 			EEGL_ASSERT(((mask & GL_COLOR_BUFFER_BIT) +
-				   (mask & GL_DEPTH_BUFFER_BIT) +
-				   (mask & GL_STENCIL_BUFFER_BIT)) > 0);
-			glClear(mask);
+						 (mask & GL_DEPTH_BUFFER_BIT) +
+						 (mask & GL_STENCIL_BUFFER_BIT)) > 0);
+			{
+				glClear(mask);
+			}
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
@@ -393,11 +553,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		eeglClearDepthf(GLclampf depth)
 		{
 			EEGL_ASSERT(depth >=0 and depth <= 1);
+			{
 #if	EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
-			glClearDepth(depth);
+				glClearDepth(depth);
 #else
-			glClearDepthf(depth);
+				glClearDepthf(depth);
 #endif
+			}
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
@@ -408,7 +570,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(green >= 0.0f && green <=1.0f);
 			EEGL_ASSERT(blue >= 0.0f && blue <=1.0f);
 			EEGL_ASSERT(alpha >= 0.0f && alpha <=1.0f);
-			glClearColor(red, green, blue, alpha);
+			{
+				glClearColor(red, green, blue, alpha);
+			}
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		EEGL_STUB_API_DECO void
@@ -480,7 +644,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			/*!
 			 CRASH NOTE
 			 ==========
-			 If this function crashes while executing, it's mostly because of bad vertex data.
+			 If this function crashes while being executed, it's mostly because of bad vertex data.
 			 Regardless of where it is. (client or server) So check the data integrity first.
 			 
 			 Detection or assertion for the bad data is very hard and really inefficient. (even for debug
@@ -494,13 +658,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		eeglDrawElement(GLenum const mode, GLsizei const count, GLenum const type, GLvoid const * const indices)
 		{
 			EEGL_ASSERT((mode == GL_POINTS) or
-				   (mode == GL_LINE_STRIP) or
-				   (mode == GL_LINE_LOOP) or
-				   (mode == GL_LINES) or
-				   (mode == GL_TRIANGLE_STRIP) or
-				   (mode == GL_TRIANGLE_FAN) or
-				   (mode == GL_TRIANGLES));
-		
+						(mode == GL_LINE_STRIP) or
+						(mode == GL_LINE_LOOP) or
+						(mode == GL_LINES) or
+						(mode == GL_TRIANGLE_STRIP) or
+						(mode == GL_TRIANGLE_FAN) or
+						(mode == GL_TRIANGLES));
+			
 			EEGL_ASSERT(count >= 0);
 			
 			EEGL_ASSERT((type == GL_UNSIGNED_BYTE) or
@@ -520,17 +684,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			////
-			
-			/*!
-			 CRASH NOTE
-			 ==========
-			 If this function crashes while executing, it's mostly because of bad vertex/index data.
-			 Regardless of where it is. (client or server) So check the data integrity first.
-			 
-			 Detection or assertion for the bad data is very hard and really inefficient. (even for debug
-			 build!) So I am not currently implementing it.
-			 */
-			glDrawElements(mode, count, type, indices);
+			{
+				
+				/*!
+				 CRASH NOTE
+				 ==========
+				 If this function crashes while being executed, it's mostly because of bad vertex/index data.
+				 Regardless of where it is. (client or server) So check the data integrity first.
+				 
+				 Detection or assertion for the bad data is very hard and really inefficient. (even for debug
+				 build!) So I am not currently implementing it.
+				 */
+				glDrawElements(mode, count, type, indices);
+			}
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		

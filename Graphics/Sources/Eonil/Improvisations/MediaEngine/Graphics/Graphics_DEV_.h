@@ -10,6 +10,21 @@
 #define __EonilGraphics__Graphics_DEV___
 
 
+
+
+
+
+/*
+ A header file for feature development.
+ Will not be available in final release.
+ */
+
+
+
+
+
+
+
 #if	__cplusplus
 
 
@@ -19,12 +34,17 @@
 
 #include "Stub/GL.h"
 
-#include "Server/Machine.h"
-#include "Server/Program.h"
-#include "Server/Shader.h"
-#include "Server/Texture.h"
-#include "Server/Buffer.h"
+#include "Server/Symbols.h"
 #include "Server/Framebuffer.h"
+#include "Server/Buffer.h"
+#include "Server/Texture.h"
+#include "Server/Shader.h"
+#include "Server/Program.h"
+
+#include "Server/Machine.h"
+#include "Server/Machinery/VertexAttributeChannel.h"
+#include "Server/Machinery/IndexUnitChannel.h"
+#include "Server/Machinery/TextureSampler.h"
 
 //#include "Platform/D2014R1/_TextTextureGenerator.h"
 #include "Aliens/TextTextureGeneratorV2.h"

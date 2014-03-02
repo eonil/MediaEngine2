@@ -10,6 +10,7 @@
 #define __Graphics__CPUTransformLineDrawer__
 
 #include "../../Common.h"
+#include "../../Server/Declarations.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	

@@ -14,23 +14,129 @@ Hoon H.
 
 Getting Started
 ---------------
+This is a minimal loop configuration, and shows conceptual running.
 
-	class 
-	FooAppDelegate1
+	class
+	Foo1
 	{
-		auto	step() -> void;		//!	This method will be called for each frame.
+	public:
+		auto
+		stepSimulation() -> void		//!	This method will be called for each frame.
+		{
+			printf("Hello World!");
+		}
 	};
 	
 	
 	int main(int, char**)
 	{
-		auto	step	=	[]()
+		Foo1	foo1{};
+
+		auto	
+		step = [&foo1]() -> void
 		{
-			printf("Hello World!");
+			foo1.stepSimulation();
 		};
 
 		Eonil::Improvisations::MediaEngine::Application::run(step);
 	}
+
+In practice, you need to load graphics resources with configured GL context.
+GL context will be configure automatically while `Application::run` method is
+running, so whatever you do in the stepping, it will take current GL context
+automatically.
+
+
+	class
+	FooGameSession1
+	{
+		bool
+	public:
+		FooGameSession1()
+		{
+			//	Load any GL resources here.
+		}
+		~FooGameSession1()
+		{
+			//	Unload any GL resources here.
+		}
+		auto 
+		step() -> void
+		{
+			//	Run game stepping.
+		}
+		auto 
+		continueStepping() -> bool
+		{
+			//	Return game continuity.
+		}
+	};
+
+	class
+	Foo1
+	{
+		FooGameSession1*	_current_game_session	{nullptr};
+
+	public:
+		auto
+		stepSimulation() -> void		//!	This method will be called for each frame.
+		{
+			if (_current_game_session == nullptr)
+			{
+				_current_game_session	=	new FooGameSession1();
+			}
+			else
+			{
+				
+			}
+			FooGameSession1
+		}
+	};
+
+	int main(int, char**)
+	{
+		Foo1	foo1{};
+
+		auto	
+		step = [&foo1]() -> void
+		{
+
+			foo1.stepSimulation();
+		};
+		
+		auto
+		prepare = [&foo1]() -> void
+		{
+			foo1.prepareResources();
+		};
+
+		auto
+		clear = [&foo1]() -> void
+		{
+			foo1.clearResources();
+		};
+
+		Eonil::Improvisations::MediaEngine::Application::run(step, prepare, clear);
+	}
+
+But, this doesn't seem to follow RIIA rule. For that we need to separate concept of
+graphics resource session. Here's more typical loop design.
+
+	class
+	GraphicsResourceSession1
+	{
+	public:
+		GraphicsResourceSession1()
+		{
+			//	Load GL resources.
+		}
+		~GraphicsResourceSession1()
+		{
+			//	Unload GL resources.
+		}
+	};
+
+
 
 
 

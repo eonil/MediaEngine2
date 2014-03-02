@@ -10,6 +10,7 @@
 #define __EonilGraphics__Framebuffer__
 
 #include "../Common.h"
+#include "Declarations.h"
 #include "ServerObjectProxy.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {

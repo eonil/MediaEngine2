@@ -24,6 +24,7 @@
 #include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
 #include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
 
+
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
@@ -163,8 +164,8 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert({"vertexTexture", &Machine::machine().vertexAttributeChannelAtIndex(1)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexTexture", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	
 //	_Legacy2013_SharingBox<VertexShader> const				vp	=	;
 //	_Legacy2013_SharingBox<FragmentShader> const			fp	=	_Legacy2013_SharingBox<FragmentShader>(new FragmentShader(TestFragmentShaderProgram));

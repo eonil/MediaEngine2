@@ -122,8 +122,8 @@ TestRendering1RenderingWithTransform()
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 
 	Program					p		{VertexShader(TestVertexShaderProgram, chmap), FragmentShader(TestFragmentShaderProgram)};
 	printf("program = %s\n", Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::describe(p).c_str());

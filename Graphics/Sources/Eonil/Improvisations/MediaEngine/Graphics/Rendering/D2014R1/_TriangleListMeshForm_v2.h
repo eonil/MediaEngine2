@@ -14,8 +14,8 @@
 
 #include "../../Common.h"
 #include "../../Value/Color.h"
-#include "../../Server/Machine.h"
-#include "../../Server/Texture.h"
+#include "../../Server/Declarations.h"
+#include "../../Server/_Legacy2013Compat.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 

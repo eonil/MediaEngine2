@@ -42,7 +42,7 @@ hardness on mobile platform.
 
 `Transcoding` is currently empty library. This will be filled with
 resource serialization features. And the classes may be adapted 
-by ResourceTreeMetaCompiler to provide convenient resource linking.
+by ERTE(Eonil's Resource Tree Encoder) to provide convenient resource linking.
 Currently, I don't have high demand on this feature, so I don't 
 implement this.
 

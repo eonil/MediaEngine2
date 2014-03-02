@@ -33,7 +33,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		////	State
+		////	Per-fragment operations.
+		
+//		EEGL_STUB_API_DECO void			eeglStencilFunc(GLenum const func, GLint const ref, GLuint const mask);
+		EEGL_STUB_API_DECO void			eeglStencilFuncSeparate(GLenum const face, GLenum const func, GLint const ref, GLuint const mask);
+//		EEGL_STUB_API_DECO void			eeglStencilOp(GLenum const sfail, GLenum const dpfail, GLenum const dppass);
+		EEGL_STUB_API_DECO void			eeglStencilOpSeparate(GLenum const face, GLenum const sfail, GLenum const dpfail, GLenum const dppass);
+		
+		EEGL_STUB_API_DECO void			eeglDepthFunc(GLenum const func);
+		EEGL_STUB_API_DECO void			eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal);
 		
 		EEGL_STUB_API_DECO void			eeglBlendFunc(GLenum const sfactor, GLenum const dfactor);
 		EEGL_STUB_API_DECO void			eeglBlendEquation(GLenum const mode);
@@ -41,13 +49,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO void			eeglBlendEquationSeparate(GLenum const modeRGB, GLenum const modeAlpha);
 		EEGL_STUB_API_DECO void			eeglBlendFuncSeparate(GLenum const srcRGB, GLenum const dstRGB, GLenum const srcAlpha, GLenum const dstAlpha);
 		
-		EEGL_STUB_API_DECO void			eeglDepthFunc(GLenum const func);
-		EEGL_STUB_API_DECO void			eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal);
-		
-		/*!
-		 TODO: Implement stencil and depth operation function stubs.
-		 */
-//			EEGL_STUB_API_DECO void			eeglStencilFunc(GLenum const func, GLint const ref, GLuint const mask);
 		
 		////	Texturing.
 		

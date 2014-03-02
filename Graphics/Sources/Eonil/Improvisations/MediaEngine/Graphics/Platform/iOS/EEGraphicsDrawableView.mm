@@ -71,6 +71,7 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
 	EONIL_DEBUG_ASSERT(_rbdepth == 0);
 	
 	CAEAGLLayer*	_layer2	=	(id)self.layer;
+	[_layer2 setContentsScale:self.window.screen.scale];
 	
 	_ctx	=	[[EAGLContext alloc] initWithAPI:(kEAGLRenderingAPIOpenGLES2) sharegroup:nil];
 	

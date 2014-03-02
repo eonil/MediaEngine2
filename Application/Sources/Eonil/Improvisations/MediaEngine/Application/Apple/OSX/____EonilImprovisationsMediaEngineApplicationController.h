@@ -22,7 +22,7 @@
 #import <AppKit/AppKit.h>
 
 @interface ____EonilImprovisationsMediaEngineApplicationController : NSObject <NSApplicationDelegate>
-+ (int)	runWithArgc:(int)argc argv:(char const*[])argv step:(void(^)(CGRect bounds))step;
++ (int)	runWithArgc:(int)argc argv:(char const*[])argv prepare:(void(^)(void))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
 @end
 
 

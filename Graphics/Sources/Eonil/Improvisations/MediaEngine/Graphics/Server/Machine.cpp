@@ -6,8 +6,21 @@
 //  Copyright (c) 2013 Eonil. All rights reserved.
 //
 
-#include "../Stub/GL.h"
 #include "Machine.h"
+
+#include "../Stub/GL.h"
+
+#include "Symbols.h"
+#include "Program.h"
+#include "Shader.h"
+#include "Texture.h"
+#include "Buffer.h"
+#include "Framebuffer.h"
+
+#include "Machinery/VertexAttributeChannel.h"
+#include "Machinery/IndexUnitChannel.h"
+#include "Machinery/TextureSampler.h"
+
 #include "../Value/Conversion/GLNumbers.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
@@ -50,7 +63,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	m;
 		}
 		
-		Machine::Machine()
+		Machine::Machine() : _idxch_ptr(new IndexUnitChannel())
 		{
 			GLint	maxc	=	eeglGetInteger(GL_MAX_VERTEX_ATTRIBS);
 			
@@ -64,10 +77,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				_tus.push_back(TextureSampler(i));		//	Texture unit number is guaranteed to be sequential by GL spec.
 			}
-		}
-		Machine::Machine(Machine const& origin)
-		{
-			EEGL_ASSERT(false);
 		}
 		
 		
@@ -134,12 +143,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		IndexUnitChannel const&
 		Machine::indexUnitChannel() const
 		{
-			return	_idxch;
+			return	*_idxch_ptr;
 		}
 		IndexUnitChannel&
 		Machine::indexUnitChannel()
 		{
-			return	_idxch;
+			return	*_idxch_ptr;
 		}
 		
 		
@@ -239,6 +248,35 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		auto Machine::
+		compositionMode() const -> CompositionMode const&
+		{
+			return	_comp_mode;
+		}
+		auto Machine::
+		compositionMode() -> CompositionMode&
+		{
+			return	_comp_mode;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		void
 		Machine::setViewport(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Bounds2 bounds)
 		{
@@ -265,32 +303,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 		}
 		
-		void
-		Machine::setScissor(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Bounds2 bounds)
-		{
-			EEGL_ASSERT(not bounds.isNaN());
-			EEGL_ASSERT(bounds != Bounds2::Utility::infinity());
-			EEGL_ASSERT(not _dbg_has_scissor);
-			Vector2	sz	=	bounds.size();
-			eeglEnable(GL_SCISSOR_TEST);
-			eeglScissor(bounds.minimum.x, bounds.minimum.y, sz.x, sz.y);
-			
-			if (Doctor::useStateValidation())
-			{
-				_dbg_has_scissor	=	true;
-			}
-		}
-		void
-		Machine::unsetScissor()
-		{
-			if (Doctor::useStateValidation())
-			{
-				EEGL_ASSERT(_dbg_has_scissor);
-				_dbg_has_scissor	=	false;
-			}
-			
-			eeglDisable(GL_SCISSOR_TEST);
-		}
 		
 		
 		
@@ -342,21 +354,21 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 			Doctor::assertForUnsignedNumericRange<Size, GLuint>(count);
 			EEGL_ASSERT_WITH_REASON(_validity_of_viewport == true, "Viewport must be set before perform any drawing.");
-			EEGL_ASSERT(_idxch._is_ready_for_drawing());
+			EEGL_ASSERT(_idxch_ptr->_is_ready_for_drawing());
 			
-			GLenum const		tcode	=	_idxch._unitTypeForDrawingParameter();
+			GLenum const		tcode	=	_idxch_ptr->_unitTypeForDrawingParameter();
 			EEGL_ASSERT_WITH_REASON(tcode == IndexUnitChannel::UnitType::CODE::UINT8 or tcode == IndexUnitChannel::UnitType::CODE::UINT16, "Currently, only UINT8 and UIN16 is considered. Otherwise code review is required.");
 			
 			Size const			usz		=	tcode == IndexUnitChannel::UnitType::CODE::UINT8 ? 1 : 2;
 			Size const			offset	=	usz * index;
-			GLvoid const* const	ptr		=	_idxch._pointerForDrawingParameter();
+			GLvoid const* const	ptr		=	_idxch_ptr->_pointerForDrawingParameter();
 			GLvoid const* const	ptr2	=	CONVPTR(CONVPTR(ptr).uint + offset).ptr;
 			
 			if (Doctor::useStateValidation())
 			{
 				Size const		reqlen	=	usz * count;
 				Size const		reqrun	=	offset + reqlen;
-				Size const		curlen	=	_idxch._lengthOfData();
+				Size const		curlen	=	_idxch_ptr->_lengthOfData();
 				
 				std::string const	errdesc	=	Doctor::stringWithCFormat("Currently bound index-data does not have enough data to draw specified range of indexes. (required: offset + length = %llu + %llu = %llu bytes, current data: length = %llu bytes)", uint64_t(offset), uint64_t(reqlen), uint64_t(reqrun), uint64_t(curlen));
 				EEGL_ASSERT_WITH_REASON(curlen >= reqrun, errdesc);
@@ -378,6 +390,95 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+#pragma mark	-	Deprecated Methods
+		
+		
+		void
+		Machine::setScissor(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Bounds2 bounds)
+		{
+			EEGL_ASSERT(not bounds.isNaN());
+			EEGL_ASSERT(bounds != Bounds2::Utility::infinity());
+			EEGL_ASSERT(not _dbg_has_scissor);
+			Vector2	sz	=	bounds.size();
+			eeglEnable(GL_SCISSOR_TEST);
+			eeglScissor(bounds.minimum.x, bounds.minimum.y, sz.x, sz.y);
+			
+			if (Doctor::useStateValidation())
+			{
+				_dbg_has_scissor	=	true;
+			}
+		}
+		void
+		Machine::unsetScissor()
+		{
+			if (Doctor::useStateValidation())
+			{
+				EEGL_ASSERT(_dbg_has_scissor);
+				_dbg_has_scissor	=	false;
+			}
+			
+			eeglDisable(GL_SCISSOR_TEST);
+		}
 		
 		
 		

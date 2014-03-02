@@ -10,6 +10,7 @@
 #define __Graphics__Functions__
 
 #include "../../Common.h"
+#include "../Declarations.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	

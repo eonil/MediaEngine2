@@ -6,10 +6,14 @@
 //  Copyright (c) 2013 Eonil. All rights reserved.
 //
 
+#include "Program.h"
+
 #include "../Stub/GL.h"
 #include "../Debugging/Doctor.h"
-#include "Program.h"
 #include "ImplementationCommon.h"
+
+#include "Shader.h"
+#include "Machinery/VertexAttributeChannel.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 

@@ -786,7 +786,8 @@
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources/GLM",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -819,7 +820,8 @@
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources/GLM",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

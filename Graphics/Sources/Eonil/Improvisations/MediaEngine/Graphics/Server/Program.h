@@ -10,15 +10,15 @@
 #define __EonilGraphics__Program__
 
 #include "../Common.h"
-#include "Shader.h"
+#include "Declarations.h"
+#include "ServerObjectProxy.h"
 #include "ProgramSlot.h"
-#include "Machinery/VertexAttributeChannel.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace
 	Server
-	{
+	{		
 		/*!
 		 
 		 @classdesign	Uniform search by name is discouraged to reduce lookup cost from client code. Client must 
@@ -71,12 +71,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		Program final : public TrackableObject
 		{
-			using						VAC		=	Machinery::VertexAttributeChannel;
+			using						VAC						=	Machinery::VertexAttributeChannel;
 			
-			GLuint						_name	=	NULL_GL_NAME();
+			GLuint						_name						{NULL_GL_NAME()};
 			
-			vec<UniformValueSlot>		_uniformValueSlots{};
-			vec<VertexAttributeSlot>	_vertexAttributeSlots{};
+			vec<UniformValueSlot>		_uniformValueSlots			{};
+			vec<VertexAttributeSlot>	_vertexAttributeSlots		{};
 			
 			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			

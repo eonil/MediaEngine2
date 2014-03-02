@@ -152,32 +152,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //	}
 	
 	
-	namespace
-	Server
-	{
-		enum class	DrawingMode : GLenum;
-		enum class	BlendingMode : GLenum;
-		
-		class	Machine;
-		
-		class	Renderbuffer;
-		class	Framebuffer;
-		
-		class	ArrayBuffer;
-		class	ElementArrayBuffer;
-		
-		class	PlanarTexture;
-		
-		class	Program;
-		class	VertexShader;
-		class	FragmentShader;
-		
-		namespace
-		Machinery
-		{
-			class	TextureSampler;
-		}
-	}
 
 	namespace
 	Rendering

@@ -15,7 +15,7 @@
 
 
 
-#import "____EonilImprovisationsMediaEngineApplicationController.h"
+#import "____EonilImprovisationsMediaEngineApplicationController_iOS.h"
 #import <Eonil/Improvisations/MediaEngine/Mathematics/Mathematics.h>
 #import <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
 
@@ -26,8 +26,21 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	
+	
+	
 	auto
-	run(int argc, char *argv[], std::function<void(Stepping const&)> const& step) -> void
+	run(int argc, char *argv[], std::function<void(Stepping const&)> const& step) -> int
+	{
+		return
+		run(argc, argv, []{}, []{}, step);
+	}
+	
+	
+	
+	
+	
+	auto
+	run(int argc, char *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
 	{
 		auto	toEE	=	[](CGFloat f) -> Scalar
 		{
@@ -36,19 +49,32 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		
 		////
 		
-		[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv step:^(CGRect bounds)
+		@autoreleasepool
 		{
-			Scalar	minx	{toEE(CGRectGetMinX(bounds))};
-			Scalar	maxx	{toEE(CGRectGetMaxX(bounds))};
-			Scalar	miny	{toEE(CGRectGetMinY(bounds))};
-			Scalar	maxy	{toEE(CGRectGetMaxY(bounds))};
-			
-			Bounds2				b	{minx, miny, maxx, maxy};
-			DisplayScreenFrame	f	{b};
+			return
+			[____EonilImprovisationsMediaEngineApplicationController_iOS runWithArgc:argc argv:argv
+			prepare:^
 			{
-				step({f});
+				prepare();
 			}
-		}];
+			cleanup:^
+			{
+				cleanup();
+			}
+			step:^(CGRect bounds)
+			{
+				Scalar	minx	{toEE(CGRectGetMinX(bounds))};
+				Scalar	maxx	{toEE(CGRectGetMaxX(bounds))};
+				Scalar	miny	{toEE(CGRectGetMinY(bounds))};
+				Scalar	maxy	{toEE(CGRectGetMaxY(bounds))};
+				
+				Bounds2				b	{minx, miny, maxx, maxy};
+				DisplayScreenFrame	f	{b};
+				{
+					step({f});
+				}
+			}];
+		}
 	}
 	
 	

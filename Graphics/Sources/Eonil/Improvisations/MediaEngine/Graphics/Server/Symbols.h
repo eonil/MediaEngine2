@@ -17,7 +17,39 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		enum class
+		FACE : GLenum
+		{
+			FRONT			=	GL_FRONT,
+			BACK			=	GL_BACK,
+			BOTH			=	GL_FRONT_AND_BACK,
+		};
 		
+		enum class
+		COMPARISON : GLenum
+		{
+			NEVER					=	GL_NEVER,
+			ALWAYS					=	GL_ALWAYS,
+			EQUAL					=	GL_EQUAL,
+			NOT_EQUAL				=	GL_NOTEQUAL,
+			LESS					=	GL_LESS,
+			LESS_OR_EQUAL			=	GL_LEQUAL,
+			GREATER					=	GL_GREATER,
+			GREATOR_OR_EQUAL		=	GL_GEQUAL,
+		};
+
+		enum class
+		OPERATION : GLenum
+		{
+			KEEP					=	GL_KEEP,
+			ZERO					=	GL_ZERO,
+			REPLACE					=	GL_REPLACE,
+			INVERT					=	GL_INVERT,			//!	Bit-wise invert.
+			INCREASE				=	GL_INCR,
+			DECREASE				=	GL_DECR,
+			INCREASE_WRAP			=	GL_INCR_WRAP,
+			DECREASE_WRAP			=	GL_DECR_WRAP,
+		};
 		
 		
 		

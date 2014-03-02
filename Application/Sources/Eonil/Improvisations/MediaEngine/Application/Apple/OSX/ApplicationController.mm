@@ -33,27 +33,58 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	auto
-	run(int argc, char *argv[], std::function<void(Stepping const&)> const& step) -> void
+	run(int argc, char *argv[], std::function<void(Stepping const&)> const& step) -> int
+	{
+		return
+		run(argc, argv, []{}, []{}, step);
+	}
+	
+	
+	
+	
+	
+	auto
+	run(int argc, char *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
 	{
 		char const* * argv2	=	(char const* *)argv;
 		
-		[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv2 step:^(CGRect bounds)
+		@autoreleasepool
 		{
-			Scalar	minx	{Scalar(CGRectGetMinX(bounds))};
-			Scalar	maxx	{Scalar(CGRectGetMaxX(bounds))};
-			Scalar	miny	{Scalar(CGRectGetMinY(bounds))};
-			Scalar	maxy	{Scalar(CGRectGetMaxY(bounds))};
-			
-			Bounds2				b	{minx, miny, maxx, maxy};
-			DisplayScreenFrame	f	{b};
+			return
+			[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv2
+			prepare:^
 			{
-				step({f});
+				prepare();
 			}
-
-//			Graphics::Rendering::D2014R2::DisplayScreenFrame	f{};
-//			step({});
-		}];
+			cleanup:^
+			{
+				cleanup();
+			}
+			step:^(CGRect bounds)
+			{
+				Scalar	minx	{Scalar(CGRectGetMinX(bounds))};
+				Scalar	maxx	{Scalar(CGRectGetMaxX(bounds))};
+				Scalar	miny	{Scalar(CGRectGetMinY(bounds))};
+				Scalar	maxy	{Scalar(CGRectGetMaxY(bounds))};
+				
+				Bounds2				b	{minx, miny, maxx, maxy};
+				DisplayScreenFrame	f	{b};
+				
+				{
+					step({f});
+				}
+			}];
+		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

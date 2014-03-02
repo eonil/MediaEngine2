@@ -1,12 +1,12 @@
 //
-//  ____EonilImprovisationsMediaEngineApplicationController.m
+//  ____EonilImprovisationsMediaEngineApplicationController_iOS.m
 //  Application
 //
 //  Created by Hoon H. on 2/21/14.
 //
 //
 
-#import "____EonilImprovisationsMediaEngineApplicationController.h"
+#import "____EonilImprovisationsMediaEngineApplicationController_iOS.h"
 
 #if	EONIL_MEDIA_ENGINE_TARGET_IOS
 
@@ -24,13 +24,16 @@
 
 #import <Eonil/Improvisations/MediaEngine/Graphics/Platform/iOS/EEGraphicsDrawableView.h>
 
+typedef	void(^PROC)(void);
 typedef	void(^STEP)(CGRect bounds);
 
+static PROC		GlobalPrepare	=	nil;
 static STEP		GlobalStepper	=	nil;
+static PROC		GlobalCleanup	=	nil;
 
 
 
-@implementation ____EonilImprovisationsMediaEngineApplicationController
+@implementation ____EonilImprovisationsMediaEngineApplicationController_iOS
 {
 	UIWindow*					_main_win;
 	UINavigationController*		_nav_con;
@@ -39,13 +42,19 @@ static STEP		GlobalStepper	=	nil;
 	
 	CADisplayLink*				_disp_link;
 }
-+ (int)runWithArgc:(int)argc argv:(char*[])argv step:(void (^)(CGRect bounds))step
++ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(void))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
 {
 	@autoreleasepool
 	{
+		GlobalPrepare	=	[prepare copy];
 		GlobalStepper	=	[step copy];
+		GlobalCleanup	=	[cleanup copy];
+		
 		int	result		=	UIApplicationMain(argc, argv, nil, NSStringFromClass([self class]));
+		
+		GlobalPrepare	=	nil;
 		GlobalStepper	=	nil;
+		GlobalCleanup	=	nil;
 		
 		return	result;
 	}
@@ -68,6 +77,7 @@ static STEP		GlobalStepper	=	nil;
 	////
 	
 	[_gl_view prepareGraphicsContext];
+	GlobalPrepare();
 	[self startDisplayTicking];
 	
 	////
@@ -85,6 +95,7 @@ static STEP		GlobalStepper	=	nil;
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	[self stopDisplayTicking];
+	GlobalCleanup();
 	[_gl_view cleanupGraphicsContext];
 }
 - (void)startDisplayTicking
@@ -102,7 +113,14 @@ static STEP		GlobalStepper	=	nil;
 }
 - (void)displayLinkTick:(id)sender
 {
-	CGRect	bounds	=	[_gl_view bounds];
+	CGRect	bounds	=	[_gl_view.layer bounds];
+	CGFloat	scale	=	_gl_view.layer.contentsScale;
+	
+	bounds.origin.x		*=	scale;
+	bounds.origin.y		*=	scale;
+	bounds.size.width	*=	scale;
+	bounds.size.height	*=	scale;
+	
 	GlobalStepper(bounds);
 	[_gl_view presentRenderbuffer];
 }

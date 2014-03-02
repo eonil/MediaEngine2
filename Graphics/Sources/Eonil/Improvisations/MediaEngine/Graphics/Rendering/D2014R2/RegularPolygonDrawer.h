@@ -10,6 +10,7 @@
 #define __Graphics__RegularPolygonDrawer__
 
 #include "../../Common.h"
+#include "../../Server/Declarations.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	

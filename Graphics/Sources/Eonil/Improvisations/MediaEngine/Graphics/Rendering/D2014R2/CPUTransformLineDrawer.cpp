@@ -11,6 +11,8 @@
 
 #include "../../Server/Symbols.h"
 #include "../../Server/Texture.h"
+#include "../../Server/Shader.h"
+#include "../../Server/Program.h"
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
@@ -153,8 +155,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				Machine::machine().useProgram(_core_ptr->program);
 				{
-					_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex).setValue(worldToScreenTransform);
+					auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
+					
+					transform_uniform_slot.setValue(worldToScreenTransform);
 					draw(instances.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::LINES, Range::fromAdvancement(0, instances.size() * 2));
+					transform_uniform_slot.unset();
 				}
 				Machine::machine().unuseProgram();
 			}

@@ -10,6 +10,7 @@
 #define __EonilGraphics__VertexAttributeChannel__
 
 #include "../../Common.h"
+#include "../Declarations.h"
 #include "../Buffer.h"
 #include "../_Legacy2013Compat.h"
 

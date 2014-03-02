@@ -16,7 +16,7 @@
 
 
 /*!
- `EONIL_MEDIA_ENGINE_TARGET_MINIMUM` means a virtual platform which support minimal common set.
+ `EONIL_MEDIA_ENGINE_TARGET_MINIMUM` means a virtual platform which support least common set.
  This is default implementation which is compatible to all supported platforms.
  Platform-specific optimization can be archived with another `EONIL_MEDIA_ENGINE_TARGET_...` 
  macros.

@@ -1,5 +1,5 @@
 //
-//  ____EonilImprovisationsMediaEngineApplicationController.h
+//  ____EonilImprovisationsMediaEngineApplicationController_iOS.h
 //  Application
 //
 //  Created by Hoon H. on 2/21/14.
@@ -26,8 +26,8 @@
  This class must be used only from main thread.
  Thread-unsafe, non-reentrant.
  */
-@interface	____EonilImprovisationsMediaEngineApplicationController : NSObject <UIApplicationDelegate>
-+ (int)	runWithArgc:(int)argc argv:(char*[])argv step:(void(^)(CGRect bounds))step;
+@interface	____EonilImprovisationsMediaEngineApplicationController_iOS : NSObject <UIApplicationDelegate>
++ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(void))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
 - (void)startDisplayTicking;
 - (void)stopDisplayTicking;
 - (void)displayLinkTick:(id)sender;

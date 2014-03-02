@@ -10,7 +10,7 @@
 #define __EonilGraphics___LineMeshForm__
 
 #include "../../Common.h"
-#include "../../Server/Machine.h"
+#include "../../Server/Declarations.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	

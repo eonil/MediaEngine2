@@ -10,6 +10,8 @@
 
 #include "../../Server/Symbols.h"
 #include "../../Server/Texture.h"
+#include "../../Server/Shader.h"
+#include "../../Server/Program.h"
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
@@ -170,11 +172,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					Matrix4	t1	=	Matrix4::Utility::scaleWithUniformScalar(inst.scale) * t0;
 					Matrix4	t2	=	Matrix4::Utility::rotationWithQuaternion(inst.rotation) * t1;
 					Matrix4	t3	=	Matrix4::Utility::translationWithVector(inst.translation) * t2;
+					Matrix4	t4	=	worldToScreenTransform * t3;
 					
 					auto	make_vertex	=
-					[&inst, &t3](Vector3 const& p, Vector2 const& uv) -> Vertex
+					[&inst, &t4](Vector3 const& p, Vector2 const& uv) -> Vertex
 					{
-						Vector3	p2	=	t3.transform(p);
+						Vector3	p2	=	t4.transform(p);
 						
 						Vertex	v{};
 						v.p		=	Vector2(p2.x, p2.y);

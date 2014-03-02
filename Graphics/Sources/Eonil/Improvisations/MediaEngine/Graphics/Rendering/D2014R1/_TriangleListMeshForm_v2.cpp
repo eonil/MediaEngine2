@@ -24,6 +24,10 @@
 
 #include "../../Stub/GL.h"
 
+#include "../../Server/Machine.h"
+#include "../../Server/Texture.h"
+#include "../../Server/Shader.h"
+#include "../../Server/Program.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 

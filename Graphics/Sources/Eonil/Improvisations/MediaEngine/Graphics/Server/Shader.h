@@ -39,7 +39,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 This does not retain any input resources, so you can freely free them all.
 			 */
 			VertexShader(str const& sourceCode);
-			VertexShader(str const& sourceCode, NameChannelMap const& attributeNamesForChannelsMapping) __attribute__((deprecated));	//	binding-attribute is different what I have been believed. All related code will be removed soon. Kept for legacy code compatibility.
 			VertexShader(VertexShader const&) = delete;
 			~VertexShader();
 			
@@ -51,6 +50,24 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	attributeNamesForChannelsMapping() const		->	NameChannelMap const&;
 			
 			auto	sourceCode() const								->	str;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		public:
+			/*!
+			 @deprecated
+			 Binding-attribute is different what I have been believed. 
+			 All related code will be removed soon. Kept for legacy code compatibility.
+			 Use other overloaded constructor method.
+			 */
+			VertexShader(str const& sourceCode, NameChannelMap const& attributeNamesForChannelsMapping) __attribute__((deprecated));
 		};
 		
 		

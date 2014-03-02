@@ -9,16 +9,10 @@
 #ifndef __EonilGraphics__Machine__
 #define __EonilGraphics__Machine__
 
-#include "Symbols.h"
-#include "Program.h"
-#include "Shader.h"
-#include "Texture.h"
-#include "Buffer.h"
-#include "Framebuffer.h"
+#include "../Common.h"
+#include "Declarations.h"
 
-#include "Machinery/VertexAttributeChannel.h"
-#include "Machinery/IndexUnitChannel.h"
-#include "Machinery/TextureSampler.h"
+#include "Machinery/CompositionMode.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 
@@ -44,11 +38,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		Machine 
 		{
 			std::vector<VertexAttributeChannel>	_chs;
-			IndexUnitChannel					_idxch;
+			uptr<IndexUnitChannel>				_idxch_ptr;
 			std::vector<TextureSampler>			_tus;
 			
+			CompositionMode						_comp_mode	{};
+			
 			Machine();
-			Machine(Machine const& origin);					//	Copy prohibited.
+			Machine(Machine const& origin) = delete;					//	Copy prohibited.
 			
 		public:
 			static Machine&						machine();
@@ -76,9 +72,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			void								setViewport(Bounds2 const bounds);		//!	Bounds in client windows coordinate space.
 			void								unsetViewport();
 			
-			void								setScissor(Bounds2 const bounds);		//!	Bounds in client windows coordinate space.
-			void								unsetScissor();
 			
+			
+			
+			
+			auto	compositionMode() const -> CompositionMode const&;
+			auto	compositionMode() -> CompositionMode&;
+			
+			
+			
+
+			
+			
+			
+			
+			
+			
+			
+			/*
+			 Drawings.
+			 */
+		public:
 //			void	drawArrays();																		//	Draws all data as triangle strip.
 //			void	drawArrays(Size const index, Size const count);										//	Draws as triangle strip.
 //			void	drawArrays(DrawingMode const mode);
@@ -123,6 +137,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			bool	_validity_program_designation	=	false;
 			
 			
+			
+			
+		public:
+			EONIL_MEDIA_ENGINE_DEPRECATE_WITH_MESSAGE("Use `compositionMode` method.")	auto	setScissor(Bounds2 const bounds) -> void ;		//!	Bounds in client windows coordinate space.
+			EONIL_MEDIA_ENGINE_DEPRECATE_WITH_MESSAGE("Use `compositionMode` method.")	auto	unsetScissor() -> void;
 			
 		};
 		

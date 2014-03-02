@@ -10,6 +10,11 @@
 
 #include "../../Stub/GL.h"
 
+#include "../../Server/Machine.h"
+#include "../../Server/Texture.h"
+#include "../../Server/Shader.h"
+#include "../../Server/Program.h"
+#include "../../Server/_Legacy2013Compat.h"
 
 
 

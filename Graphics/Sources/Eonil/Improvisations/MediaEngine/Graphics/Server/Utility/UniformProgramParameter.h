@@ -10,6 +10,7 @@
 #define __Graphics__UniformProgramParameter__
 
 #include "../../Common.h"
+#include "../../Server/Declarations.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
