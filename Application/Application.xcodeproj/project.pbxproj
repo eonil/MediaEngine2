@@ -60,6 +60,9 @@
 		4577C99318B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053518B6A59A00FCFCBD /* ApplicationController.mm */; };
 		4577C99418B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053318B6A59300FCFCBD /* ApplicationController.mm */; };
 		4577C99518B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053518B6A59A00FCFCBD /* ApplicationController.mm */; };
+		457A6C1C18C985DD007BD4D6 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457A6C1A18C985DD007BD4D6 /* Application.cpp */; };
+		457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457A6C1A18C985DD007BD4D6 /* Application.cpp */; };
+		457A6C1E18C985DD007BD4D6 /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = 457A6C1B18C985DD007BD4D6 /* Application.h */; };
 		4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
@@ -233,6 +236,8 @@
 		4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96818B6A70D0078033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		457A6C1A18C985DD007BD4D6 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		457A6C1B18C985DD007BD4D6 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		4595B3D018BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bundle_Apple_Foundation_Impl.hpp; sourceTree = "<group>"; };
 		4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bundle_Apple_OSX_Impl.mm; sourceTree = "<group>"; };
 		4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bundle_Apple_iOS_Impl.mm; sourceTree = "<group>"; };
@@ -435,6 +440,8 @@
 				4529052E18B6A56000FCFCBD /* run.cpp */,
 				4529052F18B6A56000FCFCBD /* run.h */,
 				4529053018B6A57C00FCFCBD /* Apple */,
+				457A6C1A18C985DD007BD4D6 /* Application.cpp */,
+				457A6C1B18C985DD007BD4D6 /* Application.h */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -603,6 +610,7 @@
 				450E0D7E18BDE3BC003D51E0 /* Bundle.h in Headers */,
 				45485FAD18B97535005981DA /* Stepping.h in Headers */,
 				45C49E9118B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h in Headers */,
+				457A6C1E18C985DD007BD4D6 /* Application.h in Headers */,
 				45C49E9918B75A6100544108 /* TestRendering1.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,6 +911,7 @@
 			files = (
 				4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C99118B6ABC80078033C /* run.cpp in Sources */,
+				457A6C1C18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */,
 				450E0D7C18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
 				45C49E9218B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
@@ -920,6 +929,7 @@
 			files = (
 				4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
+				457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C99018B6ABC80078033C /* run.cpp in Sources */,
 				450E0D7D18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
 				45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
@@ -1448,6 +1458,7 @@
 				453F1DE318C308D4000C25CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4577C95F18B6A7060078033C /* Build configuration list for PBXNativeTarget "OSX Static Library" */ = {
 			isa = XCConfigurationList;

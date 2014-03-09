@@ -100,18 +100,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		{
 			union
 			{
-				EEScalar	components[2];
+				Scalar	components[2];
 				struct
 				{
-					EEScalar	x, y;
+					Scalar	x, y;
 				};
 				struct
 				{
-					EEScalar	s, t;
+					Scalar	s, t;
 				};
 //					struct
 //					{
-//						EEScalar	r, g;
+//						Scalar	r, g;
 //					};
 			};
 		};
@@ -123,18 +123,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		{
 			union
 			{
-				EEScalar	components[3];
+				Scalar	components[3];
 				struct
 				{
-					EEScalar	x, y, z;
+					Scalar	x, y, z;
 				};
 				struct
 				{
-					EEScalar	s, t, p;
+					Scalar	s, t, p;
 				};
 //					struct
 //					{
-//						EEScalar	r, g, b;
+//						Scalar	r, g, b;
 //					};
 			};
 		};
@@ -145,18 +145,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		{
 			union
 			{
-				EEScalar	components[4];
+				Scalar	components[4];
 				struct
 				{
-					EEScalar	x, y, z, w;
+					Scalar	x, y, z, w;
 				};
 				struct
 				{
-					EEScalar	s, t, p, q;
+					Scalar	s, t, p, q;
 				};
 //					struct
 //					{
-//						EEScalar	r, g, b, a;
+//						Scalar	r, g, b, a;
 //					};
 			};
 		}

@@ -130,7 +130,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		auto UnknownTypeObjectTrackingPointerSlot::
 		operator!=(const Eonil::Improvisations::MediaEngine::Foundation::D2014R1::UnknownTypeObjectTrackingPointerSlot &slot) const -> bool
 		{
-			return	_ptr == slot._ptr;
+			return	_ptr != slot._ptr;
 		}
 		
 		

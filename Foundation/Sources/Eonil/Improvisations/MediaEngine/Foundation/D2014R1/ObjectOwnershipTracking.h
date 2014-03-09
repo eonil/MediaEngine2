@@ -50,7 +50,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		
 		/*
 		 With unique ownership object management, we need to make it alive
-		 until all the client objects gone. Sometimes it's hard because;
+		 until all the referencing objects gone. Sometimes it's hard because;
 		 
 		 1.	The dereferencing to a dangling pointer happens very later then the
 			object freed.
@@ -61,12 +61,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		 
 		 This class developed to get easier with this kind of error.
 		 This behaves just like a bare pointer slot, but performs automatic 
-		 retaining/releasing of ownership on the target object. This ownership 
-		 management is virtual, so it doesn not trigger actual lifecycle management,
-		 but the target object can track all the vitual owners, so it can notify
-		 an error if it is going to be freed with active owners.
+		 retaining/releasing of ownership on the target object in debug build. This 
+		 ownership management is counting-only, so it doesn not trigger actual 
+		 lifecycle  management, but the target object can track all the counted
+		 owners, so it can notify an error if it is going to be freed with active 
+		 owners.
 		 
-		 Behaviors of this class are struct subset of a bare pointer.
+		 Behaviors of this class are strict subset of a bare pointer.
 		 It can be replaced with bare pointer without any modification. 
 		 Anyway some operations which are not required to point remote object 
 		 are not supported. (e.g. arithmetics)
@@ -157,7 +158,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			auto
 			operator*() -> T&
 			{
-				return	static_cast<T&>(UnknownTypeObjectTrackingPointerSlot::operator*());
+				return	(T&)(UnknownTypeObjectTrackingPointerSlot::operator*());
 			}
 			
 			auto
@@ -168,8 +169,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			auto
 			operator->() -> T*
 			{
-				return	static_cast<T*>(UnknownTypeObjectTrackingPointerSlot::operator->());
+				/*!
+				 Force to cast away the const-ness. 
+				 That's fine because this object can be built only with mutable pointer.
+				 */
+				return	(T*)(UnknownTypeObjectTrackingPointerSlot::operator->());
 			}
+//			operator T const*() const
+//			{
+//				return	operator->();
+//			}
+//			operator T*()
+//			{
+//				return	operator->();
+//			}
 		};
 
 

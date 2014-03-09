@@ -30,9 +30,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		/*!
 		 @brief				A uniquely owned memory range.
 		 
-		 @classdesign		This is just a proxy editor around memory of value strip. This class
-							does not perform any allocation and initialization. Deallocation may
-							be performed by setting a special template parameter `OWNERSHIP`.
+		 @classdesign		This is a proxy editor around memory of value strip. This class
+							owns the memory range, and deallocates it when dies.
 		 
 		 @discussion		User always use this for existing - already initialized - value strip.
 							This class does not allocate any memory.

@@ -27,7 +27,8 @@
 #include "Geometry/AxisAngle.h"
 #include "Geometry/Matrix.h"
 #include "Geometry/Transform.h"
-#include "Geometry/Spline.h"
+//#include "Geometry/Spline.h"
+#include "Geometry/D2014R2/Spline2.h"
 
 #endif
 

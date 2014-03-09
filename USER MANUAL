@@ -8,133 +8,73 @@ Hoon H.
 
 
 
-
-
-
-
 Getting Started
 ---------------
-This is a minimal loop configuration, and shows conceptual running.
+This is a minimal loop setup.
 
 	class
 	Foo1
 	{
 	public:
-		auto
-		stepSimulation() -> void		//!	This method will be called for each frame.
+		Foo1()
 		{
-			printf("Hello World!");
+			//	Load media resources.
+		}
+		~Foo1()
+		{
+			//	Unload media resources.
+		}
+		auto
+		step(Stepping const&) -> void
+		{
+			//	Perform stepping simulation and render media.
 		}
 	};
-	
 	
 	int main(int, char**)
 	{
-		Foo1	foo1{};
-
-		auto	
-		step = [&foo1]() -> void
-		{
-			foo1.stepSimulation();
-		};
-
-		Eonil::Improvisations::MediaEngine::Application::run(step);
+		Eonil::Improvisations::MediaEngine::Application::run<Foo1>(argc, argv);
 	}
 
-In practice, you need to load graphics resources with configured GL context.
-GL context will be configure automatically while `Application::run` method is
-running, so whatever you do in the stepping, it will take current GL context
-automatically.
-
-
-	class
-	FooGameSession1
-	{
-		bool
-	public:
-		FooGameSession1()
-		{
-			//	Load any GL resources here.
-		}
-		~FooGameSession1()
-		{
-			//	Unload any GL resources here.
-		}
-		auto 
-		step() -> void
-		{
-			//	Run game stepping.
-		}
-		auto 
-		continueStepping() -> bool
-		{
-			//	Return game continuity.
-		}
-	};
+The run function will create/step/delete the `Foo1` object.
+All related media devices are all ready while the object is alive. So you can
+follow RAII to manage resources.
+Only one of `Foo1` instance will be made by the run function at a time and it 
+will not copy or move the object. So you also can do this.
 
 	class
 	Foo1
 	{
-		FooGameSession1*	_current_game_session	{nullptr};
-
 	public:
-		auto
-		stepSimulation() -> void		//!	This method will be called for each frame.
+		Foo1(Foo1 const&) = delete;
+		Foo1(Foo1&&) = delete;
+
+		Foo1()
 		{
-			if (_current_game_session == nullptr)
-			{
-				_current_game_session	=	new FooGameSession1();
-			}
-			else
-			{
-				
-			}
-			FooGameSession1
+			//	Load media resources.
+		}
+		~Foo1()
+		{
+			//	Unload media resources.
+		}
+		auto
+		step(Stepping const&) -> void
+		{
+			//	Perform stepping simulation and render media.
 		}
 	};
-
+	
 	int main(int, char**)
 	{
-		Foo1	foo1{};
-
-		auto	
-		step = [&foo1]() -> void
-		{
-
-			foo1.stepSimulation();
-		};
-		
-		auto
-		prepare = [&foo1]() -> void
-		{
-			foo1.prepareResources();
-		};
-
-		auto
-		clear = [&foo1]() -> void
-		{
-			foo1.clearResources();
-		};
-
-		Eonil::Improvisations::MediaEngine::Application::run(step, prepare, clear);
+		Eonil::Improvisations::MediaEngine::Application::run<Foo1>(argc, argv);
 	}
 
-But, this doesn't seem to follow RIIA rule. For that we need to separate concept of
-graphics resource session. Here's more typical loop design.
 
-	class
-	GraphicsResourceSession1
-	{
-	public:
-		GraphicsResourceSession1()
-		{
-			//	Load GL resources.
-		}
-		~GraphicsResourceSession1()
-		{
-			//	Unload GL resources.
-		}
-	};
+
+
+
+
+
 
 
 
@@ -149,28 +89,37 @@ graphics resource session. Here's more typical loop design.
 Explanation and `Application` class
 -----------------------------------
 MediaEngine library is passive library, and doesn't require your main
-application loop. So basically, you have to setup your application loop,
+application loop. Basically, you have to setup your application loop,
 prepare OpenGL drawable surface, and call rendering method yourself. But
-that's repeating and boring work, so I prepared convenient helper class
-`Application`.
+that's repeating and boring work, so I prepared convenient helper classes in
+`Application` namespace.
 
 The code will perform every platform specific operations for you. If the platform
-support program exit, then this will return grafully by user interaction. If the
-platform doesn't support exit, then this will not return. All the application 
+supports quitting of programs, then this will return grafully by the program exit.
+If the platform doesn't support exit, then this will not return. All the application
 events such as foreground, background or hybernation will be handled correctly.
 
-Anyway the class doesn't dispose any OpenGL server-side objects. On iOS this may
-cause some problem. Because the OS may kill your process if graphics memory (VRAM)
-becomes insufficient when your app is in background. Usually this doesn't matter 
-because this is very natural behavior of all iOS apps. But if you want extreme
-optimization, then you have to manage them yourself. For that, the `Application`
-class will provide several event handlers which can be provided by you for this 
-kind of common OS events. But if you want to handle some special OS event, then
-you have to build application event loop yourself. 
+Application feature occupies some system features for proper handling. For example,
+in iOS, `UIApplication`'s delegate will be set by this feature. So you shouldn't 
+override the delegate object yourself. There can be more os this kind of hidden
+gotchas, so you shouldn't use application part of your platform when using 
+`Application` feature.
+
+Application feature may provide platform specific behaviors, but there's none 
+currently.
 
 You can see source code of `Application` class to get idea of how to implement 
 application even loop for each platforms. Anyway the implementation of 
-`Application` isn't fixed, so can be changed at any time.
+`Application` isn't fixed, so can be changed at any time. If you really want to 
+customize them, then fork the `Application` features.
+
+
+
+
+
+
+
+
 
 
 
@@ -209,9 +158,21 @@ API.
 Anyway, there's an exception - the resource loading. You can load resources
 parallelly using OpenGL API. But this require secondary GL context and shared
 resource group feature. And controlling its operation is too complex, so I do
-not support this feature now. Even if I do support this feature, it requires 
-complete control on secondary thread, so there will be no general multi-
+not support this feature now. Even if I do support this feature, the separated
+thread control will be done in this library, so there will be no general multi-
 threading support.
+
+OpenGL is generally single threaded, but each platforms may have additional
+behaviors. Refer your platform manuals for that. Note: iOS and OS X does not
+have any extra threading cautions.
+
+
+
+
+
+
+
+
 
 
 

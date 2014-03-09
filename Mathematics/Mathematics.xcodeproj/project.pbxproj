@@ -35,9 +35,9 @@
 		45150AB518A6A22C0007BE6B /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9B18A6A22C0007BE6B /* Quaternion.cpp */; };
 		45150AB618A6A22C0007BE6B /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9B18A6A22C0007BE6B /* Quaternion.cpp */; };
 		45150AB718A6A22C0007BE6B /* Quaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 45150A9C18A6A22C0007BE6B /* Quaternion.h */; };
-		45150AB818A6A22C0007BE6B /* Spline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9D18A6A22C0007BE6B /* Spline.cpp */; };
-		45150AB918A6A22C0007BE6B /* Spline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9D18A6A22C0007BE6B /* Spline.cpp */; };
-		45150ABA18A6A22C0007BE6B /* Spline.h in Headers */ = {isa = PBXBuildFile; fileRef = 45150A9E18A6A22C0007BE6B /* Spline.h */; };
+		45150AB818A6A22C0007BE6B /* Spline1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9D18A6A22C0007BE6B /* Spline1.cpp */; };
+		45150AB918A6A22C0007BE6B /* Spline1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9D18A6A22C0007BE6B /* Spline1.cpp */; };
+		45150ABA18A6A22C0007BE6B /* Spline1.h in Headers */ = {isa = PBXBuildFile; fileRef = 45150A9E18A6A22C0007BE6B /* Spline1.h */; };
 		45150ABB18A6A22C0007BE6B /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9F18A6A22C0007BE6B /* Transform.cpp */; };
 		45150ABC18A6A22C0007BE6B /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A9F18A6A22C0007BE6B /* Transform.cpp */; };
 		45150ABD18A6A22C0007BE6B /* Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 45150AA018A6A22C0007BE6B /* Transform.h */; };
@@ -64,6 +64,12 @@
 		4585171F18AE59140074DBC1 /* ImplementationOnlyGLM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4585171D18AE59140074DBC1 /* ImplementationOnlyGLM.cpp */; };
 		4585172018AE59140074DBC1 /* ImplementationOnlyGLM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4585171D18AE59140074DBC1 /* ImplementationOnlyGLM.cpp */; };
 		4585172118AE59140074DBC1 /* ImplementationOnlyGLM.h in Headers */ = {isa = PBXBuildFile; fileRef = 4585171E18AE59140074DBC1 /* ImplementationOnlyGLM.h */; };
+		45F2DB7D18C4F95100D32978 /* ImplementationOnlyConvertion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2DB7B18C4F95100D32978 /* ImplementationOnlyConvertion.cpp */; };
+		45F2DB7E18C4F95100D32978 /* ImplementationOnlyConvertion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2DB7B18C4F95100D32978 /* ImplementationOnlyConvertion.cpp */; };
+		45F2DB7F18C4F95100D32978 /* ImplementationOnlyConvertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2DB7C18C4F95100D32978 /* ImplementationOnlyConvertion.h */; };
+		45F2DB8318C4FF3300D32978 /* Spline2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2DB8118C4FF3300D32978 /* Spline2.cpp */; };
+		45F2DB8418C4FF3300D32978 /* Spline2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2DB8118C4FF3300D32978 /* Spline2.cpp */; };
+		45F2DB8518C4FF3300D32978 /* Spline2.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2DB8218C4FF3300D32978 /* Spline2.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,8 +152,8 @@
 		45150A9A18A6A22C0007BE6B /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		45150A9B18A6A22C0007BE6B /* Quaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quaternion.cpp; sourceTree = "<group>"; };
 		45150A9C18A6A22C0007BE6B /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
-		45150A9D18A6A22C0007BE6B /* Spline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spline.cpp; sourceTree = "<group>"; };
-		45150A9E18A6A22C0007BE6B /* Spline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spline.h; sourceTree = "<group>"; };
+		45150A9D18A6A22C0007BE6B /* Spline1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spline1.cpp; sourceTree = "<group>"; };
+		45150A9E18A6A22C0007BE6B /* Spline1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spline1.h; sourceTree = "<group>"; };
 		45150A9F18A6A22C0007BE6B /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
 		45150AA018A6A22C0007BE6B /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		45150AA118A6A22C0007BE6B /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
@@ -165,6 +171,10 @@
 		4585171318AE58240074DBC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4585171D18AE59140074DBC1 /* ImplementationOnlyGLM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImplementationOnlyGLM.cpp; sourceTree = "<group>"; };
 		4585171E18AE59140074DBC1 /* ImplementationOnlyGLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplementationOnlyGLM.h; sourceTree = "<group>"; };
+		45F2DB7B18C4F95100D32978 /* ImplementationOnlyConvertion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImplementationOnlyConvertion.cpp; sourceTree = "<group>"; };
+		45F2DB7C18C4F95100D32978 /* ImplementationOnlyConvertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplementationOnlyConvertion.h; sourceTree = "<group>"; };
+		45F2DB8118C4FF3300D32978 /* Spline2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spline2.cpp; sourceTree = "<group>"; };
+		45F2DB8218C4FF3300D32978 /* Spline2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spline2.h; sourceTree = "<group>"; };
 		45F35FA218AE527000AF0EDC /* .system_framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .system_framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -335,6 +345,8 @@
 				4585171E18AE59140074DBC1 /* ImplementationOnlyGLM.h */,
 				45150AD118A6A5920007BE6B /* ImplementationOnlyCommon.cpp */,
 				45150AD218A6A5920007BE6B /* ImplementationOnlyCommon.h */,
+				45F2DB7B18C4F95100D32978 /* ImplementationOnlyConvertion.cpp */,
+				45F2DB7C18C4F95100D32978 /* ImplementationOnlyConvertion.h */,
 				45150ACB18A6A4D40007BE6B /* Debugging */,
 				45150A8D18A6A2060007BE6B /* Geometry */,
 				45150AC118A6A2BD0007BE6B /* Mathematics.cpp */,
@@ -362,8 +374,9 @@
 				45150A9A18A6A22C0007BE6B /* Matrix.h */,
 				45150A9F18A6A22C0007BE6B /* Transform.cpp */,
 				45150AA018A6A22C0007BE6B /* Transform.h */,
-				45150A9D18A6A22C0007BE6B /* Spline.cpp */,
-				45150A9E18A6A22C0007BE6B /* Spline.h */,
+				45150A9D18A6A22C0007BE6B /* Spline1.cpp */,
+				45150A9E18A6A22C0007BE6B /* Spline1.h */,
+				45F2DB8018C4FF2200D32978 /* D2014R2 */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -371,8 +384,8 @@
 		45150A9418A6A22C0007BE6B /* Conversion */ = {
 			isa = PBXGroup;
 			children = (
-				45150A9718A6A22C0007BE6B /* Unions.h */,
 				45150A9818A6A22C0007BE6B /* Unions.mm */,
+				45150A9718A6A22C0007BE6B /* Unions.h */,
 			);
 			path = Conversion;
 			sourceTree = "<group>";
@@ -396,6 +409,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		45F2DB8018C4FF2200D32978 /* D2014R2 */ = {
+			isa = PBXGroup;
+			children = (
+				45F2DB8118C4FF3300D32978 /* Spline2.cpp */,
+				45F2DB8218C4FF3300D32978 /* Spline2.h */,
+			);
+			path = D2014R2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -405,7 +427,7 @@
 			files = (
 				45150AD518A6A5920007BE6B /* ImplementationOnlyCommon.h in Headers */,
 				4585172118AE59140074DBC1 /* ImplementationOnlyGLM.h in Headers */,
-				45150ABA18A6A22C0007BE6B /* Spline.h in Headers */,
+				45150ABA18A6A22C0007BE6B /* Spline1.h in Headers */,
 				45150AD018A6A4E00007BE6B /* Doctor.h in Headers */,
 				45150AB418A6A22C0007BE6B /* Matrix.h in Headers */,
 				45150ACA18A6A2C70007BE6B /* Common.h in Headers */,
@@ -414,7 +436,9 @@
 				45150AAF18A6A22C0007BE6B /* Unions.h in Headers */,
 				45150AAB18A6A22C0007BE6B /* Bounds2.h in Headers */,
 				45150ABD18A6A22C0007BE6B /* Transform.h in Headers */,
+				45F2DB7F18C4F95100D32978 /* ImplementationOnlyConvertion.h in Headers */,
 				45150AA518A6A22C0007BE6B /* AxisAngle.h in Headers */,
+				45F2DB8518C4FF3300D32978 /* Spline2.h in Headers */,
 				45150AA818A6A22C0007BE6B /* Bounds.h in Headers */,
 				45150AC018A6A22C0007BE6B /* Vector.h in Headers */,
 			);
@@ -571,14 +595,16 @@
 				45150ABB18A6A22C0007BE6B /* Transform.cpp in Sources */,
 				45150AD318A6A5920007BE6B /* ImplementationOnlyCommon.cpp in Sources */,
 				45150AB218A6A22C0007BE6B /* Matrix.cpp in Sources */,
+				45F2DB7E18C4F95100D32978 /* ImplementationOnlyConvertion.cpp in Sources */,
 				45150ACE18A6A4E00007BE6B /* Doctor.cpp in Sources */,
 				45150ABE18A6A22C0007BE6B /* Vector.cpp in Sources */,
 				45150AA618A6A22C0007BE6B /* Bounds.cpp in Sources */,
 				45150AB018A6A22C0007BE6B /* Unions.mm in Sources */,
 				45150AA318A6A22C0007BE6B /* AxisAngle.cpp in Sources */,
 				45150AB518A6A22C0007BE6B /* Quaternion.cpp in Sources */,
-				45150AB818A6A22C0007BE6B /* Spline.cpp in Sources */,
+				45150AB818A6A22C0007BE6B /* Spline1.cpp in Sources */,
 				4585172018AE59140074DBC1 /* ImplementationOnlyGLM.cpp in Sources */,
+				45F2DB8418C4FF3300D32978 /* Spline2.cpp in Sources */,
 				45150AC318A6A2BD0007BE6B /* Mathematics.cpp in Sources */,
 				45150AA918A6A22C0007BE6B /* Bounds2.cpp in Sources */,
 				45150AC818A6A2C70007BE6B /* Common.cpp in Sources */,
@@ -592,14 +618,16 @@
 				45150ABC18A6A22C0007BE6B /* Transform.cpp in Sources */,
 				45150AD418A6A5920007BE6B /* ImplementationOnlyCommon.cpp in Sources */,
 				45150AB318A6A22C0007BE6B /* Matrix.cpp in Sources */,
+				45F2DB7D18C4F95100D32978 /* ImplementationOnlyConvertion.cpp in Sources */,
 				45150ACF18A6A4E00007BE6B /* Doctor.cpp in Sources */,
 				45150ABF18A6A22C0007BE6B /* Vector.cpp in Sources */,
 				45150AA718A6A22C0007BE6B /* Bounds.cpp in Sources */,
 				45150AB118A6A22C0007BE6B /* Unions.mm in Sources */,
 				45150AA418A6A22C0007BE6B /* AxisAngle.cpp in Sources */,
 				45150AB618A6A22C0007BE6B /* Quaternion.cpp in Sources */,
-				45150AB918A6A22C0007BE6B /* Spline.cpp in Sources */,
+				45150AB918A6A22C0007BE6B /* Spline1.cpp in Sources */,
 				4585171F18AE59140074DBC1 /* ImplementationOnlyGLM.cpp in Sources */,
+				45F2DB8318C4FF3300D32978 /* Spline2.cpp in Sources */,
 				45150AC418A6A2BD0007BE6B /* Mathematics.cpp in Sources */,
 				45150AAA18A6A22C0007BE6B /* Bounds2.cpp in Sources */,
 				45150AC918A6A2C70007BE6B /* Common.cpp in Sources */,

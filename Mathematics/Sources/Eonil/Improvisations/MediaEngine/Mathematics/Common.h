@@ -17,19 +17,29 @@
 using		namespace Eonil::Improvisations::CommonUtility;
 
 
-extern "C"
-{
-	typedef	float	EEScalar;
-}
+//extern "C"
+//{
+//	typedef	float	EEScalar;
+//}
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics {
 	
 	namespace
 	Value
 	{
-		using	Scalar	=	EEScalar;
+		/*!
+		 Currently, the type of scalar is defined as 32-bit float, 
+		 but it's not fixed to 32-bit float, and can be changed later.
+		 Do not rely on `float_t` for `Scalar` type, and always use 
+		 `Scalar` type.
+		 */
+		using	Scalar	=	float_t;
+		using	Vector1	=	Scalar;
 		
+		struct	Vector2;
+		struct	Vector3;
 		struct	Vector4;
+		
 		struct	Matrix4;
 	}
 	
