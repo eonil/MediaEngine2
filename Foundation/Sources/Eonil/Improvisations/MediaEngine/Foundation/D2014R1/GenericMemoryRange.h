@@ -38,9 +38,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			_MemoryRangeAbstraionLevel1() = default;
 			_MemoryRangeAbstraionLevel1(T* begin, T* end) : _begin(begin), _end(end)
 			{
-				EONIL_DEBUG_ASSERT(_begin != nullptr);
-				EONIL_DEBUG_ASSERT(_end != nullptr);
-				EONIL_DEBUG_ASSERT(_begin < _end);
+				EONIL_DEBUG_ASSERT((_begin != nullptr and _end != nullptr and _begin < _end) or (_begin == nullptr and _end == nullptr));
 			}
 
 		public:

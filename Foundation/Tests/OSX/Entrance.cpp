@@ -89,6 +89,13 @@ int main(int argc, const char * argv[])
 			}
 			delete	p0;
 		}
+		{
+			GenericMemoryRange<int>	r1	{nullptr, nullptr};
+		}
+		{
+			vec<int>	v1	=	{1,2,3,4};
+			GenericMemoryRange<int>	r1	{v1.data(), v1.size()};
+		}
 	}
 	
 	// insert code here...
