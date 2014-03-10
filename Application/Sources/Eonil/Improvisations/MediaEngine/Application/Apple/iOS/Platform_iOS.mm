@@ -1,12 +1,12 @@
 //
-//  Platform.cpp
+//  Platform_iOS.cpp
 //  Application
 //
 //  Created by Hoon H. on 3/11/14.
 //
 //
 
-#include "Platform.h"
+#include "Platform_iOS.h"
 
 #if	EONIL_MEDIA_ENGINE_TARGET_IOS
 

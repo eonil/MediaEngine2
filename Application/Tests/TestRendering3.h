@@ -15,8 +15,7 @@
 
 #include "run.h"
 #include "Bundle.h"
-
-#include "../Sources/Eonil/Improvisations/MediaEngine/Application/Apple/iOS/Platform.h"
+#include "Platform.h"
 
 using namespace Eonil::Improvisations::MediaEngine::Mathematics;
 using namespace Eonil::Improvisations::MediaEngine::Mathematics::Value;

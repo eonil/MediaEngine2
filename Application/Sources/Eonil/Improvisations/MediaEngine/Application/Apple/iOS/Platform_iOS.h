@@ -1,13 +1,13 @@
 //
-//  Platform.h
+//  Platform_iOS.h
 //  Application
 //
 //  Created by Hoon H. on 3/11/14.
 //
 //
 
-#ifndef __Application__Platform__
-#define __Application__Platform__
+#ifndef __Application__Platform_iOS__
+#define __Application__Platform_iOS__
 
 #include "../../Stepping.h"
 #include "../../run.h"
@@ -84,4 +84,4 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 
 #endif	//	EONIL_MEDIA_ENGINE_TARGET_IOS
 
-#endif /* defined(__Application__Platform__) */
+#endif /* defined(__Application__Platform_iOS__) */

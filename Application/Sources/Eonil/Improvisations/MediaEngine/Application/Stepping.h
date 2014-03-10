@@ -25,8 +25,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	
-	struct
-	Platform;
 	
 	
 	/*!

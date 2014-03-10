@@ -52,7 +52,10 @@
 		45485FAB18B97535005981DA /* Stepping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45485FA918B97535005981DA /* Stepping.cpp */; };
 		45485FAC18B97535005981DA /* Stepping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45485FA918B97535005981DA /* Stepping.cpp */; };
 		45485FAD18B97535005981DA /* Stepping.h in Headers */ = {isa = PBXBuildFile; fileRef = 45485FAA18B97535005981DA /* Stepping.h */; };
-		455D704C18CE102C00040198 /* Platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 455D704A18CE102C00040198 /* Platform.mm */; };
+		455D704C18CE102C00040198 /* Platform_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 455D704A18CE102C00040198 /* Platform_iOS.mm */; };
+		455D706C18CE1E6700040198 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 455D706918CE1E6700040198 /* Platform.h */; };
+		455D707A18CE1EAC00040198 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455D707918CE1EAC00040198 /* Platform.cpp */; };
+		455D707B18CE1EAC00040198 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455D707918CE1EAC00040198 /* Platform.cpp */; };
 		4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */; };
@@ -237,8 +240,10 @@
 		453F1DCC18C308D3000C25CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45485FA918B97535005981DA /* Stepping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stepping.cpp; sourceTree = "<group>"; };
 		45485FAA18B97535005981DA /* Stepping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stepping.h; sourceTree = "<group>"; };
-		455D704A18CE102C00040198 /* Platform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Platform.mm; sourceTree = "<group>"; };
-		455D704B18CE102C00040198 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		455D704A18CE102C00040198 /* Platform_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Platform_iOS.mm; sourceTree = "<group>"; };
+		455D704B18CE102C00040198 /* Platform_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform_iOS.h; sourceTree = "<group>"; };
+		455D706918CE1E6700040198 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		455D707918CE1EAC00040198 /* Platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Platform.cpp; sourceTree = "<group>"; };
 		4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96818B6A70D0078033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -445,6 +450,8 @@
 				45485FAA18B97535005981DA /* Stepping.h */,
 				450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */,
 				450E0D7B18BDE3BC003D51E0 /* Bundle.h */,
+				455D707918CE1EAC00040198 /* Platform.cpp */,
+				455D706918CE1E6700040198 /* Platform.h */,
 				4529052E18B6A56000FCFCBD /* run.cpp */,
 				4529052F18B6A56000FCFCBD /* run.h */,
 				4529053018B6A57C00FCFCBD /* Apple */,
@@ -467,8 +474,8 @@
 		4529053118B6A57C00FCFCBD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				455D704A18CE102C00040198 /* Platform.mm */,
-				455D704B18CE102C00040198 /* Platform.h */,
+				455D704A18CE102C00040198 /* Platform_iOS.mm */,
+				455D704B18CE102C00040198 /* Platform_iOS.h */,
 				4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */,
 				4529053318B6A59300FCFCBD /* ApplicationController.mm */,
 				4529053418B6A59300FCFCBD /* ApplicationController.h */,
@@ -620,6 +627,7 @@
 				450E0D7E18BDE3BC003D51E0 /* Bundle.h in Headers */,
 				45485FAD18B97535005981DA /* Stepping.h in Headers */,
 				45C49E9118B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h in Headers */,
+				455D706C18CE1E6700040198 /* Platform.h in Headers */,
 				457A6C1E18C985DD007BD4D6 /* Application.h in Headers */,
 				45C49E9918B75A6100544108 /* TestRendering1.h in Headers */,
 			);
@@ -929,6 +937,7 @@
 				4577C99418B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
 				4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
+				455D707A18CE1EAC00040198 /* Platform.cpp in Sources */,
 				45485FAB18B97535005981DA /* Stepping.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -937,10 +946,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455D707B18CE1EAC00040198 /* Platform.cpp in Sources */,
 				4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
 				4538D52618CD26D200066D7E /* TestRendering3.mm in Sources */,
-				455D704C18CE102C00040198 /* Platform.mm in Sources */,
+				455D704C18CE102C00040198 /* Platform_iOS.mm in Sources */,
 				457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C99018B6ABC80078033C /* run.cpp in Sources */,
 				450E0D7D18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
