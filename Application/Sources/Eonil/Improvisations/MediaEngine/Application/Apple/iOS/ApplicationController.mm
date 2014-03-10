@@ -10,6 +10,8 @@
 
 #if	EONIL_MEDIA_ENGINE_TARGET_IOS
 
+#include "Stepping.h"
+#include "Platform.h"
 
 
 
@@ -25,11 +27,13 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Application {
 	
 	
+		
+	
 	
 	
 	
 	auto
-	run(int argc, char *argv[], std::function<void(Stepping const&)> const& step) -> int
+	run(int argc, char *argv[], STEP const& step) -> int
 	{
 		return
 		run(argc, argv, []{}, []{}, step);
@@ -53,25 +57,28 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		{
 			return
 			[____EonilImprovisationsMediaEngineApplicationController_iOS runWithArgc:argc argv:argv
-			prepare:^
-			{
+			prepare:^(UIViewController* mvc)
+			 {
+				Platform::_init(mvc);
 				prepare();
 			}
-			cleanup:^
+			cleanup:^()
 			{
 				cleanup();
+				Platform::_term();
 			}
-			step:^(CGRect bounds)
+			step:^(CGRect boundsInPixels)
 			{
-				Scalar	minx	{toEE(CGRectGetMinX(bounds))};
-				Scalar	maxx	{toEE(CGRectGetMaxX(bounds))};
-				Scalar	miny	{toEE(CGRectGetMinY(bounds))};
-				Scalar	maxy	{toEE(CGRectGetMaxY(bounds))};
+				Scalar	minx	{toEE(CGRectGetMinX(boundsInPixels))};
+				Scalar	maxx	{toEE(CGRectGetMaxX(boundsInPixels))};
+				Scalar	miny	{toEE(CGRectGetMinY(boundsInPixels))};
+				Scalar	maxy	{toEE(CGRectGetMaxY(boundsInPixels))};
 				
 				Bounds2				b	{minx, miny, maxx, maxy};
 				DisplayScreenFrame	f	{b};
 				{
-					step({f});
+					Stepping		s	{f};
+					step(s);
 				}
 			}];
 		}

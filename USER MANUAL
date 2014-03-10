@@ -101,12 +101,9 @@ events such as foreground, background or hybernation will be handled correctly.
 
 Application feature occupies some system features for proper handling. For example,
 in iOS, `UIApplication`'s delegate will be set by this feature. So you shouldn't 
-override the delegate object yourself. There can be more os this kind of hidden
+override the delegate object yourself. There can be more of this kind of hidden
 gotchas, so you shouldn't use application part of your platform when using 
 `Application` feature.
-
-Application feature may provide platform specific behaviors, but there's none 
-currently.
 
 You can see source code of `Application` class to get idea of how to implement 
 application even loop for each platforms. Anyway the implementation of 
@@ -114,6 +111,8 @@ application even loop for each platforms. Anyway the implementation of
 customize them, then fork the `Application` features.
 
 
+*	Currently platform-specific features are provided via  `Stepping::platform()` 
+	method. See the class reference for details.
 
 
 

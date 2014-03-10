@@ -27,6 +27,7 @@
 		4525EAD918B6C0E500B05C1D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4525EAD818B6C0E500B05C1D /* main.mm */; };
 		4525EADD18B6C0E500B05C1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4525EADB18B6C0E500B05C1D /* Credits.rtf */; };
 		4525EAE518B6C0E500B05C1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525EAE418B6C0E500B05C1D /* Images.xcassets */; };
+		4538D52618CD26D200066D7E /* TestRendering3.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4538D52418CD26D200066D7E /* TestRendering3.mm */; };
 		453F1D9018C3080C000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		453F1D9118C3080C000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		453F1D9418C3086F000C25CC /* TestRendering2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453F1D9218C3086F000C25CC /* TestRendering2.cpp */; };
@@ -51,6 +52,7 @@
 		45485FAB18B97535005981DA /* Stepping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45485FA918B97535005981DA /* Stepping.cpp */; };
 		45485FAC18B97535005981DA /* Stepping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45485FA918B97535005981DA /* Stepping.cpp */; };
 		45485FAD18B97535005981DA /* Stepping.h in Headers */ = {isa = PBXBuildFile; fileRef = 45485FAA18B97535005981DA /* Stepping.h */; };
+		455D704C18CE102C00040198 /* Platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 455D704A18CE102C00040198 /* Platform.mm */; };
 		4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */; };
@@ -221,6 +223,8 @@
 		4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____EonilImprovisationsMediaEngineApplicationController_iOS.m"; sourceTree = "<group>"; };
 		4529053B18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "____EonilImprovisationsMediaEngineApplicationController.h"; sourceTree = "<group>"; };
 		4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____EonilImprovisationsMediaEngineApplicationController.m"; sourceTree = "<group>"; };
+		4538D52418CD26D200066D7E /* TestRendering3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRendering3.mm; sourceTree = "<group>"; };
+		4538D52518CD26D200066D7E /* TestRendering3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering3.h; sourceTree = "<group>"; };
 		453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIA14415_clip_1024.png; sourceTree = "<group>"; };
 		453F1D9218C3086F000C25CC /* TestRendering2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRendering2.cpp; sourceTree = "<group>"; };
 		453F1D9318C3086F000C25CC /* TestRendering2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering2.h; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 		453F1DCC18C308D3000C25CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45485FA918B97535005981DA /* Stepping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stepping.cpp; sourceTree = "<group>"; };
 		45485FAA18B97535005981DA /* Stepping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stepping.h; sourceTree = "<group>"; };
+		455D704A18CE102C00040198 /* Platform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Platform.mm; sourceTree = "<group>"; };
+		455D704B18CE102C00040198 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 		4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96818B6A70D0078033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -402,6 +408,8 @@
 				45C49E9618B75A6100544108 /* TestRendering1.h */,
 				453F1D9218C3086F000C25CC /* TestRendering2.cpp */,
 				453F1D9318C3086F000C25CC /* TestRendering2.h */,
+				4538D52418CD26D200066D7E /* TestRendering3.mm */,
+				4538D52518CD26D200066D7E /* TestRendering3.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -459,6 +467,8 @@
 		4529053118B6A57C00FCFCBD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				455D704A18CE102C00040198 /* Platform.mm */,
+				455D704B18CE102C00040198 /* Platform.h */,
 				4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */,
 				4529053318B6A59300FCFCBD /* ApplicationController.mm */,
 				4529053418B6A59300FCFCBD /* ApplicationController.h */,
@@ -929,6 +939,8 @@
 			files = (
 				4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
+				4538D52618CD26D200066D7E /* TestRendering3.mm in Sources */,
+				455D704C18CE102C00040198 /* Platform.mm in Sources */,
 				457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C99018B6ABC80078033C /* run.cpp in Sources */,
 				450E0D7D18BDE3BC003D51E0 /* Bundle.cpp in Sources */,

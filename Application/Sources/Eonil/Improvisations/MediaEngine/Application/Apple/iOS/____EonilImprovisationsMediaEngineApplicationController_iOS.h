@@ -27,7 +27,7 @@
  Thread-unsafe, non-reentrant.
  */
 @interface	____EonilImprovisationsMediaEngineApplicationController_iOS : NSObject <UIApplicationDelegate>
-+ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(void))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
++ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(UIViewController* mainViewController))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect boundsInPixels))step;
 - (void)startDisplayTicking;
 - (void)stopDisplayTicking;
 - (void)displayLinkTick:(id)sender;

@@ -54,7 +54,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	 Runs application loop with custom system object class.
 	 
 	 @param	T
-	 A class for the *system* object.
+	 Platform-agnostic system class.
+	 
+	 @param	
+	 Platform-specific extension class. Use `void` if you don't need platform specific extensions.
 	 
 	 @classdesign
 	 Application will create, step and delete the system object.
@@ -66,9 +69,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		class T
 		{
 		public:
-			T();									//	Put application-global prepare code.
-			~T();									//	Put application-global cleanup code.
-			auto step(Stepping const&) -> void;		//	Put application-global stepping code.
+			T();										//	Put application-global prepare code.
+			~T();										//	Put application-global cleanup code.
+	 
+			auto	step(Stepping const&) -> void;		//	Put application-global stepping code.
 		};
 		
 	 The lifetime of this object is defined by the application system which is defined by underlying OS
@@ -78,6 +82,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	 supported lifespan behavior. Specifically, the *iOS* does not support concept of generic program 
 	 quitting by user. (only forced termination exists) Platform-placific behavior control method can be
 	 added later, but not now.
+	 
+	 If the extension class `X` has been provided as non-`void` type, then application will also handle
+	 the extension habevior. Anyway interface for the class `X` is all different by platforms. See
+	 *Platform-Specific Customization* section in manual for required interface implementations.
 	 
 	 @discussion
 	 Because the system object `T` will be created and deleted while all the related devices are ready,

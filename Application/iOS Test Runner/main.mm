@@ -7,7 +7,7 @@
 //
 
 #include "run.h"
-#include "TestRendering1.h"
+#include "TestRendering3.h"
 
 int main(int argc, char * argv[])
 {
@@ -22,7 +22,8 @@ int main(int argc, char * argv[])
 //		r1.render(s);
 //	};
 	
-	Eonil::Improvisations::MediaEngine::Application::run<TestRendering1>(argc, argv);
+//	Eonil::Improvisations::MediaEngine::Application::run<TestRendering1>(argc, argv);
+	Eonil::Improvisations::MediaEngine::Application::run<TestRendering3>(argc, argv);
 }
 
 

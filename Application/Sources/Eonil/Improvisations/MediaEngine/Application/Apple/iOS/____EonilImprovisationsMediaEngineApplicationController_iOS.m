@@ -24,12 +24,13 @@
 
 #import <Eonil/Improvisations/MediaEngine/Graphics/Platform/iOS/EEGraphicsDrawableView.h>
 
-typedef	void(^PROC)(void);
-typedef	void(^STEP)(CGRect bounds);
+typedef	void(^INIT)(UIViewController* mainViewController);
+typedef	void(^STEP)(CGRect boundsInPixels);
+typedef	void(^TERM)(void);
 
-static PROC		GlobalPrepare	=	nil;
+static INIT		GlobalPrepare	=	nil;
 static STEP		GlobalStepper	=	nil;
-static PROC		GlobalCleanup	=	nil;
+static TERM		GlobalCleanup	=	nil;
 
 
 
@@ -42,7 +43,7 @@ static PROC		GlobalCleanup	=	nil;
 	
 	CADisplayLink*				_disp_link;
 }
-+ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(void))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
++ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(UIViewController* mainViewController))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
 {
 	@autoreleasepool
 	{
@@ -77,7 +78,7 @@ static PROC		GlobalCleanup	=	nil;
 	////
 	
 	[_gl_view prepareGraphicsContext];
-	GlobalPrepare();
+	GlobalPrepare(_gl_view_con);
 	[self startDisplayTicking];
 	
 	////

@@ -22,6 +22,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	using namespace	Eonil::Improvisations::MediaEngine::Graphics;
 	using namespace	Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2;
 	
+	
+	
+	
+	struct
+	Platform;
+	
+	
+	/*!
+	 You can access all the contextual informations via this object.
+	 */
 	class
 	Stepping
 	{
