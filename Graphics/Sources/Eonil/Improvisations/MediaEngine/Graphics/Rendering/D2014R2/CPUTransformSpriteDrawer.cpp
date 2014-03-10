@@ -143,6 +143,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto CPUTransformSpriteDrawer::
 			drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void
 			{
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must push some instances. 0 instance is not allowed.");
+				
 				/*!
 				 @todo
 				 There're a lot of room for optimization in this function. Do them all.
