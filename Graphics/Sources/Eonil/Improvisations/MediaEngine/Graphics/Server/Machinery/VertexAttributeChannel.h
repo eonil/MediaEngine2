@@ -34,7 +34,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 This is stateful. Cannot be passed by copy, and alway be referenced.
 			 */
 			class
-			VertexAttributeChannel : public NoCopyButMoveObject, public TrackableObject
+			VertexAttributeChannel : public NoCopyButMoveObject
 			{
 				GLuint					_idx		=	-1;
 				
@@ -81,12 +81,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					GLboolean			normalization		=	GL_FALSE;					
 					GLsizei				strideSizeInBytes	=	0;							//	Asserted in debug version for invalid state.
 				};
-				
-				
-				
-				
-			public:
-				VertexAttributeChannel(VertexAttributeChannel&&) = default;
 				
 			public:
 				GLuint const		index() const;			//	Generic vertex attribute index.

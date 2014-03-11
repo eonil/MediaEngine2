@@ -20,6 +20,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		
 #if	EONIL_MEDIA_ENGINE_DEBUG_MODE
 
+		/*!
+		 A referenceable object which its references will be tracked by a slot class.
+		 
+		 @classdesign
+		 This object is presumed to be a referenceable type. A referenceable type must be 
+		 immoveable because if the object moves, then references will all be invalidated.
+		 */
 		class
 		TrackableObject
 		{
@@ -35,6 +42,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			
 		protected:
 			TrackableObject() = default;
+			TrackableObject(TrackableObject const&) = delete;
+			TrackableObject(TrackableObject&&) = delete;
 			
 		public:
 			~TrackableObject();
@@ -206,6 +215,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		{
 		protected:
 			TrackableObject() = default;
+			TrackableObject(TrackableObject const&) = delete;
+			TrackableObject(TrackableObject&&) = delete;
 		};
 
 
