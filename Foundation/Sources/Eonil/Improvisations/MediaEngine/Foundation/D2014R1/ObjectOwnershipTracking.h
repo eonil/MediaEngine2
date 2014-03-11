@@ -42,8 +42,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			
 		protected:
 			TrackableObject() = default;
-			TrackableObject(TrackableObject const&) = delete;
+			TrackableObject(TrackableObject const&) : _dbg_virtual_ownership_list()
+			{
+				/*
+				 A trackable-object can be copied, and copied one does not share the reference list.
+				 */
+			}
 			TrackableObject(TrackableObject&&) = delete;
+			
+			auto
+			operator=(TrackableObject obj) -> TrackableObject&
+			{
+				std::swap(_dbg_virtual_ownership_list, obj._dbg_virtual_ownership_list);
+				return	*this;
+			}
 			
 		public:
 			~TrackableObject();
