@@ -134,7 +134,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		auto
-		PlanarRGBAImageProxy::proxyWithContentOfMemory(const GenericMemoryRange<UInt8> &memory) -> PlanarRGBAImageProxy
+		PlanarRGBAImageProxy::proxyWithContentOfMemory(GenericMemoryRange<UInt8 const> memory) -> PlanarRGBAImageProxy
 		{
 			return	PlanarRGBAImageProxy(new Core(memory));
 		}
@@ -180,7 +180,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 		}
 		auto PlanarRGBAImageProxy::Core::
-		_makeupCGImageFromData(GenericMemoryRange<UInt8> const& memory) -> CGImageRef
+		_makeupCGImageFromData(GenericMemoryRange<UInt8 const> memory) -> CGImageRef
 		{
 			@autoreleasepool
 			{

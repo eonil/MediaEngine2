@@ -261,7 +261,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return		PlanarTexture(new Core(name));
 		}
 		auto
-		PlanarTexture::Utility::textureWtihMemoryRangeContainingPNGData(const GenericMemoryRange<UInt8> &memory, bool const flipInY) -> PlanarTexture
+		PlanarTexture::Utility::textureWithMemoryRangeContainingPNGData(GenericMemoryRange<const UInt8> memory, bool const flipInY) -> PlanarTexture
 		{
 			Aliens::PlanarRGBAImageProxy	img1	=	Aliens::PlanarRGBAImageProxy::proxyWithContentOfMemory(memory);
 			return	textureWithAlienImage(img1, flipInY);

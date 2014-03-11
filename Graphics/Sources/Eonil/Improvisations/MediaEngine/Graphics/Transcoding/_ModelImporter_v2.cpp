@@ -137,10 +137,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					UInt8*	p1	=	(UInt8*)tm0.address();
 					UInt8*	p2	=	p1 + tm0.length();
 					
-					GenericMemoryRange<UInt8>	r1	{p1, p2};
+					GenericMemoryRange<UInt8 const>	r1	{p1, p2};
 					
 					bool flipInY = true;
-					m1->colorTexture	=	new Server::PlanarTexture(Server::PlanarTexture::Utility::textureWtihMemoryRangeContainingPNGData(r1, flipInY));
+					m1->colorTexture	=	new Server::PlanarTexture(Server::PlanarTexture::Utility::textureWithMemoryRangeContainingPNGData(r1, flipInY));
 				}
 
 				return	_SkinnedForm_v2::Mesh::Ref(m1);

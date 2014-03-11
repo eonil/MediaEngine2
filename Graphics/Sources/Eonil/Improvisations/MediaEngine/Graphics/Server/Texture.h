@@ -149,7 +149,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static PlanarTexture	_DEV_textureWithResourceAtPath(std::string const path);											//!	The path can be absolute or relative path to resource root.
 				
 				static auto	textureWithAlienImage(Aliens::PlanarRGBAImageProxy const& image, bool const flipInY = false) -> PlanarTexture;
-				static auto textureWtihMemoryRangeContainingPNGData(GenericMemoryRange<UInt8> const& memory, bool const flipInY = false) -> PlanarTexture;
+				static auto textureWithMemoryRangeContainingPNGData(GenericMemoryRange<UInt8 const> memory, bool const flipInY = false) -> PlanarTexture;
 				static auto	textureWithContentOfFileAtPath(str const& filepath) -> PlanarTexture;
 			};
 		};

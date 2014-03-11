@@ -53,7 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			RawPointer	_rptr{};
 			
 			auto _makeupCGImageFromData(CFDataRef const& data) -> CGImageRef;
-			auto _makeupCGImageFromData(GenericMemoryRange<UInt8> const& memory) -> CGImageRef;
+			auto _makeupCGImageFromData(GenericMemoryRange<UInt8 const> memory) -> CGImageRef;
 			auto _makeupCGImageFromData(str const& filepath) -> CGImageRef;
 
 			
@@ -63,7 +63,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				std::swap(_rptr, raw);		//	No change on refcount.
 			}
-			Core(GenericMemoryRange<UInt8> const& memory) : _rptr(_makeupCGImageFromData(memory))
+			Core(GenericMemoryRange<UInt8 const> memory) : _rptr(_makeupCGImageFromData(memory))
 			{
 			}
 			Core(str const& filepath) : _rptr(_makeupCGImageFromData(filepath))

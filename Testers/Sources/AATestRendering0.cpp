@@ -144,8 +144,8 @@ TestRenderingWithOnlyVertexesInClientMemory()
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 	
 	VertexShader			vp	{TestVertexShaderProgram, chmap};
 	FragmentShader			fp	{TestFragmentShaderProgram};

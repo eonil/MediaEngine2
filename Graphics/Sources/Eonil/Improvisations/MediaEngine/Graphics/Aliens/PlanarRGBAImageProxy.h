@@ -55,7 +55,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			static auto	proxyByOwningRawPointer(RawPointer&& rawPointer) -> PlanarRGBAImageProxy;						//!	Newrly created image proxy object will take the ownership for the underlying alien pointer.
 			static auto	proxyWithContentOfFileAtArbitraryPath(str const& filepath) -> PlanarRGBAImageProxy;				//!	The file must be a PNG file. Other format may be supported implicitly by the underlying platform feature, but that's unsupported behavior and not guaranteed. (I will not care about other formats)
 			static auto	proxyWithContentOfFileAtResourcePath(str const& resourcepath) -> PlanarRGBAImageProxy;
-			static auto	proxyWithContentOfMemory(GenericMemoryRange<UInt8> const& memory) -> PlanarRGBAImageProxy;		//!	The memory block must contain PNG encoded binary data.
+			static auto	proxyWithContentOfMemory(GenericMemoryRange<UInt8 const> memory) -> PlanarRGBAImageProxy;		//!	The memory block must contain PNG encoded binary data.
 		};
 		
 		

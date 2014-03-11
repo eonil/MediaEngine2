@@ -116,6 +116,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		/*!
 		 A proxy view of a memory range.
 		 
+		 @classdesign
+		 You should treat this with pointer semantics.
+		 
 		 @brief
 		 This is used to represent a fixed sized collection.
 		 */
