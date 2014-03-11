@@ -24,16 +24,16 @@
 #	ifdef					DEBUG
 #		if					DEBUG == 1
 #			define			EONIL_MEDIA_ENGINE_DEBUG_MODE	1
-#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to debug-mode by value of `DEBUG` flag. Anyway this is ad-hoc ingerence, and not regular solution. You should set the flag for precise control."
+#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to debug-mode by value of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
 #		endif
 #		if					DEBUG == 0
 #			define			EONIL_MEDIA_ENGINE_DEBUG_MODE	0
-#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by value of of `DEBUG` flag. Anyway this is ad-hoc ingerence, and not regular solution. You should set the flag for precise control."
+#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by value of of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
 #		endif
 #	endif
 #	ifndef					DEBUG
 #		define				EONIL_MEDIA_ENGINE_DEBUG_MODE	0
-#		pragma message		"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by lack of `DEBUG` flag. Anyway this is ad-hoc ingerence, and not regular solution. You should set the flag for precise control."
+#		pragma message		"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by lack of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
 #	endif
 #endif
 
