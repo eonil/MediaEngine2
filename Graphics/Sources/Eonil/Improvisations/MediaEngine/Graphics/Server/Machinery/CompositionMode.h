@@ -139,14 +139,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						FUNCTION	destinationFactor		{FUNCTION::ZERO};
 					};
 					
-					ChannelConfiguration	color		{};				//!	RGB part.
+					ChannelConfiguration	rgb			{};				//!	RGB part.
 					ChannelConfiguration	alpha		{};				//!	A part.
 					
 					Vector4					intensity	{0,0,0,0};		//!	Each color channel components should be all clamped value.
 					
 					////
 					
-					static auto		genericTransparencyAlphaBlending() -> PixelBlending;
+					static auto		typicalTransparencyAlphaBlending() -> PixelBlending;
 				};
 				
 				

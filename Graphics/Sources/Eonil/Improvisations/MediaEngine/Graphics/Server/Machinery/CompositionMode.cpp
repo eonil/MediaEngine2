@@ -122,6 +122,48 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			auto
+			CompositionMode::PixelBlending::typicalTransparencyAlphaBlending() -> PixelBlending
+			{
+				PixelBlending	pb1	{};
+				pb1.alpha.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
+				pb1.alpha.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
+				pb1.rgb.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
+				pb1.rgb.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
+				return	pb1;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			CompositionMode::CompositionMode()
 			{
 				_dbg_singleton_instance_exists.should_be_off_now();
@@ -222,8 +264,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				_dbg_gl_state_palette.blending.should_be_off_now();
 				{
 					eeglEnable(GL_BLEND);
-					eeglBlendEquationSeparate(GLenum(definition.color.equation), GLenum(definition.alpha.equation));
-					eeglBlendFuncSeparate(GLenum(definition.color.sourceFactor), GLenum(definition.color.destinationFactor), GLenum(definition.alpha.sourceFactor), GLenum(definition.alpha.destinationFactor));
+					eeglBlendEquationSeparate(GLenum(definition.rgb.equation), GLenum(definition.alpha.equation));
+					eeglBlendFuncSeparate(GLenum(definition.rgb.sourceFactor), GLenum(definition.rgb.destinationFactor), GLenum(definition.alpha.sourceFactor), GLenum(definition.alpha.destinationFactor));
 					eeglBlendColor(definition.intensity.x, definition.intensity.y, definition.intensity.z, definition.intensity.w);
 				}
 				_dbg_gl_state_palette.blending.set_on();
@@ -231,7 +273,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto CompositionMode::
 			unsetPixelBlending() -> void
 			{
-				_dbg_gl_state_palette.blending.should_be_off_now();
+				_dbg_gl_state_palette.blending.should_be_on_now();
 				{
 					eeglDisable(GL_BLEND);
 				}
