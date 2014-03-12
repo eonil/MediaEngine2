@@ -21,6 +21,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		
 		/*!
 		 Fixed sized dynamic array.
+		 
+		 @note
+		 This class seems deprecated, but I am not sure.
 		 */
 		template <typename T>
 		class

@@ -24,8 +24,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		 A referenceable object which its references will be tracked by a slot class.
 		 
 		 @classdesign
-		 This object is presumed to be a referenceable type. A referenceable type must be 
-		 immoveable because if the object moves, then references will all be invalidated.
+		 This class implies the object instances will be referenced, and that means moving
+		 object will invalidates all the references. And that's unacceptable. So basically,
+		 moving is disallowed for idela solution.
+		 
+		 Anyway, some classes needs moving. Those classes initialize themselves at another 
+		 place, and then want to be moved (or copy) into proper place. To support this 
+		 behavior, moving is allowed again. However, moving is allowed *only while there's
+		 no reference*. If there's any live reference then moving will cause an exception.
+		 
+		 That means moving check will be done dynamically rather then static. If you still
+		 want static check, then you can delete move-ctor in your subclass.
 		 */
 		class
 		TrackableObject
@@ -45,16 +54,31 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			TrackableObject(TrackableObject const&) : _dbg_virtual_ownership_list()
 			{
 				/*
+				 Nothing to copy.
 				 A trackable-object can be copied, and copied one does not share the reference list.
 				 */
 			}
-			TrackableObject(TrackableObject&&) = delete;
+			TrackableObject(TrackableObject&& o)
+			{
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(o._dbg_virtual_ownership_list.size() == 0, "`TrackableObject` cannot be moved after it has been referenced. This object already been referenced, and moving will break the references, so moving has been prohibited after being referenced.");
+				/*
+				 Nothing to move.
+				 */
+			}
 			
 			auto
 			operator=(TrackableObject obj) -> TrackableObject&
 			{
 				std::swap(_dbg_virtual_ownership_list, obj._dbg_virtual_ownership_list);
 				return	*this;
+			}
+			auto
+			operator=(TrackableObject&& o) -> void
+			{
+				EONIL_DEBUG_ASSERT_WITH_MESSAGE(o._dbg_virtual_ownership_list.size() == 0, "`TrackableObject` cannot be moved after it has been referenced. This object already been referenced, and moving will break the references, so moving has been prohibited after being referenced.");
+				/*
+				 Nothing to move.
+				 */
 			}
 			
 		public:
