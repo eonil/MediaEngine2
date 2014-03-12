@@ -277,7 +277,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				{
 					eeglDisable(GL_BLEND);
 				}
-				_dbg_gl_state_palette.blending.set_on();
+				_dbg_gl_state_palette.blending.set_off();
 			}
 			
 			
