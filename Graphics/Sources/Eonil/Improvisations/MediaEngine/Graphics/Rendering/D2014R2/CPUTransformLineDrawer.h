@@ -24,7 +24,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			/*!
-			 This is mainly designed for debuggin information overlay.
+			 This is mainly designed for debugging information overlay.
 			 Doesn't fit to final product rendering.
 			 */
 			class
