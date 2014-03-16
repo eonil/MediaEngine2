@@ -94,12 +94,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				UIGraphicsPushContext(context);
 				
 				{
+					Scalar		w1	=	Scalar(dimension.width);
+					Scalar		h1	=	Scalar(dimension.height);
 					FontProxy	f2	=	FontProxy::systemDefaultFont(font.pointSize, true);
-					Vector2		fsz	=	f2.measure(str{string.UTF8String}, Vector2{dimension.width, dimension.height});
+					Vector2		fsz	=	f2.measure(str{string.UTF8String}, Vector2{w1, h1});
 					CGSize		sz	=	CGSizeMake(fsz.x, fsz.y);
 
-//						CGPoint	pt		=	CGPointMake((dimension.width - sz.width) * 0.5, (dimension.height - sz.height) * 0.5);
-					CGPoint	pt		=	CGPointMake(0, (dimension.height - sz.height) * 0.5);
+//					CGPoint	pt		=	CGPointMake((dimension.width - sz.width) * 0.5, (dimension.height - sz.height) * 0.5);
+					CGPoint	pt		=	CGPointMake(0, (h1 - sz.height) * 0.5);
 					
 					/*!
 					 Currently always draw at left-top corner.

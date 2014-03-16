@@ -15,43 +15,43 @@
 
 
 
+#define	EONIL_MEDIA_ENGINE_DEBUG_MODE	EONIL_DEBUG_MODE
 
-
-/*
- Infer `EONIL_MEDIA_ENGINE_DEBUG_MODE` flag by `DEBUG` flag if the flag was lacked.
- */
-#ifndef						EONIL_MEDIA_ENGINE_DEBUG_MODE
-#	ifdef					DEBUG
-#		if					DEBUG == 1
-#			define			EONIL_MEDIA_ENGINE_DEBUG_MODE	1
-#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to debug-mode by value of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
-#		endif
-#		if					DEBUG == 0
-#			define			EONIL_MEDIA_ENGINE_DEBUG_MODE	0
-#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by value of of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
-#		endif
-#	endif
-#	ifndef					DEBUG
-#		define				EONIL_MEDIA_ENGINE_DEBUG_MODE	0
-#		pragma message		"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by lack of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
-#	endif
-#endif
-
-
-
-
-
-#ifndef			EONIL_MEDIA_ENGINE_DEBUG_MODE
-#	error		"You must define `EONIL_MEDIA_ENGINE_DEBUG_MODE` preprocessor macro to one of `0` or `1`."
-#endif
-
-
-
-#if				EONIL_MEDIA_ENGINE_DEBUG_MODE
-#	pragma		message "DEBUG BUILD!"
-#else
-#	pragma		message "RELEASE BUILD!"
-#endif
+///*
+// Infer `EONIL_MEDIA_ENGINE_DEBUG_MODE` flag by `DEBUG` flag if the flag was lacked.
+// */
+//#ifndef						EONIL_MEDIA_ENGINE_DEBUG_MODE
+//#	ifdef					DEBUG
+//#		if					DEBUG == 1
+//#			define			EONIL_MEDIA_ENGINE_DEBUG_MODE	1
+//#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to debug-mode by value of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
+//#		endif
+//#		if					DEBUG == 0
+//#			define			EONIL_MEDIA_ENGINE_DEBUG_MODE	0
+//#			pragma message	"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by value of of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
+//#		endif
+//#	endif
+//#	ifndef					DEBUG
+//#		define				EONIL_MEDIA_ENGINE_DEBUG_MODE	0
+//#		pragma message		"The preprocessor flag `EONIL_MEDIA_ENGINE_DEBUG_MODE` was not defined, and inferred to release-mode by lack of `DEBUG` flag. Anyway this is ad-hoc inference, and not regular solution. You should set the flag for precise control."
+//#	endif
+//#endif
+//
+//
+//
+//
+//
+//#ifndef			EONIL_MEDIA_ENGINE_DEBUG_MODE
+//#	error		"You must define `EONIL_MEDIA_ENGINE_DEBUG_MODE` preprocessor macro to one of `0` or `1`."
+//#endif
+//
+//
+//
+//#if				EONIL_MEDIA_ENGINE_DEBUG_MODE
+//#	pragma		message "DEBUG BUILD!"
+//#else
+//#	pragma		message "RELEASE BUILD!"
+//#endif
 
 
 

@@ -74,9 +74,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			////
 			
-			return	Vector2{dim.width, dim.height};
+			Scalar	w2	=	Scalar(dim.width);
+			Scalar	h2	=	Scalar(dim.height);
+			return	Vector2{w2, h2};
 		}
-		
 		
 		auto
 		FontProxy::systemDefaultFont(const float &size) -> FontProxy
