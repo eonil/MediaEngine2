@@ -17,7 +17,7 @@ int main(int argc, char * argv[])
 	
 	STEP	step	=	[&r1](Stepping const& s)
 	{
-		r1.step();
+		r1.step(s);
 		r1.render(s);
 	};
 	

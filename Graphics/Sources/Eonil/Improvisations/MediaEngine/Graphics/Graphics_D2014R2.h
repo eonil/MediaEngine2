@@ -39,6 +39,8 @@
 #include "Rendering/D2014R2/DisplayScreenFrame.h"
 #include "Rendering/D2014R2/DebuggingInformationOverlayDrawer.h"
 #include "Rendering/D2014R2/SpriteDrawer.h"
+#include "Rendering/D2014R2/CPUTransformRegularPolygonDrawer.h"
+#include "Rendering/D2014R2/GPUTransformRegularPolygonDrawer.h"
 #include "Rendering/D2014R2/DisplayScreenFrame.h"
 
 #endif

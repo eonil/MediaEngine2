@@ -119,6 +119,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+		public:
+			/*
+			 Querying.
+			 */
+			auto	maximumVertexUniformVectorCount() const -> Size;
+			
+			
 			
 			
 			

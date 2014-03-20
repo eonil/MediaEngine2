@@ -122,6 +122,59 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		auto Program::
+		uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlot const>
+		{
+			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
+		}
+		auto Program::
+		uniformsValueSlots() -> GenericMemoryRange<UniformValueSlot>
+		{
+			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
+		}
+		auto Program::
+		searchUniformValueSlotForName(const str &name) const -> UniformValueSlot const*
+		{
+			return	((Program*)this)->searchUniformValueSlotForName(name);
+		}
+		auto Program::
+		searchUniformValueSlotForName(const str &name) -> UniformValueSlot*
+		{
+			_assertNonEmptyState();
+			
+			for (UniformValueSlot& s : _uniformValueSlots)
+			{
+				if (s.name() == name)
+				{
+					return	&s;
+				}
+			}
+
+			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
+			if (loc2 != -1)
+			{
+				for (UniformValueSlot& s: _uniformValueSlots)
+				{
+					if (s.location() == loc2)
+					{
+						return	&s;
+					}
+				}
+			}
+			
+			return	nullptr;
+		}
+		
+		
+		
 		auto Program::
 		allUniformValueSlots() const -> vec<UniformValueSlot> const&
 		{
@@ -139,16 +192,38 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		auto Program::
 		indexOfUniformValueSlotForName(const std::string name) const -> Size
 		{
-			_assertNonEmptyState();
+			auto const*	ptr	=	searchUniformValueSlotForName(name);
 			
-			for (UniformValueSlot const& s : _uniformValueSlots)
+			if (ptr == nullptr)
 			{
-				if (s.name() == name)
-				{
-					return	s.index();
-				}
+				Doctor::exceptWithReason("Uniform value slot for the name `" + name + "` is not exist.");
 			}
-			Doctor::exceptWithReason("Uniform value slot for the name is not exist.");
+			
+			return	ptr->index();
+			
+//			_assertNonEmptyState();
+//			
+//			for (UniformValueSlot const& s : _uniformValueSlots)
+//			{
+//				if (s.name() == name)
+//				{
+//					return	s.index();
+//				}
+//			}
+//
+//			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
+//			if (loc2 != -1)
+//			{
+//				for (UniformValueSlot const& s: _uniformValueSlots)
+//				{
+//					if (s.location() == loc2)
+//					{
+//						return	s.index();
+//					}
+//				}
+//			}
+//			
+//			Doctor::exceptWithReason("Uniform value slot for the name is not exist.");
 		}
 		
 		

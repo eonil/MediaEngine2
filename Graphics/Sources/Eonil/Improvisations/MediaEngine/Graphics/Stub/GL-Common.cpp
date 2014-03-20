@@ -50,7 +50,28 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	Size(v);
 		}
 		
-		
+		auto
+		toGLfloat(Scalar const* v) -> GLfloat const*
+		{
+			return	(GLfloat const*)v;
+		}
+		auto
+		toGLfloat(Vector4 const* v) -> GLfloat const*
+		{
+			return	(GLfloat const*)v;
+		}
+		auto
+		toGLfloat(Matrix4 const* v) -> GLfloat const*
+		{
+			return	(GLfloat const*)v;
+		}
+
+
+		auto
+		toGLchar(str const& v) -> GLchar const*
+		{
+			return	v.c_str();
+		}
 	}
 	
 }}}}

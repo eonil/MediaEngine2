@@ -89,6 +89,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto				draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
 			auto				draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void;
 			
+			auto				draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void;
+//			auto				draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void;
+//			auto				draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void;
+			auto				draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void;
 			
 		};
 		

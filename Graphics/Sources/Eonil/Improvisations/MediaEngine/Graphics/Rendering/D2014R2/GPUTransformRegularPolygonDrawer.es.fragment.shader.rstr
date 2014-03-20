@@ -1,0 +1,27 @@
+R"(
+
+
+
+
+//	Inputs.
+varying highp vec4		colorF;
+
+//	Outputs.
+
+
+
+
+
+void
+main()
+{
+	gl_FragColor	=	colorF;
+}
+
+
+
+
+
+
+
+)" // +END

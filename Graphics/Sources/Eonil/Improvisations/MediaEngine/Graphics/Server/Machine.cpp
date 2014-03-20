@@ -410,7 +410,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
+		auto Machine::
+		maximumVertexUniformVectorCount() const -> Size
+		{
+			return	Stub::eeglGetInteger(GL_MAX_VERTEX_UNIFORM_VECTORS);
+		}
 		
 		
 		

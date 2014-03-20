@@ -20,25 +20,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		D2014R2
 		{
 			
-			
-			
-			
-			/*!
-			 Draws filled poly-lines with color.
-			 A polyline can be drawn as solid, dashed, dotted styled.
-			 */
-			class
-			PolylineDrawer
-			{
-			};
-			
-			
-			
-			
-			
-			
-			
-			
 		}
 	}
 	

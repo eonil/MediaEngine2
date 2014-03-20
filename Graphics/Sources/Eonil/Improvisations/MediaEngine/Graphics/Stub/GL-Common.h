@@ -49,8 +49,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		auto	toGLint(Size const& v) -> GLint;
 		auto	fromGLint(GLint const& v) -> Size;
 		
+		auto	toGLfloat(Scalar const* v) -> GLfloat const*;
+		auto	toGLfloat(Vector4 const* v) -> GLfloat const*;
+		auto	toGLfloat(Matrix4 const* v) -> GLfloat const*;
 		
-		
+		auto	toGLchar(str const& v) -> GLchar const*;
 		
 	}
 	

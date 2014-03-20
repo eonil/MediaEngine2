@@ -188,11 +188,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			_set_as_having_some_value();
 		}
 		void
+		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Scalar *const values, const Size count)
+		{
+			GLsizei	c	=	GLsizeiFromSize(count);
+			_validateProgramBinding();
+			eeglUniform1fv(location(), c, toGLfloat(values));
+			_set_as_having_some_value();
+		}
+		void
+		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 *const values, const Size count)
+		{
+			GLsizei	c	=	GLsizeiFromSize(count);
+			_validateProgramBinding();
+			eeglUniform4fv(location(), c, toGLfloat(values));
+			_set_as_having_some_value();
+		}
+		void
 		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 *const values, const Size count)
 		{
 			GLsizei	c	=	GLsizeiFromSize(count);
 			_validateProgramBinding();
-			eeglUniformMatrix4fv(location(), c, GL_FALSE, (float const* const)values);
+			eeglUniformMatrix4fv(location(), c, GL_FALSE, toGLfloat(values));
 			_set_as_having_some_value();
 		}
 		

@@ -75,8 +75,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLuint						_name						{NULL_GL_NAME()};
 			
-			vec<UniformValueSlot>		_uniformValueSlots			{};
-			vec<VertexAttributeSlot>	_vertexAttributeSlots		{};
+			vec<UniformValueSlot>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved.
+			vec<VertexAttributeSlot>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved.
 			
 			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			
@@ -120,10 +120,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			}
 //			vertexAttributeSlot;
 			
-			auto	allUniformValueSlots() const									->	vec<UniformValueSlot> const&;
-			auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlot const&;
-			auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlot&;
-			auto	indexOfUniformValueSlotForName(std::string const name) const	->	Size;			//!	@note	If there's no slot for the name, An excepion will be thrown. Also this doesn't resolve struct field or array indexing expression. Only unifom names.
+			auto	uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlot const>;
+			auto	uniformsValueSlots() -> GenericMemoryRange<UniformValueSlot>;
+			
+			auto	searchUniformValueSlotForName(str const& name) const -> UniformValueSlot const*;		//!	Returns `nullptr` if there's no slot for the name.
+			auto	searchUniformValueSlotForName(str const& name) -> UniformValueSlot*;					//!	Returns `nullptr` if there's no slot for the name.
+			
+			[[deprecated]]	auto	allUniformValueSlots() const									->	vec<UniformValueSlot> const&;
+			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlot const&;
+			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlot&;
+			[[deprecated]]	auto	indexOfUniformValueSlotForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
 			
 			auto	allVertexAttributeSlots() const									->	vec<VertexAttributeSlot> const&;
 			auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlot const&;

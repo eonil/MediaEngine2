@@ -38,7 +38,30 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
+		ArrayBuffer::ArrayBuffer(GenericMemoryRange<void const> data)
+		{
+			Debug::ObjectInstanceAddressTracker<ArrayBuffer>::registerObjectAddress(this);
+			
+			GenericMemoryRange<uint8_t const>	bin	=	data.reinterpretAs<uint8_t const>();
+			
+			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
+			
+			_name		=	eeglGenBuffer();
+			
+			EEGL_ASSERT(_name != 0);
+			
+			////
+			
+			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
+			EEGL_ASSERT(not data.empty());
+			
+			GLsizeiptr const	size	=	bin.size();
+			GLvoid* const		mem		=	(GLvoid*)bin.begin();
+			
+			eeglBindBuffer(GL_ARRAY_BUFFER, name());
+			eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
+			eeglUnbindBufer(GL_ARRAY_BUFFER);
+		}
 		ArrayBuffer::ArrayBuffer(Legacy2013SharedMemory const data)
 		{
 			Debug::ObjectInstanceAddressTracker<ArrayBuffer>::registerObjectAddress(this);
@@ -54,7 +77,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
 			EEGL_ASSERT(data != nullptr);
 			
-			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_source_content = data);
+//			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_source_content = data);
 			
 			GLsizeiptr const	size	=	data.length();
 			GLvoid* const		mem		=	(GLvoid*)data.address();
@@ -63,6 +86,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
 			eeglUnbindBufer(GL_ARRAY_BUFFER);
 			
+		}
+		ArrayBuffer::ArrayBuffer(ArrayBuffer&& o) : _name(std::move(o._name))
+		{
+			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(o._name = NULL_GL_NAME());
 		}
 		ArrayBuffer::~ArrayBuffer()
 		{

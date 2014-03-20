@@ -55,12 +55,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			GLuint	_name	=	NULL_GL_NAME();
 			
-			EONIL_MEDIA_ENGINE_DEBUG_ONLY_INLINE_FIELD(Legacy2013SharedMemory, _dbg_source_content);
+//			EONIL_MEDIA_ENGINE_DEBUG_ONLY_INLINE_FIELD(Legacy2013SharedMemory, _dbg_source_content);
 			
 		public:
 			ArrayBuffer() = default;
 			ArrayBuffer(Legacy2013SharedMemory const data);							//	Creates initialized fixed sized buffer.
+			ArrayBuffer(GenericMemoryRange<void const> data);
 			ArrayBuffer(ArrayBuffer const&) = delete;
+			ArrayBuffer(ArrayBuffer&&);
 			~ArrayBuffer();
 			
 			auto	operator==(ArrayBuffer const& other) const -> bool;

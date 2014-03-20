@@ -70,6 +70,24 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					}
 				}
 				static inline auto
+				setAllVertexChannelings(ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling) -> void
+				{
+					for (Size i=0; i<layout.channelComponents().size(); i++)
+					{
+						auto const& ch	=	layout.channelComponents().at(i);
+						
+						Machinery::VertexAttributeChannel::Format	f{};
+						f.componentCount	=	Machinery::VertexAttributeChannel::ComponentSize(ch.count);
+						f.componentType		=	ch.type;
+						f.dataOffset		=	ch.offset;
+						f.normalization		=	GL_FALSE;
+						f.strideSizeInBytes	=	Stub::toGLsizei(layout.strideSize());
+						
+						Size	chidx	=	channeling.channelIndexForComponentIndex(i);
+						M().vertexAttributeChannelAtIndex(chidx).linkWithServerBuffer(vertexes, f);
+					}
+				}
+				static inline auto
 				unsetAllVertexChannelings(ProgramVertexChannelingDescriptor const& channeling) -> void
 				{
 					for (auto const& chidx: channeling.allChannelIndexes())
@@ -224,8 +242,31 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			auto
+			draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
+			{
+				setAllVertexChannelings(vertexes, layout, channeling);
+				{
+					for (Size i=0; i<textures.size(); i++)
+					{
+						M().textureUnitAtIndex(i).setTexture(textures.at(i));
+					}
+					{
+						M().drawArrays(mode, range.location(), range.length());
+					}
+					for (Size i=0; i<textures.size(); i++)
+					{
+						M().textureUnitAtIndex(i).unsetTexture();
+					}
+				}
+				unsetAllVertexChannelings(channeling);
+			}
 			
-			
+			auto
+			draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void
+			{
+				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{}, mode, range);
+			}
 			
 			
 			

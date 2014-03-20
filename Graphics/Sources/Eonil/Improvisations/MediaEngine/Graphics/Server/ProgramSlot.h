@@ -22,17 +22,29 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
+		/*!
+		 @warning
+		 An OpenGL uniform slot can be refered using multiple names.
+		 That means you really can't rely on the *name* to identify a slot. It can be used
+		 just a hint for it. So, do not keep the name as a part of a slot information. It's
+		 just a query method.
+		 
+		 The `name` method will be kept for debugging metadta purpose, and will be removed
+		 from the public access.
+		 
+		 @note
+		 OpenGL uniform slots are just a big flat 4D float vector.
+		 */
 		
 		class
 		ProgramSlot : public NoCopyButMoveObject
 		{
 		public:
-			GLuint const			index() const;
-			std::string const&		name() const;
-			GLenum const			type() const;
-			GLint const				size() const;
-			GLint const				location() const;
+			auto	index() const -> GLuint const;
+			auto	name() const -> std::string const&;			//!	@note	I am not sure that whether I have to remove this property or not...
+			auto	type() const -> GLenum const;
+			auto	size() const -> GLint const;
+			auto	location() const -> GLint const;
 			
 		protected:
 			ProgramSlot();
@@ -85,6 +97,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			void	setValue(Vector4 const& value);
 			void	setValue(Quaternion const& value);
 			void	setValue(Matrix4 const& value);
+			void	setValueArray(Scalar const* const values, Size const count);
+			void	setValueArray(Vector4 const* const values, Size const count);
 			void	setValueArray(Matrix4 const* const values, Size const count);
 			
 			void	setSampler(TextureSampler const& sampler);

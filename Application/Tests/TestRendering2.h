@@ -41,11 +41,37 @@ TestRendering2
 	D2014R2::SpriteDrawer						_sprd{};
 	uptr<PlanarTexture>							_tex1{};
 	
+	D2014R2::GPUTransformRegularPolygonDrawer	_reg_poly_drawer	{128};
+	
+	vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	_circle_instances{};
+	
 public:
 	TestRendering2()
 	{
 		str		tex_path	=	Bundle::main().pathForResource("", "PIA14415_clip_1024", "png");
 		_tex1				=	uptr<PlanarTexture>(new PlanarTexture(PlanarTexture::Utility::textureWithContentOfFileAtPath(tex_path)));
+		
+		////
+		
+		vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	insts	=	{};
+		for (size_t i=0; i<128; i++)
+		{
+			Scalar	x	=	Scalar(rand()) / std::numeric_limits<int>::max() - 0.5;
+			Scalar	y	=	Scalar(rand()) / std::numeric_limits<int>::max() - 0.5;
+			Scalar	r1	=	Scalar(rand()) / std::numeric_limits<int>::max() * 0.2;
+			Scalar	v1	=	Scalar(rand()) / std::numeric_limits<int>::max() * 0.02 + 0.001;
+			
+			Scalar	a1	=	Scalar(rand()) / std::numeric_limits<int>::max();
+			
+			GPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
+//			CPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
+			inst1.position	=	{x, y};
+			inst1.boundary	=	{r1, Scalar(r1 + v1)};
+			inst1.color		=	{a1, a1, a1, 1};
+			insts.push_back(inst1);
+			
+			_circle_instances	=	insts;
+		}
 	}
 	
 	auto
@@ -73,6 +99,10 @@ public:
 		_sprd.drawInstances(*_tex1, {inst1, inst2}, world_to_screen_transform, s.frame());
 		
 		_dbgd.drawNull(s.frame(), world_to_screen_transform, {0.25, 0.25, 0.25});
+		
+		{
+			_reg_poly_drawer.draw(_circle_instances, world_to_screen_transform, s.frame());
+		}
 	}
 	
 	
