@@ -374,7 +374,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
 			
-			glUniform1fv(location, count, value);
+			glUniform2fv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		EEGL_STUB_API_DECO void
@@ -382,7 +382,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
 			
-			glUniform1fv(location, count, value);
+			glUniform3fv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		EEGL_STUB_API_DECO void
@@ -390,7 +390,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
 			
-			glUniform1fv(location, count, value);
+			glUniform4fv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
@@ -409,7 +409,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
 			
-			glUniform1iv(location, count, value);
+			glUniform2iv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		EEGL_STUB_API_DECO void
@@ -417,7 +417,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
 			
-			glUniform1iv(location, count, value);
+			glUniform3iv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		EEGL_STUB_API_DECO void
@@ -425,7 +425,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION();
 			
-			glUniform1iv(location, count, value);
+			glUniform4iv(location, count, value);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
