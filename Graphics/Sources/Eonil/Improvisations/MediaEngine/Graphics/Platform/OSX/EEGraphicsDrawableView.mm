@@ -45,12 +45,15 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 
 - (id)initWithFrame:(NSRect)frameRect pixelFormat:(NSOpenGLPixelFormat *)format
 {
-	[self doesNotRecognizeSelector:_cmd];
-	panic("Using of this method has been prohibited.");
+	/*
+	 This method shouldn't be deleted because this will be called by the superclass, and any exception will be silently
+	 ignored.
+	 */
+	return	[super initWithFrame:frameRect pixelFormat:format];
 }
 - (id)initWithFrame:(CGRect)frame
 {
-	self	=	[super initWithFrame:frame pixelFormat:[[self class] defaultPixelFormat]];
+	self	=	[super initWithFrame:frame];
 	if (self)
 	{
 	}
@@ -83,6 +86,13 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 {
 	EONIL_DEBUG_ASSERT(self.superview.wantsLayer);
 	EONIL_DEBUG_ASSERT(self.superview.layer != nil);
+	
+	////
+	
+	[super drawRect:dirtyRect];
+	
+	////
+	
 	{
 		Renderbuffer	rb1		{Renderbuffer::FORMAT::DEPTH16, self.frame.size.width, self.frame.size.height};
 		eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, rb1.name());

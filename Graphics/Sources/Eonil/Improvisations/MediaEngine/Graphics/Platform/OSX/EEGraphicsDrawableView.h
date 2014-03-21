@@ -42,7 +42,7 @@
  Currently OS X version is mainly exists to preview purpose for iOS version.
  */
 @interface	EEGraphicsDrawableView : NSOpenGLView
-- (id)		initWithFrame:(CGRect)frame;
+- (id)		initWithFrame:(CGRect)frame;						//!	This is a designated initializer.
 - (void)	prepareGraphicsContext;
 - (void)	cleanupGraphicsContext;
 //- (void)	presentRenderbuffer;								//	Not supported yet.
