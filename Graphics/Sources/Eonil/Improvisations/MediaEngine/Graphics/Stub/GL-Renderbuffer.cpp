@@ -64,6 +64,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(target == GL_RENDERBUFFER);
 
 			glBindRenderbuffer(GL_RENDERBUFFER, 0);
+			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
 		
