@@ -1,0 +1,28 @@
+#include "Common.fragment.shader.glsl-dt-1_10"
+R"(
+
+
+
+
+//	Inputs.
+varying highp vec4		colorF;
+
+//	Outputs.
+
+
+
+
+
+void
+main()
+{
+	gl_FragColor	=	colorF;
+}
+
+
+
+
+
+
+
+)" // +END

@@ -1,0 +1,11 @@
+#include	"Common.shader.glsl-es-1_00"
+R"(
+
+#version	100
+#define		PARAM			uniform
+#define		IN				attribute
+#define		OUT				varying
+
+#define		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	gl_MaxVertexUniformVectors
+
+)"

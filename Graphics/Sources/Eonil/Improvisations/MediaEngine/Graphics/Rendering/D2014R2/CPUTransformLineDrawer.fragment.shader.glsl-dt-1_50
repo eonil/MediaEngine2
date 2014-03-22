@@ -1,0 +1,33 @@
+#include	"Common.fragment.shader.glsl-dt-1_50"
+R"(
+
+
+//	Inputs.
+centroid in vec4		compositionColorF;
+
+//	Outputs.
+out	vec4				color;
+
+
+
+/*!
+ 
+ */
+void
+main()
+{
+	color	=	compositionColorF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+)"

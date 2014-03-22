@@ -6,13 +6,13 @@ R"(
 //	Parameters.
 
 //	Inputs.
-attribute	vec2	positionCoordinateV;
-attribute	vec2	textureCoordinateV;
-attribute	vec4	compositionColorV;
+IN	vec2	positionCoordinateV;
+IN	vec2	textureCoordinateV;
+IN	vec4	compositionColorV;
 
 //	Outputs.
-varying		vec4	compositionColorF;
-varying		vec2	textureCoordinateF;
+OUT	vec4	compositionColorF;
+OUT	vec2	textureCoordinateF;
 
 
 

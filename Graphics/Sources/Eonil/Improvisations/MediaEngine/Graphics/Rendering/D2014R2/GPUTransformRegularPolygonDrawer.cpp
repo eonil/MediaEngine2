@@ -39,16 +39,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
-#include "GPUTransformRegularPolygonDrawer.vertex.shader.rstr"
+#if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-dt-1_10"
+#elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
+#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-es-1.00"
+#else
+#error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
+#endif
 				;
 				
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
-#if EONIL_MEDIA_ENGINE_TARGET_IOS
-#include "GPUTransformRegularPolygonDrawer.es.fragment.shader.rstr"
-#endif
-#if EONIL_MEDIA_ENGINE_TARGET_OSX
-#include "GPUTransformRegularPolygonDrawer.dt.fragment.shader.rstr"
+#if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-dt-1_10"
+#elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
+#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-es-1.00"
+#else
+#error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
 				;
 				

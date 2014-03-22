@@ -1,0 +1,29 @@
+#include "Common.fragment.shader.glsl-dt-1_50"
+R"(
+
+
+
+
+//	Inputs.
+centroid highp in vec4		colorF;
+
+//	Outputs.
+out vec4					pixelF;
+
+
+
+
+
+void
+main()
+{
+	pixelF	=	colorF;
+}
+
+
+
+
+
+
+
+)" // +END

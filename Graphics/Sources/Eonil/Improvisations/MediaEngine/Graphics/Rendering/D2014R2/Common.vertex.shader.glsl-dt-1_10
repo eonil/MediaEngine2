@@ -1,0 +1,11 @@
+#include	"Common.shader.glsl-dt-1_10"
+R"(
+
+#define		PARAM			uniform
+#define		IN				attribute
+#define		OUT				varying
+
+//#define		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	gl_MaxVertexUniformVectors
+const int	EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	=	512 / 4;
+
+)"

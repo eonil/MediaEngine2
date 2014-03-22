@@ -1,0 +1,32 @@
+R"(
+	//	Parameters.
+	PARAM		mat4	localToWorldTransformP;
+
+	//	Inputs.
+	IN			vec4	locationCoordinateV;
+	IN			vec4	compositionColorV;
+
+	//	Outputs.
+	OUT			vec4	compositionColorF;
+
+
+
+
+	/*!
+	 All vertexes must be pre-transformed (would be in CPU) before passing to this shader
+	 to be drawn batched. This will be updated to perform transform in GPU using SRT 
+	 information.
+	 */
+	void
+	main()
+	{
+		gl_Position			=	locationCoordinateV * localToWorldTransformP;
+		compositionColorF	=	compositionColorV;
+	}
+
+
+
+
+
+
+)"

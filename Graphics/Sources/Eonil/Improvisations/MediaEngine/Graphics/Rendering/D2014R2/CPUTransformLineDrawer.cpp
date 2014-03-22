@@ -47,16 +47,24 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
-#include "CPUTransformLineDrawer.vertex.shader"
+#if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+#include		"CPUTransformLineDrawer.vertex.shader.glsl-dt-1_10"
+#elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
+#include		"CPUTransformLineDrawer.vertex.shader.glsl-es-1_00"
+#else
+#error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
+#endif
+				
 				;
 				
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
-#if EONIL_MEDIA_ENGINE_TARGET_IOS
-#include "CPUTransformLineDrawer.es.fragment.shader"
-#endif
-#if EONIL_MEDIA_ENGINE_TARGET_OSX
-#include "CPUTransformLineDrawer.dt.fragment.shader"
+#if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+#include		"CPUTransformLineDrawer.fragment.shader.glsl-dt-1_10"
+#elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
+#include		"CPUTransformLineDrawer.fragment.shader.glsl-es-1_00"
+#else			
+#error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
 				;
 				

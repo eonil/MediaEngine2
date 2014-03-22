@@ -1,0 +1,35 @@
+R"(
+
+
+
+//	Parameters.
+uniform sampler2D		colorTextureSamplerU;
+
+//	Inputs.
+centroid in vec4			compositionColorF;
+centroid in vec2			textureCoordinateF;
+
+//	Outputs.
+out			vec4			color;
+
+
+
+/*!
+ 
+ */
+void
+main()
+{
+	color	=	compositionColorF * texture(colorTextureSamplerU, textureCoordinateF);
+	
+//	//	Debugging...
+//	gl_FragColor	=	compositionColorF;
+}
+
+
+
+
+
+
+
+)"

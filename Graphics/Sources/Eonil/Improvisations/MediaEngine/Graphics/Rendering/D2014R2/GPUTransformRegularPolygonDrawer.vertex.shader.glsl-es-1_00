@@ -1,0 +1,2 @@
+#include "Common.vertex.shader.glsl-es-1_00"
+#include "GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common"
