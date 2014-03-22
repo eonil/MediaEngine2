@@ -1,7 +1,6 @@
 #include	"Common.shader.glsl-es-1_00"
 R"(
 
-#version	100
 #define		PARAM			uniform
 #define		IN				varying
 
