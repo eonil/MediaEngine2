@@ -77,6 +77,12 @@
 
 
 
+#if				EONIL_MEDIA_ENGINE_DEBUG_MODE
+#define			EONIL_MEDIA_ENGINE_DEBUG_LOG(msg)							{ Eonil::Improvisations::MediaEngine::Foundation::Debugging::Doctor::logMessage(msg); }
+#else
+#define			EONIL_MEDIA_ENGINE_DEBUG_LOG(msg)
+#endif
+
 
 
 
