@@ -75,8 +75,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLuint						_name						{NULL_GL_NAME()};
 			
-			vec<UniformValueSlotV1>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved.
-			vec<VertexAttributeSlotV1>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved.
+			vec<UniformValueSlotV1>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
+			vec<VertexAttributeSlotV1>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
 			
 			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			
@@ -84,7 +84,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			auto	_assertNonEmptyState() const -> void;
 			
-			
+			auto	_search_uniform_location(str const& name) const -> GLint;
 			
 			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) const -> UniformValueSlotV1 const*;
 			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) -> UniformValueSlotV1*;
@@ -122,8 +122,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			}
 //			vertexAttributeSlot;
 			
-			auto	uniformValueSlotForName(str const& name) const -> UniformValueSlot;				//!	Panics if there's no slot for the name.
-//			auto	vertexAttributeSlotForName(str const& name) const -> VertexAttributeSlot;		//!	Panics if there's no slot for the name.
+			auto	uniformValueSlotForName(str const& name) const -> local<UniformValueSlot const>;	//!	Panics if there's no slot for the name.
+			auto	uniformValueSlotForName(str const& name) -> local<UniformValueSlot>;				//!	Panics if there's no slot for the name.
+//			auto	vertexAttributeSlotForName(str const& name) const -> VertexAttributeSlot;			//!	Panics if there's no slot for the name.
 			
 			[[deprecated]]	auto	allUniformValueSlotV1s() const									->	vec<UniformValueSlotV1> const&;
 			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlotV1 const&;

@@ -13,6 +13,7 @@
 #include "ImplementationCommon.h"
 
 #include "Shader.h"
+#include "ProgramParameterLocation.h"
 #include "Machinery/VertexAttributeChannel.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
@@ -22,6 +23,46 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		using namespace Debugging;
 		using namespace Stub;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		auto
+		Program::
+		_search_uniform_location(const str &name) const -> GLint
+		{
+			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
+			if (loc2 != -1)
+			{
+				return	loc2;
+			}
+			Doctor::exceptWithReason("Uniform value slot for the name does not exist.");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -174,6 +215,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		
+		
+		
+		
+		
+		
+		auto Program::
+		uniformValueSlotForName(const str &name) const -> local<UniformValueSlot const>
+		{
+			ProgramParameterLocation	p1	{_name, _search_uniform_location(name)};
+			UniformValueSlot			s2	{p1};
+			
+			return	{s2};
+		}
+		auto Program::
+		uniformValueSlotForName(const str &name) -> local<UniformValueSlot>
+		{
+			ProgramParameterLocation	p1	{_name, _search_uniform_location(name)};
+			UniformValueSlot			s2	{p1};
+			
+			return	{s2};
+		}
 		
 		auto Program::
 		allUniformValueSlotV1s() const -> vec<UniformValueSlotV1> const&

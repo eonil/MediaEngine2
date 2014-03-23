@@ -59,14 +59,16 @@ public:
 		////
 		
 		vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	insts	=	{};
-		size_t	w	=	16;
-		size_t	h	=	16;
+		size_t	w	=	1;
+		size_t	h	=	1;
 		for (size_t xi=0; xi<w; xi++)
 		{
 			for (size_t yi=0; yi<h; yi++)
 			{
-				Scalar	x	=	Scalar(xi) / Scalar(w-1) - 0.5;
-				Scalar	y	=	Scalar(yi) / Scalar(h-1) - 0.5;
+//				Scalar	x	=	Scalar(xi) / Scalar(w) - 0.5;
+//				Scalar	y	=	Scalar(yi) / Scalar(h) - 0.5;
+				Scalar	x	=	0;
+				Scalar	y	=	0;
 				Scalar	l	=	Scalar(rand()) / std::numeric_limits<int>::max();
 				
 				GPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};

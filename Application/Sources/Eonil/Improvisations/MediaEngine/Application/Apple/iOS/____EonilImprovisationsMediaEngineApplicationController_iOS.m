@@ -51,7 +51,7 @@ static TERM		GlobalCleanup	=	nil;
 		GlobalStepper	=	[step copy];
 		GlobalCleanup	=	[cleanup copy];
 		
-		int	result		=	UIApplicationMain(argc, argv, nil, NSStringFromClass([self class]));
+		int	result		=	UIApplicationMain(argc, (char**)argv, nil, NSStringFromClass([self class]));
 		
 		GlobalPrepare	=	nil;
 		GlobalStepper	=	nil;

@@ -13,12 +13,12 @@
 #include "../../Server/Texture.h"
 #include "../../Server/Shader.h"
 #include "../../Server/Program.h"
+#include "../../Server/ProgramParameterLocation.h"
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
-
 
 
 
@@ -118,13 +118,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					
 					for (Size j=0; j<capacity; j++)
 					{
-						add_vert(j, 0, +1);
+						add_vert(j, 0, +1);						//	For connection between circles when drawing in TRIANGLE_STRIP mode.
 						for (Size i=0; i<=segmentation; i++)
 						{
 							add_vert(j, i, +1);
 							add_vert(j, i, -1);
 						}
-						add_vert(j, segmentation, -1);
+						add_vert(j, segmentation, -1);			//	For connection between circles when drawing in TRIANGLE_STRIP mode.
 					}
 				
 					return	vs;
@@ -175,8 +175,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				Size			segmentation				{};
 				Size			capacity					{};
 				Program			program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				Size			transformUniformIndex		{program.indexOfUniformValueSlotV1ForName("transformP")};
-				Size			instancesUniformIndex		{program.indexOfUniformValueSlotV1ForName("instancesP[0]")};
+				
+				local<UniformValueSlot>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
+				local<UniformValueSlot>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
 
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
@@ -217,17 +218,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				static_assert(sizeof(VaryingInstance) == sizeof(Scalar) * 8, "");
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
-
-				auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
-				auto&	instances_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->instancesUniformIndex);
+				
+				static const constexpr Size	INSTANCE_FLOAT_COUNT	=	sizeof(VaryingInstance)/sizeof(Scalar);
+				
+				auto&	transform_uniform_slot	=	*_core_ptr->transformUniformSlot;
+				auto&	instances_uniform_slot	=	*_core_ptr->instancesUniformSlot;
+				
 				Machine::machine().useProgram(_core_ptr->program);
 				{
 					transform_uniform_slot.setValue(worldToScreenTransform);
-//					instances_uniform_slot.setValueArray((float const*)instances.data(), sizeof(VaryingInstance)/sizeof(Scalar) * );
-					instances_uniform_slot.setValueArray((float const*)instances.data(), 8 * _core_ptr->capacity);
+					instances_uniform_slot.setValueArray((float const*)instances.data(), INSTANCE_FLOAT_COUNT * _core_ptr->capacity);
 					{
 						vec<GPUVertex>	vs	=	make_vertexes(_core_ptr->segmentation, _core_ptr->capacity);
-						Server::Utility::draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vs.size()));
+						Size			vc	=	instances.size() * (_core_ptr->segmentation * 2 + 2);			//	Two points for each segment and two extra point for each instances for connection.
+						Server::Utility::draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
 					}
 					instances_uniform_slot.unset();
 					transform_uniform_slot.unset();
