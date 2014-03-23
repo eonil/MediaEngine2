@@ -374,9 +374,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO void
 		eeglDepthRangef(GLclampf const nearVal, GLclampf const farVal)
 		{
-			glDepthRangef(nearVal, farVal);
-//			glDepthRange(nearVal, farVal);
-			EEGL_ASSERT_NO_GL_ERROR();
+#if		EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+			{
+				glDepthRange(nearVal, farVal);
+				EEGL_ASSERT_NO_GL_ERROR();
+			}
+#elif	EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
+			{
+				glDepthRangef(nearVal, farVal);
+				EEGL_ASSERT_NO_GL_ERROR();
+			}
+#else
+#error "Missing implementation for target platform. Please check."
+#endif
 		}
 		
 		

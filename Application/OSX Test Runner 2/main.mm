@@ -1,15 +1,16 @@
 //
 //  main.m
-//  iOSTestRunner2
+//  OSX Test Runner 2
 //
-//  Created by Hoon H. on 3/2/14.
+//  Created by Hoon H. on 3/22/14.
 //
 //
 
 #include "run.h"
+#include "TestRendering1.h"
 #include "TestRendering2.h"
 
-int main(int argc, char const * argv[])
+int main(int argc, const char * argv[])
 {
 	using namespace	Eonil::Improvisations::MediaEngine::Application;
 	

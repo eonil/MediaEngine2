@@ -33,7 +33,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	auto
-	run(int argc, char *argv[], std::function<void(Stepping const&)> const& step) -> int
+	run(int argc, char const *argv[], std::function<void(Stepping const&)> const& step) -> int
 	{
 		return
 		run(argc, argv, []{}, []{}, step);
@@ -44,16 +44,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	auto
-	run(int argc, char *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
-	{
-		char const* * argv2	=	(char const* *)argv;
-		
+	run(int argc, char const *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
+	{	
 		@autoreleasepool
 		{
 			return
-			[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv2
+			[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv
 			prepare:^
 			{
+				/*!
+				 On desktop, multisampling will be always on.
+				 */
+				glEnable(GL_MULTISAMPLE);
 				prepare();
 			}
 			cleanup:^

@@ -76,8 +76,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			//!	@todo	Remove C `abort` and throw C++ exception as Apportable supports C++ exception backtrace.
 			logMessage("Currently exception is routed to C `abort()` function. Change this to C++ exception.", "EonilFoundation", true);
 			abort();
+//			panic(reason);
 	#else
-			throw	reason;
+
+			panic(reason);
 	#endif
 		}
 		

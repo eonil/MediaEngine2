@@ -43,7 +43,7 @@ static TERM		GlobalCleanup	=	nil;
 	
 	CADisplayLink*				_disp_link;
 }
-+ (int)	runWithArgc:(int)argc argv:(char*[])argv prepare:(void(^)(UIViewController* mainViewController))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
++ (int)	runWithArgc:(int)argc argv:(char const*[])argv prepare:(void(^)(UIViewController* mainViewController))prepare cleanup:(void(^)(void))cleanup step:(void(^)(CGRect bounds))step;
 {
 	@autoreleasepool
 	{
@@ -66,7 +66,7 @@ static TERM		GlobalCleanup	=	nil;
 	_main_win		=	[[UIWindow alloc] initWithFrame:bounds];
 	_nav_con		=	[[UINavigationController alloc] init];
 	_gl_view_con	=	[[UIViewController alloc] init];
-	_gl_view		=	[[EEGraphicsDrawableView alloc] init];
+	_gl_view		=	[[EEGraphicsDrawableView alloc] initWithFrame:CGRectZero multisampling:YES];
 	
 	[_gl_view_con setView:_gl_view];
 	[_nav_con setNavigationBarHidden:YES animated:NO];

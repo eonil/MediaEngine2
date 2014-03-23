@@ -42,7 +42,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 #if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
 #include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-dt-1_10"
 #elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-es-1.00"
+#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-es-1_00"
 #else
 #error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
@@ -53,7 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 #if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
 #include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-dt-1_10"
 #elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-es-1.00"
+#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-es-1_00"
 #else
 #error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
@@ -172,14 +172,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			struct
 			GPUTransformRegularPolygonDrawer::Core
 			{
-				Size			segmentation					{};
-				Size			capacity						{};
-				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				Size			transformUniformIndex			{program.indexOfUniformValueSlotForName("transformP")};
-				Size			instancesUniformIndex			{program.indexOfUniformValueSlotForName("instancesP[0]")};
-//				Size			transformUniformIndex			{program.searchUniformValueSlotForName("transformP")->index()};
-//				Size			instancesUniformIndex			{program.searchUniformValueSlotForName("instancesP")->index()};
-				
+				Size			segmentation				{};
+				Size			capacity					{};
+				Program			program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
+				Size			transformUniformIndex		{program.indexOfUniformValueSlotForName("transformP")};
+				Size			instancesUniformIndex		{program.indexOfUniformValueSlotForName("instancesP[0]")};
+
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
 				
@@ -217,9 +215,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto GPUTransformRegularPolygonDrawer::
 			draw(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::GPUTransformRegularPolygonDrawer::VaryingInstance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &worldToScreenTransform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::DisplayScreenFrame &frame) const -> void
 			{
-				static_assert(sizeof(VaryingInstance) == 4 * 8, "");
+				static_assert(sizeof(VaryingInstance) == sizeof(Scalar) * 8, "");
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
-				
+
 				auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
 				auto&	instances_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->instancesUniformIndex);
 				Machine::machine().useProgram(_core_ptr->program);

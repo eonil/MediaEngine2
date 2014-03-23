@@ -32,7 +32,17 @@
 #endif
 
 #if	EONIL_MEDIA_ENGINE_TARGET_OSX
-#include <OpenGL/OpenGL.h>
+/*
+ In OS X 10.8.x or earlier;
+ 
+ The flag `GL_ARB_ES2_compatibility` just provides API compatibility, but actual behavior
+ will not be changed. That means unsupported feature will cause a runtime exception, and 
+ that means silent error ignore on compilation. A real big shit. I don't want that.
+ It's funnay that the compatibility feature will be disabled when this flag is *defined* 
+ instead of undefined.
+ */
+//#define	GL_ARB_ES2_compatibility
+//#include <OpenGL/OpenGL.h>
 #include <OpenGL/gl3.h>
 #include <OpenGL/gl3ext.h>
 #endif

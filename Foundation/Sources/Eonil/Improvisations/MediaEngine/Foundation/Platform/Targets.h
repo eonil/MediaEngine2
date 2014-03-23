@@ -133,6 +133,9 @@
 
 
 
+#define EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM			"Implementation of this feature for target platform is missing. Please check."
+
+
 
 
 

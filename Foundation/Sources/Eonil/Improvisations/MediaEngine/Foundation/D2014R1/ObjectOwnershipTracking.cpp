@@ -24,7 +24,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		{
 			EONIL_DEBUG_ASSERT(owner != nullptr);
 			_dbg_virtual_ownership_list.insert(owner);
-			std::cout << "_dbg_virtual_retain_ownership_by, refs = " << std::to_string(_dbg_virtual_ownership_list.size()) << "\n";
+//			std::cout << "_dbg_virtual_retain_ownership_by, refs = " << std::to_string(_dbg_virtual_ownership_list.size()) << "\n";
 		}
 		auto TrackableObject::
 		_dbg_virtual_release_ownership_by(void const* owner) const -> void
@@ -32,7 +32,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			EONIL_DEBUG_ASSERT(owner != nullptr);
 			EONIL_DEBUG_ASSERT(_dbg_virtual_ownership_list.count(owner) > 0);
 			_dbg_virtual_ownership_list.erase(owner);
-			std::cout << "_dbg_virtual_release_ownership_by, refs = " << std::to_string(_dbg_virtual_ownership_list.size()) << "\n";
+//			std::cout << "_dbg_virtual_release_ownership_by, refs = " << std::to_string(_dbg_virtual_ownership_list.size()) << "\n";
 		}
 		
 		TrackableObject::~TrackableObject()

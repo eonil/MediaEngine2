@@ -22,11 +22,23 @@
 #import <Cocoa/Cocoa.h>
 #import <AppKit/AppKit.h>
 
+
+
+
+
+@protocol	____EonilImprovisationsMediaEngineMainWindowController_Delegate
+- (void)	mainWindowControllerPrepare;
+- (void)	mainWindowControllerCleanup;
+- (void)	mainWindowControllerStep:(CGRect)bounds;
+@end
+
 @interface ____EonilImprovisationsMediaEngineMainWindowController : NSWindowController <NSWindowDelegate>
-- (id)initWithStep:(void(^)(CGRect bounds))step;
+@property	(readwrite,nonatomic,assign)	id<____EonilImprovisationsMediaEngineMainWindowController_Delegate>		delegate;
+- (id)init;									//	Designated initializer.
 - (void)startDisplayTicking;
 - (void)stopDisplayTicking;
 - (void)displayTimeTick:(id)sender;
+//- (void)routeToDelegate;					//	Bad design... but this is the only option until refactoring design of `EEGraphicsDrawableView`.
 @end
 
 

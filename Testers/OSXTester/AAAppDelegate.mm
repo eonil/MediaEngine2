@@ -24,7 +24,7 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 @implementation AAAppDelegate
 {
 	NSWindow*		_win;
-	NSOpenGLView*	_glV;
+	NSView*			_glV;
 	NSTimer*		_tmr;
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -35,12 +35,13 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 	[_win makeKeyAndOrderFront:self];
 	
 	_glV	=	[[AATestGLView alloc] init];
+	[_glV setFrame:[_win.contentView bounds]];
 	[_win.contentView addSubview:_glV];
 	
 	NSView*	cv	=	_win.contentView;
-	cv.wantsLayer	=	YES;
-	cv.layer		=	[[CALayer alloc] init];
-	cv.layer.backgroundColor	=	[NSColor redColor].CGColor;
+//	cv.wantsLayer	=	YES;
+//	cv.layer		=	[[CALayer alloc] init];
+//	cv.layer.backgroundColor	=	[NSColor redColor].CGColor;
 	
 	_glV.translatesAutoresizingMaskIntoConstraints	=	NO;
 	[cv addConstraint:[NSLayoutConstraint constraintWithItem:cv attribute:(NSLayoutAttributeCenterX) relatedBy:(NSLayoutRelationEqual) toItem:_glV attribute:(NSLayoutAttributeCenterX) multiplier:1 constant:0]];
@@ -69,14 +70,54 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 
 
 @implementation AATestGLView
+{
+	NSOpenGLContext*	_gl_ctx;
+}
+- (id)initWithFrame:(NSRect)frameRect
+{
+	if (self = [super initWithFrame:frameRect])
+	{
+		NSOpenGLPixelFormatAttribute	SENTINEL		=	0;
+		NSOpenGLPixelFormatAttribute	pixelAttrs[]	=
+		{
+			NSOpenGLPFADoubleBuffer,
+			NSOpenGLPFAOpenGLProfile,	NSOpenGLProfileVersionLegacy,
+			NSOpenGLPFAColorSize,		24,
+			NSOpenGLPFAAlphaSize,		8,
+//			NSOpenGLPFADepthSize,		24,
+//			NSOpenGLPFAStencilSize,		8,
+			NSOpenGLPFASampleBuffers,	0,
+			SENTINEL,
+		};
+		
+		NSOpenGLPixelFormat*			pf1				=	[[NSOpenGLPixelFormat alloc] initWithAttributes:pixelAttrs];
+		
+		_gl_ctx	=	[[NSOpenGLContext alloc] initWithFormat:pf1 shareContext:nil];
+	}
+	return	self;
+}
+- (void)lockFocus
+{
+    NSOpenGLContext* context = _gl_ctx;
+	
+    [super lockFocus];
+    if ([context view] != self) {
+        [context setView:self];
+    }
+    [context makeCurrentContext];
+}
 - (void)drawRect:(NSRect)dirtyRect
 {
+	[_gl_ctx makeCurrentContext];
+	[_gl_ctx setView:self];
 	
 	////
 	
+	eeglClearColor(0, 0, 1, 1);
+	eeglClear(GL_COLOR_BUFFER_BIT);
 	{
-		Renderbuffer	rb1		{Renderbuffer::FORMAT::DEPTH16, self.frame.size.width, self.frame.size.height};
-		eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, rb1.name());
+//		Renderbuffer	rb1		{Renderbuffer::FORMAT::DEPTH16, self.frame.size.width, self.frame.size.height};
+//		eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, rb1.name());
 		
 		//		GLuint	db_name;
 		//		eeglGenRenderbuffers(1, &db_name);
@@ -85,7 +126,12 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 		//		eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, db_name);
 		
 		{
-			TestStatus();
+//			TestStatus();
+			
+			if (not (eeglCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE))
+			{
+				abort();
+			}
 			
 			TestClearScreen();
 			TestRenderingWithOnlyVertexesInClientMemory();
@@ -98,11 +144,9 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 			PlanarTexture	tex		=	Server::PlanarTexture::Utility::textureWithContentOfFileAtPath(fp0.UTF8String);
 			TestRendering2RenderingWithTexture(tex);
 			
-			[self.openGLContext flushBuffer];
+			[_gl_ctx flushBuffer];
 		}
-		eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 0);
-		
-		//		eeglDeleteRenderbuffer(db_name);
+//		eeglFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 0);
 	}
 	
 	////

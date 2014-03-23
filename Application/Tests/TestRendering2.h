@@ -36,16 +36,21 @@ class
 TestRendering2
 {
 	Scalar				r1	=	0;
-	
+
 	D2014R2::DebuggingInformationOverlayDrawer	_dbgd{};
 	D2014R2::SpriteDrawer						_sprd{};
 	uptr<PlanarTexture>							_tex1{};
-	
-	D2014R2::GPUTransformRegularPolygonDrawer	_reg_poly_drawer	{128};
+
+	D2014R2::GPUTransformRegularPolygonDrawer				_reg_poly_drawer	{128};
 	
 	vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	_circle_instances{};
 	
 public:
+	TestRendering2(TestRendering2 const&) = delete;
+	TestRendering2(TestRendering2&&) = delete;
+	auto	operator=(TestRendering2) -> TestRendering2& = delete;
+	auto	operator=(TestRendering2&&) -> TestRendering2& = delete;
+	
 	TestRendering2()
 	{
 		str		tex_path	=	Bundle::main().pathForResource("", "PIA14415_clip_1024", "png");
@@ -54,23 +59,25 @@ public:
 		////
 		
 		vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	insts	=	{};
-		for (size_t i=0; i<128; i++)
+		size_t	w	=	16;
+		size_t	h	=	16;
+		for (size_t xi=0; xi<w; xi++)
 		{
-			Scalar	x	=	Scalar(rand()) / std::numeric_limits<int>::max() - 0.5;
-			Scalar	y	=	Scalar(rand()) / std::numeric_limits<int>::max() - 0.5;
-			Scalar	r1	=	Scalar(rand()) / std::numeric_limits<int>::max() * 0.2;
-			Scalar	v1	=	Scalar(rand()) / std::numeric_limits<int>::max() * 0.02 + 0.001;
-			
-			Scalar	a1	=	Scalar(rand()) / std::numeric_limits<int>::max();
-			
-			GPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
-//			CPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
-			inst1.position	=	{x, y};
-			inst1.boundary	=	{r1, Scalar(r1 + v1)};
-			inst1.color		=	{a1, a1, a1, 1};
-			insts.push_back(inst1);
-			
-			_circle_instances	=	insts;
+			for (size_t yi=0; yi<h; yi++)
+			{
+				Scalar	x	=	Scalar(xi) / Scalar(w-1) - 0.5;
+				Scalar	y	=	Scalar(yi) / Scalar(h-1) - 0.5;
+				Scalar	l	=	Scalar(rand()) / std::numeric_limits<int>::max();
+				
+				GPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
+				//			CPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
+				inst1.position	=	{x, y};
+				inst1.boundary	=	{0,0};
+				inst1.color		=	{l, l, l, 1};
+				insts.push_back(inst1);
+				
+				_circle_instances	=	insts;
+			}
 		}
 	}
 	
@@ -78,6 +85,12 @@ public:
 	mutate() -> void
 	{
 		r1	+=	0.01;
+		
+		for (auto& a: _circle_instances)
+		{
+			a.boundary.inner	=	0.1 + sinf(r1 * 4.0) * 0.1;
+			a.boundary.outer	=	a.boundary.inner + 0.0025;
+		}
 	}
 	
 	auto
@@ -87,19 +100,19 @@ public:
 		
 		////
 		
-		Server::Utility::clear({1, 0, 1, 1});
-		
+		Server::Utility::clear({0, 0.5, 1, 1});
+
 		SpriteDrawer::UniformScalingInstance	inst1{};
 		inst1.scale			=	0.5;
-		
+
 		SpriteDrawer::UniformScalingInstance	inst2{};
 		inst2.scale			=	0.25;
 		inst2.rotation		=	Quaternion::Utility::quaternionWithAxisAngle(AxisAngle{{0,0,1}, r1});
 		inst2.translation	=	{+0.1, +0.1, 0};
 		_sprd.drawInstances(*_tex1, {inst1, inst2}, world_to_screen_transform, s.frame());
-		
+
 		_dbgd.drawNull(s.frame(), world_to_screen_transform, {0.25, 0.25, 0.25});
-		
+
 		{
 			_reg_poly_drawer.draw(_circle_instances, world_to_screen_transform, s.frame());
 		}

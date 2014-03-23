@@ -64,17 +64,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			FORMAT : GLenum
 			{
 				RGBA4					=	GL_RGBA4,
-				RGB565					=	GL_RGB565,
 				RGB5A1					=	GL_RGB5_A1,
 				DEPTH16					=	GL_DEPTH_COMPONENT16,
 				STENCIL8				=	GL_STENCIL_INDEX8,
 				
-#if	EONIL_MEDIA_ENGINE_TARGET_OSX
-				
-#endif
-				
-#if	EONIL_MEDIA_ENGINE_TARGET_IOS
-				
+#if		EONIL_MEDIA_ENGINE_TARGET_OSX
+#elif	EONIL_MEDIA_ENGINE_TARGET_IOS
+				RGB565					=	GL_RGB565,
+#else	
+#error	EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
 				
 			};

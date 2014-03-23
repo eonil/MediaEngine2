@@ -17,7 +17,7 @@
 
 
 
-@interface	AATestGLView : NSOpenGLView
+@interface	AATestGLView : NSView
 @end
 
 

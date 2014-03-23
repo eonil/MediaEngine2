@@ -1,4 +1,0 @@
-R"(
-#define	highp
-)"
-#include "GPUTransformRegularPolygonDrawer.es.fragment.shader.rstr"

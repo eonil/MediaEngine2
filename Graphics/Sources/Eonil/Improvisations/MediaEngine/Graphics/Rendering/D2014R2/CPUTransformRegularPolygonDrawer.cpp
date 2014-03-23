@@ -164,7 +164,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				Size			segmentation					{};
 				Size			capacity						{};
 				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				Size			transformUniformIndex			{program.searchUniformValueSlotForName("transformP")->index()};
+				Size			transformUniformIndex			{program.indexOfUniformValueSlotForName("transformP")};
 				
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};

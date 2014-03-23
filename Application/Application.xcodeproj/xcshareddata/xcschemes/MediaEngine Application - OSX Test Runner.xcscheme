@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4525EACA18B6C0E500B05C1D"
-               BuildableName = "OSX Test Runner.app"
-               BlueprintName = "OSX Test Runner"
+               BuildableName = "OSX Test Runner 1.app"
+               BlueprintName = "OSX Test Runner 1"
                ReferencedContainer = "container:Application.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -38,13 +38,23 @@
                ReferencedContainer = "container:Application.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4584022D18DCE7DB00AAE1A2"
+               BuildableName = "OSX Test Runner 2Tests.xctest"
+               BlueprintName = "OSX Test Runner 2Tests"
+               ReferencedContainer = "container:Application.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4525EACA18B6C0E500B05C1D"
-            BuildableName = "OSX Test Runner.app"
-            BlueprintName = "OSX Test Runner"
+            BuildableName = "OSX Test Runner 1.app"
+            BlueprintName = "OSX Test Runner 1"
             ReferencedContainer = "container:Application.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4525EACA18B6C0E500B05C1D"
-            BuildableName = "OSX Test Runner.app"
-            BlueprintName = "OSX Test Runner"
+            BuildableName = "OSX Test Runner 1.app"
+            BlueprintName = "OSX Test Runner 1"
             ReferencedContainer = "container:Application.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +90,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4525EACA18B6C0E500B05C1D"
-            BuildableName = "OSX Test Runner.app"
-            BlueprintName = "OSX Test Runner"
+            BuildableName = "OSX Test Runner 1.app"
+            BlueprintName = "OSX Test Runner 1"
             ReferencedContainer = "container:Application.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

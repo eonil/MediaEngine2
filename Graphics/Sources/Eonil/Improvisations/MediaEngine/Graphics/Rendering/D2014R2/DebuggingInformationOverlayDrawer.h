@@ -35,6 +35,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 			public:
+				DebuggingInformationOverlayDrawer(DebuggingInformationOverlayDrawer const&) = delete;
 				DebuggingInformationOverlayDrawer(Scalar const& objectUniformScale = 1);
 				
 				auto	objectUniformScale() const -> Scalar const&;

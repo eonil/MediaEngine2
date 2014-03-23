@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4525EA8918B6BD2C00B05C1D"
-               BuildableName = "iOS Test Runner.app"
-               BlueprintName = "iOS Test Runner"
+               BuildableName = "iOS Test Runner 1.app"
+               BlueprintName = "iOS Test Runner 1"
                ReferencedContainer = "container:Application.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4525EA8918B6BD2C00B05C1D"
-            BuildableName = "iOS Test Runner.app"
-            BlueprintName = "iOS Test Runner"
+            BuildableName = "iOS Test Runner 1.app"
+            BlueprintName = "iOS Test Runner 1"
             ReferencedContainer = "container:Application.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4525EA8918B6BD2C00B05C1D"
-            BuildableName = "iOS Test Runner.app"
-            BlueprintName = "iOS Test Runner"
+            BuildableName = "iOS Test Runner 1.app"
+            BlueprintName = "iOS Test Runner 1"
             ReferencedContainer = "container:Application.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -90,8 +90,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4525EA8918B6BD2C00B05C1D"
-            BuildableName = "iOS Test Runner.app"
-            BlueprintName = "iOS Test Runner"
+            BuildableName = "iOS Test Runner 1.app"
+            BlueprintName = "iOS Test Runner 1"
             ReferencedContainer = "container:Application.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

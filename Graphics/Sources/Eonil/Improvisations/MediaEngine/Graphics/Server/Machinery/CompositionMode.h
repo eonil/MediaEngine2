@@ -68,7 +68,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				friend class	Server::Machine;
 				
-				bool	_locked		{false};
+				bool			_locked		{false};
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 			public:
 				

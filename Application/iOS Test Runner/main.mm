@@ -9,7 +9,7 @@
 #include "run.h"
 #include "TestRendering3.h"
 
-int main(int argc, char * argv[])
+int main(int argc, char const* argv[])
 {
 	using namespace	Eonil::Improvisations::MediaEngine::Application;
 	

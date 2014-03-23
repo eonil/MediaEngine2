@@ -88,6 +88,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			
 		public:
 			Program() = default;
 			Program(VertexShader const& vertexShader, FragmentShader const& fragmentShader);
@@ -123,13 +124,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlot const>;
 			auto	uniformsValueSlots() -> GenericMemoryRange<UniformValueSlot>;
 			
-			auto	searchUniformValueSlotForName(str const& name) const -> UniformValueSlot const*;		//!	Returns `nullptr` if there's no slot for the name.
-			auto	searchUniformValueSlotForName(str const& name) -> UniformValueSlot*;					//!	Returns `nullptr` if there's no slot for the name.
+			auto	searchUniformValueSlotForName(str const& name) const -> UniformValueSlot const*;		//!	Returns `nullptr` if there's no slot for the name. Returned pointer is stable while this program is alive.
+			auto	searchUniformValueSlotForName(str const& name) -> UniformValueSlot*;					//!	Returns `nullptr` if there's no slot for the name. Returned pointer is stable while this program is alive.
 			
 			[[deprecated]]	auto	allUniformValueSlots() const									->	vec<UniformValueSlot> const&;
 			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlot const&;
 			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlot&;
-			[[deprecated]]	auto	indexOfUniformValueSlotForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
+			auto	indexOfUniformValueSlotForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
 			
 			auto	allVertexAttributeSlots() const									->	vec<VertexAttributeSlot> const&;
 			auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlot const&;

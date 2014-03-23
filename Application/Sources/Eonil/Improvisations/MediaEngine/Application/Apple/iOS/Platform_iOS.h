@@ -35,7 +35,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	class
 	Platform
 	{
-		friend auto	run(int argc, char *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int;
+		friend auto	run(int argc, char const *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int;
 		
 		static auto	_init(UIViewController* mainViewController) -> void;
 		static auto	_term() -> void;

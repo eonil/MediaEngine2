@@ -33,7 +33,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	auto
-	run(int argc, char *argv[], STEP const& step) -> int
+	run(int argc, char const *argv[], STEP const& step) -> int
 	{
 		return
 		run(argc, argv, []{}, []{}, step);
@@ -44,7 +44,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	auto
-	run(int argc, char *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
+	run(int argc, char const *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
 	{
 		auto	toEE	=	[](CGFloat f) -> Scalar
 		{
@@ -58,7 +58,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 			return
 			[____EonilImprovisationsMediaEngineApplicationController_iOS runWithArgc:argc argv:argv
 			prepare:^(UIViewController* mvc)
-			 {
+			{
 				Platform::_init(mvc);
 				prepare();
 			}

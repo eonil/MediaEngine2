@@ -104,7 +104,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(renderbuffertarget == GL_RENDERBUFFER);
 			
 //#if not EEGL_IGNORE_ZERO_FRAMEBUFFER_NAME
-			EEGL_ASSERT(eeglGetInteger(GL_FRAMEBUFFER_BINDING) != 0);
+//			EEGL_ASSERT(eeglGetInteger(GL_FRAMEBUFFER_BINDING) != 0);
 //#endif
 			EEGL_ASSERT(renderbuffer == 0 or eeglIsRenderbuffer(renderbuffer));
 			

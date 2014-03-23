@@ -35,11 +35,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	 If you need to prepare/cleanup some stuffs, then do it before/after calling this function.
 	 */
 	auto
-	run(int argc, char *argv[], STEP const& step) -> int;
+	run(int argc, char const *argv[], STEP const& step) -> int;
 	
 	
 	auto
-	run(int argc, char *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int;
+	run(int argc, char const *argv[], PROC const& prepare, PROC const &cleanup, STEP const &step) -> int;
 	
 	
 	
@@ -97,9 +97,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	 */
 	template <typename T>
 	auto
-	run(int argc, char *argv[]) -> int
+	run(int argc, char const *argv[]) -> int
 	{
-		T*	sysptr	=	nullptr;
+		T	*sysptr	=	nullptr;
 		
 		return
 		run(argc, argv,

@@ -38,7 +38,7 @@
  
  */
 @interface	EEGraphicsDrawableView : UIView
-- (id)		initWithFrame:(CGRect)frame;
+- (id)		initWithFrame:(CGRect)frame multisampling:(BOOL)multisampling;
 - (void)	prepareGraphicsContext;
 - (void)	cleanupGraphicsContext;
 - (void)	presentRenderbuffer;

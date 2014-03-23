@@ -79,7 +79,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT(target == GL_RENDERBUFFER);
 			EEGL_ASSERT(internalformat == GL_RGBA4 or
+#if		EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
 									 internalformat == GL_RGB565 or
+#elif	EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
+#else
+#error	EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
+#endif
 									 internalformat == GL_RGB5_A1 or
 									 internalformat == GL_DEPTH_COMPONENT16 or
 									 internalformat == GL_STENCIL_INDEX8);

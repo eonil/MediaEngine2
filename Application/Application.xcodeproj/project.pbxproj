@@ -27,7 +27,6 @@
 		4525EAD918B6C0E500B05C1D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4525EAD818B6C0E500B05C1D /* main.mm */; };
 		4525EADD18B6C0E500B05C1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4525EADB18B6C0E500B05C1D /* Credits.rtf */; };
 		4525EAE518B6C0E500B05C1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525EAE418B6C0E500B05C1D /* Images.xcassets */; };
-		4538D52618CD26D200066D7E /* TestRendering3.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4538D52418CD26D200066D7E /* TestRendering3.mm */; };
 		453F1D9018C3080C000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		453F1D9118C3080C000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		453F1D9418C3086F000C25CC /* TestRendering2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453F1D9218C3086F000C25CC /* TestRendering2.cpp */; };
@@ -58,7 +57,7 @@
 		455D707B18CE1EAC00040198 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455D707918CE1EAC00040198 /* Platform.cpp */; };
 		4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
-		4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */; };
+		4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.mm */; };
 		4577C99018B6ABC80078033C /* run.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4529052E18B6A56000FCFCBD /* run.cpp */; };
 		4577C99118B6ABC80078033C /* run.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4529052E18B6A56000FCFCBD /* run.cpp */; };
 		4577C99218B6ABCB0078033C /* ApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053318B6A59300FCFCBD /* ApplicationController.mm */; };
@@ -68,6 +67,22 @@
 		457A6C1C18C985DD007BD4D6 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457A6C1A18C985DD007BD4D6 /* Application.cpp */; };
 		457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457A6C1A18C985DD007BD4D6 /* Application.cpp */; };
 		457A6C1E18C985DD007BD4D6 /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = 457A6C1B18C985DD007BD4D6 /* Application.h */; };
+		4584021118DCE7DA00AAE1A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4584021018DCE7DA00AAE1A2 /* Cocoa.framework */; };
+		4584021B18DCE7DA00AAE1A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4584021918DCE7DA00AAE1A2 /* InfoPlist.strings */; };
+		4584021D18DCE7DA00AAE1A2 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584021C18DCE7DA00AAE1A2 /* main.mm */; };
+		4584022118DCE7DA00AAE1A2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4584021F18DCE7DA00AAE1A2 /* Credits.rtf */; };
+		4584022918DCE7DA00AAE1A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4584022818DCE7DA00AAE1A2 /* Images.xcassets */; };
+		4584024218DCE92800AAE1A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
+		4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E8D18B726C100544108 /* OpenGL.framework */; };
+		4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4E718B8A2D9004A5C14 /* GLKit.framework */; };
+		4584024518DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
+		4584024618DCE94000AAE1A2 /* libEonilImprovisationsCommonUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51F18B8A45D004A5C14 /* libEonilImprovisationsCommonUtility.a */; };
+		4584024718DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
+		4584024818DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
+		4584024918DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
+		4584024C18DDC15D00AAE1A2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4584022518DCE7DA00AAE1A2 /* MainMenu.xib */; };
+		4584024D18DDC19700AAE1A2 /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
+		4584024E18DDC19700AAE1A2 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
 		4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
@@ -89,7 +104,7 @@
 		45C49E8E18B726C100544108 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E8D18B726C100544108 /* OpenGL.framework */; };
 		45C49E9118B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E8F18B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h */; };
 		45C49E9218B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
-		45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */; };
+		45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.mm */; };
 		45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
 		45C49E9918B75A6100544108 /* TestRendering1.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E9618B75A6100544108 /* TestRendering1.h */; };
 		45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
@@ -199,7 +214,7 @@
 		450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bundle.cpp; sourceTree = "<group>"; };
 		450E0D7B18BDE3BC003D51E0 /* Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bundle.h; sourceTree = "<group>"; };
 		4525EA5D18B6BD1700B05C1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4525EA8A18B6BD2C00B05C1D /* iOS Test Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4525EA8A18B6BD2C00B05C1D /* iOS Test Runner 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test Runner 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4525EA9018B6BD2C00B05C1D /* iOS Test Runner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Test Runner-Info.plist"; sourceTree = "<group>"; };
 		4525EA9218B6BD2C00B05C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4525EA9418B6BD2C00B05C1D /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -208,7 +223,7 @@
 		4525EAC118B6BE9100B05C1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		4525EAC318B6BE9800B05C1D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		4525EAC518B6BE9E00B05C1D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		4525EACB18B6C0E500B05C1D /* OSX Test Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSX Test Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSX Test Runner 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4525EACC18B6C0E500B05C1D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4525EAD418B6C0E500B05C1D /* OSX Test Runner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSX Test Runner-Info.plist"; sourceTree = "<group>"; };
 		4525EAD618B6C0E500B05C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -225,14 +240,14 @@
 		4529053918B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "____EonilImprovisationsMediaEngineApplicationController_iOS.h"; sourceTree = "<group>"; };
 		4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____EonilImprovisationsMediaEngineApplicationController_iOS.m"; sourceTree = "<group>"; };
 		4529053B18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "____EonilImprovisationsMediaEngineApplicationController.h"; sourceTree = "<group>"; };
-		4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____EonilImprovisationsMediaEngineApplicationController.m"; sourceTree = "<group>"; };
+		4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "____EonilImprovisationsMediaEngineApplicationController.mm"; sourceTree = "<group>"; };
 		4538D52418CD26D200066D7E /* TestRendering3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRendering3.mm; sourceTree = "<group>"; };
 		4538D52518CD26D200066D7E /* TestRendering3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering3.h; sourceTree = "<group>"; };
 		453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIA14415_clip_1024.png; sourceTree = "<group>"; };
 		453F1D9218C3086F000C25CC /* TestRendering2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRendering2.cpp; sourceTree = "<group>"; };
 		453F1D9318C3086F000C25CC /* TestRendering2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering2.h; sourceTree = "<group>"; };
 		453F1DB218C3088D000C25CC /* iOS Test Runner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Test Runner copy-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/iOS Test Runner copy-Info.plist"; sourceTree = "<absolute>"; };
-		453F1DB818C308D3000C25CC /* iOSTestRunner2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTestRunner2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		453F1DC218C308D3000C25CC /* iOSTestRunner2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTestRunner2-Info.plist"; sourceTree = "<group>"; };
 		453F1DC418C308D3000C25CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		453F1DC618C308D3000C25CC /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -249,6 +264,21 @@
 		4577C96818B6A70D0078033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		457A6C1A18C985DD007BD4D6 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		457A6C1B18C985DD007BD4D6 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		4584020918DCE74A00AAE1A2 /* iOS Test Runner 2 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Test Runner 2 copy-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/iOS Test Runner 2 copy-Info.plist"; sourceTree = "<absolute>"; };
+		4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSX Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4584021018DCE7DA00AAE1A2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4584021318DCE7DA00AAE1A2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4584021418DCE7DA00AAE1A2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4584021518DCE7DA00AAE1A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4584021818DCE7DA00AAE1A2 /* OSX Test Runner 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSX Test Runner 2-Info.plist"; sourceTree = "<group>"; };
+		4584021A18DCE7DA00AAE1A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4584021C18DCE7DA00AAE1A2 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		4584021E18DCE7DA00AAE1A2 /* OSX Test Runner 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSX Test Runner 2-Prefix.pch"; sourceTree = "<group>"; };
+		4584022018DCE7DA00AAE1A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4584022618DCE7DA00AAE1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4584022818DCE7DA00AAE1A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4584022F18DCE7DB00AAE1A2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4584024A18DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineTranscoding.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEonilImprovisationsMediaEngineTranscoding.a; path = ../Transcoding/build/Debug/libEonilImprovisationsMediaEngineTranscoding.a; sourceTree = "<group>"; };
 		4595B3D018BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bundle_Apple_Foundation_Impl.hpp; sourceTree = "<group>"; };
 		4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bundle_Apple_OSX_Impl.mm; sourceTree = "<group>"; };
 		4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bundle_Apple_iOS_Impl.mm; sourceTree = "<group>"; };
@@ -337,6 +367,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4584020B18DCE7DA00AAE1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */,
+				4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */,
+				4584024218DCE92800AAE1A2 /* QuartzCore.framework in Frameworks */,
+				4584021118DCE7DA00AAE1A2 /* Cocoa.framework in Frameworks */,
+				4584024518DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
+				4584024618DCE94000AAE1A2 /* libEonilImprovisationsCommonUtility.a in Frameworks */,
+				4584024718DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
+				4584024818DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
+				4584024918DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -391,8 +437,11 @@
 				4525EAD218B6C0E500B05C1D /* OSX Test Runner */,
 				4525EA8E18B6BD2C00B05C1D /* iOS Test Runner */,
 				453F1DC018C308D3000C25CC /* iOSTestRunner2 */,
+				4584021618DCE7DA00AAE1A2 /* OSX Test Runner 2 */,
+				4584020F18DCE7DA00AAE1A2 /* Frameworks */,
 				4577C95618B6A6E90078033C /* Products */,
 				453F1DB218C3088D000C25CC /* iOS Test Runner copy-Info.plist */,
+				4584020918DCE74A00AAE1A2 /* iOS Test Runner 2 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -492,7 +541,7 @@
 				4529053518B6A59A00FCFCBD /* ApplicationController.mm */,
 				4529053618B6A59A00FCFCBD /* ApplicationController.h */,
 				4529053B18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.h */,
-				4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.m */,
+				4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.mm */,
 				45C49E8F18B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h */,
 				45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */,
 			);
@@ -524,11 +573,55 @@
 			children = (
 				4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */,
 				4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */,
-				4525EA8A18B6BD2C00B05C1D /* iOS Test Runner.app */,
-				4525EACB18B6C0E500B05C1D /* OSX Test Runner.app */,
-				453F1DB818C308D3000C25CC /* iOSTestRunner2.app */,
+				4525EA8A18B6BD2C00B05C1D /* iOS Test Runner 1.app */,
+				4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */,
+				453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */,
+				4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4584020F18DCE7DA00AAE1A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4584024A18DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineTranscoding.a */,
+				4584021018DCE7DA00AAE1A2 /* Cocoa.framework */,
+				4584022F18DCE7DB00AAE1A2 /* XCTest.framework */,
+				4584021218DCE7DA00AAE1A2 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4584021218DCE7DA00AAE1A2 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4584021318DCE7DA00AAE1A2 /* AppKit.framework */,
+				4584021418DCE7DA00AAE1A2 /* CoreData.framework */,
+				4584021518DCE7DA00AAE1A2 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4584021618DCE7DA00AAE1A2 /* OSX Test Runner 2 */ = {
+			isa = PBXGroup;
+			children = (
+				4584022518DCE7DA00AAE1A2 /* MainMenu.xib */,
+				4584022818DCE7DA00AAE1A2 /* Images.xcassets */,
+				4584021718DCE7DA00AAE1A2 /* Supporting Files */,
+			);
+			path = "OSX Test Runner 2";
+			sourceTree = "<group>";
+		};
+		4584021718DCE7DA00AAE1A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4584021818DCE7DA00AAE1A2 /* OSX Test Runner 2-Info.plist */,
+				4584021918DCE7DA00AAE1A2 /* InfoPlist.strings */,
+				4584021C18DCE7DA00AAE1A2 /* main.mm */,
+				4584021E18DCE7DA00AAE1A2 /* OSX Test Runner 2-Prefix.pch */,
+				4584021F18DCE7DA00AAE1A2 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4595B3C318BDF01B00179293 /* Foundation */ = {
@@ -636,9 +729,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4525EA8918B6BD2C00B05C1D /* iOS Test Runner */ = {
+		4525EA8918B6BD2C00B05C1D /* iOS Test Runner 1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "iOS Test Runner" */;
+			buildConfigurationList = 4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "iOS Test Runner 1" */;
 			buildPhases = (
 				4525EA8618B6BD2C00B05C1D /* Sources */,
 				4525EA8718B6BD2C00B05C1D /* Frameworks */,
@@ -648,14 +741,14 @@
 			);
 			dependencies = (
 			);
-			name = "iOS Test Runner";
+			name = "iOS Test Runner 1";
 			productName = "iOS Test Runner";
-			productReference = 4525EA8A18B6BD2C00B05C1D /* iOS Test Runner.app */;
+			productReference = 4525EA8A18B6BD2C00B05C1D /* iOS Test Runner 1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4525EACA18B6C0E500B05C1D /* OSX Test Runner */ = {
+		4525EACA18B6C0E500B05C1D /* OSX Test Runner 1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "OSX Test Runner" */;
+			buildConfigurationList = 4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "OSX Test Runner 1" */;
 			buildPhases = (
 				4525EAC718B6C0E500B05C1D /* Sources */,
 				4525EAC818B6C0E500B05C1D /* Frameworks */,
@@ -665,14 +758,14 @@
 			);
 			dependencies = (
 			);
-			name = "OSX Test Runner";
+			name = "OSX Test Runner 1";
 			productName = "OSX Test Runner";
-			productReference = 4525EACB18B6C0E500B05C1D /* OSX Test Runner.app */;
+			productReference = 4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		453F1DB718C308D3000C25CC /* iOSTestRunner2 */ = {
+		453F1DB718C308D3000C25CC /* iOS Test Runner 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "iOSTestRunner2" */;
+			buildConfigurationList = 453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "iOS Test Runner 2" */;
 			buildPhases = (
 				453F1DB418C308D3000C25CC /* Sources */,
 				453F1DB518C308D3000C25CC /* Frameworks */,
@@ -682,9 +775,9 @@
 			);
 			dependencies = (
 			);
-			name = iOSTestRunner2;
+			name = "iOS Test Runner 2";
 			productName = iOSTestRunner2;
-			productReference = 453F1DB818C308D3000C25CC /* iOSTestRunner2.app */;
+			productReference = 453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4577C95D18B6A7060078033C /* OSX Static Library */ = {
@@ -720,6 +813,23 @@
 			productName = "iOS Static Library";
 			productReference = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		4584020D18DCE7DA00AAE1A2 /* OSX Test Runner 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4584023C18DCE7DB00AAE1A2 /* Build configuration list for PBXNativeTarget "OSX Test Runner 2" */;
+			buildPhases = (
+				4584020A18DCE7DA00AAE1A2 /* Sources */,
+				4584020B18DCE7DA00AAE1A2 /* Frameworks */,
+				4584020C18DCE7DA00AAE1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OSX Test Runner 2";
+			productName = "OSX Test Runner 2";
+			productReference = 4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -762,9 +872,10 @@
 			targets = (
 				4577C95D18B6A7060078033C /* OSX Static Library */,
 				4577C96518B6A70D0078033C /* iOS Static Library */,
-				4525EACA18B6C0E500B05C1D /* OSX Test Runner */,
-				4525EA8918B6BD2C00B05C1D /* iOS Test Runner */,
-				453F1DB718C308D3000C25CC /* iOSTestRunner2 */,
+				4525EACA18B6C0E500B05C1D /* OSX Test Runner 1 */,
+				4525EA8918B6BD2C00B05C1D /* iOS Test Runner 1 */,
+				4584020D18DCE7DA00AAE1A2 /* OSX Test Runner 2 */,
+				453F1DB718C308D3000C25CC /* iOS Test Runner 2 */,
 			);
 		};
 /* End PBXProject section */
@@ -892,6 +1003,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4584020C18DCE7DA00AAE1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4584021B18DCE7DA00AAE1A2 /* InfoPlist.strings in Resources */,
+				4584022918DCE7DA00AAE1A2 /* Images.xcassets in Resources */,
+				4584022118DCE7DA00AAE1A2 /* Credits.rtf in Resources */,
+				4584024C18DDC15D00AAE1A2 /* MainMenu.xib in Resources */,
+				4584024D18DDC19700AAE1A2 /* PIA14415_clip_1024.png in Resources */,
+				4584024E18DDC19700AAE1A2 /* TEX_TEST.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -930,7 +1054,7 @@
 				4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C99118B6ABC80078033C /* run.cpp in Sources */,
 				457A6C1C18C985DD007BD4D6 /* Application.cpp in Sources */,
-				4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */,
+				4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */,
 				450E0D7C18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
 				45C49E9218B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
 				4577C99518B6ABCB0078033C /* ApplicationController.mm in Sources */,
@@ -949,17 +1073,24 @@
 				455D707B18CE1EAC00040198 /* Platform.cpp in Sources */,
 				4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
-				4538D52618CD26D200066D7E /* TestRendering3.mm in Sources */,
 				455D704C18CE102C00040198 /* Platform_iOS.mm in Sources */,
 				457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C99018B6ABC80078033C /* run.cpp in Sources */,
 				450E0D7D18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
 				45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
 				4577C99218B6ABCB0078033C /* ApplicationController.mm in Sources */,
-				45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.m in Sources */,
+				45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */,
 				4577C99318B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
 				45485FAC18B97535005981DA /* Stepping.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4584020A18DCE7DA00AAE1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4584021D18DCE7DA00AAE1A2 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1127,30 @@
 				453F1DC418C308D3000C25CC /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4584021918DCE7DA00AAE1A2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4584021A18DCE7DA00AAE1A2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4584021F18DCE7DA00AAE1A2 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4584022018DCE7DA00AAE1A2 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4584022518DCE7DA00AAE1A2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4584022618DCE7DA00AAE1A2 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1122,7 +1277,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSX Test Runner/OSX Test Runner-Info.plist";
@@ -1159,7 +1314,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSX Test Runner/OSX Test Runner-Info.plist";
@@ -1435,10 +1590,89 @@
 			};
 			name = Release;
 		};
+		4584023D18DCE7DB00AAE1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OSX Test Runner 2/OSX Test Runner 2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "OSX Test Runner 2/OSX Test Runner 2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4584023E18DCE7DB00AAE1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OSX Test Runner 2/OSX Test Runner 2-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "OSX Test Runner 2/OSX Test Runner 2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "iOS Test Runner" */ = {
+		4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "iOS Test Runner 1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4525EAAF18B6BD2C00B05C1D /* Debug */,
@@ -1447,7 +1681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "OSX Test Runner" */ = {
+		4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "OSX Test Runner 1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4525EAF818B6C0E500B05C1D /* Debug */,
@@ -1465,7 +1699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "iOSTestRunner2" */ = {
+		453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "iOS Test Runner 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				453F1DE218C308D4000C25CC /* Debug */,
@@ -1488,6 +1722,15 @@
 			buildConfigurations = (
 				4577C98718B6A70D0078033C /* Debug */,
 				4577C98818B6A70D0078033C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4584023C18DCE7DB00AAE1A2 /* Build configuration list for PBXNativeTarget "OSX Test Runner 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4584023D18DCE7DB00AAE1A2 /* Debug */,
+				4584023E18DCE7DB00AAE1A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

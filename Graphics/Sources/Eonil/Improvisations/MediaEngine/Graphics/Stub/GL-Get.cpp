@@ -30,6 +30,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO void
 		eeglGetIntegerv(GLenum const pname, GLint * const params)
 		{
+//			GL_INVALID_ENUM	=	0x500;
 			glGetIntegerv(pname, params);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
@@ -85,7 +86,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 									 pname == GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
 			
 //#if not EEGL_IGNORE_ZERO_FRAMEBUFFER_NAME
-			EEGL_ASSERT(eeglGetInteger(GL_FRAMEBUFFER_BINDING) != 0);
+//			EEGL_ASSERT(eeglGetInteger(GL_FRAMEBUFFER_BINDING) != 0);
 //#endif
 			
 			glGetFramebufferAttachmentParameteriv(target, attachment, pname, params);

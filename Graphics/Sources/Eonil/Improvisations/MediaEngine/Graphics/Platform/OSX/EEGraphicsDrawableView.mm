@@ -133,7 +133,7 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 	if (self)
 	{
 		NSOpenGLPixelFormatAttribute	SENTINEL		=	0;
-		NSOpenGLPixelFormatAttribute	pixelAttrs[]	=
+		NSOpenGLPixelFormatAttribute	pfas[]			=
 		{
 			NSOpenGLPFADoubleBuffer,
 //			NSOpenGLPFAOpenGLProfile,	NSOpenGLProfileVersion3_2Core,
@@ -157,10 +157,11 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 			NSOpenGLPFASampleBuffers,	1,
 			NSOpenGLPFAMultisample,		
 			NSOpenGLPFASamples,			4,
+			NSOpenGLPFADoubleBuffer,
 			SENTINEL,
 		};
 		
-		NSOpenGLPixelFormat*			pf1				=	[[NSOpenGLPixelFormat alloc] initWithAttributes:pixelAttrs];
+		NSOpenGLPixelFormat*			pf1				=	[[NSOpenGLPixelFormat alloc] initWithAttributes:pfas];
 		
 		_gl_ctx	=	[[NSOpenGLContext alloc] initWithFormat:pf1 shareContext:nil];
 	}
