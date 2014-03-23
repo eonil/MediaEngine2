@@ -9,12 +9,14 @@
 #include "GL-Common.h"
 
 #include <limits>
+#include "../Debugging/Doctor.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace
 	Stub
 	{
+		using namespace	Debugging;
 		
 		/*
 		 These are primitive type conversion (cast) operations.
@@ -24,31 +26,48 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		auto
 		toGLsizei(Size const& v) -> GLsizei
 		{
-			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<GLsizei>::max());
+			Doctor::assertForUnsignedNumericRange<Size, GLuint>(v);
+//			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<GLsizei>::max());
 			return	GLsizei(v);
 		}
 		auto
 		fromGLsizei(GLsizei const& v) -> Size
 		{
-			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<Size>::max());
+			Doctor::assertForUnsignedNumericRange<GLuint, Size>(v);
+//			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<Size>::max());
 			return	Size(v);
 		}
 		
 		
 		
-		
 		auto
-		toGLint(Size const& v) -> GLint
+		toGLuint(Size const& v) -> GLuint
 		{
-			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<GLint>::max());
+			Doctor::assertForUnsignedNumericRange<Size, GLuint>(v);
+//			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<GLuint>::max());
 			return	GLint(v);
 		}
 		auto
-		fromGLint(GLint const& v) -> Size
+		fromGLuint(GLuint const& v) -> Size
 		{
-			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<Size>::max());
+			Doctor::assertForUnsignedNumericRange<GLuint, Size>(v);
+//			EONIL_DEBUG_ASSERT(v <= std::numeric_limits<Size>::max());
 			return	Size(v);
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		auto
 		toGLfloat(Scalar const* v) -> GLfloat const*

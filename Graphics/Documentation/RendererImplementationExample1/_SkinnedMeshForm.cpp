@@ -149,9 +149,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 //				m.textureUnitAtIndex(0).setTexture_Legacy2013(f.mesh.colorTexture);
 				m.textureUnitAtIndex(0).setTexture(*(f.mesh.colorTexture));
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("scolor")).setSampler(m.textureUnitAtIndex(0));
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("tall")).setValue(tall);
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("tbones[0]")).setValueArray(&f.bonePalette[0], f.bonePalette.size());
+				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("scolor")).setSampler(m.textureUnitAtIndex(0));
+				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tall")).setValue(tall);
+				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tbones[0]")).setValueArray(&f.bonePalette[0], f.bonePalette.size());
 				if (f.mesh.faces.size() > 0)
 				{
 					ArrayBuffer	vb		{Legacy2013SharedMemory::Factory::memoryByCopyingRange(f.mesh.faces[0].scalars, sizeof(Mesh::Face) * f.mesh.faces.size())};
@@ -168,9 +168,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					m.vertexAttributeChannelAtIndex(2).unlink();
 					m.vertexAttributeChannelAtIndex(3).unlink();
 				}
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("tbones[0]")).unset();
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("tall")).unset();
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("scolor")).unset();
+				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tbones[0]")).unset();
+				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tall")).unset();
+				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("scolor")).unset();
 //				m.textureUnitAtIndex(0).unsetTexture_Legacy2013();
 				m.textureUnitAtIndex(0).unsetTexture();
 			}

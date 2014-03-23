@@ -1,13 +1,13 @@
 //
-//  ProgramSlot.h
+//  ProgramSlotV1.h
 //  EonilGraphics
 //
 //  Created by Eonil on 5/1/13.
 //  Copyright (c) 2013 Eonil. All rights reserved.
 //
 
-#ifndef __EonilGraphics__ProgramSlot__
-#define __EonilGraphics__ProgramSlot__
+#ifndef __EonilGraphics__ProgramSlotV1__
+#define __EonilGraphics__ProgramSlotV1__
 
 #include "../Common.h"
 #include "Machinery/VertexAttributeChannel.h"
@@ -34,10 +34,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 
 		 @note
 		 OpenGL uniform slots are just a big flat 4D float vector.
+		 
+		 @deprecated
+		 This concept and classes are all deprecated.
+		 Use `ProgramParameterLocation` for newer programs.
+		 This code will be removed soon.
 		 */
 		
 		class
-		ProgramSlot : public NoCopyButMoveObject
+		ProgramSlotV1 : public NoCopyButMoveObject
 		{
 		public:
 			auto	index() const -> GLuint const;
@@ -47,7 +52,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	location() const -> GLint const;
 			
 		protected:
-			ProgramSlot();
+			ProgramSlotV1();
 			
 			GLuint					_pname;			//	Name of program which owns this slot.
 			
@@ -71,11 +76,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		UniformValueSlot final : public ProgramSlot
+		UniformValueSlotV1 final : public ProgramSlotV1
 		{
 			friend class	Program;
 			
-			UniformValueSlot(GLuint const programName, GLuint const slotIndex);
+			UniformValueSlotV1(GLuint const programName, GLuint const slotIndex);
 			
 		public:
 			
@@ -123,11 +128,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		VertexAttributeSlot final : public ProgramSlot
+		VertexAttributeSlotV1 final : public ProgramSlotV1
 		{
 			friend class	Program;
 			
-			VertexAttributeSlot(GLuint const programName, GLuint const slotIndex);
+			VertexAttributeSlotV1(GLuint const programName, GLuint const slotIndex);
 			
 		public:
 			
@@ -140,4 +145,4 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	
 }}}}
 
-#endif /* defined(__EonilGraphics__ProgramSlot__) */
+#endif /* defined(__EonilGraphics__ProgramSlotV1__) */

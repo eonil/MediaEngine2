@@ -201,10 +201,10 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 		static Scalar	c = 0;
 		c+=	0.01;
 		Matrix4		tran		=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle(Vector3(0,0,1), c));
-		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotForName("objectTransform")).setValue(tran);
+		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
 		
 		Machine::machine().textureUnitAtIndex(0).setTexture(texture);
-		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotForName("textureSampler")).setSampler(Machine::machine().textureUnitAtIndex(0));
+		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("textureSampler")).setSampler(Machine::machine().textureUnitAtIndex(0));
 		
 		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 		

@@ -104,7 +104,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			CPUTransformUniformPolylineImmediateDrawer::Core
 			{
 				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				Size			transformUniformIndex			{program.indexOfUniformValueSlotForName("localToWorldTransformP")};
+				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("localToWorldTransformP")};
 				
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};

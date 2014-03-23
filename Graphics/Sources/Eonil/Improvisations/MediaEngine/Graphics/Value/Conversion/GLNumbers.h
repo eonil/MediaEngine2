@@ -22,10 +22,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		namespace
 		Conversion
 		{
-			GLsizei const	GLsizeiFromSize(Size const size);
-			
-			GLuint const	GLuintFromSize(Size const size);
-			GLint const		GLintFromSize(Size const size);
+//			GLsizei const	GLsizeiFromSize(Size const size);
+//			
+//			GLuint const	GLuintFromSize(Size const size);
+//			GLint const		GLintFromSize(Size const size);
 		}
 	}
 	

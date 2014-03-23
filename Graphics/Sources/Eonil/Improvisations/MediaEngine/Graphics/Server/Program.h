@@ -12,7 +12,7 @@
 #include "../Common.h"
 #include "Declarations.h"
 #include "ServerObjectProxy.h"
-#include "ProgramSlot.h"
+#include "ProgramSlotV1.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -75,8 +75,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLuint						_name						{NULL_GL_NAME()};
 			
-			vec<UniformValueSlot>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved.
-			vec<VertexAttributeSlot>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved.
+			vec<UniformValueSlotV1>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved.
+			vec<VertexAttributeSlotV1>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved.
 			
 			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			
@@ -86,7 +86,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			
+			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) const -> UniformValueSlotV1 const*;
+			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) -> UniformValueSlotV1*;
 			
 			
 		public:
@@ -103,41 +104,38 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 //			struct
 //			{
-//				std::vector<UniformValueSlot> const&	all() const;
-//				UniformValueSlot const&					atIndex(Size const index) const;
-//				UniformValueSlot&						atIndex(Size const index);
+//				std::vector<UniformValueSlotV1> const&	all() const;
+//				UniformValueSlotV1 const&					atIndex(Size const index) const;
+//				UniformValueSlotV1&						atIndex(Size const index);
 //				
 //				Size const								indexForName(
-//				UniformValueSlot const&					forName(std::string const name) const;
-//				UniformValueSlot&						forName(std::string const name);
+//				UniformValueSlotV1 const&					forName(std::string const name) const;
+//				UniformValueSlotV1&						forName(std::string const name);
 //			}
 //			uniformValueSlot;
 //
 //			struct
 //			{
-//				std::vector<VertexAttributeSlot> const&		all() const;
-//				VertexAttributeSlot const&					atIndex(Size const index) const;
-//				VertexAttributeSlot&						atIndex(Size const index);
+//				std::vector<VertexAttributeSlotV1> const&		all() const;
+//				VertexAttributeSlotV1 const&					atIndex(Size const index) const;
+//				VertexAttributeSlotV1&						atIndex(Size const index);
 //			}
 //			vertexAttributeSlot;
 			
-			auto	uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlot const>;
-			auto	uniformsValueSlots() -> GenericMemoryRange<UniformValueSlot>;
+			auto	uniformValueSlotForName(str const& name) const -> UniformValueSlot;				//!	Panics if there's no slot for the name.
+//			auto	vertexAttributeSlotForName(str const& name) const -> VertexAttributeSlot;		//!	Panics if there's no slot for the name.
 			
-			auto	searchUniformValueSlotForName(str const& name) const -> UniformValueSlot const*;		//!	Returns `nullptr` if there's no slot for the name. Returned pointer is stable while this program is alive.
-			auto	searchUniformValueSlotForName(str const& name) -> UniformValueSlot*;					//!	Returns `nullptr` if there's no slot for the name. Returned pointer is stable while this program is alive.
+			[[deprecated]]	auto	allUniformValueSlotV1s() const									->	vec<UniformValueSlotV1> const&;
+			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlotV1 const&;
+			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlotV1&;
+			auto	indexOfUniformValueSlotV1ForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
 			
-			[[deprecated]]	auto	allUniformValueSlots() const									->	vec<UniformValueSlot> const&;
-			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlot const&;
-			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlot&;
-			auto	indexOfUniformValueSlotForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
+			auto	allVertexAttributeSlotV1s() const									->	vec<VertexAttributeSlotV1> const&;
+			auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlotV1 const&;
+			auto	vertexAttributeSlotAtIndex(Size const index)					->	VertexAttributeSlotV1&;
+			auto	indexOfVertexAttributeSlotV1ForName(std::string const name) const	->	Size;
 			
-			auto	allVertexAttributeSlots() const									->	vec<VertexAttributeSlot> const&;
-			auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlot const&;
-			auto	vertexAttributeSlotAtIndex(Size const index)					->	VertexAttributeSlot&;
-			auto	indexOfVertexAttributeSlotForName(std::string const name) const	->	Size;
-			
-			auto	vertexAttributeSlotForName(str const& name) const				->	VertexAttributeSlot const&;
+//			auto	vertexAttributeSlotForName(str const& name) const				->	VertexAttributeSlotV1 const&;
 			
 			
 //		public:

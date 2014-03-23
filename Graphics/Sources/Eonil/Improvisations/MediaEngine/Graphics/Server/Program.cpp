@@ -54,11 +54,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			for (GLuint i=0; i<attrc; i++)
 			{
-				_vertexAttributeSlots.push_back(VertexAttributeSlot(name(), i));
+				_vertexAttributeSlots.push_back(VertexAttributeSlotV1(name(), i));
 			}
 			for (GLuint i=0; i<unic; i++)
 			{
-				_uniformValueSlots.push_back(UniformValueSlot(name(), i));
+				_uniformValueSlots.push_back(UniformValueSlotV1(name(), i));
 			}
 			
 //				printf("shader count = %u\n", eeglGetProgrami(name(), GL_ATTACHED_SHADERS));				
@@ -130,27 +130,27 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+//		auto Program::
+//		uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlotV1 const>
+//		{
+//			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
+//		}
+//		auto Program::
+//		uniformsValueSlots() -> GenericMemoryRange<UniformValueSlotV1>
+//		{
+//			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
+//		}
 		auto Program::
-		uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlot const>
+		searchUniformValueSlotV1ForName(const str &name) const -> UniformValueSlotV1 const*
 		{
-			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
+			return	((Program*)this)->searchUniformValueSlotV1ForName(name);
 		}
 		auto Program::
-		uniformsValueSlots() -> GenericMemoryRange<UniformValueSlot>
-		{
-			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
-		}
-		auto Program::
-		searchUniformValueSlotForName(const str &name) const -> UniformValueSlot const*
-		{
-			return	((Program*)this)->searchUniformValueSlotForName(name);
-		}
-		auto Program::
-		searchUniformValueSlotForName(const str &name) -> UniformValueSlot*
+		searchUniformValueSlotV1ForName(const str &name) -> UniformValueSlotV1*
 		{
 			_assertNonEmptyState();
 			
-			for (UniformValueSlot& s : _uniformValueSlots)
+			for (UniformValueSlotV1& s : _uniformValueSlots)
 			{
 				if (s.name() == name)
 				{
@@ -161,7 +161,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
 			if (loc2 != -1)
 			{
-				for (UniformValueSlot& s: _uniformValueSlots)
+				for (UniformValueSlotV1& s: _uniformValueSlots)
 				{
 					if (s.location() == loc2)
 					{
@@ -176,23 +176,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		auto Program::
-		allUniformValueSlots() const -> vec<UniformValueSlot> const&
+		allUniformValueSlotV1s() const -> vec<UniformValueSlotV1> const&
 		{
 			_assertNonEmptyState();
 			
 			return	_uniformValueSlots;
 		}
 		auto Program::
-		uniformValueSlotAtIndex(Size const index) -> UniformValueSlot&
+		uniformValueSlotAtIndex(Size const index) -> UniformValueSlotV1&
 		{
 			_assertNonEmptyState();
 			
 			return	_uniformValueSlots.at(index);
 		}
 		auto Program::
-		indexOfUniformValueSlotForName(const std::string name) const -> Size
+		indexOfUniformValueSlotV1ForName(const std::string name) const -> Size
 		{
-			auto const*	ptr	=	searchUniformValueSlotForName(name);
+			auto const*	ptr	=	searchUniformValueSlotV1ForName(name);
 			
 			if (ptr == nullptr)
 			{
@@ -203,7 +203,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 //			_assertNonEmptyState();
 //			
-//			for (UniformValueSlot const& s : _uniformValueSlots)
+//			for (UniformValueSlotV1 const& s : _uniformValueSlots)
 //			{
 //				if (s.name() == name)
 //				{
@@ -214,7 +214,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
 //			if (loc2 != -1)
 //			{
-//				for (UniformValueSlot const& s: _uniformValueSlots)
+//				for (UniformValueSlotV1 const& s: _uniformValueSlots)
 //				{
 //					if (s.location() == loc2)
 //					{
@@ -230,7 +230,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		auto Program::
-		allVertexAttributeSlots() const -> vec<VertexAttributeSlot> const&
+		allVertexAttributeSlotV1s() const -> vec<VertexAttributeSlotV1> const&
 		{
 			_assertNonEmptyState();
 			
@@ -238,18 +238,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		auto Program::
-		vertexAttributeSlotAtIndex(Size const index) -> VertexAttributeSlot&
+		vertexAttributeSlotAtIndex(Size const index) -> VertexAttributeSlotV1&
 		{
 			_assertNonEmptyState();
 			
 			return	_vertexAttributeSlots.at(index);
 		}
 		auto Program::
-		indexOfVertexAttributeSlotForName(const std::string name) const -> Size
+		indexOfVertexAttributeSlotV1ForName(const std::string name) const -> Size
 		{
 			_assertNonEmptyState();
 			
-			for (VertexAttributeSlot const& s : _vertexAttributeSlots)
+			for (VertexAttributeSlotV1 const& s : _vertexAttributeSlots)
 			{
 				if (s.name() == name)
 				{

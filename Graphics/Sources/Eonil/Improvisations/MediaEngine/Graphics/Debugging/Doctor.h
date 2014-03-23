@@ -403,7 +403,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 #pragma mark	-	Description Implementation
 #include "../Server/Program.h"
-#include "../Server/ProgramSlot.h"
+#include "../Server/ProgramSlotV1.h"
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace

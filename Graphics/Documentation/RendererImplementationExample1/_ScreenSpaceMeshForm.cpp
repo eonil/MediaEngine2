@@ -163,7 +163,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			//	Draw screen overlays.
 			m.useProgram(*p);
-			p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("taspect")).setValue(screenAspectRatioMatrix);
+			p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("taspect")).setValue(screenAspectRatioMatrix);
 			for (_ScreenSpaceMeshForm const& f : fs)
 			{
 				if (f.vertexes.size() > 0)
@@ -190,7 +190,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					m.vertexAttributeChannelAtIndex(1).unlink();
 				}
 			}
-			p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("taspect")).unset();
+			p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("taspect")).unset();
 			m.unuseProgram();
 		}
 	}

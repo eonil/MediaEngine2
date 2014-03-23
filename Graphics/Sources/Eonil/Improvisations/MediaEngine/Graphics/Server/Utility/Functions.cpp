@@ -150,7 +150,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			static inline auto
 			clearStencil(Size const& stencil) -> void
 			{
-				GLint	s	=	Stub::toGLint(stencil);
+				EONIL_DEBUG_ASSERT(stencil <= std::numeric_limits<GLint>::max());
+				
+				GLint	s	=	GLint(stencil);
 				Stub::eeglClearStencil(s);
 				Stub::eeglClear(GL_STENCIL_BUFFER_BIT);
 			}

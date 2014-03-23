@@ -287,15 +287,9 @@ namespace
 	
 	uptr<GLManager>		_glman;
 }
-- (id)init
-{
-	[self doesNotRecognizeSelector:_cmd];
-	return	nil;
-}
 - (id)initWithFrame:(CGRect)frame
 {
-	[self doesNotRecognizeSelector:_cmd];
-	return	nil;
+	return	[self initWithFrame:frame multisampling:YES];
 }
 - (id)initWithFrame:(CGRect)frame multisampling:(BOOL)multisampling
 {

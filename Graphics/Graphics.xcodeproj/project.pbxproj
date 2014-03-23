@@ -134,6 +134,12 @@
 		4585179918B021BE0074DBC1 /* _ModelDrawingGenerator_v2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4585179718B021BE0074DBC1 /* _ModelDrawingGenerator_v2.cpp */; };
 		4585179A18B021BE0074DBC1 /* _ModelDrawingGenerator_v2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4585179718B021BE0074DBC1 /* _ModelDrawingGenerator_v2.cpp */; };
 		4585179B18B021BE0074DBC1 /* _ModelDrawingGenerator_v2.h in Headers */ = {isa = PBXBuildFile; fileRef = 4585179818B021BE0074DBC1 /* _ModelDrawingGenerator_v2.h */; };
+		4588042D18DF62DA00B1997F /* ProgramParameterLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588042B18DF62DA00B1997F /* ProgramParameterLocation.cpp */; };
+		4588042E18DF62DA00B1997F /* ProgramParameterLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588042B18DF62DA00B1997F /* ProgramParameterLocation.cpp */; };
+		4588042F18DF62DA00B1997F /* ProgramParameterLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4588042C18DF62DA00B1997F /* ProgramParameterLocation.h */; };
+		4588043218DF66C500B1997F /* ProgramMetadata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588043018DF66C500B1997F /* ProgramMetadata.cpp */; };
+		4588043318DF66C500B1997F /* ProgramMetadata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588043018DF66C500B1997F /* ProgramMetadata.cpp */; };
+		4588043418DF66C500B1997F /* ProgramMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4588043118DF66C500B1997F /* ProgramMetadata.h */; };
 		45907A4318B062440058921A /* _LineMeshForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45907A4118B062440058921A /* _LineMeshForm.cpp */; };
 		45907A4418B062440058921A /* _LineMeshForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45907A4118B062440058921A /* _LineMeshForm.cpp */; };
 		45907A4518B062440058921A /* _LineMeshForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 45907A4218B062440058921A /* _LineMeshForm.h */; };
@@ -202,7 +208,7 @@
 		45D3CB8D173BC9AB0011D992 /* TextureSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB20173BC7450011D992 /* TextureSampler.cpp */; };
 		45D3CB8E173BC9AB0011D992 /* VertexAttributeChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB22173BC7450011D992 /* VertexAttributeChannel.cpp */; };
 		45D3CB8F173BC9AB0011D992 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB24173BC7450011D992 /* Program.cpp */; };
-		45D3CB90173BC9AB0011D992 /* ProgramSlot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB26173BC7450011D992 /* ProgramSlot.cpp */; };
+		45D3CB90173BC9AB0011D992 /* ProgramSlotV1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB26173BC7450011D992 /* ProgramSlotV1.cpp */; };
 		45D3CB92173BC9AB0011D992 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB2A173BC7450011D992 /* Shader.cpp */; };
 		45D3CB93173BC9AB0011D992 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB2C173BC7450011D992 /* Texture.cpp */; };
 		45D3CB96173BC9AB0011D992 /* FBXImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CAFE173BC7450011D992 /* FBXImporter.cpp */; };
@@ -232,7 +238,7 @@
 		45D3CBC9173BC9B50011D992 /* TextureSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB20173BC7450011D992 /* TextureSampler.cpp */; };
 		45D3CBCA173BC9B50011D992 /* VertexAttributeChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB22173BC7450011D992 /* VertexAttributeChannel.cpp */; };
 		45D3CBCB173BC9B50011D992 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB24173BC7450011D992 /* Program.cpp */; };
-		45D3CBCC173BC9B50011D992 /* ProgramSlot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB26173BC7450011D992 /* ProgramSlot.cpp */; };
+		45D3CBCC173BC9B50011D992 /* ProgramSlotV1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB26173BC7450011D992 /* ProgramSlotV1.cpp */; };
 		45D3CBCE173BC9B50011D992 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB2A173BC7450011D992 /* Shader.cpp */; };
 		45D3CBCF173BC9B50011D992 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB2C173BC7450011D992 /* Texture.cpp */; };
 		45D3CBD2173BC9B50011D992 /* FBXMeshData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB35173BC7450011D992 /* FBXMeshData.cpp */; };
@@ -446,6 +452,10 @@
 		4585178118B0206C0074DBC1 /* _Viewport_v1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Viewport_v1.h; sourceTree = "<group>"; };
 		4585179718B021BE0074DBC1 /* _ModelDrawingGenerator_v2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _ModelDrawingGenerator_v2.cpp; sourceTree = "<group>"; };
 		4585179818B021BE0074DBC1 /* _ModelDrawingGenerator_v2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _ModelDrawingGenerator_v2.h; sourceTree = "<group>"; };
+		4588042B18DF62DA00B1997F /* ProgramParameterLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgramParameterLocation.cpp; sourceTree = "<group>"; };
+		4588042C18DF62DA00B1997F /* ProgramParameterLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramParameterLocation.h; sourceTree = "<group>"; };
+		4588043018DF66C500B1997F /* ProgramMetadata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgramMetadata.cpp; sourceTree = "<group>"; };
+		4588043118DF66C500B1997F /* ProgramMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramMetadata.h; sourceTree = "<group>"; };
 		45907A4118B062440058921A /* _LineMeshForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _LineMeshForm.cpp; sourceTree = "<group>"; };
 		45907A4218B062440058921A /* _LineMeshForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LineMeshForm.h; sourceTree = "<group>"; };
 		4590D5DD18A69643003595F5 /* DEVNOTE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DEVNOTE; sourceTree = "<group>"; };
@@ -520,8 +530,8 @@
 		45D3CB23173BC7450011D992 /* VertexAttributeChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VertexAttributeChannel.h; sourceTree = "<group>"; };
 		45D3CB24173BC7450011D992 /* Program.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
 		45D3CB25173BC7450011D992 /* Program.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
-		45D3CB26173BC7450011D992 /* ProgramSlot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ProgramSlot.cpp; sourceTree = "<group>"; };
-		45D3CB27173BC7450011D992 /* ProgramSlot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgramSlot.h; sourceTree = "<group>"; };
+		45D3CB26173BC7450011D992 /* ProgramSlotV1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ProgramSlotV1.cpp; sourceTree = "<group>"; };
+		45D3CB27173BC7450011D992 /* ProgramSlotV1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgramSlotV1.h; sourceTree = "<group>"; };
 		45D3CB2A173BC7450011D992 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		45D3CB2B173BC7450011D992 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		45D3CB2C173BC7450011D992 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
@@ -651,8 +661,12 @@
 				45D3CB19173BC7450011D992 /* Framebuffer.h */,
 				45D3CB24173BC7450011D992 /* Program.cpp */,
 				45D3CB25173BC7450011D992 /* Program.h */,
-				45D3CB26173BC7450011D992 /* ProgramSlot.cpp */,
-				45D3CB27173BC7450011D992 /* ProgramSlot.h */,
+				45D3CB26173BC7450011D992 /* ProgramSlotV1.cpp */,
+				45D3CB27173BC7450011D992 /* ProgramSlotV1.h */,
+				4588042B18DF62DA00B1997F /* ProgramParameterLocation.cpp */,
+				4588042C18DF62DA00B1997F /* ProgramParameterLocation.h */,
+				4588043018DF66C500B1997F /* ProgramMetadata.cpp */,
+				4588043118DF66C500B1997F /* ProgramMetadata.h */,
 				45D3CB2A173BC7450011D992 /* Shader.cpp */,
 				45D3CB2B173BC7450011D992 /* Shader.h */,
 				45D3CB2C173BC7450011D992 /* Texture.cpp */,
@@ -1394,9 +1408,11 @@
 				45DB481218BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.h in Headers */,
 				45485FA818B965B2005981DA /* DisplayScreenFrame.h in Headers */,
 				453A738618B1EEFE008E65FA /* RenderingFrame.h in Headers */,
+				4588043418DF66C500B1997F /* ProgramMetadata.h in Headers */,
 				45C5B79A18DB89990033F354 /* CPUTransformRegularPolygonDrawer.h in Headers */,
 				4585178718B0206D0074DBC1 /* _Display_v1.h in Headers */,
 				45DB480D18BE0B7E004A10E0 /* VertexLayoutDescriptor.h in Headers */,
+				4588042F18DF62DA00B1997F /* ProgramParameterLocation.h in Headers */,
 				453554D318DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.h in Headers */,
 				45E494BC18B147B000195E5F /* _FontProxy_Core_using_Apple_UIKit.h in Headers */,
 				45E494AE18B1472E00195E5F /* FontProxy.h in Headers */,
@@ -1522,6 +1538,7 @@
 				45E494E018B18F7400195E5F /* _PlanarRGBAImageUtility.mm in Sources */,
 				45E4949218B1425600195E5F /* TextTextureGeneratorV2.mm in Sources */,
 				459AD0931757BB9000515B26 /* GL-Get-Buffer.cpp in Sources */,
+				4588042E18DF62DA00B1997F /* ProgramParameterLocation.cpp in Sources */,
 				4585179A18B021BE0074DBC1 /* _ModelDrawingGenerator_v2.cpp in Sources */,
 				459AD0941757BB9000515B26 /* GL-Get-VertexAttrib.cpp in Sources */,
 				4585179218B0206D0074DBC1 /* _TriangleListMeshForm_v2.cpp in Sources */,
@@ -1556,7 +1573,7 @@
 				45BC4E4618BDAFD6005AC223 /* UniformProgramParameter.cpp in Sources */,
 				45D3CB8E173BC9AB0011D992 /* VertexAttributeChannel.cpp in Sources */,
 				45D3CB8F173BC9AB0011D992 /* Program.cpp in Sources */,
-				45D3CB90173BC9AB0011D992 /* ProgramSlot.cpp in Sources */,
+				45D3CB90173BC9AB0011D992 /* ProgramSlotV1.cpp in Sources */,
 				4593418417A3C78E0035EAF1 /* _ModelExporterA.cpp in Sources */,
 				453A739418B1F557008E65FA /* FrameChannelImage.cpp in Sources */,
 				45EE01AD177D7B1600F03A58 /* GL-Common.cpp in Sources */,
@@ -1630,6 +1647,7 @@
 				45DB480C18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
 				452847A9176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
 				452847B2176C9C6F00133320 /* Node.cpp in Sources */,
+				4588043318DF66C500B1997F /* ProgramMetadata.cpp in Sources */,
 				45B2B202176EF27300FC36F7 /* Atlas.cpp in Sources */,
 				454DD9951798FCED000A815F /* Color.cpp in Sources */,
 				451402AB176F813B008B5DF1 /* IndexUnitChannel.cpp in Sources */,
@@ -1653,6 +1671,7 @@
 				45E494DF18B18F7400195E5F /* _PlanarRGBAImageUtility.mm in Sources */,
 				45E4949118B1425600195E5F /* TextTextureGeneratorV2.mm in Sources */,
 				45D3CBBC173BC9B50011D992 /* GL-Context.cpp in Sources */,
+				4588042D18DF62DA00B1997F /* ProgramParameterLocation.cpp in Sources */,
 				45DC09CC18A4287D00E724A6 /* ServerObjectProxy.cpp in Sources */,
 				4585179418B0206D0074DBC1 /* _Viewport_v1.cpp in Sources */,
 				4593418917A3C78E0035EAF1 /* _ModelProxyEditorBoxA.cpp in Sources */,
@@ -1686,7 +1705,7 @@
 				45D3CBCB173BC9B50011D992 /* Program.cpp in Sources */,
 				45BC4E4518BDAFD6005AC223 /* UniformProgramParameter.cpp in Sources */,
 				4593418517A3C78E0035EAF1 /* _ModelExporterA.cpp in Sources */,
-				45D3CBCC173BC9B50011D992 /* ProgramSlot.cpp in Sources */,
+				45D3CBCC173BC9B50011D992 /* ProgramSlotV1.cpp in Sources */,
 				45EE01AE177D7B1600F03A58 /* GL-Common.cpp in Sources */,
 				45D3CBCE173BC9B50011D992 /* Shader.cpp in Sources */,
 				453A739318B1F557008E65FA /* FrameChannelImage.cpp in Sources */,
@@ -1761,6 +1780,7 @@
 				45DB480B18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
 				452847AA176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
 				452847B3176C9C6F00133320 /* Node.cpp in Sources */,
+				4588043218DF66C500B1997F /* ProgramMetadata.cpp in Sources */,
 				45B2B203176EF27300FC36F7 /* Atlas.cpp in Sources */,
 				454DD9961798FCED000A815F /* Color.cpp in Sources */,
 				451402AC176F813B008B5DF1 /* IndexUnitChannel.cpp in Sources */,

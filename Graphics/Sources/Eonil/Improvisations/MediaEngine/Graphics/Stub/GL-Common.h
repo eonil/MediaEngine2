@@ -41,19 +41,36 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 These are primitive type conversion (cast) operations.
 		 Why do we need this? To be notified on bad(overflow, underflow...)
 		 operations.
+		 
+		 Conversion with numeric range limit assertion.
+		 This is provided only for corresponding types for GL types.
+		 If you want conversion between unrelated types, then you have
+		 to do it yourself.
 		 */
+		
+		
+		
 		auto	toGLsizei(Size const& v) -> GLsizei;
 		auto	fromGLsizei(GLsizei const& v) -> Size;
 		
-		
-		auto	toGLint(Size const& v) -> GLint;
-		auto	fromGLint(GLint const& v) -> Size;
+		auto	toGLuint(Size const& v) -> GLuint;
+		auto	fromGLuint(GLuint const& v) -> Size;
 		
 		auto	toGLfloat(Scalar const* v) -> GLfloat const*;
 		auto	toGLfloat(Vector4 const* v) -> GLfloat const*;
 		auto	toGLfloat(Matrix4 const* v) -> GLfloat const*;
 		
 		auto	toGLchar(str const& v) -> GLchar const*;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	

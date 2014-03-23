@@ -40,9 +40,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class	VertexShader;
 		class	FragmentShader;
 		
+		class	UniformValueSlotV1;		//	Deprecated.
+		class	VertexAttributeSlotV1;	//	Deprecated.
+		class	Program;
 		class	UniformValueSlot;
 		class	VertexAttributeSlot;
-		class	Program;
 		
 		namespace
 		Machinery

@@ -337,8 +337,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			////
 			
-			GLint const		index2	=	GLintFromSize(index);
-			GLsizei const	count2	=	GLsizeiFromSize(count);
+			EONIL_DEBUG_ASSERT(index <= std::numeric_limits<GLint>::max());
+			
+			GLint const		index2	=	GLint(index);
+			GLsizei const	count2	=	toGLsizei(count);
 			
 			eeglDrawArrays(GLenum(mode), index2, count2);
 		}

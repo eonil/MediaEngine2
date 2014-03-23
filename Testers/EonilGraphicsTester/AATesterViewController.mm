@@ -37,21 +37,30 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
 	[((EEGraphicsDrawableView*)self.view) prepareGraphicsContext];
 	
 	_link	=	[CADisplayLink displayLinkWithTarget:self selector:@selector(displayTick:)];
 	[_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
-- (void)viewDidDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
-	
+	[super viewWillDisappear:animated];
 	
 	[_link removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 	[_link invalidate];
 	_link	=	nil;
 	
 	[((EEGraphicsDrawableView*)self.view) cleanupGraphicsContext];
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+	
 }
 
 - (void)displayTick:(CADisplayLink*)sender

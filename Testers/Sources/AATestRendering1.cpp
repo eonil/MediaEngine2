@@ -155,7 +155,7 @@ TestRendering1RenderingWithTransform()
 		static Scalar	c = 0;
 		c+=	0.01;
 		Matrix4		tran		=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle(Vector3(0,0,1), c));
-		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotForName("objectTransform")).setValue(tran);
+		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
 		
 		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 	};

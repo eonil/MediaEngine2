@@ -51,7 +51,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //					EONIL_DEBUG_ASSERT(not layout.channelComponents().at(i).name.empty());
 					
 					auto const&	comp	=	layout.channelComponents().at(i);
-					Size		ch_idx	=	program.indexOfVertexAttributeSlotForName(comp.name);
+					Size		ch_idx	=	program.indexOfVertexAttributeSlotV1ForName(comp.name);
 					
 					chidxs.push_back(ch_idx);
 				}

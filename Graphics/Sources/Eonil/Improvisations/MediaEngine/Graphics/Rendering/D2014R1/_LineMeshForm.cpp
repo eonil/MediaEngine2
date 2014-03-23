@@ -289,7 +289,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					Matrix4		tobj			=	f.transform();
 					Matrix4		tall			=	worldToFrameTransform * tobj;
 					
-					p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("tall")).setValue(tall);
+					p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tall")).setValue(tall);
 					if (f.lines().size() > 0)
 					{
 	//						ArrayBuffer	vb			=	ArrayBuffer(Memory::Factory::memoryByCopyingRange(f.lines()[0].scalars, sizeof(Line) * f.lines().size()));
@@ -304,7 +304,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						m.vertexAttributeChannelAtIndex(0).unlink();
 						m.vertexAttributeChannelAtIndex(1).unlink();
 					}
-					p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotForName("tall")).unset();
+					p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tall")).unset();
 				}
 				m.unuseProgram();
 			}

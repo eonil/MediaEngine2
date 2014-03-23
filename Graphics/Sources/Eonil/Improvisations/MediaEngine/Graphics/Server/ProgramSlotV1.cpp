@@ -1,5 +1,5 @@
 //
-//  ProgramSlot.cpp
+//  ProgramSlotV1.cpp
 //  EonilGraphics
 //
 //  Created by Eonil on 5/1/13.
@@ -8,7 +8,7 @@
 
 #include "../Stub/GL.h"
 #include "../Debugging/Doctor.h"
-#include "ProgramSlot.h"
+#include "ProgramSlotV1.h"
 #include "../Value/Conversion/GLNumbers.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
@@ -55,40 +55,40 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		ProgramSlot::ProgramSlot()
+		ProgramSlotV1::ProgramSlotV1()
 		{
 		}
 		
 		GLuint const
-		ProgramSlot::index() const
+		ProgramSlotV1::index() const
 		{
 			return	_idx;
 		}
 		std::string const&
-		ProgramSlot::name() const
+		ProgramSlotV1::name() const
 		{
 			return	_name;
 		}
 		GLenum const
-		ProgramSlot::type() const
+		ProgramSlotV1::type() const
 		{
 			return	_type;
 		}
 		GLint const
-		ProgramSlot::size() const
+		ProgramSlotV1::size() const
 		{
 			return	_sz;
 		}
 		GLint const
-		ProgramSlot::location() const
+		ProgramSlotV1::location() const
 		{
 			return	_loc;
 		}
 		
 		std::string const
-		ProgramSlot::description() const
+		ProgramSlotV1::description() const
 		{
-			return	Doctor::stringWithCFormat("<ProgramSlot: program = %u, index = %u, name = %s, type = %u, size = %u, location = %u>", _pname, index(), name().c_str(), type(), size(), location());
+			return	Doctor::stringWithCFormat("<ProgramSlotV1: program = %u, index = %u, name = %s, type = %u, size = %u, location = %u>", _pname, index(), name().c_str(), type(), size(), location());
 		}
 		
 	
@@ -96,13 +96,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 
 		
-		UniformValueSlot::UniformValueSlot(GLuint const programName, GLuint const slotIndex) 
+		UniformValueSlotV1::UniformValueSlotV1(GLuint const programName, GLuint const slotIndex) 
 		{
 			Size const	maxlen	=	eeglGetProgrami(programName, GL_ACTIVE_UNIFORM_MAX_LENGTH);
 			Size const	bufsz	=	maxlen+1;
 			char		buf[bufsz];
 			
-			GLsizei const	bufsz2	=	GLsizeiFromSize(bufsz);
+			GLsizei const	bufsz2	=	toGLsizei(bufsz);
 			
 			GLsizei		curlen	=	0;
 			GLint		cursz	=	0;
@@ -146,78 +146,79 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		UniformValueSlot::setValue(const Scalar &value)
+		UniformValueSlotV1::setValue(const Scalar &value)
 		{
 			_validateProgramBinding();
 			eeglUniform1f(location(), value);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 &value)
+		UniformValueSlotV1::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 &value)
 		{
 			_validateProgramBinding();
 			eeglUniform2fv(location(), 1, value.components);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 &value)
+		UniformValueSlotV1::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 &value)
 		{
 			_validateProgramBinding();
 			eeglUniform3fv(location(), 1, value.components);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 &value)
+		UniformValueSlotV1::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 &value)
 		{
 			_validateProgramBinding();
 			eeglUniform4fv(location(), 1, value.components);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Quaternion &value)
+		UniformValueSlotV1::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Quaternion &value)
 		{
 			_validateProgramBinding();
 			eeglUniform4fv(location(), 1, CONV4(value).glcomponents);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &value)
+		UniformValueSlotV1::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &value)
 		{
 			_validateProgramBinding();
 			eeglUniformMatrix4fv(location(), 1, GL_FALSE, CONV16(value).glcomponents);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Scalar *const values, const Size count)
+		UniformValueSlotV1::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Scalar *const values, const Size count)
 		{
-			GLsizei	c	=	GLsizeiFromSize(count);
+			GLsizei	c	=	toGLsizei(count);
 			_validateProgramBinding();
 			eeglUniform1fv(location(), c, toGLfloat(values));
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 *const values, const Size count)
+		UniformValueSlotV1::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 *const values, const Size count)
 		{
-			GLsizei	c	=	GLsizeiFromSize(count);
+			GLsizei	c	=	toGLsizei(count);
 			_validateProgramBinding();
 			eeglUniform4fv(location(), c, toGLfloat(values));
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 *const values, const Size count)
+		UniformValueSlotV1::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 *const values, const Size count)
 		{
-			GLsizei	c	=	GLsizeiFromSize(count);
+			GLsizei	c	=	toGLsizei(count);
 			_validateProgramBinding();
 			eeglUniformMatrix4fv(location(), c, GL_FALSE, toGLfloat(values));
 			_set_as_having_some_value();
 		}
 		
 		void
-		UniformValueSlot::setSampler(const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::TextureSampler &sampler)
+		UniformValueSlotV1::setSampler(const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::TextureSampler &sampler)
 		{
 			//!	@todo	Needs uniform type check.
 			
-			GLint	idx	=	Value::Conversion::GLintFromSize(sampler.index());
+			EONIL_DEBUG_ASSERT(sampler.index() <= std::numeric_limits<GLint>::max());
+			GLint	idx	=	sampler.index();
 			
 			_validateProgramBinding();
 			eeglUniform1i(location(), idx);
@@ -225,7 +226,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		UniformValueSlot::unset()
+		UniformValueSlotV1::unset()
 		{
 			_set_as_having_no_value();
 		}
@@ -233,18 +234,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		void
-		UniformValueSlot::_validateProgramBinding() const
+		UniformValueSlotV1::_validateProgramBinding() const
 		{
 			EEGL_ASSERT_WITH_REASON(_pname == eeglGetInteger(GL_CURRENT_PROGRAM), "You must bind the owner program before setting any uniform parameter.");
 		}
 		void
-		UniformValueSlot::_set_as_having_no_value() const
+		UniformValueSlotV1::_set_as_having_no_value() const
 		{
 			EEGL_ASSERT(_validity._does_slot_have_value);
 			_validity._does_slot_have_value	=	false;
 		}
 		void
-		UniformValueSlot::_set_as_having_some_value() const
+		UniformValueSlotV1::_set_as_having_some_value() const
 		{
 			EEGL_ASSERT(not _validity._does_slot_have_value);
 			_validity._does_slot_have_value	=	true;
@@ -269,13 +270,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		VertexAttributeSlot::VertexAttributeSlot(GLuint const programName, GLuint const slotIndex)
+		VertexAttributeSlotV1::VertexAttributeSlotV1(GLuint const programName, GLuint const slotIndex)
 		{
 			Size const	maxlen	=	eeglGetProgrami(programName, GL_ACTIVE_ATTRIBUTE_MAX_LENGTH);
 			Size const	bufsz	=	maxlen+1;
 			char		buf[bufsz];
 			
-			GLsizei const	bufsz2	=	GLsizeiFromSize(bufsz);
+			GLsizei const	bufsz2	=	toGLsizei(bufsz);
 			
 			GLsizei		curlen	=	0;
 			GLint		cursz	=	0;
@@ -309,7 +310,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 //			void
-//			VertexAttributeSlot::setVertexAttributeChannel(const Machinery::VertexAttributeChannel channel)
+//			VertexAttributeSlotV1::setVertexAttributeChannel(const Machinery::VertexAttributeChannel channel)
 //			{
 //				eeglBindAttribLocation(_pname, channel.index(), name().c_str());
 //			}
