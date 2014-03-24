@@ -29,6 +29,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		class	Machine;
 		
+		class	Query;
+		
 		class	Renderbuffer;
 		class	Framebuffer;
 		

@@ -9,6 +9,7 @@
 #include "GPUTransformRegularPolygonDrawer.h"
 
 #include "../../Server/Symbols.h"
+#include "../../Server/Query.h"
 #include "../../Server/Buffer.h"
 #include "../../Server/Texture.h"
 #include "../../Server/Shader.h"
@@ -123,6 +124,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					return	vs;
 				}
 				static inline auto
+				make_vertex_buffer(vec<GPUVertex> const& vs) -> ArrayBuffer
+				{
+					GenericMemoryRange<GPUVertex const>		r1	=	{vs.data(), vs.size()};
+					GenericMemoryRange<void const>			r2	=	{r1};
+					return	ArrayBuffer{r2};
+				}
+				static inline auto
 				calc_vertex_count(Size const& segmentation, Size const& instance_count) -> Size
 				{
 					EONIL_DEBUG_ASSERT(segmentation >= 3);
@@ -196,13 +204,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
 				
-//				Server::ArrayBuffer					vertexes;
+				Server::ArrayBuffer					vertexes;
 //				Server::ElementArrayBuffer			indexes;
 				
 				Core(Size const& segmentation, Size const& capacity)
 				:	segmentation(segmentation)
 				,	capacity(capacity)
-//				,	vertexes(make_vertexes(segmentation, capacity))
+				,	vertexes(make_vertex_buffer(make_vertexes(segmentation, capacity)))
 				{
 					static_assert(sizeof(VaryingInstance) == 8 * sizeof(Scalar), "");
 					
@@ -252,10 +260,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						transform_uniform_slot.setValue(worldToScreenTransform);
 						instances_uniform_slot.setValueArray((Scalar const*)(instances.data() + (page_index * page_size)), (INSTANCE_FLOAT_COUNT * num_inst));
 						
-						vec<GPUVertex>	vs	=	make_vertexes(_core_ptr->segmentation, _core_ptr->capacity);
 						Size			vc	=	calc_vertex_count(_core_ptr->segmentation, num_inst);
 						
-						Server::Utility::draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
+						Server::Utility::draw(_core_ptr->vertexes, _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
 						
 						instances_uniform_slot.unset();
 						transform_uniform_slot.unset();
@@ -288,7 +295,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				static_assert(std::is_same<Scalar, float>::value, "Floating-point type must be equal.");
 				
-				Size	uniform_vec_count	=	Machine::machine().maximumVertexUniformVectorCount();
+				Size	uniform_vec_count	=	Machine::machine().query().maximumVertexUniformVectorCount();
 				Size	all_bytes			=	uniform_vec_count * sizeof(Vector4);
 				Size	req_bytes			=	sizeof(Matrix4);
 				Size	avail_bytes			=	req_bytes > all_bytes ? 0 : all_bytes - req_bytes;

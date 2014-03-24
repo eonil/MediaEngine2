@@ -232,6 +232,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 				EONIL_DEBUG_ASSERT(_end != nullptr);
 				EONIL_DEBUG_ASSERT(_begin < _end);
 			}
+			
 		};
 		
 		template <>
@@ -247,6 +248,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 				EONIL_DEBUG_ASSERT(_begin != nullptr);
 				EONIL_DEBUG_ASSERT(_end != nullptr);
 				EONIL_DEBUG_ASSERT(_begin < _end);
+			}
+			
+			/*!
+			 Any type range can be converted into `void const` type.
+			 */
+			template <typename T>
+			GenericMemoryRange(GenericMemoryRange<T const> origin) : GenericMemoryRange(origin.begin(), origin.end())
+			{
 			}
 		};
 		

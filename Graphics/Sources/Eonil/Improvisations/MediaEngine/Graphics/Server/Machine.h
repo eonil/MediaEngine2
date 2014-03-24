@@ -37,6 +37,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		Machine 
 		{
+			uptr<Query>							_query		{};
 			std::vector<VertexAttributeChannel>	_chs;
 			uptr<IndexUnitChannel>				_idxch_ptr;
 			std::vector<TextureSampler>			_tus;
@@ -44,12 +45,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			CompositionMode						_comp_mode	{};
 			
 			Machine();
-			Machine(Machine const& origin) = delete;					//	Copy prohibited.
+			Machine(Machine const&) = delete;					//	Copy prohibited.
+			Machine(Machine&&) = delete;						//	Move prohibited.
+			~Machine();
 			
 		public:
 			static Machine&						machine();
 			
 		public:
+			
 			auto	setFramebuffer(Framebuffer const& framebuffer) -> void;
 			auto	unsetFramebuffer() -> void;
 			
@@ -120,11 +124,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 		public:
-			/*
-			 Querying.
-			 */
-			auto	maximumVertexUniformVectorCount() const -> Size;
-			
+			auto	query() const -> Query const&;
 			
 			
 			

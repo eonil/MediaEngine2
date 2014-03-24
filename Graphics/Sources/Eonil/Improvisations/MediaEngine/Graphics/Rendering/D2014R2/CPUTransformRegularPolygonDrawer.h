@@ -42,8 +42,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				uptr<Core>	_core_ptr	{};
 				
-				static auto	_maximumCapacityOfCurrentPlatformForVaryingInstances() -> Size;			//!	Very expensive. (reads back from remote GL server)
-				
 			public:
 				
 				/*!
@@ -99,7 +97,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 				 For example, if you 128 capacity of 128 segments will take 2.5KB.
 				 */
-				CPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity = std::min(Size(128), _maximumCapacityOfCurrentPlatformForVaryingInstances()));
+				CPUTransformRegularPolygonDrawer(Size const& segmentation);
 				~CPUTransformRegularPolygonDrawer();
 				
 				/*!

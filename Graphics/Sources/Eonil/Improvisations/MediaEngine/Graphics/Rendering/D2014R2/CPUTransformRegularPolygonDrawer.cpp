@@ -10,6 +10,7 @@
 
 #include "../../Server/Symbols.h"
 #include "../../Server/Buffer.h"
+#include "../../Server/Query.h"
 #include "../../Server/Texture.h"
 #include "../../Server/Shader.h"
 #include "../../Server/Program.h"
@@ -162,7 +163,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			CPUTransformRegularPolygonDrawer::Core
 			{
 				Size			segmentation					{};
-				Size			capacity						{};
 				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("transformP")};
 				
@@ -172,9 +172,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				Server::ArrayBuffer					vertexes;
 //				Server::ElementArrayBuffer			indexes;
 				
-				Core(Size const& segmentation, Size const& capacity)
+				Core(Size const& segmentation)
 				:	segmentation(segmentation)
-				,	capacity(capacity)
 //				,	vertexes(make_vertexes(segmentation, capacity))
 				{
 					static_assert(sizeof(VaryingInstance) == 8 * sizeof(Scalar), "");
@@ -192,9 +191,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			CPUTransformRegularPolygonDrawer::CPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity)
+			CPUTransformRegularPolygonDrawer::CPUTransformRegularPolygonDrawer(Size const& segmentation)
 			{
-				_core_ptr		=	uptr<Core>{new Core{segmentation, capacity}};
+				_core_ptr		=	uptr<Core>{new Core{segmentation}};
 			}
 			CPUTransformRegularPolygonDrawer::~CPUTransformRegularPolygonDrawer()
 			{
@@ -210,7 +209,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				{
 					transform_uniform_slot.setValue(worldToScreenTransform);
 					{
-						vec<GPUVertex>	vs	=	make_vertexes(_core_ptr->segmentation, _core_ptr->capacity);
+						vec<GPUVertex>	vs	=	make_vertexes(_core_ptr->segmentation, instances.size());
 
 						struct
 						GPUVertex2
@@ -268,17 +267,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			
-			auto CPUTransformRegularPolygonDrawer::
-			_maximumCapacityOfCurrentPlatformForVaryingInstances() -> Size
-			{				
-				Size	vec_count	=	Machine::machine().maximumVertexUniformVectorCount();
-				Size	bytes		=	vec_count * 4 * 4;
-				Size	req_bytes	=	sizeof(Matrix4) + sizeof(Vector4) * 4;
-				Size	avail_bytes	=	req_bytes > bytes ? 0 : bytes - req_bytes;
-				Size	shape_c		=	avail_bytes / (sizeof(VaryingInstance) * 4);
-				return	shape_c;
-			}
 			
 			
 			

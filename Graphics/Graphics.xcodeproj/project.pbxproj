@@ -143,6 +143,9 @@
 		4588048518DFB77400B1997F /* ShaderPatchUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588048318DFB77400B1997F /* ShaderPatchUtility.cpp */; };
 		4588048618DFB77400B1997F /* ShaderPatchUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588048318DFB77400B1997F /* ShaderPatchUtility.cpp */; };
 		4588048718DFB77400B1997F /* ShaderPatchUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 4588048418DFB77400B1997F /* ShaderPatchUtility.h */; };
+		4588048C18DFC2C100B1997F /* Query.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588048A18DFC2C100B1997F /* Query.cpp */; };
+		4588048D18DFC2C100B1997F /* Query.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4588048A18DFC2C100B1997F /* Query.cpp */; };
+		4588048E18DFC2C100B1997F /* Query.h in Headers */ = {isa = PBXBuildFile; fileRef = 4588048B18DFC2C100B1997F /* Query.h */; };
 		45907A4318B062440058921A /* _LineMeshForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45907A4118B062440058921A /* _LineMeshForm.cpp */; };
 		45907A4418B062440058921A /* _LineMeshForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45907A4118B062440058921A /* _LineMeshForm.cpp */; };
 		45907A4518B062440058921A /* _LineMeshForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 45907A4218B062440058921A /* _LineMeshForm.h */; };
@@ -457,6 +460,8 @@
 		4588048318DFB77400B1997F /* ShaderPatchUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderPatchUtility.cpp; sourceTree = "<group>"; };
 		4588048418DFB77400B1997F /* ShaderPatchUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderPatchUtility.h; sourceTree = "<group>"; };
 		4588048818DFBEDA00B1997F /* Common.vertex.shader.glsl-dt-1_10-ATI-driver-bug-fix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Common.vertex.shader.glsl-dt-1_10-ATI-driver-bug-fix"; sourceTree = "<group>"; };
+		4588048A18DFC2C100B1997F /* Query.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Query.cpp; sourceTree = "<group>"; };
+		4588048B18DFC2C100B1997F /* Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Query.h; sourceTree = "<group>"; };
 		45907A4118B062440058921A /* _LineMeshForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _LineMeshForm.cpp; sourceTree = "<group>"; };
 		45907A4218B062440058921A /* _LineMeshForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _LineMeshForm.h; sourceTree = "<group>"; };
 		4590D5DD18A69643003595F5 /* DEVNOTE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DEVNOTE; sourceTree = "<group>"; };
@@ -953,6 +958,15 @@
 			name = "(viewport regulation)";
 			sourceTree = "<group>";
 		};
+		4588048918DFC2AE00B1997F /* (querying) */ = {
+			isa = PBXGroup;
+			children = (
+				4588048A18DFC2C100B1997F /* Query.cpp */,
+				4588048B18DFC2C100B1997F /* Query.h */,
+			);
+			name = "(querying)";
+			sourceTree = "<group>";
+		};
 		4593419417A3C7930035EAF1 /* _dev_ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1140,7 @@
 				451F35BA18BF132D0043E1DA /* Declarations.h */,
 				45400D8618B405BA00DF19AB /* Symbols.cpp */,
 				45400D8718B405BA00DF19AB /* Symbols.h */,
+				4588048918DFC2AE00B1997F /* (querying) */,
 				4511FB6718A42A65000A4617 /* (proxying) */,
 				45D3CB1D173BC7450011D992 /* Machinery */,
 				45D3CB1B173BC7450011D992 /* Machine.cpp */,
@@ -1454,6 +1469,7 @@
 				45E4951018B1B01700195E5F /* PolylineDrawer.h in Headers */,
 				45E4950A18B1AFC900195E5F /* SplineDrawer.h in Headers */,
 				45485F9E18B959E1005981DA /* UniformProgramParameter.h in Headers */,
+				4588048E18DFC2C100B1997F /* Query.h in Headers */,
 				45BC4E3D18BDADA6005AC223 /* Functions.h in Headers */,
 				45E494E118B18F7400195E5F /* _PlanarRGBAImageUtility.h in Headers */,
 			);
@@ -1542,6 +1558,7 @@
 				4585179218B0206D0074DBC1 /* _TriangleListMeshForm_v2.cpp in Sources */,
 				45DC09CB18A4287D00E724A6 /* ServerObjectProxy.cpp in Sources */,
 				456B275218A8F58B0037B82A /* EEGraphicsDrawableView.mm in Sources */,
+				4588048D18DFC2C100B1997F /* Query.cpp in Sources */,
 				45F14E4918B2D25F005F4A4C /* BloomFilter.cpp in Sources */,
 				453A738518B1EEFE008E65FA /* RenderingFrame.cpp in Sources */,
 				459CF53D18B8A860004A5C14 /* CPUTransformLineDrawer.cpp in Sources */,
@@ -1676,6 +1693,7 @@
 				4593418917A3C78E0035EAF1 /* _ModelProxyEditorBoxA.cpp in Sources */,
 				45D3CBBD173BC9B50011D992 /* GL-Framebuffer.cpp in Sources */,
 				45F14E4818B2D25F005F4A4C /* BloomFilter.cpp in Sources */,
+				4588048C18DFC2C100B1997F /* Query.cpp in Sources */,
 				453A738418B1EEFE008E65FA /* RenderingFrame.cpp in Sources */,
 				45D3CBBE173BC9B50011D992 /* GL-Get-Buffer.cpp in Sources */,
 				459CF53C18B8A860004A5C14 /* CPUTransformLineDrawer.cpp in Sources */,

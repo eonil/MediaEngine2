@@ -34,6 +34,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 
 			 This draws regular circular shape with specificed segmentation.
 			 You also can draw N-gon shapes such as triangles or hexagons.
+			 
+			 @classdesign
+			 This object will draw many regular-polygons at once up to 
+			 `capacity` number. Maximum capacity number is dependent on 
+			 underlying hardware, so it's different over all platforms.
+			 
+			 If you pass wrong (too big, or too small) capacity number, 
+			 then program will panic. It's recommended to use default 
+			 number by not passing it.
 			 */
 			class
 			GPUTransformRegularPolygonDrawer

@@ -11,6 +11,7 @@
 #include "../Stub/GL.h"
 
 #include "Symbols.h"
+#include "Query.h"
 #include "Program.h"
 #include "Shader.h"
 #include "Texture.h"
@@ -65,6 +66,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		Machine::Machine() : _idxch_ptr(new IndexUnitChannel())
 		{
+			_query	=	uptr<Query>{new Query{}};
+			
 			GLint	maxc	=	eeglGetInteger(GL_MAX_VERTEX_ATTRIBS);
 			
 			for (GLuint i=0; i<maxc; i++)
@@ -78,7 +81,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				_tus.push_back(TextureSampler(i));		//	Texture unit number is guaranteed to be sequential by GL spec.
 			}
 		}
-		
+		Machine::
+		~Machine()
+		{
+		}
 		
 		
 		
@@ -411,27 +417,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
 		auto Machine::
-		maximumVertexUniformVectorCount() const -> Size
+		query() const -> Query const&
 		{
-#if			EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2			
-			auto	c1	=	Stub::eeglGetInteger(GL_MAX_VERTEX_UNIFORM_COMPONENTS);
-			EONIL_DEBUG_ASSERT(c1 % 4 == 0);
-			if (eeglGetVendorIsATI())
-			{
-				/*
-				 ATI/AMD GPU drivers has a bug that reports wrong number.
-				 It must be divided by 4 to get correct number.
-				 */
-				c1	/=	4;
-			}
-			return	c1 / 4;
-#elif		EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-			return	Stub::eeglGetInteger(GL_MAX_VERTEX_UNIFORM_VECTORS);
-#else
-#error		EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
-#endif
+			return	*_query;
 		}
 		
 		
