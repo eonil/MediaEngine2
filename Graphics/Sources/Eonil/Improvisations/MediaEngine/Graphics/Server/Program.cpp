@@ -45,6 +45,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			Doctor::exceptWithReason("Uniform value slot for the name does not exist.");
 		}
+		auto
+		Program::
+		_search_vertex_attribute_location(const str &name) const -> GLint
+		{
+			GLint	loc2	=	Stub::eeglGetAttribLocation(_name, toGLchar(name));
+			if (loc2 != -1)
+			{
+				return	loc2;
+			}
+			Doctor::exceptWithReason("Uniform value slot for the name does not exist.");
+		}
 		
 		
 		
@@ -233,6 +244,22 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			ProgramParameterLocation	p1	{_name, _search_uniform_location(name)};
 			UniformValueSlot			s2	{p1};
+			
+			return	{s2};
+		}
+		auto Program::
+		vertexAttributeSlotForName(const str &name) const -> local<VertexAttributeSlot const>
+		{
+			ProgramParameterLocation	p1	{_name, _search_vertex_attribute_location(name)};
+			VertexAttributeSlot			s2	{p1};
+			
+			return	{s2};
+		}
+		auto Program::
+		vertexAttributeSlotForName(const str &name) -> local<VertexAttributeSlot>
+		{
+			ProgramParameterLocation	p1	{_name, _search_vertex_attribute_location(name)};
+			VertexAttributeSlot			s2	{p1};
 			
 			return	{s2};
 		}

@@ -27,6 +27,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO GLboolean const			eeglGetBoolean(GLenum const pname);
 		EEGL_STUB_API_DECO GLboolean const			eeglGetFloat(GLenum const pname);
 		EEGL_STUB_API_DECO GLint const				eeglGetInteger(GLenum const pname);
+		EEGL_STUB_API_DECO GLubyte const*			eeglGetString(GLenum const name);
 		
 		
 		
@@ -50,8 +51,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		/*
+		 Eonil's extensions.
+		 */
 		
-
+		EEGL_STUB_API_DECO bool					eeglGetVendorIsATI();
 		
 		
 		

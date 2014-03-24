@@ -98,11 +98,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 -	Indexes:	2(bytes uint) * 2(indexes for each quad) * (segmentation + 1)
 
 				 For example, if you 128 capacity of 128 segments will take 2.5KB.
+				 
+				 @param	
+				 capacity
+				 
+				 Cannot be larger then maximum capacity (`_maximumCapacityOfCurrentPlatformForVaryingInstances`). I don't recommend to modify this parameter from client code.
 				 */
 				GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity = std::min(Size(128), _maximumCapacityOfCurrentPlatformForVaryingInstances()));
 				~GPUTransformRegularPolygonDrawer();
 				
 				/*!
+				 Performs batched drawing of circles.
+				 
+				 
 				 If instance count < capacity, then everything willl be drawn at once (single draw call).
 				 Otherwise, draw call count will be multiplied as much as needed.
 				 */

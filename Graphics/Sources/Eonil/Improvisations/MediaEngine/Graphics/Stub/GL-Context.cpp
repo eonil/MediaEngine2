@@ -657,8 +657,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 If this function crashes while being executed, it's mostly because of bad vertex data.
 			 Regardless of where it is. (client or server) So check the data integrity first.
 			 
-			 Detection or assertion for the bad data is very hard and really inefficient. (even for debug
-			 build!) So I am not currently implementing it.
+			 Detection or assertion for the bad data from underlying GL state is very hard and really
+			 inefficient. (even for heavy assertion mode!) So I am not currently implementing it.
 			 */
 			glDrawArrays(mode, first, count);
 			EEGL_ASSERT_NO_GL_ERROR();

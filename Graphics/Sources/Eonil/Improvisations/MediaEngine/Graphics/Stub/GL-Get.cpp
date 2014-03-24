@@ -15,6 +15,28 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		using namespace Eonil::Improvisations::MediaEngine::Graphics::Debugging;
 		
+		
+		namespace
+		{
+			template<typename T>
+			static inline auto
+			contains_target_in_samples(T const& target, vec<T> const& samples) -> bool
+			{
+				return	std::find(samples.begin(), samples.end(), target) != samples.end();
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		EEGL_STUB_API_DECO void
 		eeglGetBooleanv(GLenum const pname, GLboolean * const params)
 		{
@@ -62,6 +84,22 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return		value;
 		}
 		
+		EEGL_STUB_API_DECO GLubyte const*
+		eeglGetString(GLenum const name)
+		{
+			EONIL_DEBUG_ASSERT(contains_target_in_samples(name,
+			{
+				GL_VENDOR,
+				GL_RENDERER,
+				GL_VERSION,
+				GL_SHADING_LANGUAGE_VERSION,
+				GL_EXTENSIONS,
+			}));
+			GLubyte const*	c_str1	=	glGetString(name);
+			EEGL_ASSERT_NO_GL_ERROR();
+			EONIL_DEBUG_ASSERT(c_str1 != NULL);		//!	Zero means error. @ref https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetString.xml
+			return	c_str1;
+		}
 		
 		
 		
@@ -126,6 +164,38 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			GLint	v;
 			eeglGetRenderbufferParameteriv(target, pname, &v);
 			return	v;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		EEGL_STUB_API_DECO bool
+		eeglGetVendorIsATI()
+		{
+			GLubyte const*	bytes1	=	eeglGetString(GL_VENDOR);
+			char const*		bytes2	=	(char const*)bytes1;
+			str				s3		=	str(bytes2, 3);				//	The vendor string may contain extra characters. Especially ATI have several variants, and checking only first three characters will be better.
+			return	s3 == "ATI";
 		}
 	}
 	

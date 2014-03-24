@@ -65,8 +65,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 
 		 
 		 
-		 @discussion
-		 The destructor is not virtual by default. Subclassing this class might be dangerous.
+		 @note
+		 Subclassing is prohibited. So destructor is not virtual.
+		 
+		 @warning
+		 Do not refer any object returned from this object. Always copy them.
+		 If you're using deprecated methods, copy the index numbers instead of.
 		 */
 		class
 		Program final : public TrackableObject
@@ -85,6 +89,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	_assertNonEmptyState() const -> void;
 			
 			auto	_search_uniform_location(str const& name) const -> GLint;
+			auto	_search_vertex_attribute_location(const str &name) const -> GLint;
 			
 			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) const -> UniformValueSlotV1 const*;
 			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) -> UniformValueSlotV1*;
@@ -94,6 +99,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			Program() = default;
 			Program(VertexShader const& vertexShader, FragmentShader const& fragmentShader);
 			Program(Program const&) = delete;
+			Program(Program&&) = default;
 			~Program();
 			
 			auto	operator==(Program const& other) const -> bool;
@@ -122,19 +128,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			}
 //			vertexAttributeSlot;
 			
-			auto	uniformValueSlotForName(str const& name) const -> local<UniformValueSlot const>;	//!	Panics if there's no slot for the name.
-			auto	uniformValueSlotForName(str const& name) -> local<UniformValueSlot>;				//!	Panics if there's no slot for the name.
-//			auto	vertexAttributeSlotForName(str const& name) const -> VertexAttributeSlot;			//!	Panics if there's no slot for the name.
+			auto	uniformValueSlotForName(str const& name) const -> local<UniformValueSlot const>;			//!	Panics if there's no slot for the name.
+			auto	uniformValueSlotForName(str const& name) -> local<UniformValueSlot>;						//!	Panics if there's no slot for the name.
+			auto	vertexAttributeSlotForName(str const& name) const -> local<VertexAttributeSlot const>;		//!	Panics if there's no slot for the name.
+			auto	vertexAttributeSlotForName(str const& name) -> local<VertexAttributeSlot>;					//!	Panics if there's no slot for the name.
 			
 			[[deprecated]]	auto	allUniformValueSlotV1s() const									->	vec<UniformValueSlotV1> const&;
 			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlotV1 const&;
 			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlotV1&;
-			auto	indexOfUniformValueSlotV1ForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
+			[[deprecated]]	auto	indexOfUniformValueSlotV1ForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
 			
-			auto	allVertexAttributeSlotV1s() const									->	vec<VertexAttributeSlotV1> const&;
-			auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlotV1 const&;
-			auto	vertexAttributeSlotAtIndex(Size const index)					->	VertexAttributeSlotV1&;
-			auto	indexOfVertexAttributeSlotV1ForName(std::string const name) const	->	Size;
+			[[deprecated]]	auto	allVertexAttributeSlotV1s() const									->	vec<VertexAttributeSlotV1> const&;
+			[[deprecated]]	auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlotV1 const&;
+			[[deprecated]]	auto	vertexAttributeSlotAtIndex(Size const index)					->	VertexAttributeSlotV1&;
+			[[deprecated]]	auto	indexOfVertexAttributeSlotV1ForName(std::string const name) const	->	Size;
 			
 //			auto	vertexAttributeSlotForName(str const& name) const				->	VertexAttributeSlotV1 const&;
 			

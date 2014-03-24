@@ -19,7 +19,7 @@
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
-
+#include "ShaderPatchUtility.h"
 
 
 
@@ -39,24 +39,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
-#if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
-#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-dt-1_10"
-#elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-es-1_00"
-#else
-#error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
-#endif
+#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common"
 				;
 				
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
-#if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
-#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-dt-1_10"
-#elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-es-1_00"
-#else
-#error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
-#endif
+#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-common"
 				;
 				
 				
@@ -99,8 +87,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static inline auto
 				make_vertexes(Size const& segmentation, Size const& capacity) -> vec<GPUVertex>
 				{
+					EONIL_DEBUG_ASSERT(segmentation >= 3);
+					EONIL_DEBUG_ASSERT(capacity > 0);
+					
 					vec<GPUVertex>	vs{};
-					vs.reserve(segmentation * 2 * capacity);
+					vs.reserve((segmentation * 2 + 2) * capacity);
 					Scalar const	segf	=	Scalar(segmentation);
 					
 					auto	add_vert	=	[segf, &vs](size_t instance_num, size_t segment_num, Scalar sign)
@@ -116,6 +107,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						vs.push_back(v1);
 					};
 					
+					////
+					
 					for (Size j=0; j<capacity; j++)
 					{
 						add_vert(j, 0, +1);						//	For connection between circles when drawing in TRIANGLE_STRIP mode.
@@ -128,6 +121,21 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					}
 				
 					return	vs;
+				}
+				static inline auto
+				calc_vertex_count(Size const& segmentation, Size const& instance_count) -> Size
+				{
+					EONIL_DEBUG_ASSERT(segmentation >= 3);
+					
+					Size	extra_segmentation_for_compleness	=	1;
+					Size	vertex_per_segment					=	2;
+					Size	extra_vertex_count_for_jumping		=	2;
+					
+					Size	visible_shape_vertex_count			=	(segmentation + extra_segmentation_for_compleness) * vertex_per_segment;
+					Size	total_vertex_per_instance			=	visible_shape_vertex_count + extra_vertex_count_for_jumping;
+					Size	total_vertex_of_all_instances		=	total_vertex_per_instance * instance_count;
+					
+					return	total_vertex_of_all_instances;
 				}
 //				static inline auto
 //				make_indexes(Size const& segmentation, Size const& capacity) -> Server::ElementArrayBuffer
@@ -149,6 +157,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //					
 //					return	ab;
 //				}
+				
+				
+				
+				
+				
+				static const constexpr Size	INSTANCE_FLOAT_COUNT	=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Scalar);
 			}
 			
 			
@@ -174,7 +188,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				Size			segmentation				{};
 				Size			capacity					{};
-				Program			program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
+				Program			program						{ShaderPatchUtility::programWithPatch(VERTEX_SHADER_CODE, FRAGMENT_SHADER_CODE)};
 				
 				local<UniformValueSlot>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
 				local<UniformValueSlot>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
@@ -191,6 +205,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				,	vertexes(make_vertexes(segmentation, capacity))
 				{
 					static_assert(sizeof(VaryingInstance) == 8 * sizeof(Scalar), "");
+					
+					EONIL_MEDIA_ENGINE_DEBUG_LOG("GPUTransformRegularPolygonDrawer, capacity = " + std::to_string(capacity));
 				}
 			};
 			
@@ -207,6 +223,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity)
 			{
+				EONIL_DEBUG_ASSERT(capacity <= _maximumCapacityOfCurrentPlatformForVaryingInstances());
+				
 				_core_ptr		=	uptr<Core>{new Core{segmentation, capacity}};
 			}
 			GPUTransformRegularPolygonDrawer::~GPUTransformRegularPolygonDrawer()
@@ -219,22 +237,30 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static_assert(sizeof(VaryingInstance) == sizeof(Scalar) * 8, "");
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
 				
-				static const constexpr Size	INSTANCE_FLOAT_COUNT	=	sizeof(VaryingInstance)/sizeof(Scalar);
-				
 				auto&	transform_uniform_slot	=	*_core_ptr->transformUniformSlot;
 				auto&	instances_uniform_slot	=	*_core_ptr->instancesUniformSlot;
 				
 				Machine::machine().useProgram(_core_ptr->program);
 				{
-					transform_uniform_slot.setValue(worldToScreenTransform);
-					instances_uniform_slot.setValueArray((float const*)instances.data(), INSTANCE_FLOAT_COUNT * _core_ptr->capacity);
+					Size	page_size	=	_core_ptr->capacity;
+					Size	page_count	=	instances.size() / page_size;
+					
+					for (Size page_index=0; page_index<=page_count; page_index++)
 					{
+						Size	num_inst	=	page_index == page_count ? instances.size() % page_size : page_size;
+						
+						transform_uniform_slot.setValue(worldToScreenTransform);
+						instances_uniform_slot.setValueArray((Scalar const*)(instances.data() + (page_index * page_size)), (INSTANCE_FLOAT_COUNT * num_inst));
+						
 						vec<GPUVertex>	vs	=	make_vertexes(_core_ptr->segmentation, _core_ptr->capacity);
-						Size			vc	=	instances.size() * (_core_ptr->segmentation * 2 + 2);			//	Two points for each segment and two extra point for each instances for connection.
+						Size			vc	=	calc_vertex_count(_core_ptr->segmentation, num_inst);
+						
 						Server::Utility::draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
+						
+						instances_uniform_slot.unset();
+						transform_uniform_slot.unset();
+
 					}
-					instances_uniform_slot.unset();
-					transform_uniform_slot.unset();
 				}
 				Machine::machine().unuseProgram();
 			}
@@ -259,13 +285,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			auto GPUTransformRegularPolygonDrawer::
 			_maximumCapacityOfCurrentPlatformForVaryingInstances() -> Size
-			{				
-				Size	vec_count	=	Machine::machine().maximumVertexUniformVectorCount();
-				Size	bytes		=	vec_count * 4 * 4;
-				Size	req_bytes	=	sizeof(Matrix4) + sizeof(Vector4) * 4;
-				Size	avail_bytes	=	req_bytes > bytes ? 0 : bytes - req_bytes;
-				Size	shape_c		=	avail_bytes / (sizeof(VaryingInstance) * 4);
-				return	shape_c;
+			{
+				static_assert(std::is_same<Scalar, float>::value, "Floating-point type must be equal.");
+				
+				Size	uniform_vec_count	=	Machine::machine().maximumVertexUniformVectorCount();
+				Size	all_bytes			=	uniform_vec_count * sizeof(Vector4);
+				Size	req_bytes			=	sizeof(Matrix4);
+				Size	avail_bytes			=	req_bytes > all_bytes ? 0 : all_bytes - req_bytes;
+				Size	inst_count			=	avail_bytes / (sizeof(VaryingInstance));
+				return	inst_count;
 			}
 			
 			

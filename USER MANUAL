@@ -175,3 +175,21 @@ have any extra threading cautions.
 
 
 
+
+Tested Platforms
+----------------
+This doesn't mean all code is covered by test.
+
+-	iMac 27-inch, Mid 2011 / AMD Radeon HD 6970M / OS X 10.8
+-	iOS Simulator (5.1 ~ 7.0)
+
+GPU can behave differently by platforms, drivers and vendors.
+I tried to avoid any possible issues but still you may have
+some troubles.
+
+
+
+
+
+
+

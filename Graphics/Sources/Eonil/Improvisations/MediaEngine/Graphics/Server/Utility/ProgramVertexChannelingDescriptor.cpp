@@ -8,6 +8,7 @@
 
 #include "ProgramVertexChannelingDescriptor.h"
 #include "../Program.h"
+#include "../ProgramParameterLocation.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -52,7 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					
 					auto const&	comp	=	layout.channelComponents().at(i);
 					Size		ch_idx	=	program.indexOfVertexAttributeSlotV1ForName(comp.name);
-					
+//					Size		ch_idx	=	program.vertexAttributeSlotForName(comp.name);
 					chidxs.push_back(ch_idx);
 				}
 				

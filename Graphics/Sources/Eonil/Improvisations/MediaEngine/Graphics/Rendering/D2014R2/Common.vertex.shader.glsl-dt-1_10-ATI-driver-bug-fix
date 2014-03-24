@@ -1,0 +1,6 @@
+R"(
+
+#undef		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT
+#define		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	((gl_MaxVertexUniformComponents / 4) / 4)
+
+)"

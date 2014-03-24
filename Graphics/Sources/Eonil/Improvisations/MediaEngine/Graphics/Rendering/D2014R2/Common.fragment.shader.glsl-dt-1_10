@@ -1,8 +1,7 @@
-#include	"Common.shader.glsl-dt-1_10"
 R"(
 
 #define		PARAM			uniform
-#define		IN				centroid in
+#define		IN				varying
 
 #define		highp
 #define		midp

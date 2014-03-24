@@ -5,11 +5,6 @@ R"(
 #define		IN				in
 #define		OUT				centroid out
 
-//#define		highp
-//#define		midp
-//#define		lowp
-
-//const int	EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	=	gl_MaxVertexUniformComponents / 4;
-const int	EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	=	512 / 4;
+const int	EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	=	gl_MaxVertexUniformComponents / 4;
 
 )"
