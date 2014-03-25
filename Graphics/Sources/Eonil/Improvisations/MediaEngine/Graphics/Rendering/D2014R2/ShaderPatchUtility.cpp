@@ -41,20 +41,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 #	include		"Common.fragment.shader.glsl-dt-1_10"
 				;
 				
-				if (Stub::eeglGetVendorIsATI())
-				{
-					/*!
-					 ATI driver bug. It reports `gl_MaxVertexUniformComponents` as quad multiplied value.
-					 It must be divided by 4 to be the correct value.
-					 
-					 @todo
-					 Check again this whether this bug is really exists. This may because of the
-					 GLSL float-aligning behavior rather than an actual bug.
-					 */
-					vs_prefix_macros	+=
-#	include			"Common.vertex.shader.glsl-dt-1_10-ATI-driver-bug-fix"
-					;	
-				}
+//				if (Stub::eeglGetVendorIsATI())
+//				{
+//					/*!
+//					 ATI driver bug. It reports `gl_MaxVertexUniformComponents` as quad multiplied value.
+//					 It must be divided by 4 to be the correct value.
+//					 
+//					 @todo
+//					 Check again this whether this bug is really exists. This may because of the
+//					 GLSL float-aligning behavior rather than an actual bug.
+//					 */
+//					vs_prefix_macros	+=
+//#	include			"Common.vertex.shader.glsl-dt-1_10-ATI-driver-bug-fix"
+//					;	
+//				}
 				
 //				vs_prefix_macros	+=
 //				R"(
