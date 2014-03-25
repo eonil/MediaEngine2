@@ -53,6 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 				static const constexpr Size		INSTANCE_FLOAT_COUNT				=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Scalar);
+				static const constexpr Size		INSTANCE_VECTOR_COUNT				=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Vector4);
 				static const constexpr Size		VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES	=	256 * 1024;
 				
 				
@@ -151,48 +152,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					GenericMemoryRange<void const>			r2	=	{r1};
 					return	ArrayBuffer{r2};
 				}
+				
 				static inline auto
-				calc_optimal_capacity_for(Size segmentation) -> Size
+				calc_maximum_instance_count_for_current_hardware() -> Size
+				{
+					Size	vs_max_uni_vec_c	=	Machine::machine().query().maximumVertexUniformVectorCount();
+					Size	uni_v4_for_others	=	4;
+					Size	bytes_avail_uni		=	(vs_max_uni_vec_c - uni_v4_for_others) * sizeof(Scalar) * 4;
+					Size	bytes_req_per_inst	=	INSTANCE_FLOAT_COUNT * sizeof(Scalar);
+					Size	max_inst_count		=	bytes_avail_uni / bytes_req_per_inst;
+					return	max_inst_count;
+				}
+				static inline auto
+				calc_largest_capacity_for_current_hardware(Size segmentation) -> Size
 				{
 					Size	vert_count_per_inst	=	calc_vertex_count(segmentation, 1);
 					Size	bytes_req_per_inst	=	sizeof(GPUVertex) * vert_count_per_inst;
-					Size	optimial_count		=	VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES / bytes_req_per_inst;
-					return	optimial_count;
+					Size	buffer_max_count	=	VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES / bytes_req_per_inst;
+					Size	final_max_count		=	std::min(calc_maximum_instance_count_for_current_hardware(), buffer_max_count);
+					return	final_max_count;
 				}
-				
-				
-				
-//				static inline auto
-//				make_indexes(Size const& segmentation, Size const& capacity) -> vec<uint16_t>
-//				{
-//					vec<uint16_t>	idxs{};
-//					
-//					Scalar const	segf	=	Scalar(segmentation);
-//					idxs.reserve(calc_vertex_count(segmentation, capacity));
-//					
-//					for (Size j=0; j<capacity; j++)
-//					{
-//						idxs.push_back(0);
-//						for (Size i=0; i<=segmentation; i++)
-//						{
-//							idxs.push_back(i*2+0);
-//							idxs.push_back(i*2+1);
-//						}
-//						idxs.push_back(idxs.back());
-//					}
-//					return	idxs;
-//				}
-//				static inline auto
-//				make_index_buffer(vec<uint16_t>&& idxs) -> ElementArrayBuffer
-//				{
-//					GenericMemoryRange<uint16_t const>		r1	=	{idxs.data(), idxs.size()};
-//					return	ElementArrayBuffer{r1};
-//				}
-				
-				
-				
-				
-				
 			}
 			
 			
@@ -248,7 +227,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation) : GPUTransformRegularPolygonDrawer(segmentation, calc_optimal_capacity_for(segmentation))
+			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation)
+			:	GPUTransformRegularPolygonDrawer(segmentation, calc_largest_capacity_for_current_hardware(segmentation))
 			{
 			}
 			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity)
@@ -274,14 +254,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					Size	inst_count	=	instances.size();
 					Size	page_size	=	_core_ptr->capacity;
 					Size	page_extra	=	inst_count % page_size;
-					Size	page_count	=	inst_count / page_size + 0;//(page_extra == 0 ? 0 : 1);
+					Size	page_count	=	inst_count / page_size + 0;
 					
 					for (Size page_index=0; page_index<=page_count; page_index++)
 					{
 						Size	num_inst	=	page_index == page_count ? page_extra : page_size;
 						
 						transform_uniform_slot.setValue(worldToScreenTransform);
-						instances_uniform_slot.setValueArray((Scalar const*)(instances.data() + (page_index * page_size)), (INSTANCE_FLOAT_COUNT * num_inst));
+						instances_uniform_slot.setValueArray((Vector4 const*)(instances.data() + (page_index * page_size)), (INSTANCE_VECTOR_COUNT * num_inst));
 						
 						Size	vc			=	calc_vertex_count(_core_ptr->segmentation, num_inst);
 						

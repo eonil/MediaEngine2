@@ -17,13 +17,18 @@ R"(
 
 //	Parameters.
 PARAM	mat4	transformP;
-PARAM	float	instancesP[(EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT-4)*4];
+PARAM	vec4	instancesP[(EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT-4)];
 
 /*
  Minus 4 for `transformP` which is 4 * 4D vector.
  One INST is 2 * 4D vectors (32 bytes). 
- Just preserve all possible areas. This is defined as a float-array because 
- OpenGL ES 2.0 GLSL 1.00 doesn't support writing array of struct values.
+ Just preserve all possible slots. This is defined as a flat array because
+ OpenGL ES 2.0 GLSL 1.00 doesn't support array of structs.
+ Also this is a `vec4` array because many OpenGL implementation doesn't
+ support individual `float` declaration, and in that case, one float will 
+ be expanded to one `vec4` - huge waste of space. For dense packing, this
+ must be a 4D vector type which is the only guaranteed type to be aligned 
+ as is.
  */
 
 
@@ -61,17 +66,24 @@ INST
 INST
 instance_at(int index)
 {
-	const int	INST_COMPS	=	2+1+1+4;
+//	const int	INST_COMPS	=	2+1+1+4;
+	/*
+	 An instance is 
+	 
+		8 * floats	=	2 * vector4
+	 
+	 */
+	int	array_index	=	index * 2;
 	
 	INST	inst;
-	inst.position.x	=	instancesP[index * INST_COMPS + 0];
-	inst.position.y	=	instancesP[index * INST_COMPS + 1];
-	inst.inner		=	instancesP[index * INST_COMPS + 2];
-	inst.outer		=	instancesP[index * INST_COMPS + 3];
-	inst.color.r	=	instancesP[index * INST_COMPS + 4];
-	inst.color.g	=	instancesP[index * INST_COMPS + 5];
-	inst.color.b	=	instancesP[index * INST_COMPS + 6];
-	inst.color.a	=	instancesP[index * INST_COMPS + 7];
+	inst.position.x	=	instancesP[array_index + 0].x;
+	inst.position.y	=	instancesP[array_index + 0].y;
+	inst.inner		=	instancesP[array_index + 0].z;
+	inst.outer		=	instancesP[array_index + 0].w;
+	inst.color.r	=	instancesP[array_index + 1].x;
+	inst.color.g	=	instancesP[array_index + 1].y;
+	inst.color.b	=	instancesP[array_index + 1].z;
+	inst.color.a	=	instancesP[array_index + 1].w;
 	return	inst;
 }
 

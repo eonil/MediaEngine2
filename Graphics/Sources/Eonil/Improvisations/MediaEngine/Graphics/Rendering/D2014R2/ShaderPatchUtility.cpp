@@ -10,6 +10,8 @@
 
 #include "../../Stub/GL.h"
 #include "../../Server/Shader.h"
+#include "../../Server/Query.h"
+#include "../../Server/Machine.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -44,11 +46,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					/*!
 					 ATI driver bug. It reports `gl_MaxVertexUniformComponents` as quad multiplied value.
 					 It must be divided by 4 to be the correct value.
+					 
+					 @todo
+					 Check again this whether this bug is really exists. This may because of the
+					 GLSL float-aligning behavior rather than an actual bug.
 					 */
 					vs_prefix_macros	+=
 #	include			"Common.vertex.shader.glsl-dt-1_10-ATI-driver-bug-fix"
-					;
+					;	
 				}
+				
+//				vs_prefix_macros	+=
+//				R"(
+//#undef		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT
+//#define		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT)";
+//				Size	dyn_uni_max_comps	=	Machine::machine().query().maximumVertexUniformVectorCount();
+//				vs_prefix_macros	+=	str(" (") + std::to_string(dyn_uni_max_comps) + str(")");
+//				;
 				
 #elif		EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
 				str	vs_prefix_macros	=
