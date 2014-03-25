@@ -59,7 +59,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 		public:
 			ArrayBuffer() = default;
-			ArrayBuffer(Legacy2013SharedMemory const data);							//	Creates initialized fixed sized buffer.
+			[[deprecated]] ArrayBuffer(Legacy2013SharedMemory const data);							//	Creates initialized fixed sized buffer.
 			ArrayBuffer(GenericMemoryRange<void const> data);
 			ArrayBuffer(ArrayBuffer const&) = delete;
 			ArrayBuffer(ArrayBuffer&&);
@@ -100,7 +100,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 		public:
 			ElementArrayBuffer() = default;
-			ElementArrayBuffer(Legacy2013SharedMemory const data);
+			[[deprecated]] ElementArrayBuffer(Legacy2013SharedMemory const data);
+			ElementArrayBuffer(GenericMemoryRange<uint16_t const> data);
 			ElementArrayBuffer(ElementArrayBuffer const&) = delete;
 			~ElementArrayBuffer();
 			

@@ -52,6 +52,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 				
+				static const constexpr Size		INSTANCE_FLOAT_COUNT				=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Scalar);
+				static const constexpr Size		VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES	=	256 * 1024;
+				
+				
+				
 				static inline auto
 				M() -> Machine&
 				{
@@ -86,16 +91,32 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				};
 				
 				static inline auto
+				calc_vertex_count(Size const& segmentation, Size const& instance_count) -> Size
+				{
+					EONIL_DEBUG_ASSERT(segmentation >= 3);
+					
+					Size	extra_segmentation_for_compleness	=	1;
+					Size	vertex_per_segment					=	2;
+					Size	extra_vertex_count_for_jumping		=	2;
+					
+					Size	visible_shape_vertex_count			=	(segmentation + extra_segmentation_for_compleness) * vertex_per_segment;
+					Size	total_vertex_per_instance			=	visible_shape_vertex_count + extra_vertex_count_for_jumping;
+					Size	total_vertex_of_all_instances		=	total_vertex_per_instance * instance_count;
+					
+					return	total_vertex_of_all_instances;
+				}
+				static inline auto
 				make_vertexes(Size const& segmentation, Size const& capacity) -> vec<GPUVertex>
 				{
 					EONIL_DEBUG_ASSERT(segmentation >= 3);
 					EONIL_DEBUG_ASSERT(capacity > 0);
 					
 					vec<GPUVertex>	vs{};
-					vs.reserve((segmentation * 2 + 2) * capacity);
+					vs.reserve(calc_vertex_count(segmentation, capacity));
 					Scalar const	segf	=	Scalar(segmentation);
 					
-					auto	add_vert	=	[segf, &vs](size_t instance_num, size_t segment_num, Scalar sign)
+					auto
+					add_vert	=	[segf, &vs](size_t instance_num, size_t segment_num, Scalar sign)
 					{
 						Scalar	t	=	Scalar(segment_num)/segf;
 //						Scalar	a	=	t * 2 * M_PI;			//	Keep this for documentation purpose.
@@ -131,46 +152,47 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					return	ArrayBuffer{r2};
 				}
 				static inline auto
-				calc_vertex_count(Size const& segmentation, Size const& instance_count) -> Size
+				calc_optimal_capacity_for(Size segmentation) -> Size
 				{
-					EONIL_DEBUG_ASSERT(segmentation >= 3);
-					
-					Size	extra_segmentation_for_compleness	=	1;
-					Size	vertex_per_segment					=	2;
-					Size	extra_vertex_count_for_jumping		=	2;
-					
-					Size	visible_shape_vertex_count			=	(segmentation + extra_segmentation_for_compleness) * vertex_per_segment;
-					Size	total_vertex_per_instance			=	visible_shape_vertex_count + extra_vertex_count_for_jumping;
-					Size	total_vertex_of_all_instances		=	total_vertex_per_instance * instance_count;
-					
-					return	total_vertex_of_all_instances;
+					Size	vert_count_per_inst	=	calc_vertex_count(segmentation, 1);
+					Size	bytes_req_per_inst	=	sizeof(GPUVertex) * vert_count_per_inst;
+					Size	optimial_count		=	VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES / bytes_req_per_inst;
+					return	optimial_count;
 				}
+				
+				
+				
 //				static inline auto
-//				make_indexes(Size const& segmentation, Size const& capacity) -> Server::ElementArrayBuffer
+//				make_indexes(Size const& segmentation, Size const& capacity) -> vec<uint16_t>
 //				{
-//					Scalar const	segf	=	Scalar(segmentation);
+//					vec<uint16_t>	idxs{};
 //					
-//					vec<int16_t>	idxs{};
-//					idxs.reserve(capacity * 4);
+//					Scalar const	segf	=	Scalar(segmentation);
+//					idxs.reserve(calc_vertex_count(segmentation, capacity));
+//					
 //					for (Size j=0; j<capacity; j++)
 //					{
-//						for (Size i=0; i<segmentation; i++)
+//						idxs.push_back(0);
+//						for (Size i=0; i<=segmentation; i++)
 //						{
-//							idxs.push_back(i);
+//							idxs.push_back(i*2+0);
+//							idxs.push_back(i*2+1);
 //						}
+//						idxs.push_back(idxs.back());
 //					}
-//
-//					GenericMemoryRange<void const>	mem	{idxs.data(), idxs.data() + idxs.size()};
-//					Server::ElementArrayBuffer		eb	{mem};
-//					
-//					return	ab;
+//					return	idxs;
+//				}
+//				static inline auto
+//				make_index_buffer(vec<uint16_t>&& idxs) -> ElementArrayBuffer
+//				{
+//					GenericMemoryRange<uint16_t const>		r1	=	{idxs.data(), idxs.size()};
+//					return	ElementArrayBuffer{r1};
 //				}
 				
 				
 				
 				
 				
-				static const constexpr Size	INSTANCE_FLOAT_COUNT	=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Scalar);
 			}
 			
 			
@@ -205,15 +227,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
 				
 				Server::ArrayBuffer					vertexes;
-//				Server::ElementArrayBuffer			indexes;
 				
 				Core(Size const& segmentation, Size const& capacity)
 				:	segmentation(segmentation)
 				,	capacity(capacity)
 				,	vertexes(make_vertex_buffer(make_vertexes(segmentation, capacity)))
 				{
-					static_assert(sizeof(VaryingInstance) == 8 * sizeof(Scalar), "");
-					
 					EONIL_MEDIA_ENGINE_DEBUG_LOG("GPUTransformRegularPolygonDrawer, capacity = " + std::to_string(capacity));
 				}
 			};
@@ -229,10 +248,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation) : GPUTransformRegularPolygonDrawer(segmentation, calc_optimal_capacity_for(segmentation))
+			{
+			}
 			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity)
 			{
 				EONIL_DEBUG_ASSERT(capacity <= _maximumCapacityOfCurrentPlatformForVaryingInstances());
-				
+				EONIL_DEBUG_ASSERT(calc_vertex_count(segmentation, capacity) * sizeof(GPUVertex) <= VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES);
 				_core_ptr		=	uptr<Core>{new Core{segmentation, capacity}};
 			}
 			GPUTransformRegularPolygonDrawer::~GPUTransformRegularPolygonDrawer()
@@ -242,7 +264,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto GPUTransformRegularPolygonDrawer::
 			draw(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::GPUTransformRegularPolygonDrawer::VaryingInstance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &worldToScreenTransform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::DisplayScreenFrame &frame) const -> void
 			{
-				static_assert(sizeof(VaryingInstance) == sizeof(Scalar) * 8, "");
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
 				
 				auto&	transform_uniform_slot	=	*_core_ptr->transformUniformSlot;
@@ -250,17 +271,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				Machine::machine().useProgram(_core_ptr->program);
 				{
+					Size	inst_count	=	instances.size();
 					Size	page_size	=	_core_ptr->capacity;
-					Size	page_count	=	instances.size() / page_size;
+					Size	page_extra	=	inst_count % page_size;
+					Size	page_count	=	inst_count / page_size + 0;//(page_extra == 0 ? 0 : 1);
 					
 					for (Size page_index=0; page_index<=page_count; page_index++)
 					{
-						Size	num_inst	=	page_index == page_count ? instances.size() % page_size : page_size;
+						Size	num_inst	=	page_index == page_count ? page_extra : page_size;
 						
 						transform_uniform_slot.setValue(worldToScreenTransform);
 						instances_uniform_slot.setValueArray((Scalar const*)(instances.data() + (page_index * page_size)), (INSTANCE_FLOAT_COUNT * num_inst));
 						
-						Size			vc	=	calc_vertex_count(_core_ptr->segmentation, num_inst);
+						Size	vc			=	calc_vertex_count(_core_ptr->segmentation, num_inst);
 						
 						Server::Utility::draw(_core_ptr->vertexes, _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
 						

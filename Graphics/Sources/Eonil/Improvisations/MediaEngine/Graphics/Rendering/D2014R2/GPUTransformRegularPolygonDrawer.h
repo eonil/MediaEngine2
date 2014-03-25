@@ -43,6 +43,22 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 If you pass wrong (too big, or too small) capacity number, 
 			 then program will panic. It's recommended to use default 
 			 number by not passing it.
+			 
+			 @note
+			 This class is written for OpenGL ES 2.0 standard spec with no
+			 extentions. That means this need to retain all duplicated 
+			 polygon geometries for each instances in capacity. Some extention
+			 can reduce this waste greatly. 
+			 
+				 https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS7.html#//apple_ref/doc/uid/TP40013162-SW37
+				 https://www.khronos.org/registry/gles/extensions/EXT/EXT_instanced_arrays.txt
+			 
+			 @todo
+			 Add conditional execution path for these extension support.
+			 
+			 -	`EXT_draw_instanced`
+			 -	`GL_EXT_instanced_arrays`
+			 
 			 */
 			class
 			GPUTransformRegularPolygonDrawer
@@ -95,6 +111,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				};
 				
 			public:
+				GPUTransformRegularPolygonDrawer(Size const& segmentation);
 				/*!
 				 
 				 @note
@@ -103,17 +120,29 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 
 				 This amount of GPU memory will be pre-allocated;
 				 
-				 -	Vertexes:	4(bytes float) * 2(signed angle + index number) * 2(vertexes for each quad) * segmentation
-				 -	Indexes:	2(bytes uint) * 2(indexes for each quad) * (segmentation + 1)
+				 -	Vertexes:	4(bytes float) * 2(signed angle + index number) * 2(vertexes for each quad) * (segmentation + 2) * capacity
 
-				 For example, if you 128 capacity of 128 segments will take 2.5KB.
+				 For example, if you 128 capacity of 128 segments will take 266KB.
+				 Most of data is duplicated, but we cannot use vertex-indexing due to instance ID.
+				 This wastes too much memory if capacity is high, so the capacity has hard limit of 256KB.
+				 Instance count can be vary by the segmentation count. If you want just maximum allowed capacity,
+				 use default(parameter-less) constructor.
+				
+				 @todo
+				 If the underlying hardware supports geometry instancing, the memory consumption can be reduced
+				 greatly.
+				 
+				 -	Vertexes:	4(bytes float) * 1(signed angle) * 2(vertexes for each quad) * (segmentation + 2)
+				 
+				 For example, 1KB for any capacity of 128 segments.
+				 In this case, we don't need index buffer because indexing almost no data is duplicated.
 				 
 				 @param	
 				 capacity
 				 
 				 Cannot be larger then maximum capacity (`_maximumCapacityOfCurrentPlatformForVaryingInstances`). I don't recommend to modify this parameter from client code.
 				 */
-				GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity = std::min(Size(128), _maximumCapacityOfCurrentPlatformForVaryingInstances()));
+				GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity);
 				~GPUTransformRegularPolygonDrawer();
 				
 				/*!

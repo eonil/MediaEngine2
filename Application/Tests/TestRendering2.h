@@ -41,7 +41,7 @@ TestRendering2
 	D2014R2::SpriteDrawer						_sprd{};
 	uptr<PlanarTexture>							_tex1{};
 
-	D2014R2::GPUTransformRegularPolygonDrawer				_reg_poly_drawer	{128};
+	D2014R2::GPUTransformRegularPolygonDrawer				_reg_poly_drawer	{8};
 	
 	vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	_circle_instances{};
 	
@@ -59,8 +59,8 @@ public:
 		////
 		
 		vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	insts	=	{};
-		size_t	w	=	10;
-		size_t	h	=	10;
+		size_t	w	=	20;
+		size_t	h	=	20;
 		for (size_t xi=0; xi<w; xi++)
 		{
 			for (size_t yi=0; yi<h; yi++)

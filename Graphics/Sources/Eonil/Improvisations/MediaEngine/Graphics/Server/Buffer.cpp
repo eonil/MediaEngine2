@@ -215,6 +215,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			_hotfix_length_of_data	=	data.length();
 		}
+		ElementArrayBuffer::ElementArrayBuffer(GenericMemoryRange<uint16_t const> data)
+		{
+			EONIL_DEBUG_ASSERT(not data.empty());
+			Debug::ObjectInstanceAddressTracker<ElementArrayBuffer>::registerObjectAddress(this);
+			
+			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
+			_name		=	eeglGenBuffer();
+			
+			////
+			
+			GLsizeiptr const	size	=	data.size() * sizeof(uint16_t);
+			GLvoid* const		mem		=	(GLvoid*)data.begin();
+			
+			eeglBindBuffer(GL_ELEMENT_ARRAY_BUFFER, name());
+			eeglBufferData(GL_ELEMENT_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
+			eeglUnbindBufer(GL_ELEMENT_ARRAY_BUFFER);
+		}
 		ElementArrayBuffer::~ElementArrayBuffer()
 		{
 			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());

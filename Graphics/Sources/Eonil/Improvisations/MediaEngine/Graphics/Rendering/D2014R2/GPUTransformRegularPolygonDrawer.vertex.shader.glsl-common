@@ -17,7 +17,18 @@ R"(
 
 //	Parameters.
 PARAM	mat4	transformP;
-PARAM	float	instancesP[(EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT-16)*4];		//	One INST is 2 * 4D vectors (32 bytes). Just preserve all possible areas. This is defined as a float-array because OpenGL ES 2.0 GLSL 1.00 doesn't support writing array of struct values.
+PARAM	float	instancesP[(EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT-4)*4];
+
+/*
+ Minus 4 for `transformP` which is 4 * 4D vector.
+ One INST is 2 * 4D vectors (32 bytes). 
+ Just preserve all possible areas. This is defined as a float-array because 
+ OpenGL ES 2.0 GLSL 1.00 doesn't support writing array of struct values.
+ */
+
+
+
+
 
 
 //	Inputs.
