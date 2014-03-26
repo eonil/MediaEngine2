@@ -243,8 +243,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					CGColorSpaceRelease(colorSpace);
 					
 					GLuint	name	=	eeglGenTexture();
+					GLsizei	width2	=	toGLsizei(textureWidth);
+					GLsizei	height2	=	toGLsizei(textureHeight);
+					
 					eeglBindTexture(GL_TEXTURE_2D, name);
-					eeglTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+					eeglTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width2, height2, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 					eeglUnbindTexture(GL_TEXTURE_2D);
 					free(data);
 					

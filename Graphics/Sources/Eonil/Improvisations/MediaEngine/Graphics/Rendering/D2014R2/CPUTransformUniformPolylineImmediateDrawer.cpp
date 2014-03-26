@@ -57,11 +57,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 				
-				static inline auto
-				M() -> Machine&
-				{
-					return	Machine::current();
-				}
+//				static inline auto
+//				M() -> Machine&
+//				{
+//					return	Machine::current();
+//				}
 				
 				
 				enum

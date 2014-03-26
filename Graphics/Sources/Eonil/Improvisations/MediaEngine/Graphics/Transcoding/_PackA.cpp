@@ -138,45 +138,53 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		namespace
 		{
-			using	Pair	=	std::pair<std::string, _PackA::Type::CODE>;
-			std::map<std::string, _PackA::Type::CODE> const&
-			codeMapping()
-			{
-				static	std::map<std::string, _PackA::Type::CODE>	_m	=
-				{
-					Pair("NUL ", _PackA::Type::CODE::NONE),
-					Pair("BIN ", _PackA::Type::CODE::DATA),
-					Pair("STR ", _PackA::Type::CODE::STRING),
-					Pair("U32 ", _PackA::Type::CODE::UINT32),
-					Pair("F32 ", _PackA::Type::CODE::FLOAT32),
-				};
-				return	_m;
-			}
+//			using	Pair	=	std::pair<std::string, _PackA::Type::CODE>;
+//			std::map<std::string, _PackA::Type::CODE> const&
+//			codeMapping()
+//			{
+//				static	std::map<std::string, _PackA::Type::CODE>	_m	=
+//				{
+//					Pair("NUL ", _PackA::Type::CODE::NONE),
+//					Pair("BIN ", _PackA::Type::CODE::DATA),
+//					Pair("STR ", _PackA::Type::CODE::STRING),
+//					Pair("U32 ", _PackA::Type::CODE::UINT32),
+//					Pair("F32 ", _PackA::Type::CODE::FLOAT32),
+//				};
+//				return	_m;
+//			}
 			
-			Pair const
-			pairByString(std::string const s)
-			{
-				for (Pair const& p : codeMapping())
-				{
-					if (p.first == s)
-					{
-						return	p;
-					}
-				}
-				throw	"Bad string.";
-			}
-			Pair const
-			pairByCode(_PackA::Type::CODE const c)
-			{
-				for (Pair const& p : codeMapping())
-				{
-					if (p.second == c)
-					{
-						return	p;
-					}
-				}
-				throw	"Bad code.";
-			}
+//			Pair const
+//			pairByString(std::string const s)
+//			{
+//				for (Pair const& p : codeMapping())
+//				{
+//					if (p.first == s)
+//					{
+//						return	p;
+//					}
+//				}
+//				throw	"Bad string.";
+//			}
+//			Pair const
+//			pairByCode(_PackA::Type::CODE const c)
+//			{
+//				for (Pair const& p : codeMapping())
+//				{
+//					if (p.second == c)
+//					{
+//						return	p;
+//					}
+//				}
+//				throw	"Bad code.";
+//			}
+			
+			
+			
+			
+			
+			
+			
+			
 			
 //			
 //			

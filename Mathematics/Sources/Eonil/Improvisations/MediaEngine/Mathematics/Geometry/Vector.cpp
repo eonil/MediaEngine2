@@ -73,7 +73,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			GLKTypeFor<3> const	GLK(VectorState<3> const state) { return CONV<3>(state).GLK; }
 			GLKTypeFor<4> const	GLK(VectorState<4> const state) { return CONV<4>(state).GLK; }
 			
-			Scalar const		GLM(Scalar const state) { return state; }
+//			Scalar const		GLM(Scalar const state) { return state; }						//	Commented to suppress unused function warning. Uncomment when you want it.
 			GLMTypeFor<2> const	GLM(VectorState<2> const state) { return CONV<2>(state).GLM; }
 			GLMTypeFor<3> const	GLM(VectorState<3> const state) { return CONV<3>(state).GLM; }
 			GLMTypeFor<4> const	GLM(VectorState<4> const state) { return CONV<4>(state).GLM; }

@@ -92,46 +92,46 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-//			ProgramVertexChannelingDescriptor2::ProgramVertexChannelingDescriptor2()
-//			{
-//			}
-//			
-//			ProgramVertexChannelingDescriptor2::ProgramVertexChannelingDescriptor2(vec<SLOT> const& allChannelSlots) : _ch_slots(allChannelSlots)
-//			{
-//			}
-//			
-//			
-//			
-//			auto ProgramVertexChannelingDescriptor2::
-//			channelSlotForComponentIndex(Size const& componentIndex) const -> SLOT
-//			{
-//				return	_ch_slots.at(componentIndex);
-//			}
-//			
-//			auto ProgramVertexChannelingDescriptor2::
-//			allChannelSlots() const -> vec<SLOT> const&
-//			{
-//				return	_ch_slots;
-//			}
-//			
-//			
-//			
-//			auto ProgramVertexChannelingDescriptor2::
-//			analyze(const Eonil::Improvisations::MediaEngine::Graphics::Server::Utility::VertexLayoutDescriptor &layout, Eonil::Improvisations::MediaEngine::Graphics::Server::Program &program) -> ProgramVertexChannelingDescriptor2
-//			{
-//				vec<SLOT>	ch_slots{};
-//				
-//				for (Size i=0; i<layout.channelComponents().size(); i++)
-//				{
-////					EONIL_DEBUG_ASSERT(not layout.channelComponents().at(i).name.empty());
-//					
-//					auto const&		comp	=	layout.channelComponents().at(i);
-//					SLOT			ch_slot	=	program.vertexAttributeSlotForName(comp.name);
-//					ch_slots.push_back(ch_slot);
-//				}
-//				
-//				return	{ch_slots};
-//			}
+			ProgramVertexChannelingDescriptor2::ProgramVertexChannelingDescriptor2() : _ch_slots()
+			{
+			}
+			
+			ProgramVertexChannelingDescriptor2::ProgramVertexChannelingDescriptor2(vec<SLOT> const& allChannelSlots) : _ch_slots(allChannelSlots)
+			{
+			}
+			
+			
+			
+			auto ProgramVertexChannelingDescriptor2::
+			channelSlotForComponentIndex(Size const& componentIndex) const -> SLOT
+			{
+				return	_ch_slots.at(componentIndex);
+			}
+			
+			auto ProgramVertexChannelingDescriptor2::
+			allChannelSlots() const -> vec<SLOT> const&
+			{
+				return	_ch_slots;
+			}
+			
+			
+			
+			auto ProgramVertexChannelingDescriptor2::
+			analyze(const Eonil::Improvisations::MediaEngine::Graphics::Server::Utility::VertexLayoutDescriptor &layout, Eonil::Improvisations::MediaEngine::Graphics::Server::Program &program) -> ProgramVertexChannelingDescriptor2
+			{
+				vec<SLOT>	ch_slots{};
+				
+				for (Size i=0; i<layout.channelComponents().size(); i++)
+				{
+//					EONIL_DEBUG_ASSERT(not layout.channelComponents().at(i).name.empty());
+					
+					auto const&		comp	=	layout.channelComponents().at(i);
+					SLOT			ch_slot	=	program.vertexAttributeSlotForName(comp.name);
+					ch_slots.push_back(ch_slot);
+				}
+				
+				return	{ch_slots};
+			}
 			
 			
 			

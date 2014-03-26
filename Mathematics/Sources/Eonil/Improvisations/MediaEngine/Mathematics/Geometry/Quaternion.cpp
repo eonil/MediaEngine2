@@ -58,18 +58,22 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			static_assert(sizeof(CONV4) == sizeof(Scalar) * 4, "");
 
 			////
+
 			
-			Quaternion const
-			EE(glm::quat const glm)
-			{
-				return	CONV4(glm).EEQ;
-			}
-			
-			glm::quat const
-			GLM(Quaternion const ee)
-			{
-				return	CONV4(ee).GLMQ;
-			}
+			/*
+			 Commented to suppress unused function warning. Uncomment when you want it.
+			 */
+//			Quaternion const
+//			EE(glm::quat const glm)
+//			{
+//				return	CONV4(glm).EEQ;
+//			}
+//			
+//			glm::quat const
+//			GLM(Quaternion const ee)
+//			{
+//				return	CONV4(ee).GLMQ;
+//			}
 			
 			
 //				static_assert(CONV4(Quaternion(1,2,3,4)).EEV == CONV4(GLKQuaternionMake(1,2,3,4)).EEV ,"Two quaternion type component layout should match.");

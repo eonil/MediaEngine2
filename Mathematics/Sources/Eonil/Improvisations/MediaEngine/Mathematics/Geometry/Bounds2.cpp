@@ -37,11 +37,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			{
 				return	std::isnan(v.x) and std::isnan(v.y);
 			}
-			bool const
-			ALL_NON_NAN(Vector2 const& v)
-			{
-				return	not std::isnan(v.x) and not std::isnan(v.y);
-			}
+//			bool const
+//			ALL_NON_NAN(Vector2 const& v)
+//			{
+//				return	not std::isnan(v.x) and not std::isnan(v.y);
+//			}
 			bool const
 			ALL_NAN(Bounds2 const& v)
 			{
