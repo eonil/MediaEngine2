@@ -51,8 +51,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		namespace
 		Machinery
 		{
+			class	VertexAttributeChannelIndex;
+			
+			
+			
 			class	VertexAttributeChannel;
 			class	IndexUnitChannel;
+			
+			
+			class	VertexAttributeChannelList;
+			class	IndexUnitChannelList;
 			
 			class	TextureSampler;
 		}

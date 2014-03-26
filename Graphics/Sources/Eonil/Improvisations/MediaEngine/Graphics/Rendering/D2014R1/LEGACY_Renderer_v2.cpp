@@ -6,7 +6,7 @@
 //
 //
 
-#include "_Renderer_v2.h"
+#include "LEGACY_Renderer_v2.h"
 
 
 
@@ -95,7 +95,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			_Renderer_v2::_Renderer_v2() : machine(Server::Machine::machine())
+			_Renderer_v2::_Renderer_v2() : machine(Server::Machine::current())
 			{
 				programs.for_LineMeshForm				=	_LineMeshForm::_makeShadingProgramInMachine(machine);
 				_cache.for_TriangleListMeshForm_v2		=	_TriangleListMeshForm_v2::_makeResourceInMachine(machine);

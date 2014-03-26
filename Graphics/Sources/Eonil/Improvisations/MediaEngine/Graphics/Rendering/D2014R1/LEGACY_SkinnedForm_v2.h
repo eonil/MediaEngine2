@@ -40,6 +40,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			/*!
 			 Quick & dirty implementation of 3D flat mesh.
+			 
+			 @deprecated
+			 Legacy. Do not use this class for new code.
 			 */
 			struct
 			_SkinnedForm_v2

@@ -6,7 +6,7 @@
 //
 //
 
-#include "_ModelImporter_v2.h"
+#include "LEGACY_ModelImporter_v2.h"
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-#include "_ModelProxyEditorBoxA.h"
+#include "LEGACY_ModelProxyEditorBoxA.h"
 #include "_PackSerializerA.h"
 
 #include <fstream>

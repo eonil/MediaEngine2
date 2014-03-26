@@ -43,6 +43,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		ProgramParameterLocation
 		{
+			friend class	Debugging::Doctor;
 			friend class	UniformValueSlot;
 			friend class	VertexAttributeChannel;
 			
@@ -72,6 +73,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		UniformValueSlot
 		{
+			friend class	Debugging::Doctor;
+			
 			ProgramParameterLocation	_param_loc	{};
 
 		public:
@@ -122,7 +125,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
+		/*!
+		 A program's vertex-attribute-slot parameters.
+		 Don't be confused with `VertexAttributeChannel` object.
+		 */
 		class
 		VertexAttributeSlot
 		{

@@ -23,4 +23,6 @@
 #include	"GL-Get-Buffer.h"
 #include	"GL-Get-VertexAttrib.h"
 
+#include	"GL-Extensions.h"
+
 #endif /* defined(__EonilGraphics__GL__) */

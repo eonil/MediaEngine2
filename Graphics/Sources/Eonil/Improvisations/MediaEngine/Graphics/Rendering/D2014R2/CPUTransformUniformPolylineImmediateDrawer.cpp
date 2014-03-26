@@ -17,7 +17,7 @@
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
-
+#include "../../Server/ProgramParameterLocation.h"
 
 
 
@@ -60,7 +60,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static inline auto
 				M() -> Machine&
 				{
-					return	Machine::machine();
+					return	Machine::current();
 				}
 				
 				
@@ -104,7 +104,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			CPUTransformUniformPolylineImmediateDrawer::Core
 			{
 				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("localToWorldTransformP")};
+				local<UniformValueSlot>	transformUniformSlot	{program.uniformValueSlotForName("localToWorldTransformP")};
+//				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("localToWorldTransformP")};
 				
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
@@ -247,7 +248,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //					
 //				}
 //				
-//				Machine::machine().useProgram(_core_ptr->program);
+//				M().useProgram(_core_ptr->program);
 //				{
 //					auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
 //					
@@ -255,7 +256,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //					draw(instances.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::LINES, Range::fromAdvancement(0, instances.size() * 2));
 //					transform_uniform_slot.unset();
 //				}
-//				Machine::machine().unuseProgram();
+//				M().unuseProgram();
 			}
 			
 			

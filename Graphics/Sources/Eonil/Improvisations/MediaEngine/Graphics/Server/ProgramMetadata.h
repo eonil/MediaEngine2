@@ -10,6 +10,7 @@
 #define __Graphics__ProgramMetadata__
 
 #include "../Common.h"
+#include "Declarations.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -45,6 +46,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			vec<ParameterSlotDescription>	_vs{};
 			
 		public:
+			ProgramMetadata(GLuint const programName);
+			
 			auto	allUniformValueSlots() const -> vec<ParameterSlotDescription>;
 			auto	allVertexAttributeSlots() const -> vec<ParameterSlotDescription>;
 		};

@@ -39,7 +39,34 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static auto	analyze(VertexLayoutDescriptor const& layout, Program const& program) -> ProgramVertexChannelingDescriptor;
 			};
 			
+
 			
+			
+			
+			
+//			/*!
+//			 Maps component -> vertex channel
+//			 */
+//			class
+//			ProgramVertexChannelingDescriptor2
+//			{
+//				using	SLOT	=	local<VertexAttributeSlot>;
+//				
+//				vec<SLOT>		_ch_slots	{};
+//				
+//				ProgramVertexChannelingDescriptor2(vec<SLOT> const& allChannelSlots);
+//				
+//			public:
+//				ProgramVertexChannelingDescriptor2();
+//				
+//				auto	channelSlotForComponentIndex(Size const& componentIndex) const -> SLOT;
+//				auto	allChannelSlots() const -> vec<SLOT> const&;
+//				
+//			public:
+//				static auto	analyze(VertexLayoutDescriptor const& layout, Program& program) -> ProgramVertexChannelingDescriptor2;
+//			};
+			
+
 			
 			
 			

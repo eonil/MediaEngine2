@@ -1,12 +1,12 @@
 //
-//  GPUTransformRegularPolygonDrawer.cpp
+//  GPUTransformRegularPolygonDrawerWithExtenstions.cpp
 //  Graphics
 //
-//  Created by Hoon H. on 3/20/14.
+//  Created by Hoon H. on 3/26/14.
 //
 //
 
-#include "GPUTransformRegularPolygonDrawer.h"
+#include "GPUTransformRegularPolygonDrawerWithExtenstions.h"
 
 #include "../../Server/Symbols.h"
 #include "../../Server/Query.h"
@@ -40,12 +40,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
-#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common"
+#include		"GPUTransformRegularPolygonDrawerWithExtensions.vertex.shader.glsl-common"
 				;
 				
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
-#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-common"
+#include		"GPUTransformRegularPolygonDrawerWithExtensions.fragment.shader.glsl-common"
 				;
 				
 				

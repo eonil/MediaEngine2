@@ -31,7 +31,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			////
 			
-			Machine&	m	=	Server::Machine::machine();
+			Machine&	m	=	Server::Machine::current();
 			m.setViewport(scene.viewport.boundsOfViewport());
 			
 			//	On-screen display.

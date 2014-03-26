@@ -43,6 +43,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 
 			 This is mainly debugging aid. No optimization will be performed.
 			 Each instance will have each resources.
+			 
+			 @deprecated
+			 Legacy. Do not use this class for new code.
 			 */
 			class
 			_LineMeshForm

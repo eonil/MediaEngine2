@@ -6,7 +6,7 @@
 //
 //
 
-#include "_TriangleListMeshForm_v2.h"
+#include "LEGACY_TriangleListMeshForm_v2.h"
 
 
 
@@ -20,7 +20,7 @@
 
 
 
-#include "_LineMeshForm.h"
+#include "LEGACY_LineMeshForm.h"
 
 #include "../../Stub/GL.h"
 

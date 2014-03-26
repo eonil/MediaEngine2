@@ -54,8 +54,8 @@
 #include "Transcoding/_PackA.h"
 #include "Transcoding/_PackNodeA.h"
 #include "Transcoding/_PackSerializerA.h"
-#include "Transcoding/_ModelProxyEditorBoxA.h"
-#include "Transcoding/_ModelExporterA.h"
+#include "Transcoding/LEGACY_ModelProxyEditorBoxA.h"
+#include "Transcoding/LEGACY_ModelExporterA.h"
 
 #endif
 

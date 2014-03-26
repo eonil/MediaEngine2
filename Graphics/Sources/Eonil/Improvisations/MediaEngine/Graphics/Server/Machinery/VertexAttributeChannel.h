@@ -13,6 +13,7 @@
 #include "../Declarations.h"
 #include "../Buffer.h"
 #include "../_Legacy2013Compat.h"
+#include "../../Value/StronglyTypingNumericValue.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -23,28 +24,60 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		Machinery
 		{
 			
+#if	EONIL_MEDIA_ENGINE_DEBUG_MODE
+			class
+			VertexAttributeChannelIndex final : public Value::StronglyTypingNumericValue<VertexAttributeChannelIndex, GLuint>
+			{
+			public:
+				using	Value::StronglyTypingNumericValue<VertexAttributeChannelIndex, GLuint>::StronglyTypingNumericValue;
+			};
+#else
+			using	VertexAttributeChannelIndex	=	GLuint;
+#endif
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			/*!
+			 A pointer to a vertex-attribute channel of a machine.
+			 
 			 @discussion
 			 Linked data source (regardless of client or server) will be used while drawing something
 			 with GL API. And the data required while drawing. Anyway this object doesn't keep the data
 			 sources alive, so it's your responsibility to keep them alive while drawing.
 			 
 			 @classdesign
-			 This is an object which represents virtual channel for vertex attributes.
-			 This is stateful. Cannot be passed by copy, and alway be referenced.
+			 This is a value object is a pointer to virtual channel for vertex attributes. Treat this 
+			 just like any other pointer type. (prefere copy rather than referencing)
 			 */
 			class
-			VertexAttributeChannel : public NoCopyButMoveObject
+			VertexAttributeChannel 
 			{
-				GLuint					_idx		=	-1;
-				
-				EONIL_MEDIA_ENGINE_DEBUG_ONLY_INLINE_FIELD(ptr<ArrayBuffer const>, _dbg_cur_ab_ptr{nullptr});
-				bool				_validity	=	false;		//	This seems debugging-only, but I am not sure... If it is, make it conditional macro.
+				friend class	Server::Machine;
 				
 				////
 				
-				friend class	Server::Machine;
-				VertexAttributeChannel(GLuint const index);
+				Machine*							_machine	=	nullptr;			//	GL API is strictly single-machine design. This variable is actually meaningless, but for validity check. This will likely to become debug-only variable.
+				VertexAttributeChannelIndex			_idx		=	-1;
+				
+				////
+				
+				
+				////
+				
+				EONIL_MEDIA_ENGINE_DEBUG_ONLY_INLINE_FIELD(ptr<ArrayBuffer const>, _dbg_cur_ab_ptr{nullptr});
+				auto	_assert_ready_for_drawing() const -> void;		//!	Checks whether this channel is established and can be used for rendering or not.
+				
+				
 				
 			public:
 				
@@ -83,7 +116,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				};
 				
 			public:
-				GLuint const		index() const;			//	Generic vertex attribute index.
+				VertexAttributeChannel() = default;
+				VertexAttributeChannel(VertexAttributeChannel const&) = default;
+				VertexAttributeChannel(VertexAttributeChannel&&) = default;
+				VertexAttributeChannel(Machine* machine, Size const& index);
+				VertexAttributeChannel(Machine* machine, GLuint const& index);
+				
+				auto	operator==(VertexAttributeChannel const&) const -> bool;
+				auto	operator!=(VertexAttributeChannel const&) const -> bool;
+				
+				auto	index() const -> GLuint;											//	Generic vertex attribute index.
 				
 			public:
 				auto	linkWithClientMemory(void const* const memory, Format const format) -> void;
@@ -109,7 +151,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 			public:
 				auto	description() const -> str;
-				auto	validity() const -> bool;		//!	Means this channel is established and can be used for rendering.
 			};
 
 		}

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "453BFBF918A2424D007E514B"
-               BuildableName = "OSX Test"
-               BlueprintName = "OSX Test"
-               ReferencedContainer = "container:Foundation.xcodeproj">
+               BlueprintIdentifier = "4561326918E238F30057EB03"
+               BuildableName = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a"
+               BlueprintName = "GraphicsLegacyFeatures - OSX Static Library"
+               ReferencedContainer = "container:Graphics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "453BFBF918A2424D007E514B"
-            BuildableName = "OSX Test"
-            BlueprintName = "OSX Test"
-            ReferencedContainer = "container:Foundation.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -48,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "453BFBF918A2424D007E514B"
-            BuildableName = "OSX Test"
-            BlueprintName = "OSX Test"
-            ReferencedContainer = "container:Foundation.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -66,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "453BFBF918A2424D007E514B"
-            BuildableName = "OSX Test"
-            BlueprintName = "OSX Test"
-            ReferencedContainer = "container:Foundation.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -9,6 +9,8 @@
 #include "../../Common.h"
 #include "../../Stub/GL.h"
 #include "../../Debugging/Doctor.h"
+#include "../../Debugging/DebugOnlyValidityFlagSlot.h"
+
 #include "VertexAttributeChannel.h"
 
 
@@ -24,15 +26,137 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			using namespace Debugging;
 			using namespace Stub;
 			
-			
+			namespace
+			{
+#if	EONIL_MEDIA_ENGINE_DEBUG_MODE
+				using	DEBUG_FLAG_SLOT				=	DebugOnlyValidityFlagSlotV1;
+				using	DATA_BINDNIG_STATE_MAP		=	umap<Machine const*, umap<GLuint, DEBUG_FLAG_SLOT>>;
+				
+//				using	ARRAY_BUFFER_RETAINER		=	umap<Machine const*, umap<GLuint, ptr<ArrayBuffer const>>>;
+				
+				static auto
+				_data_binding_state_of(Machine const* m, GLint idx) -> DEBUG_FLAG_SLOT&
+				{
+					static DATA_BINDNIG_STATE_MAP*	_map_ptr	{nullptr};
+					if (_map_ptr == nullptr)
+					{
+						_map_ptr	=	new DATA_BINDNIG_STATE_MAP();
+					}
+					DATA_BINDNIG_STATE_MAP&	_map	=	*_map_ptr;
+					
+					////
+					
+					if (_map.find(m) == _map.end())
+					{
+						_map.insert({m,{}});
+					}
+					auto&	submap	=	_map.at(m);
+					if (submap.find(idx) == submap.end())
+					{
+						submap.insert({idx,{}});
+					}
+					auto&	slot	=	submap.at(idx);
+					return	slot;
+				}
+				
+				static auto
+				SET_READY_FOR_RENDERING(Machine const* m, GLint const index) -> void
+				{
+					_data_binding_state_of(m, index).set_on();
+				}
+				static auto
+				UNSET_READY_FOR_RENDERING(Machine const* m, GLint const index) -> void
+				{
+					_data_binding_state_of(m, index).set_off();
+				}
+				static auto
+				ASSERT_READINESS_FOR_RENDERING(Machine const* m, GLint const index) -> void
+				{
+					_data_binding_state_of(m, index).should_be_on_now();
+				}
+#else
+				
+				static auto inline
+				SET_READY_FOR_RENDERING(Machine const* m, GLint const index) -> void
+				{
+				}
+				static auto inline
+				UNSET_READY_FOR_RENDERING(Machine const* m, GLint const index) -> void
+				{
+				}
+				static auto inline
+				ASSERT_READINESS_FOR_RENDERING(Machine const* m, GLint const index) -> void
+				{
+				}
+#endif
+	
+			}
 			
 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			auto
+			VertexAttributeChannel::_assert_ready_for_drawing() const -> void
+			{
+				ASSERT_READINESS_FOR_RENDERING(_machine, _idx);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 						
 			
 			
 			
+			
+			VertexAttributeChannel::VertexAttributeChannel(Machine* machine, GLuint const& index) : _machine(machine), _idx(index)
+			{
+			}
+			VertexAttributeChannel::VertexAttributeChannel(Machine* machine, Size const& index) : VertexAttributeChannel(machine, toGLuint(index))
+			{
+			}
+			
+			
+			auto
+			VertexAttributeChannel::operator==(VertexAttributeChannel const& ch) const -> bool
+			{
+				return	_idx == ch._idx and _machine == ch._machine;
+			}
+			auto
+			VertexAttributeChannel::operator!=(VertexAttributeChannel const& ch) const -> bool
+			{
+				return	not (_idx == ch._idx and _machine == ch._machine);
+			}
+			
+			auto
+			VertexAttributeChannel::index() const -> GLuint
+			{
+				return	_idx;
+			}
+
 			
 			
 			
@@ -58,11 +182,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				uint8_t const*	ptr		=	(uint8_t const* const)memory;
 				uint8_t const*	ptr2	=	ptr + format.dataOffset;
 				
-				//					EEGL_ASSERT(format.dataLengthInBytes() == format.memoryLength);
+//				EEGL_ASSERT(format.dataLengthInBytes() == format.memoryLength);
 				eeglEnableVertexAttribArray(_idx);
 				eeglVertexAttribPointer(_idx, GLint(format.componentCount), GLenum(format.componentType), format.normalization, format.strideSizeInBytes, ptr2);
 				
-				_validity	=	true;
+				SET_READY_FOR_RENDERING(_machine, _idx);
 			}
 			auto
 			VertexAttributeChannel::linkWithServerBuffer(const Eonil::Improvisations::MediaEngine::Graphics::Server::ArrayBuffer &buffer, const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format format) -> void
@@ -90,7 +214,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				eeglEnableVertexAttribArray(_idx);
 				eeglUnbindBufer(GL_ARRAY_BUFFER);
 				
-				_validity	=	true;
+				SET_READY_FOR_RENDERING(_machine, _idx);
 			}
 			void
 			VertexAttributeChannel::unlink()
@@ -104,8 +228,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				eeglDisableVertexAttribArray(_idx);
 				
-				_validity	=	false;
 				
+				UNSET_READY_FOR_RENDERING(_machine, _idx);
 				EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_cur_ab_ptr = nullptr);
 			}
 			
@@ -123,18 +247,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			
-			
-			VertexAttributeChannel::VertexAttributeChannel(GLuint const index)
-			{
-				_idx	=	index;
-			}
-			GLuint const
-			VertexAttributeChannel::index() const
-			{
-				return	_idx;
-			}
-			
+						
 			
 			
 			
@@ -147,12 +260,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				std::string const	enstr	=	enabled ? "enabled" : "disabled";
 				GLint				size	=	eeglGetVertexAttribi(_idx, GL_VERTEX_ATTRIB_ARRAY_SIZE);
 				GLint				bufname	=	eeglGetVertexAttribi(_idx, GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING);
-				return	Doctor::stringWithCFormat("<VertexAttributeChannel: index = %u, %s, buffer name = %u, size = %u>", _idx, enstr.c_str(), bufname, size);
-			}
-			auto
-			VertexAttributeChannel::validity() const -> bool
-			{
-				return	_validity;
+				
+				return	Doctor::stringWithCFormat("<VertexAttributeChannel: index = %u, %s, buffer name = %u, size = %u>", GLuint(_idx), enstr.c_str(), bufname, size);
 			}
 			
 			

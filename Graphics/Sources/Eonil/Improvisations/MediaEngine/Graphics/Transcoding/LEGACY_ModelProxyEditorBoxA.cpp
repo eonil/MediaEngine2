@@ -6,4 +6,4 @@
 //  Copyright (c) 2013 Eonil. All rights reserved.
 //
 
-#include "_ModelProxyEditorBoxA.h"
+#include "LEGACY_ModelProxyEditorBoxA.h"

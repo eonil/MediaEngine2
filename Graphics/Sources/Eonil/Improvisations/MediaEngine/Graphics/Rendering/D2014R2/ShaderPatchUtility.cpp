@@ -60,7 +60,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				R"(
 //#undef		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT
 //#define		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT)";
-//				Size	dyn_uni_max_comps	=	Machine::machine().query().maximumVertexUniformVectorCount();
+//				Size	dyn_uni_max_comps	=	Machine::current().query().maximumVertexUniformVectorCount();
 //				vs_prefix_macros	+=	str(" (") + std::to_string(dyn_uni_max_comps) + str(")");
 //				;
 				

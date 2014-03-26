@@ -78,7 +78,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static inline auto
 				M() -> Machine&
 				{
-					return	Machine::machine();
+					return	Machine::current();
 				}
 				
 				enum
@@ -219,9 +219,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				////
 				
-				Machine::machine().useProgram(_core_ptr->program);
+				M().useProgram(_core_ptr->program);
 				draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, colorTexture, DrawingMode::TRIANGLES, Range::fromAdvancement(0,instances.size() * 6));
-				Machine::machine().unuseProgram();
+				M().unuseProgram();
 			}
 
 			auto CPUTransformSpriteDrawer::

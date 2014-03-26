@@ -6,7 +6,7 @@
 //
 //
 
-#include "_LineMeshForm.h"
+#include "LEGACY_LineMeshForm.h"
 
 #include "../../Stub/GL.h"
 

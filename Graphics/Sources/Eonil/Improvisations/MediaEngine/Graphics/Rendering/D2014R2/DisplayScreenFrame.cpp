@@ -48,11 +48,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			DisplayScreenFrame::DisplayScreenFrame(Bounds2 const& bounds) : _core_ptr(new Core(bounds))
 			{
-				Server::Machine::machine().setViewport(bounds);
+				Server::Machine::current().setViewport(bounds);
 			}
 			DisplayScreenFrame::~DisplayScreenFrame()
 			{
-				Server::Machine::machine().unsetViewport();
+				Server::Machine::current().unsetViewport();
 			}
 			
 			

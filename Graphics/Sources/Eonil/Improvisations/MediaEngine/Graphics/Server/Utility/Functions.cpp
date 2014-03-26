@@ -14,6 +14,7 @@
 #include "../Machine.h"
 #include "../../Stub/GL-Common.h"
 #include "../../Stub/GL-Context.h"
+#include "../../Server/Machinery/VertexAttributeChannel.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -48,7 +49,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static inline auto
 				M() -> Machine&
 				{
-					return	Machine::machine();
+					return	Machine::current();
 				}
 				
 				static inline auto
@@ -66,7 +67,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						f.strideSizeInBytes	=	Stub::toGLsizei(layout.strideSize());
 						
 						Size	chidx	=	channeling.channelIndexForComponentIndex(i);
-						M().vertexAttributeChannelAtIndex(chidx).linkWithClientMemory(vertexes, f);
+//						M().vertexAttributeChannelAtIndex(chidx).linkWithClientMemory(vertexes, f);
+						M().vertexAttributeChannels().at(chidx)->linkWithClientMemory(vertexes, f);
 					}
 				}
 				static inline auto
@@ -84,7 +86,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						f.strideSizeInBytes	=	Stub::toGLsizei(layout.strideSize());
 						
 						Size	chidx	=	channeling.channelIndexForComponentIndex(i);
-						M().vertexAttributeChannelAtIndex(chidx).linkWithServerBuffer(vertexes, f);
+//						M().vertexAttributeChannelAtIndex(chidx).linkWithServerBuffer(vertexes, f);
+						M().vertexAttributeChannels().at(chidx)->linkWithServerBuffer(vertexes, f);
 					}
 				}
 				static inline auto
@@ -92,7 +95,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				{
 					for (auto const& chidx: channeling.allChannelIndexes())
 					{
-						M().vertexAttributeChannelAtIndex(chidx).unlink();
+//						M().vertexAttributeChannelAtIndex(chidx).unlink();
+						M().vertexAttributeChannels().at(chidx)->unlink();
 					}
 				}
 				

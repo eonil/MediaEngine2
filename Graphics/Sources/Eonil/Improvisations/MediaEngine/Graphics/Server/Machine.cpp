@@ -56,11 +56,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		////
-
+		
 		Machine&
 		Machine::machine()
 		{
-			static	Machine	m;
+			return	current();
+		}
+		auto
+		Machine::current() -> Machine&
+		{
+			static	Machine	m{};
 			return	m;
 		}
 		
@@ -70,9 +75,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLint	maxc	=	eeglGetInteger(GL_MAX_VERTEX_ATTRIBS);
 			
+			EONIL_MEDIA_ENGINE_DEBUG_LOG("`Server::Machine`'s vertex-attribute-channel count: " + std::to_string(maxc));
+			
 			for (GLuint i=0; i<maxc; i++)
 			{
-				_chs.push_back(VertexAttributeChannel(i));
+				_chs.push_back(VertexAttributeChannel(this, i));
 			}
 			
 			GLint	maxctu	=	eeglGetInteger(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS);
@@ -115,7 +122,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		std::vector<VertexAttributeChannel> const&
-		Machine::vertexAttributeChannels() const
+		Machine::vertexAttributeChannelsV1() const
 		{
 			return	_chs;
 		}
@@ -204,6 +211,28 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		auto Machine::
+		vertexAttributeChannels() const -> VertexAttributeChannelList const&
+		{
+			return	_vert_ch_list;
+		}
+		auto Machine::
+		vertexAttributeChannels() -> VertexAttributeChannelList&
+		{
+			return	_vert_ch_list;
+		}
 		
 		
 		

@@ -11,6 +11,7 @@
 #include "../Stub/GL.h"
 #include "../Debugging/Doctor.h"
 #include "../Value/Conversion/GLNumbers.h"
+#include "Program.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -27,6 +28,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 
 		
+		
+		
+		
+		
+		
+		ProgramMetadata::ProgramMetadata(GLuint const programName) : _pname(programName)
+		{
+		}
 		
 		
 		auto

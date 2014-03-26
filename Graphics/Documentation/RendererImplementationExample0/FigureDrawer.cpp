@@ -108,7 +108,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 	}
 	
-	FigureDrawer::FigureDrawer() : _p(figureDrawingProgramForMachine(Machine::machine()))
+	FigureDrawer::FigureDrawer() : _p(figureDrawingProgramForMachine(Machine::current()))
 	{
 	}
 	
@@ -120,10 +120,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			DeformingMesh const&		mesh	=	figure.model.mesh();
 //			Size const
 		
-//			Machine::machine().setVertexSourcingParameters(VertexSourcingWithServerBuffer(mesh.vertexes()));
+//			Machine::current().setVertexSourcingParameters(VertexSourcingWithServerBuffer(mesh.vertexes()));
 		
-//			Machine::machine().drawArrays(DrawingMode::TRIANGLES, 0, <#const Size count#>)
-//			Machine::machine().drawElementsUsingServerBuffer(DrawingMode::TRIANGLE_STRIP, unit_count, Machine::IndexType::CODE::UINT16, <#const Eonil::Improvisations::MediaEngine::Graphics::Server::ElementArrayBuffer buffer#>, <#const Size offset#>)
+//			Machine::current().drawArrays(DrawingMode::TRIANGLES, 0, <#const Size count#>)
+//			Machine::current().drawElementsUsingServerBuffer(DrawingMode::TRIANGLE_STRIP, unit_count, Machine::IndexType::CODE::UINT16, <#const Eonil::Improvisations::MediaEngine::Graphics::Server::ElementArrayBuffer buffer#>, <#const Size offset#>)
 	}
 	
 	

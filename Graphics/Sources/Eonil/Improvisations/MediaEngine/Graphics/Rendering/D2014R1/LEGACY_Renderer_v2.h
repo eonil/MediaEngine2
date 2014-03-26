@@ -15,10 +15,10 @@
 
 #include "_Display_v1.h"
 #include "_Camera_v1.h"
-#include "_LineMeshForm.h"
+#include "LEGACY_LineMeshForm.h"
 
-#include "_TriangleListMeshForm_v2.h"
-#include "_SkinnedForm_v2.h"
+#include "LEGACY_TriangleListMeshForm_v2.h"
+#include "LEGACY_SkinnedForm_v2.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 

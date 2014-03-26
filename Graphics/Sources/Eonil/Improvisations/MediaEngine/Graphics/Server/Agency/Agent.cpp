@@ -27,7 +27,7 @@
 //				static inline auto
 //				M() -> Machine&
 //				{
-//					return	Machine::machine();
+//					return	Machine::current();
 //				}
 //				
 //				static inline auto

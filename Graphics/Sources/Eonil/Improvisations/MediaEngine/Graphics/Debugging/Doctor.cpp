@@ -21,6 +21,10 @@
 #include	"../Platform/OSX.h"
 #endif
 
+#include	"../Server/ProgramParameterLocation.h"
+#include	"../Server/ProgramMetadata.h"
+
+
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace
@@ -246,7 +250,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				}
 //			}
 		void
-		Doctor::assertVector4Validity(const Value::Vector4 v)
+		Doctor::assertVector4Validity(const Vector4 v)
 		{
 			if (Doctor::useStateValidation())
 			{
@@ -257,13 +261,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 		}
 		void
-		Doctor::assertMatrix4Validity(const Value::Matrix4 v)
+		Doctor::assertMatrix4Validity(const Matrix4 v)
 		{
 			if (Doctor::useStateValidation())
 			{
 				for (Size i=0; i<16; i++)
 				{
-					assertForZeroOrNormal(Value::Conversion::FLOAT32x16(v).components[i]);
+					assertForZeroOrNormal(Conversion::FLOAT32x16(v).components[i]);
 				}
 			}
 		}
@@ -412,39 +416,58 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		std::string const
 		Doctor::describe(const Server::Program &object)
 		{
+			Server::ProgramMetadata	pm{object.name()};
 			return	stringWithCFormat("(Program (address 0x%llx) (name %llu) (uniform values (%s)) (vertex attributes (%s)))",
 									  uint64_t(uintptr_t(&object)),
 									  uint64_t(object.name()),
-									  describeVector(object.allUniformValueSlotV1s()).c_str(),
-									  describeVector(object.allVertexAttributeSlotV1s()).c_str()
+									  describeVector(pm.allUniformValueSlots()).c_str(),
+									  describeVector(pm.allVertexAttributeSlots()).c_str()
 									  );
 		}
 		
 		
 		
-		template<>
-		std::string const
-		Doctor::describe(const Server::UniformValueSlotV1 &object)
-		{
-			return	stringWithCFormat("(UniformValueSlotV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
-									  uint64_t(uintptr_t(&object)),
-									  uint64_t(object.index()),
-									  object.name().c_str(),
-									  int64_t(object.location()));
-		}
-		template<>
-		std::string const
-		Doctor::describe(const Server::VertexAttributeSlotV1 &object)
-		{
-			return	stringWithCFormat("(VertexAttributeSlotV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
-									  uint64_t(uintptr_t(&object)),
-									  uint64_t(object.index()),
-									  object.name().c_str(),
-									  int64_t(object.location()));
-		}
+//		template<>
+//		std::string const
+//		Doctor::describe(const Server::UniformValueSlotV1 &object)
+//		{
+//			return	stringWithCFormat("(UniformValueSlotV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
+//									  uint64_t(uintptr_t(&object)),
+//									  uint64_t(object.index()),
+//									  object.name().c_str(),
+//									  int64_t(object.location()));
+//		}
+//		
+//		template<>
+//		std::string const
+//		Doctor::describe(const Server::VertexAttributeSlotV1 &object)
+//		{
+//			return	stringWithCFormat("(VertexAttributeSlotV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
+//									  uint64_t(uintptr_t(&object)),
+//									  uint64_t(object.index()),
+//									  object.name().c_str(),
+//									  int64_t(object.location()));
+//		}
 		
 		
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		template<>
+		std::string const
+		Doctor::describe(const Server::ProgramMetadata::ParameterSlotDescription &object)
+		{
+			return	object.stringify();
+		}
 		
 	}
 	

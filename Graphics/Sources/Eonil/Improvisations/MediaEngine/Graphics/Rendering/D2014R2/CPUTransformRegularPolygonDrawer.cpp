@@ -19,7 +19,7 @@
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
-
+#include "../../Server/ProgramParameterLocation.h"
 
 
 
@@ -60,7 +60,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static inline auto
 				M() -> Machine&
 				{
-					return	Machine::machine();
+					return	Machine::current();
 				}
 				
 				
@@ -164,7 +164,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				Size			segmentation					{};
 				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("transformP")};
+				
+				local<UniformValueSlot>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
+//				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("transformP")};
 				
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
 				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
@@ -204,8 +206,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
 				
-				auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
-				Machine::machine().useProgram(_core_ptr->program);
+//				auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
+				auto&	transform_uniform_slot	=	*_core_ptr->transformUniformSlot;
+				M().useProgram(_core_ptr->program);
 				{
 					transform_uniform_slot.setValue(worldToScreenTransform);
 					{
@@ -247,7 +250,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					}
 					transform_uniform_slot.unset();
 				}
-				Machine::machine().unuseProgram();
+				M().unuseProgram();
 			}
 			
 			

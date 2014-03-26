@@ -1,0 +1,41 @@
+//
+//  GPUTransformRegularPolygonDrawerWithExtensions.vertex.shader.glsl-common.h
+//  Graphics
+//
+//  Created by Hoon H. on 3/26/14.
+//
+//
+
+#ifndef __Graphics__GPUTransformRegularPolygonDrawerWithExtensions_vertex_shader_glsl_common__
+#define __Graphics__GPUTransformRegularPolygonDrawerWithExtensions_vertex_shader_glsl_common__
+
+#include <iostream>
+
+#endif /* defined(__Graphics__GPUTransformRegularPolygonDrawerWithExtensions_vertex_shader_glsl_common__) */
+R"(
+
+
+
+
+//	Inputs.
+IN highp vec4		colorF;
+
+//	Outputs.
+
+
+
+
+
+void
+main()
+{
+	gl_FragColor	=	colorF;
+}
+
+
+
+
+
+
+
+)" // +END

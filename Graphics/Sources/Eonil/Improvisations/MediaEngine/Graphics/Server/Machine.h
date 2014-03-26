@@ -13,6 +13,7 @@
 #include "Declarations.h"
 
 #include "Machinery/CompositionMode.h"
+#include "Machinery/VirtualMachineSubdeviceChannelList.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 
@@ -42,7 +43,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			uptr<IndexUnitChannel>				_idxch_ptr;
 			std::vector<TextureSampler>			_tus;
 			
-			CompositionMode						_comp_mode	{};
+			CompositionMode						_comp_mode		{};
+			VertexAttributeChannelList			_vert_ch_list	{this};
 			
 			Machine();
 			Machine(Machine const&) = delete;					//	Copy prohibited.
@@ -50,16 +52,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			~Machine();
 			
 		public:
-			static Machine&						machine();
+			static Machine&						current();
+			[[deprecated]] static Machine&		machine();
 			
 		public:
 			
 			auto	setFramebuffer(Framebuffer const& framebuffer) -> void;
 			auto	unsetFramebuffer() -> void;
 			
-			std::vector<VertexAttributeChannel> const&	vertexAttributeChannels() const;
-			VertexAttributeChannel const&		vertexAttributeChannelAtIndex(Size const index) const;
-			VertexAttributeChannel&				vertexAttributeChannelAtIndex(Size const index);
+			auto	vertexAttributeChannels() const -> VertexAttributeChannelList const&;
+			auto	vertexAttributeChannels() -> VertexAttributeChannelList&;
+			
+			[[deprecated]] std::vector<VertexAttributeChannel> const&	vertexAttributeChannelsV1() const;
+			[[deprecated]] VertexAttributeChannel const&		vertexAttributeChannelAtIndex(Size const index) const;
+			[[deprecated]] VertexAttributeChannel&				vertexAttributeChannelAtIndex(Size const index);
 			
 			IndexUnitChannel const&				indexUnitChannel() const;
 			IndexUnitChannel&					indexUnitChannel();

@@ -10,8 +10,8 @@
 #define __EonilGraphics___ModelDrawingGenerator_v2__
 
 #include "../../Common.h"
-#include "../../Transcoding/_ModelImporter_v2.h"
-#include "_SkinnedForm_v2.h"
+#include "../../Transcoding/LEGACY_ModelImporter_v2.h"
+#include "LEGACY_SkinnedForm_v2.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	

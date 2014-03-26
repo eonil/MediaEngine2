@@ -25,7 +25,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			using namespace Server;
 			using namespace Server::Machinery;
 			
-			Machine&	m	=	Server::Machine::machine();
+			Machine&	m	=	Server::Machine::current();
 			m.setViewport(scene.viewport.boundsOfViewport());
 			
 			if (scene.switches.depthTesting)

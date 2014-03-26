@@ -33,6 +33,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 
 			 @discussion
 			 Check the transform validity if this doesn't look work.
+			 
+			 @deprecated
+			 Legacy. Do not use this class for new code.
 			 */
 			struct
 			_TriangleListMeshForm_v2

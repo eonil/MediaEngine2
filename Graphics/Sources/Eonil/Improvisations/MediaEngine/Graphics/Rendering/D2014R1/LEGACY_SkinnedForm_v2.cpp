@@ -6,7 +6,7 @@
 //
 //
 
-#include "_SkinnedForm_v2.h"
+#include "LEGACY_SkinnedForm_v2.h"
 
 #include "../../Stub/GL.h"
 

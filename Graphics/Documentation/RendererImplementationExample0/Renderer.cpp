@@ -174,17 +174,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			srcparam.channelingFormats[0].strideSizeInBytes	=	sizeof(DeformingMesh::Vertex);
 //			srcparam.channelingFormats[0].setBufferOffsetInBytes(0);
 		
-//			Machine::machine().setViewport(Rect(100,100,200,200));
-//			Machine::machine().executeBlockWithProgram(p,[srcparam, vs]
+//			Machine::current().setViewport(Rect(100,100,200,200));
+//			Machine::current().executeBlockWithProgram(p,[srcparam, vs]
 //			{
-//				Machine::machine().setVertexSourcingParameters(srcparam);
+//				Machine::current().setVertexSourcingParameters(srcparam);
 //				{
-//					printf("machine = %s", Machine::machine().description().c_str());
-////					p.mutableVertexAttributeSlotV1AtIndex(0).setVertexAttributeChannel(Machine::machine().vertexAttributeChannelAtIndex(0));
-////					Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, m.vertexes().size());
-//					Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
+//					printf("machine = %s", Machine::current().description().c_str());
+////					p.mutableVertexAttributeSlotV1AtIndex(0).setVertexAttributeChannel(Machine::current().vertexAttributeChannelAtIndex(0));
+////					Machine::current().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, m.vertexes().size());
+//					Machine::current().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 //				}
-//				Machine::machine().unsetVertexSourcingParameters();
+//				Machine::current().unsetVertexSourcingParameters();
 //			});
 	}
 	
