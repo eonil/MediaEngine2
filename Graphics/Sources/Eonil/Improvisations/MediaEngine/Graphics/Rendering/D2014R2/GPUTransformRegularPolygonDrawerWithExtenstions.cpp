@@ -203,7 +203,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				local<UniformValueSlot>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
 
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
+				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
 				
 				Server::ArrayBuffer					vertexes;
 				

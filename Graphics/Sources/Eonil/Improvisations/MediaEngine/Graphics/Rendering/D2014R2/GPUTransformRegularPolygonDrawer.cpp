@@ -203,7 +203,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				local<UniformValueSlot>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
 
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
+				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
 				
 				Server::ArrayBuffer					vertexes;
 				
@@ -251,8 +251,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				M().useProgram(_core_ptr->program);
 				{
-//					_core_ptr->program.vertexAttributeSlotForName("DW")->
-//					M().vertexAttributeChannelAtIndex(0).linkWithClientMemory(<#const void *const memory#>, <#const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format format#>)
 					Size	inst_count	=	instances.size();
 					Size	page_size	=	_core_ptr->capacity;
 					Size	page_extra	=	inst_count % page_size;

@@ -64,8 +64,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	vertexAttributeChannels() -> VertexAttributeChannelList&;
 			
 			[[deprecated]] std::vector<VertexAttributeChannel> const&	vertexAttributeChannelsV1() const;
-			[[deprecated]] VertexAttributeChannel const&		vertexAttributeChannelAtIndex(Size const index) const;
-			[[deprecated]] VertexAttributeChannel&				vertexAttributeChannelAtIndex(Size const index);
+			[[deprecated]] VertexAttributeChannel const&				vertexAttributeChannelAtIndex(Size const index) const;
+			[[deprecated]] VertexAttributeChannel&						vertexAttributeChannelAtIndex(Size const index);
 			
 			IndexUnitChannel const&				indexUnitChannel() const;
 			IndexUnitChannel&					indexUnitChannel();

@@ -1,64 +1,64 @@
-R"(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//	Parameters.
-uniform		mat4	transformP;
-
-//	Inputs.
-attribute	vec4	positionV;
-attribute	vec4	colorV;
-
-//	Outputs.
-varying		vec4	colorF;
-
-
-
-
-
-
-
-
-
-
-/*!
- All vertexes must be pre-transformed (would be in CPU) before passing to this shader
- to be drawn batched. This will be updated to perform transform in GPU using SRT 
- information.
- */
-void
-main()
-{
-	gl_Position		=	transformP * positionV;
-	colorF			=	colorV;
-	colorF			=	vec4(1,1,1,1);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-)" // +END
+//R"(
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+////	Parameters.
+//uniform		mat4	transformP;
+//
+////	Inputs.
+//attribute	vec4	positionV;
+//attribute	vec4	colorV;
+//
+////	Outputs.
+//varying		vec4	colorF;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+///*!
+// All vertexes must be pre-transformed (would be in CPU) before passing to this shader
+// to be drawn batched. This will be updated to perform transform in GPU using SRT 
+// information.
+// */
+//void
+//main()
+//{
+//	gl_Position		=	transformP * positionV;
+//	colorF			=	colorV;
+//	colorF			=	vec4(1,1,1,1);
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//)" // +END

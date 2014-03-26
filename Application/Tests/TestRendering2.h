@@ -70,7 +70,6 @@ public:
 				Scalar	l	=	Scalar(rand()) / std::numeric_limits<int>::max();
 				
 				GPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
-				//			CPUTransformRegularPolygonDrawer::VaryingInstance	inst1	{};
 				inst1.position	=	{x, y};
 				inst1.boundary	=	{0,0};
 				inst1.color		=	{l, l, l, 1};

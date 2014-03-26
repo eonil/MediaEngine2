@@ -9,7 +9,10 @@
 #ifndef __Graphics__ProgramVertexChannelingDescriptor__
 #define __Graphics__ProgramVertexChannelingDescriptor__
 
+#include "../../Common.h"
 #include "VertexLayoutDescriptor.h"
+
+#include "../ProgramParameterLocation.h"		//	I don't know why the compiler wants definition of `VertexAttributeSlot`...
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -27,15 +30,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				vec<Size>		_chidxs	{};
 				
+				[[deprecated]]
 				ProgramVertexChannelingDescriptor(vec<Size> const& allChannelIndexes);
 				
 			public:
+				[[deprecated]]
 				ProgramVertexChannelingDescriptor();
 				
+				[[deprecated]]
 				auto	channelIndexForComponentIndex(Size const& componentIndex) const -> Size;
 				auto	allChannelIndexes() const -> vec<Size> const&;
 				
 			public:
+				[[deprecated]]
 				static auto	analyze(VertexLayoutDescriptor const& layout, Program const& program) -> ProgramVertexChannelingDescriptor;
 			};
 			
@@ -45,7 +52,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			/*!
-			 Maps component -> vertex channel
+			 Maps component -> vertex channel slot
 			 */
 			class
 			ProgramVertexChannelingDescriptor2

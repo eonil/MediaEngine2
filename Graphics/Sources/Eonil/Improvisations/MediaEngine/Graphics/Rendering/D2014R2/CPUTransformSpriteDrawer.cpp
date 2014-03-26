@@ -128,7 +128,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				Program								program			{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				VertexLayoutDescriptor				layout			{make_vertex_format()};
-				ProgramVertexChannelingDescriptor	channeling		{ProgramVertexChannelingDescriptor::analyze(layout, program)};
+				ProgramVertexChannelingDescriptor2	channeling		{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
 	
 			};
 			

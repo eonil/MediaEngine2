@@ -85,7 +85,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 			public:
 				using	VirtualMachineSubdeviceChannelList<VertexAttributeChannel>::VirtualMachineSubdeviceChannelList;
+					
+				auto	at(VertexAttributeSlot const& slot) const -> local<VertexAttributeChannel const>;		//!	This is O(1) operation.
+				auto	at(VertexAttributeSlot const& slot) -> local<VertexAttributeChannel>;		//!	This is O(1) operation.
 			};
+			
+			
 			
 			
 //			class

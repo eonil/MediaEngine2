@@ -46,6 +46,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			friend class	Debugging::Doctor;
 			friend class	UniformValueSlot;
 			friend class	VertexAttributeChannel;
+			friend class	VertexAttributeChannelList;
 			
 			GLuint	_pname		{NULL_GL_NAME()};
 			GLint	_loc		{};						//!	0 is allowed and a valid state.
@@ -125,13 +126,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*!
 		 A program's vertex-attribute-slot parameters.
 		 Don't be confused with `VertexAttributeChannel` object.
 		 */
 		class
-		VertexAttributeSlot
+		VertexAttributeSlot final
 		{
+			friend class				VertexAttributeChannelList;
+			
 			ProgramParameterLocation	_param_loc	{};
 			
 		public:

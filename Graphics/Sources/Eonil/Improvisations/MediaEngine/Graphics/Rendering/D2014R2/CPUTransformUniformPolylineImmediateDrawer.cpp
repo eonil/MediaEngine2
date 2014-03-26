@@ -108,7 +108,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("localToWorldTransformP")};
 				
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};
+				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
 			};
 			
 			

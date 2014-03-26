@@ -1097,7 +1097,7 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		45C5B79B18DB899F0033F354 /* (regular-polygon-drawer - CPU) */ = {
+		45C5B79B18DB899F0033F354 /* (regular-polygon-drawer - CPU - unused, but preserved for documentation purpose) */ = {
 			isa = PBXGroup;
 			children = (
 				45C5B79418DB89990033F354 /* CPUTransformRegularPolygonDrawer.dt.fragment.shader.rstr */,
@@ -1106,7 +1106,7 @@
 				45C5B79318DB89990033F354 /* CPUTransformRegularPolygonDrawer.cpp */,
 				45C5B79618DB89990033F354 /* CPUTransformRegularPolygonDrawer.h */,
 			);
-			name = "(regular-polygon-drawer - CPU)";
+			name = "(regular-polygon-drawer - CPU - unused, but preserved for documentation purpose)";
 			sourceTree = "<group>";
 		};
 		45C5B79C18DB94F00033F354 /* (regular-polygon-drawer / strict standard) */ = {
@@ -1483,7 +1483,7 @@
 				453554D018DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.h */,
 				45A8C23618E214A500FD28ED /* (regular-polygon-drawer / with extensions) */,
 				45C5B79C18DB94F00033F354 /* (regular-polygon-drawer / strict standard) */,
-				45C5B79B18DB899F0033F354 /* (regular-polygon-drawer - CPU) */,
+				45C5B79B18DB899F0033F354 /* (regular-polygon-drawer - CPU - unused, but preserved for documentation purpose) */,
 				4598F48918DB2F91000C3F6E /* CPUTransformRegularCircleDrawer.cpp */,
 				4598F48A18DB2F91000C3F6E /* CPUTransformRegularCircleDrawer.h */,
 			);

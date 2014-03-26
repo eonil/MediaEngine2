@@ -15,6 +15,7 @@
 #include "../../Stub/GL-Common.h"
 #include "../../Stub/GL-Context.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
+#include "../../Server/ProgramParameterLocation.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -52,8 +53,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					return	Machine::current();
 				}
 				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				static inline auto
-				setAllVertexChannelings(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling) -> void
+				setAllVertexChannelings(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling) -> void
 				{
 					for (Size i=0; i<layout.channelComponents().size(); i++)
 					{
@@ -66,13 +76,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						f.normalization		=	GL_FALSE;
 						f.strideSizeInBytes	=	Stub::toGLsizei(layout.strideSize());
 						
-						Size	chidx	=	channeling.channelIndexForComponentIndex(i);
-//						M().vertexAttributeChannelAtIndex(chidx).linkWithClientMemory(vertexes, f);
-						M().vertexAttributeChannels().at(chidx)->linkWithClientMemory(vertexes, f);
+						auto	vchslot		=	channeling.channelSlotForComponentIndex(i);
+						M().vertexAttributeChannels().at(*vchslot)->linkWithClientMemory(vertexes, f);
 					}
 				}
 				static inline auto
-				setAllVertexChannelings(ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling) -> void
+				setAllVertexChannelings(ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling) -> void
 				{
 					for (Size i=0; i<layout.channelComponents().size(); i++)
 					{
@@ -85,25 +94,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						f.normalization		=	GL_FALSE;
 						f.strideSizeInBytes	=	Stub::toGLsizei(layout.strideSize());
 						
-						Size	chidx	=	channeling.channelIndexForComponentIndex(i);
-//						M().vertexAttributeChannelAtIndex(chidx).linkWithServerBuffer(vertexes, f);
-						M().vertexAttributeChannels().at(chidx)->linkWithServerBuffer(vertexes, f);
+						auto	vchslot		=	channeling.channelSlotForComponentIndex(i);
+						M().vertexAttributeChannels().at(*vchslot)->linkWithServerBuffer(vertexes, f);
 					}
 				}
 				static inline auto
-				unsetAllVertexChannelings(ProgramVertexChannelingDescriptor const& channeling) -> void
+				unsetAllVertexChannelings(ProgramVertexChannelingDescriptor2 const& channeling) -> void
 				{
-					for (auto const& chidx: channeling.allChannelIndexes())
+					for (auto const& vchslot: channeling.allChannelSlots())
 					{
-//						M().vertexAttributeChannelAtIndex(chidx).unlink();
-						M().vertexAttributeChannels().at(chidx)->unlink();
+						M().vertexAttributeChannels().at(*vchslot)->unlink();
 					}
 				}
-				
-				
-				
-				
-				
+
 			}
 			
 			
@@ -193,8 +196,31 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			auto
-			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
 			{
 				setAllVertexChannelings(vertexes, layout, channeling);
 				{
@@ -214,19 +240,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			auto
-			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling, vec<PlanarTexture> const& textures, DrawingMode const& mode, Range const& range) -> void
 			{
 				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{textures.data(), textures.size()}, mode, range);
 			}
 			
 			auto
-			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling, PlanarTexture const& texture, DrawingMode const& mode, Range const& range) -> void
 			{
 				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{&texture, 1}, mode, range);
 			}
 			
 			auto
-			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void
+			draw(void const* const vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling, DrawingMode const& mode, Range const& range) -> void
 			{
 				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{}, mode, range);
 			}
@@ -241,15 +267,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-
-			
-			
-			
-			
 			
 			
 			auto
-			draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
+			draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling, GenericMemoryRange<PlanarTexture const> const& textures, DrawingMode const& mode, Range const& range) -> void
 			{
 				setAllVertexChannelings(vertexes, layout, channeling);
 				{
@@ -269,7 +290,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			auto
-			draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor const& channeling, DrawingMode const& mode, Range const& range) -> void
+			draw(Server::ArrayBuffer const& vertexes, VertexLayoutDescriptor const& layout, ProgramVertexChannelingDescriptor2 const& channeling, DrawingMode const& mode, Range const& range) -> void
 			{
 				draw(vertexes, layout, channeling, GenericMemoryRange<PlanarTexture const>{}, mode, range);
 			}
@@ -278,6 +299,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			
+			
+			
+			
+			
+			
+			
+					
+		
+		
+		
+		
+		
+		
+		
+			
+			
+			
+		
+		
 		}
 
 

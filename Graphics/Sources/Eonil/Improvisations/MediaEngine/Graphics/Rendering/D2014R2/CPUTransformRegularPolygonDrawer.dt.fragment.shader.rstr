@@ -1,4 +1,4 @@
-R"(
-#define	highp
-)"
-#include "CPUTransformRegularPolygonDrawer.es.fragment.shader.rstr"
+//R"(
+//#define	highp
+//)"
+//#include "CPUTransformRegularPolygonDrawer.es.fragment.shader.rstr"
