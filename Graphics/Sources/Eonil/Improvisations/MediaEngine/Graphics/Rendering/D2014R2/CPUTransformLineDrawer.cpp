@@ -17,6 +17,8 @@
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
+#include "../../Server/Utility/VertexComponentChannelingDescriptor.h"
+#include "../../Server/Utility/GeometryRendering.h"
 #include "../../Server/Utility/Functions.h"
 #include "../../Server/ProgramParameterLocation.h"
 
@@ -115,12 +117,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			struct
 			CPUTransformLineDrawer::Core
 			{
-				Program					program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
+				Program								program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				local<ProgramUniformValueSlotProxy>	transformUniformIndex		{program.uniformValueSlotForName("localToWorldTransformP")};
-//				Size			transformUniformIndex			{program.indexOfProgramUniformValueSlotProxyV1ForName("localToWorldTransformP")};
 				
-				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
+				VertexLayoutDescriptor				layout			{make_vertex_format()};
+				VertexComponentChannelingDescriptor	channeling		{VertexComponentChannelingDescriptor::analyze(layout, program)};
 			};
 			
 			
@@ -152,13 +153,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					EONIL_DEBUG_ASSERT(i.destination.location.w == 1);
 				}
 				
+				////
+				
 				M().useProgram(_core_ptr->program);
 				{
-//					auto&	transform_uniform_slot	=	_core_ptr->program.uniformValueSlotAtIndex(_core_ptr->transformUniformIndex);
 					auto&	transform_uniform_slot	=	*_core_ptr->transformUniformIndex;
 					
 					transform_uniform_slot.setValue(worldToScreenTransform);
-					draw(instances.data(), _core_ptr->layout, _core_ptr->channeling, DrawingMode::LINES, Range::fromAdvancement(0, instances.size() * 2));
+					{
+						GenericMemoryRange<void const>		range1	{instances.data(), instances.data() + instances.size()};
+						ClientMemoryVertexProvisioning		verts1	{range1, _core_ptr->channeling};
+						GeometryProvisioning				geomp1	{&verts1};
+						
+						draw(geomp1, DrawingMode::LINES, {0, instances.size() * 2});
+					}
 					transform_uniform_slot.unset();
 				}
 				M().unuseProgram();
