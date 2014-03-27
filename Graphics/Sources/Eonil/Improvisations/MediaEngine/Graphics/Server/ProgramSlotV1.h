@@ -76,11 +76,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		UniformValueSlotV1 final : public ProgramSlotV1
+		ProgramUniformValueSlotProxyV1 final : public ProgramSlotV1
 		{
 			friend class	Program;
 			
-			UniformValueSlotV1(GLuint const programName, GLuint const slotIndex);
+			ProgramUniformValueSlotProxyV1(GLuint const programName, GLuint const slotIndex);
 			
 		public:
 			
@@ -128,11 +128,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		class
-		VertexAttributeSlotV1 final : public ProgramSlotV1
+		ProgramVertexAttributeSlotProxyV1 final : public ProgramSlotV1
 		{
 			friend class	Program;
 			
-			VertexAttributeSlotV1(GLuint const programName, GLuint const slotIndex);
+			ProgramVertexAttributeSlotProxyV1(GLuint const programName, GLuint const slotIndex);
 			
 		public:
 			

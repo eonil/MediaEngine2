@@ -20,6 +20,10 @@
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
 #include "../../Server/Utility/Functions.h"
+
+#include "../../Server/Utility/VertexComponentChannelingDescriptor.h"
+#include "../../Server/Utility/GeometryRendering.h"
+
 #include "ShaderPatchUtility.h"
 
 
@@ -199,13 +203,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				Size			capacity					{};
 				Program			program						{ShaderPatchUtility::programWithPatch(VERTEX_SHADER_CODE, FRAGMENT_SHADER_CODE)};
 				
-				local<UniformValueSlot>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
-				local<UniformValueSlot>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
+				local<ProgramUniformValueSlotProxy>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
+				local<ProgramUniformValueSlotProxy>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
 
 				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
 				
 				Server::ArrayBuffer					vertexes;
+				VertexComponentChannelingDescriptorForStreamInServerBuffer	staticDataChanneling	{VertexComponentChannelingDescriptorForStreamInServerBuffer::analyze(&vertexes, make_vertex_format(), program)};
+				
+//				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
+				
 				
 				Core(Size const& segmentation, Size const& capacity)
 				:	segmentation(segmentation)
@@ -265,7 +272,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						
 						Size	vc			=	calc_vertex_count(_core_ptr->segmentation, num_inst);
 						
-						Server::Utility::draw(_core_ptr->vertexes, _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
+//						Server::Utility::draw(_core_ptr->vertexes, _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
+						
+						GeometryChanneling vchs {&_core_ptr->staticDataChanneling};
+						Server::Utility::draw(vchs, {}, DrawingMode::TRIANGLE_STRIP, {0, vc});
 						
 						instances_uniform_slot.unset();
 						transform_uniform_slot.unset();

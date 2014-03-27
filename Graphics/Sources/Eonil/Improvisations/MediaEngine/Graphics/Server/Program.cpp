@@ -106,11 +106,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			for (GLuint i=0; i<attrc; i++)
 			{
-				_vertexAttributeSlots.push_back(VertexAttributeSlotV1(name(), i));
+				_vertexAttributeSlots.push_back(ProgramVertexAttributeSlotProxyV1(name(), i));
 			}
 			for (GLuint i=0; i<unic; i++)
 			{
-				_uniformValueSlots.push_back(UniformValueSlotV1(name(), i));
+				_uniformValueSlots.push_back(ProgramUniformValueSlotProxyV1(name(), i));
 			}
 			
 //				printf("shader count = %u\n", eeglGetProgrami(name(), GL_ATTACHED_SHADERS));				
@@ -183,26 +183,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 //		auto Program::
-//		uniformsValueSlots() const -> GenericMemoryRange<UniformValueSlotV1 const>
+//		uniformsValueSlots() const -> GenericMemoryRange<ProgramUniformValueSlotProxyV1 const>
 //		{
 //			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
 //		}
 //		auto Program::
-//		uniformsValueSlots() -> GenericMemoryRange<UniformValueSlotV1>
+//		uniformsValueSlots() -> GenericMemoryRange<ProgramUniformValueSlotProxyV1>
 //		{
 //			return	{_uniformValueSlots.data(), _uniformValueSlots.data() + _uniformValueSlots.size()};
 //		}
 		auto Program::
-		searchUniformValueSlotV1ForName(const str &name) const -> UniformValueSlotV1 const*
+		searchProgramUniformValueSlotProxyV1ForName(const str &name) const -> ProgramUniformValueSlotProxyV1 const*
 		{
-			return	((Program*)this)->searchUniformValueSlotV1ForName(name);
+			return	((Program*)this)->searchProgramUniformValueSlotProxyV1ForName(name);
 		}
 		auto Program::
-		searchUniformValueSlotV1ForName(const str &name) -> UniformValueSlotV1*
+		searchProgramUniformValueSlotProxyV1ForName(const str &name) -> ProgramUniformValueSlotProxyV1*
 		{
 			_assertNonEmptyState();
 			
-			for (UniformValueSlotV1& s : _uniformValueSlots)
+			for (ProgramUniformValueSlotProxyV1& s : _uniformValueSlots)
 			{
 				if (s.name() == name)
 				{
@@ -213,7 +213,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
 			if (loc2 != -1)
 			{
-				for (UniformValueSlotV1& s: _uniformValueSlots)
+				for (ProgramUniformValueSlotProxyV1& s: _uniformValueSlots)
 				{
 					if (s.location() == loc2)
 					{
@@ -232,56 +232,56 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		auto Program::
-		uniformValueSlotForName(const str &name) const -> local<UniformValueSlot const>
+		uniformValueSlotForName(const str &name) const -> local<ProgramUniformValueSlotProxy const>
 		{
 			ProgramParameterLocation	p1	{_name, _search_uniform_location(name)};
-			UniformValueSlot			s2	{p1};
+			ProgramUniformValueSlotProxy			s2	{p1};
 			
 			return	{s2};
 		}
 		auto Program::
-		uniformValueSlotForName(const str &name) -> local<UniformValueSlot>
+		uniformValueSlotForName(const str &name) -> local<ProgramUniformValueSlotProxy>
 		{
 			ProgramParameterLocation	p1	{_name, _search_uniform_location(name)};
-			UniformValueSlot			s2	{p1};
+			ProgramUniformValueSlotProxy			s2	{p1};
 			
 			return	{s2};
 		}
 		auto Program::
-		vertexAttributeSlotForName(const str &name) const -> local<VertexAttributeSlot const>
+		vertexAttributeSlotForName(const str &name) const -> local<ProgramVertexAttributeSlotProxy const>
 		{
 			ProgramParameterLocation	p1	{_name, _search_vertex_attribute_location(name)};
-			VertexAttributeSlot			s2	{p1};
+			ProgramVertexAttributeSlotProxy			s2	{p1};
 			
 			return	{s2};
 		}
 		auto Program::
-		vertexAttributeSlotForName(const str &name) -> local<VertexAttributeSlot>
+		vertexAttributeSlotForName(const str &name) -> local<ProgramVertexAttributeSlotProxy>
 		{
 			ProgramParameterLocation	p1	{_name, _search_vertex_attribute_location(name)};
-			VertexAttributeSlot			s2	{p1};
+			ProgramVertexAttributeSlotProxy			s2	{p1};
 			
 			return	{s2};
 		}
 		
 		auto Program::
-		allUniformValueSlotV1s() const -> vec<UniformValueSlotV1> const&
+		allProgramUniformValueSlotProxyV1s() const -> vec<ProgramUniformValueSlotProxyV1> const&
 		{
 			_assertNonEmptyState();
 			
 			return	_uniformValueSlots;
 		}
 		auto Program::
-		uniformValueSlotAtIndex(Size const index) -> UniformValueSlotV1&
+		uniformValueSlotAtIndex(Size const index) -> ProgramUniformValueSlotProxyV1&
 		{
 			_assertNonEmptyState();
 			
 			return	_uniformValueSlots.at(index);
 		}
 		auto Program::
-		indexOfUniformValueSlotV1ForName(const std::string name) const -> Size
+		indexOfProgramUniformValueSlotProxyV1ForName(const std::string name) const -> Size
 		{
-			auto const*	ptr	=	searchUniformValueSlotV1ForName(name);
+			auto const*	ptr	=	searchProgramUniformValueSlotProxyV1ForName(name);
 			
 			if (ptr == nullptr)
 			{
@@ -292,7 +292,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 //			_assertNonEmptyState();
 //			
-//			for (UniformValueSlotV1 const& s : _uniformValueSlots)
+//			for (ProgramUniformValueSlotProxyV1 const& s : _uniformValueSlots)
 //			{
 //				if (s.name() == name)
 //				{
@@ -303,7 +303,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			GLint	loc2	=	Stub::eeglGetUniformLocation(_name, toGLchar(name));
 //			if (loc2 != -1)
 //			{
-//				for (UniformValueSlotV1 const& s: _uniformValueSlots)
+//				for (ProgramUniformValueSlotProxyV1 const& s: _uniformValueSlots)
 //				{
 //					if (s.location() == loc2)
 //					{
@@ -319,7 +319,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		auto Program::
-		allVertexAttributeSlotV1s() const -> vec<VertexAttributeSlotV1> const&
+		allProgramVertexAttributeSlotProxyV1s() const -> vec<ProgramVertexAttributeSlotProxyV1> const&
 		{
 			_assertNonEmptyState();
 			
@@ -327,18 +327,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		auto Program::
-		vertexAttributeSlotAtIndex(Size const index) -> VertexAttributeSlotV1&
+		vertexAttributeSlotAtIndex(Size const index) -> ProgramVertexAttributeSlotProxyV1&
 		{
 			_assertNonEmptyState();
 			
 			return	_vertexAttributeSlots.at(index);
 		}
 		auto Program::
-		indexOfVertexAttributeSlotV1ForName(const std::string name) const -> Size
+		indexOfProgramVertexAttributeSlotProxyV1ForName(const std::string name) const -> Size
 		{
 			_assertNonEmptyState();
 			
-			for (VertexAttributeSlotV1 const& s : _vertexAttributeSlots)
+			for (ProgramVertexAttributeSlotProxyV1 const& s : _vertexAttributeSlots)
 			{
 				if (s.name() == name)
 				{

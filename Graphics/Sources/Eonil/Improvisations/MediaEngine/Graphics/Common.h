@@ -137,7 +137,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //		}
 //	};
 	
-	
 }}}}
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {

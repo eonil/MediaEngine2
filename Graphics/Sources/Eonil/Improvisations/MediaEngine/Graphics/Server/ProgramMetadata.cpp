@@ -53,7 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		auto
 		ProgramMetadata::
-		allUniformValueSlots() const -> vec<ParameterSlotDescription>
+		allProgramUniformValueSlotProxys() const -> vec<ParameterSlotDescription>
 		{
 			vec<ParameterSlotDescription>		ret		{};
 			
@@ -111,7 +111,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		auto
 		ProgramMetadata::
-		allVertexAttributeSlots() const -> vec<ParameterSlotDescription>
+		allProgramVertexAttributeSlotProxys() const -> vec<ParameterSlotDescription>
 		{
 			vec<ParameterSlotDescription>	ret	{};
 			

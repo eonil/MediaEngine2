@@ -165,8 +165,8 @@
 //				Size			segmentation					{};
 //				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 //				
-//				local<UniformValueSlot>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
-////				Size			transformUniformIndex			{program.indexOfUniformValueSlotV1ForName("transformP")};
+//				local<ProgramUniformValueSlotProxy>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
+////				Size			transformUniformIndex			{program.indexOfProgramUniformValueSlotProxyV1ForName("transformP")};
 //				
 //				VertexLayoutDescriptor				layout		{make_vertex_format()};
 //				ProgramVertexChannelingDescriptor	channeling	{ProgramVertexChannelingDescriptor::analyze(layout, program)};

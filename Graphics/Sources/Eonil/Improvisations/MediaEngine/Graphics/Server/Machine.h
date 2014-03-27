@@ -13,7 +13,7 @@
 #include "Declarations.h"
 
 #include "Machinery/CompositionMode.h"
-#include "Machinery/VirtualMachineSubdeviceChannelList.h"
+#include "Machinery/MachineVirtualSubdeviceChannelList.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 

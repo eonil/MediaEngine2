@@ -180,7 +180,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				Machine::current().setVertexSourcingParameters(srcparam);
 //				{
 //					printf("machine = %s", Machine::current().description().c_str());
-////					p.mutableVertexAttributeSlotV1AtIndex(0).setVertexAttributeChannel(Machine::current().vertexAttributeChannelAtIndex(0));
+////					p.mutableProgramVertexAttributeSlotProxyV1AtIndex(0).setVertexAttributeChannel(Machine::current().vertexAttributeChannelAtIndex(0));
 ////					Machine::current().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, m.vertexes().size());
 //					Machine::current().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 //				}

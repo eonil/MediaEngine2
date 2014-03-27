@@ -420,8 +420,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	stringWithCFormat("(Program (address 0x%llx) (name %llu) (uniform values (%s)) (vertex attributes (%s)))",
 									  uint64_t(uintptr_t(&object)),
 									  uint64_t(object.name()),
-									  describeVector(pm.allUniformValueSlots()).c_str(),
-									  describeVector(pm.allVertexAttributeSlots()).c_str()
+									  describeVector(pm.allProgramUniformValueSlotProxys()).c_str(),
+									  describeVector(pm.allProgramVertexAttributeSlotProxys()).c_str()
 									  );
 		}
 		
@@ -429,9 +429,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 //		template<>
 //		std::string const
-//		Doctor::describe(const Server::UniformValueSlotV1 &object)
+//		Doctor::describe(const Server::ProgramUniformValueSlotProxyV1 &object)
 //		{
-//			return	stringWithCFormat("(UniformValueSlotV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
+//			return	stringWithCFormat("(ProgramUniformValueSlotProxyV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
 //									  uint64_t(uintptr_t(&object)),
 //									  uint64_t(object.index()),
 //									  object.name().c_str(),
@@ -440,9 +440,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //		
 //		template<>
 //		std::string const
-//		Doctor::describe(const Server::VertexAttributeSlotV1 &object)
+//		Doctor::describe(const Server::ProgramVertexAttributeSlotProxyV1 &object)
 //		{
-//			return	stringWithCFormat("(VertexAttributeSlotV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
+//			return	stringWithCFormat("(ProgramVertexAttributeSlotProxyV1 (address 0x%llx) (index %llu) (name \"%s\") (location %lli))",
 //									  uint64_t(uintptr_t(&object)),
 //									  uint64_t(object.index()),
 //									  object.name().c_str(),

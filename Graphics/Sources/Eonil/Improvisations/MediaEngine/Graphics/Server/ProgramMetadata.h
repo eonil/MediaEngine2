@@ -48,8 +48,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		public:
 			ProgramMetadata(GLuint const programName);
 			
-			auto	allUniformValueSlots() const -> vec<ParameterSlotDescription>;
-			auto	allVertexAttributeSlots() const -> vec<ParameterSlotDescription>;
+			auto	allProgramUniformValueSlotProxys() const -> vec<ParameterSlotDescription>;
+			auto	allProgramVertexAttributeSlotProxys() const -> vec<ParameterSlotDescription>;
 		};
 		
 		

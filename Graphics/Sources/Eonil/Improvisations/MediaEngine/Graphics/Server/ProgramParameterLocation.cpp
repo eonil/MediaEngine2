@@ -89,55 +89,55 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		UniformValueSlot::
-		UniformValueSlot(ProgramParameterLocation const& location) : _param_loc(location)
+		ProgramUniformValueSlotProxy::
+		ProgramUniformValueSlotProxy(ProgramParameterLocation const& location) : _param_loc(location)
 		{
 		}
 		
 		void
-		UniformValueSlot::setValue(const Scalar &value)
+		ProgramUniformValueSlotProxy::setValue(const Scalar &value)
 		{
 			_validateProgramBinding();
 			eeglUniform1f(_param_loc.location(), value);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 &value)
+		ProgramUniformValueSlotProxy::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 &value)
 		{
 			_validateProgramBinding();
 			eeglUniform2fv(_param_loc.location(), 1, value.components);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 &value)
+		ProgramUniformValueSlotProxy::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 &value)
 		{
 			_validateProgramBinding();
 			eeglUniform3fv(_param_loc.location(), 1, value.components);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 &value)
+		ProgramUniformValueSlotProxy::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 &value)
 		{
 			_validateProgramBinding();
 			eeglUniform4fv(_param_loc.location(), 1, value.components);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Quaternion &value)
+		ProgramUniformValueSlotProxy::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Quaternion &value)
 		{
 			_validateProgramBinding();
 			eeglUniform4fv(_param_loc.location(), 1, CONV4(value).glcomponents);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &value)
+		ProgramUniformValueSlotProxy::setValue(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &value)
 		{
 			_validateProgramBinding();
 			eeglUniformMatrix4fv(_param_loc.location(), 1, GL_FALSE, CONV16(value).glcomponents);
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Scalar *const values, const Size count)
+		ProgramUniformValueSlotProxy::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Scalar *const values, const Size count)
 		{
 			GLsizei	c	=	toGLsizei(count);
 			_validateProgramBinding();
@@ -145,7 +145,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 *const values, const Size count)
+		ProgramUniformValueSlotProxy::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 *const values, const Size count)
 		{
 			GLsizei	c	=	toGLsizei(count);
 			_validateProgramBinding();
@@ -153,7 +153,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			_set_as_having_some_value();
 		}
 		void
-		UniformValueSlot::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 *const values, const Size count)
+		ProgramUniformValueSlotProxy::setValueArray(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 *const values, const Size count)
 		{
 			GLsizei	c	=	toGLsizei(count);
 			_validateProgramBinding();
@@ -162,7 +162,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		UniformValueSlot::setSampler(const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::TextureSampler &sampler)
+		ProgramUniformValueSlotProxy::setSampler(const Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::TextureSampler &sampler)
 		{
 			//!	@todo	Needs uniform type check.
 			
@@ -175,7 +175,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		UniformValueSlot::unset()
+		ProgramUniformValueSlotProxy::unset()
 		{
 			_set_as_having_no_value();
 		}
@@ -183,18 +183,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		void
-		UniformValueSlot::_validateProgramBinding() const
+		ProgramUniformValueSlotProxy::_validateProgramBinding() const
 		{
 			EEGL_ASSERT_WITH_REASON(_param_loc._pname == eeglGetInteger(GL_CURRENT_PROGRAM), "You must bind the owner program before setting any uniform parameter.");
 		}
 		void
-		UniformValueSlot::_set_as_having_no_value() const
+		ProgramUniformValueSlotProxy::_set_as_having_no_value() const
 		{
 			EEGL_ASSERT(_validity._does_slot_have_value);
 			_validity._does_slot_have_value	=	false;
 		}
 		void
-		UniformValueSlot::_set_as_having_some_value() const
+		ProgramUniformValueSlotProxy::_set_as_having_some_value() const
 		{
 			EEGL_ASSERT(not _validity._does_slot_have_value);
 			_validity._does_slot_have_value	=	true;
@@ -218,8 +218,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		VertexAttributeSlot::
-		VertexAttributeSlot(ProgramParameterLocation const& location) : _param_loc(location)
+		ProgramVertexAttributeSlotProxy::
+		ProgramVertexAttributeSlotProxy(ProgramParameterLocation const& location) : _param_loc(location)
 		{
 		}
 		

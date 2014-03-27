@@ -79,8 +79,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLuint						_name						{NULL_GL_NAME()};
 			
-			vec<UniformValueSlotV1>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
-			vec<VertexAttributeSlotV1>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
+			vec<ProgramUniformValueSlotProxyV1>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
+			vec<ProgramVertexAttributeSlotProxyV1>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
 			
 			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			
@@ -91,8 +91,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	_search_uniform_location(str const& name) const -> GLint;
 			auto	_search_vertex_attribute_location(const str &name) const -> GLint;
 			
-			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) const -> UniformValueSlotV1 const*;
-			[[deprecated]]	auto	searchUniformValueSlotV1ForName(const str &name) -> UniformValueSlotV1*;
+			[[deprecated]]	auto	searchProgramUniformValueSlotProxyV1ForName(const str &name) const -> ProgramUniformValueSlotProxyV1 const*;
+			[[deprecated]]	auto	searchProgramUniformValueSlotProxyV1ForName(const str &name) -> ProgramUniformValueSlotProxyV1*;
 			
 			
 		public:
@@ -110,40 +110,40 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 //			struct
 //			{
-//				std::vector<UniformValueSlotV1> const&	all() const;
-//				UniformValueSlotV1 const&					atIndex(Size const index) const;
-//				UniformValueSlotV1&						atIndex(Size const index);
+//				std::vector<ProgramUniformValueSlotProxyV1> const&	all() const;
+//				ProgramUniformValueSlotProxyV1 const&					atIndex(Size const index) const;
+//				ProgramUniformValueSlotProxyV1&						atIndex(Size const index);
 //				
 //				Size const								indexForName(
-//				UniformValueSlotV1 const&					forName(std::string const name) const;
-//				UniformValueSlotV1&						forName(std::string const name);
+//				ProgramUniformValueSlotProxyV1 const&					forName(std::string const name) const;
+//				ProgramUniformValueSlotProxyV1&						forName(std::string const name);
 //			}
 //			uniformValueSlot;
 //
 //			struct
 //			{
-//				std::vector<VertexAttributeSlotV1> const&		all() const;
-//				VertexAttributeSlotV1 const&					atIndex(Size const index) const;
-//				VertexAttributeSlotV1&						atIndex(Size const index);
+//				std::vector<ProgramVertexAttributeSlotProxyV1> const&		all() const;
+//				ProgramVertexAttributeSlotProxyV1 const&					atIndex(Size const index) const;
+//				ProgramVertexAttributeSlotProxyV1&						atIndex(Size const index);
 //			}
 //			vertexAttributeSlot;
 			
-			auto	uniformValueSlotForName(str const& name) const -> local<UniformValueSlot const>;			//!	Panics if there's no slot for the name.
-			auto	uniformValueSlotForName(str const& name) -> local<UniformValueSlot>;						//!	Panics if there's no slot for the name.
-			auto	vertexAttributeSlotForName(str const& name) const -> local<VertexAttributeSlot const>;		//!	Panics if there's no slot for the name.
-			auto	vertexAttributeSlotForName(str const& name) -> local<VertexAttributeSlot>;					//!	Panics if there's no slot for the name.
+			auto	uniformValueSlotForName(str const& name) const -> local<ProgramUniformValueSlotProxy const>;			//!	Panics if there's no slot for the name.
+			auto	uniformValueSlotForName(str const& name) -> local<ProgramUniformValueSlotProxy>;						//!	Panics if there's no slot for the name.
+			auto	vertexAttributeSlotForName(str const& name) const -> local<ProgramVertexAttributeSlotProxy const>;		//!	Panics if there's no slot for the name.
+			auto	vertexAttributeSlotForName(str const& name) -> local<ProgramVertexAttributeSlotProxy>;					//!	Panics if there's no slot for the name.
 			
-			[[deprecated]]	auto	allUniformValueSlotV1s() const									->	vec<UniformValueSlotV1> const&;
-			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	UniformValueSlotV1 const&;
-			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	UniformValueSlotV1&;
-			[[deprecated]]	auto	indexOfUniformValueSlotV1ForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
+			[[deprecated]]	auto	allProgramUniformValueSlotProxyV1s() const									->	vec<ProgramUniformValueSlotProxyV1> const&;
+			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index) const					->	ProgramUniformValueSlotProxyV1 const&;
+			[[deprecated]]	auto	uniformValueSlotAtIndex(Size const index)						->	ProgramUniformValueSlotProxyV1&;
+			[[deprecated]]	auto	indexOfProgramUniformValueSlotProxyV1ForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
 			
-			[[deprecated]]	auto	allVertexAttributeSlotV1s() const									->	vec<VertexAttributeSlotV1> const&;
-			[[deprecated]]	auto	vertexAttributeSlotAtIndex(Size const index) const				->	VertexAttributeSlotV1 const&;
-			[[deprecated]]	auto	vertexAttributeSlotAtIndex(Size const index)					->	VertexAttributeSlotV1&;
-			[[deprecated]]	auto	indexOfVertexAttributeSlotV1ForName(std::string const name) const	->	Size;
+			[[deprecated]]	auto	allProgramVertexAttributeSlotProxyV1s() const									->	vec<ProgramVertexAttributeSlotProxyV1> const&;
+			[[deprecated]]	auto	vertexAttributeSlotAtIndex(Size const index) const				->	ProgramVertexAttributeSlotProxyV1 const&;
+			[[deprecated]]	auto	vertexAttributeSlotAtIndex(Size const index)					->	ProgramVertexAttributeSlotProxyV1&;
+			[[deprecated]]	auto	indexOfProgramVertexAttributeSlotProxyV1ForName(std::string const name) const	->	Size;
 			
-//			auto	vertexAttributeSlotForName(str const& name) const				->	VertexAttributeSlotV1 const&;
+//			auto	vertexAttributeSlotForName(str const& name) const				->	ProgramVertexAttributeSlotProxyV1 const&;
 			
 			
 //		public:

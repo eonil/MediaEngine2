@@ -195,8 +195,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					m.textureUnitAtIndex(0).setTexture(*(f.colorTexture));
 //					m.textureUnitAtIndex(0).setTexture_Legacy2013(f.colorTexture);
 				}
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("scolor")).setSampler(m.textureUnitAtIndex(0));
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tall")).setValue(tall);
+				p->uniformValueSlotAtIndex(p->indexOfProgramUniformValueSlotProxyV1ForName("scolor")).setSampler(m.textureUnitAtIndex(0));
+				p->uniformValueSlotAtIndex(p->indexOfProgramUniformValueSlotProxyV1ForName("tall")).setValue(tall);
 				
 				if (f.faces.size() > 0)
 				{
@@ -216,8 +216,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					m.vertexAttributeChannelAtIndex(2).unlink();
 				}
 				
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("tall")).unset();
-				p->uniformValueSlotAtIndex(p->indexOfUniformValueSlotV1ForName("scolor")).unset();
+				p->uniformValueSlotAtIndex(p->indexOfProgramUniformValueSlotProxyV1ForName("tall")).unset();
+				p->uniformValueSlotAtIndex(p->indexOfProgramUniformValueSlotProxyV1ForName("scolor")).unset();
 				if (f.colorTexture != nullptr)
 				{
 					m.textureUnitAtIndex(0).unsetTexture();

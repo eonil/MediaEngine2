@@ -44,7 +44,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		ProgramParameterLocation
 		{
 			friend class	Debugging::Doctor;
-			friend class	UniformValueSlot;
+			friend class	ProgramUniformValueSlotProxy;
 			friend class	VertexAttributeChannel;
 			friend class	VertexAttributeChannelList;
 			
@@ -70,17 +70,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 @discussion
 		 This class keeps just pointer to the slot.
 		 If you need full slot metadata, then you can use `ProgramMetadata` class.
+		 Semantically this is a pointer to another object.
 		 */
 		class
-		UniformValueSlot
+		ProgramUniformValueSlotProxy
 		{
 			friend class	Debugging::Doctor;
 			
 			ProgramParameterLocation	_param_loc	{};
 
 		public:
-			UniformValueSlot() = default;
-			UniformValueSlot(ProgramParameterLocation const& location);
+			ProgramUniformValueSlotProxy() = default;
+			ProgramUniformValueSlotProxy(ProgramParameterLocation const& location);
 			
 //			void	setValue(GLfloat const value);
 //			void	setValue(GLint const value);
@@ -140,17 +141,31 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		/*!
 		 A program's vertex-attribute-slot parameters.
 		 Don't be confused with `VertexAttributeChannel` object.
+		 Semantically this is a pointer to another object.
+		 
+		 @discussion
+		 Semantically, we just channel a vertex data into this slot.
+		 But the GL is adapting some complex indirection mechacnism 
+		 for flexibility - *generic veretx index* -, and we cannot
+		 channel a vertex data into program slot directly. 
+		 
+		 It's possible to add some *convenient* method to abstract
+		 them out, but we do not provide those methods because this
+		 is the lowest C++ layer to GL API, and this must reflect 
+		 GL's API structure. Adding those method also means 
+		 abstracting out some semantics, and that may introduce 
+		 some serious semantic issues.
 		 */
 		class
-		VertexAttributeSlot final
+		ProgramVertexAttributeSlotProxy final
 		{
 			friend class				VertexAttributeChannelList;
 			
 			ProgramParameterLocation	_param_loc	{};
 			
 		public:
-			VertexAttributeSlot() = default;
-			VertexAttributeSlot(ProgramParameterLocation const& location);
+			ProgramVertexAttributeSlotProxy() = default;
+			ProgramVertexAttributeSlotProxy(ProgramParameterLocation const& location);
 		};
 		
 	}
