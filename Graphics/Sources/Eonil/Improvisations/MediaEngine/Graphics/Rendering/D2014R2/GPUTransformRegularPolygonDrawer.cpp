@@ -199,25 +199,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			struct
 			GPUTransformRegularPolygonDrawer::Core
 			{
-				Size			segmentation				{};
-				Size			capacity					{};
-				Program			program						{ShaderPatchUtility::programWithPatch(VERTEX_SHADER_CODE, FRAGMENT_SHADER_CODE)};
+				Size								segmentation			{};
+				Size								capacity				{};
+				Program								program					{ShaderPatchUtility::programWithPatch(VERTEX_SHADER_CODE, FRAGMENT_SHADER_CODE)};
 				
 				local<ProgramUniformValueSlotProxy>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
 				local<ProgramUniformValueSlotProxy>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
 
-				VertexLayoutDescriptor				layout		{make_vertex_format()};
+				VertexLayoutDescriptor				layout					{make_vertex_format()};
 				
 				Server::ArrayBuffer					vertexes;
-				VertexComponentChannelingDescriptorForStreamInServerBuffer	staticDataChanneling	{VertexComponentChannelingDescriptorForStreamInServerBuffer::analyze(&vertexes, make_vertex_format(), program)};
-				
-//				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
-				
+				VertexComponentChannelingDescriptor	staticDataChanneling;
 				
 				Core(Size const& segmentation, Size const& capacity)
 				:	segmentation(segmentation)
 				,	capacity(capacity)
 				,	vertexes(make_vertex_buffer(make_vertexes(segmentation, capacity)))
+				,	staticDataChanneling(VertexComponentChannelingDescriptor::analyze(make_vertex_format(), program))
 				{
 					EONIL_MEDIA_ENGINE_DEBUG_LOG("GPUTransformRegularPolygonDrawer, capacity = " + std::to_string(capacity));
 				}
@@ -272,10 +270,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						
 						Size	vc			=	calc_vertex_count(_core_ptr->segmentation, num_inst);
 						
-//						Server::Utility::draw(_core_ptr->vertexes, _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
-						
-						GeometryChanneling vchs {&_core_ptr->staticDataChanneling};
-						Server::Utility::draw(vchs, {}, DrawingMode::TRIANGLE_STRIP, {0, vc});
+						ServerBufferVertexProvisioning	vertexes1	{&_core_ptr->vertexes, _core_ptr->staticDataChanneling};
+						{
+							Server::Utility::draw(&vertexes1, DrawingMode::TRIANGLE_STRIP, {0, vc});
+						}
 						
 						instances_uniform_slot.unset();
 						transform_uniform_slot.unset();
