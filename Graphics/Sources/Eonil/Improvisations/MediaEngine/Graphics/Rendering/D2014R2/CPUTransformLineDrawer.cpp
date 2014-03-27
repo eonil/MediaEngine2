@@ -13,12 +13,12 @@
 #include "../../Server/Texture.h"
 #include "../../Server/Shader.h"
 #include "../../Server/Program.h"
+#include "../../Server/ProgramParameterLocation.h"
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/VertexComponentChannelingDescriptor.h"
 #include "../../Server/Utility/GeometryRendering.h"
-#include "../../Server/ProgramParameterLocation.h"
 
 /*!
  
@@ -118,8 +118,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				Program								program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				local<ProgramUniformValueSlotProxy>	transformUniformIndex		{program.uniformValueSlotForName("localToWorldTransformP")};
 				
-				VertexLayoutDescriptor				layout			{make_vertex_format()};
-				VertexComponentChannelingDescriptor	channeling		{VertexComponentChannelingDescriptor::analyze(layout, program)};
+				VertexComponentChannelingDescriptor	channeling					{VertexComponentChannelingDescriptor::analyze(make_vertex_format(), program)};
 			};
 			
 			

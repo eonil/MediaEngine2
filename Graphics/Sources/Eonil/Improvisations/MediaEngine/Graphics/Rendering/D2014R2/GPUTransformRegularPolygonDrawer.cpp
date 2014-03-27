@@ -202,8 +202,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				local<ProgramUniformValueSlotProxy>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
 				local<ProgramUniformValueSlotProxy>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
-
-				VertexLayoutDescriptor				layout					{make_vertex_format()};
 				
 				Server::ArrayBuffer					vertexes;
 				VertexComponentChannelingDescriptor	staticDataChanneling;

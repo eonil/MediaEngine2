@@ -37,24 +37,29 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 Vertex data can be sourced from multiple sources. In many cases, only one (interleaved) source is used.
 			 */
 
-			using	ServerBufferChannelingRangePointer	=	GenericMemoryRange<VertexComponentChannelingDescriptorForStreamInServerBuffer const>;
-			using	ClientMemoryChannelingRangePointer	=	GenericMemoryRange<VertexComponentChannelingDescriptorForStreamInClientMemory const>;
-			using	TextureChannelingRangePointer		=	GenericMemoryRange<PlanarTexture const>;														//!	Texture bindings for each samplers at indexes.
-			
 
 			struct
-			GeometryChanneling
+			GeometryProvisioning
 			{
-				ServerBufferChannelingRangePointer		server	{};
-				ClientMemoryChannelingRangePointer		client	{};
+				using	SS	=	GenericMemoryRange<ServerBufferVertexProvisioning const>;
+				using	CC	=	GenericMemoryRange<ClientMemoryVertexProvisioning const>;
 				
-				GeometryChanneling() = delete;
-				GeometryChanneling(VertexComponentChannelingDescriptorForStreamInServerBuffer const* server) : server({server, server+1}) {}
-				GeometryChanneling(VertexComponentChannelingDescriptorForStreamInClientMemory const* client) : client({client, client+1}) {}
-				GeometryChanneling(VertexComponentChannelingDescriptorForStreamInServerBuffer const* server, VertexComponentChannelingDescriptorForStreamInClientMemory const* client) : server({server, server+1}), client({client, client+1}) {}
-				GeometryChanneling(ClientMemoryChannelingRangePointer const& client) : client(client) {}
-				GeometryChanneling(ServerBufferChannelingRangePointer const& server) : server(server) {}
-				GeometryChanneling(ServerBufferChannelingRangePointer const& server, ClientMemoryChannelingRangePointer const& client) : server(server), client(client) {}
+				SS		server	{};
+				CC		client	{};
+				
+				GeometryProvisioning() = delete;
+				GeometryProvisioning(ServerBufferVertexProvisioning const* server) : server({server, server+1}) { EONIL_DEBUG_ASSERT(server != nullptr); }
+				GeometryProvisioning(ClientMemoryVertexProvisioning const* client) : client({client, client+1}) { EONIL_DEBUG_ASSERT(client != nullptr); }
+				GeometryProvisioning(ServerBufferVertexProvisioning const* server, ClientMemoryVertexProvisioning const* client) : server({server, server+1}), client({client, client+1}) { EONIL_DEBUG_ASSERT(server != nullptr); EONIL_DEBUG_ASSERT(client != nullptr); }
+				GeometryProvisioning(SS const& server) : server(server) { EONIL_DEBUG_ASSERT(&server != nullptr); }
+				GeometryProvisioning(CC const& client) : client(client) { EONIL_DEBUG_ASSERT(&client != nullptr); }
+				GeometryProvisioning(SS const& server, CC const& client) : server(server), client(client) { EONIL_DEBUG_ASSERT(&server != nullptr); EONIL_DEBUG_ASSERT(&client != nullptr); }
+				
+				auto
+				empty() const -> bool
+				{
+					return	server.empty() and client.empty();
+				}
 			};
 			
 			struct
@@ -63,6 +68,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 			};
 			
+			using	TextureChannelingRangePointer	=	GenericMemoryRange<PlanarTexture const>;														//!	Texture bindings for each samplers at indexes.
 			
 						
 			/*!
@@ -93,9 +99,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 @note				This is the most generic form. Others are just simplified versions, and semantically will use this version.
 								This passes very many stuffs, but not everything. For example, program unifroams are not being passed.
 			 
+			 @note				If you don't want to use some parameter, use an overload which doesn't have the parameter. 
+								Do not pass empty parameter. In other words, always fill all the parameters.
 			 */
-			auto	draw(GeometryChanneling const& vertexes, TextureChannelingRangePointer const& textures, DrawingMode const& mode, IndexingRange const& selection) -> void;
-			auto	draw(GeometryChanneling const& vertexes, DrawingMode const& mode, IndexingRange const& selection) -> void;
+			auto	draw(GeometryProvisioning const& vertexes, TextureChannelingRangePointer const& textures, DrawingMode const& mode, IndexingRange const& selection) -> void;
+			auto	draw(GeometryProvisioning const& vertexes, DrawingMode const& mode, IndexingRange const& selection) -> void;
 
 		
 		

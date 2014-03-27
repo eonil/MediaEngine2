@@ -16,8 +16,7 @@
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
 #include "../../Server/Utility/UniformProgramParameter.h"
-#include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
-#include "../../Server/Utility/Functions.h"
+#include "../../Server/Utility/GeometryRendering.h"
 
 /*!
  
@@ -127,9 +126,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			CPUTransformSpriteDrawer::Core
 			{
 				Program								program			{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
-				VertexLayoutDescriptor				layout			{make_vertex_format()};
-				ProgramVertexChannelingDescriptor2	channeling		{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
-	
+				VertexComponentChannelingDescriptor	channeling		{VertexComponentChannelingDescriptor::analyze(make_vertex_format(), program)};
 			};
 			
 			
@@ -220,7 +217,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				////
 				
 				M().useProgram(_core_ptr->program);
-				draw(vs.data(), _core_ptr->layout, _core_ptr->channeling, colorTexture, DrawingMode::TRIANGLES, Range::fromAdvancement(0,instances.size() * 6));
+				{
+					GenericMemoryRange<void const>	mem1	{vs.data(), vs.data() + vs.size()};
+					ClientMemoryVertexProvisioning	verts1	{mem1, _core_ptr->channeling};
+					GeometryProvisioning			geomp1	{&verts1};
+					draw(geomp1, {&colorTexture, (&colorTexture)+1}, DrawingMode::TRIANGLES, {0, instances.size() * 6});
+				}
 				M().unuseProgram();
 			}
 

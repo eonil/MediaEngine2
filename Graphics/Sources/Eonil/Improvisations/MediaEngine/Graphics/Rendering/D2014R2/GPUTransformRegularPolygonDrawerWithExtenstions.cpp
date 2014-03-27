@@ -2,7 +2,7 @@
 //  GPUTransformRegularPolygonDrawerWithExtenstions.cpp
 //  Graphics
 //
-//  Created by Hoon H. on 3/26/14.
+//  Created by Hoon H. on 3/20/14.
 //
 //
 
@@ -18,8 +18,9 @@
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
-#include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
-#include "../../Server/Utility/Functions.h"
+#include "../../Server/Utility/VertexComponentChannelingDescriptor.h"
+#include "../../Server/Utility/GeometryRendering.h"
+
 #include "ShaderPatchUtility.h"
 
 
@@ -40,20 +41,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
-#include		"GPUTransformRegularPolygonDrawerWithExtensions.vertex.shader.glsl-common"
+#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common"
 				;
 				
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
-#include		"GPUTransformRegularPolygonDrawerWithExtensions.fragment.shader.glsl-common"
+#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-common"
 				;
 				
 				
 				
 				
 				
-				static const constexpr Size		INSTANCE_FLOAT_COUNT				=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Scalar);
-				static const constexpr Size		INSTANCE_VECTOR_COUNT				=	sizeof(GPUTransformRegularPolygonDrawer::VaryingInstance)/sizeof(Vector4);
+				static const constexpr Size		INSTANCE_FLOAT_COUNT				=	sizeof(GPUTransformRegularPolygonDrawerWithExtenstions::VaryingInstance)/sizeof(Scalar);
+				static const constexpr Size		INSTANCE_VECTOR_COUNT				=	sizeof(GPUTransformRegularPolygonDrawerWithExtenstions::VaryingInstance)/sizeof(Vector4);
 				static const constexpr Size		VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES	=	256 * 1024;
 				
 				
@@ -193,24 +194,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			struct
-			GPUTransformRegularPolygonDrawer::Core
+			GPUTransformRegularPolygonDrawerWithExtenstions::Core
 			{
-				Size			segmentation				{};
-				Size			capacity					{};
-				Program			program						{ShaderPatchUtility::programWithPatch(VERTEX_SHADER_CODE, FRAGMENT_SHADER_CODE)};
+				Size								segmentation			{};
+				Size								capacity				{};
+				Program								program					{ShaderPatchUtility::programWithPatch(VERTEX_SHADER_CODE, FRAGMENT_SHADER_CODE)};
 				
 				local<ProgramUniformValueSlotProxy>	transformUniformSlot	{program.uniformValueSlotForName("transformP")};
 				local<ProgramUniformValueSlotProxy>	instancesUniformSlot	{program.uniformValueSlotForName("instancesP[0]")};
-
-				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
 				
 				Server::ArrayBuffer					vertexes;
+				VertexComponentChannelingDescriptor	staticDataChanneling;
 				
 				Core(Size const& segmentation, Size const& capacity)
 				:	segmentation(segmentation)
 				,	capacity(capacity)
 				,	vertexes(make_vertex_buffer(make_vertexes(segmentation, capacity)))
+				,	staticDataChanneling(VertexComponentChannelingDescriptor::analyze(make_vertex_format(), program))
 				{
 					EONIL_MEDIA_ENGINE_DEBUG_LOG("GPUTransformRegularPolygonDrawer, capacity = " + std::to_string(capacity));
 				}
@@ -227,22 +227,22 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation)
-			:	GPUTransformRegularPolygonDrawer(segmentation, calc_largest_capacity_for_current_hardware(segmentation))
+			GPUTransformRegularPolygonDrawerWithExtenstions::GPUTransformRegularPolygonDrawerWithExtenstions(Size const& segmentation)
+			:	GPUTransformRegularPolygonDrawerWithExtenstions(segmentation, calc_largest_capacity_for_current_hardware(segmentation))
 			{
 			}
-			GPUTransformRegularPolygonDrawer::GPUTransformRegularPolygonDrawer(Size const& segmentation, Size const& capacity)
+			GPUTransformRegularPolygonDrawerWithExtenstions::GPUTransformRegularPolygonDrawerWithExtenstions(Size const& segmentation, Size const& capacity)
 			{
 				EONIL_DEBUG_ASSERT(capacity <= _maximumCapacityOfCurrentPlatformForVaryingInstances());
 				EONIL_DEBUG_ASSERT(calc_vertex_count(segmentation, capacity) * sizeof(GPUVertex) <= VERTEX_BUFFER_SIZE_HARD_LIMIT_BYTES);
 				_core_ptr		=	uptr<Core>{new Core{segmentation, capacity}};
 			}
-			GPUTransformRegularPolygonDrawer::~GPUTransformRegularPolygonDrawer()
+			GPUTransformRegularPolygonDrawerWithExtenstions::~GPUTransformRegularPolygonDrawerWithExtenstions()
 			{
 			}
 			
-			auto GPUTransformRegularPolygonDrawer::
-			draw(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::GPUTransformRegularPolygonDrawer::VaryingInstance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &worldToScreenTransform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::DisplayScreenFrame &frame) const -> void
+			auto GPUTransformRegularPolygonDrawerWithExtenstions::
+			draw(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::GPUTransformRegularPolygonDrawerWithExtenstions::VaryingInstance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &worldToScreenTransform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::DisplayScreenFrame &frame) const -> void
 			{
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
 				
@@ -265,7 +265,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 						
 						Size	vc			=	calc_vertex_count(_core_ptr->segmentation, num_inst);
 						
-						Server::Utility::draw(_core_ptr->vertexes, _core_ptr->layout, _core_ptr->channeling, DrawingMode::TRIANGLE_STRIP, Range::fromAdvancement(0, vc));
+						ServerBufferVertexProvisioning	vertexes1	{&_core_ptr->vertexes, _core_ptr->staticDataChanneling};
+						{
+							Server::Utility::draw(&vertexes1, DrawingMode::TRIANGLE_STRIP, {0, vc});
+						}
 						
 						instances_uniform_slot.unset();
 						transform_uniform_slot.unset();
@@ -293,7 +296,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			auto GPUTransformRegularPolygonDrawer::
+			auto GPUTransformRegularPolygonDrawerWithExtenstions::
 			_maximumCapacityOfCurrentPlatformForVaryingInstances() -> Size
 			{
 				static_assert(std::is_same<Scalar, float>::value, "Floating-point type must be equal.");

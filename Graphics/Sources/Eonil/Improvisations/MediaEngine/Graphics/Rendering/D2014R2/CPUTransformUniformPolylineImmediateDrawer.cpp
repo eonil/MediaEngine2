@@ -15,9 +15,8 @@
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
-#include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
-#include "../../Server/Utility/Functions.h"
 #include "../../Server/ProgramParameterLocation.h"
+#include "../../Server/Utility/GeometryRendering.h"
 
 
 
@@ -103,12 +102,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			struct
 			CPUTransformUniformPolylineImmediateDrawer::Core
 			{
-				Program			program							{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
+				Program								program					{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				local<ProgramUniformValueSlotProxy>	transformUniformSlot	{program.uniformValueSlotForName("localToWorldTransformP")};
-//				Size			transformUniformIndex			{program.indexOfProgramUniformValueSlotProxyV1ForName("localToWorldTransformP")};
 				
-				VertexLayoutDescriptor				layout		{make_vertex_format()};
-				ProgramVertexChannelingDescriptor2	channeling	{ProgramVertexChannelingDescriptor2::analyze(layout, program)};
+				VertexComponentChannelingDescriptor	channeling				{VertexComponentChannelingDescriptor::analyze(make_vertex_format(), program)};
 			};
 			
 			

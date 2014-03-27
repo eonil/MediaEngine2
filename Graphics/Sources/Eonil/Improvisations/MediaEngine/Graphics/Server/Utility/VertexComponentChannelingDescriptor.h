@@ -10,8 +10,10 @@
 #define __Graphics__VertexComponentChannelingDescriptor__
 
 #include "../../Common.h"
-#include "ProgramVertexChannelingDescriptor.h"
 #include "Program.h"
+#include "ProgramParameterLocation.h"
+#include "VertexLayoutDescriptor.h"
+#include "ProgramVertexChannelingDescriptor.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -21,22 +23,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		namespace
 		Utility
 		{
-
-			
-			
-			
-			
-			
-			enum class
-			VERTEX_STREAM_DATA_PLACEMENT
-			{
-				CLIENT_MEMORY,
-				SERVER_BUFFER,
-			};
-			
-
-
-			
 			
 			
 			
@@ -58,14 +44,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 If you really want non-interleaved data layout, you can do
 			 that by putting only one component in a stream.
 			 */
-			template <VERTEX_STREAM_DATA_PLACEMENT const P>
 			class
 			VertexComponentChannelingDescriptor
 			{
-				using	DATA_PTR		=	typename std::conditional<P == VERTEX_STREAM_DATA_PLACEMENT::CLIENT_MEMORY, GenericMemoryRange<void const>, ArrayBuffer const*>::type;
 				using	PROGRAM_SLOT	=	local<ProgramVertexAttributeSlotProxy>;
 				
-				DATA_PTR					_component_stream	{};
 				VertexLayoutDescriptor		_source_layout		{};
 				vec<PROGRAM_SLOT>			_destination_slots	{};
 					
@@ -76,18 +59,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				////
 				
-				VertexComponentChannelingDescriptor(DATA_PTR componentStream, VertexLayoutDescriptor const& sourceComponentLayout, vec<PROGRAM_SLOT> const& destinationSlots);
+				VertexComponentChannelingDescriptor(VertexLayoutDescriptor const& sourceComponentLayout, vec<PROGRAM_SLOT> const& destinationSlots);
 				
 			public:
 				VertexComponentChannelingDescriptor() = default;
 				VertexComponentChannelingDescriptor(VertexComponentChannelingDescriptor const&) = default;
 				
-				auto	componentStream() const -> DATA_PTR;
+				
 				auto	sourceComponentLayout() const -> VertexLayoutDescriptor const&;
 				auto	destinationSlots() const -> vec<PROGRAM_SLOT> const&;
 				
 			public:
-				static auto	analyze(DATA_PTR data, VertexLayoutDescriptor const& layout, Program& program) -> VertexComponentChannelingDescriptor;
+				static auto	analyze(VertexLayoutDescriptor const& layout, Program& program) -> VertexComponentChannelingDescriptor;
 			};
 			
 			
@@ -99,56 +82,74 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+						
 			
-			template <VERTEX_STREAM_DATA_PLACEMENT const P>
-			VertexComponentChannelingDescriptor<P>::VertexComponentChannelingDescriptor(DATA_PTR componentStream, VertexLayoutDescriptor const& sourceComponentLayout, vec<PROGRAM_SLOT> const& destinationSlots)
-			:	_component_stream(componentStream)
-			,	_source_layout(sourceComponentLayout)
-			,	_destination_slots(destinationSlots)
-			{
-			}
 			
-			template <VERTEX_STREAM_DATA_PLACEMENT const P> auto
-			VertexComponentChannelingDescriptor<P>::
-			componentStream() const -> DATA_PTR
-			{
-				return	_component_stream;
-			}
-			template <VERTEX_STREAM_DATA_PLACEMENT const P> auto
-			VertexComponentChannelingDescriptor<P>::
-			sourceComponentLayout() const -> VertexLayoutDescriptor const&
-			{
-				return	_source_layout;
-			}
-			template <VERTEX_STREAM_DATA_PLACEMENT const P> auto
-			VertexComponentChannelingDescriptor<P>::
-			destinationSlots() const -> vec<PROGRAM_SLOT> const&
-			{
-				return	_destination_slots;
-			}
 			
-			template <VERTEX_STREAM_DATA_PLACEMENT const P> auto
-			VertexComponentChannelingDescriptor<P>::
-			analyze(DATA_PTR data, VertexLayoutDescriptor const& layout, Program& program) -> VertexComponentChannelingDescriptor
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			enum class
+			VERTEX_PROVISIONING_LOCATION
 			{
-				vec<PROGRAM_SLOT>	ch_slots{};
+				CLIENT_MEMORY,
+				SERVER_BUFFER,
+			};
+			
+			
+			/*!
+			 A definition of streaming vertex component with metadata.
+			 */
+			template <VERTEX_PROVISIONING_LOCATION const P>
+			struct
+			VertexComponentProvisioning
+			{
+				using	DATA_PTR		=	typename std::conditional<P == VERTEX_PROVISIONING_LOCATION::CLIENT_MEMORY, GenericMemoryRange<void const>, ArrayBuffer const*>::type;
+
+				DATA_PTR								_components;
+				VertexComponentChannelingDescriptor		_channeling;
 				
-				for (Size i=0; i<layout.channelComponents().size(); i++)
-				{
-					EONIL_DEBUG_ASSERT(not layout.channelComponents().at(i).name.empty());
-					
-					auto const&		comp	=	layout.channelComponents().at(i);
-					PROGRAM_SLOT	ch_slot	=	program.vertexAttributeSlotForName(comp.name);
-					ch_slots.push_back(ch_slot);
-				}
+			public:
+				VertexComponentProvisioning(DATA_PTR components, VertexComponentChannelingDescriptor const& channeling);
 				
-				return	{data, layout, ch_slots};
+				auto	components() const -> DATA_PTR;
+				auto	channeling() const -> VertexComponentChannelingDescriptor const&;
+			};
+			
+			
+			
+			template <VERTEX_PROVISIONING_LOCATION const P>
+			VertexComponentProvisioning<P>::
+			VertexComponentProvisioning(DATA_PTR components, VertexComponentChannelingDescriptor const& channeling) : _components(components), _channeling(channeling)
+			{
 			}
-			
-			
-			
-			
-			
+			template <VERTEX_PROVISIONING_LOCATION const P> auto
+			VertexComponentProvisioning<P>::components() const -> DATA_PTR
+			{
+				return	_components;
+			}
+			template <VERTEX_PROVISIONING_LOCATION const P> auto
+			VertexComponentProvisioning<P>::channeling() const -> VertexComponentChannelingDescriptor const&
+			{
+				return	_channeling;
+			}
 			
 			
 			
@@ -157,16 +158,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 
-			using	VertexComponentChannelingDescriptorForStreamInClientMemory	=	VertexComponentChannelingDescriptor<VERTEX_STREAM_DATA_PLACEMENT::CLIENT_MEMORY>;		//	Actually we just need beginning pointer, but accepts ending pointer for validation in debug mode.
-			using	VertexComponentChannelingDescriptorForStreamInServerBuffer	=	VertexComponentChannelingDescriptor<VERTEX_STREAM_DATA_PLACEMENT::SERVER_BUFFER>;
-			
-
-			
-			
-			
-			
-			
-			
+			using	ServerBufferVertexProvisioning		=	VertexComponentProvisioning<VERTEX_PROVISIONING_LOCATION::SERVER_BUFFER>;
+			using	ClientMemoryVertexProvisioning		=	VertexComponentProvisioning<VERTEX_PROVISIONING_LOCATION::CLIENT_MEMORY>;
 			
 			
 			
