@@ -18,9 +18,6 @@
 #include "../../Server/Machine.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/Utility/VertexLayoutDescriptor.h"
-#include "../../Server/Utility/ProgramVertexChannelingDescriptor.h"
-#include "../../Server/Utility/Functions.h"
-
 #include "../../Server/Utility/VertexComponentChannelingDescriptor.h"
 #include "../../Server/Utility/GeometryRendering.h"
 
