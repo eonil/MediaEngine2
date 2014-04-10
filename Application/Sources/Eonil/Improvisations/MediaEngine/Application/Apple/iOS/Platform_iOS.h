@@ -45,7 +45,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		virtual ~Platform() = default;
 		
 		/*!
-		 A overlay view is a plain `UIView` which will be laid over the GL rendering view.
+		 An overlay view is a plain `UIView` which will be laid over the GL rendering view.
 		 Its size will be adjusted to be same with GL rendering view.
 		 You can push only one overla-view.
 		 */
