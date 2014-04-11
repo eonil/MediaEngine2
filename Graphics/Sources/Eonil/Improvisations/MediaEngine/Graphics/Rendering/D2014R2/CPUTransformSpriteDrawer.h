@@ -54,6 +54,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				~CPUTransformSpriteDrawer();
 				
 				/*!
+				 Draws instances using part of a texture.
+				 
 				 @param	samplingRegion
 				 Measured in texture UV space. (0,0) is left-bottom origin point, and
 				 (+1,+1) is right-top point. This library is based on OpenGL coordination
@@ -69,7 +71,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 				
 				/*!
-				 Draw instances using whole texture region.
+				 Draws instances using whole texture region.
 				 */
 				auto	drawInstances(PlanarTexture const& colorTexture, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 			};
