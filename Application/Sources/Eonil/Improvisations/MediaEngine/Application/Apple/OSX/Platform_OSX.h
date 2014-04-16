@@ -1,18 +1,17 @@
 //
-//  Platform_iOS.h
+//  Platform_OSX.h
 //  Application
 //
-//  Created by Hoon H. on 3/11/14.
+//  Created by Hoon H. on 4/16/14.
 //
 //
 
-#ifndef __Application__Platform_iOS__
-#define __Application__Platform_iOS__
+#pragma once
 
 #include "../../Stepping.h"
 #include "../../run.h"
 
-#if	EONIL_MEDIA_ENGINE_TARGET_IOS
+#if	EONIL_MEDIA_ENGINE_TARGET_OSX
 
 #if		! EE_LANG_OBJC
 #error	"This header must be imported only in an Objective-C++ program."
@@ -27,7 +26,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	/*!
-	 This is an interface for iOS specific features.
+	 This is an interface for OSX specific features.
 	 
 	 @classdesign
 	 Interface is designed to be declarative to avoid any accidental behavior breaking.
@@ -37,7 +36,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	{
 		friend auto	run(int argc, char const *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int;
 		
-		static auto	_init(UIViewController* mainViewController) -> void;
+		static auto	_init(id mainWindowController) -> void;
 		static auto	_term() -> void;
 		
 	public:
@@ -45,11 +44,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		virtual ~Platform() = default;
 		
 		/*!
-		 An overlay view is a plain `UIView` which will be laid over the GL rendering view.
+		 An overlay view is a plain `NSView` which will be laid over the GL rendering view.
 		 Its size will be adjusted to be same with GL rendering view.
 		 You can push only one overlay-view.
 		 */
-		auto	setOverlayView(UIView* view) -> void;
+		auto	setOverlayView(NSView* view) -> void;
 		auto	unsetOverlayView() -> void;
 		
 //		virtual auto	presentModalViewController(UIViewController* vc) -> void;
@@ -61,7 +60,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		
 		/*!
 		 Gets the singleton instance of the platform class.
-		 This is accessible only while application is running. 
+		 This is accessible only while application is running.
 		 It's safe to access this object within user-supplied system class.
 		 */
 		static auto	current() -> Platform&;
@@ -82,6 +81,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 }}}}
 
-#endif	//	EONIL_MEDIA_ENGINE_TARGET_IOS
+#endif	//	EONIL_MEDIA_ENGINE_TARGET_OSX
 
-#endif /* defined(__Application__Platform_iOS__) */
+
+

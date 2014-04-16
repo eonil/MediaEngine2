@@ -33,6 +33,7 @@
 @end
 
 @interface ____EonilImprovisationsMediaEngineMainWindowController : NSWindowController <NSWindowDelegate>
+@property	(readwrite,nonatomic,strong)	NSView*																	overlayView;
 @property	(readwrite,nonatomic,assign)	id<____EonilImprovisationsMediaEngineMainWindowController_Delegate>		delegate;
 - (id)init;									//	Designated initializer.
 - (void)startDisplayTicking;

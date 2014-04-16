@@ -147,6 +147,30 @@
 
 
 
+- (void)setOverlayView:(NSView *)overlayView
+{
+	if (_overlayView != NULL)
+	{
+		[_overlayView removeFromSuperview];
+	}
+	
+	_overlayView	=	overlayView;
+	
+	if (_overlayView != NULL)
+	{
+		_overlayView.frame	=	_gl_view.bounds;
+		[_gl_view addSubview:_overlayView];
+	}
+}
+
+
+
+
+
+
+
+
+
 - (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
@@ -183,6 +207,10 @@
 	{
 		[_gl_view prepareGraphicsContext];
 	}
+	
+	////
+	
+	_overlayView.frame	=	_gl_view.bounds;
 }
 //- (void)windowDidUpdate:(NSNotification *)notification
 //{
