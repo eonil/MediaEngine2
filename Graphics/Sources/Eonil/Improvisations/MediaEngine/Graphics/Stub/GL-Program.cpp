@@ -20,6 +20,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO GLboolean const				eeglIsProgram(GLuint const program);
 		EEGL_STUB_API_DECO GLint const					eeglGetProgrami(GLuint const program, GLenum const pname);
 		
+		
+#if EONIL_DEBUG_MODE
 		static void EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(GLuint const program)
 		{
 			EEGL_ASSERT(program != 0);
@@ -31,6 +33,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(eeglGetInteger(GL_CURRENT_PROGRAM));
 		}
+#else
+#define	EEGL_ASSERT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION(program)
+#define	EEGL_ASSERT_CURRENT_PROGRAM_IS_VALID_FOR_SLOT_OPERATION()
+#endif
 		
 		
 		

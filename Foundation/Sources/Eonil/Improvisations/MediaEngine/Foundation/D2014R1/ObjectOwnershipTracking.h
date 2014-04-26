@@ -250,10 +250,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		class
 		TrackableObject
 		{
-		protected:
-			TrackableObject() = default;
-			TrackableObject(TrackableObject const&) = delete;
-			TrackableObject(TrackableObject&&) = delete;
+//		protected:
+//			TrackableObject() = default;
+//			TrackableObject(TrackableObject const&) = default;
+//			TrackableObject(TrackableObject&&) = default;
 		};
 
 

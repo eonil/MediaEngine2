@@ -24,16 +24,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		Machinery
 		{
 			
-#if	EONIL_MEDIA_ENGINE_DEBUG_MODE
+//#if	EONIL_MEDIA_ENGINE_DEBUG_MODE
 			class
 			VertexAttributeChannelIndex final : public Value::StronglyTypingNumericValue<VertexAttributeChannelIndex, GLuint>
 			{
 			public:
 				using	Value::StronglyTypingNumericValue<VertexAttributeChannelIndex, GLuint>::StronglyTypingNumericValue;
 			};
-#else
-			using	VertexAttributeChannelIndex	=	GLuint;
-#endif
+//#else
+//			using	VertexAttributeChannelIndex	=	GLuint;
+//#endif
 			
 			
 			
