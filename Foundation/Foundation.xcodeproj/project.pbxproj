@@ -15,8 +15,6 @@
 		453423C918A361C30074B957 /* GenericMemoryBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C618A361C30074B957 /* GenericMemoryBlock.cpp */; };
 		453423F318A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */; };
 		453423F418A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */; };
-		4534240D18A3A58A0074B957 /* ResourceStealing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4534240B18A3A58A0074B957 /* ResourceStealing.cpp */; };
-		4534240E18A3A58A0074B957 /* ResourceStealing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4534240B18A3A58A0074B957 /* ResourceStealing.cpp */; };
 		453A736D18A21FB200C01AAC /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* Memory.cpp */; };
 		453A736E18A21FB200C01AAC /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* Memory.cpp */; };
 		453A737E18A2247D00C01AAC /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A737C18A2247D00C01AAC /* Common.cpp */; };
@@ -60,8 +58,6 @@
 		453423C718A361C30074B957 /* GenericMemoryBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericMemoryBlock.h; sourceTree = "<group>"; };
 		453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectOwnershipTracking.cpp; sourceTree = "<group>"; };
 		453423F218A395050074B957 /* ObjectOwnershipTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectOwnershipTracking.h; sourceTree = "<group>"; };
-		4534240B18A3A58A0074B957 /* ResourceStealing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceStealing.cpp; sourceTree = "<group>"; };
-		4534240C18A3A58A0074B957 /* ResourceStealing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceStealing.h; sourceTree = "<group>"; };
 		453A736B18A21FB200C01AAC /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
 		453A736C18A21FB200C01AAC /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
 		453A737C18A2247D00C01AAC /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
@@ -135,8 +131,6 @@
 				453423C718A361C30074B957 /* GenericMemoryBlock.h */,
 				453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */,
 				453423F218A395050074B957 /* ObjectOwnershipTracking.h */,
-				4534240B18A3A58A0074B957 /* ResourceStealing.cpp */,
-				4534240C18A3A58A0074B957 /* ResourceStealing.h */,
 			);
 			path = D2014R1;
 			sourceTree = "<group>";
@@ -358,7 +352,6 @@
 				4511FB9018A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */,
 				453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
 				45F6F8EF18A1414900A41EAB /* Numerics.cpp in Sources */,
-				4534240D18A3A58A0074B957 /* ResourceStealing.cpp in Sources */,
 				45F6F8D918A13FCA00A41EAB /* Foundation.cpp in Sources */,
 				45F6F8E518A13FFC00A41EAB /* Doctor.mm in Sources */,
 				453A737E18A2247D00C01AAC /* Common.cpp in Sources */,
@@ -377,7 +370,6 @@
 				4511FB9118A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */,
 				45F6F8F018A1414900A41EAB /* Numerics.cpp in Sources */,
 				45F6F8DA18A13FCA00A41EAB /* Foundation.cpp in Sources */,
-				4534240E18A3A58A0074B957 /* ResourceStealing.cpp in Sources */,
 				45F6F8E618A13FFC00A41EAB /* Doctor.mm in Sources */,
 				453A737F18A2247D00C01AAC /* Common.cpp in Sources */,
 				453423C918A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,

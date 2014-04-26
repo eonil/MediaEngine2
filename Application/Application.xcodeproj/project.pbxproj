@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450A21E818FE9F6F009B2E5D /* Platform_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */; };
+		450A21E918FE9F6F009B2E5D /* Platform_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */; };
+		450A21EA18FE9F6F009B2E5D /* Platform_OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450A21E718FE9F6F009B2E5D /* Platform_OSX.h */; };
 		450E0D6C18BDE35E003D51E0 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
 		450E0D6D18BDE35E003D51E0 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
 		450E0D7C18BDE3BC003D51E0 /* Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */; };
@@ -29,8 +32,8 @@
 		4525EAE518B6C0E500B05C1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525EAE418B6C0E500B05C1D /* Images.xcassets */; };
 		453F1D9018C3080C000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		453F1D9118C3080C000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
-		453F1D9418C3086F000C25CC /* TestRendering2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453F1D9218C3086F000C25CC /* TestRendering2.cpp */; };
-		453F1D9518C3086F000C25CC /* TestRendering2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453F1D9218C3086F000C25CC /* TestRendering2.cpp */; };
+		453F1D9418C3086F000C25CC /* TestRendering2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 453F1D9218C3086F000C25CC /* TestRendering2.mm */; };
+		453F1D9518C3086F000C25CC /* TestRendering2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 453F1D9218C3086F000C25CC /* TestRendering2.mm */; };
 		453F1DC518C308D3000C25CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 453F1DC318C308D3000C25CC /* InfoPlist.strings */; };
 		453F1DC718C308D3000C25CC /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 453F1DC618C308D3000C25CC /* main.mm */; };
 		453F1DCD18C308D3000C25CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453F1DCC18C308D3000C25CC /* Images.xcassets */; };
@@ -87,6 +90,7 @@
 		4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
 		4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
+		459BED6D190B6EE200978D8C /* libAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5E190B6E9600978D8C /* libAliens.a */; };
 		459CF4E618B8A1DE004A5C14 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459CF4E518B8A1DE004A5C14 /* MainMenu.xib */; };
 		459CF4E818B8A2D9004A5C14 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4E718B8A2D9004A5C14 /* GLKit.framework */; };
 		459CF51118B8A412004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F518B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
@@ -111,6 +115,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		451E26A118FDB2520003B8A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4561326A18E238F30057EB03;
+			remoteInfo = "GraphicsLegacyFeatures - OSX Static Library";
+		};
+		451E26A318FDB2520003B8A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4561327218E239070057EB03;
+			remoteInfo = "GraphicsLegacyFeatures - iOS Static Library";
+		};
+		459BED5B190B6E9600978D8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457B617F190A9C740021A442;
+			remoteInfo = "Aliens - iOS";
+		};
+		459BED5D190B6E9600978D8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457B61AA190A9CA20021A442;
+			remoteInfo = "Aliens - OSX";
+		};
+		459BED6E190B6EFE00978D8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B61A9190A9CA20021A442;
+			remoteInfo = "Aliens - OSX";
+		};
 		459CF4F218B8A3F1004A5C14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
@@ -210,6 +249,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Platform_OSX.mm; sourceTree = "<group>"; };
+		450A21E718FE9F6F009B2E5D /* Platform_OSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform_OSX.h; sourceTree = "<group>"; };
 		450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TEX_TEST.png; sourceTree = "<group>"; };
 		450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bundle.cpp; sourceTree = "<group>"; };
 		450E0D7B18BDE3BC003D51E0 /* Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bundle.h; sourceTree = "<group>"; };
@@ -244,7 +285,7 @@
 		4538D52418CD26D200066D7E /* TestRendering3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRendering3.mm; sourceTree = "<group>"; };
 		4538D52518CD26D200066D7E /* TestRendering3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering3.h; sourceTree = "<group>"; };
 		453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PIA14415_clip_1024.png; sourceTree = "<group>"; };
-		453F1D9218C3086F000C25CC /* TestRendering2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRendering2.cpp; sourceTree = "<group>"; };
+		453F1D9218C3086F000C25CC /* TestRendering2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRendering2.mm; sourceTree = "<group>"; };
 		453F1D9318C3086F000C25CC /* TestRendering2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering2.h; sourceTree = "<group>"; };
 		453F1DB218C3088D000C25CC /* iOS Test Runner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Test Runner copy-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/iOS Test Runner copy-Info.plist"; sourceTree = "<absolute>"; };
 		453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,10 +319,10 @@
 		4584022618DCE7DA00AAE1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4584022818DCE7DA00AAE1A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4584022F18DCE7DB00AAE1A2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4584024A18DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineTranscoding.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEonilImprovisationsMediaEngineTranscoding.a; path = ../Transcoding/build/Debug/libEonilImprovisationsMediaEngineTranscoding.a; sourceTree = "<group>"; };
 		4595B3D018BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bundle_Apple_Foundation_Impl.hpp; sourceTree = "<group>"; };
 		4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bundle_Apple_OSX_Impl.mm; sourceTree = "<group>"; };
 		4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bundle_Apple_iOS_Impl.mm; sourceTree = "<group>"; };
+		459BED55190B6E9600978D8C /* Aliens.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Aliens.xcodeproj; path = ../../../Aliens/Aliens.xcodeproj; sourceTree = "<group>"; };
 		459CF4E518B8A1DE004A5C14 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		459CF4E718B8A2D9004A5C14 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
@@ -371,6 +412,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459BED6D190B6EE200978D8C /* libAliens.a in Frameworks */,
 				4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */,
 				4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */,
 				4584024218DCE92800AAE1A2 /* QuartzCore.framework in Frameworks */,
@@ -456,11 +498,12 @@
 		4529052818B6A53400FCFCBD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				459BED55190B6E9600978D8C /* Aliens.xcodeproj */,
 				453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */,
 				450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */,
 				45C49E9518B75A6100544108 /* TestRendering1.cpp */,
 				45C49E9618B75A6100544108 /* TestRendering1.h */,
-				453F1D9218C3086F000C25CC /* TestRendering2.cpp */,
+				453F1D9218C3086F000C25CC /* TestRendering2.mm */,
 				453F1D9318C3086F000C25CC /* TestRendering2.h */,
 				4538D52418CD26D200066D7E /* TestRendering3.mm */,
 				4538D52518CD26D200066D7E /* TestRendering3.h */,
@@ -544,6 +587,8 @@
 				4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.mm */,
 				45C49E8F18B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h */,
 				45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */,
+				450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */,
+				450A21E718FE9F6F009B2E5D /* Platform_OSX.h */,
 			);
 			path = OSX;
 			sourceTree = "<group>";
@@ -584,7 +629,6 @@
 		4584020F18DCE7DA00AAE1A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4584024A18DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineTranscoding.a */,
 				4584021018DCE7DA00AAE1A2 /* Cocoa.framework */,
 				4584022F18DCE7DB00AAE1A2 /* XCTest.framework */,
 				4584021218DCE7DA00AAE1A2 /* Other Frameworks */,
@@ -630,6 +674,15 @@
 				4595B3D018BDF04E00179293 /* Bundle_Apple_Foundation_Impl.hpp */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		459BED56190B6E9600978D8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				459BED5C190B6E9600978D8C /* libEonilAliens.a */,
+				459BED5E190B6E9600978D8C /* libAliens.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		459CF4E918B8A372004A5C14 /* Dependencies */ = {
@@ -696,6 +749,8 @@
 			children = (
 				459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */,
 				459CF51018B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */,
+				451E26A218FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
+				451E26A418FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -718,6 +773,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450E0D7E18BDE3BC003D51E0 /* Bundle.h in Headers */,
+				450A21EA18FE9F6F009B2E5D /* Platform_OSX.h in Headers */,
 				45485FAD18B97535005981DA /* Stepping.h in Headers */,
 				45C49E9118B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h in Headers */,
 				455D706C18CE1E6700040198 /* Platform.h in Headers */,
@@ -825,6 +881,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				459BED6F190B6EFE00978D8C /* PBXTargetDependency */,
 			);
 			name = "OSX Test Runner 2";
 			productName = "OSX Test Runner 2";
@@ -851,6 +908,10 @@
 			productRefGroup = 4577C95618B6A6E90078033C /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 459BED56190B6E9600978D8C /* Products */;
+					ProjectRef = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+				},
 				{
 					ProductGroup = 459CF51918B8A45D004A5C14 /* Products */;
 					ProjectRef = 459CF51818B8A45D004A5C14 /* CommonUtility.xcodeproj */;
@@ -881,6 +942,35 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		451E26A218FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
+			remoteRef = 451E26A118FDB2520003B8A1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		451E26A418FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
+			remoteRef = 451E26A318FDB2520003B8A1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		459BED5C190B6E9600978D8C /* libEonilAliens.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilAliens.a;
+			remoteRef = 459BED5B190B6E9600978D8C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		459BED5E190B6E9600978D8C /* libAliens.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			name = libAliens.a;
+			path = libEonilAliens.a;
+			remoteRef = 459BED5D190B6E9600978D8C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1024,7 +1114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A28B5818BF2084005DECF5 /* TestRendering1.cpp in Sources */,
-				453F1D9418C3086F000C25CC /* TestRendering2.cpp in Sources */,
+				453F1D9418C3086F000C25CC /* TestRendering2.mm in Sources */,
 				4525EA9518B6BD2C00B05C1D /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1034,7 +1124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A28B6518BF2085005DECF5 /* TestRendering1.cpp in Sources */,
-				453F1D9518C3086F000C25CC /* TestRendering2.cpp in Sources */,
+				453F1D9518C3086F000C25CC /* TestRendering2.mm in Sources */,
 				4525EAD918B6C0E500B05C1D /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1052,6 +1142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
+				450A21E818FE9F6F009B2E5D /* Platform_OSX.mm in Sources */,
 				4577C99118B6ABC80078033C /* run.cpp in Sources */,
 				457A6C1C18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */,
@@ -1073,6 +1164,7 @@
 				455D707B18CE1EAC00040198 /* Platform.cpp in Sources */,
 				4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
+				450A21E918FE9F6F009B2E5D /* Platform_OSX.mm in Sources */,
 				455D704C18CE102C00040198 /* Platform_iOS.mm in Sources */,
 				457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C99018B6ABC80078033C /* run.cpp in Sources */,
@@ -1095,6 +1187,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		459BED6F190B6EFE00978D8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - OSX";
+			targetProxy = 459BED6E190B6EFE00978D8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4525EA9118B6BD2C00B05C1D /* InfoPlist.strings */ = {
@@ -1339,6 +1439,7 @@
 					"\"$SRCROOT\"/../Foundation/Sources",
 					"\"$SRCROOT\"/../Graphics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
+					"\"$(SRCROOT)\"/../../Aliens",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1359,6 +1460,7 @@
 					"\"$SRCROOT\"/../Foundation/Sources",
 					"\"$SRCROOT\"/../Graphics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
+					"\"$(SRCROOT)\"/../../Aliens",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;

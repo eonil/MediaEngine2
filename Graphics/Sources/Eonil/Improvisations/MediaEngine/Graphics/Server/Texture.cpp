@@ -70,17 +70,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		struct
-		PlanarTexture::Core
-		{
-			GLuint				name	=	NULL_GL_NAME();
-//			GLKTextureInfo*		info	=	nil;
-			
-			Core();							//!	Create a new texture name.
-			Core(GLuint const name);		//!	Use existing texture name.
-			~Core();						//!	Delete the texture name.
-		};
-		
 		
 		
 		
@@ -239,7 +228,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		
+		auto
+		PlanarTexture::Utility::textureWithPixels(GenericMemoryRange<const void> memory, const Size &width, const Size &height, bool const& flipInY) -> PlanarTexture
+		{
+			GLuint	name	=	eeglGenTexture();
+			GLsizei	width2	=	toGLsizei(width);
+			GLsizei	height2	=	toGLsizei(height);
+			
+			eeglBindTexture(GL_TEXTURE_2D, name);
+			eeglTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width2, height2, 0, GL_RGBA, GL_UNSIGNED_BYTE, memory.begin());
+			eeglUnbindTexture(GL_TEXTURE_2D);
+			
+			return	PlanarTexture(new Core(name));
+		}
 		
 		auto
 		PlanarTexture::Utility::_DEV_textureWithResourceAtPath(const std::string path) -> PlanarTexture
@@ -256,7 +257,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		PlanarTexture::Utility::textureWithAlienImage(const Aliens::PlanarRGBAImageProxy &image, bool const flipInY) -> PlanarTexture
 		{
 			CGImageRef	img1	=	image.rawPointer().alien;
-			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage(img1, flipInY);
+//			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage(img1, flipInY);
+			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage2(img1);
 			
 			return		PlanarTexture(new Core(name));
 		}

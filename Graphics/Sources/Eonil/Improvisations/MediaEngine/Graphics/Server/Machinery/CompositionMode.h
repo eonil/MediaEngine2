@@ -151,11 +151,40 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					ChannelConfiguration	rgb			{};				//!	RGB part.
 					ChannelConfiguration	alpha		{};				//!	A part.
 					
-					Vector4					intensity	{0,0,0,0};		//!	Each color channel components should be all clamped value.
+//					template <typename T>
+//					struct
+//					ChannelConfiguration
+//					{
+//						T	rgb			{};
+//						T	alpha		{};
+//						
+//						ChannelConfiguration() = delete;
+//						ChannelConfiguration(T rgba) : rgb(rgba), alpha(rgba) {}
+//						ChannelConfiguration(T rgb, T alpha) : rgb(rgb), alpha(alpha) {}
+//					};
+//					
+//					ChannelConfiguration<FUNCTION>		source		{FUNCTION::ONE, FUNCTION::ONE};
+//					ChannelConfiguration<FUNCTION>		destination	{FUNCTION::ONE, FUNCTION::ONE};
+//					ChannelConfiguration<MODE>			equation	{MODE::ADD, MODE::ADD};
+					
+					Vector4								intensity	{0,0,0,0};		//!	Each color channel components should be all clamped value.
 					
 					////
 					
-					static auto		typicalTransparencyAlphaBlending() -> PixelBlending;
+					/*!
+					 Create alpha-blening parameters to render tranparency using alpha channel.
+					 
+					 @param			premultiplication
+									If true, then blending option will be set to render premultiplied alpha correctly.
+					 */
+					static auto		transparencyNormalAlphaBlending(bool const premultiplication = false) -> PixelBlending;
+					static auto		transparencyScreenAlphaBlending() -> PixelBlending;
+					
+					
+					/*!
+					 @deprecated	DO NOT USE.
+					 */
+					EONIL_MARK_FUNCTION_DEPRECATED static auto		typicalTransparencyAlphaBlending() -> PixelBlending;
 				};
 				
 				

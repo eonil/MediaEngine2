@@ -67,9 +67,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			}
 			
 			auto
-			operator=(TrackableObject obj) -> TrackableObject&
+			operator=(TrackableObject const& o) -> TrackableObject&
 			{
-				std::swap(_dbg_virtual_ownership_list, obj._dbg_virtual_ownership_list);
+				TrackableObject	tmp	=	o;
+				std::swap(_dbg_virtual_ownership_list, tmp._dbg_virtual_ownership_list);
 				return	*this;
 			}
 			auto

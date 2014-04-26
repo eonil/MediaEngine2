@@ -39,7 +39,6 @@
 #include	"D2014R1/GenericMemoryRange.h"
 #include	"D2014R1/GenericMemoryBlock.h"
 #include	"D2014R1/ObjectOwnershipTracking.h"
-#include	"D2014R1/ResourceStealing.h"
 #endif
 
 

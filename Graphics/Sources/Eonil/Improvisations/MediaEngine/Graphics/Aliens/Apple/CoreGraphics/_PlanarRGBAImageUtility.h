@@ -91,21 +91,63 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		/*!
 		 This produces RGBA (premultiplied) texture image and returns a GL texture name to it.
-		 You are responsible to delete the GL texture name.
+		 You are responsible to delete the GL texture name — You owns the returning name, and
+		 if you don't delete the returning name, it will be leaked.
 		 
-		 @discussion			RGBA(8888) format is primrily considered because it's GL standard.
-		 By default, all rendering pipeline in this engine all uses premultiplied
-		 image unless there's special concern. So this will also apply
-		 premultiplication.
+		 @result
 		 
-		 @note					iPhone GPU is not optimal with RGBA texture, and actually it
-		 likes ARGB(?, not sure) image.
-		 The optimal format is not supported currently, but will be added later.
+					Returning texture can be larger than input image to be valid in GL requirements
+					— POT textures. If you want to avoid memory waste, always use POT textures.
+		 
+		 @discussion			
+		 
+					RGBA(8888) format is primarily considered because it's GL standard.
+					By default, all rendering pipeline in this engine all uses premultiplied
+					image unless there's special concern. So this will also apply
+					premultiplication.
+		 
+		 @note
+					iPhone GPU is not optimal with RGBA texture, and actually it
+					likes ARGB(?, not sure) image.
+					The optimal format is not supported currently, but will be added later.
 		 */
-		auto		NameByCreatingTextureFromCGImage(CGImageRef const image, bool const flipInY) -> GLuint const;
+		auto		NameByCreatingTextureFromCGImage(CGImageRef const image, bool const flipInY) -> GLuint const EONIL_MARK_FUNCTION_DEPRECATED;
+		
 
 		
-			
+		
+		
+		
+		
+		
+		
+					
+		/*!
+		 This produces RGBA (straight) texture image and returns a GL texture name to it.
+		 You are responsible to delete the GL texture name — You owns the returning name, and
+		 if you don't delete the returning name, it will be leaked.
+		 
+		 @discussion			
+		 
+					RGBA(8888) format is primarily considered because it's GL standard.
+		 
+		 @param		image
+					A source image. This must be POT image, and its alpha channel must be must 
+					striahgt-alpha.
+		 
+		 @result
+		 
+					Returning texture can be larger than input image to be valid in GL requirements
+					— POT textures. If you want to avoid memory waste, always use POT textures.
+		 
+		 
+		 @note
+					iPhone GPU is not optimal with RGBA texture, and actually it
+					likes ARGB(?, not sure) image.
+					The optimal format is not supported currently, but will be added later.
+		 */
+		auto		NameByCreatingTextureFromCGImage2(CGImageRef const image) -> GLuint const;
+
 		
 	}
 	

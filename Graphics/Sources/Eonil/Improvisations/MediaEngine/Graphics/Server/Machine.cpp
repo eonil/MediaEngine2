@@ -75,6 +75,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLint	maxc	=	eeglGetInteger(GL_MAX_VERTEX_ATTRIBS);
 			
+			EONIL_MEDIA_ENGINE_DEBUG_LOG("OpenGL system vendor: " + str((char const*)eeglGetString(GL_VENDOR)));
 			EONIL_MEDIA_ENGINE_DEBUG_LOG("`Server::Machine`'s vertex-attribute-channel count: " + std::to_string(maxc));
 			
 			for (GLuint i=0; i<maxc; i++)

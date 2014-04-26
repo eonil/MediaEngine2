@@ -86,13 +86,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		Legacy2013SharedMemory const
 		ProcessIntoPremultipliedARGB8888Pixels(Legacy2013SharedMemory const pixels, bool const firstToLast, bool const multiplyAlpha)
 		{
-			//					if (not lastToFirstAlpha and not multiplyAlpha)
-			//					{
-			//						return	pixels;
-			//					}
-			
-			////
-			
 			struct
 			Pixel
 			{
@@ -225,10 +218,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				{
 					void*				data			=	malloc(textureHeight * textureWidth * 4);
 					CGColorSpaceRef		colorSpace		=	CGColorSpaceCreateDeviceRGB();
-					CGContextRef		context			=	CGBitmapContextCreate(data, textureWidth, textureHeight, 8, 4 * textureWidth, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+					CGBitmapInfo		bitmapInfo		=	kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big;
+					
+					CGContextRef		context			=	CGBitmapContextCreate(data, textureWidth, textureHeight, 8, 4 * textureWidth, colorSpace, bitmapInfo);
 					{
 						CGContextClearRect(context, CGRectMake(0, 0, textureWidth, textureHeight));
-						//						CGContextTranslateCTM(context, 0, textureHeight - imageSize.height);			//	I don't know why this line exist, but it seems required for non-square texture...
+//						CGContextTranslateCTM(context, 0, textureHeight - imageSize.height);			//	I don't know why this line exist, but it seems required for non-square texture...
 						
 						if (flipInY)
 						{
@@ -273,6 +268,57 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		
+		
+		auto
+		NameByCreatingTextureFromCGImage2(CGImageRef const image) -> GLuint const
+		{
+			/*
+			 The source image must satisfy ARGB 8888 image.
+			 */
+			EEGL_ASSERT(image != NULL);
+			EEGL_ASSERT_WITH_REASON(CGImageGetColorSpace(image) != NULL, "Only colored images are supported.");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE(CGImageGetAlphaInfo(image) == kCGImageAlphaLast, "Unsupported image format. (alpha channel type mismatched must be straight alpha at last channel)");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE(CGImageGetBitsPerComponent(image) == 8, "Unsupported image format. (color channel components must be 8-bits)");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE(CGImageGetBitsPerPixel(image) == 8*4, "Unsupported image format. (one pixel must be 4*8-bits for RGBA8888 format)");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE(isPOT(CGImageGetWidth(image)), "Unsupported image format. (width of passed image is not POT)");
+			EONIL_DEBUG_ASSERT_WITH_MESSAGE(isPOT(CGImageGetHeight(image)), "Unsupported image format. (height of passed image is not POT)");
+						
+			size_t				textureWidth	=	CGImageGetWidth(image);
+			size_t				textureHeight	=	CGImageGetHeight(image);
+			CGSize				imageSize		=	CGSizeMake(textureWidth, textureHeight);
+			EEGL_ASSERT(imageSize.width > 0 && imageSize.height > 0);
+			
+			{
+				CGDataProviderRef	dprov1	=	CGImageGetDataProvider(image);
+				CFDataRef			data2	=	CGDataProviderCopyData(dprov1);
+				void const*			mem3	=	CFDataGetBytePtr(data2);
+				EONIL_DEBUG_ASSERT(CFDataGetLength(data2) == textureWidth * textureHeight * 4);
+				
+				GLuint	name	=	eeglGenTexture();
+				GLsizei	width2	=	toGLsizei(textureWidth);
+				GLsizei	height2	=	toGLsizei(textureHeight);
+				
+				eeglBindTexture(GL_TEXTURE_2D, name);
+				eeglTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width2, height2, 0, GL_RGBA, GL_UNSIGNED_BYTE, mem3);
+				eeglUnbindTexture(GL_TEXTURE_2D);
+				
+				CFRelease(data2);
+				
+//				UIImage*	img1	=	[UIImage imageWithCGImage:image];
+//				[UIImagePNGRepresentation(img1) writeToFile:@"/Users/Eonil/Temp/aaaa.png" atomically:YES];
+				
+				return	name;
+			}
+		}
+
+		
+			
+			
+			
+			
 		
 		
 		

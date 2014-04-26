@@ -7,6 +7,7 @@
 //
 
 #include "ApplicationController.h"
+#include "Platform_OSX.h"
 
 #if	EONIL_MEDIA_ENGINE_TARGET_OSX
 
@@ -50,12 +51,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 		{
 			return
 			[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv
-			prepare:^
+			prepare:^(____EonilImprovisationsMediaEngineMainWindowController* mwc)
 			{
 				/*!
 				 On desktop, multisampling will be always on.
 				 */
 				glEnable(GL_MULTISAMPLE);
+				Platform::_init(mwc);
 				prepare();
 			}
 			cleanup:^

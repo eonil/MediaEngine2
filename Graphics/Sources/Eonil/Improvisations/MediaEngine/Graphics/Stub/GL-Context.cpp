@@ -420,6 +420,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO void
 		eeglBlendColor(GLclampf const red, GLclampf const green, GLclampf const blue, GLclampf const alpha)
 		{
+			/*
+			 Color clamping is not required or always performed by the spec, 
+			 but asserted for safety check because I currently don't need to
+			 use unclamped color range.
+			 */
 			EEGL_ASSERT(red >= 0.0f and red <= 1.0f);
 			EEGL_ASSERT(green >= 0.0f and green <= 1.0f);
 			EEGL_ASSERT(blue >= 0.0f and blue <= 1.0f);

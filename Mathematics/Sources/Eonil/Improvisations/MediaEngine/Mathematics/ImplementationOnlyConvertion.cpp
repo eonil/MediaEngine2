@@ -46,6 +46,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 	
 	
 	auto
+	toGLM(Vector1 const& v) -> glm::vec1
+	{
+		return	v;
+	}
+	auto
 	toGLM(Vector2 const& v) -> glm::vec2
 	{
 		return	Conversion::FLOAT32x2{v}.GLM;

@@ -14,6 +14,8 @@
 #include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
 #include <Eonil/Improvisations/MediaEngine/Graphics/Server/Utility/Functions.h>
 
+#include <Eonil/Aliens.h>
+
 #include "run.h"
 #include "Bundle.h"
 
@@ -26,6 +28,26 @@ using namespace Eonil::Improvisations::MediaEngine::Application;
 
 
 
+
+
+
+
+namespace
+{
+	static inline auto
+	load_texture(str const& filepath) -> PlanarTexture
+	{
+		NSString*	s1			=	[NSString stringWithUTF8String:filepath.c_str()];
+		NSData*		d2			=	[NSData dataWithContentsOfFile:s1];
+		
+		Eonil::Aliens::PNG::Package	p1		=	{};
+		p1.data								=	{((uint8_t const*)d2.bytes), ((uint8_t const*)d2.bytes)+d2.length};
+		
+		Eonil::Aliens::PNG::Image	img2	=	Eonil::Aliens::PNG::decode(p1);
+		
+		return	PlanarTexture::Utility::textureWithPixels({img2.pixels.data(), img2.pixels.data() + img2.pixels.size()}, img2.width, img2.height);
+	}
+}
 
 
 
@@ -53,9 +75,11 @@ public:
 	
 	TestRendering2()
 	{
-		str		tex_path	=	Bundle::main().pathForResource("", "PIA14415_clip_1024", "png");
-		_tex1				=	uptr<PlanarTexture>(new PlanarTexture(PlanarTexture::Utility::textureWithContentOfFileAtPath(tex_path)));
+		using namespace	Eonil;
 		
+		str		tex_path	=	Bundle::main().pathForResource("", "PIA14415_clip_1024", "png");
+		_tex1				=	uptr<PlanarTexture>(new PlanarTexture(load_texture(tex_path)));
+
 		////
 		
 		vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	insts	=	{};

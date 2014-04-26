@@ -111,8 +111,8 @@ application even loop for each platforms. Anyway the implementation of
 customize them, then fork the `Application` features.
 
 
-*	Currently platform-specific features are provided via  `Stepping::platform()` 
-	method. See the class reference for details.
+*	Currently platform-specific features are provided via  `Platform` class which
+	is defined specifically for each platforms. See the class reference for details.
 
 
 

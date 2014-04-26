@@ -58,6 +58,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
+			
+			
+			auto DisplayScreenFrame::
+			dimensionInPixels() const -> Bounds2
+			{
+				return	_core_ptr->bounds;
+			}
+			
 			auto DisplayScreenFrame::
 			regulationTransformMatrix() const -> Matrix4
 			{

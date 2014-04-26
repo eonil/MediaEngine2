@@ -30,6 +30,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			ServerObjectProxy() = default;
 			ServerObjectProxy(ServerObjectProxy const&) = default;
 			ServerObjectProxy(ServerObjectProxy&&) = default;
+			
+			auto	operator=(ServerObjectProxy const&) -> ServerObjectProxy& = delete;
+			auto	operator=(ServerObjectProxy&&) -> ServerObjectProxy& = default;
 		};
 		
 

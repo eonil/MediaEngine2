@@ -23,7 +23,8 @@
 
 #import "____EonilImprovisationsMediaEngineMainWindowController.h"
 
-typedef	void(^PROC)(void);
+typedef void(^INIT)(____EonilImprovisationsMediaEngineMainWindowController*);
+typedef	void(^TERM)(void);
 typedef	void(^STEP)(CGRect bounds);
 
 @interface		____EonilImprovisationsMediaEngineApplicationController () <____EonilImprovisationsMediaEngineMainWindowController_Delegate>
@@ -31,9 +32,9 @@ typedef	void(^STEP)(CGRect bounds);
 
 @implementation ____EonilImprovisationsMediaEngineApplicationController
 {
-	PROC	_prepare;
+	INIT	_prepare;
 	STEP	_step;
-	PROC	_cleanup;
+	TERM	_cleanup;
 	
 	____EonilImprovisationsMediaEngineMainWindowController*	_main_wincon;
 }
@@ -41,7 +42,7 @@ typedef	void(^STEP)(CGRect bounds);
 //{
 //	
 //}
-+ (int)runWithArgc:(int)argc argv:(const char *[])argv prepare:(void (^)(void))prepare cleanup:(void (^)(void))cleanup step:(void (^)(CGRect))step
++ (int)runWithArgc:(int)argc argv:(const char *[])argv prepare:(void (^)(____EonilImprovisationsMediaEngineMainWindowController* mwc))prepare cleanup:(void (^)(void))cleanup step:(void (^)(CGRect))step
 {
 	int	result	=	0;
 	
@@ -56,7 +57,7 @@ typedef	void(^STEP)(CGRect bounds);
 //		appcon->_prepare	=	prepare;
 //		appcon->_step		=	step;
 //		appcon->_cleanup	=	cleanup;
-		
+				
 		result				=	NSApplicationMain(argc, argv);
 		
 		appcon->_prepare	=	nil;
@@ -88,7 +89,7 @@ typedef	void(^STEP)(CGRect bounds);
 
 - (void)mainWindowControllerPrepare
 {
-	_prepare();
+	_prepare(_main_wincon);
 }
 - (void)mainWindowControllerCleanup
 {

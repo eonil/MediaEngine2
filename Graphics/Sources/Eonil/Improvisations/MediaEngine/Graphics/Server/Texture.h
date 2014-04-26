@@ -118,10 +118,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		PlanarTexture final : public ServerObjectProxy
 		{
-			
 //			friend class	Machinery::TextureSampler;
 			
-			struct	Core;
+			struct
+			Core
+			{
+				GLuint				name	=	NULL_GL_NAME();
+				
+				Core();							//!	Create a new texture name.
+				Core(GLuint const name);		//!	Use existing texture name.
+				~Core();						//!	Delete the texture name.
+			};
 			
 			uptr<Core>		_cptr	{nullptr};					//!	`std::uniqur_ptr` doesn't work due to size requirement for incomplete type.
 			
@@ -132,10 +139,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 		public:
-			PlanarTexture();									//!	Creates an empty texture.
-			PlanarTexture(PlanarTexture const&) = delete;		//!	Copy prohibited.
-			PlanarTexture(PlanarTexture&& other);				//!	Move allowed.
+			PlanarTexture();											//!	Creates an empty texture. (null, no server-side object)
+			PlanarTexture(PlanarTexture const&) = delete;				//!	Copy prohibited.
+			PlanarTexture(PlanarTexture&& other);						//!	Move allowed.
 			~PlanarTexture();
+			
+			auto	operator=(PlanarTexture&&) -> PlanarTexture& = default;		//!	Move assignment allowed.
 			
 //			auto	transferData(Image const image) -> void;
 			
@@ -146,10 +155,51 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			struct
 			Utility
 			{
+				/*!
+				 Creates a texture from RGBA8888 pixels. (LDR, 8-bits integer per channel x 4 channels, 32-bits per pixels)
+				 
+				 @param		flipInY
+							Flips the image along the Y axis. Use this if you need to flip the image.
+							In most cases (especially if you loaded an image using only this library)
+							you don't need to set the value. 
+				 
+							**CAUTION** 
+							This option is supported only with premultiplied-alpha images.
+							If your image is straight-alpha, you must set this to `false`.
+				 
+				 @note
+				 This function will use alpha channel as is. If you want premultiplied alpha, then you should premultiply
+				 them yourself.
+				 */
+				static auto	textureWithPixels(GenericMemoryRange<void const> memory, Size const& width, Size const& height, bool const& flipInY = false) -> PlanarTexture;
+				
+				EONIL_MEDIA_ENGINE_DEPRECATE()
 				static PlanarTexture	_DEV_textureWithResourceAtPath(std::string const path);											//!	The path can be absolute or relative path to resource root.
 				
+				/*!
+				 @param		flipInY
+							Flips the image along the Y axis. Use this if you need to flip the image.
+							In most cases (especially if you loaded an image using only this library)
+							you don't need to set the value. 
+				 
+							**CAUTION** 
+							This option is supported only with premultiplied-alpha images.
+							If your image is straight-alpha, you must set this to `false`.
+				 
+				 */
+				
+				EONIL_MEDIA_ENGINE_DEPRECATE()
 				static auto	textureWithAlienImage(Aliens::PlanarRGBAImageProxy const& image, bool const flipInY = false) -> PlanarTexture;
+				
+				/*!
+				 @param		flipInY
+							This parameter will be routed to `flipInY` parameter in `textureWithAlienImage` 
+							function. See the function's comment.
+				 */
+				EONIL_MEDIA_ENGINE_DEPRECATE()
 				static auto textureWithMemoryRangeContainingPNGData(GenericMemoryRange<UInt8 const> memory, bool const flipInY = false) -> PlanarTexture;
+				
+				EONIL_MEDIA_ENGINE_DEPRECATE()
 				static auto	textureWithContentOfFileAtPath(str const& filepath) -> PlanarTexture;
 			};
 		};

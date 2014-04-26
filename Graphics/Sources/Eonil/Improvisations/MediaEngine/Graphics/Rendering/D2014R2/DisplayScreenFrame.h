@@ -58,6 +58,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				~DisplayScreenFrame();
 				
 				/*!
+				 Provides pixel dimension of the display surface.
+				 Take care that this is covers only display surface (client window), not whole a screen.
+				 */
+				auto	dimensionInPixels() const -> Bounds2;
+
+				/*!
 				 Creates a matrix which transforms points in RSS into NDC.
 				 If you draw 1x1 square with this transform, it will become biggest filling square in the screen.
 				 If the screen is non-square shape, then longer side will have paddings.

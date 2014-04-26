@@ -76,7 +76,15 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			static Vector2 const				minimumDrawingSizeOfText(Text const t);													//!	Minimum size in pixels which required to draw the text.
-			static auto		imageRangeV2WithText(Text const t, Vector4 const colorInRGBA = Vector4(1,1,1,1)) -> ImageRangeV2;			//!	Uses CGImage(premultiplied ARGB)/GLKTextureLoader. No support for straight alpha.
+			
+			/*!
+			 Uses CGImage(premultiplied ARGB)/GLKTextureLoader. No support for straight alpha.
+			 
+			 @todo
+			 Rendering pipeline is going to implement straight alpha mode. Text-rendering feature needs to 
+			 become single-channel alpha-only texture. Implement it later.
+			 */
+			static auto		imageRangeV2WithText(Text const t, Vector4 const colorInRGBA = Vector4(1,1,1,1)) -> ImageRangeV2;
 			
 			//				static NativeImage const		textureWithText2(Text const t);			//!	Uses CGImage(Alpha only)/manual loading. For support of straight alpha.
 		};

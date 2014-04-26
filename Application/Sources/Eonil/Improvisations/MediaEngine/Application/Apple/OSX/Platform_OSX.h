@@ -30,6 +30,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	 
 	 @classdesign
 	 Interface is designed to be declarative to avoid any accidental behavior breaking.
+	 
+	 @note
+	 The singleton instance is currently being initialized in `____EonilImprovisationsMediaEngineMainWindowController` class.
 	 */
 	class
 	Platform

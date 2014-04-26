@@ -97,23 +97,69 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			
-			
-			
-			auto
-			CompositionMode::PixelBlending::typicalTransparencyAlphaBlending() -> PixelBlending
+			namespace
 			{
-				PixelBlending	pb1	{};
-				pb1.alpha.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
-				pb1.alpha.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
-				pb1.rgb.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
-				pb1.rgb.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
-				return	pb1;
+				using	PixelBlending	=	CompositionMode::PixelBlending;
+				
+				static auto
+				straightTransparencyAlphaBlending() -> PixelBlending
+				{
+					PixelBlending	pb1	{};
+					pb1.rgb.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
+					pb1.alpha.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
+					pb1.rgb.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
+					pb1.alpha.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
+					return	pb1;
+				}
+				
+				static auto
+				premultipliedTransparencyAlphaBlending() -> PixelBlending
+				{
+					PixelBlending	pb1	{};
+					pb1.rgb.sourceFactor		=	PixelBlending::FUNCTION::ONE;
+					pb1.alpha.sourceFactor		=	PixelBlending::FUNCTION::ONE;
+					pb1.rgb.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
+					pb1.alpha.destinationFactor	=	PixelBlending::FUNCTION::ONE_MINUS_SRC_ALPHA;
+					return	pb1;
+				}
+				
+				static auto
+				straight_screen_transparency_alpha_blending() -> PixelBlending
+				{
+					PixelBlending	pb1	{};
+					pb1.rgb.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
+					pb1.alpha.sourceFactor		=	PixelBlending::FUNCTION::SRC_ALPHA;
+					pb1.rgb.destinationFactor	=	PixelBlending::FUNCTION::ONE;
+					pb1.alpha.destinationFactor	=	PixelBlending::FUNCTION::ONE;
+					return	pb1;
+				}
 			}
 			
 			
 			
+			auto
+			CompositionMode::PixelBlending::transparencyNormalAlphaBlending(bool const premultiplication) -> PixelBlending
+			{
+				if (premultiplication)
+				{
+					return	premultipliedTransparencyAlphaBlending();
+				}
+				else
+				{
+					return	straightTransparencyAlphaBlending();
+				}
+			}
+			auto
+			CompositionMode::PixelBlending::transparencyScreenAlphaBlending() -> PixelBlending
+			{
+				return	straight_screen_transparency_alpha_blending();
+			}
 			
+			auto
+			CompositionMode::PixelBlending::typicalTransparencyAlphaBlending() -> PixelBlending
+			{
+				return	premultipliedTransparencyAlphaBlending();
+			}
 			
 			
 			

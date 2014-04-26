@@ -88,6 +88,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 //		NoCopyButMoveObject(NoCopyButMoveObject const&&) = delete;
 		NoCopyButMoveObject(NoCopyButMoveObject&&) = default;
+		
+		auto	operator=(NoCopyButMoveObject const&) -> NoCopyButMoveObject& = delete;
+		auto	operator=(NoCopyButMoveObject&&) -> NoCopyButMoveObject& = default;
 	};
 
 	

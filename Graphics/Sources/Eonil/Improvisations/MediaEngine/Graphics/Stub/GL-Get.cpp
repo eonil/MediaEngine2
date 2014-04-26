@@ -84,6 +84,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return		value;
 		}
 		
+		
+		/*!
+		 Returning strings are all NULL-terminated.
+		 */
 		EEGL_STUB_API_DECO GLubyte const*
 		eeglGetString(GLenum const name)
 		{

@@ -41,12 +41,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
-#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common"
+#include		"GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common.inc"
 				;
 				
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
-#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-common"
+#include		"GPUTransformRegularPolygonDrawer.fragment.shader.glsl-common.inc"
 				;
 				
 				

@@ -80,18 +80,16 @@
 		[self setWindow:mainwin];
 		
 		////
+
+		CGSize const	IPHONE4_SCREEN_RESOLUTION	=	CGSizeMake(640, 960);
 		
 		NSUInteger	style	=	NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask;
-		CGRect		frame1	=	[[NSScreen mainScreen] frame];
-		CGRect		frame2	=	CGRectInset(frame1, frame1.size.width/2, frame1.size.height/2);
-//		CGRect		frame3	=	CGRectInset(frame2, -320/2, -480/2);
-		CGRect		frame3	=	CGRectInset(frame2, -640/2, -960/2);
 		[mainwin setStyleMask:style];
 		[mainwin setBackgroundColor:[NSColor grayColor]];
 		[mainwin setDelegate:self];
-		[mainwin setFrame:frame3 display:YES];
-		[mainwin makeKeyAndOrderFront:self];
-		
+		[mainwin setContentSize:IPHONE4_SCREEN_RESOLUTION];
+		[mainwin orderFront:nil];
+		[mainwin makeKeyWindow];
 		////
 		
 		NSView*	cv					=	[mainwin contentView];
