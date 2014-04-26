@@ -90,7 +90,7 @@
 		4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3D518BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm */; };
 		4595B3DC18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
 		4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
-		459BED6D190B6EE200978D8C /* libAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5E190B6E9600978D8C /* libAliens.a */; };
+		459BED6D190B6EE200978D8C /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5E190B6E9600978D8C /* libEonilAliens.a */; };
 		459CF4E618B8A1DE004A5C14 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459CF4E518B8A1DE004A5C14 /* MainMenu.xib */; };
 		459CF4E818B8A2D9004A5C14 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4E718B8A2D9004A5C14 /* GLKit.framework */; };
 		459CF51118B8A412004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F518B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
@@ -112,6 +112,7 @@
 		45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
 		45C49E9918B75A6100544108 /* TestRendering1.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E9618B75A6100544108 /* TestRendering1.h */; };
 		45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
+		45EFC6BD190B78890066E246 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5C190B6E9600978D8C /* libEonilAliens.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 452ACC4D1855077600447731;
 			remoteInfo = RunningTester;
+		};
+		45EFC6BB190B78860066E246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B617E190A9C740021A442;
+			remoteInfo = "Aliens - iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -379,6 +387,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EFC6BD190B78890066E246 /* libEonilAliens.a in Frameworks */,
 				453F1DEE18C30961000C25CC /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
 				453F1DEF18C30961000C25CC /* libEonilImprovisationsCommonUtility.a in Frameworks */,
 				453F1DF018C30961000C25CC /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
@@ -412,7 +421,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459BED6D190B6EE200978D8C /* libAliens.a in Frameworks */,
+				459BED6D190B6EE200978D8C /* libEonilAliens.a in Frameworks */,
 				4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */,
 				4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */,
 				4584024218DCE92800AAE1A2 /* QuartzCore.framework in Frameworks */,
@@ -680,7 +689,7 @@
 			isa = PBXGroup;
 			children = (
 				459BED5C190B6E9600978D8C /* libEonilAliens.a */,
-				459BED5E190B6E9600978D8C /* libAliens.a */,
+				459BED5E190B6E9600978D8C /* libEonilAliens.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -830,6 +839,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				45EFC6BC190B78860066E246 /* PBXTargetDependency */,
 			);
 			name = "iOS Test Runner 2";
 			productName = iOSTestRunner2;
@@ -963,10 +973,9 @@
 			remoteRef = 459BED5B190B6E9600978D8C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459BED5E190B6E9600978D8C /* libAliens.a */ = {
+		459BED5E190B6E9600978D8C /* libEonilAliens.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = libAliens.a;
 			path = libEonilAliens.a;
 			remoteRef = 459BED5D190B6E9600978D8C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -1194,6 +1203,11 @@
 			name = "Aliens - OSX";
 			targetProxy = 459BED6E190B6EFE00978D8C /* PBXContainerItemProxy */;
 		};
+		45EFC6BC190B78860066E246 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - iOS";
+			targetProxy = 45EFC6BB190B78860066E246 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1275,6 +1289,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1322,6 +1337,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1488,6 +1504,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1535,6 +1552,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1637,6 +1655,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/iOS_Static_Library.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1675,6 +1694,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/iOS_Static_Library.dst;
 				ENABLE_NS_ASSERTIONS = NO;
