@@ -252,6 +252,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		auto Machine::
 		useProgram(const Eonil::Improvisations::MediaEngine::Graphics::Server::Program &program) -> void
 		{
+			/*
+			 `glUseProgram` is quiet expensive.
+			 Redundant call to the function can be eliminated by shadowing states.
+			 */
+			
 			EEGL_ASSERT(_validity_program_designation == false);
 			_validity_program_designation	=	true;
 			eeglUseProgram(program.name());
@@ -259,6 +264,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		auto Machine::
 		unuseProgram() -> void
 		{
+			/*
+			 This call is actually not required, but exosts to ensure state management.
+			 Can be optionally removed by shadowing state.
+			 */
+			
 			EEGL_ASSERT(_validity_program_designation == true);
 			eeglUnuseProgram();
 			_validity_program_designation	=	false;

@@ -154,7 +154,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				/*!
 				 @todo
-				 There're a lot of room for optimization in this function. Do them all.
+				 There're a lot of room for optimization in this function. Do them all later as soon as you can make some time...
 				 */
 				
 				struct
@@ -226,7 +226,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			{
 				drawInstances(colorTexture, Bounds2{0,0,1,1}, instances, worldToScreenTransform, frame);
 			}
-			
 
 			auto CPUTransformSpriteDrawer::
 			drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void
