@@ -48,11 +48,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					Vector3		translation		{0,0,0};
 					Vector4		color			{1,1,1,1};		//	Will be multiplied to texture color.
 				};
+				struct
+				FreeTransformInstance
+				{
+					Matrix4		transform		=	Matrix4::Utility::identity();
+					Vector4		color			=	{1,1,1,1};						//	Will be multiplied to texture color.
+				};
 				
 			public:
 				CPUTransformSpriteDrawer();
 				~CPUTransformSpriteDrawer();
-				
+
 				/*!
 				 Draws instances using part of a texture.
 				 
@@ -64,15 +70,18 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 sampled according to its wraping mode.
 				 If you want to specify whole texture, then set this to {0,0,1,1}.
 				 
-				 @param	worldToScreenTransform		
+				 @param	worldToScreenTransform
 				 This must be a whole transform from world to final screen (NDC).
 				 Take care that final destination space is NDC, not RSS.
 				 */
-				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
+				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 				
 				/*!
 				 Draws instances using whole texture region.
 				 */
+				auto	drawInstances(PlanarTexture const& colorTexture, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
+
+				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 				auto	drawInstances(PlanarTexture const& colorTexture, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 			};
 			
