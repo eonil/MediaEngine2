@@ -29,10 +29,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			_Regulator_v2::_Regulator_v2() : _Regulator_v2(0)
 			{
 			}
-			_Regulator_v2::_Regulator_v2(Scalar const aspectRatio, Scalar const frameScale) : _aspect_ratio(aspectRatio), _vp_scale(frameScale)
+			_Regulator_v2::_Regulator_v2(Scalar const aspectRatio, Scalar const frameScale) : _aspect_ratio(aspectRatio), _viewport_scale(frameScale)
 			{
 				Debugging::Doctor::assertForZeroOrNormal(_aspect_ratio);
-				Debugging::Doctor::assertForZeroOrNormal(_vp_scale);
+				Debugging::Doctor::assertForZeroOrNormal(_viewport_scale);
 			}
 			
 			
@@ -60,9 +60,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				Vector2	vol		=	volumeOfViewportInRegularScreenSpace();
 				Vector3	scale0	=	Vector3(1.0f/vol.x, 1.0f/vol.y, 1.0f);
-				Vector3	scale1	=	scale0 * 2;				//	Multiply 2 because length of GL screen space is 2 (-1~+1).
-				Vector3	scale2	=	scale1 * _vp_scale;		//	Global override.
-				return	Matrix4::Utility::scaleWithVector(scale2);
+				Vector3	scale1	=	scale0 * _viewport_scale;		//	Global override.
+				return	Matrix4::Utility::scaleWithVector(scale1);
+				
+//				_assert_validity();
+//				
+//				Vector2	vol		=	volumeOfViewportInRegularScreenSpace();
+//				Vector3	scale0	=	Vector3(1.0f/vol.x, 1.0f/vol.y, 1.0f);
+//				Vector3	scale1	=	scale0 * 2;						//	Multiply 2 because length of GL screen space is 2 (-1~+1).
+//				Vector3	scale2	=	scale1 * _viewport_scale;		//	Global override.
+//				return	Matrix4::Utility::scaleWithVector(scale2);
 			}
 			
 			
@@ -135,7 +142,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			_Regulator_v2::_assert_validity() const
 			{
 				Debugging::Doctor::assertForZeroOrNormal(_aspect_ratio);
-				Debugging::Doctor::assertForZeroOrNormal(_vp_scale);
+				Debugging::Doctor::assertForZeroOrNormal(_viewport_scale);
 				EEGL_ASSERT(_aspect_ratio != 0);
 			}
 			
