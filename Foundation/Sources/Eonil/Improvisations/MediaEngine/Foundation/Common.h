@@ -88,7 +88,7 @@
 
 
 
-#define			EONIL_MEDIA_ENGINE_DEPRECATE()								__attribute__((deprecated("This feature has been deprecated.")))
+#define			EONIL_MEDIA_ENGINE_DEPRECATE()								__attribute__((deprecated("This feature has been deprecated. No reason specified. Souce code may contain more informations.")))
 #define			EONIL_MEDIA_ENGINE_DEPRECATE_WITH_MESSAGE(msg)				__attribute__((deprecated(msg)))											//!	If this doesn't work, then you need Clang 3.5+. @ref http://clang.llvm.org/docs/LanguageExtensions.html#messages-on-deprecated-and-unavailable-attributes
 
 

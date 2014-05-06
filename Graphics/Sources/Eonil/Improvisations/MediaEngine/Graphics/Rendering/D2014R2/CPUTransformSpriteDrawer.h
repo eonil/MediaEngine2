@@ -41,6 +41,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 			public:
 				struct
+				EONIL_MEDIA_ENGINE_DEPRECATE()
 				UniformScalingInstance
 				{
 					Scalar		scale			{1};
@@ -60,7 +61,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				~CPUTransformSpriteDrawer();
 
 				/*!
-				 Draws instances using part of a texture.
+				 Draws 2x2 sized (-1,-1) ~ (+1,+1) instances using part of a texture.
 				 
 				 @param	samplingRegion
 				 Measured in texture UV space. (0,0) is left-bottom origin point, and
@@ -69,20 +70,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 You can coordinate out of (0~1) range. In that case, texture will be
 				 sampled according to its wraping mode.
 				 If you want to specify whole texture, then set this to {0,0,1,1}.
+				 Whatever you specified, the drawn sprite size is same. If you specify
+				 smaller portion, it will fill the 2x2 sized box.
 				 
 				 @param	worldToScreenTransform
 				 This must be a whole transform from world to final screen (NDC).
 				 Take care that final destination space is NDC, not RSS.
+				 
 				 */
 				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 				
 				/*!
-				 Draws instances using whole texture region.
+				 Draws 1x1 sized  instances using whole texture region.
 				 */
 				auto	drawInstances(PlanarTexture const& colorTexture, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 
-				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
-				auto	drawInstances(PlanarTexture const& colorTexture, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
+				auto	EONIL_MEDIA_ENGINE_DEPRECATE() drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
+				auto	EONIL_MEDIA_ENGINE_DEPRECATE() drawInstances(PlanarTexture const& colorTexture, vec<UniformScalingInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 			};
 			
 			

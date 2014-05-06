@@ -18,7 +18,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	Aliens
 	{
 		
-		
+
 		/*!
 		 Represents default 2D RGBA image object implemented using platform specific feature.
 		 
@@ -26,8 +26,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 This classs is mainly used to support text-drawing. So this is editable by default,
 		 and expected to be placed in system-memory rather than VRAM. Anyway, the mutation
 		 may be implemented by recreating a whole new image, so efficiency is not guaranteed.
+		 
+		 @deprecated
+		 This is depending on platform-specific image facility, and has been deprecated.
+		 Use `Eonil::Aliens::PNG` feature in Aliens library instead of.
 		 */
 		class
+		EONIL_MEDIA_ENGINE_DEPRECATE()
 		PlanarRGBAImageProxy
 		{
 			struct	Core;
