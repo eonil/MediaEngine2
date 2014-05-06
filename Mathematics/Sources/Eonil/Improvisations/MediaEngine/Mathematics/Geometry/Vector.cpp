@@ -1,3 +1,549 @@
+////
+////  Vector.cpp
+////  Mathematics
+////
+////  Created by Hoon Hwangbo on 6/10/13.
+////
+////
+//
+//#include "Vector.h"
+//#include "Matrix.h"
+//
+///*
+// Do not include whole GLKit which needs Objective-C context.
+// */
+////#include <GLKit/GLKit.h>
+//#include <GLKit/GLKitBase.h>
+//#include <GLKit/GLKMath.h>
+//
+//#include "../ImplementationOnlyCommon.h"
+//
+//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics {
+//
+//	namespace
+//	Value
+//	{
+//		/*
+//		 Consider using of OpenCL vector types which will be fully supported and
+//		 automatically vectorized by Clang 3.4 compiler.
+//		 */
+//		
+//		
+//		
+//				
+//		namespace
+//		{
+//			using namespace	Eonil::Improvisations::MediaEngine::Mathematics::Value;
+//			
+//			using	Size	=	size_t;
+//			using	Scalar	=	float_t;
+//			
+//			
+//			template <Size const DIM>
+//			using	SCALAR_ARRAY		=	std::array<Scalar, DIM>;
+//			
+//			template <Size const DIM>
+//			struct
+//			TYPEMAP
+//			{
+//			};
+//			template <>
+//			struct
+//			TYPEMAP<2>
+//			{
+//				using	COMPS	=	SCALAR_ARRAY<2>;
+//				using	GLK		=	GLKVector2;
+//				using	GLM		=	glm::vec2;
+//				using	EONIL	=	Vector2;
+//				using	SVA		=	SimpleVectorAbstraction<2,Vector2>;
+//			};
+//			template <>
+//			struct
+//			TYPEMAP<3>
+//			{
+//				using	COMPS	=	SCALAR_ARRAY<3>;
+//				using	GLK		=	GLKVector3;
+//				using	GLM		=	glm::vec3;
+//				using	EONIL	=	Vector3;
+//				using	SVA		=	SimpleVectorAbstraction<3,Vector3>;
+//			};
+//			template <>
+//			struct
+//			TYPEMAP<4>
+//			{
+//				using	COMPS	=	SCALAR_ARRAY<4>;
+//				using	GLK		=	GLKVector4;
+//				using	GLM		=	glm::vec4;
+//				using	EONIL	=	Vector4;
+//				using	SVA		=	SimpleVectorAbstraction<4,Vector4>;
+//			};
+//			
+//			////
+//			
+//			template <Size const DIM>
+//			union
+//			Converter
+//			{
+//				using	ARRAY	=	typename TYPEMAP<DIM>::COMPS;
+//				using	GLK		=	typename TYPEMAP<DIM>::GLK;
+//				using	GLM		=	typename TYPEMAP<DIM>::GLM;
+//				using	EONIL	=	typename TYPEMAP<DIM>::EONIL;
+//				using	SVA		=	typename TYPEMAP<DIM>::SVA;
+//				
+//				ARRAY	array	=	{};
+//				GLK		glk		=	{};
+//				GLM		glm		=	{};
+//				EONIL	eonil	=	{};
+//				SVA		sva		=	{};
+//				
+//				Converter()
+//				{
+//					for (Size i=0; i< DIM; i++)
+//					{
+//						array[i]	=	0.0;
+//					}
+//				}
+//				Converter(ARRAY const& o) : array(o) {}
+//				Converter(GLK const& o) : glk(o) {}
+//				Converter(GLM const& o) : glm(o) {}
+//				Converter(EONIL const& o) : eonil(o) {}
+//				Converter(SVA const& o) : sva(o) {}
+//				
+//				Converter(Converter const& o) : array(o.array) {}
+//				
+//				operator ARRAY() const	{ return array; }
+//				operator GLK() const	{ return glk; }
+//				operator GLM() const	{ return glm; }
+//				operator EONIL() const	{ return eonil; }
+//				operator SVA() const	{ return sva; }
+//			};
+//			
+//			namespace
+//			ops
+//			{
+//#define			UNARY_VECTOR_OP(dim,opname,rawcall)					inline auto opname(Converter<dim> const& a) -> decltype(rawcall(a)) { return rawcall(a); }
+//#define			BINARY_VECTOR_SCALAR_OP(dim,opname,rawcall)			inline auto opname(Converter<dim> const& a, Scalar const& b) -> decltype(rawcall(a,b)) { return rawcall(a,b); }
+//#define			BINARY_VECTOR_VECTOR_OP(dim,opname,rawcall)			inline auto opname(Converter<dim> const& a, Converter<dim> const& b) -> decltype(rawcall(a,b)) { return rawcall(a,b); }
+//#define			TERNARY_VECTOR_VECTOR_SCALAR_OP(dim,opname,rawcall)	inline auto opname(Converter<dim> const& a, Converter<dim> const& b, Scalar const c) -> decltype(rawcall(a,b,c)) { return rawcall(a,b,c); }
+//				
+//				using	B	=	bool;
+//				using	S	=	Scalar;
+//				using	V2	=	Converter<2>;
+//				using	V3	=	Converter<3>;
+//				using	V4	=	Converter<4>;
+//				
+//#define			OP_V_S(dim,opname,rawcall)		inline auto opname(V##dim const& a) -> S { return rawcall(a); }
+//#define			OP_V_V(dim,opname,rawcall)		inline auto opname(V##dim const& a) -> V##dim { return rawcall(a); }
+//#define			OP_VS_B(dim,opname,rawcall)		inline auto opname(V##dim const& a, S const& b) -> B { return rawcall(a,b); }
+//#define			OP_VV_B(dim,opname,rawcall)		inline auto opname(V##dim const& a, V##dim const& b) -> B { return rawcall(a,b); }
+//#define			OP_VS_S(dim,opname,rawcall)		inline auto opname(V##dim const& a, S const& b) -> S { return rawcall(a,b); }
+//#define			OP_VS_V(dim,opname,rawcall)		inline auto opname(V##dim const& a, S const& b) -> V##dim { return rawcall(a,b); }
+//#define			OP_VV_S(dim,opname,rawcall)		inline auto opname(V##dim const& a, V##dim const& b) -> S { return rawcall(a,b); }
+//#define			OP_VV_V(dim,opname,rawcall)		inline auto opname(V##dim const& a, V##dim const& b) -> V##dim { return rawcall(a,b); }
+//#define			OP_VVS_V(dim,opname,rawcall)	inline auto opname(V##dim const& a, V##dim const& b, S const& c) -> V##dim { return rawcall(a,b,c); }
+//				
+////				OP_VS_B		(2, equal,		GLKVector2AllEqualToScalar);
+//				OP_VV_B		(2, equal,		GLKVector2AllEqualToVector2);
+//				OP_V_V		(2, negate,		GLKVector2Negate);
+//				OP_VS_V		(2, add,		GLKVector2AddScalar);
+//				OP_VV_V		(2, add,		GLKVector2Add);
+//				OP_VS_V		(2, subtract,	GLKVector2SubtractScalar);
+//				OP_VV_V		(2, subtract,	GLKVector2Subtract);
+//				OP_VS_V		(2, multiply,	GLKVector2MultiplyScalar);
+//				OP_VV_V		(2, multiply,	GLKVector2Multiply);
+//				OP_VS_V		(2, divide,		GLKVector2DivideScalar);
+//				OP_VV_V		(2, divide,		GLKVector2Divide);
+//				OP_VV_S		(2, dot,		GLKVector2DotProduct);
+////				OP_VV_S		(2, cross,		GLKVector2CrossProduct);
+//				OP_VV_V		(2, min,		GLKVector2Minimum);
+//				OP_VV_V		(2, max,		GLKVector2Maximum);
+//				OP_V_V		(2, normalize,	GLKVector2Normalize);
+//				OP_V_S		(2, length,		GLKVector2Length);
+//				OP_VV_S		(2, distance,	GLKVector2Distance);
+//				OP_VV_V		(2, project,	GLKVector2Project);
+//				OP_VVS_V	(2, lerp,		GLKVector2Lerp);
+//				
+////				OP_VS_B		(3, equal,		GLKVector3AllEqualToScalar);
+//				OP_VV_B		(3, equal,		GLKVector3AllEqualToVector3);
+//				OP_V_V		(3, negate,		GLKVector3Negate);
+//				OP_VS_V		(3, add,		GLKVector3AddScalar);
+//				OP_VV_V		(3, add,		GLKVector3Add);
+//				OP_VS_V		(3, subtract,	GLKVector3SubtractScalar);
+//				OP_VV_V		(3, subtract,	GLKVector3Subtract);
+//				OP_VS_V		(3, multiply,	GLKVector3MultiplyScalar);
+//				OP_VV_V		(3, multiply,	GLKVector3Multiply);
+//				OP_VS_V		(3, divide,		GLKVector3DivideScalar);
+//				OP_VV_V		(3, divide,		GLKVector3Divide);
+//				OP_VV_S		(3, dot,		GLKVector3DotProduct);
+//				OP_VV_V		(3, cross,		GLKVector3CrossProduct);
+//				OP_VV_V		(3, min,		GLKVector3Minimum);
+//				OP_VV_V		(3, max,		GLKVector3Maximum);
+//				OP_V_V		(3, normalize,	GLKVector3Normalize);
+//				OP_V_S		(3, length,		GLKVector3Length);
+//				OP_VV_S		(3, distance,	GLKVector3Distance);
+//				OP_VV_V		(3, project,	GLKVector3Project);
+//				OP_VVS_V	(3, lerp,		GLKVector3Lerp);
+//				
+////				OP_VS_B		(4, equal,		GLKVector4AllEqualToScalar);
+//				OP_VV_B		(4, equal,		GLKVector4AllEqualToVector4);
+//				OP_V_V		(4, negate,		GLKVector4Negate);
+//				OP_VS_V		(4, add,		GLKVector4AddScalar);
+//				OP_VV_V		(4, add,		GLKVector4Add);
+//				OP_VS_V		(4, subtract,	GLKVector4SubtractScalar);
+//				OP_VV_V		(4, subtract,	GLKVector4Subtract);
+//				OP_VS_V		(4, multiply,	GLKVector4MultiplyScalar);
+//				OP_VV_V		(4, multiply,	GLKVector4Multiply);
+//				OP_VS_V		(4, divide,		GLKVector4DivideScalar);
+//				OP_VV_V		(4, divide,		GLKVector4Divide);
+//				OP_VV_S		(4, dot,		GLKVector4DotProduct);
+////				OP_VV_V		(4, cross,		GLKVector4CrossProduct);
+//				OP_VV_V		(4, min,		GLKVector4Minimum);
+//				OP_VV_V		(4, max,		GLKVector4Maximum);
+//				OP_V_V		(4, normalize,	GLKVector4Normalize);
+//				OP_V_S		(4, length,		GLKVector4Length);
+//				OP_VV_S		(4, distance,	GLKVector4Distance);
+//				OP_VV_V		(4, project,	GLKVector4Project);
+//				OP_VVS_V	(4, lerp,		GLKVector4Lerp);
+//				
+//				template <Size const DIM>
+//				inline auto
+//				catmull_rom(Converter<DIM> const& prebegin, Converter<DIM> const& begin, Converter<DIM> const& end, Converter<DIM> const& postend, S const time) -> Converter<DIM>
+//				{
+//					return	glm::catmullRom(prebegin.glm, begin.glm, end.glm, postend.glm, time);
+//				}
+//			};
+//		}
+//
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//#pragma mark	-	Method Implementations
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::signalingNaN() -> V const
+//		{
+//			V	v;
+//			for (Size i=0; i<C; i++)
+//			{
+//				v.components[i]	=	std::numeric_limits<Scalar>::signaling_NaN();
+//			}
+//			return	v;
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::infinity() -> V const
+//		{
+//			V	v;
+//			for (Size i=0; i<C; i++)
+//			{
+//				v.components[i]	=	std::numeric_limits<Scalar>::infinity();
+//			}
+//			return	v;
+//		}
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::distanceBetweenVectors(const V left, const V right) -> S const
+//		{
+//			return	ops::distance(left, right);
+//		}
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::minimumOfVectors(const V left, const V right) -> V const
+//		{
+//			return	ops::min(left, right);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::maximumOfVectors(const V left, const V right) -> V const
+//		{
+//			return	ops::max(left, right);
+//		}
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::dotProductionOfVectors(const V left, const V right) -> S const
+//		{
+//			return	ops::dot(left, right);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::vectorUsingLinearInterpolationBetweenVectors(const V begin, const V end, const Scalar time) -> V const
+//		{
+//			return	ops::lerp(begin, end, time);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::Utility::vectorUsingCatmullRomSplineBetweenVectors(const V prebegin, const V begin, const V end, const V postend, const Scalar time) -> V const
+//		{
+//			return	ops::catmull_rom<C>(prebegin, begin, end, postend, time);
+//		}
+//		
+//		
+//		
+//		
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator==(V const& other) const -> bool const
+//		{
+//			return	ops::equal(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator!=(V const& other) const -> bool const
+//		{
+//			return	not ops::equal(*this, other);
+//		}
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator+() const -> V const
+//		{
+//			return	Converter<C>{*this};
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator-() const -> V const
+//		{
+//			return	ops::negate(*this);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator+(V const& other) const -> V const
+//		{
+//			return	ops::add(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator-(V const& other) const -> V const
+//		{
+//			return	ops::subtract(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator*(V const& other) const -> V const
+//		{
+//			return	ops::multiply(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator/(V const& other) const -> V const
+//		{
+//			return	ops::divide(*this, other);
+//		}
+//		
+//		
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator+(Scalar const& other) const -> V const
+//		{
+//			return	ops::add(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator-(Scalar const& other) const -> V const
+//		{
+//			return	ops::subtract(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator*(Scalar const& other) const -> V const
+//		{
+//			return	ops::multiply(*this, other);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::operator/(Scalar const& other) const -> V const
+//		{
+//			return	ops::divide(*this, other);
+//		}
+//		
+//		
+//		
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::length() const -> S const
+//		{
+//			return	ops::length(*this);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::lengthSquare() const -> S const
+//		{
+//			/*!
+//			 TODO: optimize.
+//			 */
+//			auto	len1	=	ops::length(*this);
+//			return	len1 * len1;
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::norm() const -> V const
+//		{
+//			return	ops::normalize(*this);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::distanceToVector(V const target) const -> S const
+//		{
+//			return	ops::distance(*this, target);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::dotProductionWithVector(V const target) const -> S const
+//		{
+//			return	ops::dot(*this, target);
+//		}
+//		template<Size C, typename V> auto
+//		SimpleVectorAbstraction<C, V>::projectionOntoVector(V const target) const -> V const
+//		{
+//			return	ops::project(*this, target);
+//		}
+//		
+//		
+//					
+//		
+//		
+//		
+//		template class SimpleVectorAbstraction<2, Vector2>;
+//		template class SimpleVectorAbstraction<3, Vector3>;
+//		template class SimpleVectorAbstraction<4, Vector4>;
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//#pragma mark	-	Concrete Class Constructors
+//		
+//		Vector2::Vector2(Scalar const x, Scalar const y)
+//		{
+//			this->x	=	x;
+//			this->y	=	y;
+//		}
+//		
+//		Vector3::Vector3(Vector2 const v, Scalar const z)
+//		{
+//			this->x	=	v.x;
+//			this->y	=	v.y;
+//			this->z	=	z;
+//		}
+//		Vector3::Vector3(Scalar const x, Scalar const y, Scalar const z)
+//		{
+//			this->x	=	x;
+//			this->y	=	y;
+//			this->z	=	z;
+//		}
+//		
+//		Scalar const
+//		Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector3 planeAxis)
+//		{
+//			/*
+//			 The GLM method always return degrees.
+//			 Convert manually until it handles radians correctly.
+//			 */
+//			return	glm::radians(glm::orientedAngle(Converter<3>(a).glm, Converter<3>(b).glm, Converter<3>(planeAxis).glm));
+//		}
+//		Vector3 const
+//		Vector3::Utility::crossProductionOfVectors(const Vector3 left, const Vector3 right)
+//		{
+//			return	ops::cross(left, right);
+//		}
+//		Vector3 const
+//		Vector3::crossProductionWithVector(Vector3 const target) const
+//		{
+//			return	ops::cross(*this, target);
+//		}
+//		
+//
+//		
+//		Vector4::Vector4(Vector3 const v, Scalar const w)
+//		{
+//			this->x	=	v.x;
+//			this->y	=	v.y;
+//			this->z	=	v.z;
+//			this->w	=	w;
+//		}
+//		Vector4::Vector4(Vector2 const v, Scalar const z, Scalar const w)
+//		{
+//			this->x	=	v.x;
+//			this->y	=	v.y;
+//			this->z	=	z;
+//			this->w	=	w;
+//		}
+//		Vector4::Vector4(Scalar const x, Scalar const y, Scalar const z, Scalar const w)
+//		{
+//			this->x	=	x;
+//			this->y	=	y;
+//			this->z	=	z;
+//			this->w	=	w;
+//		}
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//#pragma mark	-	Compile time tests.
+//		
+//		static_assert(std::is_pod<VectorState<2>>::value, "");
+//		static_assert(std::is_pod<VectorState<3>>::value, "");
+//		static_assert(std::is_pod<VectorState<4>>::value, "");
+//		
+//		static_assert(std::is_pod<SimpleVectorAbstraction<2, Vector2>>::value, "");
+//		static_assert(std::is_pod<SimpleVectorAbstraction<3, Vector3>>::value, "");
+//		static_assert(std::is_pod<SimpleVectorAbstraction<4, Vector4>>::value, "");
+//		
+//		static_assert(std::is_standard_layout<Vector2>::value, "");
+//		static_assert(std::is_standard_layout<Vector3>::value, "");
+//		static_assert(std::is_standard_layout<Vector4>::value, "");
+//		
+//		static_assert(sizeof(VectorState<2>) == sizeof(Scalar)*2, "`sizeof(VectorState<2>)` must be `sizeof(Scalar) * 2`.");
+//		static_assert(sizeof(VectorState<3>) == sizeof(Scalar)*3, "`sizeof(VectorState<3>)` must be `sizeof(Scalar) * 3`.");
+//		static_assert(sizeof(VectorState<4>) == sizeof(Scalar)*4, "`sizeof(VectorState<4>)` must be `sizeof(Scalar) * 4`.");
+//		
+//		static_assert(sizeof(Vector2) == sizeof(Scalar)*2, "`sizeof(Vector2)` must be 8.");
+//		static_assert(sizeof(Vector3) == sizeof(Scalar)*3, "`sizeof(Vector3)` must be 12.");
+//		static_assert(sizeof(Vector4) == sizeof(Scalar)*4, "`sizeof(Vector4)` must be 16.");
+//		
+//		static_assert(std::is_same<decltype(Vector2::x), Scalar>::value, "Vector2::x must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector2::y), Scalar>::value, "Vector2::y must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector3::x), Scalar>::value, "Vector3::x must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector3::y), Scalar>::value, "Vector3::y must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector3::z), Scalar>::value, "Vector3::z must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector4::x), Scalar>::value, "Vector4::x must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector4::y), Scalar>::value, "Vector4::y must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector4::z), Scalar>::value, "Vector4::z must be a Scalar.");
+//		static_assert(std::is_same<decltype(Vector4::w), Scalar>::value, "Vector4::w must be a Scalar.");
+//		
+//		
+//	}
+//	
+//	
+//
+//	
+//	
+//}}}}
+
+
 //
 //  Vector.cpp
 //  Mathematics

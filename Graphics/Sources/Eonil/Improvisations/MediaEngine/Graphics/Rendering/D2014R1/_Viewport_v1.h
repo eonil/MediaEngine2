@@ -23,17 +23,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 			
 			/*!
-			 @discussion			Handles NDC to window space transform.
+			 @discussion			
 			 
-									Because this is out of GL pipeline, this won't be used in shaders.
-									Anyway this is required when we convert points in between NDC and window space.
-									Also to set `glViewport` and `glScissor` parameters which needs window space
-									coordinates.
+			 Handles NDC to window space transform.
 			 
-										NDC -(viewport)-> window space
+			 Because this is out of GL pipeline, this won't be used in shaders.
+			 Anyway this is required when we convert points in between NDC and window space.
+			 Also to set `glViewport` and `glScissor` parameters which needs window space
+			 coordinates.
 			 
-									Currently this treats client window coordinate is Y-flipped - so we need to flip
-									vertically.
+				NDC -(viewport)-> window space
+			 
+			 Currently this treats client window coordinate is Y-flipped - so we need to flip
+			 vertically.
 			 */
 			class
 			_Viewport_v1

@@ -64,6 +64,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		namespace
 		Conversion
 		{
+			static_assert(sizeof(Scalar) == 4, "Size of a scalar must be 4 bytes.");
+			
+			
 			union
 			FLOAT32x16
 			{
@@ -73,7 +76,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 				GLKMatrix4							GLK;
 #endif
 				glm::mat4							GLM;
-//					SimpleMatrixAbstraction<4, Matrix4>	SMA4;
 				Matrix4								EE;
 				
 #if	EE_LANG_OBJC && (EONIL_MEDIA_ENGINE_TARGET_IOS || EONIL_MEDIA_ENGINE_TARGET_OSX)
@@ -81,7 +83,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 #endif
 				
 				FLOAT32x16(glm::mat4 const glm) : GLM(glm) {}
-//					FLOAT32x16(SimpleMatrixAbstraction<4, Matrix4> const sma4) : SMA4(sma4) {}
 				FLOAT32x16(Matrix4 const ee) : EE(ee) {}
 				FLOAT32x16(float const* const components)
 				{
@@ -95,8 +96,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			
 			
 			
-			static_assert(sizeof(Scalar) == 4, "");
-			static_assert(sizeof(FLOAT32x16) == sizeof(Scalar) * 16, "");
+			static_assert(sizeof(FLOAT32x16) == sizeof(Scalar) * 16, "Size of 4x4 matrix must be 16 scalars.");
+			static_assert(sizeof(FLOAT32x16) == sizeof(glm::mat4), "Size of 4x4 matrix must be 16 scalars.");
+			static_assert(sizeof(FLOAT32x16) == sizeof(Matrix4), "Size of 4x4 matrix must be 16 scalars.");
+#if	EE_LANG_OBJC && (EONIL_MEDIA_ENGINE_TARGET_IOS || EONIL_MEDIA_ENGINE_TARGET_OSX)
+			static_assert(sizeof(FLOAT32x16) == sizeof(GLKMatrix4), "Size of 4x4 matrix must be 16 scalars.");
+#endif
 			
 			
 			
@@ -119,7 +124,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 				GLKVector4							GLK;
 #endif
 				glm::vec4							GLM;
-				//					SimpleMatrixAbstraction<4, Matrix4>	SMA4;
 				Vector4								EE;
 				
 #if	EE_LANG_OBJC && (EONIL_MEDIA_ENGINE_TARGET_IOS || EONIL_MEDIA_ENGINE_TARGET_OSX)
@@ -131,9 +135,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			}
 			__attribute__((aligned(16)));
 			
-			static_assert(sizeof(Scalar) == 4, "");
-			static_assert(sizeof(FLOAT32x4) == sizeof(Scalar) * 4, "");
-			
+			static_assert(sizeof(FLOAT32x4) == sizeof(Scalar) * 4, "Size of 4D vector must be 4 scalars.");
+			static_assert(sizeof(FLOAT32x4) == sizeof(glm::vec4), "Size of 4D vector must be 4 scalars.");
+			static_assert(sizeof(FLOAT32x4) == sizeof(Vector4), "Size of 4D vector must be 4 scalars.");
+#if	EE_LANG_OBJC && (EONIL_MEDIA_ENGINE_TARGET_IOS || EONIL_MEDIA_ENGINE_TARGET_OSX)
+			static_assert(sizeof(FLOAT32x4) == sizeof(GLKVector4), "Size of 4D vector must be 4 scalars.");
+#endif
 			
 			
 			
@@ -156,8 +163,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 				FLOAT32x3(glm::vec3 const glm) : GLM(glm) {}
 				FLOAT32x3(Vector3 const ee) : EE(ee) {}
 			};
-			static_assert(sizeof(Scalar) == 4, "");
-			static_assert(sizeof(FLOAT32x3) == sizeof(Scalar) * 3, "");
+			
+			static_assert(sizeof(FLOAT32x3) == sizeof(Scalar) * 3, "Size of 3D vector must be 3 scalars.");
+			static_assert(sizeof(FLOAT32x3) == sizeof(glm::vec3), "Size of 3D vector must be 3 scalars.");
+			static_assert(sizeof(FLOAT32x3) == sizeof(Vector3), "Size of 3D vector must be 3 scalars.");
+#if	EE_LANG_OBJC && (EONIL_MEDIA_ENGINE_TARGET_IOS || EONIL_MEDIA_ENGINE_TARGET_OSX)
+			static_assert(sizeof(FLOAT32x3) == sizeof(GLKVector3), "Size of 3D vector must be 3 scalars.");
+#endif
 			
 			
 			
@@ -183,8 +195,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 				FLOAT32x2(Vector2 const ee) : EE(ee) {}
 			};
 			
-			static_assert(sizeof(Scalar) == 4, "");
-			static_assert(sizeof(FLOAT32x2) == sizeof(Scalar) * 2, "");
+			static_assert(sizeof(FLOAT32x2) == sizeof(Scalar) * 2, "Size of 2D vector must be 2 scalars.");
+			static_assert(sizeof(FLOAT32x2) == sizeof(glm::vec2), "Size of 2D vector must be 2 scalars.");
+			static_assert(sizeof(FLOAT32x2) == sizeof(Vector2), "Size of 2D vector must be 2 scalars.");
+#if	EE_LANG_OBJC && (EONIL_MEDIA_ENGINE_TARGET_IOS || EONIL_MEDIA_ENGINE_TARGET_OSX)
+			static_assert(sizeof(FLOAT32x2) == sizeof(GLKVector2), "Size of 2D vector must be 2 scalars.");
+#endif
 		}
 	}
 	

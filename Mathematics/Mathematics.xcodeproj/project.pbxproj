@@ -13,7 +13,7 @@
 		45150A4718A69EDE0007BE6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45150A4618A69EDE0007BE6B /* main.m */; };
 		45150A4B18A69EDE0007BE6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45150A4A18A69EDE0007BE6B /* AppDelegate.m */; };
 		45150A4D18A69EDE0007BE6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45150A4C18A69EDE0007BE6B /* Images.xcassets */; };
-		45150A6D18A69EE80007BE6B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45150A6C18A69EE80007BE6B /* main.cpp */; };
+		45150A6D18A69EE80007BE6B /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45150A6C18A69EE80007BE6B /* main.mm */; };
 		45150A6F18A69EE80007BE6B /* Math___Running_Test___OSX.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45150A6E18A69EE80007BE6B /* Math___Running_Test___OSX.1 */; };
 		45150A7818A69F950007BE6B /* Trash in Resources */ = {isa = PBXBuildFile; fileRef = 45150A7718A69F950007BE6B /* Trash */; };
 		45150A8218A6A0470007BE6B /* GLM in Resources */ = {isa = PBXBuildFile; fileRef = 45150A8118A6A0470007BE6B /* GLM */; };
@@ -134,7 +134,7 @@
 		45150A4A18A69EDE0007BE6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45150A4C18A69EDE0007BE6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45150A6A18A69EE80007BE6B /* Mathematics - Running Test - OSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mathematics - Running Test - OSX"; sourceTree = BUILT_PRODUCTS_DIR; };
-		45150A6C18A69EE80007BE6B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		45150A6C18A69EE80007BE6B /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		45150A6E18A69EE80007BE6B /* Math___Running_Test___OSX.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = "Math___Running_Test___OSX.1"; sourceTree = "<group>"; };
 		45150A7718A69F950007BE6B /* Trash */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Trash; sourceTree = "<group>"; };
 		45150A8118A6A0470007BE6B /* GLM */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GLM; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 		45150A6B18A69EE80007BE6B /* Mathematics - Running Test - OSX */ = {
 			isa = PBXGroup;
 			children = (
-				45150A6C18A69EE80007BE6B /* main.cpp */,
+				45150A6C18A69EE80007BE6B /* main.mm */,
 				45150A6E18A69EE80007BE6B /* Math___Running_Test___OSX.1 */,
 			);
 			path = "Mathematics - Running Test - OSX";
@@ -647,7 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45150A6D18A69EE80007BE6B /* main.cpp in Sources */,
+				45150A6D18A69EE80007BE6B /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +668,10 @@
 		451509F518A69E8E0007BE6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_FAST_MATH = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -693,6 +697,10 @@
 		451509F618A69E8E0007BE6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_FAST_MATH = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "EONIL_DEBUG_MODE=0";
@@ -714,8 +722,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -730,7 +736,6 @@
 				DSTROOT = "/tmp/Math___Static_Library___iOS.dst";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -754,8 +759,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -788,8 +791,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -804,7 +805,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -823,8 +823,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;

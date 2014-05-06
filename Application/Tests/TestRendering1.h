@@ -34,6 +34,8 @@ using namespace Eonil::Improvisations::MediaEngine::Application;
 /*!
  This tests extreme simple logic.
  All the drawing resources are intentionally loaded/unloaded for each frame.
+ 
+ A picture will be drawin in quarter area of the screen. (client area)
  */
 class
 TestRendering1

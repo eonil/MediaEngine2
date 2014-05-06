@@ -44,8 +44,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				UniformScalingInstance
 				{
 					Scalar		scale			{1};
-					Quaternion	rotation		{Quaternion::Utility::identity()};
 					Vector3		translation		{0,0,0};
+					Quaternion	rotation		{Quaternion::Utility::identity()};
 					Vector4		color			{1,1,1,1};		//	Will be multiplied to texture color.
 				};
 				struct

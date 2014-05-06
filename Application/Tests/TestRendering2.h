@@ -119,7 +119,7 @@ public:
 	auto
 	render(Stepping const& s) const -> void
 	{
-		Matrix4		world_to_screen_transform	=	s.frame().regulationTransformMatrix();
+		Matrix4		world_to_screen_transform	=	Matrix4::Utility::scaleWithUniformScalar(2) * s.frame().regulationTransformMatrix();
 		
 		////
 		

@@ -65,7 +65,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		
 		
 		/*
-		 Any base classes mus be treated as implementation details. It's subject to change at anytime.
+		 Any base classes must be treated as implementation details. It's subject to change at anytime.
 		 You must use only final concrete classes, and should not depend on subclassing hierarchy.
 		 */
 		
@@ -114,8 +114,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 //						Scalar	r, g;
 //					};
 			};
-		};
-//			__attribute__((aligned(8)));
+		}
+		__attribute__((aligned(8)));
 		
 		template<>
 		struct
@@ -209,7 +209,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			struct
 			Utility
 			{
-				static V const	signalingNaN();			//!	A vector with all components are set to NAN.
+				static V const	signalingNaN();			//!	A vector with all components are set to signaling NAN.
 				static V const	infinity();				//!	A vector with all components are set to INFINITE.
 				
 //					static S const	lengthOfVector(V const value);
@@ -324,8 +324,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			Utility : public SimpleVectorAbstraction<2, Vector2>::Utility
 			{
 			};
-		};
-//			__attribute__((aligned(8)));
+		}
+		__attribute__((aligned(8)));
+		
+		static_assert(sizeof(Vector2) == sizeof(Scalar) * 2, "Size of Vector4 must be 8 bytes.");
+		static_assert(sizeof(Vector2) == 8, "Size of Vector4 must be 8 bytes.");
 
 		struct
 		Vector3 final : public SimpleVectorAbstraction<3, Vector3>
@@ -343,6 +346,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 				static Vector3 const	crossProductionOfVectors(Vector3 const a, Vector3 const b);
 			};
 		};
+		static_assert(sizeof(Vector3) == sizeof(Scalar) * 3, "Size of Vector3 must be 12 bytes.");
+		static_assert(sizeof(Vector3) == 12, "Size of Vector3 must be 12 bytes.");
 		
 		struct
 		Vector4 final : public SimpleVectorAbstraction<4, Vector4>
@@ -358,6 +363,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 			};
 		}
 		__attribute__((aligned(16)));
+		static_assert(sizeof(Vector4) == sizeof(Scalar) * 4, "Size of Vector4 must be 16 bytes.");
+		static_assert(sizeof(Vector4) == 16, "Size of Vector4 must be 16 bytes.");
 		
 		
 		
@@ -389,8 +396,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		template<typename V>	V const			min(V const left, V const right);
 		template<typename V>	V const			max(V const left, V const right);
 		
-		template<typename V>	V const			add(V const left, V const right);
-		template<typename V>	V const			mul(V const left, V const right);
+//		template<typename V>	V const			add(V const left, V const right);
+//		template<typename V>	V const			mul(V const left, V const right);
 		
 		template<typename V>	Scalar const	dot(V const left, V const right);
 		template<typename V>	V const			cross(V const left, V const right);
