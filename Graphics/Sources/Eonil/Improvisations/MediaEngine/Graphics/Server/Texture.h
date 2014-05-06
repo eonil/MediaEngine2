@@ -139,6 +139,32 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 		public:
+			struct
+			Parameters
+			{
+				enum class
+				FILTER : GLint
+				{
+					NEAREST	=	GL_NEAREST,
+					LINEAR	=	GL_LINEAR,
+				};
+				
+				enum class
+				WRAP : GLint
+				{
+					CLAMP	=	GL_CLAMP_TO_EDGE,
+					REPEAT	=	GL_REPEAT,
+					MIRROR	=	GL_MIRRORED_REPEAT,
+				};
+				
+				FILTER	minificationFilter	=	FILTER::NEAREST;
+				FILTER	magnificationFilter	=	FILTER::NEAREST;
+//				FILTER	mipmappingFilter	=	FILTER::NEAREST;	//!	Map-mapping is not supported yet.
+				WRAP	horizontalWrapping	=	WRAP::REPEAT;		//!	Initial value is REPEAT. @ref https://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml
+				WRAP	verticalWrapping	=	WRAP::REPEAT;		//!	Initial value is REPEAT. @ref https://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexParameter.xml
+			};
+			
+		public:
 			PlanarTexture();											//!	Creates an empty texture. (null, no server-side object)
 			PlanarTexture(PlanarTexture const&) = delete;				//!	Copy prohibited.
 			PlanarTexture(PlanarTexture&& other);						//!	Move allowed.
@@ -150,6 +176,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			auto	empty() const -> bool;
 			auto	name() const -> GLuint;
+			
+			auto	setParameters(Parameters const&) -> void;
 			
 		public:
 			struct

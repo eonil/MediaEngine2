@@ -124,14 +124,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		PlanarTexture::PlanarTexture(Core* const core) : _cptr(core)
 		{
-			eeglBindTexture(GL_TEXTURE_2D, name());
-			{
-				eeglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-				eeglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-				eeglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-				eeglTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-			}
-			eeglUnbindTexture(GL_TEXTURE_2D);
+			/*!
+			 Textures will not work without parameter setting.
+			 There's initial value doesn't work.
+			 */
+			setParameters({});
 		}
 		PlanarTexture::PlanarTexture(PlanarTexture&& other) : _cptr(std::move(other._cptr))
 		{
@@ -170,6 +167,21 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			return	_cptr->name;
 		}
+		
+		auto
+		PlanarTexture::
+		setParameters(const Eonil::Improvisations::MediaEngine::Graphics::Server::PlanarTexture::Parameters &p1) -> void
+		{
+			eeglBindTexture(GL_TEXTURE_2D, name());
+			eeglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GLint(p1.minificationFilter));
+			eeglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GLint(p1.magnificationFilter));
+			eeglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GLint(p1.horizontalWrapping));
+			eeglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GLint(p1.verticalWrapping));
+			eeglUnbindTexture(GL_TEXTURE_2D);
+		}
+		
+		
+		
 		
 		void
 		PlanarTexture::_assertNonEmptyState() const
