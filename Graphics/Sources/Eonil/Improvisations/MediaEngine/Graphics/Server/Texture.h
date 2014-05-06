@@ -130,7 +130,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				~Core();						//!	Delete the texture name.
 			};
 			
-			uptr<Core>		_cptr	{nullptr};					//!	`std::uniqur_ptr` doesn't work due to size requirement for incomplete type.
+			uptr<Core>		_cptr	{nullptr};
 			
 			PlanarTexture(Core* const core);
 			
@@ -172,6 +172,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 them yourself.
 				 */
 				static auto	textureWithPixels(GenericMemoryRange<void const> memory, Size const& width, Size const& height, bool const& flipInY = false) -> PlanarTexture;
+				
+				
+				
+				
+				
+				
+				
 				
 				EONIL_MEDIA_ENGINE_DEPRECATE()
 				static PlanarTexture	_DEV_textureWithResourceAtPath(std::string const path);											//!	The path can be absolute or relative path to resource root.
