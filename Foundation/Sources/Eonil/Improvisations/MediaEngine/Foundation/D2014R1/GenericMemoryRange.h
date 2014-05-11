@@ -11,6 +11,7 @@
 
 #include "../Common.h"
 #include "../Numerics.h"
+#include "ConstantEvaluationUtility.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Foundation {
 	
@@ -23,43 +24,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		
 		
 		
-		namespace
-		{
-			
-			template <typename X>
-			struct
-			_void_aware_sizeof
-			{
-				static const size_t	value	=	sizeof(X);
-			};
-			template <>
-			struct
-			_void_aware_sizeof<void>
-			{
-				static const size_t	value	=	0;
-			};
-			template <>
-			struct
-			_void_aware_sizeof<void const>
-			{
-				static const size_t	value	=	0;
-			};
-			
-			template<typename T>
-			constexpr auto
-			_VOID_AWARE_SIZEOF() -> Size
-			{
-				return	_void_aware_sizeof<T>::value;
-			}
-		}
-		
-		
 		
 		template <typename T>
 		class
 		_MemoryRangeAbstraionLevel1
-		{
-			
+		{	
 		protected:
 			T*		_begin{nullptr};
 			T*		_end{nullptr};
@@ -87,11 +56,28 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			template <typename V> auto
 			reinterpretAs() const -> GenericMemoryRange<V>
 			{
-				static_assert(sizeof(V) > 0, "Size of the type `V` cannot be zero.");
-				static_assert((not std::is_same<typename std::remove_const<T>::type, void>::value and not std::is_same<typename std::remove_const<V>::type, void>::value)
-							  or (_VOID_AWARE_SIZEOF<T>() % _VOID_AWARE_SIZEOF<V>() == 0 or _VOID_AWARE_SIZEOF<V>() % _VOID_AWARE_SIZEOF<T>() == 0),
-							  "One of sizes of types `T` and `V` must be multiplication of the other one or `void`.");
-				EONIL_DEBUG_ASSERT_WITH_MESSAGE((uintptr_t(_end) - uintptr_t(_begin)) % sizeof(V) == 0, "Size of current block must be exaclt multiplication of destination type `V`.");
+				using namespace	ConstantEvaluation;
+				
+				static_assert(std::is_void<V>::value or
+							  void_aware_sizeof<V>() > 0,
+							  "The type `V` must be `void or non-zero sized.");
+				
+				static_assert(std::is_void<T>::value or
+							  std::is_void<V>::value or
+							  void_aware_sizeof<T>() % void_aware_sizeof<V>() == 0 or
+							  void_aware_sizeof<V>() % void_aware_sizeof<T>() == 0,
+							  "One of sizes of types `T` and `V` must be multiplication of the other unless one of them is `void`.");
+	
+				if (void_aware_sizeof<V>() == Size(0))
+				{
+					//	We cannot check because we don't know the destination type.
+				}
+				else
+				{
+					EONIL_DEBUG_ASSERT_WITH_MESSAGE((uintptr_t(_end) - uintptr_t(_begin)) % void_aware_sizeof<V>() == 0, "Size of current block must be exaclt multiplication of destination type `V` unless `V` is `void`.");
+				}
+				
+				////
 				
 				V*	b	=	reinterpret_cast<V*>(_begin);
 				V*	e	=	reinterpret_cast<V*>(_end);
@@ -153,6 +139,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		 
 		 @brief
 		 This is used to represent a fixed sized collection.
+		 
+		 @note
+		 This is special case (consecutive list of values) of generic range concept.
+		 Can be replaced by generic range concept in near future.
+		 So be careful when you add a new feature.
 		 */
 		template <typename T>
 		class

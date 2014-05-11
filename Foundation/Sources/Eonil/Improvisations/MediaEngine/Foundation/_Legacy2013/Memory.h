@@ -22,8 +22,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		/*!
 		 Abstracts immutable region of memory.
 		 Target memory region also can be a part of file by memory-mapped file feature.
+		 
+		 @deprecated
+		 Shared management are all deprecated. Do not use shared memory block feature.
+		 You can consider using of `GenericMemoryBlock`.
+		 Use uniquely owned memory block.
 		 */
 		class
+		EONIL_DEPRECATED_CLASS
 		SharedMemory
 		{
 		public:
@@ -32,7 +38,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 			Factory
 			{
 				static SharedMemory const memoryByCopyingRange(void const* const address, Size const length);		//	Copy and own the memory.
-				static SharedMemory const memoryByProxyingRange(void const* const address, Size const length);	//	Just offer viwe on existing memory. Doesn't own the memory.
+				static SharedMemory const memoryByProxyingRange(void const* const address, Size const length);		//	Just offer viwe on existing memory. Doesn't own the memory.
 				static SharedMemory const memoryByOwningRange(void const* const address, Size const length);		//	Own the memory without copying.
 			};
 			

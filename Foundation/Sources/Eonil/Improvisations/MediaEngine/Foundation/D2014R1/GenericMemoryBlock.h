@@ -28,13 +28,20 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		
 		
 		/*!
-		 @brief				A uniquely owned memory range.
+		 @brief				Represents a uniquely owned dynamic memory range of known and unknown type.
 		 
 		 @classdesign		This is a proxy editor around memory of value strip. This class
 							owns the memory range, and deallocates it when dies.
 		 
 		 @discussion		User always use this for existing - already initialized - value strip.
 							This class does not allocate any memory.
+		 
+		 @note	
+		 Usually static memory block by `std::array` is far better option. Do not use this unless the `std::array` is not applicable.
+		 
+		 @discussion
+		 Needs for this class feature usually means bad ownership design.
+		 So this class seems to be deprecated soon. Do not use this class as much as possible.
 		 */
 		template <typename T>
 		class

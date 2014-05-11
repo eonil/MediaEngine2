@@ -63,6 +63,8 @@ int main(int argc, const char * argv[])
 		EONIL_TEST_ASSERT(a5.at(0).aaa == 0);
 		EONIL_TEST_ASSERT(a5.at(0).bbb == 11);
 		EONIL_TEST_ASSERT(a5.at(0).ccc == ((22 << 8) + 33) or i4.at(1) == ((33 << 8) + 22));
+		
+		delete[]	bs;
 	}
 	
 	

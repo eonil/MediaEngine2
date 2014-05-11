@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */; };
+		450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */; };
 		4511FB9018A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */; };
 		4511FB9118A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */; };
 		453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C118A35E490074B957 /* GenericMemoryRange.cpp */; };
@@ -32,8 +34,6 @@
 		45F6F8E618A13FFC00A41EAB /* Doctor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8E318A13FFC00A41EAB /* Doctor.mm */; };
 		45F6F8EF18A1414900A41EAB /* Numerics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8ED18A1414900A41EAB /* Numerics.cpp */; };
 		45F6F8F018A1414900A41EAB /* Numerics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8ED18A1414900A41EAB /* Numerics.cpp */; };
-		45FB775518A7FC5A00DD25B4 /* GenericDynamicArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45FB775318A7FC5A00DD25B4 /* GenericDynamicArray.cpp */; };
-		45FB775618A7FC5A00DD25B4 /* GenericDynamicArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45FB775318A7FC5A00DD25B4 /* GenericDynamicArray.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstantEvaluationUtility.cpp; sourceTree = "<group>"; };
+		450D40E6191F251B004F8901 /* ConstantEvaluationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantEvaluationUtility.h; sourceTree = "<group>"; };
 		4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImplementationOnlyCommon.cpp; sourceTree = "<group>"; };
 		4511FB8F18A53605000A4617 /* ImplementationOnlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplementationOnlyCommon.h; sourceTree = "<group>"; };
 		453423C118A35E490074B957 /* GenericMemoryRange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericMemoryRange.cpp; sourceTree = "<group>"; };
@@ -80,8 +82,6 @@
 		45F6F8E418A13FFC00A41EAB /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
 		45F6F8ED18A1414900A41EAB /* Numerics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Numerics.cpp; sourceTree = "<group>"; };
 		45F6F8EE18A1414900A41EAB /* Numerics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Numerics.h; sourceTree = "<group>"; };
-		45FB775318A7FC5A00DD25B4 /* GenericDynamicArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericDynamicArray.cpp; sourceTree = "<group>"; };
-		45FB775418A7FC5A00DD25B4 /* GenericDynamicArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericDynamicArray.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +123,8 @@
 		453A737618A2230900C01AAC /* D2014R1 */ = {
 			isa = PBXGroup;
 			children = (
-				45FB775318A7FC5A00DD25B4 /* GenericDynamicArray.cpp */,
-				45FB775418A7FC5A00DD25B4 /* GenericDynamicArray.h */,
+				450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */,
+				450D40E6191F251B004F8901 /* ConstantEvaluationUtility.h */,
 				453423C118A35E490074B957 /* GenericMemoryRange.cpp */,
 				453423C218A35E490074B957 /* GenericMemoryRange.h */,
 				453423C618A361C30074B957 /* GenericMemoryBlock.cpp */,
@@ -346,8 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
 				453A736D18A21FB200C01AAC /* Memory.cpp in Sources */,
-				45FB775618A7FC5A00DD25B4 /* GenericDynamicArray.cpp in Sources */,
 				453423C818A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,
 				4511FB9018A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */,
 				453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
@@ -364,8 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
 				453A736E18A21FB200C01AAC /* Memory.cpp in Sources */,
-				45FB775518A7FC5A00DD25B4 /* GenericDynamicArray.cpp in Sources */,
 				453423C418A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
 				4511FB9118A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */,
 				45F6F8F018A1414900A41EAB /* Numerics.cpp in Sources */,

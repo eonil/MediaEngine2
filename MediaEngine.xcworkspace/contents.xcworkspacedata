@@ -29,9 +29,6 @@
       location = "group:Mathematics/Mathematics.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:PlatformAdapters/PlatformAdapters.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Graphics/Graphics.xcodeproj">
    </FileRef>
    <FileRef

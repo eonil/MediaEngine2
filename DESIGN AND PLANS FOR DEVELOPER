@@ -71,3 +71,68 @@ prohibits the cutomizable design.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Don't! Why?
+-----------
+
+-	`GenericDynamicArray`
+
+	Use `std::unique_ptr<std::array<T>>` which is standard.
+
+
+
+
+-	`GenericMemoryBlock` 
+
+	Needs for this class feature usually means bad ownership design.
+	I couldn't find nice use-case yet, and will be erased if I fail to find one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
