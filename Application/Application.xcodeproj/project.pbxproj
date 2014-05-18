@@ -112,6 +112,67 @@
 		45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
 		45C49E9918B75A6100544108 /* TestRendering1.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E9618B75A6100544108 /* TestRendering1.h */; };
 		45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
+		45D7B2BE1928E99C00279F43 /* DraggingGesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */; };
+		45D7B2BF1928E99C00279F43 /* DraggingGesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */; };
+		45D7B2C01928E99C00279F43 /* DraggingGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2B11928E99C00279F43 /* DraggingGesture.h */; };
+		45D7B2C11928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2B31928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.h */; };
+		45D7B2C21928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B41928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm */; };
+		45D7B2C31928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B41928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm */; };
+		45D7B2C41928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2B61928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.h */; };
+		45D7B2C51928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B71928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm */; };
+		45D7B2C61928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B71928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm */; };
+		45D7B2C71928E99C00279F43 /* OverlayAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2B81928E99C00279F43 /* OverlayAdapter.h */; };
+		45D7B2C81928E99C00279F43 /* OverlayAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B91928E99C00279F43 /* OverlayAdapter.mm */; };
+		45D7B2C91928E99C00279F43 /* OverlayAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B91928E99C00279F43 /* OverlayAdapter.mm */; };
+		45D7B2CA1928E99C00279F43 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2BA1928E99C00279F43 /* Touch.cpp */; };
+		45D7B2CB1928E99C00279F43 /* Touch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2BA1928E99C00279F43 /* Touch.cpp */; };
+		45D7B2CC1928E99C00279F43 /* Touch.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2BB1928E99C00279F43 /* Touch.h */; };
+		45D7B2CD1928E99C00279F43 /* TouchGestureCapturing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2BC1928E99C00279F43 /* TouchGestureCapturing.cpp */; };
+		45D7B2CE1928E99C00279F43 /* TouchGestureCapturing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2BC1928E99C00279F43 /* TouchGestureCapturing.cpp */; };
+		45D7B2CF1928E99C00279F43 /* TouchGestureCapturing.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2BD1928E99C00279F43 /* TouchGestureCapturing.h */; };
+		45D7B2E31928E9E500279F43 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2E11928E9E500279F43 /* Common.cpp */; };
+		45D7B2E41928E9E500279F43 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2E11928E9E500279F43 /* Common.cpp */; };
+		45D7B2E51928E9E500279F43 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2E21928E9E500279F43 /* Common.h */; };
+		45D7B2F61928EB6200279F43 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D7B2F01928EB5000279F43 /* libEonilCommonRealtimeGameAlgorithms.a */; };
+		45D7B2F71928EB6800279F43 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D7B2EE1928EB5000279F43 /* libEonilCommonRealtimeGameAlgorithms.a */; };
+		45D7B2FE1928F21600279F43 /* TestAll.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2FC1928F21600279F43 /* TestAll.mm */; };
+		45D7B2FF1928F21600279F43 /* TestAll.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2FC1928F21600279F43 /* TestAll.mm */; };
+		45D7B3001928F21600279F43 /* TestAll.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2FD1928F21600279F43 /* TestAll.h */; };
+		45D7B3071928F27D00279F43 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5E190B6E9600978D8C /* libEonilAliens.a */; };
+		45D7B3081928F27D00279F43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4E718B8A2D9004A5C14 /* GLKit.framework */; };
+		45D7B3091928F27D00279F43 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E8D18B726C100544108 /* OpenGL.framework */; };
+		45D7B30A1928F27D00279F43 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
+		45D7B30B1928F27D00279F43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4584021018DCE7DA00AAE1A2 /* Cocoa.framework */; };
+		45D7B30C1928F27D00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
+		45D7B30D1928F27D00279F43 /* libEonilImprovisationsCommonUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51F18B8A45D004A5C14 /* libEonilImprovisationsCommonUtility.a */; };
+		45D7B30E1928F27D00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
+		45D7B30F1928F27D00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
+		45D7B3101928F27D00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
+		45D7B3161928F27D00279F43 /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
+		45D7B3171928F27D00279F43 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
+		45D7B35D1928F4AF00279F43 /* Controlling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B35B1928F4AF00279F43 /* Controlling.cpp */; };
+		45D7B35E1928F4AF00279F43 /* Controlling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B35B1928F4AF00279F43 /* Controlling.cpp */; };
+		45D7B35F1928F4AF00279F43 /* Controlling.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B35C1928F4AF00279F43 /* Controlling.h */; };
+		45D7B3631928F62900279F43 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B3621928F62900279F43 /* main.mm */; };
+		45D7B3651928F65000279F43 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D7B3641928F65000279F43 /* MainMenu.xib */; };
+		45D7B472192918AE00279F43 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5C190B6E9600978D8C /* libEonilAliens.a */; };
+		45D7B473192918AE00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
+		45D7B474192918AE00279F43 /* libEonilImprovisationsCommonUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51F18B8A45D004A5C14 /* libEonilImprovisationsCommonUtility.a */; };
+		45D7B475192918AE00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
+		45D7B476192918AE00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
+		45D7B477192918AE00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
+		45D7B478192918AE00279F43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EA5D18B6BD1700B05C1D /* CoreGraphics.framework */; };
+		45D7B479192918AE00279F43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96818B6A70D0078033C /* Foundation.framework */; };
+		45D7B47A192918AE00279F43 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC518B6BE9E00B05C1D /* ImageIO.framework */; };
+		45D7B47B192918AE00279F43 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC318B6BE9800B05C1D /* OpenGLES.framework */; };
+		45D7B47C192918AE00279F43 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC118B6BE9100B05C1D /* QuartzCore.framework */; };
+		45D7B47D192918AE00279F43 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51618B8A444004A5C14 /* GLKit.framework */; };
+		45D7B47E192918AE00279F43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51418B8A438004A5C14 /* UIKit.framework */; };
+		45D7B480192918AE00279F43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 453F1DC318C308D3000C25CC /* InfoPlist.strings */; };
+		45D7B481192918AE00279F43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453F1DCC18C308D3000C25CC /* Images.xcassets */; };
+		45D7B482192918AE00279F43 /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
+		45D7B483192918AE00279F43 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
+		45D7B49D192918F300279F43 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B49C192918F300279F43 /* main.mm */; };
 		45EFC6BD190B78890066E246 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BED5C190B6E9600978D8C /* libEonilAliens.a */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +296,69 @@
 			remoteGlobalIDString = 452ACC4D1855077600447731;
 			remoteInfo = RunningTester;
 		};
+		45D7B2D11928E99C00279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45165A90190C832B0066177B;
+			remoteInfo = "Aliens - Test - OSX";
+		};
+		45D7B2ED1928EB5000279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45FC6FAC190EB7290018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - iOS";
+		};
+		45D7B2EF1928EB5000279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45FC7001190EB7AF0018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
+		};
+		45D7B2F11928EB5000279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 450EF2A6190EBD6E00FC3FE3;
+			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - OSX";
+		};
+		45D7B2F31928EB5000279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 455B126D19106740007997D8;
+			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - iOS";
+		};
+		45D7B2F81928EB7000279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45FC6FAB190EB7290018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - iOS";
+		};
+		45D7B2FA1928EB7400279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45FC7000190EB7AF0018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
+		};
+		45D7B3031928F27D00279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B61A9190A9CA20021A442;
+			remoteInfo = "Aliens - OSX";
+		};
+		45D7B46E192918AE00279F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B617E190A9C740021A442;
+			remoteInfo = "Aliens - iOS";
+		};
 		45EFC6BB190B78860066E246 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
@@ -345,6 +469,34 @@
 		45C49E9518B75A6100544108 /* TestRendering1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRendering1.cpp; sourceTree = "<group>"; };
 		45C49E9618B75A6100544108 /* TestRendering1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering1.h; sourceTree = "<group>"; };
 		45C49E9A18B82B4200544108 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DraggingGesture.cpp; sourceTree = "<group>"; };
+		45D7B2B11928E99C00279F43 /* DraggingGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggingGesture.h; sourceTree = "<group>"; };
+		45D7B2B31928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.h"; sourceTree = "<group>"; };
+		45D7B2B41928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm"; sourceTree = "<group>"; };
+		45D7B2B61928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.h"; sourceTree = "<group>"; };
+		45D7B2B71928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm"; sourceTree = "<group>"; };
+		45D7B2B81928E99C00279F43 /* OverlayAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayAdapter.h; sourceTree = "<group>"; };
+		45D7B2B91928E99C00279F43 /* OverlayAdapter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OverlayAdapter.mm; sourceTree = "<group>"; };
+		45D7B2BA1928E99C00279F43 /* Touch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Touch.cpp; sourceTree = "<group>"; };
+		45D7B2BB1928E99C00279F43 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
+		45D7B2BC1928E99C00279F43 /* TouchGestureCapturing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchGestureCapturing.cpp; sourceTree = "<group>"; };
+		45D7B2BD1928E99C00279F43 /* TouchGestureCapturing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchGestureCapturing.h; sourceTree = "<group>"; };
+		45D7B2E11928E9E500279F43 /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		45D7B2E21928E9E500279F43 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonRealtimeGameAlgorithms.xcodeproj; path = ../../../CommonRealtimeGameAlgorithms/CommonRealtimeGameAlgorithms.xcodeproj; sourceTree = "<group>"; };
+		45D7B2FC1928F21600279F43 /* TestAll.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestAll.mm; sourceTree = "<group>"; };
+		45D7B2FD1928F21600279F43 /* TestAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAll.h; sourceTree = "<group>"; };
+		45D7B31B1928F27D00279F43 /* OSX Test All Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSX Test All Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45D7B31C1928F27E00279F43 /* OSX Test Runner 2 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "OSX Test Runner 2 copy-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/OSX Test Runner 2 copy-Info.plist"; sourceTree = "<absolute>"; };
+		45D7B35B1928F4AF00279F43 /* Controlling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controlling.cpp; sourceTree = "<group>"; };
+		45D7B35C1928F4AF00279F43 /* Controlling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controlling.h; sourceTree = "<group>"; };
+		45D7B3611928F62900279F43 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		45D7B3621928F62900279F43 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		45D7B3641928F65000279F43 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		45D7B487192918AE00279F43 /* iOS Test All Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test All Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45D7B488192918AE00279F43 /* iOS Test Runner 2 copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Test Runner 2 copy2-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/iOS Test Runner 2 copy2-Info.plist"; sourceTree = "<absolute>"; };
+		45D7B49B192918F300279F43 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		45D7B49C192918F300279F43 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +559,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D7B2F61928EB6200279F43 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +567,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D7B2F71928EB6800279F43 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +585,43 @@
 				4584024718DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
 				4584024818DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
 				4584024918DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D7B3061928F27D00279F43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D7B3071928F27D00279F43 /* libEonilAliens.a in Frameworks */,
+				45D7B3081928F27D00279F43 /* GLKit.framework in Frameworks */,
+				45D7B3091928F27D00279F43 /* OpenGL.framework in Frameworks */,
+				45D7B30A1928F27D00279F43 /* QuartzCore.framework in Frameworks */,
+				45D7B30B1928F27D00279F43 /* Cocoa.framework in Frameworks */,
+				45D7B30C1928F27D00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
+				45D7B30D1928F27D00279F43 /* libEonilImprovisationsCommonUtility.a in Frameworks */,
+				45D7B30E1928F27D00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
+				45D7B30F1928F27D00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
+				45D7B3101928F27D00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D7B471192918AE00279F43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D7B472192918AE00279F43 /* libEonilAliens.a in Frameworks */,
+				45D7B473192918AE00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
+				45D7B474192918AE00279F43 /* libEonilImprovisationsCommonUtility.a in Frameworks */,
+				45D7B475192918AE00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
+				45D7B476192918AE00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
+				45D7B477192918AE00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+				45D7B478192918AE00279F43 /* CoreGraphics.framework in Frameworks */,
+				45D7B479192918AE00279F43 /* Foundation.framework in Frameworks */,
+				45D7B47A192918AE00279F43 /* ImageIO.framework in Frameworks */,
+				45D7B47B192918AE00279F43 /* OpenGLES.framework in Frameworks */,
+				45D7B47C192918AE00279F43 /* QuartzCore.framework in Frameworks */,
+				45D7B47D192918AE00279F43 /* GLKit.framework in Frameworks */,
+				45D7B47E192918AE00279F43 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,10 +680,13 @@
 				4525EA8E18B6BD2C00B05C1D /* iOS Test Runner */,
 				453F1DC018C308D3000C25CC /* iOSTestRunner2 */,
 				4584021618DCE7DA00AAE1A2 /* OSX Test Runner 2 */,
+				45D7B31D1928F2C200279F43 /* Targets */,
 				4584020F18DCE7DA00AAE1A2 /* Frameworks */,
 				4577C95618B6A6E90078033C /* Products */,
 				453F1DB218C3088D000C25CC /* iOS Test Runner copy-Info.plist */,
 				4584020918DCE74A00AAE1A2 /* iOS Test Runner 2 copy-Info.plist */,
+				45D7B31C1928F27E00279F43 /* OSX Test Runner 2 copy-Info.plist */,
+				45D7B488192918AE00279F43 /* iOS Test Runner 2 copy2-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -516,6 +710,8 @@
 				453F1D9318C3086F000C25CC /* TestRendering2.h */,
 				4538D52418CD26D200066D7E /* TestRendering3.mm */,
 				4538D52518CD26D200066D7E /* TestRendering3.h */,
+				45D7B2FC1928F21600279F43 /* TestAll.mm */,
+				45D7B2FD1928F21600279F43 /* TestAll.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -539,6 +735,7 @@
 		4529052C18B6A55700FCFCBD /* MediaEngine */ = {
 			isa = PBXGroup;
 			children = (
+				45D7B2AF1928E99C00279F43 /* Controlling */,
 				4529052D18B6A55700FCFCBD /* Application */,
 			);
 			path = MediaEngine;
@@ -631,6 +828,8 @@
 				4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */,
 				453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */,
 				4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */,
+				45D7B31B1928F27D00279F43 /* OSX Test All Runner.app */,
+				45D7B487192918AE00279F43 /* iOS Test All Runner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -690,6 +889,7 @@
 			children = (
 				459BED5C190B6E9600978D8C /* libEonilAliens.a */,
 				459BED5E190B6E9600978D8C /* libEonilAliens.a */,
+				45D7B2D21928E99C00279F43 /* Aliens - Test - OSX */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -698,6 +898,7 @@
 			isa = PBXGroup;
 			children = (
 				459CF51818B8A45D004A5C14 /* CommonUtility.xcodeproj */,
+				45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */,
 				459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */,
 				459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */,
 				459CF50818B8A401004A5C14 /* Graphics.xcodeproj */,
@@ -774,6 +975,92 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		45D7B2AF1928E99C00279F43 /* Controlling */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B35B1928F4AF00279F43 /* Controlling.cpp */,
+				45D7B35C1928F4AF00279F43 /* Controlling.h */,
+				45D7B2E11928E9E500279F43 /* Common.cpp */,
+				45D7B2E21928E9E500279F43 /* Common.h */,
+				45D7B2B21928E99C00279F43 /* iOS */,
+				45D7B2B51928E99C00279F43 /* OSX */,
+				45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */,
+				45D7B2B11928E99C00279F43 /* DraggingGesture.h */,
+				45D7B2B81928E99C00279F43 /* OverlayAdapter.h */,
+				45D7B2B91928E99C00279F43 /* OverlayAdapter.mm */,
+				45D7B2BA1928E99C00279F43 /* Touch.cpp */,
+				45D7B2BB1928E99C00279F43 /* Touch.h */,
+				45D7B2BC1928E99C00279F43 /* TouchGestureCapturing.cpp */,
+				45D7B2BD1928E99C00279F43 /* TouchGestureCapturing.h */,
+			);
+			path = Controlling;
+			sourceTree = "<group>";
+		};
+		45D7B2B21928E99C00279F43 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B2B31928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.h */,
+				45D7B2B41928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		45D7B2B51928E99C00279F43 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B2B61928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.h */,
+				45D7B2B71928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		45D7B2E71928EB5000279F43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B2EE1928EB5000279F43 /* libEonilCommonRealtimeGameAlgorithms.a */,
+				45D7B2F01928EB5000279F43 /* libEonilCommonRealtimeGameAlgorithms.a */,
+				45D7B2F21928EB5000279F43 /* CommonRealtimeGameAlgorithms - Tester - OSX */,
+				45D7B2F41928EB5000279F43 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45D7B31D1928F2C200279F43 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B31E1928F2C200279F43 /* TestAllRunner */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		45D7B31E1928F2C200279F43 /* TestAllRunner */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B49A192918F300279F43 /* iOS */,
+				45D7B3601928F62900279F43 /* OSX */,
+			);
+			path = TestAllRunner;
+			sourceTree = "<group>";
+		};
+		45D7B3601928F62900279F43 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B3611928F62900279F43 /* main.h */,
+				45D7B3621928F62900279F43 /* main.mm */,
+				45D7B3641928F65000279F43 /* MainMenu.xib */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		45D7B49A192918F300279F43 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				45D7B49B192918F300279F43 /* main.h */,
+				45D7B49C192918F300279F43 /* main.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -781,12 +1068,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D7B2CC1928E99C00279F43 /* Touch.h in Headers */,
+				45D7B2C41928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.h in Headers */,
 				450E0D7E18BDE3BC003D51E0 /* Bundle.h in Headers */,
+				45D7B2C01928E99C00279F43 /* DraggingGesture.h in Headers */,
 				450A21EA18FE9F6F009B2E5D /* Platform_OSX.h in Headers */,
 				45485FAD18B97535005981DA /* Stepping.h in Headers */,
+				45D7B2C11928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.h in Headers */,
 				45C49E9118B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h in Headers */,
 				455D706C18CE1E6700040198 /* Platform.h in Headers */,
+				45D7B2E51928E9E500279F43 /* Common.h in Headers */,
 				457A6C1E18C985DD007BD4D6 /* Application.h in Headers */,
+				45D7B2CF1928E99C00279F43 /* TouchGestureCapturing.h in Headers */,
+				45D7B3001928F21600279F43 /* TestAll.h in Headers */,
+				45D7B2C71928E99C00279F43 /* OverlayAdapter.h in Headers */,
+				45D7B35F1928F4AF00279F43 /* Controlling.h in Headers */,
 				45C49E9918B75A6100544108 /* TestRendering1.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +1153,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				45D7B2FB1928EB7400279F43 /* PBXTargetDependency */,
 			);
 			name = "OSX Static Library";
 			productName = "OSX Static Library";
@@ -874,6 +1171,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				45D7B2F91928EB7000279F43 /* PBXTargetDependency */,
 			);
 			name = "iOS Static Library";
 			productName = "iOS Static Library";
@@ -896,6 +1194,42 @@
 			name = "OSX Test Runner 2";
 			productName = "OSX Test Runner 2";
 			productReference = 4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45D7B3011928F27D00279F43 /* Test All Runner - OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45D7B3181928F27D00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - OSX" */;
+			buildPhases = (
+				45D7B3041928F27D00279F43 /* Sources */,
+				45D7B3061928F27D00279F43 /* Frameworks */,
+				45D7B3111928F27D00279F43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45D7B3021928F27D00279F43 /* PBXTargetDependency */,
+			);
+			name = "Test All Runner - OSX";
+			productName = "OSX Test Runner 2";
+			productReference = 45D7B31B1928F27D00279F43 /* OSX Test All Runner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45D7B46C192918AE00279F43 /* Test All Runner - iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45D7B484192918AE00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - iOS" */;
+			buildPhases = (
+				45D7B46F192918AE00279F43 /* Sources */,
+				45D7B471192918AE00279F43 /* Frameworks */,
+				45D7B47F192918AE00279F43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45D7B46D192918AE00279F43 /* PBXTargetDependency */,
+			);
+			name = "Test All Runner - iOS";
+			productName = iOSTestRunner2;
+			productReference = 45D7B487192918AE00279F43 /* iOS Test All Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -923,6 +1257,10 @@
 					ProjectRef = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
 				},
 				{
+					ProductGroup = 45D7B2E71928EB5000279F43 /* Products */;
+					ProjectRef = 45D7B2E61928EB5000279F43 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+				},
+				{
 					ProductGroup = 459CF51918B8A45D004A5C14 /* Products */;
 					ProjectRef = 459CF51818B8A45D004A5C14 /* CommonUtility.xcodeproj */;
 				},
@@ -947,6 +1285,8 @@
 				4525EA8918B6BD2C00B05C1D /* iOS Test Runner 1 */,
 				4584020D18DCE7DA00AAE1A2 /* OSX Test Runner 2 */,
 				453F1DB718C308D3000C25CC /* iOS Test Runner 2 */,
+				45D7B3011928F27D00279F43 /* Test All Runner - OSX */,
+				45D7B46C192918AE00279F43 /* Test All Runner - iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -1064,6 +1404,41 @@
 			remoteRef = 459CF52218B8A45D004A5C14 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		45D7B2D21928E99C00279F43 /* Aliens - Test - OSX */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Aliens - Test - OSX";
+			remoteRef = 45D7B2D11928E99C00279F43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D7B2EE1928EB5000279F43 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilCommonRealtimeGameAlgorithms.a;
+			remoteRef = 45D7B2ED1928EB5000279F43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D7B2F01928EB5000279F43 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilCommonRealtimeGameAlgorithms.a;
+			remoteRef = 45D7B2EF1928EB5000279F43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D7B2F21928EB5000279F43 /* CommonRealtimeGameAlgorithms - Tester - OSX */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "CommonRealtimeGameAlgorithms - Tester - OSX";
+			remoteRef = 45D7B2F11928EB5000279F43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D7B2F41928EB5000279F43 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "CommonRealtimeGameAlgorithms - Tester - iOS.app";
+			remoteRef = 45D7B2F31928EB5000279F43 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1115,6 +1490,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45D7B3111928F27D00279F43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D7B3161928F27D00279F43 /* PIA14415_clip_1024.png in Resources */,
+				45D7B3171928F27D00279F43 /* TEX_TEST.png in Resources */,
+				45D7B3651928F65000279F43 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D7B47F192918AE00279F43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D7B480192918AE00279F43 /* InfoPlist.strings in Resources */,
+				45D7B481192918AE00279F43 /* Images.xcassets in Resources */,
+				45D7B482192918AE00279F43 /* PIA14415_clip_1024.png in Resources */,
+				45D7B483192918AE00279F43 /* TEX_TEST.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1155,14 +1551,23 @@
 				4577C99118B6ABC80078033C /* run.cpp in Sources */,
 				457A6C1C18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */,
+				45D7B35D1928F4AF00279F43 /* Controlling.cpp in Sources */,
 				450E0D7C18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
 				45C49E9218B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
 				4577C99518B6ABCB0078033C /* ApplicationController.mm in Sources */,
+				45D7B2E31928E9E500279F43 /* Common.cpp in Sources */,
+				45D7B2BE1928E99C00279F43 /* DraggingGesture.cpp in Sources */,
 				4577C99418B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
 				4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
 				455D707A18CE1EAC00040198 /* Platform.cpp in Sources */,
+				45D7B2CD1928E99C00279F43 /* TouchGestureCapturing.cpp in Sources */,
+				45D7B2C21928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm in Sources */,
+				45D7B2C51928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm in Sources */,
+				45D7B2CA1928E99C00279F43 /* Touch.cpp in Sources */,
+				45D7B2FE1928F21600279F43 /* TestAll.mm in Sources */,
 				45485FAB18B97535005981DA /* Stepping.cpp in Sources */,
+				45D7B2C81928E99C00279F43 /* OverlayAdapter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1170,18 +1575,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D7B2C91928E99C00279F43 /* OverlayAdapter.mm in Sources */,
 				455D707B18CE1EAC00040198 /* Platform.cpp in Sources */,
+				45D7B2BF1928E99C00279F43 /* DraggingGesture.cpp in Sources */,
+				45D7B35E1928F4AF00279F43 /* Controlling.cpp in Sources */,
 				4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */,
 				4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
+				45D7B2E41928E9E500279F43 /* Common.cpp in Sources */,
+				45D7B2CE1928E99C00279F43 /* TouchGestureCapturing.cpp in Sources */,
 				450A21E918FE9F6F009B2E5D /* Platform_OSX.mm in Sources */,
 				455D704C18CE102C00040198 /* Platform_iOS.mm in Sources */,
 				457A6C1D18C985DD007BD4D6 /* Application.cpp in Sources */,
 				4577C99018B6ABC80078033C /* run.cpp in Sources */,
 				450E0D7D18BDE3BC003D51E0 /* Bundle.cpp in Sources */,
 				45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */,
+				45D7B2CB1928E99C00279F43 /* Touch.cpp in Sources */,
 				4577C99218B6ABCB0078033C /* ApplicationController.mm in Sources */,
+				45D7B2FF1928F21600279F43 /* TestAll.mm in Sources */,
 				45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */,
 				4577C99318B6ABCB0078033C /* ApplicationController.mm in Sources */,
+				45D7B2C31928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm in Sources */,
+				45D7B2C61928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm in Sources */,
 				4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
 				45485FAC18B97535005981DA /* Stepping.cpp in Sources */,
 			);
@@ -1195,6 +1609,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45D7B3041928F27D00279F43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D7B3631928F62900279F43 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45D7B46F192918AE00279F43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45D7B49D192918F300279F43 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1202,6 +1632,26 @@
 			isa = PBXTargetDependency;
 			name = "Aliens - OSX";
 			targetProxy = 459BED6E190B6EFE00978D8C /* PBXContainerItemProxy */;
+		};
+		45D7B2F91928EB7000279F43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CommonRealtimeGameAlgorithms - iOS";
+			targetProxy = 45D7B2F81928EB7000279F43 /* PBXContainerItemProxy */;
+		};
+		45D7B2FB1928EB7400279F43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CommonRealtimeGameAlgorithms - OSX";
+			targetProxy = 45D7B2FA1928EB7400279F43 /* PBXContainerItemProxy */;
+		};
+		45D7B3021928F27D00279F43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - OSX";
+			targetProxy = 45D7B3031928F27D00279F43 /* PBXContainerItemProxy */;
+		};
+		45D7B46D192918AE00279F43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - iOS";
+			targetProxy = 45D7B46E192918AE00279F43 /* PBXContainerItemProxy */;
 		};
 		45EFC6BC190B78860066E246 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1456,6 +1906,7 @@
 					"\"$SRCROOT\"/../Graphics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$(SRCROOT)\"/../../Aliens",
+					"\"$(SRCROOT)\"/../../CommonRealtimeGameAlgorithms",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1477,6 +1928,7 @@
 					"\"$SRCROOT\"/../Graphics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$(SRCROOT)\"/../../Aliens",
+					"\"$(SRCROOT)\"/../../CommonRealtimeGameAlgorithms",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1791,6 +2243,176 @@
 			};
 			name = Release;
 		};
+		45D7B3191928F27D00279F43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OSX Test Runner 2/OSX Test Runner 2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "OSX Test Runner 2 copy-Info.plist";
+				PRODUCT_NAME = "OSX Test All Runner";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		45D7B31A1928F27D00279F43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OSX Test Runner 2/OSX Test Runner 2-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "OSX Test Runner 2 copy-Info.plist";
+				PRODUCT_NAME = "OSX Test All Runner";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		45D7B485192918AE00279F43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOSTestRunner2/iOSTestRunner2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "iOS Test Runner 2 copy2-Info.plist";
+				PRODUCT_NAME = "iOS Test All Runner";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		45D7B486192918AE00279F43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOSTestRunner2/iOSTestRunner2-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "iOS Test Runner 2 copy2-Info.plist";
+				PRODUCT_NAME = "iOS Test All Runner";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1853,6 +2475,24 @@
 			buildConfigurations = (
 				4584023D18DCE7DB00AAE1A2 /* Debug */,
 				4584023E18DCE7DB00AAE1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45D7B3181928F27D00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45D7B3191928F27D00279F43 /* Debug */,
+				45D7B31A1928F27D00279F43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45D7B484192918AE00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45D7B485192918AE00279F43 /* Debug */,
+				45D7B486192918AE00279F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

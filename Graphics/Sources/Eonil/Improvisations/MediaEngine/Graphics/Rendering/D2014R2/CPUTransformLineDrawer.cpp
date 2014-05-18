@@ -141,7 +141,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			auto CPUTransformLineDrawer::
-			drawInstances(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformLineDrawer::Instance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &worldToScreenTransform, DisplayScreenFrame const& frame) const -> void
+			drawInstances(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformLineDrawer::Instance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 &worldToScreenTransform) const -> void
 			{
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() >0, "You must pass at least one or more instances. No instance cannot be rendered.");
 				for (auto const& i: instances)

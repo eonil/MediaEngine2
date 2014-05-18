@@ -146,8 +146,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		{
 			return	EE(GLKMatrix4Multiply(GLK(*this), GLK(other)));
 		}
-
 		
+		template<Size C, typename M> auto
+		SimpleMatrixAbstraction<C, M>::operator*(const S& s) const -> M const
+		{
+			return	EE(CONV16(*this).GLM * s);
+		}
 		
 //			template<Size C, typename M> auto
 //			SimpleMatrixAbstraction<C, M>::inversion(bool* isInvertible) const -> M const

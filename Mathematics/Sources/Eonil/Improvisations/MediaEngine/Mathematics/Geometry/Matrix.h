@@ -59,12 +59,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 		struct
 		SimpleMatrixAbstraction : private MatrixState<C>
 		{
+			using	S	=	Scalar;
+			
 //				bool const	operator==(M const& other) const;
 //				bool const	operator!=(M const& other) const;
 			
 			M const		operator+(M const& other) const;
 			M const		operator-(M const& other) const;
 			M const		operator*(M const& other) const;
+
+			M const		operator*(S const&) const;
 			
 //				M const		inversion(bool* isInvertible = nullptr) const;		//!	@todo	Implement determinant parameter.
 			M const		inversion() const;

@@ -184,7 +184,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					/*!
 					 @deprecated	DO NOT USE.
 					 */
-					EONIL_MARK_FUNCTION_DEPRECATED static auto		typicalTransparencyAlphaBlending() -> PixelBlending;
+					EONIL_DEPRECATED_FUNCTION static auto		typicalTransparencyAlphaBlending() -> PixelBlending;
 				};
 				
 				

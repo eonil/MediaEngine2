@@ -17,9 +17,6 @@
       location = "group:USER MANUAL">
    </FileRef>
    <FileRef
-      location = "group:USER MANUAL - NAMESPACE SUMMARY">
-   </FileRef>
-   <FileRef
       location = "group:../CommonUtility/CommonUtility.xcodeproj">
    </FileRef>
    <FileRef

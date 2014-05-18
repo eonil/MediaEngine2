@@ -148,7 +148,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			auto CPUTransformSpriteDrawer::
-			drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void
+			drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform) const -> void
 			{
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must push some instances. 0 instance is not allowed.");
 				
@@ -221,6 +221,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				}
 				M().unuseProgram();
 			}
+			auto CPUTransformSpriteDrawer::
+			drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void
+			{
+				drawInstances(colorTexture, samplingRegion, instances, worldToScreenTransform);
+			}
+			
 			auto CPUTransformSpriteDrawer::
 			drawInstances(PlanarTexture const& colorTexture, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void
 			{

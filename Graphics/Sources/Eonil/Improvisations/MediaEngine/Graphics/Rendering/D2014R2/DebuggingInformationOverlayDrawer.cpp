@@ -70,7 +70,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				lines.push_back(LINE{{+y_max, y_axis_color}, {-y_max, y_axis_color}});
 				lines.push_back(LINE{{+z_max, z_axis_color}, {-z_max, z_axis_color}});
 				
-				_line_drawer.drawInstances(lines, transform, frame);
+				_line_drawer.drawInstances(lines, transform);
 			}
 			
 			auto DebuggingInformationOverlayDrawer::
@@ -100,7 +100,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					{rb, lb},
 				};
 				
-				_line_drawer.drawInstances(ls, transform, frame);
+				_line_drawer.drawInstances(ls, transform);
 			}
 			
 			auto DebuggingInformationOverlayDrawer::
@@ -135,7 +135,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					{rbf, lbf},
 				};
 				
-				_line_drawer.drawInstances(ls, transform, frame);
+				_line_drawer.drawInstances(ls, transform);
 			}
 			
 			

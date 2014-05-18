@@ -63,6 +63,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				/*!
 				 Draws 2x2 sized (-1,-1) ~ (+1,+1) instances using part of a texture.
 				 
+				 @discussion
+				 Drawn texture will fully fill the screen if transform is identity.
+				 
 				 @param	samplingRegion
 				 Measured in texture UV space. (0,0) is left-bottom origin point, and
 				 (+1,+1) is right-top point. This library is based on OpenGL coordination
@@ -78,10 +81,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 Take care that final destination space is NDC, not RSS.
 				 
 				 */
+				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform) const -> void;
 				auto	drawInstances(PlanarTexture const& colorTexture, Bounds2 const& samplingRegion, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 				
 				/*!
-				 Draws 1x1 sized  instances using whole texture region.
+				 Draws 2x2 sized  instances using whole texture region.
 				 */
 				auto	drawInstances(PlanarTexture const& colorTexture, vec<FreeTransformInstance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
 

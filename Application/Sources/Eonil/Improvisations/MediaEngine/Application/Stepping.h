@@ -6,8 +6,7 @@
 //
 //
 
-#ifndef __Application__Stepping__
-#define __Application__Stepping__
+#pragma once
 
 #include <Eonil/Improvisations/MediaEngine/Foundation/Foundation.h>
 #include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
@@ -28,7 +27,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 	
 	
 	/*!
+	 Temporal environment context information.
 	 You can access all the contextual informations via this object.
+	 
+	 @discussion
+	 This is temporal object. You shouldn't store or cache this object
+	 or any informations retrieved from this object.
 	 */
 	class
 	Stepping
@@ -51,4 +55,4 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 }}}}
 
 
-#endif /* defined(__Application__Stepping__) */
+

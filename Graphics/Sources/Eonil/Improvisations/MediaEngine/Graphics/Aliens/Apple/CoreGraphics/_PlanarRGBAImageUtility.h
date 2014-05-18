@@ -111,7 +111,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					likes ARGB(?, not sure) image.
 					The optimal format is not supported currently, but will be added later.
 		 */
-		EONIL_MARK_FUNCTION_DEPRECATED
+		EONIL_DEPRECATED_FUNCTION
 		auto		NameByCreatingTextureFromCGImage(CGImageRef const image, bool const flipInY) -> GLuint const;
 		
 

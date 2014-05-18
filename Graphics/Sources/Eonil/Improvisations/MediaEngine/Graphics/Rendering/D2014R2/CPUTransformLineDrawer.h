@@ -67,7 +67,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				 This must be a whole transform from world to final screen (NDC).
 				 Take care that final destination space is NDC, not RSS.
 				 */
-				auto	drawInstances(vec<Instance> const& instances, Matrix4 const& worldToScreenTransform, DisplayScreenFrame const& frame) const -> void;
+				auto	drawInstances(vec<Instance> const& instances, Matrix4 const& worldToScreenTransform) const -> void;
 			};
 			
 			

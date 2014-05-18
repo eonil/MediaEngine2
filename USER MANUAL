@@ -111,7 +111,7 @@ application even loop for each platforms. Anyway the implementation of
 customize them, then fork the `Application` features.
 
 
-*	Currently platform-specific features are provided via  `Platform` class which
+*	Currently platform-specific features are provided via `Platform` class which
 	is defined specifically for each platforms. See the class reference for details.
 
 
@@ -186,6 +186,150 @@ This doesn't mean all code is covered by test.
 GPU can behave differently by platforms, drivers and vendors.
 I tried to avoid any possible issues but still you may have
 some troubles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Appendex 1 - Namespace Summary
+------------------------------
+It's is required to understand the role of each classes and how 
+they are organized in namespaces.
+
+-	`Eonil::Improvisations::MediaEngine::Graphics`
+
+	Contains main high-level building blocks.
+	Renderer, transform, camera and etc.
+	These blocks may will move into proper namespace.
+	
+	This is high level framework which uses `Server` objects.
+	Also, performs many optimizations silently under the hood.
+
+-	`Eonil::Improvisations::MediaEngine::Graphics::Value`
+
+	Contains commonly used value types.
+
+-	`Eonil::Improvisations::MediaEngine::Graphics::Stub`
+
+	Contains lowest-level OpenGL ES 2.0 stub functions.
+	These stubs are set to detect all the errors at lowest level as much as possible.
+	Performs parameter assertion, state based assertion. GL error assertion.
+	All the assertions can be disabled by compiler flag.
+	
+	This is same level of bare bone precedural OpenGL API.
+
+-	`Eonil::Improvisations::MediaEngine::Graphics::Server`
+
+	Proxies to server-side graphics object.
+	*Server* in OpenGL means GPU machine.
+	These proxies are reference counted for optimization.
+	
+	These proxy objects effectlvely abstracts OpenGL API in pretty object-oriented manner.
+	And because this is mostly direct abstraction, there's no hidden behavior. (such as 
+	state shadowing) Every call will be executed without any frills. Primarily desigend 
+	to provide very thin and honest object-oriented style abstraction layer.
+	
+	No resource proxy object will employ extra automatic ownership management. You need 
+	to explicitly own any resources, and just pass them around the API. No shared ownership
+	implied.
+
+-	`Eonil::Improvisations::MediaEngine::Graphics::Resource`
+
+	Client-side graphics data object.
+	Graphics data usually need to be re-used, these are all shared object by
+	reference-counting.
+
+-	`Eonil::Improvisations::MediaEngine::Graphics::Transcoding`
+
+	This is collection of editor/encoder/decoder. Because graphcis data in OpenGL are
+	all exist highly optimized form, it's not easy to use in editor or for any other 
+	purpose. This mades those works more easier.
+	
+	This also contains classes for importing/exporting of resources.
+	
+-	`Eonil::Improvisations::MediaEngine::Graphics::Form`
+
+	Form is actual representation of specific shape in a space. Shapes are usually 
+	defined by combining several resources which can be passed GPU part.
+
+	Scene description is built by combining these forms.
+	Forms are all independent values, but may share some static data over instances.
+	(static data is usually `Resource`s).
+
+	Renderer will finally render these forms.
+
+
+-	`Eonil::Improvisations::MediaEngine::Graphics::Aliens`
+
+	Provides features depending on external code - including platform native features.
+	Currently, these features are included in this namespace.
+	
+		BulletPhysics (Multi-platform)
+		CGImage (Apple/CoreGraphics)
+		
+	It is very hard to implement all the required features purely platform-agnostic ways.
+	We need to adapt many platform specific, or external libraries, and this namespace
+	is a space to collect them.
+	
+	It's very hard, and usually impossible to determine thread-safety and re-entrancy
+	of alien code. So all the features in this namespace are thread-unsafe, non-reentrant.
+	Also you should call them only from main thread. You need to manage any thread safety
+	mechanism yourself.
+
+	This library also contains some Objective-C classes for extra feature.
+
+
+
+-	`Eonil::Improvisations::MediaEngine::Application`
+
+	Contains convenient simple application framework.
+	Also contains user-control responding features in `Eonil::Improvisations::MediaEngine::Controlling`
+	namespace.
+
+
+
+
+
+
+
+
+
 
 
 
