@@ -6,47 +6,44 @@
 //
 //
 
-#ifndef __Mathematics__Common__
-#define __Mathematics__Common__
+#pragma once
 
 #include	<Eonil/Improvisations/CommonUtility/CommonUtility.h>
 #include	<Eonil/Improvisations/MediaEngine/Foundation/Foundation.h>
 
-#if	EE_LANG_CPP
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUG_MODE					EONIL_MEDIA_ENGINE_DEBUG_MODE
+#define	EONIL_COMMON_REALTIME_GAME_ALGORITHMS_DEBUG_MODE			EONIL_MEDIA_ENGINE_DEBUG_MODE
 
-using		namespace Eonil::Improvisations::CommonUtility;
+#include	<Eonil/CommonRealtimeGameAlgorithms.h>
+
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_NAMESPACE_BEGIN				namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics {
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_NAMESPACE_END				} } } }
+
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_BEGIN	namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics { namespace Debugging {
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_END		} } } } }
+
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN		namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics { namespace Geometry {
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END		} } } } }
 
 
-//extern "C"
-//{
-//	typedef	float	EEScalar;
-//}
+EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
+using namespace	Eonil::Improvisations::CommonUtility;
+using namespace	Eonil::Improvisations::MediaEngine::Foundation;
+using namespace	Eonil::Improvisations::MediaEngine::Foundation::D2014R1;
+/*!
+ Currently, the type of scalar is defined as 32-bit float,
+ but it's not fixed to 32-bit float, and can be changed later.
+ Do not assume `Scalar` to be `float_t`, and always use `Scalar`.
+ */
+using	Scalar	=	float_t;
+using	Vector1	=	Scalar;
+struct	Vector2;
+struct	Vector3;
+struct	Vector4;
+struct	Quaternion;
+struct	Matrix4;
+EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics {
-	
-	namespace
-	Value
-	{
-		/*!
-		 Currently, the type of scalar is defined as 32-bit float, 
-		 but it's not fixed to 32-bit float, and can be changed later.
-		 Do not rely on `float_t` for `Scalar` type, and always use 
-		 `Scalar` type.
-		 */
-		using	Scalar	=	float_t;
-		using	Vector1	=	Scalar;
-		
-		struct	Vector2;
-		struct	Vector3;
-		struct	Vector4;
-		
-		struct	Matrix4;
-	}
-	
-	using namespace	Eonil::Improvisations::MediaEngine::Foundation;
-	using namespace	Eonil::Improvisations::MediaEngine::Foundation::D2014R1;
-	
-}}}}
 
 
 
@@ -67,6 +64,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace M
 
 
 
-#endif
 
-#endif /* defined(__Mathematics__Common__) */
+
+

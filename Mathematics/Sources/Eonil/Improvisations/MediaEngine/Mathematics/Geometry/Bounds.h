@@ -6,9 +6,5 @@
 //
 //
 
-#ifndef __Mathematics__Bounds__
-#define __Mathematics__Bounds__
-
+#pragma once
 #include "Bounds2.h"
-
-#endif /* defined(__Mathematics__Bounds__) */
