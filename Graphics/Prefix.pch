@@ -2,8 +2,12 @@
 // Prefix header for all source files of the 'EonilGL' target in the 'EonilGL' project
 //
 
+/*
+ This exists only to accelerate compilation.
+ Do not rely on prefix header not to write include code.
+ */
 
 #ifdef		__cplusplus
-#include	"Sources/Eonil/Improvisations/MediaEngine/Graphics/Common.h"
+#include	"Sources/Eonil/MediaEngine/Graphics/Common.h"
 #endif
 

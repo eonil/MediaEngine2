@@ -10,15 +10,15 @@
 
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
+#include <Eonil/MediaEngine/Graphics.h>
+#include <Eonil/MediaEngine/Graphics_DEV.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Stub;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Server;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Resource;
+//using namespace Eonil::Improvisations::MediaEngine::Graphics::Resources;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Transcoding;
 
 
@@ -100,7 +100,7 @@ namespace
 	MakeTestIndexesFoSquare()
 	{
 		std::vector<uint16_t>	idxs;
-		idxs.push_back(33333);
+		idxs.push_back(33333);			//	Wrong value at first intentionally for test...
 		idxs.push_back(0);
 		idxs.push_back(1);
 		idxs.push_back(2);
@@ -143,11 +143,7 @@ TestRenderingWithOnlyVertexesInClientMemory()
 	//	Transfer data & program.
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	
-	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
-	
-	VertexShader			vp	{TestVertexShaderProgram, chmap};
+	VertexShader			vp	{TestVertexShaderProgram};
 	FragmentShader			fp	{TestFragmentShaderProgram};
 	Program					p	{vp, fp};
 	
@@ -166,16 +162,16 @@ TestRenderingWithOnlyVertexesInClientMemory()
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
-	Machine::machine().setViewport(Bounds2(0,0,10,10));
-	Machine::machine().vertexAttributeChannelAtIndex(0).linkWithClientMemory(&vs[0], f0);
-	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithClientMemory(&vs[0], f1);
-	Machine::machine().executeBlockWithProgram(p,[vs]
+	Machine::current().setViewport(Bounds2(0,0,10,10));
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->linkWithClientMemory(&vs[0], f0);
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->linkWithClientMemory(&vs[0], f1);
+	Machine::current().executeBlockWithProgram(p,[vs]
 	{
-		Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
+		Machine::current().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 	});
-	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
-	Machine::machine().unsetViewport();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->unlink();
+	Machine::current().unsetViewport();
 }
 
 
@@ -197,16 +193,12 @@ TestRenderingWithOnlyVertexesInServerMemory()
 	//	Transfer data & program.
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	
-	VertexShader::NameChannelMap chmap;
-	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
-	
-	VertexShader const				vp	{TestVertexShaderProgram, chmap};
+	VertexShader const				vp	{TestVertexShaderProgram};
 	FragmentShader const			fp	{TestFragmentShaderProgram};
 	Program							p	{vp, fp};
 	
 	//	Perform rendering.
-	ArrayBuffer		vb		{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&vs[0], sizeof(TestVertex) * vs.size())};
+	ArrayBuffer		vb		=	{{vs.data(), vs.data()+vs.size()}};
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
 	f0.dataOffset			=	0;
@@ -221,16 +213,16 @@ TestRenderingWithOnlyVertexesInServerMemory()
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
-	Machine::machine().setViewport(Bounds2(20,0,20+10,10));
-	Machine::machine().vertexAttributeChannelAtIndex(0).linkWithServerBuffer(vb, f0);
-	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithServerBuffer(vb, f1);
-	Machine::machine().executeBlockWithProgram(p,[vs]
+	Machine::current().setViewport(Bounds2(20,0,20+10,10));
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->linkWithServerBuffer(vb, f0);
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->linkWithServerBuffer(vb, f1);
+	Machine::current().executeBlockWithProgram(p,[vs]
 	{
-		Machine::machine().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
+		Machine::current().drawArrays(DrawingMode::TRIANGLE_STRIP, 0, vs.size());
 	});
-	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
-	Machine::machine().unsetViewport();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->unlink();
+	Machine::current().unsetViewport();
 	
 }
 
@@ -265,12 +257,8 @@ TestRenderingWithVertexesAndIndexesInClientMemory()
 	//	Transfer data & program.
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
-	
-	
-	VertexShader::NameChannelMap chmap;
-	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
-	VertexShader			vp	{TestVertexShaderProgram, chmap};
+		
+	VertexShader			vp	{TestVertexShaderProgram};
 	FragmentShader			fp	{TestFragmentShaderProgram};
 	Program					p	{vp, fp};
 	
@@ -289,18 +277,18 @@ TestRenderingWithVertexesAndIndexesInClientMemory()
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
-	Machine::machine().setViewport(Bounds2(40,0,40+10,10));
-	Machine::machine().vertexAttributeChannelAtIndex(0).linkWithClientMemory(&vs[0], f0);
-	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithClientMemory(&vs[0], f1);
-	Machine::machine().indexUnitChannel().linkWithClientMemory(Legacy2013SharedMemory::Factory::memoryByCopyingRange(&is[0], sizeof(uint16_t) * is.size()), IndexUnitChannel::UnitType::UINT16);
-	Machine::machine().executeBlockWithProgram(p,[vs, is]
+	Machine::current().setViewport(Bounds2(40,0,40+10,10));
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->linkWithClientMemory(&vs[0], f0);
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->linkWithClientMemory(&vs[0], f1);
+	Machine::current().indexUnitChannel().linkWithClientMemory({is.data(), is.data()+is.size()}, IndexUnitChannel::UnitType::UINT16);
+	Machine::current().executeBlockWithProgram(p,[vs, is]
 	{
-		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::current().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);		//	Starts from second index intentionally for test...
 	});
-	Machine::machine().indexUnitChannel().unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
-	Machine::machine().unsetViewport();
+	Machine::current().indexUnitChannel().unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->unlink();
+	Machine::current().unsetViewport();
 }
 
 
@@ -320,14 +308,12 @@ TestRenderingWithVertexesAndIndexesInServerMemory()
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
-	VertexShader::NameChannelMap chmap;
-	chmap.insert({"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert({"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
-	Program							p	{VertexShader(TestVertexShaderProgram, chmap), FragmentShader(TestFragmentShaderProgram)};
+	Program							p	{VertexShader(TestVertexShaderProgram), FragmentShader(TestFragmentShaderProgram)};
 	
 	//	Perform rendering.
-	ArrayBuffer			vb	{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&vs[0], sizeof(TestVertex) * vs.size())};
-	ElementArrayBuffer	ib	{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&is[0], sizeof(uint16_t) * is.size())};
+	ArrayBuffer			vb		=	{{vs.data(), vs.data()+vs.size()}};
+//	ElementArrayBuffer	ib	{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&is[0], sizeof(uint16_t) * is.size())};
+	ElementArrayBuffer	ib		=	{{is.data(), is.data()+is.size()}};
 	
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
@@ -343,18 +329,18 @@ TestRenderingWithVertexesAndIndexesInServerMemory()
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
-	Machine::machine().setViewport(Bounds2(60,0,60+10,10));
-	Machine::machine().vertexAttributeChannelAtIndex(0).linkWithServerBuffer(vb, f0);
-	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithServerBuffer(vb, f1);
-	Machine::machine().indexUnitChannel().linkWithServerBuffer(ib, 0, IndexUnitChannel::UnitType::CODE::UINT16);
-	Machine::machine().executeBlockWithProgram(p,[vs,is]
+	Machine::current().setViewport(Bounds2(60,0,60+10,10));
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->linkWithServerBuffer(vb, f0);
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->linkWithServerBuffer(vb, f1);
+	Machine::current().indexUnitChannel().linkWithServerBuffer(ib, 0, IndexUnitChannel::UnitType::CODE::UINT16);
+	Machine::current().executeBlockWithProgram(p,[vs,is]
 	{
-		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::current().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);		//	Starts from second index intentionally for test...
 	});
-	Machine::machine().indexUnitChannel().unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
-	Machine::machine().unsetViewport();
+	Machine::current().indexUnitChannel().unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->unlink();
+	Machine::current().unsetViewport();
 	
 	
 }

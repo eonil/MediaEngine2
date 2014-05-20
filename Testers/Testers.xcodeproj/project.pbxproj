@@ -31,6 +31,10 @@
 		459BEA5217715DD100CA6A24 /* AATestRendering0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEA4917715DD100CA6A24 /* AATestRendering0.cpp */; };
 		459BEA5317715DD100CA6A24 /* AATestRendering1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEA4B17715DD100CA6A24 /* AATestRendering1.cpp */; };
 		459BEA5417715DD100CA6A24 /* AATestRendering1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459BEA4B17715DD100CA6A24 /* AATestRendering1.cpp */; };
+		45C6C5B9192B998E00649FB9 /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C6C5B6192B998E00649FB9 /* libFoundation_LEGACY.a */; };
+		45C6C5C5192B999300649FB9 /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C6C5B6192B998E00649FB9 /* libFoundation_LEGACY.a */; };
+		45C6C5C7192B999E00649FB9 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C6C5C6192B999E00649FB9 /* libEonilCommonRealtimeGameAlgorithms.a */; };
+		45C6C5C8192B99A400649FB9 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C6C5C6192B999E00649FB9 /* libEonilCommonRealtimeGameAlgorithms.a */; };
 		45E494CE18B1791400195E5F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E494CD18B1791400195E5F /* ImageIO.framework */; };
 		45E494DC18B1791B00195E5F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E494DB18B1791B00195E5F /* ImageIO.framework */; };
 		45E7052317956E9900DA4D8B /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45E7052217956E9900DA4D8B /* 02.png */; };
@@ -63,6 +67,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		45478EC61929C89A009E72B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D13018A78E1900F05D97 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4561326A18E238F30057EB03;
+			remoteInfo = "GraphicsLegacyFeatures - OSX Static Library";
+		};
+		45478EC81929C89A009E72B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D13018A78E1900F05D97 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4561327218E239070057EB03;
+			remoteInfo = "GraphicsLegacyFeatures - iOS Static Library";
+		};
+		45C6C5B5192B998E00649FB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D11918A78E1200F05D97 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CE96192B462100F3FC8B;
+			remoteInfo = "Foundation_LEGACY - iOS";
+		};
+		45C6C5B7192B998E00649FB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45F3D11918A78E1200F05D97 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CEBE192B463500F3FC8B;
+			remoteInfo = "Foundation_LEGACY - OSX";
+		};
 		45F3D11118A78E0500F05D97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45F3D0F618A78D9C00F05D97 /* CommonUtility.xcodeproj */;
@@ -181,6 +213,7 @@
 		459BEA4A17715DD100CA6A24 /* AATestRendering0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATestRendering0.h; sourceTree = "<group>"; };
 		459BEA4B17715DD100CA6A24 /* AATestRendering1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AATestRendering1.cpp; sourceTree = "<group>"; };
 		459BEA4C17715DD100CA6A24 /* AATestRendering1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATestRendering1.h; sourceTree = "<group>"; };
+		45C6C5C6192B999E00649FB9 /* libEonilCommonRealtimeGameAlgorithms.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEonilCommonRealtimeGameAlgorithms.a; path = "../../../../../../Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug/libEonilCommonRealtimeGameAlgorithms.a"; sourceTree = "<group>"; };
 		45E494CD18B1791400195E5F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		45E494DB18B1791B00195E5F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		45E7052217956E9900DA4D8B /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
@@ -214,6 +247,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C6C5C7192B999E00649FB9 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
+				45C6C5C5192B999300649FB9 /* libFoundation_LEGACY.a in Frameworks */,
 				45F3D15F18A7A31900F05D97 /* QuartzCore.framework in Frameworks */,
 				45F3D15918A7A2DF00F05D97 /* CoreGraphics.framework in Frameworks */,
 				45F3D15D18A7A2FD00F05D97 /* UIKit.framework in Frameworks */,
@@ -231,6 +266,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C6C5C8192B99A400649FB9 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
+				45C6C5B9192B998E00649FB9 /* libFoundation_LEGACY.a in Frameworks */,
 				45F3D15718A790B300F05D97 /* Cocoa.framework in Frameworks */,
 				45F3D14D18A78E7A00F05D97 /* GLKit.framework in Frameworks */,
 				45E494CE18B1791400195E5F /* ImageIO.framework in Frameworks */,
@@ -247,6 +284,7 @@
 		45435E4F172F37E8008BD9D5 = {
 			isa = PBXGroup;
 			children = (
+				45C6C5C6192B999E00649FB9 /* libEonilCommonRealtimeGameAlgorithms.a */,
 				45E494DB18B1791B00195E5F /* ImageIO.framework */,
 				45E494CD18B1791400195E5F /* ImageIO.framework */,
 				45F3D10518A78DBE00F05D97 /* Dependencies */,
@@ -384,9 +422,11 @@
 		45F3D12518A78E1500F05D97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				45F3D12F18A78E1500F05D97 /* OSX Test */,
 				45F3D12B18A78E1500F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */,
 				45F3D12D18A78E1500F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				45F3D12F18A78E1500F05D97 /* OSX Test */,
+				45C6C5B6192B998E00649FB9 /* libFoundation_LEGACY.a */,
+				45C6C5B8192B998E00649FB9 /* libFoundation_LEGACY.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -396,6 +436,8 @@
 			children = (
 				45F3D13618A78E1A00F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */,
 				45F3D13818A78E1A00F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */,
+				45478EC71929C89A009E72B8 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
+				45478EC91929C89A009E72B8 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -561,6 +603,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		45478EC71929C89A009E72B8 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
+			remoteRef = 45478EC61929C89A009E72B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45478EC91929C89A009E72B8 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
+			remoteRef = 45478EC81929C89A009E72B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45C6C5B6192B998E00649FB9 /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 45C6C5B5192B998E00649FB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45C6C5B8192B998E00649FB9 /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 45C6C5B7192B998E00649FB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		45F3D11218A78E0500F05D97 /* libEonilImprovisationsCommonUtility.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -786,6 +856,7 @@
 					"\"$SRCROOT\"/../Graphics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources/GLM",
+					"\"$SRCROOT\"/../../CommonRealtimeGameAlgorithms",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -820,6 +891,7 @@
 					"\"$SRCROOT\"/../Graphics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources/GLM",
+					"\"$SRCROOT\"/../../CommonRealtimeGameAlgorithms",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -834,6 +906,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "EonilGraphicsTester/Testers-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = Testers;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -845,6 +921,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "EonilGraphicsTester/Testers-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = Testers;
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -870,6 +950,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "OSXTester/OSXTester-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -893,6 +977,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "OSXTester/OSXTester-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;

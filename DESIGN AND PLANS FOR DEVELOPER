@@ -131,6 +131,33 @@ Don't! Why?
 
 
 
+Deprecation Management
+----------------------
+
+
+-	*LEGACY* means the feature is not used anymore, and should be erased.
+	I do not guarantee the legacy feature will work.
+	This is an old style deprecation. If the symbol naming style is not compatible with
+	versioning.
+
+-	*DEPRECATED* means the feature is working but has serious design defect.
+	So there is (or will be) a new replacement, and the deprecated one shouldn't be used anymore.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

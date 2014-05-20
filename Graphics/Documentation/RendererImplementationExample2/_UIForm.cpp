@@ -131,7 +131,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		_UIForm const
-		_UIForm::Utility::boxWithColor(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 color)
+		_UIForm::Utility::boxWithColor(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 color)
 		{
 			_UIForm::Mesh	m;
 			
@@ -204,7 +204,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		_UIForm const
-		_UIForm::Utility::boxWithTextureMapping(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 minST, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 maxST)
+		_UIForm::Utility::boxWithTextureMapping(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 minST, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 maxST)
 		{
 			_UIForm::Mesh	m;
 			
@@ -306,7 +306,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		_UIForm::_renderOnMachine(Server::Machine &m, CommonResource &r, const std::vector<_UIForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 worldToFrameTransform)
+		_UIForm::_renderOnMachine(Server::Machine &m, CommonResource &r, const std::vector<_UIForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 worldToFrameTransform)
 		{
 			using namespace Stub;
 			using namespace Server::Machinery;

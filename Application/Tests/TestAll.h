@@ -8,18 +8,18 @@
 
 #pragma once
 
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Server/Utility/Functions.h>
-#include "../Eonil/Improvisations/MediaEngine/Application/Application.h"
-#include "../Eonil/Improvisations/MediaEngine/Controlling/Controlling.h"
+#include <Eonil/MediaEngine/Graphics.h>
+#include <Eonil/MediaEngine/Graphics_DEV.h>
+#include <Eonil/MediaEngine/Graphics/Server/Utility/Functions.h>
+#include "../Eonil/MediaEngine/Application/Application.h"
+#include "../Eonil/MediaEngine/Controlling/Controlling.h"
 #include <Eonil/Aliens.h>
 
 #include "run.h"
 #include "Bundle.h"
 
 using namespace Eonil::Improvisations::MediaEngine::Mathematics;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Value;
+using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Rendering;
 using namespace Eonil::Improvisations::MediaEngine::Application;

@@ -21,8 +21,8 @@
 
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
+#include <Eonil/MediaEngine/Graphics.h>
+#include <Eonil/MediaEngine/Graphics_DEV.h>
 
 
 using namespace Eonil;
@@ -30,7 +30,7 @@ using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Stub;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Server;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Resource;
+//using namespace Eonil::Improvisations::MediaEngine::Graphics::Resources;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Transcoding;
 
 
@@ -164,8 +164,8 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
 	
 	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexTexture", &Machine::machine().vertexAttributeChannelAtIndex(1)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::current().vertexAttributeChannelAtIndex(0)});
+	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexTexture", &Machine::current().vertexAttributeChannelAtIndex(1)});
 	
 //	_Legacy2013_SharingBox<VertexShader> const				vp	=	;
 //	_Legacy2013_SharingBox<FragmentShader> const			fp	=	_Legacy2013_SharingBox<FragmentShader>(new FragmentShader(TestFragmentShaderProgram));
@@ -201,10 +201,12 @@ TestRendering2RenderingWithTexture(PlanarTexture const& texture)
 		static Scalar	c = 0;
 		c+=	0.01;
 		Matrix4		tran		=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle(Vector3(0,0,1), c));
-		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
+//		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
+		p.uniformValueSlotForName("objectTransform")->setValue(tran);
 		
 		Machine::machine().textureUnitAtIndex(0).setTexture(texture);
-		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("textureSampler")).setSampler(Machine::machine().textureUnitAtIndex(0));
+//		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("textureSampler")).setSampler(Machine::machine().textureUnitAtIndex(0));
+		p.uniformValueSlotForName("textureSampler")->setSampler(Machine::machine().textureUnitAtIndex(0));
 		
 		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 		

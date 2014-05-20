@@ -14,15 +14,15 @@
 
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
+#include <Eonil/MediaEngine/Graphics.h>
+#include <Eonil/MediaEngine/Graphics_DEV.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Stub;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Server;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Resource;
+//using namespace Eonil::Improvisations::MediaEngine::Graphics::Resources;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Transcoding;
 
 

@@ -10,7 +10,7 @@
 
 #include <GLKit/GLKit.h>
 
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
+#include <Eonil/MediaEngine/Graphics.h>
 
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
 

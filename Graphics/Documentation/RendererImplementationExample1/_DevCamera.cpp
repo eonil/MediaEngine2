@@ -133,17 +133,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		Vector4 const
-		_DevCamera::transformPointInWorldToScope(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 p) const
+		_DevCamera::transformPointInWorldToScope(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 p) const
 		{
 			return	worldToScopeMatrix().transform(p);
 		}
 		Vector4 const
-		_DevCamera::transformPointInScopeToFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 p) const
+		_DevCamera::transformPointInScopeToFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 p) const
 		{
 			return	scopeToFrameMatrix().transform(p);
 		}
 		Vector4 const
-		_DevCamera::transformPointInWorldToFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 p) const
+		_DevCamera::transformPointInWorldToFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 p) const
 		{
 			return	worldToFrameMatrix().transform(p);
 		}
@@ -151,17 +151,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		Vector4 const
-		_DevCamera::transformPointInWorldFromScope(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 p) const
+		_DevCamera::transformPointInWorldFromScope(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 p) const
 		{
 			return	worldFromScopeMatrix().transform(p);
 		}
 		Vector4 const
-		_DevCamera::transformPointInScopeFromFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 p) const
+		_DevCamera::transformPointInScopeFromFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 p) const
 		{
 			return	scopeFromFrameMatrix().transform(p);
 		}
 		Vector4 const
-		_DevCamera::transformPointInWorldFromFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 p) const
+		_DevCamera::transformPointInWorldFromFrame(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 p) const
 		{
 			return	worldFromFrameMatrix().transform(p);
 		}

@@ -30,7 +30,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		_TriangleListMeshForm const
-		_TriangleListMeshForm::Utility::box2D(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 color)
+		_TriangleListMeshForm::Utility::box2D(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 color)
 		{
 			_TriangleListMeshForm	m;
 			
@@ -160,7 +160,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		_TriangleListMeshForm::_renderOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_TriangleListMeshForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Value::Matrix4 worldToFrameTransform)
+		_TriangleListMeshForm::_renderOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_TriangleListMeshForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 worldToFrameTransform)
 		{
 			using namespace Stub;
 			using namespace Server::Machinery;

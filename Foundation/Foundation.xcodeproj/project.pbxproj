@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4504CEC2192B46ED00F3FC8B /* LEGACY_Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */; };
+		4504CEC3192B46F000F3FC8B /* LEGACY_Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */; };
 		450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */; };
 		450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */; };
-		4511FB9018A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */; };
-		4511FB9118A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */; };
 		453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C118A35E490074B957 /* GenericMemoryRange.cpp */; };
 		453423C418A35E490074B957 /* GenericMemoryRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C118A35E490074B957 /* GenericMemoryRange.cpp */; };
 		453423C818A361C30074B957 /* GenericMemoryBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C618A361C30074B957 /* GenericMemoryBlock.cpp */; };
 		453423C918A361C30074B957 /* GenericMemoryBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C618A361C30074B957 /* GenericMemoryBlock.cpp */; };
 		453423F318A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */; };
 		453423F418A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */; };
-		453A736D18A21FB200C01AAC /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* Memory.cpp */; };
-		453A736E18A21FB200C01AAC /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* Memory.cpp */; };
 		453A737E18A2247D00C01AAC /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A737C18A2247D00C01AAC /* Common.cpp */; };
 		453A737F18A2247D00C01AAC /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A737C18A2247D00C01AAC /* Common.cpp */; };
 		453BFBFD18A2424D007E514B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453BFBFC18A2424D007E514B /* main.cpp */; };
 		453BFBFF18A2424D007E514B /* Tests.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 453BFBFE18A2424D007E514B /* Tests.1 */; };
 		453BFC0618A2427D007E514B /* Entrance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453BFC0418A2427D007E514B /* Entrance.cpp */; };
+		45478E561929B438009E72B8 /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478E541929B438009E72B8 /* Foundation.cpp */; };
+		45478E571929B438009E72B8 /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478E541929B438009E72B8 /* Foundation.cpp */; };
 		456404E118A246C10068EC12 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */; };
 		456404E318A246C10068EC12 /* libEonilImprovisationsCommonUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 456404E218A246C10068EC12 /* libEonilImprovisationsCommonUtility.a */; };
-		45F6F8D918A13FCA00A41EAB /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8D718A13FCA00A41EAB /* Foundation.cpp */; };
-		45F6F8DA18A13FCA00A41EAB /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8D718A13FCA00A41EAB /* Foundation.cpp */; };
+		45F6F8D918A13FCA00A41EAB /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8D718A13FCA00A41EAB /* All.cpp */; };
+		45F6F8DA18A13FCA00A41EAB /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8D718A13FCA00A41EAB /* All.cpp */; };
 		45F6F8E018A13FF700A41EAB /* Targets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8DE18A13FF700A41EAB /* Targets.cpp */; };
 		45F6F8E118A13FF700A41EAB /* Targets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8DE18A13FF700A41EAB /* Targets.cpp */; };
 		45F6F8E518A13FFC00A41EAB /* Doctor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8E318A13FFC00A41EAB /* Doctor.mm */; };
@@ -50,18 +50,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4504CE96192B462100F3FC8B /* libFoundation_LEGACY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFoundation_LEGACY.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4504CEA4192B462100F3FC8B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4504CEA7192B462100F3FC8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4504CEBE192B463500F3FC8B /* libFoundation_LEGACY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFoundation_LEGACY.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstantEvaluationUtility.cpp; sourceTree = "<group>"; };
 		450D40E6191F251B004F8901 /* ConstantEvaluationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantEvaluationUtility.h; sourceTree = "<group>"; };
-		4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImplementationOnlyCommon.cpp; sourceTree = "<group>"; };
-		4511FB8F18A53605000A4617 /* ImplementationOnlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplementationOnlyCommon.h; sourceTree = "<group>"; };
 		453423C118A35E490074B957 /* GenericMemoryRange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericMemoryRange.cpp; sourceTree = "<group>"; };
 		453423C218A35E490074B957 /* GenericMemoryRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericMemoryRange.h; sourceTree = "<group>"; };
 		453423C618A361C30074B957 /* GenericMemoryBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericMemoryBlock.cpp; sourceTree = "<group>"; };
 		453423C718A361C30074B957 /* GenericMemoryBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericMemoryBlock.h; sourceTree = "<group>"; };
 		453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectOwnershipTracking.cpp; sourceTree = "<group>"; };
 		453423F218A395050074B957 /* ObjectOwnershipTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectOwnershipTracking.h; sourceTree = "<group>"; };
-		453A736B18A21FB200C01AAC /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
-		453A736C18A21FB200C01AAC /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memory.h; sourceTree = "<group>"; };
+		453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LEGACY_Memory.cpp; sourceTree = "<group>"; };
+		453A736C18A21FB200C01AAC /* LEGACY_Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEGACY_Memory.h; sourceTree = "<group>"; };
 		453A737C18A2247D00C01AAC /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
 		453A737D18A2247D00C01AAC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		453BFBFA18A2424D007E514B /* OSX Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OSX Test"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,13 +71,15 @@
 		453BFBFE18A2424D007E514B /* Tests.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Tests.1; sourceTree = "<group>"; };
 		453BFC0418A2427D007E514B /* Entrance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entrance.cpp; sourceTree = "<group>"; };
 		453BFC0518A2427D007E514B /* Entrance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entrance.h; sourceTree = "<group>"; };
+		45478E541929B438009E72B8 /* Foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Foundation.cpp; sourceTree = "<group>"; };
+		45478E551929B438009E72B8 /* Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foundation.h; sourceTree = "<group>"; };
 		456404E218A246C10068EC12 /* libEonilImprovisationsCommonUtility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEonilImprovisationsCommonUtility.a; path = "../../CommonUtility/build/Debug-iphoneos/libEonilImprovisationsCommonUtility.a"; sourceTree = "<group>"; };
 		45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F0372C175C353F00C469FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F6F8D118A13F9A00A41EAB /* Trash */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Trash; sourceTree = "<group>"; };
-		45F6F8D718A13FCA00A41EAB /* Foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Foundation.cpp; sourceTree = "<group>"; };
-		45F6F8D818A13FCA00A41EAB /* Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foundation.h; sourceTree = "<group>"; };
+		45F6F8D718A13FCA00A41EAB /* All.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = All.cpp; sourceTree = "<group>"; };
+		45F6F8D818A13FCA00A41EAB /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
 		45F6F8DE18A13FF700A41EAB /* Targets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Targets.cpp; sourceTree = "<group>"; };
 		45F6F8DF18A13FF700A41EAB /* Targets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Targets.h; sourceTree = "<group>"; };
 		45F6F8E318A13FFC00A41EAB /* Doctor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Doctor.mm; sourceTree = "<group>"; };
@@ -85,6 +89,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4504CE93192B462100F3FC8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4504CEBB192B463500F3FC8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		453BFBF718A2424D007E514B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,8 +132,8 @@
 		453A736A18A21FAA00C01AAC /* _Legacy2013 */ = {
 			isa = PBXGroup;
 			children = (
-				453A736B18A21FB200C01AAC /* Memory.cpp */,
-				453A736C18A21FB200C01AAC /* Memory.h */,
+				453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */,
+				453A736C18A21FB200C01AAC /* LEGACY_Memory.h */,
 			);
 			path = _Legacy2013;
 			sourceTree = "<group>";
@@ -171,6 +189,8 @@
 				45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */,
 				45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */,
 				453BFBFA18A2424D007E514B /* OSX Test */,
+				4504CE96192B462100F3FC8B /* libFoundation_LEGACY.a */,
+				4504CEBE192B463500F3FC8B /* libFoundation_LEGACY.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +200,8 @@
 			children = (
 				456404E218A246C10068EC12 /* libEonilImprovisationsCommonUtility.a */,
 				45F0372C175C353F00C469FD /* Foundation.framework */,
+				4504CEA4192B462100F3FC8B /* XCTest.framework */,
+				4504CEA7192B462100F3FC8B /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,22 +217,16 @@
 		45F6F8D318A13FBA00A41EAB /* Eonil */ = {
 			isa = PBXGroup;
 			children = (
-				45F6F8D418A13FBA00A41EAB /* Improvisations */,
-			);
-			path = Eonil;
-			sourceTree = "<group>";
-		};
-		45F6F8D418A13FBA00A41EAB /* Improvisations */ = {
-			isa = PBXGroup;
-			children = (
 				45F6F8D518A13FBA00A41EAB /* MediaEngine */,
 			);
-			path = Improvisations;
+			path = Eonil;
 			sourceTree = "<group>";
 		};
 		45F6F8D518A13FBA00A41EAB /* MediaEngine */ = {
 			isa = PBXGroup;
 			children = (
+				45478E541929B438009E72B8 /* Foundation.cpp */,
+				45478E551929B438009E72B8 /* Foundation.h */,
 				45F6F8D618A13FBA00A41EAB /* Foundation */,
 			);
 			path = MediaEngine;
@@ -221,16 +237,14 @@
 			children = (
 				453A737C18A2247D00C01AAC /* Common.cpp */,
 				453A737D18A2247D00C01AAC /* Common.h */,
-				4511FB8E18A53605000A4617 /* ImplementationOnlyCommon.cpp */,
-				4511FB8F18A53605000A4617 /* ImplementationOnlyCommon.h */,
 				45F6F8DD18A13FEA00A41EAB /* Platform */,
 				45F6F8DC18A13FEA00A41EAB /* Debugging */,
 				45F6F8ED18A1414900A41EAB /* Numerics.cpp */,
 				45F6F8EE18A1414900A41EAB /* Numerics.h */,
 				453A736A18A21FAA00C01AAC /* _Legacy2013 */,
 				453A737618A2230900C01AAC /* D2014R1 */,
-				45F6F8D718A13FCA00A41EAB /* Foundation.cpp */,
-				45F6F8D818A13FCA00A41EAB /* Foundation.h */,
+				45F6F8D718A13FCA00A41EAB /* All.cpp */,
+				45F6F8D818A13FCA00A41EAB /* All.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -256,6 +270,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4504CE95192B462100F3FC8B /* Foundation_LEGACY - iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4504CEB8192B462100F3FC8B /* Build configuration list for PBXNativeTarget "Foundation_LEGACY - iOS" */;
+			buildPhases = (
+				4504CE92192B462100F3FC8B /* Sources */,
+				4504CE93192B462100F3FC8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation_LEGACY - iOS";
+			productName = Foundation_LEGACY;
+			productReference = 4504CE96192B462100F3FC8B /* libFoundation_LEGACY.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4504CEBD192B463500F3FC8B /* Foundation_LEGACY - OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4504CEBF192B463500F3FC8B /* Build configuration list for PBXNativeTarget "Foundation_LEGACY - OSX" */;
+			buildPhases = (
+				4504CEBA192B463500F3FC8B /* Sources */,
+				4504CEBB192B463500F3FC8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Foundation_LEGACY - OSX";
+			productName = Foundation_LEGACY;
+			productReference = 4504CEBE192B463500F3FC8B /* libFoundation_LEGACY.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		453BFBF918A2424D007E514B /* OSX Test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 453BFC0218A2424D007E514B /* Build configuration list for PBXNativeTarget "OSX Test" */;
@@ -325,14 +371,32 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				453BFBF918A2424D007E514B /* OSX Test */,
 				45F0374B175C359E00C469FD /* Foundation - OSX Static Library */,
 				45F03728175C353F00C469FD /* Foundation - iOS Static Library */,
-				453BFBF918A2424D007E514B /* OSX Test */,
+				4504CE95192B462100F3FC8B /* Foundation_LEGACY - iOS */,
+				4504CEBD192B463500F3FC8B /* Foundation_LEGACY - OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4504CE92192B462100F3FC8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4504CEC2192B46ED00F3FC8B /* LEGACY_Memory.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4504CEBA192B463500F3FC8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4504CEC3192B46F000F3FC8B /* LEGACY_Memory.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		453BFBF618A2424D007E514B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,12 +411,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
-				453A736D18A21FB200C01AAC /* Memory.cpp in Sources */,
 				453423C818A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,
-				4511FB9018A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */,
 				453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
 				45F6F8EF18A1414900A41EAB /* Numerics.cpp in Sources */,
-				45F6F8D918A13FCA00A41EAB /* Foundation.cpp in Sources */,
+				45478E571929B438009E72B8 /* Foundation.cpp in Sources */,
+				45F6F8D918A13FCA00A41EAB /* All.cpp in Sources */,
 				45F6F8E518A13FFC00A41EAB /* Doctor.mm in Sources */,
 				453A737E18A2247D00C01AAC /* Common.cpp in Sources */,
 				45F6F8E018A13FF700A41EAB /* Targets.cpp in Sources */,
@@ -365,11 +428,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
-				453A736E18A21FB200C01AAC /* Memory.cpp in Sources */,
 				453423C418A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
-				4511FB9118A53605000A4617 /* ImplementationOnlyCommon.cpp in Sources */,
 				45F6F8F018A1414900A41EAB /* Numerics.cpp in Sources */,
-				45F6F8DA18A13FCA00A41EAB /* Foundation.cpp in Sources */,
+				45F6F8DA18A13FCA00A41EAB /* All.cpp in Sources */,
+				45478E561929B438009E72B8 /* Foundation.cpp in Sources */,
 				45F6F8E618A13FFC00A41EAB /* Doctor.mm in Sources */,
 				453A737F18A2247D00C01AAC /* Common.cpp in Sources */,
 				453423C918A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,
@@ -381,6 +443,148 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4504CEB4192B462100F3FC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/Foundation_LEGACY.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(PROJECT_NAME)_LEGACY";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4504CEB5192B462100F3FC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/Foundation_LEGACY.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(PROJECT_NAME)_LEGACY";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4504CEC0192B463500F3FC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(PROJECT_NAME)_LEGACY";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4504CEC1192B463500F3FC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(PROJECT_NAME)_LEGACY";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		453BFC0018A2424D007E514B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -589,6 +793,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4504CEB8192B462100F3FC8B /* Build configuration list for PBXNativeTarget "Foundation_LEGACY - iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4504CEB4192B462100F3FC8B /* Debug */,
+				4504CEB5192B462100F3FC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4504CEBF192B463500F3FC8B /* Build configuration list for PBXNativeTarget "Foundation_LEGACY - OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4504CEC0192B463500F3FC8B /* Debug */,
+				4504CEC1192B463500F3FC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		453BFC0218A2424D007E514B /* Build configuration list for PBXNativeTarget "OSX Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -9,15 +9,15 @@
 #ifndef __Application__TestRendering1__
 #define __Application__TestRendering1__
 
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Server/Utility/Functions.h>
-
+#include <Eonil/MediaEngine/Graphics.h>
+#include <Eonil/MediaEngine/Graphics_DEV.h>
+#include <Eonil/MediaEngine/Graphics/Server/Utility/Functions.h>
 #include "run.h"
 #include "Bundle.h"
+#include "TestCommon.h"
 
 using namespace Eonil::Improvisations::MediaEngine::Mathematics;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Value;
+using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Rendering;
 using namespace Eonil::Improvisations::MediaEngine::Application;
@@ -58,7 +58,9 @@ public:
 		
 		D2014R2::DebuggingInformationOverlayDrawer	_dbgd	{};
 		D2014R2::SpriteDrawer						_sprd	{};
-		PlanarTexture								_tex1	{PlanarTexture::Utility::textureWithContentOfFileAtPath(tex_path)};
+		
+		auto			img1	=	load_png_image_from_path(tex_path);
+		PlanarTexture	_tex1	=	PlanarTexture::Utility::textureWithPixels({img1.pixels.data(), img1.pixels.data()+img1.pixels.size()}, img1.width, img1.height);
 		
 		////
 		
@@ -68,15 +70,14 @@ public:
 		
 		
 		
-		
-		
-		SpriteDrawer::UniformScalingInstance	inst1{};
-		inst1.scale			=	0.5;
-		
-		SpriteDrawer::UniformScalingInstance	inst2{};
-		inst2.scale			=	0.25;
-		inst2.rotation		=	Quaternion::Utility::quaternionWithAxisAngle(AxisAngle{{0,0,1}, r1});
-		inst2.translation	=	{+0.1, +0.1, 0};
+		SpriteDrawer::FreeTransformInstance		inst1	=	{};
+		inst1.transform		=	Matrix4::Utility::scaleWithUniformScalar(0.5);
+
+		Matrix4	stm	=	Matrix4::Utility::scaleWithUniformScalar(0.25);
+		Matrix4	rtm	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle{{0,0,1}, r1});
+		Matrix4	ttm	=	Matrix4::Utility::translationWithVector({+0.1, +0.1, 0});
+		SpriteDrawer::FreeTransformInstance		inst2	=	{};
+		inst2.transform		=	ttm * rtm * stm;
 		_sprd.drawInstances(_tex1, {inst1, inst2}, world_to_screen_transform, s.frame());
 		
 		_dbgd.drawNull(s.frame(), world_to_screen_transform, {0.25, 0.25, 0.25});

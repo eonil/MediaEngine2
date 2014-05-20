@@ -9,15 +9,15 @@
 #include "AATestRendering1.h"
 
 #include <vector>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics.h>
-#include <Eonil/Improvisations/MediaEngine/Graphics/Graphics_DEV_.h>
+#include <Eonil/MediaEngine/Graphics.h>
+#include <Eonil/MediaEngine/Graphics_DEV.h>
 
 using namespace Eonil;
 using namespace Eonil::Improvisations::MediaEngine::Graphics;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Stub;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Server;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Resource;
+//using namespace Eonil::Improvisations::MediaEngine::Graphics::Resources;
 using namespace Eonil::Improvisations::MediaEngine::Graphics::Transcoding;
 
 
@@ -155,7 +155,8 @@ TestRendering1RenderingWithTransform()
 		static Scalar	c = 0;
 		c+=	0.01;
 		Matrix4		tran		=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle(Vector3(0,0,1), c));
-		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
+//		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
+		p.uniformValueSlotForName("objectTransform")->setValue(tran);
 		
 		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 	};

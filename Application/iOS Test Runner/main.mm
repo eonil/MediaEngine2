@@ -7,23 +7,21 @@
 //
 
 #include "run.h"
-#include "TestRendering3.h"
+#include "TestRendering1.h"
 
 int main(int argc, char const* argv[])
 {
 	using namespace	Eonil::Improvisations::MediaEngine::Application;
 	
-//	TestRendering1	r1{};
-//	
-//	STEP
-//	step	=	[&r1](Stepping const& s)
-//	{
-//		r1.step();
-//		r1.render(s);
-//	};
+	TestRendering1	r1{};
 	
-//	Eonil::Improvisations::MediaEngine::Application::run<TestRendering1>(argc, argv);
-	Eonil::Improvisations::MediaEngine::Application::run<TestRendering3>(argc, argv);
+	STEP	step	=	[&r1](Stepping const& s)
+	{
+		r1.step(s);
+		r1.render(s);
+	};
+	
+	Eonil::Improvisations::MediaEngine::Application::run(argc, argv, step);
 }
 
 

@@ -45,7 +45,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			_Regulator::boundsOfInnerSquare() const
 //			{
 //				Scalar	aspect_ratio	=	aspectRatio();
-//				Vector2	inner_bounds	=	Vector2(<#Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector2 &&#>)
+//				Vector2	inner_bounds	=	Vector2(<#Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 &&#>)
 //			}
 		
 		
@@ -124,23 +124,23 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		Vector4 const
-		_Regulator::projectPoint(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 pointInRSS) const
+		_Regulator::projectPoint(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 pointInRSS) const
 		{
 			return	aspectRatioCompensationTransformMatrix().transform(pointInRSS);
 		}
 		Vector4 const
-		_Regulator::unprojectPoint(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Vector4 pointInNDC) const
+		_Regulator::unprojectPoint(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 pointInNDC) const
 		{
 			return	aspectRatioCompensationTransformMatrix().inversion().transform(pointInNDC);
 		}
 		
 		Bounds2 const
-		_Regulator::projectBounds(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Bounds2 boundsInRSS) const
+		_Regulator::projectBounds(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Bounds2 boundsInRSS) const
 		{
 			return	boundsInRSS.boundsWithTransformationByMatrix(aspectRatioCompensationTransformMatrix());
 		}
 		Bounds2 const
-		_Regulator::unprojectBounds(const Eonil::Improvisations::MediaEngine::Mathematics::Value::Bounds2 boundsInNDC) const
+		_Regulator::unprojectBounds(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Bounds2 boundsInNDC) const
 		{
 			return	boundsInNDC.boundsWithTransformationByMatrix(aspectRatioCompensationTransformMatrix().inversion());
 		}

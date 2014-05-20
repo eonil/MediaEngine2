@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4504CEDE192B47B400F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
+		4504CEEB192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
+		4504CEEC192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
+		4504CEED192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
+		4504CEEE192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
+		4504CEEF192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
+		4504CEF0192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
+		4504CEF1192B4EF300F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
+		4504CEF2192B4EF900F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
+		4504CEF3192B4F1300F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
+		4504CEF4192B4F1800F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
+		4504CF04192B4F5B00F3FC8B /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */; };
+		4504CF05192B4F6400F3FC8B /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */; };
 		450A21E818FE9F6F009B2E5D /* Platform_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */; };
 		450A21E918FE9F6F009B2E5D /* Platform_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */; };
 		450A21EA18FE9F6F009B2E5D /* Platform_OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450A21E718FE9F6F009B2E5D /* Platform_OSX.h */; };
@@ -112,6 +125,7 @@
 		45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
 		45C49E9918B75A6100544108 /* TestRendering1.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E9618B75A6100544108 /* TestRendering1.h */; };
 		45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
+		45C6C582192B8D8400649FB9 /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
 		45D7B2BE1928E99C00279F43 /* DraggingGesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */; };
 		45D7B2BF1928E99C00279F43 /* DraggingGesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */; };
 		45D7B2C01928E99C00279F43 /* DraggingGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2B11928E99C00279F43 /* DraggingGesture.h */; };
@@ -177,6 +191,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4504CEC9192B472900F3FC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CE96192B462100F3FC8B;
+			remoteInfo = "Foundation_LEGACY - iOS";
+		};
+		4504CECB192B472900F3FC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CEBE192B463500F3FC8B;
+			remoteInfo = "Foundation_LEGACY - OSX";
+		};
+		4504CEFB192B4F4600F3FC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457B617F190A9C740021A442;
+			remoteInfo = "Aliens - iOS";
+		};
+		4504CEFD192B4F4600F3FC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457B61AA190A9CA20021A442;
+			remoteInfo = "Aliens - OSX";
+		};
+		4504CEFF192B4F4600F3FC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45165A90190C832B0066177B;
+			remoteInfo = "Aliens - Test - OSX";
+		};
 		451E26A118FDB2520003B8A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
@@ -381,13 +430,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCommon.cpp; sourceTree = "<group>"; };
+		4504CEEA192B4C3C00F3FC8B /* TestCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCommon.h; sourceTree = "<group>"; };
+		4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Aliens.xcodeproj; path = ../../../Aliens/Aliens.xcodeproj; sourceTree = "<group>"; };
+		4504CF01192B4F4D00F3FC8B /* libDiscount.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDiscount.a; path = "../../../../../../Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug/libDiscount.a"; sourceTree = "<group>"; };
 		450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Platform_OSX.mm; sourceTree = "<group>"; };
 		450A21E718FE9F6F009B2E5D /* Platform_OSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform_OSX.h; sourceTree = "<group>"; };
 		450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TEX_TEST.png; sourceTree = "<group>"; };
 		450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bundle.cpp; sourceTree = "<group>"; };
 		450E0D7B18BDE3BC003D51E0 /* Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bundle.h; sourceTree = "<group>"; };
 		4525EA5D18B6BD1700B05C1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4525EA8A18B6BD2C00B05C1D /* iOS Test Runner 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test Runner 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4525EA8A18B6BD2C00B05C1D /* Application - iOS - Test Runner 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Application - iOS - Test Runner 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4525EA9018B6BD2C00B05C1D /* iOS Test Runner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Test Runner-Info.plist"; sourceTree = "<group>"; };
 		4525EA9218B6BD2C00B05C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4525EA9418B6BD2C00B05C1D /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -396,7 +449,7 @@
 		4525EAC118B6BE9100B05C1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		4525EAC318B6BE9800B05C1D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		4525EAC518B6BE9E00B05C1D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSX Test Runner 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4525EACB18B6C0E500B05C1D /* Application - OSX - Test Runner 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Application - OSX - Test Runner 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4525EACC18B6C0E500B05C1D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4525EAD418B6C0E500B05C1D /* OSX Test Runner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OSX Test Runner-Info.plist"; sourceTree = "<group>"; };
 		4525EAD618B6C0E500B05C1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -420,7 +473,7 @@
 		453F1D9218C3086F000C25CC /* TestRendering2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestRendering2.mm; sourceTree = "<group>"; };
 		453F1D9318C3086F000C25CC /* TestRendering2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRendering2.h; sourceTree = "<group>"; };
 		453F1DB218C3088D000C25CC /* iOS Test Runner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Test Runner copy-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/iOS Test Runner copy-Info.plist"; sourceTree = "<absolute>"; };
-		453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		453F1DB818C308D3000C25CC /* Application - iOS - Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Application - iOS - Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		453F1DC218C308D3000C25CC /* iOSTestRunner2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTestRunner2-Info.plist"; sourceTree = "<group>"; };
 		453F1DC418C308D3000C25CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		453F1DC618C308D3000C25CC /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -438,7 +491,7 @@
 		457A6C1A18C985DD007BD4D6 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		457A6C1B18C985DD007BD4D6 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		4584020918DCE74A00AAE1A2 /* iOS Test Runner 2 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Test Runner 2 copy-Info.plist"; path = "/Users/Eonil/Workshop/Development/MediaEngine/Application/iOS Test Runner 2 copy-Info.plist"; sourceTree = "<absolute>"; };
-		4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSX Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4584020E18DCE7DA00AAE1A2 /* Application - OSX - Test Runner 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Application - OSX - Test Runner 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4584021018DCE7DA00AAE1A2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4584021318DCE7DA00AAE1A2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4584021418DCE7DA00AAE1A2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -504,6 +557,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CF04192B4F5B00F3FC8B /* libEonilAliens.a in Frameworks */,
+				4504CEF2192B4EF900F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
 				4525EA8B18B6BD2C00B05C1D /* Foundation.framework in Frameworks */,
 				4525EA8C18B6BD2C00B05C1D /* CoreGraphics.framework in Frameworks */,
 				4525EAC218B6BE9100B05C1D /* QuartzCore.framework in Frameworks */,
@@ -523,6 +578,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CF05192B4F6400F3FC8B /* libEonilAliens.a in Frameworks */,
+				4504CEF1192B4EF300F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
 				45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */,
 				45C49E8E18B726C100544108 /* OpenGL.framework in Frameworks */,
 				4525EACD18B6C0E500B05C1D /* Cocoa.framework in Frameworks */,
@@ -539,6 +596,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEF4192B4F1800F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
 				45EFC6BD190B78890066E246 /* libEonilAliens.a in Frameworks */,
 				453F1DEE18C30961000C25CC /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
 				453F1DEF18C30961000C25CC /* libEonilImprovisationsCommonUtility.a in Frameworks */,
@@ -575,6 +633,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEF3192B4F1300F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
 				459BED6D190B6EE200978D8C /* libEonilAliens.a in Frameworks */,
 				4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */,
 				4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */,
@@ -592,6 +651,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C6C582192B8D8400649FB9 /* libFoundation_LEGACY.a in Frameworks */,
 				45D7B3071928F27D00279F43 /* libEonilAliens.a in Frameworks */,
 				45D7B3081928F27D00279F43 /* GLKit.framework in Frameworks */,
 				45D7B3091928F27D00279F43 /* OpenGL.framework in Frameworks */,
@@ -609,6 +669,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEDE192B47B400F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
 				45D7B472192918AE00279F43 /* libEonilAliens.a in Frameworks */,
 				45D7B473192918AE00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
 				45D7B474192918AE00279F43 /* libEonilImprovisationsCommonUtility.a in Frameworks */,
@@ -628,6 +689,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4504CEF6192B4F4600F3FC8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */,
+				4504CEFE192B4F4600F3FC8B /* libEonilAliens.a */,
+				4504CF00192B4F4600F3FC8B /* Aliens - Test - OSX */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4525EA8E18B6BD2C00B05C1D /* iOS Test Runner */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,8 +749,8 @@
 				4529052818B6A53400FCFCBD /* Tests */,
 				4525EAD218B6C0E500B05C1D /* OSX Test Runner */,
 				4525EA8E18B6BD2C00B05C1D /* iOS Test Runner */,
-				453F1DC018C308D3000C25CC /* iOSTestRunner2 */,
 				4584021618DCE7DA00AAE1A2 /* OSX Test Runner 2 */,
+				453F1DC018C308D3000C25CC /* iOSTestRunner2 */,
 				45D7B31D1928F2C200279F43 /* Targets */,
 				4584020F18DCE7DA00AAE1A2 /* Frameworks */,
 				4577C95618B6A6E90078033C /* Products */,
@@ -704,6 +775,8 @@
 				459BED55190B6E9600978D8C /* Aliens.xcodeproj */,
 				453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */,
 				450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */,
+				4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */,
+				4504CEEA192B4C3C00F3FC8B /* TestCommon.h */,
 				45C49E9518B75A6100544108 /* TestRendering1.cpp */,
 				45C49E9618B75A6100544108 /* TestRendering1.h */,
 				453F1D9218C3086F000C25CC /* TestRendering2.mm */,
@@ -719,17 +792,9 @@
 		4529052A18B6A55700FCFCBD /* Eonil */ = {
 			isa = PBXGroup;
 			children = (
-				4529052B18B6A55700FCFCBD /* Improvisations */,
-			);
-			path = Eonil;
-			sourceTree = "<group>";
-		};
-		4529052B18B6A55700FCFCBD /* Improvisations */ = {
-			isa = PBXGroup;
-			children = (
 				4529052C18B6A55700FCFCBD /* MediaEngine */,
 			);
-			path = Improvisations;
+			path = Eonil;
 			sourceTree = "<group>";
 		};
 		4529052C18B6A55700FCFCBD /* MediaEngine */ = {
@@ -824,10 +889,10 @@
 			children = (
 				4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */,
 				4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */,
-				4525EA8A18B6BD2C00B05C1D /* iOS Test Runner 1.app */,
-				4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */,
-				453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */,
-				4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */,
+				4525EA8A18B6BD2C00B05C1D /* Application - iOS - Test Runner 1.app */,
+				4525EACB18B6C0E500B05C1D /* Application - OSX - Test Runner 1.app */,
+				453F1DB818C308D3000C25CC /* Application - iOS - Test Runner 2.app */,
+				4584020E18DCE7DA00AAE1A2 /* Application - OSX - Test Runner 2.app */,
 				45D7B31B1928F27D00279F43 /* OSX Test All Runner.app */,
 				45D7B487192918AE00279F43 /* iOS Test All Runner.app */,
 			);
@@ -837,6 +902,7 @@
 		4584020F18DCE7DA00AAE1A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4504CF01192B4F4D00F3FC8B /* libDiscount.a */,
 				4584021018DCE7DA00AAE1A2 /* Cocoa.framework */,
 				4584022F18DCE7DB00AAE1A2 /* XCTest.framework */,
 				4584021218DCE7DA00AAE1A2 /* Other Frameworks */,
@@ -902,6 +968,7 @@
 				459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */,
 				459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */,
 				459CF50818B8A401004A5C14 /* Graphics.xcodeproj */,
+				4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */,
 				459CF4EA18B8A390004A5C14 /* iOS */,
 				459CF4EB18B8A390004A5C14 /* OSX */,
 			);
@@ -936,9 +1003,11 @@
 		459CF4ED18B8A3F1004A5C14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				459CF4F718B8A3F1004A5C14 /* OSX Test */,
 				459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */,
 				459CF4F518B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				459CF4F718B8A3F1004A5C14 /* OSX Test */,
+				4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */,
+				4504CECC192B472900F3FC8B /* libFoundation_LEGACY.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1090,9 +1159,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4525EA8918B6BD2C00B05C1D /* iOS Test Runner 1 */ = {
+		4525EA8918B6BD2C00B05C1D /* Application - iOS - Test Runner 1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "iOS Test Runner 1" */;
+			buildConfigurationList = 4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "Application - iOS - Test Runner 1" */;
 			buildPhases = (
 				4525EA8618B6BD2C00B05C1D /* Sources */,
 				4525EA8718B6BD2C00B05C1D /* Frameworks */,
@@ -1102,14 +1171,14 @@
 			);
 			dependencies = (
 			);
-			name = "iOS Test Runner 1";
+			name = "Application - iOS - Test Runner 1";
 			productName = "iOS Test Runner";
-			productReference = 4525EA8A18B6BD2C00B05C1D /* iOS Test Runner 1.app */;
+			productReference = 4525EA8A18B6BD2C00B05C1D /* Application - iOS - Test Runner 1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4525EACA18B6C0E500B05C1D /* OSX Test Runner 1 */ = {
+		4525EACA18B6C0E500B05C1D /* Application - OSX - Test Runner 1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "OSX Test Runner 1" */;
+			buildConfigurationList = 4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "Application - OSX - Test Runner 1" */;
 			buildPhases = (
 				4525EAC718B6C0E500B05C1D /* Sources */,
 				4525EAC818B6C0E500B05C1D /* Frameworks */,
@@ -1119,14 +1188,14 @@
 			);
 			dependencies = (
 			);
-			name = "OSX Test Runner 1";
+			name = "Application - OSX - Test Runner 1";
 			productName = "OSX Test Runner";
-			productReference = 4525EACB18B6C0E500B05C1D /* OSX Test Runner 1.app */;
+			productReference = 4525EACB18B6C0E500B05C1D /* Application - OSX - Test Runner 1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		453F1DB718C308D3000C25CC /* iOS Test Runner 2 */ = {
+		453F1DB718C308D3000C25CC /* Application - iOS - Test Runner 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "iOS Test Runner 2" */;
+			buildConfigurationList = 453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "Application - iOS - Test Runner 2" */;
 			buildPhases = (
 				453F1DB418C308D3000C25CC /* Sources */,
 				453F1DB518C308D3000C25CC /* Frameworks */,
@@ -1137,14 +1206,14 @@
 			dependencies = (
 				45EFC6BC190B78860066E246 /* PBXTargetDependency */,
 			);
-			name = "iOS Test Runner 2";
+			name = "Application - iOS - Test Runner 2";
 			productName = iOSTestRunner2;
-			productReference = 453F1DB818C308D3000C25CC /* iOS Test Runner 2.app */;
+			productReference = 453F1DB818C308D3000C25CC /* Application - iOS - Test Runner 2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4577C95D18B6A7060078033C /* OSX Static Library */ = {
+		4577C95D18B6A7060078033C /* Application - OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4577C95F18B6A7060078033C /* Build configuration list for PBXNativeTarget "OSX Static Library" */;
+			buildConfigurationList = 4577C95F18B6A7060078033C /* Build configuration list for PBXNativeTarget "Application - OSX" */;
 			buildPhases = (
 				4577C95A18B6A7060078033C /* Sources */,
 				4577C95B18B6A7060078033C /* Frameworks */,
@@ -1155,14 +1224,14 @@
 			dependencies = (
 				45D7B2FB1928EB7400279F43 /* PBXTargetDependency */,
 			);
-			name = "OSX Static Library";
+			name = "Application - OSX";
 			productName = "OSX Static Library";
 			productReference = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		4577C96518B6A70D0078033C /* iOS Static Library */ = {
+		4577C96518B6A70D0078033C /* Application - iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4577C98618B6A70D0078033C /* Build configuration list for PBXNativeTarget "iOS Static Library" */;
+			buildConfigurationList = 4577C98618B6A70D0078033C /* Build configuration list for PBXNativeTarget "Application - iOS" */;
 			buildPhases = (
 				4577C96218B6A70D0078033C /* Sources */,
 				4577C96318B6A70D0078033C /* Frameworks */,
@@ -1173,14 +1242,14 @@
 			dependencies = (
 				45D7B2F91928EB7000279F43 /* PBXTargetDependency */,
 			);
-			name = "iOS Static Library";
+			name = "Application - iOS";
 			productName = "iOS Static Library";
 			productReference = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		4584020D18DCE7DA00AAE1A2 /* OSX Test Runner 2 */ = {
+		4584020D18DCE7DA00AAE1A2 /* Application - OSX - Test Runner 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4584023C18DCE7DB00AAE1A2 /* Build configuration list for PBXNativeTarget "OSX Test Runner 2" */;
+			buildConfigurationList = 4584023C18DCE7DB00AAE1A2 /* Build configuration list for PBXNativeTarget "Application - OSX - Test Runner 2" */;
 			buildPhases = (
 				4584020A18DCE7DA00AAE1A2 /* Sources */,
 				4584020B18DCE7DA00AAE1A2 /* Frameworks */,
@@ -1191,14 +1260,14 @@
 			dependencies = (
 				459BED6F190B6EFE00978D8C /* PBXTargetDependency */,
 			);
-			name = "OSX Test Runner 2";
+			name = "Application - OSX - Test Runner 2";
 			productName = "OSX Test Runner 2";
-			productReference = 4584020E18DCE7DA00AAE1A2 /* OSX Test Runner 2.app */;
+			productReference = 4584020E18DCE7DA00AAE1A2 /* Application - OSX - Test Runner 2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		45D7B3011928F27D00279F43 /* Test All Runner - OSX */ = {
+		45D7B3011928F27D00279F43 /* Application - Test All Runner - OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45D7B3181928F27D00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - OSX" */;
+			buildConfigurationList = 45D7B3181928F27D00279F43 /* Build configuration list for PBXNativeTarget "Application - Test All Runner - OSX" */;
 			buildPhases = (
 				45D7B3041928F27D00279F43 /* Sources */,
 				45D7B3061928F27D00279F43 /* Frameworks */,
@@ -1209,14 +1278,14 @@
 			dependencies = (
 				45D7B3021928F27D00279F43 /* PBXTargetDependency */,
 			);
-			name = "Test All Runner - OSX";
+			name = "Application - Test All Runner - OSX";
 			productName = "OSX Test Runner 2";
 			productReference = 45D7B31B1928F27D00279F43 /* OSX Test All Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		45D7B46C192918AE00279F43 /* Test All Runner - iOS */ = {
+		45D7B46C192918AE00279F43 /* Application - Test All Runner - iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45D7B484192918AE00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - iOS" */;
+			buildConfigurationList = 45D7B484192918AE00279F43 /* Build configuration list for PBXNativeTarget "Application - Test All Runner - iOS" */;
 			buildPhases = (
 				45D7B46F192918AE00279F43 /* Sources */,
 				45D7B471192918AE00279F43 /* Frameworks */,
@@ -1227,7 +1296,7 @@
 			dependencies = (
 				45D7B46D192918AE00279F43 /* PBXTargetDependency */,
 			);
-			name = "Test All Runner - iOS";
+			name = "Application - Test All Runner - iOS";
 			productName = iOSTestRunner2;
 			productReference = 45D7B487192918AE00279F43 /* iOS Test All Runner.app */;
 			productType = "com.apple.product-type.application";
@@ -1252,6 +1321,10 @@
 			productRefGroup = 4577C95618B6A6E90078033C /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 4504CEF6192B4F4600F3FC8B /* Products */;
+					ProjectRef = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
+				},
 				{
 					ProductGroup = 459BED56190B6E9600978D8C /* Products */;
 					ProjectRef = 459BED55190B6E9600978D8C /* Aliens.xcodeproj */;
@@ -1279,19 +1352,54 @@
 			);
 			projectRoot = "";
 			targets = (
-				4577C95D18B6A7060078033C /* OSX Static Library */,
-				4577C96518B6A70D0078033C /* iOS Static Library */,
-				4525EACA18B6C0E500B05C1D /* OSX Test Runner 1 */,
-				4525EA8918B6BD2C00B05C1D /* iOS Test Runner 1 */,
-				4584020D18DCE7DA00AAE1A2 /* OSX Test Runner 2 */,
-				453F1DB718C308D3000C25CC /* iOS Test Runner 2 */,
-				45D7B3011928F27D00279F43 /* Test All Runner - OSX */,
-				45D7B46C192918AE00279F43 /* Test All Runner - iOS */,
+				4577C95D18B6A7060078033C /* Application - OSX */,
+				4577C96518B6A70D0078033C /* Application - iOS */,
+				4525EACA18B6C0E500B05C1D /* Application - OSX - Test Runner 1 */,
+				4525EA8918B6BD2C00B05C1D /* Application - iOS - Test Runner 1 */,
+				4584020D18DCE7DA00AAE1A2 /* Application - OSX - Test Runner 2 */,
+				453F1DB718C308D3000C25CC /* Application - iOS - Test Runner 2 */,
+				45D7B3011928F27D00279F43 /* Application - Test All Runner - OSX */,
+				45D7B46C192918AE00279F43 /* Application - Test All Runner - iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 4504CEC9192B472900F3FC8B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4504CECC192B472900F3FC8B /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 4504CECB192B472900F3FC8B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilAliens.a;
+			remoteRef = 4504CEFB192B4F4600F3FC8B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4504CEFE192B4F4600F3FC8B /* libEonilAliens.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilAliens.a;
+			remoteRef = 4504CEFD192B4F4600F3FC8B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4504CF00192B4F4600F3FC8B /* Aliens - Test - OSX */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Aliens - Test - OSX";
+			remoteRef = 4504CEFF192B4F4600F3FC8B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		451E26A218FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1518,6 +1626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEEC192B4C3C00F3FC8B /* TestCommon.cpp in Sources */,
 				45A28B5818BF2084005DECF5 /* TestRendering1.cpp in Sources */,
 				453F1D9418C3086F000C25CC /* TestRendering2.mm in Sources */,
 				4525EA9518B6BD2C00B05C1D /* main.mm in Sources */,
@@ -1528,6 +1637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEEB192B4C3C00F3FC8B /* TestCommon.cpp in Sources */,
 				45A28B6518BF2085005DECF5 /* TestRendering1.cpp in Sources */,
 				453F1D9518C3086F000C25CC /* TestRendering2.mm in Sources */,
 				4525EAD918B6C0E500B05C1D /* main.mm in Sources */,
@@ -1538,6 +1648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEEE192B4C3C00F3FC8B /* TestCommon.cpp in Sources */,
 				453F1DC718C308D3000C25CC /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1605,6 +1716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEED192B4C3C00F3FC8B /* TestCommon.cpp in Sources */,
 				4584021D18DCE7DA00AAE1A2 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1613,6 +1725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEEF192B4C3C00F3FC8B /* TestCommon.cpp in Sources */,
 				45D7B3631928F62900279F43 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1621,6 +1734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504CEF0192B4C3C00F3FC8B /* TestCommon.cpp in Sources */,
 				45D7B49D192918F300279F43 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1762,6 +1876,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOS Test Runner/iOS Test Runner-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -1804,6 +1922,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOS Test Runner/iOS Test Runner-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1847,6 +1969,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSX Test Runner/OSX Test Runner-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -1884,6 +2010,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSX Test Runner/OSX Test Runner-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -2416,7 +2546,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "iOS Test Runner 1" */ = {
+		4525EAAE18B6BD2C00B05C1D /* Build configuration list for PBXNativeTarget "Application - iOS - Test Runner 1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4525EAAF18B6BD2C00B05C1D /* Debug */,
@@ -2425,7 +2555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "OSX Test Runner 1" */ = {
+		4525EAF718B6C0E500B05C1D /* Build configuration list for PBXNativeTarget "Application - OSX - Test Runner 1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4525EAF818B6C0E500B05C1D /* Debug */,
@@ -2443,7 +2573,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "iOS Test Runner 2" */ = {
+		453F1DE118C308D4000C25CC /* Build configuration list for PBXNativeTarget "Application - iOS - Test Runner 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				453F1DE218C308D4000C25CC /* Debug */,
@@ -2452,7 +2582,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4577C95F18B6A7060078033C /* Build configuration list for PBXNativeTarget "OSX Static Library" */ = {
+		4577C95F18B6A7060078033C /* Build configuration list for PBXNativeTarget "Application - OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4577C96018B6A7060078033C /* Debug */,
@@ -2461,7 +2591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4577C98618B6A70D0078033C /* Build configuration list for PBXNativeTarget "iOS Static Library" */ = {
+		4577C98618B6A70D0078033C /* Build configuration list for PBXNativeTarget "Application - iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4577C98718B6A70D0078033C /* Debug */,
@@ -2470,7 +2600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4584023C18DCE7DB00AAE1A2 /* Build configuration list for PBXNativeTarget "OSX Test Runner 2" */ = {
+		4584023C18DCE7DB00AAE1A2 /* Build configuration list for PBXNativeTarget "Application - OSX - Test Runner 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4584023D18DCE7DB00AAE1A2 /* Debug */,
@@ -2479,7 +2609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45D7B3181928F27D00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - OSX" */ = {
+		45D7B3181928F27D00279F43 /* Build configuration list for PBXNativeTarget "Application - Test All Runner - OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45D7B3191928F27D00279F43 /* Debug */,
@@ -2488,7 +2618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45D7B484192918AE00279F43 /* Build configuration list for PBXNativeTarget "Test All Runner - iOS" */ = {
+		45D7B484192918AE00279F43 /* Build configuration list for PBXNativeTarget "Application - Test All Runner - iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45D7B485192918AE00279F43 /* Debug */,

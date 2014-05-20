@@ -13,7 +13,7 @@
 #include 	"AATestRendering1.h"
 #include	"AATestRendering2.h"
 
-#import		<Eonil/Improvisations/MediaEngine/Graphics/Platform/iOS/EEGraphicsDrawableView.h>
+#import		<Eonil/MediaEngine/Graphics/Platform/iOS/EEGraphicsDrawableView.h>
 
 using namespace	Eonil::Improvisations::MediaEngine::Graphics;
 using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
