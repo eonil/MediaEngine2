@@ -120,17 +120,13 @@ TestRendering1RenderingWithTransform()
 	//	Transfer data & program.
 	std::vector<TestVertex> const	vs	=	MakeTestVertexesForSquare();
 	std::vector<uint16_t> const		is	=	MakeTestIndexesFoSquare();
-	
-	VertexShader::NameChannelMap chmap;
-	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexPosition", &Machine::machine().vertexAttributeChannelAtIndex(0)});
-	chmap.insert(std::pair<str, Machinery::VertexAttributeChannel const*>{"vertexColor", &Machine::machine().vertexAttributeChannelAtIndex(1)});
 
-	Program					p		{VertexShader(TestVertexShaderProgram, chmap), FragmentShader(TestFragmentShaderProgram)};
+	Program					p		{VertexShader(TestVertexShaderProgram), FragmentShader(TestFragmentShaderProgram)};
 	printf("program = %s\n", Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::describe(p).c_str());
 	
 	//	Perform rendering.
-	ArrayBuffer			vb	{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&vs[0], sizeof(TestVertex) * vs.size())};
-	ElementArrayBuffer	ib	{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&is[0], sizeof(uint16_t) * is.size())};
+	ArrayBuffer			vb	=	{{vs.data(), vs.data()+vs.size()}};
+	ElementArrayBuffer	ib	=	{{is.data(), is.data()+is.size()}};
 	
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
 	
@@ -146,25 +142,24 @@ TestRendering1RenderingWithTransform()
 	f1.normalization		=	false;
 	f1.strideSizeInBytes	=	sizeof(TestVertex);
 	
-	Machine::machine().setViewport(Bounds2(0,40,0+20,40+20));
-	Machine::machine().vertexAttributeChannelAtIndex(0).linkWithServerBuffer(vb, f0);
-	Machine::machine().vertexAttributeChannelAtIndex(1).linkWithServerBuffer(vb, f1);
-	Machine::machine().indexUnitChannel().linkWithServerBuffer(ib, 0, IndexUnitChannel::UnitType::CODE::UINT16);
-	Machine::machine().useProgram(p);
+	Machine::current().setViewport(Bounds2(0,40,0+20,40+20));
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->linkWithServerBuffer(vb, f0);
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->linkWithServerBuffer(vb, f1);
+	Machine::current().indexUnitChannel().linkWithServerBuffer(ib, 0, IndexUnitChannel::UnitType::CODE::UINT16);
+	Machine::current().useProgram(p);
 	{
 		static Scalar	c = 0;
 		c+=	0.01;
 		Matrix4		tran		=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle(Vector3(0,0,1), c));
-//		p.uniformValueSlotAtIndex(p.indexOfUniformValueSlotV1ForName("objectTransform")).setValue(tran);
 		p.uniformValueSlotForName("objectTransform")->setValue(tran);
 		
-		Machine::machine().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
+		Machine::current().drawElements(DrawingMode::TRIANGLE_STRIP, 1, is.size()-1);
 	};
-	Machine::machine().unuseProgram();
-	Machine::machine().indexUnitChannel().unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(1).unlink();
-	Machine::machine().vertexAttributeChannelAtIndex(0).unlink();
-	Machine::machine().unsetViewport();
+	Machine::current().unuseProgram();
+	Machine::current().indexUnitChannel().unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexColor"))->unlink();
+	Machine::current().vertexAttributeChannels().at(*p.vertexAttributeSlotForName("vertexPosition"))->unlink();
+	Machine::current().unsetViewport();
 	
 }
 

@@ -312,7 +312,6 @@ TestRenderingWithVertexesAndIndexesInServerMemory()
 	
 	//	Perform rendering.
 	ArrayBuffer			vb		=	{{vs.data(), vs.data()+vs.size()}};
-//	ElementArrayBuffer	ib	{Legacy2013SharedMemory::Factory::memoryByCopyingRange(&is[0], sizeof(uint16_t) * is.size())};
 	ElementArrayBuffer	ib		=	{{is.data(), is.data()+is.size()}};
 	
 	Eonil::Improvisations::MediaEngine::Graphics::Server::Machinery::VertexAttributeChannel::Format	f0, f1;
