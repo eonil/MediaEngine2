@@ -99,6 +99,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace F
 		namespace
 		{
 			bool const
+			EONIL_MEDIA_ENGINE_DEPRECATE()
 			DataEquals(SharedMemory const m0, SharedMemory const m1)
 			{
 				return	(m0.length() == m1.length())

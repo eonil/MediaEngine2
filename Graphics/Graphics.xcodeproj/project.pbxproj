@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4504CE78192B457800F3FC8B /* LEGACY_Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CE76192B457800F3FC8B /* LEGACY_Common.cpp */; };
-		4504CE79192B457800F3FC8B /* LEGACY_Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CE76192B457800F3FC8B /* LEGACY_Common.cpp */; };
-		4504CE7A192B457800F3FC8B /* LEGACY_Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 4504CE77192B457800F3FC8B /* LEGACY_Common.h */; };
 		4504CEE6192B4A0600F3FC8B /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE4192B4A0600F3FC8B /* Transform.cpp */; };
 		4504CEE7192B4A0600F3FC8B /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE4192B4A0600F3FC8B /* Transform.cpp */; };
 		4504CEE8192B4A0600F3FC8B /* Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = 4504CEE5192B4A0600F3FC8B /* Transform.h */; };
@@ -376,8 +373,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4504CE76192B457800F3FC8B /* LEGACY_Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LEGACY_Common.cpp; sourceTree = "<group>"; };
-		4504CE77192B457800F3FC8B /* LEGACY_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEGACY_Common.h; sourceTree = "<group>"; };
 		4504CEE4192B4A0600F3FC8B /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
 		4504CEE5192B4A0600F3FC8B /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		4511FB6818A43031000A4617 /* LEGACY_Legacy2013Compat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LEGACY_Legacy2013Compat.cpp; sourceTree = "<group>"; };
@@ -749,15 +744,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4504CE75192B456D00F3FC8B /* LEGACY */ = {
-			isa = PBXGroup;
-			children = (
-				4504CE76192B457800F3FC8B /* LEGACY_Common.cpp */,
-				4504CE77192B457800F3FC8B /* LEGACY_Common.h */,
-			);
-			path = LEGACY;
-			sourceTree = "<group>";
-		};
 		4511FB6718A42A65000A4617 /* (proxying) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1223,7 +1209,6 @@
 				45A28B5418BF2004005DECF5 /* D2014R2.h */,
 				45478ED81929CA12009E72B8 /* DEV_SUPPORT.cpp */,
 				45478ED91929CA12009E72B8 /* DEV_SUPPORT.h */,
-				4504CE75192B456D00F3FC8B /* LEGACY */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -1397,7 +1382,6 @@
 			isa = PBXGroup;
 			children = (
 				45E4949F18B145C000195E5F /* CoreGraphics */,
-				45E494B618B147A800195E5F /* AppKit */,
 				45E494B718B147A800195E5F /* UIKit */,
 			);
 			path = Apple;
@@ -1412,13 +1396,6 @@
 				45E494DE18B18F7400195E5F /* _PlanarRGBAImageUtility.h */,
 			);
 			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		45E494B618B147A800195E5F /* AppKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppKit;
 			sourceTree = "<group>";
 		};
 		45E494B718B147A800195E5F /* UIKit */ = {
@@ -1628,7 +1605,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4504CE7A192B457800F3FC8B /* LEGACY_Common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1741,7 +1717,6 @@
 				456132AA18E23CE10057EB03 /* LEGACY_LineMeshForm.cpp in Sources */,
 				456132AB18E23CE10057EB03 /* LEGACY_SkinnedForm_v2.cpp in Sources */,
 				456132AC18E23CE10057EB03 /* LEGACY_TriangleListMeshForm_v2.cpp in Sources */,
-				4504CE78192B457800F3FC8B /* LEGACY_Common.cpp in Sources */,
 				456132AD18E23CE10057EB03 /* LEGACY_Renderer_v2.cpp in Sources */,
 				456132AE18E23CE10057EB03 /* LEGACY_ModelDrawingGenerator_v2.cpp in Sources */,
 				4504CF06192B512900F3FC8B /* LEGACY_Transform.cpp in Sources */,
@@ -1762,7 +1737,6 @@
 				456132AF18E23D030057EB03 /* LEGACY_LineMeshForm.cpp in Sources */,
 				456132B018E23D030057EB03 /* LEGACY_SkinnedForm_v2.cpp in Sources */,
 				456132B118E23D030057EB03 /* LEGACY_TriangleListMeshForm_v2.cpp in Sources */,
-				4504CE79192B457800F3FC8B /* LEGACY_Common.cpp in Sources */,
 				456132B218E23D030057EB03 /* LEGACY_Renderer_v2.cpp in Sources */,
 				456132B318E23D030057EB03 /* LEGACY_ModelDrawingGenerator_v2.cpp in Sources */,
 				4504CF0A192B512C00F3FC8B /* LEGACY_Transform.cpp in Sources */,

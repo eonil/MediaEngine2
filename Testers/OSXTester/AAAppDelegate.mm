@@ -7,6 +7,7 @@
 //
 
 
+#include "AATestCommon.h"
 #include "AATestStatus.h"
 #include "AATestRendering0.h"
 #include "AATestRendering1.h"
@@ -141,7 +142,8 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 			TestRendering1RenderingWithTransform();
 			
 			NSString*		fp0		=	[[NSBundle mainBundle] pathForResource:@"02" ofType:@"png"];
-			PlanarTexture	tex		=	Server::PlanarTexture::Utility::textureWithContentOfFileAtPath(fp0.UTF8String);
+			PlanarTexture	tex		=	load_texture_from_png_image_at_path(fp0.UTF8String);
+			
 			TestRendering2RenderingWithTexture(tex);
 			
 			[_gl_ctx flushBuffer];

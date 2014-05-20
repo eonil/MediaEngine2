@@ -253,37 +253,37 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			return	PlanarTexture(new Core(name));
 		}
 		
-		auto
-		PlanarTexture::Utility::_DEV_textureWithResourceAtPath(const std::string path) -> PlanarTexture
-		{
-			return	textureWithAlienImage(Aliens::PlanarRGBAImageProxy::proxyWithContentOfFileAtResourcePath(path));
-		}
-		
-		
-		
-		
-
-		
-		auto
-		PlanarTexture::Utility::textureWithAlienImage(const Aliens::PlanarRGBAImageProxy &image, bool const flipInY) -> PlanarTexture
-		{
-			CGImageRef	img1	=	image.rawPointer().alien;
-//			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage(img1, flipInY);
-			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage2(img1);
-			
-			return		PlanarTexture(new Core(name));
-		}
-		auto
-		PlanarTexture::Utility::textureWithMemoryRangeContainingPNGData(GenericMemoryRange<const UInt8> memory, bool const flipInY) -> PlanarTexture
-		{
-			Aliens::PlanarRGBAImageProxy	img1	=	Aliens::PlanarRGBAImageProxy::proxyWithContentOfMemory(memory);
-			return	textureWithAlienImage(img1, flipInY);
-		}
-		auto
-		PlanarTexture::Utility::textureWithContentOfFileAtPath(const str &filepath) -> PlanarTexture
-		{
-			return	textureWithAlienImage(Aliens::PlanarRGBAImageProxy::proxyWithContentOfFileAtArbitraryPath(filepath));
-		}
+//		auto
+//		PlanarTexture::Utility::_DEV_textureWithResourceAtPath(const std::string path) -> PlanarTexture
+//		{
+//			return	textureWithAlienImage(Aliens::PlanarRGBAImageProxy::proxyWithContentOfFileAtResourcePath(path));
+//		}
+//		
+//		
+//		
+//		
+//
+//		
+//		auto
+//		PlanarTexture::Utility::textureWithAlienImage(const Aliens::PlanarRGBAImageProxy &image, bool const flipInY) -> PlanarTexture
+//		{
+//			CGImageRef	img1	=	image.rawPointer().alien;
+////			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage(img1, flipInY);
+//			GLuint		name	=	Aliens::NameByCreatingTextureFromCGImage2(img1);
+//			
+//			return		PlanarTexture(new Core(name));
+//		}
+//		auto
+//		PlanarTexture::Utility::textureWithMemoryRangeContainingPNGData(GenericMemoryRange<const UInt8> memory, bool const flipInY) -> PlanarTexture
+//		{
+//			Aliens::PlanarRGBAImageProxy	img1	=	Aliens::PlanarRGBAImageProxy::proxyWithContentOfMemory(memory);
+//			return	textureWithAlienImage(img1, flipInY);
+//		}
+//		auto
+//		PlanarTexture::Utility::textureWithContentOfFileAtPath(const str &filepath) -> PlanarTexture
+//		{
+//			return	textureWithAlienImage(Aliens::PlanarRGBAImageProxy::proxyWithContentOfFileAtArbitraryPath(filepath));
+//		}
 		
 		
 		

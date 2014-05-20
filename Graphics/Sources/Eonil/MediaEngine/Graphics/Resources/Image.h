@@ -8,7 +8,6 @@
 
 #pragma once
 #include "../Common.h"
-#include "../LEGACY/LEGACY_Common.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_BEGIN
 
 /*!
@@ -23,6 +22,8 @@ struct
 EONIL_MEDIA_ENGINE_DEPRECATE()
 Image
 {
+	using		Legacy2013SharedMemory				=	Eonil::Improvisations::MediaEngine::Foundation::_Legacy2013::SharedMemory;
+	
 	struct
 	TYPE
 	{

@@ -59,8 +59,7 @@ public:
 		D2014R2::DebuggingInformationOverlayDrawer	_dbgd	{};
 		D2014R2::SpriteDrawer						_sprd	{};
 		
-		auto			img1	=	load_png_image_from_path(tex_path);
-		PlanarTexture	_tex1	=	PlanarTexture::Utility::textureWithPixels({img1.pixels.data(), img1.pixels.data()+img1.pixels.size()}, img1.width, img1.height);
+		PlanarTexture	_tex1	=	load_texture_from_png_image_at_path(tex_path);
 		
 		////
 		

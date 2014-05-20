@@ -1,9 +1,9 @@
 //
-//  TestCommon.h
-//  Application
+//  AATestCommon.h
+//  Testers
 //
-//  Created by Hoon H. on 14/5/20.
-//
+//  Created by Hoon H. on 14/5/21.
+//  Copyright (c) 2014 Eonil. All rights reserved.
 //
 
 #pragma once

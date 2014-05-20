@@ -48,6 +48,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		 Core is implemented using CoreGraphics and UIKit in iOS.
 		 */
 		class
+		EONIL_MEDIA_ENGINE_DEPRECATE()
 		PlanarRGBAImageProxy::Core
 		{
 			RawPointer	_rptr{};

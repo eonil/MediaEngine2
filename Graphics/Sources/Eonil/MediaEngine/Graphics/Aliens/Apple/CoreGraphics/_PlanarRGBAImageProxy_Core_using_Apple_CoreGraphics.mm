@@ -176,7 +176,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				CGImageRef			img		=	CGImageSourceCreateImageAtIndex(source, 0, NULL);		//	rc == +1.
 				CFRelease(source);
 				
-				auto	code	=	CGImageGetAlphaInfo(img) ;
+//				auto	code	=	CGImageGetAlphaInfo(img) ;
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(CGImageGetAlphaInfo(img) == kCGImageAlphaLast, "The image must be a non-premultiplied RGBA image. (alpha channel at last)");
 				return	img;
 			}

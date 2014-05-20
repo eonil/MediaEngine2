@@ -44,15 +44,15 @@
 #include "Server/Machinery/TextureSampler.h"
 
 //#include "Platform/D2014R1/_TextTextureGenerator.h"
-#include "Aliens/TextTextureGeneratorV2.h"
+//#include "Aliens/TextTextureGeneratorV2.h"
 
 
 
-#include "Transcoding/LEGACY_PackA.h"
-#include "Transcoding/LEGACY_PackNodeA.h"
-#include "Transcoding/LEGACY_PackSerializerA.h"
-#include "Transcoding/LEGACY_ModelProxyEditorBoxA.h"
-#include "Transcoding/LEGACY_ModelExporterA.h"
+//#include "Transcoding/LEGACY_PackA.h"
+//#include "Transcoding/LEGACY_PackNodeA.h"
+//#include "Transcoding/LEGACY_PackSerializerA.h"
+//#include "Transcoding/LEGACY_ModelProxyEditorBoxA.h"
+//#include "Transcoding/LEGACY_ModelExporterA.h"
 
 #endif
 

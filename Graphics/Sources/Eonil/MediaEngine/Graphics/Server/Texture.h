@@ -208,34 +208,34 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				
 				
 				
-				EONIL_MEDIA_ENGINE_DEPRECATE()
-				static PlanarTexture	_DEV_textureWithResourceAtPath(std::string const path);											//!	The path can be absolute or relative path to resource root.
-				
-				/*!
-				 @param		flipInY
-							Flips the image along the Y axis. Use this if you need to flip the image.
-							In most cases (especially if you loaded an image using only this library)
-							you don't need to set the value. 
-				 
-							**CAUTION** 
-							This option is supported only with premultiplied-alpha images.
-							If your image is straight-alpha, you must set this to `false`.
-				 
-				 */
-				
-				EONIL_MEDIA_ENGINE_DEPRECATE()
-				static auto	textureWithAlienImage(Aliens::PlanarRGBAImageProxy const& image, bool const flipInY = false) -> PlanarTexture;
-				
-				/*!
-				 @param		flipInY
-							This parameter will be routed to `flipInY` parameter in `textureWithAlienImage` 
-							function. See the function's comment.
-				 */
-				EONIL_MEDIA_ENGINE_DEPRECATE()
-				static auto textureWithMemoryRangeContainingPNGData(GenericMemoryRange<UInt8 const> memory, bool const flipInY = false) -> PlanarTexture;
-				
-				EONIL_MEDIA_ENGINE_DEPRECATE()
-				static auto	textureWithContentOfFileAtPath(str const& filepath) -> PlanarTexture;
+//				EONIL_MEDIA_ENGINE_DEPRECATE()
+//				static PlanarTexture	_DEV_textureWithResourceAtPath(std::string const path);											//!	The path can be absolute or relative path to resource root.
+//				
+//				/*!
+//				 @param		flipInY
+//							Flips the image along the Y axis. Use this if you need to flip the image.
+//							In most cases (especially if you loaded an image using only this library)
+//							you don't need to set the value. 
+//				 
+//							**CAUTION** 
+//							This option is supported only with premultiplied-alpha images.
+//							If your image is straight-alpha, you must set this to `false`.
+//				 
+//				 */
+//				
+//				EONIL_MEDIA_ENGINE_DEPRECATE()
+//				static auto	textureWithAlienImage(Aliens::PlanarRGBAImageProxy const& image, bool const flipInY = false) -> PlanarTexture;
+//				
+//				/*!
+//				 @param		flipInY
+//							This parameter will be routed to `flipInY` parameter in `textureWithAlienImage` 
+//							function. See the function's comment.
+//				 */
+//				EONIL_MEDIA_ENGINE_DEPRECATE()
+//				static auto textureWithMemoryRangeContainingPNGData(GenericMemoryRange<UInt8 const> memory, bool const flipInY = false) -> PlanarTexture;
+//				
+//				EONIL_MEDIA_ENGINE_DEPRECATE()
+//				static auto	textureWithContentOfFileAtPath(str const& filepath) -> PlanarTexture;
 			};
 		};
 		
