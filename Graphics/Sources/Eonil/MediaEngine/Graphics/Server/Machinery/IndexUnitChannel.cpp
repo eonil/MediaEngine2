@@ -139,7 +139,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			IndexUnitChannel::_lengthOfData() const
 			{
 				EEGL_ASSERT(_is_ready_for_drawing());
-				return	not _client_side_binding.empty() ? _client_side_binding.memory.reinterpretAs<uint8_t const>().size() : _server_side_biding.length();
+				EEGL_ASSERT(_client_side_binding.empty() or _client_side_binding.memory.reinterpretAs<uint8_t const>().size() > 0);
+				return	_server_side_biding.empty() ? _client_side_binding.memory.reinterpretAs<uint8_t const>().size() : _server_side_biding.length();
 			}
 			GLenum const
 			IndexUnitChannel::_unitTypeForDrawingParameter() const
@@ -152,7 +153,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			IndexUnitChannel::_pointerForDrawingParameter() const
 			{
 				EEGL_ASSERT(_is_ready_for_drawing());
-				return	not _client_side_binding.empty() ? _client_side_binding.memory.begin() : CONVPTR(_server_side_biding.offset).ptr;
+				EEGL_ASSERT(_client_side_binding.empty() or _client_side_binding.memory.reinterpretAs<uint8_t const>().size() > 0);
+				return	_server_side_biding.empty() ? _client_side_binding.memory.begin() : CONVPTR(_server_side_biding.offset).ptr;
 			}
 			
 			bool const

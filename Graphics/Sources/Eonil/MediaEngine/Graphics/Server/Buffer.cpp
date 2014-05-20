@@ -233,6 +233,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			eeglBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _name);
 			eeglBufferData(GL_ELEMENT_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
 			eeglUnbindBufer(GL_ELEMENT_ARRAY_BUFFER);
+			
+			_hotfix_length_of_data	=	bytes.size();
 		}
 		ElementArrayBuffer::~ElementArrayBuffer()
 		{

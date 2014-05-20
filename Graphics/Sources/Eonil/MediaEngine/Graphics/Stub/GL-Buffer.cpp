@@ -145,7 +145,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 I think this is desinged behavior. So we need to full every buffer as much as possible.
 			 Anyway, treat OK if allocated buffer is equal or larger than requested.
 			 */
-			auto	a1	=	eeglGetBufferParameteri(target, GL_BUFFER_SIZE);
+//			auto	a1	=	eeglGetBufferParameteri(target, GL_BUFFER_SIZE);
 			EEGL_ASSERT(eeglGetBufferParameteri(target, GL_BUFFER_SIZE) >= size);
 		}
 		
