@@ -80,9 +80,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			GLuint						_name						{NULL_GL_NAME()};
 			
-			vec<ProgramUniformValueSlotProxyV1>		_uniformValueSlots			{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
-			vec<ProgramVertexAttributeSlotProxyV1>	_vertexAttributeSlots		{};			//	This is immutable/readonly. Will not be modified after once retrieved. @deprecated
-			
 			map<str, VAC const*>		_vertexChannelsForAttributesMapping{};
 			
 			////
@@ -91,10 +88,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			auto	_search_uniform_location(str const& name) const -> GLint;
 			auto	_search_vertex_attribute_location(const str &name) const -> GLint;
-			
-			EONIL_MEDIA_ENGINE_DEPRECATE() auto	searchProgramUniformValueSlotProxyV1ForName(const str &name) const -> ProgramUniformValueSlotProxyV1 const*;
-			EONIL_MEDIA_ENGINE_DEPRECATE() auto	searchProgramUniformValueSlotProxyV1ForName(const str &name) -> ProgramUniformValueSlotProxyV1*;
-			
 			
 		public:
 			Program() = default;
@@ -109,46 +102,11 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			auto	empty() const -> bool;
 			auto	name() const -> GLuint;
 			
-//			struct
-//			{
-//				std::vector<ProgramUniformValueSlotProxyV1> const&	all() const;
-//				ProgramUniformValueSlotProxyV1 const&					atIndex(Size const index) const;
-//				ProgramUniformValueSlotProxyV1&						atIndex(Size const index);
-//				
-//				Size const								indexForName(
-//				ProgramUniformValueSlotProxyV1 const&					forName(std::string const name) const;
-//				ProgramUniformValueSlotProxyV1&						forName(std::string const name);
-//			}
-//			uniformValueSlot;
-//
-//			struct
-//			{
-//				std::vector<ProgramVertexAttributeSlotProxyV1> const&		all() const;
-//				ProgramVertexAttributeSlotProxyV1 const&					atIndex(Size const index) const;
-//				ProgramVertexAttributeSlotProxyV1&						atIndex(Size const index);
-//			}
-//			vertexAttributeSlot;
-			
 			auto	uniformValueSlotForName(str const& name) const -> local<ProgramUniformValueSlotProxy const>;			//!	Panics if there's no slot for the name.
 			auto	uniformValueSlotForName(str const& name) -> local<ProgramUniformValueSlotProxy>;						//!	Panics if there's no slot for the name.
 			auto	vertexAttributeSlotForName(str const& name) const -> local<ProgramVertexAttributeSlotProxy const>;		//!	Panics if there's no slot for the name.
 			auto	vertexAttributeSlotForName(str const& name) -> local<ProgramVertexAttributeSlotProxy>;					//!	Panics if there's no slot for the name.
 			
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	allProgramUniformValueSlotProxyV1s() const									->	vec<ProgramUniformValueSlotProxyV1> const&;
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	uniformValueSlotAtIndex(Size const index) const					->	ProgramUniformValueSlotProxyV1 const&;
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	uniformValueSlotAtIndex(Size const index)						->	ProgramUniformValueSlotProxyV1&;
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	indexOfProgramUniformValueSlotProxyV1ForName(std::string const name) const	->	Size;								//!	@note	If there's no slot for the name, An excepion will be thrown. Take care that you need to supply fully qualified name for a slot. See the OpenGL ES 2.0 manual for details. The only exception is sole array name.
-			
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	allProgramVertexAttributeSlotProxyV1s() const									->	vec<ProgramVertexAttributeSlotProxyV1> const&;
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	vertexAttributeSlotAtIndex(Size const index) const				->	ProgramVertexAttributeSlotProxyV1 const&;
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	vertexAttributeSlotAtIndex(Size const index)					->	ProgramVertexAttributeSlotProxyV1&;
-			EONIL_MEDIA_ENGINE_DEPRECATE()	auto	indexOfProgramVertexAttributeSlotProxyV1ForName(std::string const name) const	->	Size;
-			
-//			auto	vertexAttributeSlotForName(str const& name) const				->	ProgramVertexAttributeSlotProxyV1 const&;
-			
-			
-//		public:
-//			std::string const							description() const;
 			
 			
 			
