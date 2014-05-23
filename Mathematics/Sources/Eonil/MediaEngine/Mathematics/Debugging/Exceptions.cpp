@@ -62,38 +62,38 @@ default_epsilon() -> Geometry::Scalar
 	return	std::numeric_limits<Geometry::Scalar>::epsilon();
 }
 auto
-large_epsilon() -> Geometry::Scalar
+default_tolerance() -> Geometry::Scalar
 {
 	return	0.001;
 }
 auto
-almost_equals(Geometry::Scalar const& a, Geometry::Scalar const& b, Geometry::Scalar const& epsilon) -> bool
+almost_equals(Geometry::Scalar const& a, Geometry::Scalar const& b, Geometry::Scalar const& tolerance) -> bool
 {
 	if (USE_EXCEPTIONS)
 	{
-		error_if(epsilon < 0);
+		error_if(tolerance < 0);
 	}
 	
 	////
 	
-	return	std::abs(a - b) < epsilon;
+	return	std::abs(a - b) < tolerance;
 }
 auto
-almost_equals(Geometry::Vector3 const& a, Geometry::Vector3 const& b, Geometry::Scalar const& epsilon) -> bool
+almost_equals(Geometry::Vector3 const& a, Geometry::Vector3 const& b, Geometry::Scalar const& tolerance) -> bool
 {
 	if (USE_EXCEPTIONS)
 	{
-		error_if(epsilon < 0);
+		error_if(tolerance < 0);
 	}
 	
 	////
 	
-	return	(a - b).length() < epsilon;
+	return	(a - b).length() < tolerance;
 }
 auto
-almost_normalized(Geometry::Vector3 const& a, Geometry::Scalar const& epsilon) -> bool
+almost_normalized(Geometry::Vector3 const& a, Geometry::Scalar const& tolerance) -> bool
 {
-	return	almost_equals(a.length(), 1, epsilon);
+	return	almost_equals(a.length(), 1, tolerance);
 }
 
 
