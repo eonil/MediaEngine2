@@ -306,12 +306,28 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 		 */
 		static auto		angleBetweenVectors(Vector3 const& a, Vector3 const& b) -> Scalar;											//!	All parameters should be normalized.
 		
-//		/*!
-//		 @return
-//		 Angle in randisn to make vector `a` to `b`. 
-//		 Positive number is counter-clockwise direction.
-//		 */
-//		static Scalar const		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis);			//!	All parameters should be normalized.
+		/*!
+		 @param
+		 a
+		 Must be normalized.
+		 
+		 @param
+		 b
+		 Must be normalized.
+		 
+		 @param
+		 planeAxis
+		 Must be normalized.
+		 
+		 @return
+		 Angle in randisn to make vector `a` to `b`.
+		 Returning angle is always a smallest angle between them.
+		 Positive number is counter-clockwise direction.
+		 Output range is `-PI~+PI`.
+		 `-PI` and `+PI` are semantically equal.
+		 */
+		static auto		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis) -> Scalar;			//!	All parameters should be normalized.
+		
 		static Vector3 const	crossProductionOfVectors(Vector3 const a, Vector3 const b);
 	};
 };

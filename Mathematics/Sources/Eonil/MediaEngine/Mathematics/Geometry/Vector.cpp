@@ -379,20 +379,6 @@ Vector3::Vector3(Scalar const x, Scalar const y, Scalar const z)
 	this->z	=	z;
 }
 
-//Scalar const
-//Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis)
-//{
-//	if (USE_EXCEPTIONS)
-//	{
-//		error_if(not almost_normalized(a), "All input vectors must be normalized.");
-//		error_if(not almost_normalized(b), "All input vectors must be normalized.");
-//		error_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
-//	}
-//	
-//	////
-//	
-//	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
-//}
 auto
 Vector3::Utility::angleBetweenVectors(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 &a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 &b) -> Scalar
 {
@@ -404,17 +390,25 @@ Vector3::Utility::angleBetweenVectors(const Eonil::Improvisations::MediaEngine::
 	
 	////
 	
-	/*!
-	 We don't need to deal with vector magnitude stuffs because all input vectors are normalized.
-	 
-	 @note
-	 Do not use GLM angle function. Seems to have a bug by clamping dot output range.
-	 */
+	return	EE(glm::angle(GLM(a), GLM(b)));
 	
+//	auto const	dot	=	Vector3::Utility::dotProductionOfVectors(a, b);
+//	auto const	a3	=	Trigonometry::arccosine(dot);
+//	return		a3;
+}
+auto
+Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis) -> Scalar
+{
+	if (USE_EXCEPTIONS)
+	{
+		error_if(not almost_normalized(a), "All input vectors must be normalized.");
+		error_if(not almost_normalized(b), "All input vectors must be normalized.");
+		error_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
+	}
 	
-	auto const	dot	=	Vector3::Utility::dotProductionOfVectors(a, b);
-	auto const	a3	=	Trigonometry::arccosine(dot);
-	return		a3;
+	////
+	
+	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
 }
 Vector3 const
 Vector3::Utility::crossProductionOfVectors(const Vector3 left, const Vector3 right)
