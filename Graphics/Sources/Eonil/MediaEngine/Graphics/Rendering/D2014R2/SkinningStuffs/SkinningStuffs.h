@@ -13,6 +13,12 @@ EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
 
 
+/*
+ All features in this file are just a sketch. Not actually implemented or tested.
+ */
+
+
+
 namespace
 SkinningStuffs
 {
