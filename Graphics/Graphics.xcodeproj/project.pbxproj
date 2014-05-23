@@ -206,9 +206,9 @@
 		459AD0971757BB9000515B26 /* GL-Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB52173BC7450011D992 /* GL-Shader.cpp */; };
 		459AD0981757BB9000515B26 /* GL-Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB54173BC7450011D992 /* GL-Texture.cpp */; };
 		459AD0991757BB9000515B26 /* GL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D3CB56173BC7450011D992 /* GL.cpp */; };
-		459CF53C18B8A860004A5C14 /* CPUTransformLineDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459CF53A18B8A860004A5C14 /* CPUTransformLineDrawer.cpp */; };
-		459CF53D18B8A860004A5C14 /* CPUTransformLineDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459CF53A18B8A860004A5C14 /* CPUTransformLineDrawer.cpp */; };
-		459CF53E18B8A860004A5C14 /* CPUTransformLineDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 459CF53B18B8A860004A5C14 /* CPUTransformLineDrawer.h */; };
+		459CF53C18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459CF53A18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp */; };
+		459CF53D18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459CF53A18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp */; };
+		459CF53E18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 459CF53B18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.h */; };
 		459CF54418B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459CF54218B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.cpp */; };
 		459CF54518B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459CF54218B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.cpp */; };
 		459CF54618B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 459CF54318B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.h */; };
@@ -349,6 +349,15 @@
 		45F14E9A18B2F087005F4A4C /* CPUTransformParticleDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F14E9818B2F087005F4A4C /* CPUTransformParticleDrawer.cpp */; };
 		45F14E9B18B2F087005F4A4C /* CPUTransformParticleDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F14E9818B2F087005F4A4C /* CPUTransformParticleDrawer.cpp */; };
 		45F14E9C18B2F087005F4A4C /* CPUTransformParticleDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F14E9918B2F087005F4A4C /* CPUTransformParticleDrawer.h */; };
+		45F2AF8F192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF8D192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp */; };
+		45F2AF90192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF8D192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp */; };
+		45F2AF91192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2AF8E192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.h */; };
+		45F2AF94192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF92192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp */; };
+		45F2AF95192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF92192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp */; };
+		45F2AF96192F5F6F00258DFD /* CPUTransformTriangleDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2AF93192F5F6F00258DFD /* CPUTransformTriangleDrawer.h */; };
+		45F2AFEC192F8D3800258DFD /* TriangleDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AFEA192F8D3800258DFD /* TriangleDrawer.cpp */; };
+		45F2AFED192F8D3800258DFD /* TriangleDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AFEA192F8D3800258DFD /* TriangleDrawer.cpp */; };
+		45F2AFEE192F8D3800258DFD /* TriangleDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2AFEB192F8D3800258DFD /* TriangleDrawer.h */; };
 		45F77FA218F90C570063FEF9 /* ServerObjectPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F77FA018F90C570063FEF9 /* ServerObjectPtr.cpp */; };
 		45F77FA318F90C570063FEF9 /* ServerObjectPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F77FA018F90C570063FEF9 /* ServerObjectPtr.cpp */; };
 		45F77FA418F90C570063FEF9 /* ServerObjectPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F77FA118F90C570063FEF9 /* ServerObjectPtr.h */; };
@@ -429,20 +438,20 @@
 		4529051418B6979800FCFCBD /* ROADMAP & PLAN - GOALS AND NON-GOALS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ROADMAP & PLAN - GOALS AND NON-GOALS"; sourceTree = "<group>"; };
 		4529051718B6984300FCFCBD /* DEAD DOCUMENTATIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DEAD DOCUMENTATIONS"; sourceTree = "<group>"; };
 		452D7EE318DDDD4E00ACD745 /* GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common.inc */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "GPUTransformRegularPolygonDrawer.vertex.shader.glsl-common.inc"; sourceTree = "<group>"; };
-		452D7F3818DDFC9000ACD745 /* CPUTransformLineDrawer.vertex.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = "CPUTransformLineDrawer.vertex.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
+		452D7F3818DDFC9000ACD745 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; path = "CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
 		452D7F3918DDFD4C00ACD745 /* Common.vertex.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.vertex.shader.glsl-es-1_00"; sourceTree = "<group>"; };
 		452D7F3A18DDFD5B00ACD745 /* Common.fragment.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.fragment.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
 		452D7F3B18DDFDA700ACD745 /* Common.vertex.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.vertex.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
 		452D7F3C18DDFDB100ACD745 /* Common.fragment.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.fragment.shader.glsl-es-1_00"; sourceTree = "<group>"; };
 		452D7F3D18DDFDE200ACD745 /* Common.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
 		452D7F3E18DDFDED00ACD745 /* Common.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.shader.glsl-es-1_00"; sourceTree = "<group>"; };
-		452D7F3F18DDFF4E00ACD745 /* CPUTransformLineDrawer.vertex.shader.glsl-common */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformLineDrawer.vertex.shader.glsl-common"; sourceTree = "<group>"; };
+		452D7F3F18DDFF4E00ACD745 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-common */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.vertex.shader.glsl-common"; sourceTree = "<group>"; };
 		452D7F4118DE1C4E00ACD745 /* Common.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
 		452D7F4218DE1C9500ACD745 /* Common.vertex.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.vertex.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
 		452D7F4318DE1CBF00ACD745 /* Common.fragment.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "Common.fragment.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
 		452D7F4418DE1CDB00ACD745 /* CPUTransformSpriteDrawer.fragment.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformSpriteDrawer.fragment.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
-		452D7F4518DE1CFF00ACD745 /* CPUTransformLineDrawer.vertex.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformLineDrawer.vertex.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
-		452D7F4618DE1D1C00ACD745 /* CPUTransformLineDrawer.fragment.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformLineDrawer.fragment.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
+		452D7F4518DE1CFF00ACD745 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
+		452D7F4618DE1D1C00ACD745 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_10 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_10"; sourceTree = "<group>"; };
 		452F3A1118E3823C00AF22BA /* GeometryRendering.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryRendering.cpp; sourceTree = "<group>"; };
 		452F3A1218E3823C00AF22BA /* GeometryRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryRendering.h; sourceTree = "<group>"; };
 		453554CF18DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPUTransformUniformPolylineImmediateDrawer.cpp; sourceTree = "<group>"; };
@@ -505,7 +514,7 @@
 		456B274F18A8F58B0037B82A /* EEGraphicsDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEGraphicsDrawableView.h; sourceTree = "<group>"; };
 		456B275018A8F58B0037B82A /* EEGraphicsDrawableView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EEGraphicsDrawableView.mm; sourceTree = "<group>"; };
 		45773030189F9726006BC2A3 /* Trash */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Trash; sourceTree = "<group>"; };
-		457E3B1C18B97A2100327EB8 /* CPUTransformLineDrawer.fragment.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformLineDrawer.fragment.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
+		457E3B1C18B97A2100327EB8 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
 		457E3B1D18B988CF00327EB8 /* ShadingAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShadingAlgorithm.cpp; sourceTree = "<group>"; };
 		457E3B1E18B988CF00327EB8 /* ShadingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadingAlgorithm.h; sourceTree = "<group>"; };
 		457FAB4A1771EA2F00F088DA /* WHATSTHIS.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = WHATSTHIS.md; sourceTree = "<group>"; };
@@ -558,10 +567,10 @@
 		4598F49018DB32A0000C3F6E /* GPUTransformRegularPolygonDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GPUTransformRegularPolygonDrawer.cpp; sourceTree = "<group>"; };
 		4598F49118DB32A0000C3F6E /* GPUTransformRegularPolygonDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUTransformRegularPolygonDrawer.h; sourceTree = "<group>"; };
 		459AD0A61757C18500515B26 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		459CF53A18B8A860004A5C14 /* CPUTransformLineDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPUTransformLineDrawer.cpp; sourceTree = "<group>"; };
-		459CF53B18B8A860004A5C14 /* CPUTransformLineDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUTransformLineDrawer.h; sourceTree = "<group>"; };
-		459CF53F18B8A99D004A5C14 /* CPUTransformLineDrawer.fragment.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformLineDrawer.fragment.shader.glsl-es-1_00"; sourceTree = "<group>"; };
-		459CF54018B8A9AE004A5C14 /* CPUTransformLineDrawer.vertex.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformLineDrawer.vertex.shader.glsl-es-1_00"; sourceTree = "<group>"; };
+		459CF53A18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPUTransformDebuggingLineDrawer.cpp; sourceTree = "<group>"; };
+		459CF53B18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUTransformDebuggingLineDrawer.h; sourceTree = "<group>"; };
+		459CF53F18B8A99D004A5C14 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.fragment.shader.glsl-es-1_00"; sourceTree = "<group>"; };
+		459CF54018B8A9AE004A5C14 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-es-1_00 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.vertex.shader.glsl-es-1_00"; sourceTree = "<group>"; };
 		459CF54218B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DebuggingInformationOverlayDrawer.cpp; sourceTree = "<group>"; };
 		459CF54318B8ACD5004A5C14 /* DebuggingInformationOverlayDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggingInformationOverlayDrawer.h; sourceTree = "<group>"; };
 		459F595B17A4BB3B008B7F1A /* OSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OSX.mm; sourceTree = "<group>"; };
@@ -707,6 +716,14 @@
 		45F14E7F18B2EED8005F4A4C /* SpriteDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteDrawer.h; sourceTree = "<group>"; };
 		45F14E9818B2F087005F4A4C /* CPUTransformParticleDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPUTransformParticleDrawer.cpp; sourceTree = "<group>"; };
 		45F14E9918B2F087005F4A4C /* CPUTransformParticleDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUTransformParticleDrawer.h; sourceTree = "<group>"; };
+		45F2AF8D192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolylineDrawer_RefImplOnCPU.cpp; sourceTree = "<group>"; };
+		45F2AF8E192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolylineDrawer_RefImplOnCPU.h; sourceTree = "<group>"; };
+		45F2AF92192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPUTransformTriangleDrawer.cpp; sourceTree = "<group>"; };
+		45F2AF93192F5F6F00258DFD /* CPUTransformTriangleDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUTransformTriangleDrawer.h; sourceTree = "<group>"; };
+		45F2AF97192F608500258DFD /* CPUTransformTriangleDrawer.vertex.shader.rstr */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = CPUTransformTriangleDrawer.vertex.shader.rstr; sourceTree = "<group>"; };
+		45F2AF98192F60D500258DFD /* CPUTransformTriangleDrawer.fragment.shader.rstr */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = CPUTransformTriangleDrawer.fragment.shader.rstr; sourceTree = "<group>"; };
+		45F2AFEA192F8D3800258DFD /* TriangleDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TriangleDrawer.cpp; sourceTree = "<group>"; };
+		45F2AFEB192F8D3800258DFD /* TriangleDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleDrawer.h; sourceTree = "<group>"; };
 		45F77FA018F90C570063FEF9 /* ServerObjectPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerObjectPtr.cpp; sourceTree = "<group>"; };
 		45F77FA118F90C570063FEF9 /* ServerObjectPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObjectPtr.h; sourceTree = "<group>"; };
 		45F9DCB618BEB47D00B4E03F /* TO-DO LIST */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TO-DO LIST"; sourceTree = "<group>"; };
@@ -916,20 +933,20 @@
 			path = Optimization;
 			sourceTree = "<group>";
 		};
-		452D7F3718DDFC3500ACD745 /* (CPU based line-drawer) */ = {
+		452D7F3718DDFC3500ACD745 /* (debugging line drawer - CPU based) */ = {
 			isa = PBXGroup;
 			children = (
-				452D7F3F18DDFF4E00ACD745 /* CPUTransformLineDrawer.vertex.shader.glsl-common */,
-				452D7F3818DDFC9000ACD745 /* CPUTransformLineDrawer.vertex.shader.glsl-dt-1_50 */,
-				452D7F4518DE1CFF00ACD745 /* CPUTransformLineDrawer.vertex.shader.glsl-dt-1_10 */,
-				459CF54018B8A9AE004A5C14 /* CPUTransformLineDrawer.vertex.shader.glsl-es-1_00 */,
-				457E3B1C18B97A2100327EB8 /* CPUTransformLineDrawer.fragment.shader.glsl-dt-1_50 */,
-				452D7F4618DE1D1C00ACD745 /* CPUTransformLineDrawer.fragment.shader.glsl-dt-1_10 */,
-				459CF53F18B8A99D004A5C14 /* CPUTransformLineDrawer.fragment.shader.glsl-es-1_00 */,
-				459CF53A18B8A860004A5C14 /* CPUTransformLineDrawer.cpp */,
-				459CF53B18B8A860004A5C14 /* CPUTransformLineDrawer.h */,
+				452D7F3F18DDFF4E00ACD745 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-common */,
+				452D7F3818DDFC9000ACD745 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_50 */,
+				452D7F4518DE1CFF00ACD745 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_10 */,
+				459CF54018B8A9AE004A5C14 /* CPUTransformDebuggingLineDrawer.vertex.shader.glsl-es-1_00 */,
+				457E3B1C18B97A2100327EB8 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_50 */,
+				452D7F4618DE1D1C00ACD745 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_10 */,
+				459CF53F18B8A99D004A5C14 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-es-1_00 */,
+				459CF53A18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp */,
+				459CF53B18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.h */,
 			);
-			name = "(CPU based line-drawer)";
+			name = "(debugging line drawer - CPU based)";
 			sourceTree = "<group>";
 		};
 		452D7F4018DE00EB00ACD745 /* (sprite-drawer-CPU) */ = {
@@ -1469,8 +1486,7 @@
 				45F14E8318B2EF8E005F4A4C /* (lowest level drawers) */,
 				45F14E7E18B2EED8005F4A4C /* SpriteDrawer.cpp */,
 				45F14E7F18B2EED8005F4A4C /* SpriteDrawer.h */,
-				45E4950C18B1B01700195E5F /* PolylineDrawer.cpp */,
-				45E4950D18B1B01700195E5F /* PolylineDrawer.h */,
+				45F2AFEF192F94B600258DFD /* (polyline drawer - CPU based) */,
 				45E4950618B1AFC900195E5F /* SplineDrawer.cpp */,
 				45E4950718B1AFC900195E5F /* SplineDrawer.h */,
 				45D15C1B18B204EB00B56E85 /* RegularPolygonDrawer.cpp */,
@@ -1505,8 +1521,9 @@
 			children = (
 				45F14E9818B2F087005F4A4C /* CPUTransformParticleDrawer.cpp */,
 				45F14E9918B2F087005F4A4C /* CPUTransformParticleDrawer.h */,
+				452D7F3718DDFC3500ACD745 /* (debugging line drawer - CPU based) */,
+				45F2AF99192F616700258DFD /* (triangle drawer - CPU based) */,
 				452D7F4018DE00EB00ACD745 /* (sprite-drawer-CPU) */,
-				452D7F3718DDFC3500ACD745 /* (CPU based line-drawer) */,
 				453554D418DAF03900744177 /* CPUTransformUniformPolylineImmediateDrawer.vertex.shader.rstr */,
 				453554D518DAF09B00744177 /* CPUTransformUniformPolylineImmediateDrawer.es.fragment.shader.rstr */,
 				453554D618DAF17B00744177 /* CPUTransformUniformPolylineImmediateDrawer.dt.fragment.shader.rstr */,
@@ -1518,6 +1535,30 @@
 				4598F48A18DB2F91000C3F6E /* CPUTransformRegularCircleDrawer.h */,
 			);
 			name = "(lowest level drawers)";
+			sourceTree = "<group>";
+		};
+		45F2AF99192F616700258DFD /* (triangle drawer - CPU based) */ = {
+			isa = PBXGroup;
+			children = (
+				45F2AF97192F608500258DFD /* CPUTransformTriangleDrawer.vertex.shader.rstr */,
+				45F2AF98192F60D500258DFD /* CPUTransformTriangleDrawer.fragment.shader.rstr */,
+				45F2AF92192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp */,
+				45F2AF93192F5F6F00258DFD /* CPUTransformTriangleDrawer.h */,
+				45F2AFEA192F8D3800258DFD /* TriangleDrawer.cpp */,
+				45F2AFEB192F8D3800258DFD /* TriangleDrawer.h */,
+			);
+			name = "(triangle drawer - CPU based)";
+			sourceTree = "<group>";
+		};
+		45F2AFEF192F94B600258DFD /* (polyline drawer - CPU based) */ = {
+			isa = PBXGroup;
+			children = (
+				45F2AF8D192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp */,
+				45F2AF8E192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.h */,
+				45E4950C18B1B01700195E5F /* PolylineDrawer.cpp */,
+				45E4950D18B1B01700195E5F /* PolylineDrawer.h */,
+			);
+			name = "(polyline drawer - CPU based)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1534,6 +1575,7 @@
 				453A738618B1EEFE008E65FA /* RenderingFrame.h in Headers */,
 				4588048718DFB77400B1997F /* ShaderPatchUtility.h in Headers */,
 				4588043418DF66C500B1997F /* ProgramMetadata.h in Headers */,
+				45F2AF91192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.h in Headers */,
 				4561325B18E2253F0057EB03 /* StronglyTypingNumericValue.h in Headers */,
 				45D7B52819291F0A00279F43 /* Scope.h in Headers */,
 				45478EDC1929CA12009E72B8 /* DEV_SUPPORT.h in Headers */,
@@ -1545,6 +1587,7 @@
 				45E494BC18B147B000195E5F /* _FontProxy_Core_using_Apple_UIKit.h in Headers */,
 				45E494AE18B1472E00195E5F /* FontProxy.h in Headers */,
 				4585178418B0206C0074DBC1 /* _Camera_v1.h in Headers */,
+				45F2AFEE192F8D3800258DFD /* TriangleDrawer.h in Headers */,
 				45400DAF18B432A400DF19AB /* HierarchicalAgents.h in Headers */,
 				452F3A1518E3823C00AF22BA /* GeometryRendering.h in Headers */,
 				456B275118A8F58B0037B82A /* EEGraphicsDrawableView.h in Headers */,
@@ -1552,7 +1595,7 @@
 				451F35BD18BF132D0043E1DA /* Declarations.h in Headers */,
 				45400D8A18B405BA00DF19AB /* Symbols.h in Headers */,
 				4598F49418DB32A0000C3F6E /* GPUTransformRegularPolygonDrawer.h in Headers */,
-				459CF53E18B8A860004A5C14 /* CPUTransformLineDrawer.h in Headers */,
+				459CF53E18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.h in Headers */,
 				45F14E8218B2EED8005F4A4C /* SpriteDrawer.h in Headers */,
 				45D15C1F18B204EB00B56E85 /* RegularPolygonDrawer.h in Headers */,
 				45400DA718B4233100DF19AB /* Agent.h in Headers */,
@@ -1580,6 +1623,7 @@
 				4585179618B0206D0074DBC1 /* _Viewport_v1.h in Headers */,
 				4585174B18AE6DA00074DBC1 /* Aliases.h in Headers */,
 				453ECEB5192B28440003F5FE /* RenderingCommon.h in Headers */,
+				45F2AF96192F5F6F00258DFD /* CPUTransformTriangleDrawer.h in Headers */,
 				4585179318B0206D0074DBC1 /* LEGACY_TriangleListMeshForm_v2.h in Headers */,
 				45F14E4A18B2D25F005F4A4C /* BloomFilter.h in Headers */,
 				45BC4E4718BDAFD6005AC223 /* UniformProgramParameter.h in Headers */,
@@ -1769,7 +1813,7 @@
 				4588048D18DFC2C100B1997F /* Query.cpp in Sources */,
 				45F14E4918B2D25F005F4A4C /* BloomFilter.cpp in Sources */,
 				453A738518B1EEFE008E65FA /* RenderingFrame.cpp in Sources */,
-				459CF53D18B8A860004A5C14 /* CPUTransformLineDrawer.cpp in Sources */,
+				459CF53D18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp in Sources */,
 				4588048618DFB77400B1997F /* ShaderPatchUtility.cpp in Sources */,
 				459AD0951757BB9000515B26 /* GL-Get.cpp in Sources */,
 				459AD0961757BB9000515B26 /* GL-Program.cpp in Sources */,
@@ -1833,6 +1877,7 @@
 				45136EAB18E36513006E816C /* VertexComponentChannelingDescriptor.cpp in Sources */,
 				45A28B5118BF1FE2005DECF5 /* D2014R1.cpp in Sources */,
 				4504CEE7192B4A0600F3FC8B /* Transform.cpp in Sources */,
+				45F2AFED192F8D3800258DFD /* TriangleDrawer.cpp in Sources */,
 				4528472517697B0400133320 /* Cluster.cpp in Sources */,
 				4528472A1769873600133320 /* Mesh.cpp in Sources */,
 				4528472E1769873C00133320 /* Sprite.cpp in Sources */,
@@ -1857,6 +1902,7 @@
 				457FAB631772A6C600F088DA /* GLNumbers.cpp in Sources */,
 				45DB481118BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp in Sources */,
 				4585178318B0206C0074DBC1 /* _Camera_v1.cpp in Sources */,
+				45F2AF95192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp in Sources */,
 				453A736818A2198500C01AAC /* ImplementationCommon.cpp in Sources */,
 				451F356C18BEE4A80043E1DA /* CompositionMode.cpp in Sources */,
 				45E4950F18B1B01700195E5F /* PolylineDrawer.cpp in Sources */,
@@ -1867,6 +1913,7 @@
 				4561325F18E22A610057EB03 /* DebugOnlyValidityFlagSlot.cpp in Sources */,
 				45D7B52719291F0A00279F43 /* Scope.cpp in Sources */,
 				452847A6176C095400133320 /* TransformationQueue.cpp in Sources */,
+				45F2AF90192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp in Sources */,
 				453ECEAF192B267A0003F5FE /* SkinningStuffs.cpp in Sources */,
 				45DB480C18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
 				452847A9176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
@@ -1903,7 +1950,7 @@
 				4588048C18DFC2C100B1997F /* Query.cpp in Sources */,
 				453A738418B1EEFE008E65FA /* RenderingFrame.cpp in Sources */,
 				45D3CBBE173BC9B50011D992 /* GL-Get-Buffer.cpp in Sources */,
-				459CF53C18B8A860004A5C14 /* CPUTransformLineDrawer.cpp in Sources */,
+				459CF53C18B8A860004A5C14 /* CPUTransformDebuggingLineDrawer.cpp in Sources */,
 				4588048518DFB77400B1997F /* ShaderPatchUtility.cpp in Sources */,
 				45F14E8018B2EED8005F4A4C /* SpriteDrawer.cpp in Sources */,
 				45400DAD18B432A400DF19AB /* HierarchicalAgents.cpp in Sources */,
@@ -1967,6 +2014,7 @@
 				45136EAA18E36513006E816C /* VertexComponentChannelingDescriptor.cpp in Sources */,
 				4504CEE6192B4A0600F3FC8B /* Transform.cpp in Sources */,
 				45A28B5018BF1FE2005DECF5 /* D2014R1.cpp in Sources */,
+				45F2AFEC192F8D3800258DFD /* TriangleDrawer.cpp in Sources */,
 				4528472B1769873600133320 /* Mesh.cpp in Sources */,
 				4528472F1769873C00133320 /* Sprite.cpp in Sources */,
 				45284733176988AC00133320 /* Image.cpp in Sources */,
@@ -1991,6 +2039,7 @@
 				4528477A176A23EB00133320 /* Animation.cpp in Sources */,
 				45DB481018BE0DF7004A10E0 /* ProgramVertexChannelingDescriptor.cpp in Sources */,
 				457FAB641772A6C700F088DA /* GLNumbers.cpp in Sources */,
+				45F2AF94192F5F6F00258DFD /* CPUTransformTriangleDrawer.cpp in Sources */,
 				453A736918A2198500C01AAC /* ImplementationCommon.cpp in Sources */,
 				451F356B18BEE4A80043E1DA /* CompositionMode.cpp in Sources */,
 				45E4950E18B1B01700195E5F /* PolylineDrawer.cpp in Sources */,
@@ -2001,6 +2050,7 @@
 				4561325E18E22A610057EB03 /* DebugOnlyValidityFlagSlot.cpp in Sources */,
 				45D7B52619291F0A00279F43 /* Scope.cpp in Sources */,
 				452847A7176C095400133320 /* TransformationQueue.cpp in Sources */,
+				45F2AF8F192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp in Sources */,
 				453ECEAE192B267A0003F5FE /* SkinningStuffs.cpp in Sources */,
 				45DB480B18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
 				452847AA176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,

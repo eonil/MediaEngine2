@@ -56,7 +56,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 		public:
 			ArrayBuffer() = default;
-			EONIL_MEDIA_ENGINE_DEPRECATE() ArrayBuffer(_Legacy2013::SharedMemory const data);							//	Creates initialized fixed sized buffer.
+//			EONIL_MEDIA_ENGINE_DEPRECATE() ArrayBuffer(_Legacy2013::SharedMemory const data);							//	Creates initialized fixed sized buffer.
 			ArrayBuffer(GenericMemoryRange<void const> data);
 			ArrayBuffer(ArrayBuffer const&) = delete;
 			ArrayBuffer(ArrayBuffer&&);
@@ -93,12 +93,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			GLuint	_name	=	NULL_GL_NAME();
 			size_t	_hotfix_length_of_data{0};
 
-			EONIL_MEDIA_ENGINE_DEPRECATE()
-			EONIL_MEDIA_ENGINE_DEBUG_ONLY_INLINE_FIELD(_Legacy2013::SharedMemory, _dbg_source_content);
+//			EONIL_MEDIA_ENGINE_DEPRECATE()
+//			EONIL_MEDIA_ENGINE_DEBUG_ONLY_INLINE_FIELD(_Legacy2013::SharedMemory, _dbg_source_content);
 
 		public:
 			ElementArrayBuffer() = default;
-			[[deprecated]] ElementArrayBuffer(_Legacy2013::SharedMemory const data);
+//			[[deprecated]] ElementArrayBuffer(_Legacy2013::SharedMemory const data);
 			ElementArrayBuffer(GenericMemoryRange<uint16_t const> data);
 			ElementArrayBuffer(ElementArrayBuffer const&) = delete;
 			~ElementArrayBuffer();

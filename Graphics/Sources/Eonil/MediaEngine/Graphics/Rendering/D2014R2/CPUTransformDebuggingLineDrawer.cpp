@@ -1,12 +1,12 @@
 //
-//  CPUTransformLineDrawer.cpp
+//  CPUTransformDebuggingLineDrawer.cpp
 //  Graphics
 //
 //  Created by Hoon H. on 2/22/14.
 //
 //
 
-#include "CPUTransformLineDrawer.h"
+#include "CPUTransformDebuggingLineDrawer.h"
 
 
 #include "../../Server/Symbols.h"
@@ -48,9 +48,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static constexpr char const
 				VERTEX_SHADER_CODE[]	=
 #if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
-#include		"CPUTransformLineDrawer.vertex.shader.glsl-dt-1_10"
+#include		"CPUTransformDebuggingLineDrawer.vertex.shader.glsl-dt-1_10"
 #elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-#include		"CPUTransformLineDrawer.vertex.shader.glsl-es-1_00"
+#include		"CPUTransformDebuggingLineDrawer.vertex.shader.glsl-es-1_00"
 #else
 #error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
@@ -60,9 +60,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				static constexpr char const
 				FRAGMENT_SHADER_CODE[]	=
 #if				EONIL_MEDIA_ENGINE_TARGET_OPENGLDT_3_2
-#include		"CPUTransformLineDrawer.fragment.shader.glsl-dt-1_10"
+#include		"CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_10"
 #elif			EONIL_MEDIA_ENGINE_TARGET_OPENGLES_2_0
-#include		"CPUTransformLineDrawer.fragment.shader.glsl-es-1_00"
+#include		"CPUTransformDebuggingLineDrawer.fragment.shader.glsl-es-1_00"
 #else			
 #error			EONIL_MEDIA_ENGINE_MISSING_IMPLEMENTATION_FOR_TARGET_PLATFORM
 #endif
@@ -113,7 +113,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			struct
-			CPUTransformLineDrawer::Core
+			CPUTransformDebuggingLineDrawer::Core
 			{
 				Program								program						{{VERTEX_SHADER_CODE}, {FRAGMENT_SHADER_CODE}};
 				local<ProgramUniformValueSlotProxy>	transformUniformIndex		{program.uniformValueSlotForName("localToWorldTransformP")};
@@ -132,16 +132,16 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			
-			CPUTransformLineDrawer::CPUTransformLineDrawer()
+			CPUTransformDebuggingLineDrawer::CPUTransformDebuggingLineDrawer()
 			{
 				_core_ptr		=	uptr<Core>{new Core{}};
 			}
-			CPUTransformLineDrawer::~CPUTransformLineDrawer()
+			CPUTransformDebuggingLineDrawer::~CPUTransformDebuggingLineDrawer()
 			{
 			}
 			
-			auto CPUTransformLineDrawer::
-			drawInstances(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformLineDrawer::Instance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 &worldToScreenTransform) const -> void
+			auto CPUTransformDebuggingLineDrawer::
+			drawInstances(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformDebuggingLineDrawer::Instance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 &worldToScreenTransform) const -> void
 			{
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() >0, "You must pass at least one or more instances. No instance cannot be rendered.");
 				for (auto const& i: instances)

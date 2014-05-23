@@ -63,6 +63,9 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			TRIANGLE_STRIP	=	GL_TRIANGLE_STRIP,
 			TRIANGLE_FAN	=	GL_TRIANGLE_FAN,
 			TRIANGLES		=	GL_TRIANGLES,
+			
+			LINE_LIST		=	LINES,
+			TRIANGLE_LIST	=	TRIANGLES,
 		};
 		enum class
 		BlendingMode : GLenum

@@ -6,23 +6,10 @@
 //
 //
 
-#ifndef __Graphics__PolylineDrawer__
-#define __Graphics__PolylineDrawer__
+#pragma once
+#include "PolylineDrawer_RefImplOnCPU.h"
+EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
-#include "../../Common.h"
+using	PolylineDrawer	=	PolylineDrawer_RefImplOnCPU;
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
-	namespace
-	Rendering
-	{
-		namespace
-		D2014R2
-		{
-			
-		}
-	}
-	
-}}}}
-
-#endif /* defined(__Graphics__PolylineDrawer__) */
+EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_END

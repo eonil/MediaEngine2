@@ -1,2 +1,0 @@
-#include	"Common.vertex.shader.glsl-dt-1_10"
-#include	"CPUTransformLineDrawer.vertex.shader.glsl-common"

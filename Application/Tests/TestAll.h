@@ -167,6 +167,74 @@ public:
 			insts1.push_back(inst1);
 			_sprd.drawInstances(_tex2, r2, insts1, world_to_screen_transform, s.frame());
 		}
+
+		{
+			Matrix4	m1	=	Matrix4::Utility::translationWithScalars(+0.5, -0.5, 0);
+			Matrix4	m2	=	world_to_screen_transform * m1;
+			
+			CPUTransformTriangleDrawer				trid	=	{};
+			CPUTransformTriangleDrawer::Triangle	t1		=	{};
+			CPUTransformTriangleDrawer::Triangle	t2		=	{};
+			t1.points		=
+			{
+				Vector3{0,0,0},
+				Vector3{0,+0.1,0},
+				Vector3{-0.1,0,0},
+			};
+			t2.points		=
+			{
+				Vector3{0,+0.1,0},
+				Vector3{0,+0.2,0},
+				Vector3{-0.1,+0.1,0},
+			};
+			for (auto& p: t1.points)
+			{
+				p	=	m2.transform(p);
+			}
+			for (auto& p: t2.points)
+			{
+				p	=	m2.transform(p);
+			}
+			vec<CPUTransformTriangleDrawer::Triangle>	ts	=	{};
+			ts.push_back(t1);
+			ts.push_back(t2);
+			trid.drawTriangleList({ts.data(), ts.data() + ts.size()}, {1,1,0,1});
+		}
+		{
+			PolylineDrawer				pld		=	{};
+			PolylineDrawer::Instance	inst0	=	{};
+			inst0.points						=
+			{
+				Vector3{-0.2,0,0},
+				Vector3{0,0,0},
+				Vector3{+0.1,+0.1,0},
+				Vector3{+0.1,+0.3,0},
+				Vector3{+0.2,+0.4,0},
+				Vector3{+0.4,+0.4,0},
+			};
+			for (auto& p: inst0.points)
+			{
+				p	=	world_to_screen_transform.transform(p);
+			}
+			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
+		}
+		{
+			Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, +0.3));
+			Vector3	p1	=	{0,0.2,0};
+			
+			PolylineDrawer				pld		=	{};
+			PolylineDrawer::Instance	inst0	=	{};
+			for (size_t i=0; i<16; i++)
+			{
+				inst0.points.push_back(p1);
+				p1	=	m1.transform(p1);
+			}
+			for (auto& p: inst0.points)
+			{
+				p	=	world_to_screen_transform.transform(p);
+			}
+			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
+		}
 	}
 	
 	

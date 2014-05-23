@@ -28,8 +28,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		{
 			namespace
 			{
-				using	LINE	=	CPUTransformLineDrawer::Instance;
-				using	POINT	=	CPUTransformLineDrawer::Point;
+				using	LINE	=	CPUTransformDebuggingLineDrawer::Instance;
+				using	POINT	=	CPUTransformDebuggingLineDrawer::Point;
 			}
 			
 			

@@ -10,7 +10,7 @@
 #define __Graphics__DebuggingInformationOverlayDrawer__
 
 #include "../../Common.h"
-#include "CPUTransformLineDrawer.h"
+#include "CPUTransformDebuggingLineDrawer.h"
 
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
@@ -28,7 +28,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			class
 			DebuggingInformationOverlayDrawer
 			{
-				CPUTransformLineDrawer	_line_drawer{};
+				CPUTransformDebuggingLineDrawer	_line_drawer{};
 				Scalar					_uni_scale{1};
 				
 			public:

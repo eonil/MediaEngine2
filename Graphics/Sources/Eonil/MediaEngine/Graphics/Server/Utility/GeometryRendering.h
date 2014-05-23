@@ -62,11 +62,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				}
 			};
 			
-			struct
-			GeometryInstancing
-			{
-				
-			};
+//			struct
+//			GeometryInstancing
+//			{	
+//			};
 			
 			using	TextureChannelingRangePointer	=	GenericMemoryRange<PlanarTexture const>;														//!	Texture bindings for each samplers at indexes.
 			

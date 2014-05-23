@@ -17,6 +17,8 @@
 #include "Common.h"
 #include "Rendering/D2014R2/DisplayScreenFrame.h"
 #include "Rendering/D2014R2/DebuggingInformationOverlayDrawer.h"
+#include "Rendering/D2014R2/CPUTransformTriangleDrawer.h"
+#include "Rendering/D2014R2/PolylineDrawer.h"
 #include "Rendering/D2014R2/SpriteDrawer.h"
 #include "Rendering/D2014R2/CPUTransformRegularPolygonDrawer.h"
 #include "Rendering/D2014R2/GPUTransformRegularPolygonDrawer.h"

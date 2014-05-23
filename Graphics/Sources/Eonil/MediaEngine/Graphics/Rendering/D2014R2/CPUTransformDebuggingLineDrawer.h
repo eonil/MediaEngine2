@@ -1,13 +1,13 @@
 //
-//  CPUTransformLineDrawer.h
+//  CPUTransformDebuggingLineDrawer.h
 //  Graphics
 //
 //  Created by Hoon H. on 2/22/14.
 //
 //
 
-#ifndef __Graphics__CPUTransformLineDrawer__
-#define __Graphics__CPUTransformLineDrawer__
+#ifndef __Graphics__CPUTransformDebuggingLineDrawer__
+#define __Graphics__CPUTransformDebuggingLineDrawer__
 
 #include "../../Common.h"
 #include "../../Server/Declarations.h"
@@ -29,7 +29,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			 (line width support is not required by the GL spec)
 			 */
 			class
-			CPUTransformLineDrawer
+			CPUTransformDebuggingLineDrawer
 			{
 				struct	Core;
 				
@@ -57,8 +57,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				};
 				
 			public:
-				CPUTransformLineDrawer();
-				~CPUTransformLineDrawer();
+				CPUTransformDebuggingLineDrawer();
+				~CPUTransformDebuggingLineDrawer();
 				
 				/*!
 				 @param	instances
@@ -84,4 +84,4 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	
 }}}}
 
-#endif /* defined(__Graphics__CPUTransformLineDrawer__) */
+#endif /* defined(__Graphics__CPUTransformDebuggingLineDrawer__) */

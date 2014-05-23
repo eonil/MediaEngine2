@@ -43,7 +43,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		ProgramParameterLocation
 		{
-			friend class	Debugging::Doctor;
+			friend class	Foundation::Debugging::Doctor;
 			friend class	ProgramUniformValueSlotProxy;
 			friend class	VertexAttributeChannel;
 			friend class	VertexAttributeChannelList;
@@ -75,7 +75,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		class
 		ProgramUniformValueSlotProxy
 		{
-			friend class	Debugging::Doctor;
+			friend class	Foundation::Debugging::Doctor;
 			
 			ProgramParameterLocation	_param_loc	{};
 

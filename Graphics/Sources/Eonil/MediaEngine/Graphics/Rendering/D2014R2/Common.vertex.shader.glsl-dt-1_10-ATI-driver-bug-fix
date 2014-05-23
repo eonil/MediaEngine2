@@ -4,3 +4,7 @@
 //#define		EEGLSL_MAX_VERTEX_UNIFORM_VECTOR_COUNT	((gl_MaxVertexUniformComponents / 4) / 4)
 //
 //)"
+
+/*
+ There's no such ATI driver bug. That's all caused from incorrect information on OpenGL wiki.
+ */

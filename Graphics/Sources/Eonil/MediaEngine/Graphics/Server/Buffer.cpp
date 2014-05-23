@@ -62,31 +62,31 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
 			eeglUnbindBufer(GL_ARRAY_BUFFER);
 		}
-		ArrayBuffer::ArrayBuffer(_Legacy2013::SharedMemory const data)
-		{
-			Debug::ObjectInstanceAddressTracker<ArrayBuffer>::registerObjectAddress(this);
-			
-			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
-			
-			_name		=	eeglGenBuffer();
-			
-			EEGL_ASSERT(_name != 0);
-			
-			////
-			
-			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
-			EEGL_ASSERT(data != nullptr);
-			
-//			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_source_content = data);
-			
-			GLsizeiptr const	size	=	data.length();
-			GLvoid* const		mem		=	(GLvoid*)data.address();
-			
-			eeglBindBuffer(GL_ARRAY_BUFFER, name());
-			eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
-			eeglUnbindBufer(GL_ARRAY_BUFFER);
-			
-		}
+//		ArrayBuffer::ArrayBuffer(_Legacy2013::SharedMemory const data)
+//		{
+//			Debug::ObjectInstanceAddressTracker<ArrayBuffer>::registerObjectAddress(this);
+//			
+//			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
+//			
+//			_name		=	eeglGenBuffer();
+//			
+//			EEGL_ASSERT(_name != 0);
+//			
+//			////
+//			
+//			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
+//			EEGL_ASSERT(data != nullptr);
+//			
+////			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_source_content = data);
+//			
+//			GLsizeiptr const	size	=	data.length();
+//			GLvoid* const		mem		=	(GLvoid*)data.address();
+//			
+//			eeglBindBuffer(GL_ARRAY_BUFFER, name());
+//			eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
+//			eeglUnbindBufer(GL_ARRAY_BUFFER);
+//			
+//		}
 		ArrayBuffer::ArrayBuffer(ArrayBuffer&& o) : _name(std::move(o._name))
 		{
 			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(o._name = NULL_GL_NAME());
@@ -192,29 +192,29 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
-		ElementArrayBuffer::ElementArrayBuffer(_Legacy2013::SharedMemory const data)
-		{
-			Debug::ObjectInstanceAddressTracker<ElementArrayBuffer>::registerObjectAddress(this);
-			
-			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
-			_name		=	eeglGenBuffer();
-
-			////
-			
-			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_source_content = data);
-			
-			if (data.length() > 0)
-			{
-				GLsizeiptr const	size	=	data.length();
-				GLvoid* const		mem		=	(GLvoid*)data.address();
-				
-				eeglBindBuffer(GL_ARRAY_BUFFER, name());
-				eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
-				eeglUnbindBufer(GL_ARRAY_BUFFER);
-			}
-			
-			_hotfix_length_of_data	=	data.length();
-		}
+//		ElementArrayBuffer::ElementArrayBuffer(_Legacy2013::SharedMemory const data)
+//		{
+//			Debug::ObjectInstanceAddressTracker<ElementArrayBuffer>::registerObjectAddress(this);
+//			
+//			EEGL_RUN_AS_ASSERTION(Doctor::assertCurrentGLContextExistence());
+//			_name		=	eeglGenBuffer();
+//
+//			////
+//			
+//			EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN(_dbg_source_content = data);
+//			
+//			if (data.length() > 0)
+//			{
+//				GLsizeiptr const	size	=	data.length();
+//				GLvoid* const		mem		=	(GLvoid*)data.address();
+//				
+//				eeglBindBuffer(GL_ARRAY_BUFFER, name());
+//				eeglBufferData(GL_ARRAY_BUFFER, size, mem, GL_STATIC_DRAW);
+//				eeglUnbindBufer(GL_ARRAY_BUFFER);
+//			}
+//			
+//			_hotfix_length_of_data	=	data.length();
+//		}
 		ElementArrayBuffer::ElementArrayBuffer(GenericMemoryRange<uint16_t const> data)
 		{
 			EONIL_DEBUG_ASSERT(not data.empty());
