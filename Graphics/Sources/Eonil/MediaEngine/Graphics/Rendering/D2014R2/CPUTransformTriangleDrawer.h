@@ -21,11 +21,16 @@ EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
 
 /*!
- A triangle drawer. This draws triangles in NDC space.
+ A triangle drawer which draws triangles in NDC space.
+ 
+ @discussion
  All vertexes must be pre-transformed into NDC.
  
  Points are defined as 3D to output z-depth correctly to provide depth buffer features.
  If you don't use depth-buffer, just set `z` value to any. (I recommend zero).
+ 
+ This is one of most basic drawers. Usually used for test or reference implementations.
+ All triangles must be counter-clockwise. Clockwise triangles are not supported.
  */
 class
 CPUTransformTriangleDrawer
