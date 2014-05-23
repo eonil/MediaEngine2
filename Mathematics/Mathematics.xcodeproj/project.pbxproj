@@ -73,6 +73,16 @@
 		45D7B5A819298F6900279F43 /* Mathematics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B5A619298F6900279F43 /* Mathematics.cpp */; };
 		45D7B5A919298F6900279F43 /* Mathematics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B5A619298F6900279F43 /* Mathematics.cpp */; };
 		45D7B5AA19298F6900279F43 /* Mathematics.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B5A719298F6900279F43 /* Mathematics.h */; };
+		45F2AF5D192E3C5B00258DFD /* Interpolation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF51192E3C5B00258DFD /* Interpolation.cpp */; };
+		45F2AF5E192E3C5B00258DFD /* Interpolation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF51192E3C5B00258DFD /* Interpolation.cpp */; };
+		45F2AF5F192E3C5B00258DFD /* Interpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2AF52192E3C5B00258DFD /* Interpolation.h */; };
+		45F2AF9C192F7CD500258DFD /* Doctor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF9A192F7CD500258DFD /* Doctor.cpp */; };
+		45F2AF9D192F7CD500258DFD /* Doctor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AF9A192F7CD500258DFD /* Doctor.cpp */; };
+		45F2AF9E192F7CD500258DFD /* Doctor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F2AF9B192F7CD500258DFD /* Doctor.h */; };
+		45F2AFAC192F803200258DFD /* test1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AFAA192F803200258DFD /* test1.cpp */; };
+		45F2AFAD192F803200258DFD /* test1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AFAA192F803200258DFD /* test1.cpp */; };
+		45F2AFDB192F86B700258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCC6881929A01800EC3C2A /* libEonilCommonRealtimeGameAlgorithms.a */; };
+		45F2AFDC192F86BB00258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCC6881929A01800EC3C2A /* libEonilCommonRealtimeGameAlgorithms.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +134,62 @@
 			proxyType = 2;
 			remoteGlobalIDString = 455B126D19106740007997D8;
 			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - iOS";
+		};
+		45F2AF3D192E3C0A00258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CE96192B462100F3FC8B;
+			remoteInfo = "Foundation_LEGACY - iOS";
+		};
+		45F2AF3F192E3C0A00258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CEBE192B463500F3FC8B;
+			remoteInfo = "Foundation_LEGACY - OSX";
+		};
+		45F2AFC6192F869600258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 451509F118A69E8E0007BE6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45150A2518A69EB40007BE6B;
+			remoteInfo = "Mathematics - Static Library - OSX";
+		};
+		45F2AFD1192F869C00258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45CCC6801929A01800EC3C2A /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45FC7000190EB7AF0018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
+		};
+		45F2AFD3192F86A100258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F0374B175C359E00C469FD;
+			remoteInfo = "Foundation - OSX Static Library";
+		};
+		45F2AFD5192F86A500258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45CCC6801929A01800EC3C2A /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45FC6FAB190EB7290018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - iOS";
+		};
+		45F2AFD7192F86A700258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 451509F118A69E8E0007BE6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 451509FA18A69EAA0007BE6B;
+			remoteInfo = "Mathematics - Static Library - iOS";
+		};
+		45F2AFD9192F86AA00258DFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45F03728175C353F00C469FD;
+			remoteInfo = "Foundation - iOS Static Library";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -210,6 +276,13 @@
 		45CCC6BB1929AA5500EC3C2A /* GLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLM.h; sourceTree = "<group>"; };
 		45D7B5A619298F6900279F43 /* Mathematics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mathematics.cpp; sourceTree = "<group>"; };
 		45D7B5A719298F6900279F43 /* Mathematics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mathematics.h; sourceTree = "<group>"; };
+		45F2AF51192E3C5B00258DFD /* Interpolation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interpolation.cpp; sourceTree = "<group>"; };
+		45F2AF52192E3C5B00258DFD /* Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interpolation.h; sourceTree = "<group>"; };
+		45F2AF60192E3E9700258DFD /* InterpolationIllustrations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = InterpolationIllustrations; sourceTree = "<group>"; };
+		45F2AF9A192F7CD500258DFD /* Doctor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Doctor.cpp; sourceTree = "<group>"; };
+		45F2AF9B192F7CD500258DFD /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
+		45F2AFAA192F803200258DFD /* test1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test1.cpp; sourceTree = "<group>"; };
+		45F2AFAB192F803200258DFD /* test1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test1.h; sourceTree = "<group>"; };
 		45F35FA218AE527000AF0EDC /* (inactive).system_framework(inactive) */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "(inactive).system_framework(inactive)"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F2AFDB192F86B700258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
 				45150A3E18A69EDE0007BE6B /* CoreGraphics.framework in Frameworks */,
 				45150A3C18A69EDE0007BE6B /* Foundation.framework in Frameworks */,
 				4585171418AE58240074DBC1 /* UIKit.framework in Frameworks */,
@@ -244,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F2AFDC192F86BB00258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
 				4585171118AE580F0074DBC1 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
 				4585171218AE580F0074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
 			);
@@ -335,6 +410,8 @@
 		45150A7618A69F8F0007BE6B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				45F2AFAA192F803200258DFD /* test1.cpp */,
+				45F2AFAB192F803200258DFD /* test1.h */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -399,6 +476,7 @@
 				45150AA018A6A22C0007BE6B /* Transform.h */,
 				45150A9D18A6A22C0007BE6B /* Spline1.cpp */,
 				45150A9E18A6A22C0007BE6B /* Spline1.h */,
+				45F2AF50192E3C5B00258DFD /* _ImmatureFeaturesD1 */,
 				45CCC6A81929A78100EC3C2A /* InternalRawAlgorithmStuffs */,
 			);
 			path = Geometry;
@@ -409,6 +487,8 @@
 			children = (
 				45478E5F1929B50D009E72B8 /* Exceptions.cpp */,
 				45478E601929B50D009E72B8 /* Exceptions.h */,
+				45F2AF9A192F7CD500258DFD /* Doctor.cpp */,
+				45F2AF9B192F7CD500258DFD /* Doctor.h */,
 			);
 			path = Debugging;
 			sourceTree = "<group>";
@@ -416,9 +496,11 @@
 		4585170318AE57B50074DBC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				4585170D18AE57B50074DBC1 /* OSX Test */,
 				4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */,
 				4585170B18AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				4585170D18AE57B50074DBC1 /* OSX Test */,
+				45F2AF3E192E3C0A00258DFD /* libFoundation_LEGACY.a */,
+				45F2AF40192E3C0A00258DFD /* libFoundation_LEGACY.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,6 +542,16 @@
 			path = D2014R2;
 			sourceTree = "<group>";
 		};
+		45F2AF50192E3C5B00258DFD /* _ImmatureFeaturesD1 */ = {
+			isa = PBXGroup;
+			children = (
+				45F2AF51192E3C5B00258DFD /* Interpolation.cpp */,
+				45F2AF52192E3C5B00258DFD /* Interpolation.h */,
+				45F2AF60192E3E9700258DFD /* InterpolationIllustrations */,
+			);
+			path = _ImmatureFeaturesD1;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -467,6 +559,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F2AF9E192F7CD500258DFD /* Doctor.h in Headers */,
 				45CCC6BE1929AA5500EC3C2A /* GLM.h in Headers */,
 				45BCFCC5192996B5002E1132 /* All.h in Headers */,
 				45D7B5AA19298F6900279F43 /* Mathematics.h in Headers */,
@@ -484,6 +577,7 @@
 				45150AA818A6A22C0007BE6B /* Bounds.h in Headers */,
 				45478E631929B50D009E72B8 /* Exceptions.h in Headers */,
 				45150AC018A6A22C0007BE6B /* Vector.h in Headers */,
+				45F2AF5F192E3C5B00258DFD /* Interpolation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +629,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				45F2AFDA192F86AA00258DFD /* PBXTargetDependency */,
+				45F2AFD8192F86A700258DFD /* PBXTargetDependency */,
+				45F2AFD6192F86A500258DFD /* PBXTargetDependency */,
 			);
 			name = "Mathematics - Running Test - iOS";
 			productName = "Math - Running Test - iOS";
@@ -552,6 +649,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				45F2AFD4192F86A100258DFD /* PBXTargetDependency */,
+				45F2AFD2192F869C00258DFD /* PBXTargetDependency */,
+				45F2AFC7192F869600258DFD /* PBXTargetDependency */,
 			);
 			name = "Mathematics - Running Test - OSX";
 			productName = "Math - Running Test - OSX";
@@ -646,6 +746,20 @@
 			remoteRef = 45CCC68D1929A01800EC3C2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		45F2AF3E192E3C0A00258DFD /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 45F2AF3D192E3C0A00258DFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45F2AF40192E3C0A00258DFD /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 45F2AF3F192E3C0A00258DFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -677,7 +791,9 @@
 				45478EBA1929C69E009E72B8 /* ApplePlatformExtras.cpp in Sources */,
 				45CCC6B81929A9AE00EC3C2A /* Conversion.cpp in Sources */,
 				45150AA618A6A22C0007BE6B /* Bounds.cpp in Sources */,
+				45F2AF9D192F7CD500258DFD /* Doctor.cpp in Sources */,
 				45CCC6AE1929A78100EC3C2A /* Spline2.cpp in Sources */,
+				45F2AF5E192E3C5B00258DFD /* Interpolation.cpp in Sources */,
 				45150AA318A6A22C0007BE6B /* AxisAngle.cpp in Sources */,
 				45150AB518A6A22C0007BE6B /* Quaternion.cpp in Sources */,
 				45CCC6BD1929AA5500EC3C2A /* GLM.cpp in Sources */,
@@ -701,7 +817,9 @@
 				45478EB91929C69E009E72B8 /* ApplePlatformExtras.cpp in Sources */,
 				45CCC6B71929A9AE00EC3C2A /* Conversion.cpp in Sources */,
 				45150AA718A6A22C0007BE6B /* Bounds.cpp in Sources */,
+				45F2AF9C192F7CD500258DFD /* Doctor.cpp in Sources */,
 				45CCC6AD1929A78100EC3C2A /* Spline2.cpp in Sources */,
+				45F2AF5D192E3C5B00258DFD /* Interpolation.cpp in Sources */,
 				45150AA418A6A22C0007BE6B /* AxisAngle.cpp in Sources */,
 				45150AB618A6A22C0007BE6B /* Quaternion.cpp in Sources */,
 				45CCC6BC1929AA5500EC3C2A /* GLM.cpp in Sources */,
@@ -717,6 +835,7 @@
 			files = (
 				45150A4B18A69EDE0007BE6B /* AppDelegate.m in Sources */,
 				45150A4718A69EDE0007BE6B /* main.m in Sources */,
+				45F2AFAD192F803200258DFD /* test1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,10 +844,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				45150A6D18A69EE80007BE6B /* main.mm in Sources */,
+				45F2AFAC192F803200258DFD /* test1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45F2AFC7192F869600258DFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45150A2518A69EB40007BE6B /* Mathematics - Static Library - OSX */;
+			targetProxy = 45F2AFC6192F869600258DFD /* PBXContainerItemProxy */;
+		};
+		45F2AFD2192F869C00258DFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CommonRealtimeGameAlgorithms - OSX";
+			targetProxy = 45F2AFD1192F869C00258DFD /* PBXContainerItemProxy */;
+		};
+		45F2AFD4192F86A100258DFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Foundation - OSX Static Library";
+			targetProxy = 45F2AFD3192F86A100258DFD /* PBXContainerItemProxy */;
+		};
+		45F2AFD6192F86A500258DFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CommonRealtimeGameAlgorithms - iOS";
+			targetProxy = 45F2AFD5192F86A500258DFD /* PBXContainerItemProxy */;
+		};
+		45F2AFD8192F86A700258DFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 451509FA18A69EAA0007BE6B /* Mathematics - Static Library - iOS */;
+			targetProxy = 45F2AFD7192F86A700258DFD /* PBXContainerItemProxy */;
+		};
+		45F2AFDA192F86AA00258DFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Foundation - iOS Static Library";
+			targetProxy = 45F2AFD9192F86AA00258DFD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		45150A4318A69EDE0007BE6B /* InfoPlist.strings */ = {
