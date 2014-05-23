@@ -10,6 +10,7 @@
 
 #include "Common.h"
 #include "Debugging/Doctor.h"
+#include "Trigonometry.h"
 #include "Geometry/Bounds.h"
 #include "Geometry/Vector.h"
 #include "Geometry/Quaternion.h"

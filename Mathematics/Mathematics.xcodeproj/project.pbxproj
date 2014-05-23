@@ -55,6 +55,9 @@
 		4585171418AE58240074DBC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585171318AE58240074DBC1 /* UIKit.framework */; };
 		4585171518AE58300074DBC1 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451509FB18A69EAA0007BE6B /* libEonilImprovisationsMediaEngineMathematics.a */; };
 		4585171618AE58300074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */; };
+		45ADA1D3192FB11700EC89F5 /* Trigonometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45ADA1D1192FB11700EC89F5 /* Trigonometry.cpp */; };
+		45ADA1D4192FB11700EC89F5 /* Trigonometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45ADA1D1192FB11700EC89F5 /* Trigonometry.cpp */; };
+		45ADA1D5192FB11700EC89F5 /* Trigonometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ADA1D2192FB11700EC89F5 /* Trigonometry.h */; };
 		45BCFCC3192996B5002E1132 /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BCFCC1192996B5002E1132 /* All.cpp */; };
 		45BCFCC4192996B5002E1132 /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45BCFCC1192996B5002E1132 /* All.cpp */; };
 		45BCFCC5192996B5002E1132 /* All.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BCFCC2192996B5002E1132 /* All.h */; };
@@ -264,6 +267,8 @@
 		45753E3E18A6B3CF00960D5C /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		4585170218AE57B50074DBC1 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
 		4585171318AE58240074DBC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		45ADA1D1192FB11700EC89F5 /* Trigonometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trigonometry.cpp; sourceTree = "<group>"; };
+		45ADA1D2192FB11700EC89F5 /* Trigonometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigonometry.h; sourceTree = "<group>"; };
 		45BCFCC1192996B5002E1132 /* All.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = All.cpp; sourceTree = "<group>"; };
 		45BCFCC2192996B5002E1132 /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
 		45CCC6801929A01800EC3C2A /* CommonRealtimeGameAlgorithms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonRealtimeGameAlgorithms.xcodeproj; path = ../../../CommonRealtimeGameAlgorithms/CommonRealtimeGameAlgorithms.xcodeproj; sourceTree = "<group>"; };
@@ -457,6 +462,8 @@
 				45150AC618A6A2C60007BE6B /* Common.cpp */,
 				45150AC718A6A2C70007BE6B /* Common.h */,
 				45150ACB18A6A4D40007BE6B /* Debugging */,
+				45ADA1D1192FB11700EC89F5 /* Trigonometry.cpp */,
+				45ADA1D2192FB11700EC89F5 /* Trigonometry.h */,
 				45150A8D18A6A2060007BE6B /* Geometry */,
 				45BCFCC1192996B5002E1132 /* All.cpp */,
 				45BCFCC2192996B5002E1132 /* All.h */,
@@ -574,6 +581,7 @@
 				45150ABA18A6A22C0007BE6B /* Spline1.h in Headers */,
 				45150AB418A6A22C0007BE6B /* Matrix.h in Headers */,
 				45CCC6B21929A93400EC3C2A /* ConversionUnions.h in Headers */,
+				45ADA1D5192FB11700EC89F5 /* Trigonometry.h in Headers */,
 				45150ACA18A6A2C70007BE6B /* Common.h in Headers */,
 				45150AB718A6A22C0007BE6B /* Quaternion.h in Headers */,
 				45150AAB18A6A22C0007BE6B /* Bounds2.h in Headers */,
@@ -789,6 +797,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45ADA1D4192FB11700EC89F5 /* Trigonometry.cpp in Sources */,
 				45150ABB18A6A22C0007BE6B /* Transform.cpp in Sources */,
 				45150AB218A6A22C0007BE6B /* Matrix.cpp in Sources */,
 				45BCFCC4192996B5002E1132 /* All.cpp in Sources */,
@@ -815,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45ADA1D3192FB11700EC89F5 /* Trigonometry.cpp in Sources */,
 				45150ABC18A6A22C0007BE6B /* Transform.cpp in Sources */,
 				45150AB318A6A22C0007BE6B /* Matrix.cpp in Sources */,
 				45BCFCC3192996B5002E1132 /* All.cpp in Sources */,

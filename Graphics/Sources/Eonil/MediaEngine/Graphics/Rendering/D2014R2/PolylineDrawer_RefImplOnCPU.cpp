@@ -54,7 +54,7 @@ namespace
 	
 	
 	static inline auto
-	resolve_volume_displacement_vector_length(Vector3 const& v1, Vector3 const& v2, Scalar const radius) -> Scalar
+	resolve_volume_displacement_vector_length(Scalar const& a3, Scalar const radius) -> Scalar
 	{
 		/*!
 		 @code
@@ -80,7 +80,6 @@ namespace
 		 d			=	r / sine(a1)
 		 
 		 */
-		auto const	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
 		auto const	d	=	radius / std::sin(a3);
 		
 		return	d;
@@ -122,11 +121,13 @@ namespace
 		
 		auto const	v1	=	p1 - p0;
 		auto const	v2	=	p2 - p1;
-		auto const	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
-		auto const	a4	=	a3/Scalar(2);
+		auto const	v1n	=	v1.norm();
+		auto const	v2n	=	v2.norm();
+		auto const	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1n, v2n, {0,0,1});
+		auto const	a4	=	(M_PI-a3)/Scalar(2);
 		
 		auto const	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, a4));
-		auto const	dtl	=	resolve_volume_displacement_vector_length(v1, v2, radius);
+		auto const	dtl	=	resolve_volume_displacement_vector_length(a4, radius);
 		auto const	n0	=	m1.transform(-v2).norm();
 		auto const	d0	=	n0 * dtl;
 		auto const	d1	=	-n0 * dtl;

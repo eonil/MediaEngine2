@@ -37,6 +37,45 @@ More informations in GLM manual:
 http://glm.g-truc.net/glm.pdf
 
 ================================================================================
+GLM 0.9.5.4: 2014-0X-XX
+--------------------------------------------------------------------------------
+- Fixed non-utf8 character #196
+- Added FindGLM install for CMake #189
+- Fixed GTX_color_space - saturation #195
+- Fixed glm::isinf and glm::isnan for with Android NDK 9d #191
+
+================================================================================
+GLM 0.9.5.3: 2014-04-02
+--------------------------------------------------------------------------------
+- Added instruction set auto detection with Visual C++ using _M_IX86_FP - /arch
+  compiler argument
+- Fixed GTX_raw_data code dependency
+- Fixed GCC instruction set detection
+- Added GLM_GTX_matrix_transform_2d extension (#178, #176)
+- Fixed CUDA issues (#169, #168, #183, #182)
+- Added support for all extensions but GTX_string_cast to CUDA
+- Fixed strict aliasing warnings in GCC 4.8.1 / Android NDK 9c (#152)
+- Fixed missing bitfieldInterleave definisions
+- Fixed usubBorrow (#171)
+- Fixed eulerAngle*** not consistent for right-handed coordinate system (#173)
+- Added full tests for eulerAngle*** functions (#173)
+- Added workaround for a CUDA compiler bug (#186, #185)
+
+================================================================================
+GLM 0.9.5.2: 2014-02-08
+--------------------------------------------------------------------------------
+- Fixed initializer list ambiguity (#159, #160)
+- Fixed warnings with the Android NDK 9c
+- Fixed non power of two matrix products
+- Fixed mix function link error
+- Fixed SSE code included in GLM tests on "pure" platforms
+- Fixed undefined reference to fastInverseSqrt (#161)
+- Fixed GLM_FORCE_RADIANS with <glm/ext.hpp> build error (#165)
+- Fix dot product clamp range for vector angle functions. (#163)
+- Tentative fix for strict aliasing warning in GCC 4.8.1 / Android NDK 9c (#152)
+- Fixed GLM_GTC_constants description brief (#162)
+
+================================================================================
 GLM 0.9.5.1: 2014-01-11
 --------------------------------------------------------------------------------
 - Fixed angle and orientedAngle that sometimes return NaN values (#145)

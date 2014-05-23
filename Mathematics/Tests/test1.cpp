@@ -10,6 +10,7 @@
 #include "Exceptions.h"
 using namespace Eonil::Improvisations::MediaEngine::Mathematics;
 using namespace Eonil::Improvisations::MediaEngine::Mathematics::Debugging;
+using namespace Eonil::Improvisations::MediaEngine::Mathematics::Trigonometry;
 using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
 
 
@@ -72,33 +73,106 @@ test1() -> void
 //		test_assert(not Doctor::isNaN(a2));
 //	}
 	
+//	{
+//		Vector4	a1	=	{0,0,0,0};
+//		test_assert_always_halt([&](){ a1.norm(); });
+//	}
+//	{
+//		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({1,0,0}, {1,0,0}, {0,0,0}); });
+//		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({0,0,0}, {1,0,0}, {1,0,0}); });
+//		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({1,0,0}, {0,0,0}, {1,0,0}); });
+//	}
+//	{
+//		Vector3	v1	=	{0,1,0};
+//		Vector3	v2	=	{1,0,0};
+//		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
+//		test_assert((std::abs(a3) - M_PI_2) < 0.001);
+//	}
+//	{
+//		Vector3	v1	=	{0,1,0};
+//		Vector3	v2	=	{0,0,1};
+//		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {1,0,0});
+//		test_assert((std::abs(a3) - M_PI_2) < 0.001);
+//	}
+//	{
+//		Vector3	v1	=	{0,-1,0};
+//		Vector3	v2	=	{0,+1,0};
+//		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
+//		test_assert((std::abs(a3) - M_PI) < 0.001);
+//	}
+//	
+//	{
+//		Vector3	v1	=	{-1,0,0};
+//		Vector3	v2	=	{0,+1,0};
+//		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
+//		test_assert(almost_equals(a3, -M_PI_2));
+//	}
+	
+	
+	//	Angles.
 	{
-		Vector4	a1	=	{0,0,0,0};
-		test_assert_always_halt([&](){ a1.norm(); });
+		/*
+		 No need to calculate magnitude stuffs if the vectors are normalized.
+		 */
+		{
+			Vector3	v1	=	{-1,0,0};
+			Vector3	v2	=	{+1,0,0};
+			Scalar	dot	=	Vector3::Utility::dotProductionOfVectors(v1, v2);
+			Scalar	a3	=	std::acos(dot);
+			Scalar	a4	=	Vector3::Utility::angleBetweenVectors(v1, v2);
+			test_assert(almost_equals(dot, -1));
+			test_assert(almost_equals(a3, M_PI));
+			test_assert(almost_equals(a3, a4));
+		}
+		{
+			Vector3	v1	=	{+1,0,0};
+			Vector3	v2	=	{-1,0,0};
+			Scalar	dot	=	Vector3::Utility::dotProductionOfVectors(v1, v2);
+			Scalar	a3	=	std::acos(dot);
+			Scalar	a4	=	Vector3::Utility::angleBetweenVectors(v1, v2);
+			test_assert(almost_equals(dot, -1));
+			test_assert(almost_equals(a3, M_PI));
+			test_assert(almost_equals(a3, a4));
+		}
+		{
+			Vector3	v1	=	{-1,0,0};
+			Vector3	v2	=	Vector3{+1,+1,0}.norm();
+			Scalar	dot	=	Vector3::Utility::dotProductionOfVectors(v1, v2);
+			Scalar	a3	=	std::acos(dot);
+			Scalar	a4	=	Vector3::Utility::angleBetweenVectors(v1, v2);
+			test_assert(almost_equals(dot, -0.70710));
+			test_assert(almost_equals(dot, cosine(M_PI_4*3)));
+			test_assert(almost_equals(a3, M_PI_4*3));
+			test_assert(almost_equals(a3, a4));
+		}
+		{
+			Vector3	v1	=	{-1,0,0};
+			Vector3	v2	=	{0,+1,0};
+			Scalar	dot	=	Vector3::Utility::dotProductionOfVectors(v1, v2);
+			Scalar	a3	=	std::acos(dot);
+			Scalar	a4	=	Vector3::Utility::angleBetweenVectors(v1, v2);
+			test_assert(almost_equals(dot, 0));
+			test_assert(almost_equals(a3, M_PI_2));
+			test_assert(almost_equals(a3, a4));
+		}
+		{
+			Vector3	v1	=	{-1,0,0};
+			Vector3	v2	=	Vector3{-1,+1,0}.norm();
+			Scalar	dot	=	Vector3::Utility::dotProductionOfVectors(v1, v2);
+			Scalar	a3	=	std::acos(dot);
+			Scalar	a4	=	Vector3::Utility::angleBetweenVectors(v1, v2);
+			test_assert(almost_equals(dot, +0.70710));
+			test_assert(almost_equals(dot, cosine(M_PI_4)));
+			test_assert(almost_equals(a3, M_PI_4));
+			test_assert(almost_equals(a3, a4));
+		}
 	}
-	{
-		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({1,0,0}, {1,0,0}, {0,0,0}); });
-		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({0,0,0}, {1,0,0}, {1,0,0}); });
-		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({1,0,0}, {0,0,0}, {1,0,0}); });
-	}
-	{
-		Vector3	v1	=	{0,1,0};
-		Vector3	v2	=	{1,0,0};
-		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
-		test_assert((std::abs(a3) - M_PI_2) < 0.001);
-	}
-	{
-		Vector3	v1	=	{0,1,0};
-		Vector3	v2	=	{0,0,1};
-		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {1,0,0});
-		test_assert((std::abs(a3) - M_PI_2) < 0.001);
-	}
-	{
-		Vector3	v1	=	{0,-1,0};
-		Vector3	v2	=	{0,+1,0};
-		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
-		test_assert((std::abs(a3) - M_PI) < 0.001);
-	}
+//	{
+//		Vector3	v1	=	{-1,0,0};
+//		Vector3	v2	=	{+1,0,0};
+//		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
+//		test_assert(almost_equals(a3, M_PI));
+//	}
 	{
 		Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI_2));
 		Vector3	v1	=	{0,1,0};

@@ -22,6 +22,9 @@
 #define	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_BEGIN	namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics { namespace Debugging {
 #define	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_END		} } } } }
 
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_TRIGONOMETRY_NAMESPACE_BEGIN	namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics { namespace Trigonometry {
+#define	EONIL_MEDIA_ENGINE_MATHEMATICS_TRIGONOMETRY_NAMESPACE_END	} } } } }
+
 #define	EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN		namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Mathematics { namespace Geometry {
 #define	EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END		} } } } }
 

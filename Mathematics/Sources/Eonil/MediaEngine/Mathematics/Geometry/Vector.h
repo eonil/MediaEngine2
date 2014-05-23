@@ -291,11 +291,27 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 	Utility : public SimpleVectorAbstraction<3, Vector3>::Utility
 	{
 		/*!
-		 @return
-		 Angle in randisn to make vector `a` to `b`. 
-		 Positive number is counter-clockwise direction.
+		 @param
+		 a
+		 Must be normalized.
+		 
+		 @param
+		 b
+		 Must be normalized.
+		 
+		 @return	
+		 Angle between two vectors.
+		 Returning angle is always a smallest angle between them, and there's no directional meaning.
+		 Output range is `0~PI`.
 		 */
-		static Scalar const		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis);			//!	Parameters should be normalized.
+		static auto		angleBetweenVectors(Vector3 const& a, Vector3 const& b) -> Scalar;											//!	All parameters should be normalized.
+		
+//		/*!
+//		 @return
+//		 Angle in randisn to make vector `a` to `b`. 
+//		 Positive number is counter-clockwise direction.
+//		 */
+//		static Scalar const		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis);			//!	All parameters should be normalized.
 		static Vector3 const	crossProductionOfVectors(Vector3 const a, Vector3 const b);
 	};
 };

@@ -10,6 +10,7 @@
 #include "Matrix.h"
 
 #include "../Debugging/Exceptions.h"
+#include "../Trigonometry.h"
 #include "InternalRawAlgorithmStuffs/D2014R2/ConversionUnions.h"
 #include "InternalRawAlgorithmStuffs/D2014R2/ApplePlatformExtras.h"
 
@@ -378,19 +379,42 @@ Vector3::Vector3(Scalar const x, Scalar const y, Scalar const z)
 	this->z	=	z;
 }
 
-Scalar const
-Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis)
+//Scalar const
+//Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis)
+//{
+//	if (USE_EXCEPTIONS)
+//	{
+//		error_if(not almost_normalized(a), "All input vectors must be normalized.");
+//		error_if(not almost_normalized(b), "All input vectors must be normalized.");
+//		error_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
+//	}
+//	
+//	////
+//	
+//	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
+//}
+auto
+Vector3::Utility::angleBetweenVectors(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 &a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 &b) -> Scalar
 {
 	if (USE_EXCEPTIONS)
 	{
 		error_if(not almost_normalized(a), "All input vectors must be normalized.");
 		error_if(not almost_normalized(b), "All input vectors must be normalized.");
-		error_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
 	}
 	
 	////
 	
-	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
+	/*!
+	 We don't need to deal with vector magnitude stuffs because all input vectors are normalized.
+	 
+	 @note
+	 Do not use GLM angle function. Seems to have a bug by clamping dot output range.
+	 */
+	
+	
+	auto const	dot	=	Vector3::Utility::dotProductionOfVectors(a, b);
+	auto const	a3	=	Trigonometry::arccosine(dot);
+	return		a3;
 }
 Vector3 const
 Vector3::Utility::crossProductionOfVectors(const Vector3 left, const Vector3 right)
