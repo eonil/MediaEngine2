@@ -92,28 +92,22 @@ namespace
 	static inline auto
 	resolve_stepping_edge(point const& p0, point const& p1, point const& p2, Scalar const& radius) -> VolumeQuad::SteppingEdge
 	{
-		EONIL_DEBUG_ASSERT(p0 != p1);
-		EONIL_DEBUG_ASSERT(p1 != p2);
-		EONIL_DEBUG_ASSERT(p2 != p0);
-		
-		Matrix4 const	r0	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI_2));
-		
 		/*!
 		 
                  p4             p2
                   *-------------*
                  /             /
                 /             /
-               /             /
+               /             /  v2
               /             /
 		     /             /
 			*-------------*
 	       p0            p1
-
+                  v1
 								p2
 							    *
                                /
-				      v0      /
+				      q0      /
                        *     /
                         \   /
                          \ /
@@ -121,30 +115,82 @@ namespace
                            \
                             \
 							 *
-							 v1
+							 q1
          
 		 The line `v0~v1` builds a line volume stepping edge.
 		 */
 		
-		auto const	dt_1_2	=	p2 - p1;
-		auto const	p4		=	p0 + dt_1_2;
-		auto const	dt_1_4	=	p4 - p1;
+		auto const	v1	=	p1 - p0;
+		auto const	v2	=	p2 - p1;
+		auto const	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
+		auto const	a4	=	a3/Scalar(2);
 		
-		auto const	displacement_length	=	resolve_volume_displacement_vector_length(dt_1_2, dt_1_4, radius);
+		auto const	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, a4));
+		auto const	dtl	=	resolve_volume_displacement_vector_length(v1, v2, radius);
+		auto const	n0	=	m1.transform(-v2).norm();
+		auto const	d0	=	n0 * dtl;
+		auto const	d1	=	-n0 * dtl;
+		auto const	q0	=	p1 + d0;
+		auto const	q1	=	p1 + d1;
 
+		VolumeQuad::SteppingEdge	e0	=	{};
+		e0.left			=	q0;
+		e0.right		=	q1;
+		return	e0;
 		
-		auto const	is_para	=	dt_1_4.lengthSquare() == 0;
-		auto const	n0		=	is_para ? r0.transform(dt_1_2).norm() : dt_1_4.norm();
-		auto const	disp_l	=	n0 * displacement_length;
-		auto const	v0		=	p1 + disp_l;
-		auto const	v1		=	p1 - disp_l;
-		
-		////
-		
-		VolumeQuad::SteppingEdge	result	=	{};
-		result.left		=	v0;
-		result.right	=	v1;
-		return	result;
+//		EONIL_DEBUG_ASSERT(p0 != p1);
+//		EONIL_DEBUG_ASSERT(p1 != p2);
+//		EONIL_DEBUG_ASSERT(p2 != p0);
+//		
+//		Matrix4 const	r0	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI_2));
+//		
+//		/*!
+//		 
+//                 p4             p2
+//                  *-------------*
+//                 /             /
+//                /             /
+//               /             /
+//              /             /
+//		     /             /
+//			*-------------*
+//	       p0            p1
+//
+//								p2
+//							    *
+//                               /
+//				      v0      /
+//                       *     /
+//                        \   /
+//                         \ /
+//		 p0 *-------------* p1
+//                           \
+//                            \
+//							 *
+//							 v1
+//         
+//		 The line `v0~v1` builds a line volume stepping edge.
+//		 */
+//		
+//		auto const	dt_1_2	=	p2 - p1;
+//		auto const	p4		=	p0 + dt_1_2;
+//		auto const	dt_1_4	=	p4 - p1;
+//		
+//		auto const	displacement_length	=	resolve_volume_displacement_vector_length(dt_1_2, dt_1_4, radius);
+//
+//		
+//		auto const	is_para	=	dt_1_4.lengthSquare() == 0;
+//		auto const	n0		=	is_para ? r0.transform(dt_1_2).norm() : dt_1_4.norm();
+//		auto const	disp_l	=	n0 * radius;
+//		auto const	v0		=	p1 + disp_l;
+//		auto const	v1		=	p1 - disp_l;
+//		
+//		////
+//		
+//		VolumeQuad::SteppingEdge	result	=	{};
+//		result.left		=	v0;
+//		result.right	=	v1;
+//		return	result;
 	}
 	
 	

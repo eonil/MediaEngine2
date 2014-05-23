@@ -83,6 +83,8 @@
 		45F2AFAD192F803200258DFD /* test1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F2AFAA192F803200258DFD /* test1.cpp */; };
 		45F2AFDB192F86B700258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCC6881929A01800EC3C2A /* libEonilCommonRealtimeGameAlgorithms.a */; };
 		45F2AFDC192F86BB00258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCC6881929A01800EC3C2A /* libEonilCommonRealtimeGameAlgorithms.a */; };
+		45F2B002192FA10E00258DFD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F2B001192FA10E00258DFD /* GLKit.framework */; };
+		45F2B009192FA11500258DFD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F2B008192FA11500258DFD /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +285,8 @@
 		45F2AF9B192F7CD500258DFD /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
 		45F2AFAA192F803200258DFD /* test1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test1.cpp; sourceTree = "<group>"; };
 		45F2AFAB192F803200258DFD /* test1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test1.h; sourceTree = "<group>"; };
+		45F2B001192FA10E00258DFD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		45F2B008192FA11500258DFD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		45F35FA218AE527000AF0EDC /* (inactive).system_framework(inactive) */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "(inactive).system_framework(inactive)"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -305,6 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F2B009192FA11500258DFD /* GLKit.framework in Frameworks */,
 				45F2AFDB192F86B700258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
 				45150A3E18A69EDE0007BE6B /* CoreGraphics.framework in Frameworks */,
 				45150A3C18A69EDE0007BE6B /* Foundation.framework in Frameworks */,
@@ -318,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F2B002192FA10E00258DFD /* GLKit.framework in Frameworks */,
 				45F2AFDC192F86BB00258DFD /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
 				4585171118AE580F0074DBC1 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
 				4585171218AE580F0074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
@@ -356,6 +362,8 @@
 		451509FD18A69EAA0007BE6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45F2B008192FA11500258DFD /* GLKit.framework */,
+				45F2B001192FA10E00258DFD /* GLKit.framework */,
 				4585171318AE58240074DBC1 /* UIKit.framework */,
 				45150A8418A6A1990007BE6B /* libEonilImprovisationsCommonUtility.a */,
 				45150A8518A6A1990007BE6B /* libEonilImprovisationsMediaEngineFoundation.a */,

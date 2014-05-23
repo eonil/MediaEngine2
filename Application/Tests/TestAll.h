@@ -205,19 +205,36 @@ public:
 			PolylineDrawer::Instance	inst0	=	{};
 			inst0.points						=
 			{
-				Vector3{-0.2,0,0},
 				Vector3{0,0,0},
-				Vector3{+0.1,+0.1,0},
-				Vector3{+0.1,+0.3,0},
-				Vector3{+0.2,+0.4,0},
-				Vector3{+0.4,+0.4,0},
+				Vector3{+0.1,0,0},
+				Vector3{+0.2,+0.1,0},
+				Vector3{+0.2,+0.3,0},
 			};
 			for (auto& p: inst0.points)
 			{
-				p	=	world_to_screen_transform.transform(p);
+//				p	=	world_to_screen_transform.transform(p);
 			}
 			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
 		}
+
+//		{
+//			PolylineDrawer				pld		=	{};
+//			PolylineDrawer::Instance	inst0	=	{};
+//			inst0.points						=
+//			{
+//				Vector3{-0.2,0,0},
+//				Vector3{0,0,0},
+//				Vector3{+0.1,+0.1,0},
+//				Vector3{+0.1,+0.3,0},
+//				Vector3{+0.2,+0.4,0},
+//				Vector3{+0.4,+0.4,0},
+//			};
+//			for (auto& p: inst0.points)
+//			{
+//				p	=	world_to_screen_transform.transform(p);
+//			}
+//			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
+//		}
 		{
 			Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, +0.3));
 			Vector3	p1	=	{0,0.2,0};
