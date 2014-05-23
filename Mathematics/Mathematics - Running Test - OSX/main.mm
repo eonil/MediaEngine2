@@ -6,7 +6,7 @@
 //
 //
 
-#include <iostream>
+#include "test1.h"
 
 //#import <GLKit/GLKit.h>
 //#include "ImplementationOnlyGLM.h"
@@ -168,13 +168,9 @@
 
 
 
-
-
 int main(int argc, const char * argv[])
 {
-
-	// insert code here...
-	std::cout << "Hello, World!\n";
+	test1();
     return 0;
 }
 
