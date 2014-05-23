@@ -25,7 +25,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
 
 #pragma mark	-	Hidden primitives.
 
-template<Size C>
+template<Size const C>
 struct
 VectorState
 {
@@ -193,7 +193,7 @@ public:
 	
 	S const		length() const;
 	S const		lengthSquare() const;
-	V const		norm() const;
+	V const		norm() const;												//!	Result undefined for invalid input.
 	S const		distanceToVector(V const target) const;
 	S const		dotProductionWithVector(V const pair) const;
 	V const		projectionOntoVector(V const target) const;

@@ -13,6 +13,8 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_BEGIN
 
 
 
+
+
 struct
 Error : Eonil::CommonRealtimeGameAlgorithms::Error
 {
@@ -20,7 +22,7 @@ Error : Eonil::CommonRealtimeGameAlgorithms::Error
 };
 
 struct
-Crash : Eonil::CommonRealtimeGameAlgorithms::Crash
+Halt : Eonil::CommonRealtimeGameAlgorithms::Crash
 {
 	using	Eonil::CommonRealtimeGameAlgorithms::Crash::Crash;
 };
@@ -28,7 +30,7 @@ Crash : Eonil::CommonRealtimeGameAlgorithms::Crash
 
 static const bool	USE_EXCEPTIONS	=	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUG_MODE;
 
-auto	throw_if(bool const cond, std::string const& message = Eonil::CommonRealtimeGameAlgorithms::EXCEPTION_DEFAULT_MESSAGE) -> void;
+auto	error_if(bool const cond, std::string const& message = Eonil::CommonRealtimeGameAlgorithms::EXCEPTION_DEFAULT_MESSAGE) -> void;
 auto	halt_if(bool const cond, std::string const& message = Eonil::CommonRealtimeGameAlgorithms::EXCEPTION_DEFAULT_MESSAGE) -> void;
 
 

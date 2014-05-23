@@ -7,6 +7,7 @@
 //
 
 #include "Exceptions.h"
+#include <iostream>
 EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_BEGIN
 
 
@@ -18,14 +19,24 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_BEGIN
 namespace
 {
 	static char const*	DEFAULT_DOMAIN	=	"Eonil::MediaEngine::Mathematics";
+	
+	static inline auto
+	log(std::string const& msg) -> void
+	{
+		std::cout << msg << "\n";
+	}
 }
 
+
+
 auto
-throw_if(bool const cond, std::string const& message) -> void
+error_if(bool const cond, std::string const& message) -> void
 {
 	if (cond)
 	{
-		throw	Error(DEFAULT_DOMAIN, message);
+		auto	exc	=	Error(DEFAULT_DOMAIN, message);
+		log(exc.what());
+		throw	exc;
 	}
 }
 
@@ -34,7 +45,10 @@ halt_if(bool const cond, std::string const& message) -> void
 {
 	if (cond)
 	{
-		throw	Crash(DEFAULT_DOMAIN, message);
+		auto	exc	=	Halt(DEFAULT_DOMAIN, message);
+		
+		log(exc.what());
+		throw	exc;
 	}
 }
 

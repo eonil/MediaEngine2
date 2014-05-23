@@ -97,6 +97,9 @@ protected:
 		static M const		translationWithScalars(Scalar const x, Scalar const y, Scalar const z);
 		static M const		translationWithVector(Vector3 const factor);
 	};
+	
+private:
+	friend class	Debugging::Doctor;
 };
 
 extern template class	SimpleMatrixAbstraction<4, Matrix4>;
