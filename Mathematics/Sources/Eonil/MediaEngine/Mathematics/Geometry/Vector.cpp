@@ -11,6 +11,7 @@
 
 #include "../Debugging/Exceptions.h"
 #include "../Trigonometry.h"
+#include "EqualityComparison.h"
 #include "InternalRawAlgorithmStuffs/D2014R2/ConversionUnions.h"
 #include "InternalRawAlgorithmStuffs/D2014R2/ApplePlatformExtras.h"
 

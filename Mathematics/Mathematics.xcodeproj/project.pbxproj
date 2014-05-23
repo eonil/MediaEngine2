@@ -50,6 +50,9 @@
 		45478EB91929C69E009E72B8 /* ApplePlatformExtras.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478EB71929C69E009E72B8 /* ApplePlatformExtras.cpp */; };
 		45478EBA1929C69E009E72B8 /* ApplePlatformExtras.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478EB71929C69E009E72B8 /* ApplePlatformExtras.cpp */; };
 		45478EBB1929C69E009E72B8 /* ApplePlatformExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 45478EB81929C69E009E72B8 /* ApplePlatformExtras.h */; };
+		457E445F192FD10C00DF340C /* EqualityComparison.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E445D192FD10C00DF340C /* EqualityComparison.cpp */; };
+		457E4460192FD10C00DF340C /* EqualityComparison.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E445D192FD10C00DF340C /* EqualityComparison.cpp */; };
+		457E4461192FD10C00DF340C /* EqualityComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 457E445E192FD10C00DF340C /* EqualityComparison.h */; };
 		4585171118AE580F0074DBC1 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45150A2618A69EB40007BE6B /* libEonilImprovisationsMediaEngineMathematics.a */; };
 		4585171218AE580F0074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */; };
 		4585171418AE58240074DBC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585171318AE58240074DBC1 /* UIKit.framework */; };
@@ -265,6 +268,8 @@
 		45478EB71929C69E009E72B8 /* ApplePlatformExtras.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplePlatformExtras.cpp; sourceTree = "<group>"; };
 		45478EB81929C69E009E72B8 /* ApplePlatformExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePlatformExtras.h; sourceTree = "<group>"; };
 		45753E3E18A6B3CF00960D5C /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		457E445D192FD10C00DF340C /* EqualityComparison.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EqualityComparison.cpp; sourceTree = "<group>"; };
+		457E445E192FD10C00DF340C /* EqualityComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualityComparison.h; sourceTree = "<group>"; };
 		4585170218AE57B50074DBC1 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
 		4585171318AE58240074DBC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		45ADA1D1192FB11700EC89F5 /* Trigonometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trigonometry.cpp; sourceTree = "<group>"; };
@@ -493,6 +498,8 @@
 				45150A9E18A6A22C0007BE6B /* Spline1.h */,
 				45F2AF50192E3C5B00258DFD /* _ImmatureFeaturesD1 */,
 				45CCC6A81929A78100EC3C2A /* InternalRawAlgorithmStuffs */,
+				457E445D192FD10C00DF340C /* EqualityComparison.cpp */,
+				457E445E192FD10C00DF340C /* EqualityComparison.h */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -589,6 +596,7 @@
 				45478EBB1929C69E009E72B8 /* ApplePlatformExtras.h in Headers */,
 				45150AA518A6A22C0007BE6B /* AxisAngle.h in Headers */,
 				45CCC6AF1929A78100EC3C2A /* Spline2.h in Headers */,
+				457E4461192FD10C00DF340C /* EqualityComparison.h in Headers */,
 				45CCC6B91929A9AE00EC3C2A /* Conversion.h in Headers */,
 				45150AA818A6A22C0007BE6B /* Bounds.h in Headers */,
 				45478E631929B50D009E72B8 /* Exceptions.h in Headers */,
@@ -798,6 +806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45ADA1D4192FB11700EC89F5 /* Trigonometry.cpp in Sources */,
+				457E4460192FD10C00DF340C /* EqualityComparison.cpp in Sources */,
 				45150ABB18A6A22C0007BE6B /* Transform.cpp in Sources */,
 				45150AB218A6A22C0007BE6B /* Matrix.cpp in Sources */,
 				45BCFCC4192996B5002E1132 /* All.cpp in Sources */,
@@ -825,6 +834,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45ADA1D3192FB11700EC89F5 /* Trigonometry.cpp in Sources */,
+				457E445F192FD10C00DF340C /* EqualityComparison.cpp in Sources */,
 				45150ABC18A6A22C0007BE6B /* Transform.cpp in Sources */,
 				45150AB318A6A22C0007BE6B /* Matrix.cpp in Sources */,
 				45BCFCC3192996B5002E1132 /* All.cpp in Sources */,

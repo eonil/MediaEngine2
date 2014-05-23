@@ -301,10 +301,12 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 		 
 		 @return	
 		 Angle between two vectors.
-		 Returning angle is always a smallest angle between them, and there's no directional meaning.
+		 Returning angle is always a smallest angle between them.
+		 Always positive number (no directional meaning)
 		 Output range is `0~PI`.
 		 
 		 @note
+		 Take care that origin vector must be shared.
 		 One clamp, one dot.
 		 */
 		static auto		angleBetweenVectors(Vector3 const& a, Vector3 const& b) -> Scalar;											//!	All parameters should be normalized.
@@ -323,13 +325,14 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 		 Must be normalized.
 		 
 		 @return
-		 Angle in randisn to make vector `a` to `b`.
+		 Angle in randian to make vector `a` to become `b`.
 		 Returning angle is always a smallest angle between them.
 		 Positive number is counter-clockwise direction.
 		 Output range is `-PI~+PI`.
 		 `-PI` and `+PI` are semantically equal.
 		 
 		 @note
+		 Take care that origin vector must be shared.
 		 One clamp, one dot, one product.
 		 */
 		static auto		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis) -> Scalar;			//!	All parameters should be normalized.
