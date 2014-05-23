@@ -290,11 +290,6 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 	struct
 	Utility : public SimpleVectorAbstraction<3, Vector3>::Utility
 	{
-		/*!
-		 @note
-		 Returning value is signed, and the sign has meaning. But the direction of sign is not set yet.
-		 So do not trust sign of returning value. Always take absolute of it until I fix the meaning of it.
-		 */
 		static Scalar const		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis);			//!	Parameters should be normalized.
 		static Vector3 const	crossProductionOfVectors(Vector3 const a, Vector3 const b);
 	};
