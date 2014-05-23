@@ -17,6 +17,43 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		EEGL_STUB_API_DECO void
+		eeglGetRenderbufferParameteriv(GLenum const target, GLenum const pname, GLint* const params)
+		{
+			EEGL_ASSERT(target == GL_RENDERBUFFER);
+			EEGL_ASSERT(pname == GL_RENDERBUFFER_WIDTH or
+						pname == GL_RENDERBUFFER_HEIGHT or
+						pname == GL_RENDERBUFFER_INTERNAL_FORMAT or
+						pname == GL_RENDERBUFFER_RED_SIZE or
+						pname == GL_RENDERBUFFER_GREEN_SIZE or
+						pname == GL_RENDERBUFFER_BLUE_SIZE or
+						pname == GL_RENDERBUFFER_ALPHA_SIZE or
+						pname == GL_RENDERBUFFER_DEPTH_SIZE or
+						pname == GL_RENDERBUFFER_STENCIL_SIZE);
+			
+			glGetRenderbufferParameteriv(target, pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		EEGL_STUB_API_DECO GLint const
+		eeglGetRenderbufferParameteri(GLenum const target, GLenum const pname)
+		{
+			GLint	v;
+			eeglGetRenderbufferParameteriv(target, pname, &v);
+			return	v;
+		}
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
 		EEGL_STUB_API_DECO void
 		eeglGenRenderbuffers(GLsizei const n, GLuint* const renderbuffers)
 		{

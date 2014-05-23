@@ -8,7 +8,6 @@
 
 #pragma once
 #include "../Common.h"
-
 #define 	EEGL_STUB_API_DECO
 
 /*!
@@ -72,7 +71,97 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		class
+		EEGLname
+		{
+		public:
+			EEGLname(EEGLname const&) = default;
+			EEGLname(EEGLname&&) = default;
+			
+			auto operator=(EEGLname const&) -> EEGLname& = default;
+			auto operator=(EEGLname&&) -> EEGLname& = default;
+			
+		public:
+			EEGLname(GLuint const value) : _value(value)
+			{
+			}
+			
+			operator GLuint() const
+			{
+				return	_value;
+			}
+			
+		private:
+			GLuint	_value	=	{};
+		};
+		
+		struct
+		EEGLbuffer : EEGLname
+		{
+			using	EEGLname::EEGLname;
+		};
+//		struct
+//		EEGLarraybuffer : EEGLbuffer
+//		{
+//			using	EEGLbuffer::EEGLbuffer;
+//		};
+//		struct
+//		EEGLelementarraybuffer : EEGLbuffer
+//		{
+//			using	EEGLbuffer::EEGLbuffer;
+//		};
+		struct
+		EEGLtexture : EEGLname
+		{
+			using	EEGLname::EEGLname;
+		};
+//		struct
+//		EEGLtexture2d : EEGLtexture
+//		{
+//			using	EEGLtexture::EEGLtexture;
+//		};
+		
+		struct
+		EEGLshader : EEGLname
+		{
+			using	EEGLname::EEGLname;
+		};
+		struct
+		EEGLprogram : EEGLname
+		{
+			using	EEGLname::EEGLname;
+		};
+		
+		struct
+		EEGLrenderbuffer : EEGLname
+		{
+			using	EEGLname::EEGLname;
+		};
+		struct
+		EEGLframebuffer : EEGLname
+		{
+			using	EEGLname::EEGLname;
+		};
+		
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }}}}
 

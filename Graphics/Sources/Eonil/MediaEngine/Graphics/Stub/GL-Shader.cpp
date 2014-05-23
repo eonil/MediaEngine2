@@ -7,12 +7,14 @@
 //
 
 #include "GL-Shader.h"
-
+#include "../Debugging/Doctor.h"
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 
 	namespace
 	Stub
 	{
+		using namespace Debugging;
+		
 		/*
 		 GL Shader is ref-counted obejct.
 		 */

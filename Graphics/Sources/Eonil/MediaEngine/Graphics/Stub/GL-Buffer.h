@@ -10,15 +10,22 @@
 #define __EonilGraphics__GL_Buffer__
 
 #include "GL-Common.h"
-#include "GL-Get.h"
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
 	namespace
 	Stub
 	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		EEGL_STUB_API_DECO void			eeglGetBufferParameteriv(GLenum const target, GLenum const pname, GLint* const params);
-		EEGL_STUB_API_DECO GLint const		eeglGetBufferParameteri(GLenum const target, GLenum const pname);
+		EEGL_STUB_API_DECO GLint const	eeglGetBufferParameteri(GLenum const target, GLenum const pname);
 		
 		
 		
@@ -44,10 +51,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 	}
-	
-	
 }}}}
-
 #endif /* defined(__EonilGraphics__GL_Buffer__) */
 
 

@@ -8,16 +8,23 @@
 
 #ifndef __EonilGraphics__GL_Program__
 #define __EonilGraphics__GL_Program__
-
 #include "GL-Common.h"
-#include "GL-Get.h"
 #include "GL-Shader.h"
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
 	namespace
 	Stub
 	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 #ifdef 	__cplusplus
 		EEGL_STUB_API_DECO std::vector<GLuint> const	eeglGetAttachedShadersVector(GLuint const program);
 #endif
@@ -113,24 +120,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO std::string const			eeglGetProgramInfoLogString(GLuint program);
 		EEGL_STUB_API_DECO std::vector<GLuint> const	eeglGetAttachedShadersVector(GLuint const program);
 #endif
-	}
+		
+		
+		
+		
+		
+		
+		
+		
 	
+		
+		
+	}
 }}}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif /* defined(__EonilGraphics__GL_Program__) */
 
 

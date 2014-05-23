@@ -7,17 +7,50 @@
 //
 
 #include "GL-Framebuffer.h"
-
-#include "GL-Get.h"
 #include "GL-Renderbuffer.h"
-
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
 	namespace
 	Stub
 	{
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		EEGL_STUB_API_DECO void
+		eeglGetFramebufferAttachmentParameteriv(GLenum const target, GLenum const attachment, GLenum const pname, GLint* const params)
+		{
+			EEGL_ASSERT(target == GL_FRAMEBUFFER);
+			EEGL_ASSERT(attachment == GL_COLOR_ATTACHMENT0 or
+						attachment == GL_DEPTH_ATTACHMENT or
+						attachment == GL_STENCIL_ATTACHMENT);
+			EEGL_ASSERT(pname == GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE or
+						pname == GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME or
+						pname == GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL or
+						pname == GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
+			
+//#if not EEGL_IGNORE_ZERO_FRAMEBUFFER_NAME
+//			EEGL_ASSERT(eeglGetInteger(GL_FRAMEBUFFER_BINDING) != 0);
+//#endif
+			
+			glGetFramebufferAttachmentParameteriv(target, attachment, pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		
+		EEGL_STUB_API_DECO GLint const
+		eeglGetFramebufferAttachmentParameteri(GLenum const target, GLenum const attachment, GLenum const pname)
+		{
+			GLint	v;
+			eeglGetFramebufferAttachmentParameteriv(target, attachment, pname, &v);
+			return	v;
+		}
+		
+		
+
 		
 		
 		EEGL_STUB_API_DECO void

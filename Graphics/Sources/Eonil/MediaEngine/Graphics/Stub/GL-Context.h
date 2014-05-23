@@ -20,15 +20,56 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{
-		EEGL_STUB_API_DECO void			eeglViewport(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
-		EEGL_STUB_API_DECO void			eeglScissor(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
+		////	Get.
+		
+		EEGL_STUB_API_DECO void				eeglGetBooleanv(GLenum const pname, GLboolean * const params);
+		EEGL_STUB_API_DECO void				eeglGetFloatv(GLenum const pname, GLfloat * const params);
+		EEGL_STUB_API_DECO void				eeglGetIntegerv(GLenum const pname, GLint * const params);
+		
+		EEGL_STUB_API_DECO GLboolean const	eeglGetBoolean(GLenum const pname);
+		EEGL_STUB_API_DECO GLboolean const	eeglGetFloat(GLenum const pname);
+		EEGL_STUB_API_DECO GLint const		eeglGetInteger(GLenum const pname);
+		EEGL_STUB_API_DECO GLubyte const*	eeglGetString(GLenum const name);
+		
+		
+		using namespace Debugging;
+		
+		EEGL_STUB_API_DECO void				eeglGetVertexAttribfv(GLuint const index, GLenum const pname, GLfloat * const params);
+		EEGL_STUB_API_DECO void				eeglGetVertexAttribiv(GLuint const index, GLenum const pname, GLint * const params);
+		EEGL_STUB_API_DECO GLfloat const	eeglGetVertexAttribf(GLuint const index, GLenum const pname);
+		EEGL_STUB_API_DECO GLint const		eeglGetVertexAttribi(GLuint const index, GLenum const pname);
+		
+		EEGL_STUB_API_DECO void				eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname, GLvoid** const pointer);
+		EEGL_STUB_API_DECO GLvoid* const	eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname);
+		
+#ifdef	__cplusplus
+#endif
+		
+		EEGL_STUB_API_DECO void				eeglViewport(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
+		EEGL_STUB_API_DECO void				eeglScissor(GLint const x, GLint const y, GLsizei const width, GLsizei const height);
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		////	Capability.
 		
-		EEGL_STUB_API_DECO void			eeglEnable(GLenum const cap);
-		EEGL_STUB_API_DECO void			eeglDisable(GLenum const cap);
+		EEGL_STUB_API_DECO void				eeglEnable(GLenum const cap);
+		EEGL_STUB_API_DECO void				eeglDisable(GLenum const cap);
 		EEGL_STUB_API_DECO GLboolean const	eeglIsEnabled(GLenum const cap);
 		
 		

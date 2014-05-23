@@ -8,15 +8,21 @@
 
 #ifndef __EonilGraphics__GL_Shader__
 #define __EonilGraphics__GL_Shader__
-
-#include "GL-Get.h"
 #include "GL-Common.h"
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
 	namespace
 	Stub
 	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*
 		 GL Shader is ref-counted obejct.
 		 */
@@ -79,10 +85,26 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		EEGL_STUB_API_DECO std::string const			eeglGetShaderSourceString(GLuint const shader);
 		EEGL_STUB_API_DECO std::string const			eeglGetShaderInfoLogString(GLuint const shader);
 #endif
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
-	
 }}}}
-
 #endif /* defined(__EonilGraphics__GL_Shader__) */
 
 

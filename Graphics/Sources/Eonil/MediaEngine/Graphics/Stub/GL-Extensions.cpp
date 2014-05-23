@@ -9,10 +9,9 @@
 #include "GL-Extensions.h"
 
 #include "../Debugging/Doctor.h"
-#include "GL-Get.h"
+#include "GL-Context.h"
 #include "GL-Program.h"
 #include "GL-Framebuffer.h"
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace

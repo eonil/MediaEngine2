@@ -8,15 +8,18 @@
 
 #ifndef __EonilGraphics__GL_Texture__
 #define __EonilGraphics__GL_Texture__
-
-#include "GL-Get.h"
 #include "GL-Common.h"
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
 	namespace
 	Stub
-	{			
+	{
+		
+		
+		
+		
+		
+		
+		
 		EEGL_STUB_API_DECO GLboolean const	eeglIsTexture(GLuint const texture);
 		
 		EEGL_STUB_API_DECO void				eeglGetTexParameterfv(GLenum const target, GLenum const pname, GLfloat* const params);
@@ -63,9 +66,13 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+	
+		
+		
+		
+		
+		
 		
 	}
-	
 }}}}
-
 #endif /* defined(__EonilGraphics__GL_Texture__) */

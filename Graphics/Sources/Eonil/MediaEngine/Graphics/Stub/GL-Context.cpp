@@ -7,7 +7,7 @@
 //
 
 #include "GL-Context.h"
-
+#include "InternalRawStuffs/InternalRawStuffsCommon.h"
 
 
 
@@ -19,12 +19,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		namespace
 		{
-			template<typename T>
-			static inline auto
-			contains_target_in_samples(T const& target, vec<T> const& samples) -> bool
-			{
-				return	std::find(samples.begin(), samples.end(), target) != samples.end();
-			}
 			
 			static inline auto
 			is_valid_face(GLenum const face) -> bool
@@ -147,6 +141,182 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		EEGL_STUB_API_DECO void
+		eeglGetBooleanv(GLenum const pname, GLboolean * const params)
+		{
+			glGetBooleanv(pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		EEGL_STUB_API_DECO void
+		eeglGetFloatv(GLenum const pname, GLfloat * const params)
+		{
+			glGetFloatv(pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		EEGL_STUB_API_DECO void
+		eeglGetIntegerv(GLenum const pname, GLint * const params)
+		{
+			//			GL_INVALID_ENUM	=	0x500;
+			glGetIntegerv(pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		
+		
+		
+		
+		EEGL_STUB_API_DECO GLboolean const
+		eeglGetBoolean(GLenum const pname)
+		{
+			GLboolean	value;
+			eeglGetBooleanv(pname, &value);
+			return		value;
+		}
+		
+		EEGL_STUB_API_DECO GLboolean const
+		eeglGetFloat(GLenum const pname)
+		{
+			GLfloat		value;
+			eeglGetFloatv(pname, &value);
+			return		value;
+		}
+		
+		EEGL_STUB_API_DECO GLint const
+		eeglGetInteger(GLenum const pname)
+		{
+			GLint		value;
+			eeglGetIntegerv(pname, &value);
+			return		value;
+		}
+		
+		
+		/*!
+		 Returning strings are all NULL-terminated.
+		 */
+		EEGL_STUB_API_DECO GLubyte const*
+		eeglGetString(GLenum const name)
+		{
+			EONIL_DEBUG_ASSERT(contains_target_in_samples(name,
+														  {
+															  GL_VENDOR,
+															  GL_RENDERER,
+															  GL_VERSION,
+															  GL_SHADING_LANGUAGE_VERSION,
+															  GL_EXTENSIONS,
+														  }));
+			GLubyte const*	c_str1	=	glGetString(name);
+			EEGL_ASSERT_NO_GL_ERROR();
+			EONIL_DEBUG_ASSERT(c_str1 != NULL);		//!	Zero means error. @ref https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetString.xml
+			return	c_str1;
+		}
+		
+		
+		
+		EEGL_STUB_API_DECO void
+		eeglGetVertexAttribfv(GLuint const index, GLenum const pname, GLfloat * const params)
+		{
+			glGetVertexAttribfv(index, pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		
+		EEGL_STUB_API_DECO void
+		eeglGetVertexAttribiv(GLuint const index, GLenum const pname, GLint * const params)
+		{
+			glGetVertexAttribiv(index, pname, params);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		
+		
+		
+		EEGL_STUB_API_DECO GLfloat const
+		eeglGetVertexAttribf(GLuint const index, GLenum const pname)
+		{
+			GLfloat	params[1];
+			eeglGetVertexAttribfv(index, pname, params);
+			return	params[0];
+		}
+		
+		EEGL_STUB_API_DECO GLint const
+		eeglGetVertexAttribi(GLuint const index, GLenum const pname)
+		{
+			GLint	params[1];
+			eeglGetVertexAttribiv(index, pname, params);
+			return	params[0];
+		}
+		
+		/*!
+		 @param	pointer		Out parameter.
+		 */
+		EEGL_STUB_API_DECO void
+		eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname, GLvoid** const pointer)
+		{
+			EEGL_ASSERT(pname == GL_VERTEX_ATTRIB_ARRAY_POINTER);
+			//				EEGL_ASSERT(pointer != NULL, "Out parameter point shouldn't be a `NULL`.");
+			glGetVertexAttribPointerv(index, pname, pointer);
+			EEGL_ASSERT_NO_GL_ERROR();
+		}
+		
+		
+		EEGL_STUB_API_DECO GLvoid* const
+		eeglGetVertexAttribPointerv(GLuint const index, GLenum const pname)
+		{
+			GLvoid*	ptraddr	=	NULL;
+			eeglGetVertexAttribPointerv(index, pname, &ptraddr);
+			return	ptraddr;
+		}
+		
+		
+		
+#ifdef	__cplusplus
+#endif
+
 		
 		
 		

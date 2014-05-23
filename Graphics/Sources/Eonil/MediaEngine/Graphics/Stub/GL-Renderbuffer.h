@@ -22,6 +22,10 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	{
 		using namespace Eonil::Improvisations::MediaEngine::Graphics::Debugging;
 		
+		EEGL_STUB_API_DECO void			eeglGetRenderbufferParameteriv(GLenum const target, GLenum const pname, GLint* const params);
+		EEGL_STUB_API_DECO GLint const	eeglGetRenderbufferParameteri(GLenum const target, GLenum const pname);
+		
+		
 		EEGL_STUB_API_DECO void			eeglGenRenderbuffers(GLsizei const n, GLuint* const renderbuffers);
 		EEGL_STUB_API_DECO void			eeglDeleteRenderbuffers(GLsizei const n, GLuint const* const renderbuffers);
 		

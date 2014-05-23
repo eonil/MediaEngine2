@@ -7,7 +7,7 @@
 //
 
 #include "GL-Program.h"
-
+#include "GL-Context.h"
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 
 	namespace

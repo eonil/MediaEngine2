@@ -10,7 +10,6 @@
 #define __EonilGraphics__GL__
 
 #include	"GL-Common.h"
-
 #include	"GL-Context.h"
 #include	"GL-Framebuffer.h"
 #include	"GL-Renderbuffer.h"
@@ -19,10 +18,7 @@
 #include	"GL-Shader.h"
 #include	"GL-Program.h"
 
-#include	"GL-Get.h"
-#include	"GL-Get-Buffer.h"
-#include	"GL-Get-VertexAttrib.h"
-
 #include	"GL-Extensions.h"
+#include	"GL-Custom.h"
 
 #endif /* defined(__EonilGraphics__GL__) */
