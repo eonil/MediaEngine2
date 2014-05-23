@@ -411,13 +411,13 @@ Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaE
 	
 	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
 }
-Vector3 const
-Vector3::Utility::crossProductionOfVectors(const Vector3 left, const Vector3 right)
+auto
+Vector3::Utility::crossProductionOfVectors(const Vector3 left, const Vector3 right) -> Vector3
 {
 	return	EE(Ops<3>::crossProduct(GLK(left), GLK(right)));
 }
-Vector3 const
-Vector3::crossProductionWithVector(Vector3 const target) const
+auto
+Vector3::crossProductionWithVector(Vector3 const target) const -> Vector3
 {
 	return	EE(Ops<3>::crossProduct(GLK(*this), GLK(target)));
 }

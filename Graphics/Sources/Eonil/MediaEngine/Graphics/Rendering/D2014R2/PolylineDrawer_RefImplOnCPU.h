@@ -35,15 +35,19 @@ public:
 	
 public:
 	/*!
-	 All the point coordinates must be a location in NDC space. (must be pre-transformed)
+	 All the point coordinates must be a location in world space. (must be pre-transformed)
 	 Points are defined as 3D to draw Z-depth correctly. You can utilized depth-buffer features.
+	 
+	 @param	
+	 transform
+	 World-to-NDC transform.
 	 */
-	auto	drawInNDCSpace(vec<Instance> const& instances, Scalar const& radius, Vector4 const& color) const -> void;
+	auto	draw(Matrix4 const& transform, vec<Instance> const& instances, Scalar const& radius, Vector4 const& color) const -> void;
 	
 private:
 	CPUTransformTriangleDrawer	_tri_drawer	=	{};
 	
-	auto	_draw_one_in_context(Instance const&, Scalar const& radius, Vector4 const& color) const -> void;
+	auto	_draw_one_in_context(Matrix4 const& transform, Instance const&, Scalar const& radius, Vector4 const& color) const -> void;
 };
 
 

@@ -285,7 +285,7 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 	Vector3(Vector2 const v2, Scalar const z);
 	Vector3(Scalar const x, Scalar const y, Scalar const z);
 	
-	Vector3 const		crossProductionWithVector(Vector3 const pair) const;
+	auto	crossProductionWithVector(Vector3 const pair) const -> Vector3;
 	
 	struct
 	Utility : public SimpleVectorAbstraction<3, Vector3>::Utility
@@ -337,7 +337,7 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 		 */
 		static auto		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis) -> Scalar;			//!	All parameters should be normalized.
 		
-		static Vector3 const	crossProductionOfVectors(Vector3 const a, Vector3 const b);
+		static auto		crossProductionOfVectors(Vector3 const a, Vector3 const b) -> Vector3;
 	};
 };
 static_assert(sizeof(Vector3) == sizeof(Scalar) * 3, "Size of Vector3 must be 12 bytes.");

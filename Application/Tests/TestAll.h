@@ -72,7 +72,8 @@ TestAll
 	
 	PlanarTexture			_tex2	=	load_texture_resource("TEX_TEST", "png");
 	
-	D2014R2::GPUTransformRegularPolygonDrawer				_reg_poly_drawer	{8};
+	D2014R2::GPUTransformRegularPolygonDrawer	_reg_poly_drawer	=	{8};
+	D2014R2::PolylineDrawer						_polyline_drawer	=	{};
 	
 	vec<GPUTransformRegularPolygonDrawer::VaryingInstance>	_circle_instances{};
 	
@@ -201,56 +202,66 @@ public:
 			trid.drawTriangleList({ts.data(), ts.data() + ts.size()}, {1,1,0,1});
 		}
 		{
-			PolylineDrawer				pld		=	{};
-			PolylineDrawer::Instance	inst0	=	{};
-			inst0.points						=
 			{
-				Vector3{0,0,0},
-				Vector3{+0.1,0,0},
-				Vector3{+0.2,+0.1,0},
-				Vector3{+0.2,+0.3,0},
-			};
-			for (auto& p: inst0.points)
-			{
-//				p	=	world_to_screen_transform.transform(p);
+				PolylineDrawer::Instance	inst0	=	{};
+				inst0.points						=
+				{
+					Vector3{0,0,0},
+					Vector3{+0.1,0,0},
+					Vector3{+0.2,+0.1,0},
+					Vector3{+0.2,+0.3,0},
+					Vector3{+0.1,+0.4,0},
+					Vector3{+0.0,+0.4,0},
+				};
+				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
 			}
-			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
-		}
-
-//		{
-//			PolylineDrawer				pld		=	{};
-//			PolylineDrawer::Instance	inst0	=	{};
-//			inst0.points						=
-//			{
-//				Vector3{-0.2,0,0},
-//				Vector3{0,0,0},
-//				Vector3{+0.1,+0.1,0},
-//				Vector3{+0.1,+0.3,0},
-//				Vector3{+0.2,+0.4,0},
-//				Vector3{+0.4,+0.4,0},
-//			};
-//			for (auto& p: inst0.points)
-//			{
-//				p	=	world_to_screen_transform.transform(p);
-//			}
-//			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
-//		}
-		{
-			Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, +0.3));
-			Vector3	p1	=	{0,0.2,0};
-			
-			PolylineDrawer				pld		=	{};
-			PolylineDrawer::Instance	inst0	=	{};
-			for (size_t i=0; i<16; i++)
 			{
-				inst0.points.push_back(p1);
-				p1	=	m1.transform(p1);
+				PolylineDrawer::Instance	inst0	=	{};
+				inst0.points						=
+				{
+					Vector3{0,0,0},
+					Vector3{+0.1,0,0},
+					Vector3{+0.2,0,0},
+					Vector3{+0.3,0,0},
+				};
+				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
 			}
-			for (auto& p: inst0.points)
 			{
-				p	=	world_to_screen_transform.transform(p);
+				PolylineDrawer::Instance	inst0	=	{};
+				inst0.points						=
+				{
+					Vector3{0,0,0},
+					Vector3{+0.1,-0.05,0},
+					Vector3{+0.2,-0.10,0},
+					Vector3{+0.3,-0.15,0},
+				};
+				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
 			}
-			pld.drawInNDCSpace({inst0}, 0.01, {1,1,1,1});
+			{
+				PolylineDrawer::Instance	inst0	=	{};
+				inst0.points						=
+				{
+					Vector3{-0.2,0,0},
+					Vector3{0,0,0},
+					Vector3{+0.1,+0.1,0},
+					Vector3{+0.1,+0.3,0},
+					Vector3{+0.2,+0.4,0},
+					Vector3{+0.4,+0.4,0},
+				};
+				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+			}
+			{
+				Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, +0.3));
+				Vector3	p1	=	{0,0.2,0};
+				
+				PolylineDrawer::Instance	inst0	=	{};
+				for (size_t i=0; i<16; i++)
+				{
+					inst0.points.push_back(p1);
+					p1	=	m1.transform(p1);
+				}
+				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+			}
 		}
 	}
 	

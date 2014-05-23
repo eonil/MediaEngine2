@@ -54,7 +54,7 @@ namespace
 	
 	
 	static inline auto
-	resolve_volume_displacement_vector_length(Scalar const& a3, Scalar const radius) -> Scalar
+	resolve_volume_displacement_vector_length(Vector3 const& n1, Vector3 const& n3, Scalar const y) -> Scalar
 	{
 		/*!
 		 @code
@@ -63,7 +63,7 @@ namespace
 			 *
 			 |\
 			 | \
-		  r  |  \  d
+		  y  |  \  d
 			 |   \
 			 |    \
 			 |     \
@@ -71,38 +71,67 @@ namespace
 			 a      b
 		 
 		 
-		 vector	v1	=	a~b
-		 vector	v2	=	b~c
+		 vector	n1	=	normalize(a~b)
+		 vector	n3	=	normalize(b~c)
 		 angle	a3	=	a~b~c
-		 length	r	=	a~c
+		 length	y	=	a~c
 		 
-		 sine(a1)	=	(r / d)
-		 d			=	r / sine(a1)
+		 sine(a3)	=	y / d
+		 d			=	y / sine(a3)
 		 
 		 */
-		auto const	d	=	radius / std::sin(a3);
+		auto const	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(-n1, n3, {0,0,1});
+		auto const	d	=	y / Trigonometry::sine(a3);
 		
-		return	d;
+		return		d;
 	}
 	
 	
+	
+	static inline auto
+	perpendicular_2d(Vector3 const& a) -> Vector3
+	{
+//		Matrix4 const	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI_2));
+//		Vector3 const	b	=	m1.transform(a);
+//		return	b;
+		return	{-a.y, a.x, a.z};
+	}
 	
 	
 	static inline auto
 	resolve_stepping_edge(point const& p0, point const& p1, point const& p2, Scalar const& radius) -> VolumeQuad::SteppingEdge
 	{
+		EONIL_DEBUG_ASSERT(p0 != p1);
+		EONIL_DEBUG_ASSERT(p1 != p2);
+		EONIL_DEBUG_ASSERT(p2 != p0);
+
 		/*!
 		 
-                 p4             p2
-                  *-------------*
-                 /             /
-                /             /
-               /             /  v2
-              /             /
-		     /             /
+             p4             p2
+              *-------------*
+             /             /  v2
 			*-------------*
 	       p0            p1
                   v1
+		 
+		 v1	=	p0~p1
+		 v2	=	p1~p2
+		 
+					 n2
+          *           *-----------*
+           \         / \         /
+            \ d3    /   \       /
+             \     /     \     /
+              \   /       \   /
+		       \ /         \ /
+			    *-----------*
+              (0,0)         n1
+		 
+		 n1	=	p0~p1 (normalized)
+		 n2	=	p1~p2 (normalized)
+		 d3	=	n1~n2 (NOT normalized!)
+		 n3	=	n1~n2 (normalized)
+		 
 								p2
 							    *
                                /
@@ -116,21 +145,27 @@ namespace
 							 *
 							 q1
          
+		 v3	=	p1~q0
+		 n3	=	p1~q0 (normalized)
+		 
 		 The line `v0~v1` builds a line volume stepping edge.
+		 
+		 
+		 
 		 */
 		
 		auto const	v1	=	p1 - p0;
 		auto const	v2	=	p2 - p1;
-		auto const	v1n	=	v1.norm();
-		auto const	v2n	=	v2.norm();
-		auto const	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1n, v2n, {0,0,1});
-		auto const	a4	=	(M_PI-a3)/Scalar(2);
+		auto const	n1	=	v1.norm();
+		auto const	n2	=	v2.norm();
 		
-		auto const	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, a4));
-		auto const	dtl	=	resolve_volume_displacement_vector_length(a4, radius);
-		auto const	n0	=	m1.transform(-v2).norm();
-		auto const	d0	=	n0 * dtl;
-		auto const	d1	=	-n0 * dtl;
+		auto const	d3	=	n2 - n1;
+		auto const	par	=	almost_equals(d3, {0,0,0});		//	straight line...
+		auto const	n3	=	(par ? perpendicular_2d(v1) : d3).norm();
+		
+		auto const	dtl	=	resolve_volume_displacement_vector_length(n1, n3, radius);
+		auto const	d0	=	n3 * dtl;
+		auto const	d1	=	-n3 * dtl;
 		auto const	q0	=	p1 + d0;
 		auto const	q1	=	p1 + d1;
 
@@ -138,60 +173,6 @@ namespace
 		e0.left			=	q0;
 		e0.right		=	q1;
 		return	e0;
-		
-//		EONIL_DEBUG_ASSERT(p0 != p1);
-//		EONIL_DEBUG_ASSERT(p1 != p2);
-//		EONIL_DEBUG_ASSERT(p2 != p0);
-//		
-//		Matrix4 const	r0	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI_2));
-//		
-//		/*!
-//		 
-//                 p4             p2
-//                  *-------------*
-//                 /             /
-//                /             /
-//               /             /
-//              /             /
-//		     /             /
-//			*-------------*
-//	       p0            p1
-//
-//								p2
-//							    *
-//                               /
-//				      v0      /
-//                       *     /
-//                        \   /
-//                         \ /
-//		 p0 *-------------* p1
-//                           \
-//                            \
-//							 *
-//							 v1
-//         
-//		 The line `v0~v1` builds a line volume stepping edge.
-//		 */
-//		
-//		auto const	dt_1_2	=	p2 - p1;
-//		auto const	p4		=	p0 + dt_1_2;
-//		auto const	dt_1_4	=	p4 - p1;
-//		
-//		auto const	displacement_length	=	resolve_volume_displacement_vector_length(dt_1_2, dt_1_4, radius);
-//
-//		
-//		auto const	is_para	=	dt_1_4.lengthSquare() == 0;
-//		auto const	n0		=	is_para ? r0.transform(dt_1_2).norm() : dt_1_4.norm();
-//		auto const	disp_l	=	n0 * radius;
-//		auto const	v0		=	p1 + disp_l;
-//		auto const	v1		=	p1 - disp_l;
-//		
-//		////
-//		
-//		VolumeQuad::SteppingEdge	result	=	{};
-//		result.left		=	v0;
-//		result.right	=	v1;
-//		return	result;
 	}
 	
 	
@@ -238,16 +219,12 @@ namespace
 	}
 	
 	
-	
-//	static inline auto
-//	transform_all(vec<PolylineDrawer_RefImplOnCPU::Instance> const instances)
-	
 }
 
 
 
 auto
-PolylineDrawer_RefImplOnCPU::drawInNDCSpace(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::Instance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+PolylineDrawer_RefImplOnCPU::draw(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 &transform, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::Instance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
 {
 	/*!
 	 Logic explanation.
@@ -326,7 +303,7 @@ PolylineDrawer_RefImplOnCPU::drawInNDCSpace(const vec<Eonil::Improvisations::Med
 				copy1.points.push_back(p0);
 				copy1.points.push_back(p1);
 				copy1.points.push_back(p1 + dt_0_1);
-				_draw_one_in_context(copy1, radius, color);
+				_draw_one_in_context(transform, copy1, radius, color);
 				break;
 			}
 			case 3:
@@ -343,12 +320,12 @@ PolylineDrawer_RefImplOnCPU::drawInNDCSpace(const vec<Eonil::Improvisations::Med
 				copy1.points.push_back(p1);
 				copy1.points.push_back(p2);
 				copy1.points.push_back(p2 + dt_1_2);
-				_draw_one_in_context(copy1, radius, color);
+				_draw_one_in_context(transform, copy1, radius, color);
 				break;
 			}
 			default:
 			{
-				_draw_one_in_context(inst0, radius, color);
+				_draw_one_in_context(transform, inst0, radius, color);
 				break;
 			}
 		}
@@ -357,7 +334,7 @@ PolylineDrawer_RefImplOnCPU::drawInNDCSpace(const vec<Eonil::Improvisations::Med
 
 
 auto
-PolylineDrawer_RefImplOnCPU::_draw_one_in_context(const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::Instance &polyline, Scalar const& radius, Vector4 const& color) const -> void
+PolylineDrawer_RefImplOnCPU::_draw_one_in_context(const Matrix4 &transform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::Instance &polyline, Scalar const& radius, Vector4 const& color) const -> void
 {
 	EONIL_DEBUG_ASSERT(polyline.points.size() >= 4);
 	
@@ -371,8 +348,15 @@ PolylineDrawer_RefImplOnCPU::_draw_one_in_context(const Eonil::Improvisations::M
 		auto const&	p3	=	polyline.points.at(i+3);
 		
 		auto const	vo0	=	volumize_single_segment(p0, p1, p2, p3, radius);
-		auto const	tri	=	vo0.triangulate();
-		_tri_drawer.drawTriangleList({tri.begin(), tri.end()}, color);
+		auto	ts	=	vo0.triangulate();
+		for (auto& t: ts)
+		{
+			for (auto& p: t.points)
+			{
+				p	=	transform.transform(p);
+			}
+		}
+		_tri_drawer.drawTriangleList({ts.begin(), ts.end()}, color);
 	}
 }
 
