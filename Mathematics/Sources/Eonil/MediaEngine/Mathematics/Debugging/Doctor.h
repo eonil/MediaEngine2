@@ -18,6 +18,7 @@ class
 Doctor
 {
 public:
+	
 //	static auto	isGood(Scalar const&) -> bool;
 //	static auto	isGood(Vector4 const&) -> bool;
 //	static auto	isGood(Matrix4 const&) -> bool;

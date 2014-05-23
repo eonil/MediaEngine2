@@ -379,6 +379,15 @@ Vector3::Vector3(Scalar const x, Scalar const y, Scalar const z)
 Scalar const
 Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis)
 {
+	if (Debugging::USE_EXCEPTIONS)
+	{
+		Debugging::error_if(Debugging::almost_equals(a.length(), 1), "All input vectors must be normalized.");
+		Debugging::error_if(Debugging::almost_equals(b.length(), 1), "All input vectors must be normalized.");
+		Debugging::error_if(Debugging::almost_equals(planeAxis.length(), 1), "All input vectors must be normalized.");
+	}
+	
+	////
+	
 	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
 }
 Vector3 const

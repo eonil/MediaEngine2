@@ -7,6 +7,7 @@
 //
 
 #include "Exceptions.h"
+#include "../Geometry/Vector.h"
 #include <iostream>
 EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUGGING_NAMESPACE_BEGIN
 
@@ -54,6 +55,36 @@ halt_if(bool const cond, std::string const& message) -> void
 
 
 
+		
+auto
+default_epsilon() -> Geometry::Scalar
+{
+	return	std::numeric_limits<Geometry::Scalar>::epsilon();
+}
+auto
+almost_equals(Geometry::Scalar const& a, Geometry::Scalar const& b, Geometry::Scalar const& epsilon) -> bool
+{
+	if (USE_EXCEPTIONS)
+	{
+		error_if(epsilon < 0);
+	}
+	
+	////
+	
+	return	std::abs(a - b) < epsilon;
+}
+auto
+almost_equals(Geometry::Vector3 const& a, Geometry::Vector3 const& b, Geometry::Scalar const& epsilon) -> bool
+{
+	if (USE_EXCEPTIONS)
+	{
+		error_if(epsilon < 0);
+	}
+	
+	////
+	
+	return	(a - b).length() < epsilon;
+}
 
 
 
