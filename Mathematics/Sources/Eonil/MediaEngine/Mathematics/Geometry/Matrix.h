@@ -49,7 +49,7 @@ extern template class	MatrixState<4>;
 
 template<Size C, typename M>
 struct
-SimpleMatrixAbstraction : private MatrixState<C>
+SimpleMatrixAbstraction : public MatrixState<C>
 {
 	using	S	=	Scalar;
 	

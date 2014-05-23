@@ -31,7 +31,9 @@ almost_equals(Geometry::Scalar const& a, Geometry::Scalar const& b, Geometry::Sc
 {
 	if (USE_EXCEPTIONS)
 	{
-		error_if(tolerance < 0);
+		error_if(has_nan(a), "Input vectors shouldn't contains any NaN.");
+		error_if(has_nan(b), "Input vectors shouldn't contains any NaN.");
+		error_if(tolerance < 0, "Parameter `tolerance` should be larger then 0.");
 	}
 	
 	////
@@ -43,12 +45,15 @@ almost_equals(Geometry::Vector3 const& a, Geometry::Vector3 const& b, Geometry::
 {
 	if (USE_EXCEPTIONS)
 	{
-		error_if(tolerance < 0);
+		error_if(has_nan(a), "Input vectors shouldn't contains any NaN.");
+		error_if(has_nan(b), "Input vectors shouldn't contains any NaN.");
+		error_if(tolerance < 0, "Parameter `tolerance` should be larger then 0.");
 	}
 	
 	////
 	
-	return	(a - b).length() < tolerance;
+	return	(a - b).lengthSquare() < (tolerance * tolerance);
+//	return	(a - b).length() < tolerance;
 }
 auto
 almost_normalized(Geometry::Vector3 const& a, Geometry::Scalar const& tolerance) -> bool

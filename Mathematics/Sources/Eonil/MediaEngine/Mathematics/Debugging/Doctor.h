@@ -18,7 +18,7 @@ class
 Doctor
 {
 public:
-	
+//	static auto		refComponentsOfMatrix(Matrix4 const&) -> std::array<Scalar, 16> const&;
 //	static auto	isGood(Scalar const&) -> bool;
 //	static auto	isGood(Vector4 const&) -> bool;
 //	static auto	isGood(Matrix4 const&) -> bool;

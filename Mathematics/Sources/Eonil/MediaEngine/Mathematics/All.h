@@ -18,6 +18,7 @@
 #include "Geometry/Matrix.h"
 #include "Geometry/Transform.h"
 #include "Geometry/_ImmatureFeaturesD1/Interpolation.h"
+#include "Geometry/EqualityComparison.h"
 //#include "Geometry/Spline.h"
 
 EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN

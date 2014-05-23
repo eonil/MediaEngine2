@@ -33,8 +33,11 @@ static const bool	USE_EXCEPTIONS	=	EONIL_MEDIA_ENGINE_MATHEMATICS_DEBUG_MODE;
 auto	error_if(bool const cond, std::string const& message = Eonil::CommonRealtimeGameAlgorithms::EXCEPTION_DEFAULT_MESSAGE) -> void;
 auto	halt_if(bool const cond, std::string const& message = Eonil::CommonRealtimeGameAlgorithms::EXCEPTION_DEFAULT_MESSAGE) -> void;
 
-
-
+auto	has_nan(Geometry::Scalar const&) -> bool;
+auto	has_nan(Geometry::Vector2 const&) -> bool;
+auto	has_nan(Geometry::Vector3 const&) -> bool;
+auto	has_nan(Geometry::Vector4 const&) -> bool;
+auto	has_nan(Geometry::Matrix4 const&) -> bool;
 
 
 
