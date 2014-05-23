@@ -88,8 +88,15 @@ protected:
 		static M const		scaleWithScalar(Scalar const x, Scalar const y, Scalar const z);
 		static M const		scaleWithVector(Vector3 const factor);
 		
-		static M const		rotationWithQuaternion(Quaternion const factor);
+		/*!
+		 Creates a matrix which performs rotation transform.
+		 
+		 @param
+		 factor
+		 Positive angle result counter-clockwise direction rotation.
+		 */
 		static M const		rotationWithAxisAngle(AxisAngle const factor);
+		static M const		rotationWithQuaternion(Quaternion const factor);
 //		static M const		rotationByAngleAroundXAxis(Vector3 const angle);
 //		static M const		rotationByAngleAroundYAxis(Vector3 const angle);
 //		static M const		rotationByAngleAroundZAxis(Vector3 const angle);
