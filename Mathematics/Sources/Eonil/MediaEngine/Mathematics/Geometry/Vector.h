@@ -290,6 +290,11 @@ Vector3 final : public SimpleVectorAbstraction<3, Vector3>
 	struct
 	Utility : public SimpleVectorAbstraction<3, Vector3>::Utility
 	{
+		/*!
+		 @return
+		 Angle in randisn to make vector `a` to `b`. 
+		 Positive number is counter-clockwise direction.
+		 */
 		static Scalar const		angleBetweenVectorsOnPlane(Vector3 const a, Vector3 const b, Vector3 const planeAxis);			//!	Parameters should be normalized.
 		static Vector3 const	crossProductionOfVectors(Vector3 const a, Vector3 const b);
 	};
