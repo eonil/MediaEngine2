@@ -292,40 +292,57 @@ PolylineDrawer_RefImplOnCPU::draw(const Eonil::Improvisations::MediaEngine::Math
 				EONIL_DEBUG_ASSERT_WITH_MESSAGE(false, "Poly-line point must be at least 2.");
 				break;
 			}
-			case 2:
+//			case 2:
+//			{
+//				Vector3		p0		=	inst0.points.at(0);
+//				Vector3		p1		=	inst0.points.at(1);
+//				Vector3		dt_0_1	=	p1 - p0;
+//
+//				Instance	copy1	=	{};
+//				copy1.points.push_back(p0 - dt_0_1);
+//				copy1.points.push_back(p0);
+//				copy1.points.push_back(p1);
+//				copy1.points.push_back(p1 + dt_0_1);
+//				
+//				_draw_one_in_context(transform, copy1, radius, color);
+//				break;
+//			}
+//			case 3:
+//			{
+//				Vector3		p0		=	inst0.points.at(0);
+//				Vector3		p1		=	inst0.points.at(1);
+//				Vector3		p2		=	inst0.points.at(2);
+//				Vector3		dt_0_1	=	p1 - p0;
+//				Vector3		dt_1_2	=	p2 - p1;
+//				
+//				Instance	copy1	=	{};
+//				copy1.points.push_back(p0 - dt_0_1);
+//				copy1.points.push_back(p0);
+//				copy1.points.push_back(p1);
+//				copy1.points.push_back(p2);
+//				copy1.points.push_back(p2 + dt_1_2);
+//				
+//				_draw_one_in_context(transform, copy1, radius, color);
+//				break;
+//			}
+			default:
 			{
 				Vector3		p0		=	inst0.points.at(0);
 				Vector3		p1		=	inst0.points.at(1);
+				Vector3		p2		=	inst0.points.at(inst0.points.size()-2);
+				Vector3		p3		=	inst0.points.at(inst0.points.size()-1);
 				Vector3		dt_0_1	=	p1 - p0;
-
-				Instance	copy1	=	{};
-				copy1.points.push_back(p0 - dt_0_1);
-				copy1.points.push_back(p0);
-				copy1.points.push_back(p1);
-				copy1.points.push_back(p1 + dt_0_1);
-				_draw_one_in_context(transform, copy1, radius, color);
-				break;
-			}
-			case 3:
-			{
-				Vector3		p0		=	inst0.points.at(0);
-				Vector3		p1		=	inst0.points.at(1);
-				Vector3		p2		=	inst0.points.at(2);
-				Vector3		dt_0_1	=	p1 - p0;
-				Vector3		dt_1_2	=	p2 - p1;
+				Vector3		dt_2_3	=	p3 - p2;
 				
 				Instance	copy1	=	{};
 				copy1.points.push_back(p0 - dt_0_1);
-				copy1.points.push_back(p0);
-				copy1.points.push_back(p1);
-				copy1.points.push_back(p2);
-				copy1.points.push_back(p2 + dt_1_2);
+				for (auto const& p: inst0.points)
+				{
+					copy1.points.push_back(p);
+				}
+				copy1.points.push_back(inst0.points.back() + dt_2_3);
+				
 				_draw_one_in_context(transform, copy1, radius, color);
-				break;
-			}
-			default:
-			{
-				_draw_one_in_context(transform, inst0, radius, color);
 				break;
 			}
 		}
