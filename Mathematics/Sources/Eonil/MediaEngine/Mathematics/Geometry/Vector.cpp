@@ -383,9 +383,9 @@ Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaE
 {
 	if (USE_EXCEPTIONS)
 	{
-		error_if(not almost_normalized(a), "All input vectors must be normalized.");
-		error_if(not almost_normalized(b), "All input vectors must be normalized.");
-		error_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
+		error_if(not almost_normalized(a, large_epsilon()), "All input vectors must be normalized.");
+		error_if(not almost_normalized(b, large_epsilon()), "All input vectors must be normalized.");
+		error_if(not almost_normalized(planeAxis, large_epsilon()), "All input vectors must be normalized.");
 	}
 	
 	////
