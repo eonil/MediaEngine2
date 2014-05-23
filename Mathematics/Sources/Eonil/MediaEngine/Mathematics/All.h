@@ -9,12 +9,14 @@
 #pragma once
 
 #include "Common.h"
+#include "Debugging/Doctor.h"
 #include "Geometry/Bounds.h"
 #include "Geometry/Vector.h"
 #include "Geometry/Quaternion.h"
 #include "Geometry/AxisAngle.h"
 #include "Geometry/Matrix.h"
 #include "Geometry/Transform.h"
+#include "Geometry/_ImmatureFeaturesD1/Interpolation.h"
 //#include "Geometry/Spline.h"
 
 EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
