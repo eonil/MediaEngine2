@@ -166,19 +166,13 @@ test1() -> void
 			test_assert(almost_equals(-a3, a5));
 		}
 	}
-//	{
-//		Vector3	v1	=	{-1,0,0};
-//		Vector3	v2	=	{+1,0,0};
-//		Scalar	a3	=	Vector3::Utility::angleBetweenVectorsOnPlane(v1, v2, {0,0,1});
-//		test_assert(almost_equals(a3, M_PI));
-//	}
+
 	{
 		Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI_2));
 		Vector3	v1	=	{0,1,0};
 		Vector3	v2	=	m1.transform(v1);
 		Vector3	v3	=	{-1,0,0};
-		Scalar	s1	=	(v3 - v2).length();
-		test_assert(s1 < 0.001);
+		test_assert(almost_equals(v2, v3));
 	}
 }
 
