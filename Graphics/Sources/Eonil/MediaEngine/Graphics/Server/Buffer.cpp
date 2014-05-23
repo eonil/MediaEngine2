@@ -9,13 +9,13 @@
 #include "GL-Buffer.h"
 #include "Buffer.h"
 #include "ImplementationCommon.h"
-
-
+#include "../Debugging/Doctor.h"
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace
 	Server
 	{
+		using namespace Debugging;
 		using namespace	Stub;
 		
 		static	std::vector<void*>	cptr;

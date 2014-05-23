@@ -13,11 +13,9 @@
 #include "UniformProgramParameter.h"
 #include "../Machine.h"
 #include "../../Stub/GL-Common.h"
-#include "../../Stub/GL-Get.h"
 #include "../../Stub/GL-Context.h"
 #include "../../Server/Machinery/VertexAttributeChannel.h"
 #include "../../Server/ProgramParameterLocation.h"
-
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 	
 	namespace
