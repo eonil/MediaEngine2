@@ -379,11 +379,7 @@ Vector3::Vector3(Scalar const x, Scalar const y, Scalar const z)
 Scalar const
 Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis)
 {
-	/*
-	 The GLM method always return degrees.
-	 Convert manually until it handles radians correctly.
-	 */
-	return	glm::radians(EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis))));
+	return	EE(glm::orientedAngle(GLM(a), GLM(b), GLM(planeAxis)));
 }
 Vector3 const
 Vector3::Utility::crossProductionOfVectors(const Vector3 left, const Vector3 right)
