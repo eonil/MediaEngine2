@@ -156,6 +156,12 @@
 		457E3B1F18B988CF00327EB8 /* ShadingAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E3B1D18B988CF00327EB8 /* ShadingAlgorithm.cpp */; };
 		457E3B2018B988CF00327EB8 /* ShadingAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E3B1D18B988CF00327EB8 /* ShadingAlgorithm.cpp */; };
 		457E3B2118B988CF00327EB8 /* ShadingAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 457E3B1E18B988CF00327EB8 /* ShadingAlgorithm.h */; };
+		457E4486192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E4484192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp */; };
+		457E4487192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E4484192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp */; };
+		457E4488192FDA7E00DF340C /* PolylineDrawer_Algorithms.h in Headers */ = {isa = PBXBuildFile; fileRef = 457E4485192FDA7E00DF340C /* PolylineDrawer_Algorithms.h */; };
+		457E448B192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E4489192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp */; };
+		457E448C192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457E4489192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp */; };
+		457E448D192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.h in Headers */ = {isa = PBXBuildFile; fileRef = 457E448A192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.h */; };
 		457FAB631772A6C600F088DA /* GLNumbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457FAB611772A6C300F088DA /* GLNumbers.cpp */; };
 		457FAB641772A6C700F088DA /* GLNumbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457FAB611772A6C300F088DA /* GLNumbers.cpp */; };
 		4585174918AE6DA00074DBC1 /* Aliases.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4585174718AE6DA00074DBC1 /* Aliases.cpp */; };
@@ -517,6 +523,10 @@
 		457E3B1C18B97A2100327EB8 /* CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_50 */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = "CPUTransformDebuggingLineDrawer.fragment.shader.glsl-dt-1_50"; sourceTree = "<group>"; };
 		457E3B1D18B988CF00327EB8 /* ShadingAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShadingAlgorithm.cpp; sourceTree = "<group>"; };
 		457E3B1E18B988CF00327EB8 /* ShadingAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadingAlgorithm.h; sourceTree = "<group>"; };
+		457E4484192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolylineDrawer_Algorithms.cpp; sourceTree = "<group>"; };
+		457E4485192FDA7E00DF340C /* PolylineDrawer_Algorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolylineDrawer_Algorithms.h; sourceTree = "<group>"; };
+		457E4489192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolylineDrawer_OptImplOnGPU.cpp; sourceTree = "<group>"; };
+		457E448A192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolylineDrawer_OptImplOnGPU.h; sourceTree = "<group>"; };
 		457FAB4A1771EA2F00F088DA /* WHATSTHIS.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = WHATSTHIS.md; sourceTree = "<group>"; };
 		457FAB611772A6C300F088DA /* GLNumbers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GLNumbers.cpp; sourceTree = "<group>"; };
 		457FAB621772A6C300F088DA /* GLNumbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLNumbers.h; sourceTree = "<group>"; };
@@ -1021,6 +1031,18 @@
 			path = OSX;
 			sourceTree = "<group>";
 		};
+		457E4483192FD9B300DF340C /* (old, erased) */ = {
+			isa = PBXGroup;
+			children = (
+				453554D418DAF03900744177 /* CPUTransformUniformPolylineImmediateDrawer.vertex.shader.rstr */,
+				453554D518DAF09B00744177 /* CPUTransformUniformPolylineImmediateDrawer.es.fragment.shader.rstr */,
+				453554D618DAF17B00744177 /* CPUTransformUniformPolylineImmediateDrawer.dt.fragment.shader.rstr */,
+				453554CF18DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.cpp */,
+				453554D018DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.h */,
+			);
+			name = "(old, erased)";
+			sourceTree = "<group>";
+		};
 		457FAB451771E9E700F088DA /* _DEV_ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1519,16 +1541,12 @@
 		45F14E8318B2EF8E005F4A4C /* (lowest level drawers) */ = {
 			isa = PBXGroup;
 			children = (
+				457E4483192FD9B300DF340C /* (old, erased) */,
 				45F14E9818B2F087005F4A4C /* CPUTransformParticleDrawer.cpp */,
 				45F14E9918B2F087005F4A4C /* CPUTransformParticleDrawer.h */,
 				452D7F3718DDFC3500ACD745 /* (debugging line drawer - CPU based) */,
 				45F2AF99192F616700258DFD /* (triangle drawer - CPU based) */,
 				452D7F4018DE00EB00ACD745 /* (sprite-drawer-CPU) */,
-				453554D418DAF03900744177 /* CPUTransformUniformPolylineImmediateDrawer.vertex.shader.rstr */,
-				453554D518DAF09B00744177 /* CPUTransformUniformPolylineImmediateDrawer.es.fragment.shader.rstr */,
-				453554D618DAF17B00744177 /* CPUTransformUniformPolylineImmediateDrawer.dt.fragment.shader.rstr */,
-				453554CF18DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.cpp */,
-				453554D018DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.h */,
 				45C5B79C18DB94F00033F354 /* (regular-polygon-drawer / strict standard) */,
 				45C5B79B18DB899F0033F354 /* (regular-polygon-drawer - CPU - unused, but preserved for documentation purpose) */,
 				4598F48918DB2F91000C3F6E /* CPUTransformRegularCircleDrawer.cpp */,
@@ -1553,8 +1571,12 @@
 		45F2AFEF192F94B600258DFD /* (polyline drawer - CPU based) */ = {
 			isa = PBXGroup;
 			children = (
+				457E4484192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp */,
+				457E4485192FDA7E00DF340C /* PolylineDrawer_Algorithms.h */,
 				45F2AF8D192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp */,
 				45F2AF8E192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.h */,
+				457E4489192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp */,
+				457E448A192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.h */,
 				45E4950C18B1B01700195E5F /* PolylineDrawer.cpp */,
 				45E4950D18B1B01700195E5F /* PolylineDrawer.h */,
 			);
@@ -1585,6 +1607,7 @@
 				4588042F18DF62DA00B1997F /* ProgramParameterLocation.h in Headers */,
 				453554D318DAEFE300744177 /* CPUTransformUniformPolylineImmediateDrawer.h in Headers */,
 				45E494BC18B147B000195E5F /* _FontProxy_Core_using_Apple_UIKit.h in Headers */,
+				457E448D192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.h in Headers */,
 				45E494AE18B1472E00195E5F /* FontProxy.h in Headers */,
 				4585178418B0206C0074DBC1 /* _Camera_v1.h in Headers */,
 				45F2AFEE192F8D3800258DFD /* TriangleDrawer.h in Headers */,
@@ -1635,6 +1658,7 @@
 				45F14E7818B2E6E6005F4A4C /* ObjectRenderer.h in Headers */,
 				45E4947918B1215F00195E5F /* NativeImage.h in Headers */,
 				45E4951018B1B01700195E5F /* PolylineDrawer.h in Headers */,
+				457E4488192FDA7E00DF340C /* PolylineDrawer_Algorithms.h in Headers */,
 				45E4950A18B1AFC900195E5F /* SplineDrawer.h in Headers */,
 				45485F9E18B959E1005981DA /* UniformProgramParameter.h in Headers */,
 				4588048E18DFC2C100B1997F /* Query.h in Headers */,
@@ -1916,10 +1940,12 @@
 				45F2AF90192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp in Sources */,
 				453ECEAF192B267A0003F5FE /* SkinningStuffs.cpp in Sources */,
 				45DB480C18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
+				457E4487192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp in Sources */,
 				452847A9176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
 				452847B2176C9C6F00133320 /* Node.cpp in Sources */,
 				4588043318DF66C500B1997F /* ProgramMetadata.cpp in Sources */,
 				45B2B202176EF27300FC36F7 /* Atlas.cpp in Sources */,
+				457E448C192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp in Sources */,
 				454DD9951798FCED000A815F /* Color.cpp in Sources */,
 				451402AB176F813B008B5DF1 /* IndexUnitChannel.cpp in Sources */,
 				45A12A23179B77F8008FA8A3 /* TextureCoreUtil-Internal.mm in Sources */,
@@ -2053,10 +2079,12 @@
 				45F2AF8F192F4DFE00258DFD /* PolylineDrawer_RefImplOnCPU.cpp in Sources */,
 				453ECEAE192B267A0003F5FE /* SkinningStuffs.cpp in Sources */,
 				45DB480B18BE0B7E004A10E0 /* VertexLayoutDescriptor.cpp in Sources */,
+				457E4486192FDA7E00DF340C /* PolylineDrawer_Algorithms.cpp in Sources */,
 				452847AA176C18D500133320 /* TransformationQueueAlgorithm.c in Sources */,
 				452847B3176C9C6F00133320 /* Node.cpp in Sources */,
 				4588043218DF66C500B1997F /* ProgramMetadata.cpp in Sources */,
 				45B2B203176EF27300FC36F7 /* Atlas.cpp in Sources */,
+				457E448B192FDB1E00DF340C /* PolylineDrawer_OptImplOnGPU.cpp in Sources */,
 				454DD9961798FCED000A815F /* Color.cpp in Sources */,
 				451402AC176F813B008B5DF1 /* IndexUnitChannel.cpp in Sources */,
 				45A12A24179B77F8008FA8A3 /* TextureCoreUtil-Internal.mm in Sources */,
