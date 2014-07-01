@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4506CB89196311C2007F2C9A /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45150A2618A69EB40007BE6B /* libEonilMediaEngineMathematics.a */; };
-		4506CB8A196311C2007F2C9A /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7F6C1962F17E00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */; };
-		4506CB8B196311C2007F2C9A /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */; };
 		4506CBA0196316CA007F2C9A /* NaNCheck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4506CB9E196316CA007F2C9A /* NaNCheck.cpp */; };
 		4506CBA1196316CA007F2C9A /* NaNCheck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4506CB9E196316CA007F2C9A /* NaNCheck.cpp */; };
 		4506CBA2196316CA007F2C9A /* NaNCheck.h in Headers */ = {isa = PBXBuildFile; fileRef = 4506CB9F196316CA007F2C9A /* NaNCheck.h */; };
@@ -58,7 +56,6 @@
 		457E4461192FD10C00DF340C /* EqualityComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 457E445E192FD10C00DF340C /* EqualityComparison.h */; };
 		4585171418AE58240074DBC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585171318AE58240074DBC1 /* UIKit.framework */; };
 		4585171518AE58300074DBC1 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451509FB18A69EAA0007BE6B /* libEonilMediaEngineMathematics.a */; };
-		4585171618AE58300074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */; };
 		4590A85F1930AB76009E014C /* test2_vector_array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4590A85D1930AB76009E014C /* test2_vector_array.cpp */; };
 		4590A8601930AB76009E014C /* test2_vector_array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4590A85D1930AB76009E014C /* test2_vector_array.cpp */; };
 		4590A8631930ABF8009E014C /* test_common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4590A8611930ABF8009E014C /* test_common.cpp */; };
@@ -94,77 +91,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4506CB7919631190007F2C9A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F0374B175C359E00C469FD;
-			remoteInfo = "Foundation - OSX Static Library";
-		};
-		4506CB7B19631194007F2C9A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F03728175C353F00C469FD;
-			remoteInfo = "Foundation - iOS Static Library";
-		};
-		4585170818AE57B50074DBC1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45F0374C175C359E00C469FD;
-			remoteInfo = "Foundation - OSX Static Library";
-		};
-		4585170A18AE57B50074DBC1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45F03729175C353F00C469FD;
-			remoteInfo = "Foundation - iOS Static Library";
-		};
-		4585170C18AE57B50074DBC1 /* PBXContainerItemProxy */ = {
+		4506CBAB1963178D007F2C9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 453BFBFA18A2424D007E514B;
 			remoteInfo = "OSX Test";
 		};
-		459F7F691962F17E00CB53E0 /* PBXContainerItemProxy */ = {
+		4506CBAD1963178D007F2C9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 45FC6FAC190EB7290018BC59;
-			remoteInfo = "CommonRealtimeGameAlgorithms - iOS";
+			remoteGlobalIDString = 45F0374C175C359E00C469FD;
+			remoteInfo = "Foundation - OSX Static Library";
 		};
-		459F7F6B1962F17E00CB53E0 /* PBXContainerItemProxy */ = {
+		4506CBAF1963178D007F2C9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 45FC7001190EB7AF0018BC59;
-			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
+			remoteGlobalIDString = 45F03729175C353F00C469FD;
+			remoteInfo = "Foundation - iOS Static Library";
 		};
-		459F7F6D1962F17E00CB53E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 450EF2A6190EBD6E00FC3FE3;
-			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - OSX";
-		};
-		459F7F6F1962F17E00CB53E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 455B126D19106740007997D8;
-			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - iOS";
-		};
-		45F2AF3D192E3C0A00258DFD /* PBXContainerItemProxy */ = {
+		4506CBB11963178D007F2C9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4504CE96192B462100F3FC8B;
 			remoteInfo = "Foundation_LEGACY - iOS";
 		};
-		45F2AF3F192E3C0A00258DFD /* PBXContainerItemProxy */ = {
+		4506CBB31963178D007F2C9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
 			proxyType = 2;
@@ -178,26 +133,12 @@
 			remoteGlobalIDString = 45150A2518A69EB40007BE6B;
 			remoteInfo = "Mathematics - Static Library - OSX";
 		};
-		45F2AFD3192F86A100258DFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F0374B175C359E00C469FD;
-			remoteInfo = "Foundation - OSX Static Library";
-		};
 		45F2AFD7192F86A700258DFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 451509F118A69E8E0007BE6B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 451509FA18A69EAA0007BE6B;
 			remoteInfo = "Mathematics - Static Library - iOS";
-		};
-		45F2AFD9192F86AA00258DFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F03728175C353F00C469FD;
-			remoteInfo = "Foundation - iOS Static Library";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -270,13 +211,13 @@
 		45753E3E18A6B3CF00960D5C /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		457E445D192FD10C00DF340C /* EqualityComparison.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EqualityComparison.cpp; sourceTree = "<group>"; };
 		457E445E192FD10C00DF340C /* EqualityComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualityComparison.h; sourceTree = "<group>"; };
-		4585170218AE57B50074DBC1 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
+		4585170218AE57B50074DBC1 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
 		4585171318AE58240074DBC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4590A85D1930AB76009E014C /* test2_vector_array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test2_vector_array.cpp; sourceTree = "<group>"; };
 		4590A85E1930AB76009E014C /* test2_vector_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2_vector_array.h; sourceTree = "<group>"; };
 		4590A8611930ABF8009E014C /* test_common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test_common.cpp; sourceTree = "<group>"; };
 		4590A8621930ABF8009E014C /* test_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test_common.h; sourceTree = "<group>"; };
-		459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonRealtimeGameAlgorithms.xcodeproj; path = ../../CommonRealtimeGameAlgorithms/CommonRealtimeGameAlgorithms.xcodeproj; sourceTree = "<group>"; };
+		459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonRealtimeGameAlgorithms.xcodeproj; path = ../CommonRealtimeGameAlgorithms/CommonRealtimeGameAlgorithms.xcodeproj; sourceTree = "<group>"; };
 		45ADA1D1192FB11700EC89F5 /* Trigonometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trigonometry.cpp; sourceTree = "<group>"; };
 		45ADA1D2192FB11700EC89F5 /* Trigonometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trigonometry.h; sourceTree = "<group>"; };
 		45BCFCC1192996B5002E1132 /* All.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = All.cpp; sourceTree = "<group>"; };
@@ -325,7 +266,6 @@
 				45150A3E18A69EDE0007BE6B /* CoreGraphics.framework in Frameworks */,
 				45150A3C18A69EDE0007BE6B /* Foundation.framework in Frameworks */,
 				4585171418AE58240074DBC1 /* UIKit.framework in Frameworks */,
-				4585171618AE58300074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
 				4585171518AE58300074DBC1 /* libEonilMediaEngineMathematics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,8 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4506CB89196311C2007F2C9A /* libEonilMediaEngineMathematics.a in Frameworks */,
-				4506CB8A196311C2007F2C9A /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
-				4506CB8B196311C2007F2C9A /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
 				45F2B002192FA10E00258DFD /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,10 +282,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4506CBA41963178D007F2C9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4506CBAC1963178D007F2C9A /* OSX Test */,
+				4506CBAE1963178D007F2C9A /* libEonilImprovisationsMediaEngineFoundation.a */,
+				4506CBB01963178D007F2C9A /* libEonilMediaEngineFoundation.a */,
+				4506CBB21963178D007F2C9A /* libFoundation_LEGACY.a */,
+				4506CBB41963178D007F2C9A /* libFoundation_LEGACY.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		451509F018A69E8E0007BE6B = {
 			isa = PBXGroup;
 			children = (
-				45150A7B18A69FAF0007BE6B /* Dependencies */,
+				459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */,
+				4585170218AE57B50074DBC1 /* Foundation.xcodeproj */,
 				45753E3E18A6B3CF00960D5C /* Prefix.pch */,
 				45150A7518A69F8F0007BE6B /* Sources */,
 				45150A7618A69F8F0007BE6B /* Tests */,
@@ -439,15 +390,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		45150A7B18A69FAF0007BE6B /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */,
-				4585170218AE57B50074DBC1 /* Foundation.xcodeproj */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		45150A7C18A6A01A0007BE6B /* Eonil */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,29 +458,6 @@
 				4506CB9E196316CA007F2C9A /* NaNCheck.cpp */,
 			);
 			path = Debugging;
-			sourceTree = "<group>";
-		};
-		4585170318AE57B50074DBC1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4585170D18AE57B50074DBC1 /* OSX Test */,
-				4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				4585170B18AE57B50074DBC1 /* libEonilMediaEngineFoundation.a */,
-				45F2AF3E192E3C0A00258DFD /* libFoundation_LEGACY.a */,
-				45F2AF40192E3C0A00258DFD /* libFoundation_LEGACY.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		459F7F631962F17E00CB53E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				459F7F6A1962F17E00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */,
-				459F7F6C1962F17E00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */,
-				459F7F6E1962F17E00CB53E0 /* CommonRealtimeGameAlgorithms - Tester - OSX */,
-				459F7F701962F17E00CB53E0 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		45CCC6A81929A78100EC3C2A /* InternalRawAlgorithmStuffs */ = {
@@ -621,7 +540,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4506CB7C19631194007F2C9A /* PBXTargetDependency */,
 			);
 			name = "Mathematics - Static Library - iOS";
 			productName = "Math - Static Library - iOS";
@@ -639,7 +557,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4506CB7A19631190007F2C9A /* PBXTargetDependency */,
 			);
 			name = "Mathematics - Static Library - OSX";
 			productName = "Math - Static Library - OSX";
@@ -657,7 +574,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				45F2AFDA192F86AA00258DFD /* PBXTargetDependency */,
 				45F2AFD8192F86A700258DFD /* PBXTargetDependency */,
 			);
 			name = "Mathematics - Running Test - iOS";
@@ -676,7 +592,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				45F2AFD4192F86A100258DFD /* PBXTargetDependency */,
 				45F2AFC7192F869600258DFD /* PBXTargetDependency */,
 			);
 			name = "Mathematics - Running Test - OSX";
@@ -704,11 +619,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 459F7F631962F17E00CB53E0 /* Products */;
-					ProjectRef = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
-				},
-				{
-					ProductGroup = 4585170318AE57B50074DBC1 /* Products */;
+					ProductGroup = 4506CBA41963178D007F2C9A /* Products */;
 					ProjectRef = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
 				},
 			);
@@ -723,68 +634,40 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4585170918AE57B50074DBC1 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
+		4506CBAC1963178D007F2C9A /* OSX Test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "OSX Test";
+			remoteRef = 4506CBAB1963178D007F2C9A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4506CBAE1963178D007F2C9A /* libEonilImprovisationsMediaEngineFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			name = libEonilImprovisationsMediaEngineFoundation.a;
 			path = libEonilMediaEngineFoundation.a;
-			remoteRef = 4585170818AE57B50074DBC1 /* PBXContainerItemProxy */;
+			remoteRef = 4506CBAD1963178D007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4585170B18AE57B50074DBC1 /* libEonilMediaEngineFoundation.a */ = {
+		4506CBB01963178D007F2C9A /* libEonilMediaEngineFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libEonilMediaEngineFoundation.a;
-			remoteRef = 4585170A18AE57B50074DBC1 /* PBXContainerItemProxy */;
+			remoteRef = 4506CBAF1963178D007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4585170D18AE57B50074DBC1 /* OSX Test */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "OSX Test";
-			remoteRef = 4585170C18AE57B50074DBC1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459F7F6A1962F17E00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilCommonRealtimeGameAlgorithms.a;
-			remoteRef = 459F7F691962F17E00CB53E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459F7F6C1962F17E00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilCommonRealtimeGameAlgorithms.a;
-			remoteRef = 459F7F6B1962F17E00CB53E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459F7F6E1962F17E00CB53E0 /* CommonRealtimeGameAlgorithms - Tester - OSX */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "CommonRealtimeGameAlgorithms - Tester - OSX";
-			remoteRef = 459F7F6D1962F17E00CB53E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459F7F701962F17E00CB53E0 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "CommonRealtimeGameAlgorithms - Tester - iOS.app";
-			remoteRef = 459F7F6F1962F17E00CB53E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F2AF3E192E3C0A00258DFD /* libFoundation_LEGACY.a */ = {
+		4506CBB21963178D007F2C9A /* libFoundation_LEGACY.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libFoundation_LEGACY.a;
-			remoteRef = 45F2AF3D192E3C0A00258DFD /* PBXContainerItemProxy */;
+			remoteRef = 4506CBB11963178D007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		45F2AF40192E3C0A00258DFD /* libFoundation_LEGACY.a */ = {
+		4506CBB41963178D007F2C9A /* libFoundation_LEGACY.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libFoundation_LEGACY.a;
-			remoteRef = 45F2AF3F192E3C0A00258DFD /* PBXContainerItemProxy */;
+			remoteRef = 4506CBB31963178D007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -884,35 +767,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4506CB7A19631190007F2C9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Foundation - OSX Static Library";
-			targetProxy = 4506CB7919631190007F2C9A /* PBXContainerItemProxy */;
-		};
-		4506CB7C19631194007F2C9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Foundation - iOS Static Library";
-			targetProxy = 4506CB7B19631194007F2C9A /* PBXContainerItemProxy */;
-		};
 		45F2AFC7192F869600258DFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45150A2518A69EB40007BE6B /* Mathematics - Static Library - OSX */;
 			targetProxy = 45F2AFC6192F869600258DFD /* PBXContainerItemProxy */;
 		};
-		45F2AFD4192F86A100258DFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Foundation - OSX Static Library";
-			targetProxy = 45F2AFD3192F86A100258DFD /* PBXContainerItemProxy */;
-		};
 		45F2AFD8192F86A700258DFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 451509FA18A69EAA0007BE6B /* Mathematics - Static Library - iOS */;
 			targetProxy = 45F2AFD7192F86A700258DFD /* PBXContainerItemProxy */;
-		};
-		45F2AFDA192F86AA00258DFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Foundation - iOS Static Library";
-			targetProxy = 45F2AFD9192F86AA00258DFD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
