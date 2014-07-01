@@ -9,7 +9,7 @@
 #include "Vector.h"
 #include "Matrix.h"
 
-#include "../Debugging/Exceptions.h"
+#include "../Debugging/NaNCheck.h"
 #include "../Trigonometry.h"
 #include "EqualityComparison.h"
 #include "InternalRawAlgorithmStuffs/D2014R2/ConversionUnions.h"
@@ -27,28 +27,28 @@ using namespace Debugging;
 
 namespace
 {
-	template<Size C> class GLKTypeResolver {};
+	template<size_t C> class GLKTypeResolver {};
 	template<> struct GLKTypeResolver<2> { using TYPE = GLKVector2; };
 	template<> struct GLKTypeResolver<3> { using TYPE = GLKVector3; };
 	template<> struct GLKTypeResolver<4> { using TYPE = GLKVector4; };
 	
-	template<Size C> class GLMTypeResolver {};
+	template<size_t C> class GLMTypeResolver {};
 	template<> struct GLMTypeResolver<2> { using TYPE = glm::vec2; };
 	template<> struct GLMTypeResolver<3> { using TYPE = glm::vec3; };
 	template<> struct GLMTypeResolver<4> { using TYPE = glm::vec4; };
 	
-	template<Size C> class EETypeResolver {};
+	template<size_t C> class EETypeResolver {};
 	template<> struct EETypeResolver<2> { using TYPE = Vector2; };
 	template<> struct EETypeResolver<3> { using TYPE = Vector3; };
 	template<> struct EETypeResolver<4> { using TYPE = Vector4; };
 	
-	template<Size C> using GLKTypeFor = typename GLKTypeResolver<C>::TYPE;
-	template<Size C> using GLMTypeFor = typename GLMTypeResolver<C>::TYPE;
-	template<Size C> using EETypeFor = typename EETypeResolver<C>::TYPE;
+	template<size_t C> using GLKTypeFor = typename GLKTypeResolver<C>::TYPE;
+	template<size_t C> using GLMTypeFor = typename GLMTypeResolver<C>::TYPE;
+	template<size_t C> using EETypeFor = typename EETypeResolver<C>::TYPE;
 	
 	////
 
-	template<Size C>
+	template<size_t C>
 	union
 	CONV
 	{
@@ -84,7 +84,7 @@ namespace
 	
 	////
 					
-	template<Size C>
+	template<size_t C>
 	struct Ops
 	{
 	};
@@ -180,7 +180,7 @@ namespace
 
 #pragma mark	-	Method Implementations
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::signalingNaN() -> V const
 {
 	V	v;
@@ -190,7 +190,7 @@ SimpleVectorAbstraction<C, V>::Utility::signalingNaN() -> V const
 	}
 	return	v;
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::infinity() -> V const
 {
 	V	v;
@@ -201,34 +201,34 @@ SimpleVectorAbstraction<C, V>::Utility::infinity() -> V const
 	return	v;
 }
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::distanceBetweenVectors(const V left, const V right) -> S const
 {
 	return	EE(Ops<C>::distance(GLK(left), GLK(right)));
 }
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::minimumOfVectors(const V left, const V right) -> V const
 {
 	return	EE(Ops<C>::minimum(GLK(left), GLK(right)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::maximumOfVectors(const V left, const V right) -> V const
 {
 	return	EE(Ops<C>::maximum(GLK(left), GLK(right)));
 }
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::dotProductionOfVectors(const V left, const V right) -> S const
 {
 	return	EE(Ops<C>::dotProduct(GLK(left), GLK(right)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::vectorUsingLinearInterpolationBetweenVectors(const V begin, const V end, const Scalar time) -> V const
 {
 	return	EE(Ops<C>::lerp(GLK(begin), GLK(end), GLK(time)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::Utility::vectorUsingCatmullRomSplineBetweenVectors(const V prebegin, const V begin, const V end, const V postend, const Scalar time) -> V const
 {
 	return	EE(glm::catmullRom(GLM(prebegin), GLM(begin), GLM(end), GLM(postend), time));
@@ -238,43 +238,43 @@ SimpleVectorAbstraction<C, V>::Utility::vectorUsingCatmullRomSplineBetweenVector
 
 
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator==(V const& other) const -> bool const
 {
 	return	EE(Ops<C>::equals(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator!=(V const& other) const -> bool const
 {
 	return	not EE(Ops<C>::equals(GLK(*this), GLK(other)));
 }
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator+() const -> V const
 {
 	return	EE((GLK(*this)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator-() const -> V const
 {
 	return	EE(Ops<C>::negate(GLK(*this)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator+(V const& other) const -> V const
 {
 	return	EE(Ops<C>::add(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator-(V const& other) const -> V const
 {
 	return	EE(Ops<C>::subtract(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator*(V const& other) const -> V const
 {
 	return	EE(Ops<C>::multiply(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator/(V const& other) const -> V const
 {
 	return	EE(Ops<C>::divide(GLK(*this), GLK(other)));
@@ -282,22 +282,22 @@ SimpleVectorAbstraction<C, V>::operator/(V const& other) const -> V const
 
 
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator+(Scalar const& other) const -> V const
 {
 	return	EE(Ops<C>::addScalar(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator-(Scalar const& other) const -> V const
 {
 	return	EE(Ops<C>::subtractScalar(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator*(Scalar const& other) const -> V const
 {
 	return	EE(Ops<C>::multiplyScalar(GLK(*this), GLK(other)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::operator/(Scalar const& other) const -> V const
 {
 	return	EE(Ops<C>::divideScalar(GLK(*this), GLK(other)));
@@ -305,39 +305,39 @@ SimpleVectorAbstraction<C, V>::operator/(Scalar const& other) const -> V const
 
 
 
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::length() const -> S const
 {
 	return	EE(Ops<C>::length(GLK(*this)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::lengthSquare() const -> S const
 {
 	return	length() * length();		//	TODO: optimize.
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::norm() const -> V const
 {
-	if (Debugging::USE_EXCEPTIONS)
+	if (USE_DEBUGGING_ASSERTIONS)
 	{
-		Debugging::halt_if(lengthSquare() == 0, "This vector is zero-length, and cannot have a norm.");
+		err2_recoverable_program_state_is_not_proper_for_this_command_if(lengthSquare() == 0, "This vector is zero-length, and cannot have a norm.");
 	}
 	
 	////
 	
 	return	EE(Ops<C>::normalize(GLK(*this)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::distanceToVector(V const target) const -> S const
 {
 	return	EE(Ops<C>::distance(GLK(*this), GLK(target)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::dotProductionWithVector(V const target) const -> S const
 {
 	return	EE(Ops<C>::dotProduct(GLK(*this), GLK(target)));
 }
-template<Size C, typename V> auto
+template<size_t C, typename V> auto
 SimpleVectorAbstraction<C, V>::projectionOntoVector(V const target) const -> V const
 {
 	return	EE(Ops<C>::project(GLK(*this), GLK(target)));
@@ -381,12 +381,12 @@ Vector3::Vector3(Scalar const x, Scalar const y, Scalar const z)
 }
 
 auto
-Vector3::Utility::angleBetweenVectors(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 &a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 &b) -> Scalar
+Vector3::Utility::angleBetweenVectors(const Vector3 &a, const Vector3 &b) -> Scalar
 {
-	if (USE_EXCEPTIONS)
+	if (USE_DEBUGGING_ASSERTIONS)
 	{
-		error_if(not almost_normalized(a), "All input vectors must be normalized.");
-		error_if(not almost_normalized(b), "All input vectors must be normalized.");
+		err1_recoverable_bad_input_parameter_if(not almost_normalized(a), "All input vectors must be normalized.");
+		err1_recoverable_bad_input_parameter_if(not almost_normalized(b), "All input vectors must be normalized.");
 	}
 	
 	////
@@ -398,13 +398,13 @@ Vector3::Utility::angleBetweenVectors(const Eonil::Improvisations::MediaEngine::
 //	return		a3;
 }
 auto
-Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis) -> Scalar
+Vector3::Utility::angleBetweenVectorsOnPlane(const Vector3 a, const Vector3 b, const Vector3 planeAxis) -> Scalar
 {
-	if (USE_EXCEPTIONS)
+	if (USE_DEBUGGING_ASSERTIONS)
 	{
-		error_if(not almost_normalized(a), "All input vectors must be normalized.");
-		error_if(not almost_normalized(b), "All input vectors must be normalized.");
-		error_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
+		err1_recoverable_bad_input_parameter_if(not almost_normalized(a), "All input vectors must be normalized.");
+		err1_recoverable_bad_input_parameter_if(not almost_normalized(b), "All input vectors must be normalized.");
+		err1_recoverable_bad_input_parameter_if(not almost_normalized(planeAxis), "All input vectors must be normalized.");
 	}
 	
 	////
@@ -787,7 +787,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //		
 //#pragma mark	-	Method Implementations
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::signalingNaN() -> V const
 //		{
 //			V	v;
@@ -797,7 +797,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //			}
 //			return	v;
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::infinity() -> V const
 //		{
 //			V	v;
@@ -808,34 +808,34 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //			return	v;
 //		}
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::distanceBetweenVectors(const V left, const V right) -> S const
 //		{
 //			return	ops::distance(left, right);
 //		}
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::minimumOfVectors(const V left, const V right) -> V const
 //		{
 //			return	ops::min(left, right);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::maximumOfVectors(const V left, const V right) -> V const
 //		{
 //			return	ops::max(left, right);
 //		}
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::dotProductionOfVectors(const V left, const V right) -> S const
 //		{
 //			return	ops::dot(left, right);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::vectorUsingLinearInterpolationBetweenVectors(const V begin, const V end, const Scalar time) -> V const
 //		{
 //			return	ops::lerp(begin, end, time);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::Utility::vectorUsingCatmullRomSplineBetweenVectors(const V prebegin, const V begin, const V end, const V postend, const Scalar time) -> V const
 //		{
 //			return	ops::catmull_rom<C>(prebegin, begin, end, postend, time);
@@ -845,43 +845,43 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //		
 //		
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator==(V const& other) const -> bool const
 //		{
 //			return	ops::equal(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator!=(V const& other) const -> bool const
 //		{
 //			return	not ops::equal(*this, other);
 //		}
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator+() const -> V const
 //		{
 //			return	Converter<C>{*this};
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator-() const -> V const
 //		{
 //			return	ops::negate(*this);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator+(V const& other) const -> V const
 //		{
 //			return	ops::add(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator-(V const& other) const -> V const
 //		{
 //			return	ops::subtract(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator*(V const& other) const -> V const
 //		{
 //			return	ops::multiply(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator/(V const& other) const -> V const
 //		{
 //			return	ops::divide(*this, other);
@@ -889,22 +889,22 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //		
 //		
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator+(Scalar const& other) const -> V const
 //		{
 //			return	ops::add(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator-(Scalar const& other) const -> V const
 //		{
 //			return	ops::subtract(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator*(Scalar const& other) const -> V const
 //		{
 //			return	ops::multiply(*this, other);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::operator/(Scalar const& other) const -> V const
 //		{
 //			return	ops::divide(*this, other);
@@ -912,12 +912,12 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //		
 //		
 //		
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::length() const -> S const
 //		{
 //			return	ops::length(*this);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::lengthSquare() const -> S const
 //		{
 //			/*!
@@ -926,22 +926,22 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //			auto	len1	=	ops::length(*this);
 //			return	len1 * len1;
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::norm() const -> V const
 //		{
 //			return	ops::normalize(*this);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::distanceToVector(V const target) const -> S const
 //		{
 //			return	ops::distance(*this, target);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::dotProductionWithVector(V const target) const -> S const
 //		{
 //			return	ops::dot(*this, target);
 //		}
-//		template<Size C, typename V> auto
+//		template<size_t C, typename V> auto
 //		SimpleVectorAbstraction<C, V>::projectionOntoVector(V const target) const -> V const
 //		{
 //			return	ops::project(*this, target);
@@ -985,7 +985,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_END
 //		}
 //		
 //		Scalar const
-//		Vector3::Utility::angleBetweenVectorsOnPlane(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 planeAxis)
+//		Vector3::Utility::angleBetweenVectorsOnPlane(const Vector3 a, const Vector3 b, const Vector3 planeAxis)
 //		{
 //			/*
 //			 The GLM method always return degrees.

@@ -13,6 +13,30 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	namespace
 	Stub
 	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		EEGL_STUB_API_DECO GLboolean 
+		eeglIsBuffer(GLuint const buffer)
+		{
+			GLboolean const	r	=	glIsBuffer(buffer);
+			EEGL_ASSERT_NO_GL_ERROR();
+			return	r;
+		}
+		
+		
+		
+		
+		
+		
+		
 		EEGL_STUB_API_DECO void
 		eeglGetBufferParameteriv(GLenum const target, GLenum const pname, GLint* const params)
 		{
@@ -36,7 +60,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
-		EEGL_STUB_API_DECO GLint const
+		EEGL_STUB_API_DECO GLint
 		eeglGetBufferParameteri(GLenum const target, GLenum const pname)
 		{
 			GLint	param;
@@ -63,7 +87,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			glGenBuffers(n, buffers);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
-		EEGL_STUB_API_DECO GLuint const
+		EEGL_STUB_API_DECO GLuint 
 		eeglGenBuffer()
 		{
 			GLuint	name	=	0;

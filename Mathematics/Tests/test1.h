@@ -7,6 +7,6 @@
 //
 
 #pragma once
-#include "Mathematics.h"
+#include "test_common.h"
 
 auto	test1() -> void;

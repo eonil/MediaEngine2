@@ -7,11 +7,11 @@
 //
 
 #include "test1.h"
-#include "Exceptions.h"
-using namespace Eonil::Improvisations::MediaEngine::Mathematics;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Debugging;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Trigonometry;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
+#include "NaNCheck.h"
+using namespace Eonil::MediaEngine::Mathematics;
+using namespace Eonil::MediaEngine::Mathematics::Debugging;
+using namespace Eonil::MediaEngine::Mathematics::Trigonometry;
+using namespace Eonil::MediaEngine::Mathematics::Geometry;
 
 
 namespace
@@ -33,22 +33,7 @@ namespace
 		{
 			proc();
 		}
-		catch(Error const&)
-		{
-			ok	=	true;
-		}
-		
-		test_assert(ok);
-	}
-	static inline auto
-	test_assert_always_halt(std::function<void(void)> const& proc) -> void
-	{
-		bool	ok	=	false;
-		try
-		{
-			proc();
-		}
-		catch(Halt const&)
+		catch(std::logic_error const&)
 		{
 			ok	=	true;
 		}
@@ -75,7 +60,7 @@ test1() -> void
 	
 	{
 		Vector4	a1	=	{0,0,0,0};
-		test_assert_always_halt([&](){ a1.norm(); });
+		test_assert_always_error([&](){ a1.norm(); });
 	}
 	{
 		test_assert_always_error([](){ Vector3::Utility::angleBetweenVectorsOnPlane({1,0,0}, {1,0,0}, {0,0,0}); });

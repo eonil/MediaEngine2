@@ -19,9 +19,6 @@
 #define		EEGL_ASSERT_NO_GL_ERROR()						{ if(Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::useStateValidation()) { Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::assertNoGLError(); }}
 #define		EEGL_RUN_AS_ASSERTION(stmt)						{ if(Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::useStateValidation()) { stmt; } }
 
-#define	EONIL_MEDIA_ENGINE_GRAPHICS_STUB2_NAMESPACE_BEGIN					namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics { namespace Stub2 {
-#define	EONIL_MEDIA_ENGINE_GRAPHICS_STUB2_NAMESPACE_END						} } } } }
-
 #define	EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_BEGIN				namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics { namespace Resources {
 #define	EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_END					} } } } }
 

@@ -72,23 +72,23 @@ namespace
 #pragma mark	-	GLM Version
 
 bool const
-Quaternion::operator==(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+Quaternion::operator==(const Quaternion &other) const
 {
 	return	CONV4(*this).GLMQ == CONV4(other).GLMQ;
 }
 Quaternion const
-Quaternion::operator+(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+Quaternion::operator+(const Quaternion &other) const
 {
 	//	Should be per component addition.
 	return	CONV4(CONV4(*this).GLMQ + CONV4(other).GLMQ).EEQ;
 }
 Quaternion const
-Quaternion::operator-(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+Quaternion::operator-(const Quaternion &other) const
 {
 	return	CONV4(CONV4(*this).GLMQ + (-CONV4(other).GLMQ)).EEQ;
 }
 Quaternion const
-Quaternion::operator*(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+Quaternion::operator*(const Quaternion &other) const
 {
 	return	CONV4(CONV4(*this).GLMQ * CONV4(other).GLMQ).EEQ;
 }
@@ -133,7 +133,7 @@ Quaternion::Utility::identity()
 	return	CONV4(glm::quat()).EEQ;		//	Parameter-less quat ctor creates identity quaternion.
 }
 Quaternion const
-Quaternion::Utility::quaternionWithAxisAngle(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::AxisAngle aa)
+Quaternion::Utility::quaternionWithAxisAngle(const AxisAngle aa)
 {
 	glm::vec3	glm_axis_vector(aa.axis.x, aa.axis.y, aa.axis.z);
 	float		glm_angle_rad(aa.angle);
@@ -148,7 +148,7 @@ Quaternion::Utility::quaternionWithAxisAngle(const Eonil::Improvisations::MediaE
 //				glm::squad(<#const detail::tquat<T> &q1#>, <#const detail::tquat<T> &q2#>, <#const detail::tquat<T> &s1#>, <#const detail::tquat<T> &s2#>, <#const T &h#>)
 //			}
 Quaternion const
-Quaternion::Utility::quaternionBySamplingUsingSphericalQuadraticInterpolation(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion a, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion b, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion c, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion d, const Scalar t)
+Quaternion::Utility::quaternionBySamplingUsingSphericalQuadraticInterpolation(const Quaternion a, const Quaternion b, const Quaternion c, const Quaternion d, const Scalar t)
 {
 	return	CONV4(glm::squad(CONV4(a).GLMQ, CONV4(b).GLMQ, CONV4(c).GLMQ, CONV4(d).GLMQ, t)).EEQ;
 }
@@ -271,22 +271,22 @@ Quaternion::Utility::quaternionBySamplingUsingSphericalQuadraticInterpolation(co
 //			}
 //			
 //			bool const
-//			Quaternion::operator==(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+//			Quaternion::operator==(const Quaternion &other) const
 //			{
 //				return	GLKVector4AllEqualToVector4(CONV4(*this).GLKV, CONV4(other).GLKV);
 //			}
 //			Quaternion const
-//			Quaternion::operator+(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+//			Quaternion::operator+(const Quaternion &other) const
 //			{
 //				return	EE(GLKQuaternionAdd(GLK(*this), GLK(other)));
 //			}
 //			Quaternion const
-//			Quaternion::operator-(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+//			Quaternion::operator-(const Quaternion &other) const
 //			{
 //				return	EE(GLKQuaternionSubtract(GLK(*this), GLK(other)));
 //			}
 //			Quaternion const
-//			Quaternion::operator*(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Quaternion &other) const
+//			Quaternion::operator*(const Quaternion &other) const
 //			{
 //				return	EE(GLKQuaternionMultiply(GLK(*this), GLK(other)));
 //			}
@@ -332,7 +332,7 @@ Quaternion::Utility::quaternionBySamplingUsingSphericalQuadraticInterpolation(co
 //				return	EE(GLKQuaternionIdentity);
 //			}
 //			Quaternion const
-//			Quaternion::Utility::quaternionWithAxisAngle(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::AxisAngle aa)
+//			Quaternion::Utility::quaternionWithAxisAngle(const AxisAngle aa)
 //			{
 //				return	EE(GLKQuaternionMakeWithAngleAndAxis(aa.angle, aa.axis.x, aa.axis.y, aa.axis.z));
 //			}

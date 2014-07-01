@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4504CEC2192B46ED00F3FC8B /* LEGACY_Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */; };
 		4504CEC3192B46F000F3FC8B /* LEGACY_Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */; };
+		4506CB66196307E4007F2C9A /* Prelude.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4506CB64196307E4007F2C9A /* Prelude.cpp */; };
+		4506CB67196307E4007F2C9A /* Prelude.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4506CB64196307E4007F2C9A /* Prelude.cpp */; };
+		4506CB6A19630D12007F2C9A /* TestHelperMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4506CB6819630D12007F2C9A /* TestHelperMacros.cpp */; };
+		4506CB6B19630D12007F2C9A /* TestHelperMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4506CB6819630D12007F2C9A /* TestHelperMacros.cpp */; };
 		450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */; };
 		450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */; };
 		453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C118A35E490074B957 /* GenericMemoryRange.cpp */; };
@@ -17,24 +21,39 @@
 		453423C918A361C30074B957 /* GenericMemoryBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423C618A361C30074B957 /* GenericMemoryBlock.cpp */; };
 		453423F318A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */; };
 		453423F418A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */; };
-		453A737E18A2247D00C01AAC /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A737C18A2247D00C01AAC /* Common.cpp */; };
-		453A737F18A2247D00C01AAC /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453A737C18A2247D00C01AAC /* Common.cpp */; };
 		453BFBFD18A2424D007E514B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453BFBFC18A2424D007E514B /* main.cpp */; };
 		453BFBFF18A2424D007E514B /* Tests.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 453BFBFE18A2424D007E514B /* Tests.1 */; };
 		453BFC0618A2427D007E514B /* Entrance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453BFC0418A2427D007E514B /* Entrance.cpp */; };
 		45478E561929B438009E72B8 /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478E541929B438009E72B8 /* Foundation.cpp */; };
 		45478E571929B438009E72B8 /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478E541929B438009E72B8 /* Foundation.cpp */; };
-		456404E118A246C10068EC12 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		456404E318A246C10068EC12 /* libEonilImprovisationsCommonUtility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 456404E218A246C10068EC12 /* libEonilImprovisationsCommonUtility.a */; };
+		456404E118A246C10068EC12 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */; };
+		459F7EF31962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */; };
+		459F7EF41962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */; };
+		459F7F4E1962F04200CB53E0 /* TestTrackingPointerSlot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459F7F4C1962F04200CB53E0 /* TestTrackingPointerSlot.cpp */; };
 		45F6F8D918A13FCA00A41EAB /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8D718A13FCA00A41EAB /* All.cpp */; };
 		45F6F8DA18A13FCA00A41EAB /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8D718A13FCA00A41EAB /* All.cpp */; };
 		45F6F8E018A13FF700A41EAB /* Targets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8DE18A13FF700A41EAB /* Targets.cpp */; };
 		45F6F8E118A13FF700A41EAB /* Targets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8DE18A13FF700A41EAB /* Targets.cpp */; };
-		45F6F8E518A13FFC00A41EAB /* Doctor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8E318A13FFC00A41EAB /* Doctor.mm */; };
-		45F6F8E618A13FFC00A41EAB /* Doctor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8E318A13FFC00A41EAB /* Doctor.mm */; };
-		45F6F8EF18A1414900A41EAB /* Numerics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8ED18A1414900A41EAB /* Numerics.cpp */; };
-		45F6F8F018A1414900A41EAB /* Numerics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8ED18A1414900A41EAB /* Numerics.cpp */; };
+		45F6F8E518A13FFC00A41EAB /* Doctor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8E318A13FFC00A41EAB /* Doctor.cpp */; };
+		45F6F8E618A13FFC00A41EAB /* Doctor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F6F8E318A13FFC00A41EAB /* Doctor.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		459F7FB91963011000CB53E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459F7FB41963010F00CB53E0 /* CommonStuffsForC++.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4512421D195EDD8F00B6198A;
+			remoteInfo = "CommonStuffsForC++";
+		};
+		459F7FBB1963011000CB53E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459F7FB41963010F00CB53E0 /* CommonStuffsForC++.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45124234195EDD8F00B6198A;
+			remoteInfo = "CommonStuffsForC++Tests";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		453BFBF818A2424D007E514B /* CopyFiles */ = {
@@ -54,6 +73,10 @@
 		4504CEA4192B462100F3FC8B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4504CEA7192B462100F3FC8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4504CEBE192B463500F3FC8B /* libFoundation_LEGACY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFoundation_LEGACY.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4506CB64196307E4007F2C9A /* Prelude.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prelude.cpp; sourceTree = "<group>"; };
+		4506CB65196307E4007F2C9A /* Prelude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prelude.h; sourceTree = "<group>"; };
+		4506CB6819630D12007F2C9A /* TestHelperMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestHelperMacros.cpp; sourceTree = "<group>"; };
+		4506CB6919630D12007F2C9A /* TestHelperMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelperMacros.h; sourceTree = "<group>"; };
 		450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstantEvaluationUtility.cpp; sourceTree = "<group>"; };
 		450D40E6191F251B004F8901 /* ConstantEvaluationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantEvaluationUtility.h; sourceTree = "<group>"; };
 		453423C118A35E490074B957 /* GenericMemoryRange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericMemoryRange.cpp; sourceTree = "<group>"; };
@@ -64,8 +87,6 @@
 		453423F218A395050074B957 /* ObjectOwnershipTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectOwnershipTracking.h; sourceTree = "<group>"; };
 		453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LEGACY_Memory.cpp; sourceTree = "<group>"; };
 		453A736C18A21FB200C01AAC /* LEGACY_Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEGACY_Memory.h; sourceTree = "<group>"; };
-		453A737C18A2247D00C01AAC /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
-		453A737D18A2247D00C01AAC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		453BFBFA18A2424D007E514B /* OSX Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OSX Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BFBFC18A2424D007E514B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		453BFBFE18A2424D007E514B /* Tests.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Tests.1; sourceTree = "<group>"; };
@@ -73,19 +94,25 @@
 		453BFC0518A2427D007E514B /* Entrance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entrance.h; sourceTree = "<group>"; };
 		45478E541929B438009E72B8 /* Foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Foundation.cpp; sourceTree = "<group>"; };
 		45478E551929B438009E72B8 /* Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foundation.h; sourceTree = "<group>"; };
-		456404E218A246C10068EC12 /* libEonilImprovisationsCommonUtility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEonilImprovisationsCommonUtility.a; path = "../../CommonUtility/build/Debug-iphoneos/libEonilImprovisationsCommonUtility.a"; sourceTree = "<group>"; };
-		45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalCopyingAutomaticStorePointer.cpp; sourceTree = "<group>"; };
+		459F7EF21962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalCopyingAutomaticStorePointer.h; sourceTree = "<group>"; };
+		459F7F4C1962F04200CB53E0 /* TestTrackingPointerSlot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTrackingPointerSlot.cpp; sourceTree = "<group>"; };
+		459F7F4D1962F04200CB53E0 /* TestTrackingPointerSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTrackingPointerSlot.h; sourceTree = "<group>"; };
+		459F7FB41963010F00CB53E0 /* CommonStuffsForC++.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CommonStuffsForC++.xcodeproj"; path = "../Common/CommonStuffsForC++/CommonStuffsForC++.xcodeproj"; sourceTree = "<group>"; };
+		459F7FC31963012B00CB53E0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		459F7FC61963012B00CB53E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		459F7FC71963012B00CB53E0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		459F7FC81963012B00CB53E0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F0372C175C353F00C469FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libEonilImprovisationsMediaEngineFoundation.a; path = libEonilMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F6F8D118A13F9A00A41EAB /* Trash */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Trash; sourceTree = "<group>"; };
 		45F6F8D718A13FCA00A41EAB /* All.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = All.cpp; sourceTree = "<group>"; };
 		45F6F8D818A13FCA00A41EAB /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
 		45F6F8DE18A13FF700A41EAB /* Targets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Targets.cpp; sourceTree = "<group>"; };
 		45F6F8DF18A13FF700A41EAB /* Targets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Targets.h; sourceTree = "<group>"; };
-		45F6F8E318A13FFC00A41EAB /* Doctor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Doctor.mm; sourceTree = "<group>"; };
+		45F6F8E318A13FFC00A41EAB /* Doctor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Doctor.cpp; sourceTree = "<group>"; };
 		45F6F8E418A13FFC00A41EAB /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
-		45F6F8ED18A1414900A41EAB /* Numerics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Numerics.cpp; sourceTree = "<group>"; };
-		45F6F8EE18A1414900A41EAB /* Numerics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Numerics.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				456404E318A246C10068EC12 /* libEonilImprovisationsCommonUtility.a in Frameworks */,
-				456404E118A246C10068EC12 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
+				456404E118A246C10068EC12 /* libEonilMediaEngineFoundation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,14 +167,14 @@
 		453A737618A2230900C01AAC /* D2014R1 */ = {
 			isa = PBXGroup;
 			children = (
-				450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */,
 				450D40E6191F251B004F8901 /* ConstantEvaluationUtility.h */,
-				453423C118A35E490074B957 /* GenericMemoryRange.cpp */,
+				450D40E5191F251B004F8901 /* ConstantEvaluationUtility.cpp */,
 				453423C218A35E490074B957 /* GenericMemoryRange.h */,
-				453423C618A361C30074B957 /* GenericMemoryBlock.cpp */,
+				453423C118A35E490074B957 /* GenericMemoryRange.cpp */,
 				453423C718A361C30074B957 /* GenericMemoryBlock.h */,
-				453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */,
+				453423C618A361C30074B957 /* GenericMemoryBlock.cpp */,
 				453423F218A395050074B957 /* ObjectOwnershipTracking.h */,
+				453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */,
 			);
 			path = D2014R1;
 			sourceTree = "<group>";
@@ -168,13 +194,35 @@
 			children = (
 				453BFC0418A2427D007E514B /* Entrance.cpp */,
 				453BFC0518A2427D007E514B /* Entrance.h */,
+				459F7F4C1962F04200CB53E0 /* TestTrackingPointerSlot.cpp */,
+				459F7F4D1962F04200CB53E0 /* TestTrackingPointerSlot.h */,
 			);
 			path = OSX;
+			sourceTree = "<group>";
+		};
+		459F7FB51963010F00CB53E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				459F7FBA1963011000CB53E0 /* CommonStuffsForC++.framework */,
+				459F7FBC1963011000CB53E0 /* CommonStuffsForC++Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		459F7FC51963012B00CB53E0 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				459F7FC61963012B00CB53E0 /* Foundation.framework */,
+				459F7FC71963012B00CB53E0 /* CoreData.framework */,
+				459F7FC81963012B00CB53E0 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		45F0371E175C353100C469FD = {
 			isa = PBXGroup;
 			children = (
+				459F7FB41963010F00CB53E0 /* CommonStuffsForC++.xcodeproj */,
 				45F6F8D218A13FBA00A41EAB /* Sources */,
 				453BFBFB18A2424D007E514B /* Tests */,
 				45F6F8D118A13F9A00A41EAB /* Trash */,
@@ -186,7 +234,7 @@
 		45F0372A175C353F00C469FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */,
+				45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */,
 				45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */,
 				453BFBFA18A2424D007E514B /* OSX Test */,
 				4504CE96192B462100F3FC8B /* libFoundation_LEGACY.a */,
@@ -198,10 +246,11 @@
 		45F0372B175C353F00C469FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				456404E218A246C10068EC12 /* libEonilImprovisationsCommonUtility.a */,
 				45F0372C175C353F00C469FD /* Foundation.framework */,
 				4504CEA4192B462100F3FC8B /* XCTest.framework */,
 				4504CEA7192B462100F3FC8B /* UIKit.framework */,
+				459F7FC31963012B00CB53E0 /* Cocoa.framework */,
+				459F7FC51963012B00CB53E0 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,16 +284,16 @@
 		45F6F8D618A13FBA00A41EAB /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				453A737C18A2247D00C01AAC /* Common.cpp */,
-				453A737D18A2247D00C01AAC /* Common.h */,
+				45F6F8D818A13FCA00A41EAB /* All.h */,
+				45F6F8D718A13FCA00A41EAB /* All.cpp */,
+				4506CB65196307E4007F2C9A /* Prelude.h */,
+				4506CB64196307E4007F2C9A /* Prelude.cpp */,
 				45F6F8DD18A13FEA00A41EAB /* Platform */,
 				45F6F8DC18A13FEA00A41EAB /* Debugging */,
-				45F6F8ED18A1414900A41EAB /* Numerics.cpp */,
-				45F6F8EE18A1414900A41EAB /* Numerics.h */,
 				453A736A18A21FAA00C01AAC /* _Legacy2013 */,
 				453A737618A2230900C01AAC /* D2014R1 */,
-				45F6F8D718A13FCA00A41EAB /* All.cpp */,
-				45F6F8D818A13FCA00A41EAB /* All.h */,
+				459F7EF21962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.h */,
+				459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -252,8 +301,10 @@
 		45F6F8DC18A13FEA00A41EAB /* Debugging */ = {
 			isa = PBXGroup;
 			children = (
-				45F6F8E318A13FFC00A41EAB /* Doctor.mm */,
 				45F6F8E418A13FFC00A41EAB /* Doctor.h */,
+				45F6F8E318A13FFC00A41EAB /* Doctor.cpp */,
+				4506CB6919630D12007F2C9A /* TestHelperMacros.h */,
+				4506CB6819630D12007F2C9A /* TestHelperMacros.cpp */,
 			);
 			path = Debugging;
 			sourceTree = "<group>";
@@ -261,8 +312,8 @@
 		45F6F8DD18A13FEA00A41EAB /* Platform */ = {
 			isa = PBXGroup;
 			children = (
-				45F6F8DE18A13FF700A41EAB /* Targets.cpp */,
 				45F6F8DF18A13FF700A41EAB /* Targets.h */,
+				45F6F8DE18A13FF700A41EAB /* Targets.cpp */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -332,7 +383,7 @@
 			);
 			name = "Foundation - iOS Static Library";
 			productName = "iOS Static Library";
-			productReference = 45F03729175C353F00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */;
+			productReference = 45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		45F0374B175C359E00C469FD /* Foundation - OSX Static Library */ = {
@@ -369,6 +420,12 @@
 			mainGroup = 45F0371E175C353100C469FD;
 			productRefGroup = 45F0372A175C353F00C469FD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 459F7FB51963010F00CB53E0 /* Products */;
+					ProjectRef = 459F7FB41963010F00CB53E0 /* CommonStuffsForC++.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				453BFBF918A2424D007E514B /* OSX Test */,
@@ -379,6 +436,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		459F7FBA1963011000CB53E0 /* CommonStuffsForC++.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "CommonStuffsForC++.framework";
+			remoteRef = 459F7FB91963011000CB53E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		459F7FBC1963011000CB53E0 /* CommonStuffsForC++Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "CommonStuffsForC++Tests.xctest";
+			remoteRef = 459F7FBB1963011000CB53E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4504CE92192B462100F3FC8B /* Sources */ = {
@@ -401,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459F7F4E1962F04200CB53E0 /* TestTrackingPointerSlot.cpp in Sources */,
 				453BFBFD18A2424D007E514B /* main.cpp in Sources */,
 				453BFC0618A2427D007E514B /* Entrance.cpp in Sources */,
 			);
@@ -413,12 +488,13 @@
 				450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
 				453423C818A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,
 				453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
-				45F6F8EF18A1414900A41EAB /* Numerics.cpp in Sources */,
 				45478E571929B438009E72B8 /* Foundation.cpp in Sources */,
 				45F6F8D918A13FCA00A41EAB /* All.cpp in Sources */,
-				45F6F8E518A13FFC00A41EAB /* Doctor.mm in Sources */,
-				453A737E18A2247D00C01AAC /* Common.cpp in Sources */,
+				459F7EF41962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp in Sources */,
+				45F6F8E518A13FFC00A41EAB /* Doctor.cpp in Sources */,
 				45F6F8E018A13FF700A41EAB /* Targets.cpp in Sources */,
+				4506CB67196307E4007F2C9A /* Prelude.cpp in Sources */,
+				4506CB6B19630D12007F2C9A /* TestHelperMacros.cpp in Sources */,
 				453423F318A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,13 +505,14 @@
 			files = (
 				450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
 				453423C418A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
-				45F6F8F018A1414900A41EAB /* Numerics.cpp in Sources */,
 				45F6F8DA18A13FCA00A41EAB /* All.cpp in Sources */,
 				45478E561929B438009E72B8 /* Foundation.cpp in Sources */,
-				45F6F8E618A13FFC00A41EAB /* Doctor.mm in Sources */,
-				453A737F18A2247D00C01AAC /* Common.cpp in Sources */,
+				45F6F8E618A13FFC00A41EAB /* Doctor.cpp in Sources */,
+				459F7EF31962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp in Sources */,
 				453423C918A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,
 				45F6F8E118A13FF700A41EAB /* Targets.cpp in Sources */,
+				4506CB66196307E4007F2C9A /* Prelude.cpp in Sources */,
+				4506CB6A19630D12007F2C9A /* TestHelperMacros.cpp in Sources */,
 				453423F418A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,12 +741,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$SRCROOT\"/../../CommonUtility/Source",
+					"\"$SRCROOT\"/../Common/CommonStuffsForC++",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = EonilImprovisationsMediaEngine$PROJECT_NAME;
+				PRODUCT_NAME = EonilMediaEngine$PROJECT_NAME;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -685,11 +762,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$SRCROOT\"/../../CommonUtility/Source",
+					"\"$SRCROOT\"/../Common/CommonStuffsForC++",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = EonilImprovisationsMediaEngine$PROJECT_NAME;
+				PRODUCT_NAME = EonilMediaEngine$PROJECT_NAME;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

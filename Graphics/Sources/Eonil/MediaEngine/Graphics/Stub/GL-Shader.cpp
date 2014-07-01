@@ -7,6 +7,7 @@
 //
 
 #include "GL-Shader.h"
+#include "GL-Context.h"
 #include "../Debugging/Doctor.h"
 namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
 

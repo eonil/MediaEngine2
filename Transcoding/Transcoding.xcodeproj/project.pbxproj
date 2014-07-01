@@ -15,93 +15,6 @@
 		453B3D3618A6E52A00B2BEA8 /* Transcoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 453B3D3318A6E52A00B2BEA8 /* Transcoding.h */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		45F3D0C418A78A1A00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45F0374C175C359E00C469FD;
-			remoteInfo = "Foundation - OSX Static Library";
-		};
-		45F3D0C618A78A1A00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45F03729175C353F00C469FD;
-			remoteInfo = "Foundation - iOS Static Library";
-		};
-		45F3D0C818A78A1A00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 453BFBFA18A2424D007E514B;
-			remoteInfo = "OSX Test";
-		};
-		45F3D0CF18A78A2400F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45D3CB79173BC83E0011D992;
-			remoteInfo = "Graphics - OSX Static Library";
-		};
-		45F3D0D118A78A2400F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45D3CB66173BC8280011D992;
-			remoteInfo = "Graphics - iOS Static Library";
-		};
-		45F3D0DA18A78A2E00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45150A2618A69EB40007BE6B;
-			remoteInfo = "Mathematics - Static Library - OSX";
-		};
-		45F3D0DC18A78A2E00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 451509FB18A69EAA0007BE6B;
-			remoteInfo = "Mathematics - Static Library - iOS";
-		};
-		45F3D0DE18A78A2E00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45150A6A18A69EE80007BE6B;
-			remoteInfo = "Mathematics - Running Test - OSX";
-		};
-		45F3D0E018A78A2E00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45150A3B18A69EDE0007BE6B;
-			remoteInfo = "Mathematics - Running Test - iOS";
-		};
-		45F3D0E918A78A7A00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 452ACBF71854FAAC00447731;
-			remoteInfo = "CommonUtility - OSX";
-		};
-		45F3D0EB18A78A7A00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 458F7EC618A243DA00409ED4;
-			remoteInfo = "CommonUtility - iOS";
-		};
-		45F3D0ED18A78A7A00F05D97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 452ACC4D1855077600447731;
-			remoteInfo = RunningTester;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		453B3CA918A6E3E000B2BEA8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -122,10 +35,6 @@
 		453B3D2E18A6E52200B2BEA8 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		453B3D3218A6E52A00B2BEA8 /* Transcoding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transcoding.cpp; sourceTree = "<group>"; };
 		453B3D3318A6E52A00B2BEA8 /* Transcoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transcoding.h; sourceTree = "<group>"; };
-		45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Foundation.xcodeproj; path = ../../Foundation/Foundation.xcodeproj; sourceTree = "<group>"; };
-		45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Graphics.xcodeproj; path = ../../Graphics/Graphics.xcodeproj; sourceTree = "<group>"; };
-		45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mathematics.xcodeproj; path = ../../Mathematics/Mathematics.xcodeproj; sourceTree = "<group>"; };
-		45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtility.xcodeproj; path = ../../../CommonUtility/CommonUtility.xcodeproj; sourceTree = "<group>"; };
 		45F3D18A18A7A4E200F05D97 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,10 +79,6 @@
 		453B3D1618A6E45300B2BEA8 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */,
-				45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */,
-				45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */,
-				45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -227,46 +132,6 @@
 			children = (
 			);
 			path = _Legacy2013;
-			sourceTree = "<group>";
-		};
-		45F3D0BF18A78A1A00F05D97 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				45F3D0C518A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				45F3D0C718A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				45F3D0C918A78A1A00F05D97 /* OSX Test */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		45F3D0CB18A78A2400F05D97 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				45F3D0D018A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */,
-				45F3D0D218A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		45F3D0D418A78A2E00F05D97 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				45F3D0DB18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */,
-				45F3D0DD18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */,
-				45F3D0DF18A78A2E00F05D97 /* Mathematics - Running Test - OSX */,
-				45F3D0E118A78A2E00F05D97 /* Mathematics - Running Test - iOS.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		45F3D0E318A78A7A00F05D97 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				45F3D0EA18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */,
-				45F3D0EC18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */,
-				45F3D0EE18A78A7A00F05D97 /* RunningTester */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		45F3D18718A7A4D800F05D97 /* Targets */ = {
@@ -360,24 +225,6 @@
 			mainGroup = 453B3CA018A6E3C700B2BEA8;
 			productRefGroup = 453B3CAC18A6E3E000B2BEA8 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 45F3D0E318A78A7A00F05D97 /* Products */;
-					ProjectRef = 45F3D0E218A78A7A00F05D97 /* CommonUtility.xcodeproj */;
-				},
-				{
-					ProductGroup = 45F3D0BF18A78A1A00F05D97 /* Products */;
-					ProjectRef = 45F3D0BE18A78A1A00F05D97 /* Foundation.xcodeproj */;
-				},
-				{
-					ProductGroup = 45F3D0CB18A78A2400F05D97 /* Products */;
-					ProjectRef = 45F3D0CA18A78A2400F05D97 /* Graphics.xcodeproj */;
-				},
-				{
-					ProductGroup = 45F3D0D418A78A2E00F05D97 /* Products */;
-					ProjectRef = 45F3D0D318A78A2E00F05D97 /* Mathematics.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				453B3CD518A6E3EC00B2BEA8 /* MediaEngine Transcoding - OSX Static Library */,
@@ -385,93 +232,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		45F3D0C518A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineFoundation.a;
-			remoteRef = 45F3D0C418A78A1A00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0C718A78A1A00F05D97 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineFoundation.a;
-			remoteRef = 45F3D0C618A78A1A00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0C918A78A1A00F05D97 /* OSX Test */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "OSX Test";
-			remoteRef = 45F3D0C818A78A1A00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0D018A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineGraphics.a;
-			remoteRef = 45F3D0CF18A78A2400F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0D218A78A2400F05D97 /* libEonilImprovisationsMediaEngineGraphics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineGraphics.a;
-			remoteRef = 45F3D0D118A78A2400F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0DB18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineMathematics.a;
-			remoteRef = 45F3D0DA18A78A2E00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0DD18A78A2E00F05D97 /* libEonilImprovisationsMediaEngineMathematics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineMathematics.a;
-			remoteRef = 45F3D0DC18A78A2E00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0DF18A78A2E00F05D97 /* Mathematics - Running Test - OSX */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "Mathematics - Running Test - OSX";
-			remoteRef = 45F3D0DE18A78A2E00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0E118A78A2E00F05D97 /* Mathematics - Running Test - iOS.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Mathematics - Running Test - iOS.app";
-			remoteRef = 45F3D0E018A78A2E00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0EA18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsCommonUtility.a;
-			remoteRef = 45F3D0E918A78A7A00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0EC18A78A7A00F05D97 /* libEonilImprovisationsCommonUtility.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsCommonUtility.a;
-			remoteRef = 45F3D0EB18A78A7A00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		45F3D0EE18A78A7A00F05D97 /* RunningTester */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = RunningTester;
-			remoteRef = 45F3D0ED18A78A7A00F05D97 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		453B3CA718A6E3E000B2BEA8 /* Sources */ = {
@@ -503,7 +263,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$SRCROOT\"/../../CommonUtility/Source",
 					"\"$SRCROOT\"/../Foundation/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$SRCROOT\"/../Graphics/Sources",
@@ -521,7 +280,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$SRCROOT\"/../../CommonUtility/Source",
 					"\"$SRCROOT\"/../Foundation/Sources",
 					"\"$SRCROOT\"/../Mathematics/Sources",
 					"\"$SRCROOT\"/../Graphics/Sources",

@@ -202,17 +202,18 @@ public:
 			trid.drawTriangleList({ts.data(), ts.data() + ts.size()}, {1,1,0,1});
 		}
 		{
+			Matrix4 const	rss_to_ndc	=	world_to_screen_transform;
 			{
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				inst0.points						=
 				{
 					Vector3{-0.3,-0.3,0},
 					Vector3{-0.4,-0.45,0},
 				};
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.01, {1,1,1,1});
 			}
 			{
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				inst0.points						=
 				{
 					Vector3{0,0,0},
@@ -222,10 +223,10 @@ public:
 					Vector3{+0.1,+0.4,0},
 					Vector3{+0.0,+0.4,0},
 				};
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.01, {1,1,1,1});
 			}
 			{
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				inst0.points						=
 				{
 					Vector3{0,0,0},
@@ -233,10 +234,10 @@ public:
 					Vector3{+0.2,0,0},
 					Vector3{+0.3,0,0},
 				};
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.01, {1,1,1,1});
 			}
 			{
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				inst0.points						=
 				{
 					Vector3{0,0,0},
@@ -244,10 +245,10 @@ public:
 					Vector3{+0.2,-0.10,0},
 					Vector3{+0.3,-0.15,0},
 				};
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.01, {1,1,1,1});
 			}
 			{
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				inst0.points						=
 				{
 					Vector3{-0.2,0,0},
@@ -257,31 +258,31 @@ public:
 					Vector3{+0.2,+0.4,0},
 					Vector3{+0.4,+0.4,0},
 				};
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.01, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.01, {1,1,1,1});
 			}
 			{
 				Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, +0.3));
 				Vector3	p1	=	{0,0.2,0};
 				
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				for (size_t i=0; i<16; i++)
 				{
 					inst0.points.push_back(p1);
 					p1	=	m1.transform(p1);
 				}
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.005, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.005, {1,1,1,1});
 			}
 			{
 				Matrix4	m1	=	Matrix4::Utility::rotationWithAxisAngle(AxisAngle({0,0,1}, M_PI * 2 / 128));
 				Vector3	p1	=	{0,0.43,0};
 				
-				PolylineDrawer::Instance	inst0	=	{};
+				PolylineDrawer::StrokeInstance	inst0	=	{};
 				for (size_t i=0; i<127; i++)
 				{
 					inst0.points.push_back(p1);
 					p1	=	m1.transform(p1);
 				}
-				_polyline_drawer.draw(world_to_screen_transform, {inst0}, 0.002, {1,1,1,1});
+				_polyline_drawer.draw(rss_to_ndc, {inst0}, 0.002, {1,1,1,1});
 			}
 		}
 	}

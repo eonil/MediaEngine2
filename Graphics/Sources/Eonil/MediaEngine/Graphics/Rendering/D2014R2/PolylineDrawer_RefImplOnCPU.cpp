@@ -18,60 +18,23 @@ EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
 
 auto
-PolylineDrawer_RefImplOnCPU::draw(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 &transform, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::Instance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::AssemblyInstance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
 {
-	/*!
-	 Logic explanation.
-	 
-	 @code
-		 
-	    p0                         p3
-		 *                         *
-		  \                       /
-		   \                     /
-			\                   /
-			 \                 /
-			  \               /
-			   *-------------*
-                  p1             p2
-     
-		p0            q0           p3
-		 *-------------*           *
-		  \             \         /
-		   \             \       /
-			\             \     /
-			 \             \   /
-			  \             \ /
-			   *-------------*
-			  p1            p2
+	for (auto const& inst0: instances)
+	{
+		EONIL_DEBUG_ASSERT_WITH_MESSAGE(inst0.passages.size() == 0, "Poly-line point must be at least 2.");
 
-		p0          q1             p3
-		 *           *-------------*
-		  \         /             /
-		   \       /             /
-			\     /             /
-			 \   /             /
-			  \ /             /
-			   *-------------*
-			  p1            p2
-
-	 
-		p0                         p3
-		 *                         *
-		  \                       /
-		   \      a0     b2      /
-			\     *       *     /
-			 \   /         \   /
-			  \ /           \ /
-			p1 *-------------* p2
-			  /               \
-			 /                 \
-			*                   *
-		   a1                   b3
-	 
-	 @endcode
-	 */
-	
+		vec<Vector3>	copy1	=	{};
+		copy1.reserve(inst0.passages.size() + 2);
+		copy1.push_back(inst0.origination);
+		copy1.insert(copy1.end(), inst0.passages.begin(), inst0.passages.end());
+		copy1.push_back(inst0.destination);
+		_draw_single_stroke_in_context(RSSToNDC, copy1, radius, color);
+	}
+}
+auto
+PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::StrokeInstance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+{
 	for (auto const& inst0: instances)
 	{
 		switch (inst0.points.size())
@@ -132,35 +95,95 @@ PolylineDrawer_RefImplOnCPU::draw(const Eonil::Improvisations::MediaEngine::Math
 				Vector3		dt_0_1	=	p1 - p0;
 				Vector3		dt_2_3	=	p3 - p2;
 				
-				Instance	copy1	=	{};
-				copy1.points.push_back(p0 - dt_0_1);
+				vec<Vector3>	copy1	=	{};
+				copy1.push_back(p0 - dt_0_1);
 				for (auto const& p: inst0.points)
 				{
-					copy1.points.push_back(p);
+					copy1.push_back(p);
 				}
-				copy1.points.push_back(inst0.points.back() + dt_2_3);
+				copy1.push_back(inst0.points.back() + dt_2_3);
 				
-				_draw_one_in_context(transform, copy1, radius, color);
+				_draw_single_stroke_in_context(RSSToNDC, copy1, radius, color);
 				break;
+
 			}
 		}
 	}
 }
 
 
+/*!
+ @param
+ points
+ Must contain handle points (to adjust ending shape) on each end.
+ */
 auto
-PolylineDrawer_RefImplOnCPU::_draw_one_in_context(const Matrix4 &transform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::Instance &polyline, Scalar const& radius, Vector4 const& color) const -> void
+PolylineDrawer_RefImplOnCPU::_draw_single_stroke_in_context(Matrix4 const& RSSToNDC, const vec<Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3> &points, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
 {
-	EONIL_DEBUG_ASSERT(polyline.points.size() >= 4);
+	EONIL_DEBUG_ASSERT(points.size() >= 4);
+
 	
-	Size const	num_segs	=	polyline.points.size() - 2 - 1;
+	
+	/*!
+	 Logic explanation.
+	 
+	 @code
+		 
+	    p0                         p3
+		 *                         *
+		  \                       /
+		   \                     /
+			\                   /
+			 \                 /
+			  \               /
+			   *-------------*
+                  p1             p2
+     
+		p0            q0           p3
+		 *-------------*           *
+		  \             \         /
+		   \             \       /
+			\             \     /
+			 \             \   /
+			  \             \ /
+			   *-------------*
+			  p1            p2
+
+		p0          q1             p3
+		 *           *-------------*
+		  \         /             /
+		   \       /             /
+			\     /             /
+			 \   /             /
+			  \ /             /
+			   *-------------*
+			  p1            p2
+
+	 
+		p0                         p3
+		 *                         *
+		  \                       /
+		   \      a0     b2      /
+			\     *       *     /
+			 \   /         \   /
+			  \ /           \ /
+			p1 *-------------* p2
+			  /               \
+			 /                 \
+			*                   *
+		   a1                   b3
+	 
+	 @endcode
+	 */
+	
+	Size const	num_segs	=	points.size() - 2 - 1;
 	
 	for (Size i=0; i<num_segs; i++)
 	{
-		auto const&	p0	=	polyline.points.at(i+0);
-		auto const&	p1	=	polyline.points.at(i+1);
-		auto const&	p2	=	polyline.points.at(i+2);
-		auto const&	p3	=	polyline.points.at(i+3);
+		auto const&	p0	=	points.at(i+0);
+		auto const&	p1	=	points.at(i+1);
+		auto const&	p2	=	points.at(i+2);
+		auto const&	p3	=	points.at(i+3);
 		
 		auto const	vo0	=	PolylineDrawer_Algorithms::volumize_single_segment(p0, p1, p2, p3, radius);
 		auto	ts	=	vo0.triangulate();
@@ -168,7 +191,7 @@ PolylineDrawer_RefImplOnCPU::_draw_one_in_context(const Matrix4 &transform, cons
 		{
 			for (auto& p: t.points)
 			{
-				p	=	transform.transform(p);
+				p	=	RSSToNDC.transform(p);
 			}
 		}
 		_tri_drawer.drawTriangleList({ts.begin(), ts.end()}, color);

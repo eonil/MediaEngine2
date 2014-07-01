@@ -217,7 +217,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		EEGL_STUB_API_DECO void
-		eeglTexImage2D(GLenum const target, GLint const level, GLint const internalformat, GLsizei const width, GLsizei const height, GLint const border, GLenum const format, GLenum const type, const GLvoid * const pixels)
+		eeglTexImage2D(GLenum const target, GLint const level, GLint const internalformat, GLsizei const width, GLsizei const height, GLint const border, GLenum const format, GLenum const type, const GLvoid * const data)
 		{
 			EEGL_ASSERT((target == GL_TEXTURE_2D && eeglGetInteger(GL_TEXTURE_BINDING_2D) != 0) || (target == GL_TEXTURE_CUBE_MAP && eeglGetInteger(GL_TEXTURE_BINDING_CUBE_MAP) != 0));
 			
@@ -234,19 +234,19 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			EEGL_ASSERT(format == internalformat);
 			EEGL_ASSERT(type == GL_UNSIGNED_BYTE || type == GL_UNSIGNED_SHORT_5_6_5 || type == GL_UNSIGNED_SHORT_4_4_4_4 || type == GL_UNSIGNED_SHORT_5_5_5_1);
 			//	Data pointer can be NULL.
-			glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+			glTexImage2D(target, level, internalformat, width, height, border, format, type, data);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		
 		EEGL_STUB_API_DECO void
-		eeglTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels)
+		eeglTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *data)
 		{
 			if (Doctor::useStateValidation())
 			{
 				EEGL_ASSERT((target == GL_TEXTURE_2D && eeglGetInteger(GL_TEXTURE_BINDING_2D) != 0) || (target == GL_TEXTURE_CUBE_MAP && eeglGetInteger(GL_TEXTURE_BINDING_CUBE_MAP) != 0));
 			}
 
-			glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
+			glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, data);
 			EEGL_ASSERT_NO_GL_ERROR();
 		}
 		

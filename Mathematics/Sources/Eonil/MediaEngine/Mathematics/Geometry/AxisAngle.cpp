@@ -24,7 +24,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
 namespace
 {
 	static inline auto
-	refAsVector4(AxisAngle const& o) -> Vector4 const&
+	reinterpretAsVector4(AxisAngle const& o) -> Vector4 const&
 	{
 		static_assert(sizeof(AxisAngle) == sizeof(Vector4), "Size of two types must be equal.");
 		
@@ -41,14 +41,14 @@ namespace
 
 
 bool const
-AxisAngle::operator==(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::AxisAngle &other) const
+AxisAngle::operator==(const Eonil::MediaEngine::Mathematics::Geometry::AxisAngle &other) const
 {
-	return	refAsVector4(*this) == refAsVector4(other);
+	return	reinterpretAsVector4(*this) == reinterpretAsVector4(other);
 }
 bool const
-AxisAngle::operator!=(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::AxisAngle &other) const
+AxisAngle::operator!=(const Eonil::MediaEngine::Mathematics::Geometry::AxisAngle &other) const
 {
-	return	refAsVector4(*this) != refAsVector4(other);
+	return	reinterpretAsVector4(*this) != reinterpretAsVector4(other);
 }
 Quaternion const
 AxisAngle::asQuaternion() const

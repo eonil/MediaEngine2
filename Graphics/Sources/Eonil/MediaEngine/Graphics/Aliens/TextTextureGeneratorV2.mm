@@ -101,7 +101,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 					CGSize		sz	=	CGSizeMake(fsz.x, fsz.y);
 
 //					CGPoint	pt		=	CGPointMake((dimension.width - sz.width) * 0.5, (dimension.height - sz.height) * 0.5);
-					CGPoint	pt		=	CGPointMake(0, (h1 - sz.height) * 0.5);
+//					CGPoint	pt		=	CGPointMake(0, (h1 - sz.height) * 0.5);
 					
 					/*!
 					 Currently always draw at left-top corner.

@@ -6,45 +6,10 @@
 //
 //
 
-#ifndef __Graphics__SplineDrawer__
-#define __Graphics__SplineDrawer__
+#pragma once
+#include "SplineDrawer_RefImplOnCPU.h"
+EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
-#include "../../Common.h"
+using	SplineDrawer	=	SplineDrawer_RefImplOnCPU;
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
-	namespace
-	Rendering
-	{
-		namespace
-		D2014R2
-		{
-			
-			
-			
-			
-			/*!
-			 Draws filled spline with color.
-			 
-			 @classdesign
-			 This is implemented using `PolylineDrawer` by resampling
-			 splines.
-			 */
-			class
-			SplineDrawer
-			{
-			};
-			
-			
-			
-			
-			
-			
-			
-			
-		}
-	}
-	
-}}}}
-
-#endif /* defined(__Graphics__SplineDrawer__) */
+EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_END

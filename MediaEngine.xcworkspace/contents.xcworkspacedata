@@ -17,9 +17,6 @@
       location = "group:USER MANUAL">
    </FileRef>
    <FileRef
-      location = "group:../CommonUtility/CommonUtility.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Foundation/Foundation.xcodeproj">
    </FileRef>
    <FileRef
@@ -36,11 +33,5 @@
    </FileRef>
    <FileRef
       location = "group:Application/Application.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TTCA/TTCA.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Testers/Testers.xcodeproj">
    </FileRef>
 </Workspace>

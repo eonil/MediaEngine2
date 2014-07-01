@@ -8,7 +8,7 @@
 
 #pragma once
 
-#pragma		clang system_header
+//#pragma		clang system_header
 #include	"Platform/Targets.h"
 
 #if			EE_LANG_CPP
@@ -21,15 +21,16 @@
 #include	<map>
 #include	<functional>
 
-#include	"Common.h"
-#include	"Numerics.h"
-#include	"_Legacy2013/LEGACY_Memory.h"
+#include	"Prelude.h"
 #include	"Debugging/Doctor.h"
+#include	"Debugging/TestHelperMacros.h"
 
-//#include	"D2014R1/GenericDynamicArray.h"
+#include	"LocalCopyingAutomaticStorePointer.h"
+
 #include	"D2014R1/GenericMemoryRange.h"
 #include	"D2014R1/GenericMemoryBlock.h"
 #include	"D2014R1/ObjectOwnershipTracking.h"
+
 #endif
 
 

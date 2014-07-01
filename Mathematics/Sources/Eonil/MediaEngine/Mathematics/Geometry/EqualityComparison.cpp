@@ -7,10 +7,10 @@
 //
 
 #include "EqualityComparison.h"
-#include "../Debugging/Exceptions.h"
+#include "../Debugging/NaNCheck.h"
 EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
 using namespace	Debugging;
-
+using namespace	Eonil::Common::age2;
 
 
 
@@ -29,11 +29,11 @@ default_tolerance() -> Geometry::Scalar
 auto
 almost_equals(Geometry::Scalar const& a, Geometry::Scalar const& b, Geometry::Scalar const& tolerance) -> bool
 {
-	if (USE_EXCEPTIONS)
+	if (USE_DEBUGGING_ASSERTIONS)
 	{
-		error_if(has_nan(a), "Input vectors shouldn't contains any NaN.");
-		error_if(has_nan(b), "Input vectors shouldn't contains any NaN.");
-		error_if(tolerance < 0, "Parameter `tolerance` should be larger then 0.");
+		err1_recoverable_bad_input_parameter_if(has_nan(a), "Input vectors shouldn't contain any NaN.");
+		err1_recoverable_bad_input_parameter_if(has_nan(b), "Input vectors shouldn't contain any NaN.");
+		err1_recoverable_bad_input_parameter_if(tolerance < 0, "Parameter `tolerance` should be larger then 0.");
 	}
 	
 	////
@@ -43,11 +43,11 @@ almost_equals(Geometry::Scalar const& a, Geometry::Scalar const& b, Geometry::Sc
 auto
 almost_equals(Geometry::Vector3 const& a, Geometry::Vector3 const& b, Geometry::Scalar const& tolerance) -> bool
 {
-	if (USE_EXCEPTIONS)
+	if (USE_DEBUGGING_ASSERTIONS)
 	{
-		error_if(has_nan(a), "Input vectors shouldn't contains any NaN.");
-		error_if(has_nan(b), "Input vectors shouldn't contains any NaN.");
-		error_if(tolerance < 0, "Parameter `tolerance` should be larger then 0.");
+		err1_recoverable_bad_input_parameter_if(has_nan(a), "Input vectors shouldn't contains any NaN.");
+		err1_recoverable_bad_input_parameter_if(has_nan(b), "Input vectors shouldn't contains any NaN.");
+		err1_recoverable_bad_input_parameter_if(tolerance < 0, "Parameter `tolerance` should be larger then 0.");
 	}
 	
 	////

@@ -83,18 +83,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			ProgramUniformValueSlotProxy() = default;
 			ProgramUniformValueSlotProxy(ProgramParameterLocation const& location);
 			
-//			void	setValue(GLfloat const value);
-//			void	setValue(GLint const value);
-//			void	setValue(glm::ivec2 const value);
-//			void	setValue(glm::vec2 const value);
-//			void	setValue(glm::mat2 const value);
-//			void	setValue(glm::ivec3 const value);
-//			void	setValue(glm::vec3 const value);
-//			void	setValue(glm::mat3 const value);
-//			void	setValue(glm::ivec4 const value);
-//			void	setValue(glm::vec4 const value);
-//			void	setValue(glm::mat4 const value);
-			
 			auto	setValue(Scalar const& value) -> void;
 			auto	setValue(Vector2 const& value) -> void;
 			auto	setValue(Vector3 const& value) -> void;

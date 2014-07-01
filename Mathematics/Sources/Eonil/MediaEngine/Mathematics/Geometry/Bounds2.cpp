@@ -8,7 +8,7 @@
 
 #include	"Bounds2.h"
 #include	"../Common.h"
-#include	"../Debugging/Exceptions.h"
+#include	"../Debugging/NaNCheck.h"
 EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
 
 
@@ -60,11 +60,11 @@ namespace
 	void
 	ASSERT_LEGAL_STATE(Bounds2 const& b)
 	{
-		if (USE_EXCEPTIONS)
+		if (USE_DEBUGGING_ASSERTIONS)
 		{
-			halt_if(not (ALL_NAN(b) or ALL_NON_NAN(b)), "A `Bounds2` instance must be null-state(all-NAN) or numeric-state(all-non-NAN). Partial NAN is illegal.");
-			halt_if(not (ALL_NAN(b) or b.minimum.x <= b.maximum.x));
-			halt_if(not (ALL_NAN(b) or b.minimum.y <= b.maximum.y));
+			err1_recoverable_bad_input_parameter_if(not (ALL_NAN(b) or ALL_NON_NAN(b)), "A `Bounds2` instance must be null-state(all-NAN) or numeric-state(all-non-NAN). Partial NAN is illegal.");
+			err1_recoverable_bad_input_parameter_if(not (ALL_NAN(b) or b.minimum.x <= b.maximum.x));
+			err1_recoverable_bad_input_parameter_if(not (ALL_NAN(b) or b.minimum.y <= b.maximum.y));
 		}
 //		EONIL_MEDIA_ENGINE_MATH_ASSERT_WITH_REASON(ALL_NAN(b) or ALL_NON_NAN(b), "A `Bounds2` instance must be null-state(all-NAN) or numeric-state(all-non-NAN). Partial NAN is illegal.");
 //		EONIL_MEDIA_ENGINE_MATH_ASSERT(ALL_NAN(b) or b.minimum.x <= b.maximum.x);
@@ -74,9 +74,9 @@ namespace
 	void
 	ASSERT_NON_NULL(Bounds2 const& b)
 	{
-		if (USE_EXCEPTIONS)
+		if (USE_DEBUGGING_ASSERTIONS)
 		{
-			halt_if(not ALL_NON_NAN(b));
+			err1_recoverable_bad_input_parameter_if(not ALL_NON_NAN(b));
 		}
 //		EONIL_MEDIA_ENGINE_MATH_ASSERT(ALL_NON_NAN(b));
 	}
@@ -106,21 +106,33 @@ Bounds2::Bounds2(Scalar const minX, Scalar const minY, Scalar const maxX, Scalar
 
 
 bool const
-Bounds2::operator==(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Bounds2 &other) const
+Bounds2::operator==(const Bounds2 &other) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_LEGAL_STATE(other);
-	ASSERT_NON_NULL(*this);
-	ASSERT_NON_NULL(other);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_LEGAL_STATE(other);
+		ASSERT_NON_NULL(*this);
+		ASSERT_NON_NULL(other);
+	}
+	
+	////
+	
 	return	minimum == other.minimum and maximum == other.maximum;
 }
 bool const
-Bounds2::operator!=(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Bounds2 &other) const
+Bounds2::operator!=(const Bounds2 &other) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_LEGAL_STATE(other);
-	ASSERT_NON_NULL(*this);
-	ASSERT_NON_NULL(other);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_LEGAL_STATE(other);
+		ASSERT_NON_NULL(*this);
+		ASSERT_NON_NULL(other);
+	}
+	
+	////
+	
 	return	minimum != other.minimum or maximum != other.maximum;
 }
 //			bool const
@@ -146,8 +158,13 @@ Bounds2::operator!=(const Eonil::Improvisations::MediaEngine::Mathematics::Geome
 Vector2 const
 Bounds2::center() const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	Scalar	midX	=	(minimum.x + maximum.x) * 0.5;
 	Scalar	midY	=	(minimum.y + maximum.y) * 0.5;
@@ -156,8 +173,13 @@ Bounds2::center() const
 Vector2 const
 Bounds2::size() const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	return	Vector2(maximum.x - minimum.x, maximum.y - minimum.y);
 }
@@ -170,16 +192,26 @@ Bounds2::aspectRatio() const
 Scalar const
 Bounds2::width() const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	return	maximum.x - minimum.x;
 }
 Scalar const
 Bounds2::height() const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	return	maximum.y - minimum.y;
 }
@@ -191,14 +223,24 @@ Bounds2::isNaN() const
 bool const
 Bounds2::isEmpty() const
 {
-	ASSERT_LEGAL_STATE(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+	}
+	
+	////
 	
 	return	minimum.x == maximum.x and minimum.y == maximum.y;
 }
 bool const
 Bounds2::isIntegral() const
 {
-	ASSERT_LEGAL_STATE(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+	}
+	
+	////
 	
 	return	roundf(minimum.x) == minimum.x
 	and		roundf(minimum.y) == minimum.y
@@ -214,8 +256,13 @@ Bounds2::isIntegral() const
 Bounds2 const
 Bounds2::integralBounds2ByRounding() const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	return	Bounds2(roundf(minimum.x), roundf(minimum.y), roundf(maximum.x), roundf(maximum.y));
 }
@@ -223,28 +270,43 @@ Bounds2::integralBounds2ByRounding() const
 bool const
 Bounds2::containsPoint(const Vector2 point) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	return	point.x >= minimum.x and point.x <= maximum.x and point.y >= minimum.y and point.y <= maximum.y;
 }
 bool const
-Bounds2::intersectsWith(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Bounds2 bounds) const
+Bounds2::intersectsWith(const Bounds2 bounds) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_LEGAL_STATE(bounds);
-	ASSERT_NON_NULL(*this);
-	ASSERT_NON_NULL(bounds);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_LEGAL_STATE(bounds);
+		ASSERT_NON_NULL(*this);
+		ASSERT_NON_NULL(bounds);
+	}
+	
+	////
 	
 	return	not intersectionWith(bounds).isNaN();
 }
 Bounds2 const
-Bounds2::intersectionWith(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Bounds2 bounds) const
+Bounds2::intersectionWith(const Bounds2 bounds) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_LEGAL_STATE(bounds);
-	ASSERT_NON_NULL(*this);
-	ASSERT_NON_NULL(bounds);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_LEGAL_STATE(bounds);
+		ASSERT_NON_NULL(*this);
+		ASSERT_NON_NULL(bounds);
+	}
+	
+	////
 	
 	if (this->isNaN() or bounds.isNaN())
 	{
@@ -263,20 +325,30 @@ Bounds2::intersectionWith(const Eonil::Improvisations::MediaEngine::Mathematics:
 	}
 }
 Bounds2 const
-Bounds2::boundsWithDisplacementOfEdges(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 f) const
+Bounds2::boundsWithDisplacementOfEdges(const Vector2 f) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	Bounds2	b1	=	*this;
 	b1.displaceEdges(f);
 	return	b1;
 }
 Bounds2 const
-Bounds2::boundsWithTransformationByMatrix(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 m) const
+Bounds2::boundsWithTransformationByMatrix(const Matrix4 m) const
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	Bounds2	r1	=	*this;
 	r1.transformByMatrix(m);
@@ -296,10 +368,15 @@ Bounds2::boundsWithTransformationByMatrix(const Eonil::Improvisations::MediaEngi
 
 
 void
-Bounds2::displaceEdges(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 f)
+Bounds2::displaceEdges(const Vector2 f)
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	displaceEdgesHorizontally(f.x);
 	displaceEdgesVertically(f.y);
@@ -307,8 +384,13 @@ Bounds2::displaceEdges(const Eonil::Improvisations::MediaEngine::Mathematics::Ge
 void
 Bounds2::displaceEdgesHorizontally(const Scalar f)
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	minimum.x	-=	f;
 	maximum.x	+=	f;
@@ -316,17 +398,27 @@ Bounds2::displaceEdgesHorizontally(const Scalar f)
 void
 Bounds2::displaceEdgesVertically(const Scalar f)
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	minimum.y	-=	f;
 	maximum.y	+=	f;
 }
 void
-Bounds2::transformByMatrix(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 m)
+Bounds2::transformByMatrix(const Matrix4 m)
 {
-	ASSERT_LEGAL_STATE(*this);
-	ASSERT_NON_NULL(*this);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		ASSERT_LEGAL_STATE(*this);
+		ASSERT_NON_NULL(*this);
+	}
+	
+	////
 	
 	Vector4	min0	=	Vector4(minimum, 0, 1);
 	Vector4	max0	=	Vector4(maximum, 0, 1);

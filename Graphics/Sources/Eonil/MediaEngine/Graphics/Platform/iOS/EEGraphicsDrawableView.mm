@@ -26,7 +26,7 @@
 //#import <OpenGLES/EAGL.h>
 
 #include "../../Stub/GL-Common.h"
-#include "../../Stub/GL-Get.h"
+//#include "../../Stub/GL-Get.h"
 //#include "../../Stub/GL-Buffer.h"
 #include "../../Stub/GL-Framebuffer.h"
 #include "../../Stub/GL-Renderbuffer.h"

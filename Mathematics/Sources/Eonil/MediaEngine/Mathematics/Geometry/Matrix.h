@@ -28,7 +28,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
 //		};
 
 
-template<Size C>
+template<size_t C>
 struct
 MatrixState
 {
@@ -47,7 +47,7 @@ extern template class	MatrixState<4>;
 
 
 
-template<Size C, typename M>
+template<size_t C, typename M>
 struct
 SimpleMatrixAbstraction : public MatrixState<C>
 {

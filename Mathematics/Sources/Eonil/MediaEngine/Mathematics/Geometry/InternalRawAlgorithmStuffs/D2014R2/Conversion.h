@@ -19,7 +19,7 @@ InternalRawAlgorithmStuffs
 	D2014R2
 	{
 		/*
-		 Zero-cost conversions.
+		 Zero-cost conversions (if inlined by compiler, and very likely does).
 		 */
 		namespace
 		Conversion
@@ -39,15 +39,22 @@ InternalRawAlgorithmStuffs
 			auto	toGLM(Quaternion const& v) -> glm::quat;
 			auto	toGLM(Matrix4 const& v) -> glm::mat4;
 	
-			auto	refAsVector3(Vector4 const& vector) -> Vector3 const&;
-			auto	refAsVector2(Vector4 const& vector) -> Vector2 const&;
-			auto	refAsVector1(Vector4 const& vector) -> Vector1 const&;
+			auto	reinterpretAsVector3(Vector4 const& vector) -> Vector3 const&;
+			auto	reinterpretAsVector2(Vector4 const& vector) -> Vector2 const&;
+			auto	reinterpretAsVector1(Vector4 const& vector) -> Vector1 const&;
 			
-			auto	refAsVector2(Vector3 const& vector) -> Vector2 const&;
-			auto	refAsVector1(Vector3 const& vector) -> Vector1 const&;
+			auto	reinterpretAsVector2(Vector3 const& vector) -> Vector2 const&;
+			auto	reinterpretAsVector1(Vector3 const& vector) -> Vector1 const&;
 			
-			auto	refAsVector1(Vector2 const& vector) -> Vector1 const&;
-		
+			auto	reinterpretAsVector1(Vector2 const& vector) -> Vector1 const&;
+			
+			auto	reinterpretAsScalarArray(Vector2 const&) -> std::array<Scalar, 2> const&;
+			auto	reinterpretAsScalarArray(Vector3 const&) -> std::array<Scalar, 3> const&;
+			auto	reinterpretAsScalarArray(Vector4 const&) -> std::array<Scalar, 4> const&;
+			auto	reinterpretAsScalarArray(Matrix4 const&) -> std::array<Scalar, 16> const&;
+			
+			
+			
 			
 			
 			

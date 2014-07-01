@@ -25,7 +25,7 @@ EONIL_MEDIA_ENGINE_MATHEMATICS_GEOMETRY_NAMESPACE_BEGIN
 
 #pragma mark	-	Hidden primitives.
 
-template<Size const C>
+template<sz const C>
 struct
 VectorState
 {
@@ -126,7 +126,7 @@ extern template class	VectorState<4>;
 ////
 
 
-template<Size C, typename V>
+template<size_t C, typename V>
 struct
 VectorAbstraction : public VectorState<C>
 {
@@ -143,7 +143,7 @@ extern template class	VectorAbstraction<4, Vector4>;
 
 
 
-template<Size C, typename V>
+template<size_t C, typename V>
 struct
 SimpleVectorAbstraction : public VectorAbstraction<C, V>
 {
@@ -198,7 +198,7 @@ public:
 	S const		dotProductionWithVector(V const pair) const;
 	V const		projectionOntoVector(V const target) const;
 };
-//			template<Size C, typename V>
+//			template<size_t C, typename V>
 //			struct
 //			ComplexVectorAbstraction : public SimpleVectorAbstraction<C, V>
 //			{

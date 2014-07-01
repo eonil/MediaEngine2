@@ -7,7 +7,7 @@
 //
 
 #include "Conversion.h"
-#include "../../../Debugging/Exceptions.h"
+#include "../../../Debugging/NaNCheck.h"
 #include "../../Vector.h"
 #include "../../AxisAngle.h"
 #include "../../Matrix.h"
@@ -118,34 +118,34 @@ InternalRawAlgorithmStuffs
 			
 			
 			auto
-			refAsVector3(Vector4 const& vector) -> Vector3 const&
+			reinterpretAsVector3(Vector4 const& vector) -> Vector3 const&
 			{
 				return	reinterpret_cast<Vector3 const&>(vector);
 			}
 			auto
-			refAsVector2(Vector4 const& vector) -> Vector2 const&
+			reinterpretAsVector2(Vector4 const& vector) -> Vector2 const&
 			{
 				return	reinterpret_cast<Vector2 const&>(vector);
 			}
 			auto
-			refAsVector1(Vector4 const& vector) -> Vector1 const&
+			reinterpretAsVector1(Vector4 const& vector) -> Vector1 const&
 			{
 				return	reinterpret_cast<Vector1 const&>(vector);
 			}
 			
 			auto
-			refAsVector2(Vector3 const& vector) -> Vector2 const&
+			reinterpretAsVector2(Vector3 const& vector) -> Vector2 const&
 			{
 				return	reinterpret_cast<Vector2 const&>(vector);
 			}
 			auto
-			refAsVector1(Vector3 const& vector) -> Vector1 const&
+			reinterpretAsVector1(Vector3 const& vector) -> Vector1 const&
 			{
 				return	reinterpret_cast<Vector1 const&>(vector);
 			}
 			
 			auto
-			refAsVector1(Vector2 const& vector) -> Vector1 const&
+			reinterpretAsVector1(Vector2 const& vector) -> Vector1 const&
 			{
 				return	reinterpret_cast<Vector1 const&>(vector);
 			}
@@ -153,6 +153,32 @@ InternalRawAlgorithmStuffs
 			
 			
 			
+			
+			
+			auto
+			reinterpretAsScalarArray(Vector2 const& o) -> std::array<Scalar, 2> const&
+			{
+				static_assert(sizeof(Vector2) == sizeof(std::array<Scalar, 2>), "Memory layout must be equal.");
+				return	reinterpret_cast<std::array<Scalar, 2> const&>(o);
+			}
+			auto
+			reinterpretAsScalarArray(Vector3 const& o) -> std::array<Scalar, 3> const&
+			{
+				static_assert(sizeof(Vector3) == sizeof(std::array<Scalar, 3>), "Memory layout must be equal.");
+				return	reinterpret_cast<std::array<Scalar, 3> const&>(o);
+			}
+			auto
+			reinterpretAsScalarArray(Vector4 const& o) -> std::array<Scalar, 4> const&
+			{
+				static_assert(sizeof(Vector4) == sizeof(std::array<Scalar, 4>), "Memory layout must be equal.");
+				return	reinterpret_cast<std::array<Scalar, 4> const&>(o);
+			}
+			auto
+			reinterpretAsScalarArray(Matrix4 const& o) -> std::array<Scalar, 16> const&
+			{
+				static_assert(sizeof(Matrix4) == sizeof(std::array<Scalar, 16>), "Memory layout must be equal.");
+				return	reinterpret_cast<std::array<Scalar, 16> const&>(o);
+			}
 			
 			
 			
