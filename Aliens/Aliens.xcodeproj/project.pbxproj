@@ -1,0 +1,861 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45165A84190C70320066177B /* libDiscount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450C7E80190C280F0088D506 /* libDiscount.a */; };
+		45165A85190C703A0066177B /* libDiscount.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 450C7E80190C280F0088D506 /* libDiscount.a */; };
+		45165A8A190C75A00066177B /* Markdown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45165A88190C75A00066177B /* Markdown.cpp */; };
+		45165A8B190C75A30066177B /* Markdown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45165A88190C75A00066177B /* Markdown.cpp */; };
+		45165A93190C832B0066177B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45165A92190C832B0066177B /* main.cpp */; };
+		45165A95190C832B0066177B /* Test.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45165A94190C832B0066177B /* Test.1 */; };
+		45165AA5190C84AF0066177B /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B61AA190A9CA20021A442 /* libEonilAliens.a */; };
+		45165ABE190C951E0066177B /* XML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45165ABC190C951E0066177B /* XML.cpp */; };
+		45165ABF190C951E0066177B /* XML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45165ABC190C951E0066177B /* XML.cpp */; };
+		45165AC0190C951E0066177B /* XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 45165ABD190C951E0066177B /* XML.h */; };
+		45646DB2190C97BA00C2FACB /* pugiconfig.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 45646DB0190C97BA00C2FACB /* pugiconfig.hpp */; };
+		45646DB3190C97BA00C2FACB /* pugixml.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 45646DB1190C97BA00C2FACB /* pugixml.hpp */; };
+		45692A00190C9AB4008438D6 /* libPugiXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45849EA4190C974700DF5E42 /* libPugiXML.a */; };
+		457B61F6190A9F1D0021A442 /* libLodePNG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B61F2190A9EAB0021A442 /* libLodePNG.a */; };
+		457B61F7190A9F220021A442 /* libLodePNG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457B61F0190A9EAB0021A442 /* libLodePNG.a */; };
+		457B620A190AA0FA0021A442 /* Aliens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B6208190AA0FA0021A442 /* Aliens.cpp */; };
+		457B620B190AA0FA0021A442 /* Aliens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B6208190AA0FA0021A442 /* Aliens.cpp */; };
+		457B620C190AA0FA0021A442 /* Aliens.h in Headers */ = {isa = PBXBuildFile; fileRef = 457B6209190AA0FA0021A442 /* Aliens.h */; };
+		457B620F190AA1050021A442 /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B620D190AA1050021A442 /* All.cpp */; };
+		457B6210190AA1050021A442 /* All.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B620D190AA1050021A442 /* All.cpp */; };
+		457B6211190AA1050021A442 /* All.h in Headers */ = {isa = PBXBuildFile; fileRef = 457B620E190AA1050021A442 /* All.h */; };
+		457B6214190AA11A0021A442 /* PNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B6212190AA11A0021A442 /* PNG.cpp */; };
+		457B6215190AA11A0021A442 /* PNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B6212190AA11A0021A442 /* PNG.cpp */; };
+		457B6216190AA11A0021A442 /* PNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 457B6213190AA11A0021A442 /* PNG.h */; };
+		457B6219190AA13C0021A442 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B6217190AA13C0021A442 /* Common.cpp */; };
+		457B621A190AA13C0021A442 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457B6217190AA13C0021A442 /* Common.cpp */; };
+		457B621B190AA13C0021A442 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 457B6218190AA13C0021A442 /* Common.h */; };
+		45849EA8190C974D00DF5E42 /* libPugiXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45849EA4190C974700DF5E42 /* libPugiXML.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		450C7E7F190C280F0088D506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450C7D97190C265F0088D506 /* Discount.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 450C7D9E190C266E0088D506;
+			remoteInfo = "Aliens - Discount - iOS";
+		};
+		450C7E81190C280F0088D506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450C7D97190C265F0088D506 /* Discount.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 450C7E5C190C26FA0088D506;
+			remoteInfo = "Aliens - Discount - OSX";
+		};
+		45165A9A190C83A20066177B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457B616B190A9C010021A442 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B61A9190A9CA20021A442;
+			remoteInfo = "Aliens - OSX";
+		};
+		45165A9C190C83AF0066177B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450C7D97190C265F0088D506 /* Discount.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 450C7E5B190C26FA0088D506;
+			remoteInfo = "Aliens - Discount - OSX";
+		};
+		45165A9E190C83B20066177B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450C7D97190C265F0088D506 /* Discount.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 450C7D9D190C266E0088D506;
+			remoteInfo = "Aliens - Discount - iOS";
+		};
+		452BC59319362CA000DDBED0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 451C78A2192BBCE1005CCB00 /* FreeType.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 451C78AE192BBD5D005CCB00;
+			remoteInfo = "Aliens - FreeType - OSX";
+		};
+		452BC59519362CA000DDBED0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 451C78A2192BBCE1005CCB00 /* FreeType.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 451C78B7192BBD69005CCB00;
+			remoteInfo = "Aliens - FreeType - iOS";
+		};
+		45646DB9190C99FC00C2FACB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45165AB8190C93820066177B /* PugiXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45165AC7190C95600066177B;
+			remoteInfo = "Aliens - PugiXML - OSX";
+		};
+		45692A01190C9AB8008438D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45165AB8190C93820066177B /* PugiXML.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45646DBE190C9A2A00C2FACB;
+			remoteInfo = "Aliens - PugiXML - iOS";
+		};
+		457B61EF190A9EAB0021A442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457B61B2190A9CE40021A442;
+			remoteInfo = "LodePNG - OSX";
+		};
+		457B61F1190A9EAB0021A442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 457B61BB190A9CF00021A442;
+			remoteInfo = "LodePNG - iOS";
+		};
+		457B61F8190A9F280021A442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B61B1190A9CE40021A442;
+			remoteInfo = "LodePNG - OSX";
+		};
+		457B61FA190A9F2B0021A442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 457B61BA190A9CF00021A442;
+			remoteInfo = "LodePNG - iOS";
+		};
+		45849EA3190C974700DF5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45165AB8190C93820066177B /* PugiXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45165AC8190C95600066177B;
+			remoteInfo = "Aliens - PugiXML - OSX";
+		};
+		45849EA5190C974700DF5E42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45165AB8190C93820066177B /* PugiXML.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45165AD2190C957E0066177B;
+			remoteInfo = "Aliens - PugiXML - iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45165A8E190C832B0066177B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				45165A95190C832B0066177B /* Test.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		457B617D190A9C740021A442 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		450C7D97190C265F0088D506 /* Discount.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Discount.xcodeproj; path = Discount/Discount.xcodeproj; sourceTree = "<group>"; };
+		45165A88190C75A00066177B /* Markdown.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Markdown.cpp; sourceTree = "<group>"; };
+		45165A89190C75A00066177B /* Markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Markdown.h; sourceTree = "<group>"; };
+		45165A90190C832B0066177B /* Aliens - Test - OSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Aliens - Test - OSX"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45165A92190C832B0066177B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		45165A94190C832B0066177B /* Test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Test.1; sourceTree = "<group>"; };
+		45165AB8190C93820066177B /* PugiXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PugiXML.xcodeproj; path = PugiXML/PugiXML.xcodeproj; sourceTree = "<group>"; };
+		45165ABC190C951E0066177B /* XML.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XML.cpp; sourceTree = "<group>"; };
+		45165ABD190C951E0066177B /* XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XML.h; sourceTree = "<group>"; };
+		451C78A2192BBCE1005CCB00 /* FreeType.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FreeType.xcodeproj; path = FreeType/FreeType.xcodeproj; sourceTree = "<group>"; };
+		45646DB0190C97BA00C2FACB /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugiconfig.hpp; sourceTree = "<group>"; };
+		45646DB1190C97BA00C2FACB /* pugixml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = pugixml.hpp; sourceTree = "<group>"; };
+		457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LodePNG.xcodeproj; path = LodePNG/LodePNG.xcodeproj; sourceTree = "<group>"; };
+		457B617F190A9C740021A442 /* libEonilAliens.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilAliens.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		457B61AA190A9CA20021A442 /* libEonilAliens.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilAliens.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		457B6208190AA0FA0021A442 /* Aliens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Aliens.cpp; sourceTree = "<group>"; };
+		457B6209190AA0FA0021A442 /* Aliens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aliens.h; sourceTree = "<group>"; };
+		457B620D190AA1050021A442 /* All.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = All.cpp; sourceTree = "<group>"; };
+		457B620E190AA1050021A442 /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
+		457B6212190AA11A0021A442 /* PNG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNG.cpp; sourceTree = "<group>"; };
+		457B6213190AA11A0021A442 /* PNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNG.h; sourceTree = "<group>"; };
+		457B6217190AA13C0021A442 /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		457B6218190AA13C0021A442 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45165A8D190C832B0066177B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45165AA5190C84AF0066177B /* libEonilAliens.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457B617C190A9C740021A442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45692A00190C9AB4008438D6 /* libPugiXML.a in Frameworks */,
+				45165A84190C70320066177B /* libDiscount.a in Frameworks */,
+				457B61F6190A9F1D0021A442 /* libLodePNG.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457B61A7190A9CA20021A442 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45849EA8190C974D00DF5E42 /* libPugiXML.a in Frameworks */,
+				45165A85190C703A0066177B /* libDiscount.a in Frameworks */,
+				457B61F7190A9F220021A442 /* libLodePNG.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		450C7D98190C265F0088D506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				450C7E80190C280F0088D506 /* libDiscount.a */,
+				450C7E82190C280F0088D506 /* libDiscount.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45165A91190C832B0066177B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				45165A92190C832B0066177B /* main.cpp */,
+				45165A94190C832B0066177B /* Test.1 */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		45165AB9190C93820066177B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45849EA4190C974700DF5E42 /* libPugiXML.a */,
+				45849EA6190C974700DF5E42 /* libPugiXML.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		451C78A3192BBCE1005CCB00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				452BC59419362CA000DDBED0 /* libFreeType.a */,
+				452BC59619362CA000DDBED0 /* libFreeType.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		457B616A190A9C010021A442 = {
+			isa = PBXGroup;
+			children = (
+				451C78A2192BBCE1005CCB00 /* FreeType.xcodeproj */,
+				457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */,
+				450C7D97190C265F0088D506 /* Discount.xcodeproj */,
+				45165AB8190C93820066177B /* PugiXML.xcodeproj */,
+				457B6200190AA0C80021A442 /* Aliens */,
+				45165A91190C832B0066177B /* Test */,
+				457B6180190A9C740021A442 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		457B6179190A9C0F0021A442 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				457B61F0190A9EAB0021A442 /* libLodePNG.a */,
+				457B61F2190A9EAB0021A442 /* libLodePNG.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		457B6180190A9C740021A442 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				457B617F190A9C740021A442 /* libEonilAliens.a */,
+				457B61AA190A9CA20021A442 /* libEonilAliens.a */,
+				45165A90190C832B0066177B /* Aliens - Test - OSX */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		457B6200190AA0C80021A442 /* Aliens */ = {
+			isa = PBXGroup;
+			children = (
+				45646DB0190C97BA00C2FACB /* pugiconfig.hpp */,
+				45646DB1190C97BA00C2FACB /* pugixml.hpp */,
+				457B6201190AA0C80021A442 /* Eonil */,
+			);
+			path = Aliens;
+			sourceTree = "<group>";
+		};
+		457B6201190AA0C80021A442 /* Eonil */ = {
+			isa = PBXGroup;
+			children = (
+				457B6208190AA0FA0021A442 /* Aliens.cpp */,
+				457B6209190AA0FA0021A442 /* Aliens.h */,
+				457B6202190AA0C80021A442 /* Aliens */,
+			);
+			path = Eonil;
+			sourceTree = "<group>";
+		};
+		457B6202190AA0C80021A442 /* Aliens */ = {
+			isa = PBXGroup;
+			children = (
+				457B620D190AA1050021A442 /* All.cpp */,
+				457B620E190AA1050021A442 /* All.h */,
+				457B6217190AA13C0021A442 /* Common.cpp */,
+				457B6218190AA13C0021A442 /* Common.h */,
+				457B6212190AA11A0021A442 /* PNG.cpp */,
+				457B6213190AA11A0021A442 /* PNG.h */,
+				45165A88190C75A00066177B /* Markdown.cpp */,
+				45165A89190C75A00066177B /* Markdown.h */,
+				45165ABC190C951E0066177B /* XML.cpp */,
+				45165ABD190C951E0066177B /* XML.h */,
+			);
+			path = Aliens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		457B61A8190A9CA20021A442 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				457B6216190AA11A0021A442 /* PNG.h in Headers */,
+				45646DB2190C97BA00C2FACB /* pugiconfig.hpp in Headers */,
+				457B6211190AA1050021A442 /* All.h in Headers */,
+				45165AC0190C951E0066177B /* XML.h in Headers */,
+				457B620C190AA0FA0021A442 /* Aliens.h in Headers */,
+				457B621B190AA13C0021A442 /* Common.h in Headers */,
+				45646DB3190C97BA00C2FACB /* pugixml.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		45165A8F190C832B0066177B /* Aliens - Test - OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45165A96190C832B0066177B /* Build configuration list for PBXNativeTarget "Aliens - Test - OSX" */;
+			buildPhases = (
+				45165A8C190C832B0066177B /* Sources */,
+				45165A8D190C832B0066177B /* Frameworks */,
+				45165A8E190C832B0066177B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45165A9B190C83A20066177B /* PBXTargetDependency */,
+			);
+			name = "Aliens - Test - OSX";
+			productName = Test;
+			productReference = 45165A90190C832B0066177B /* Aliens - Test - OSX */;
+			productType = "com.apple.product-type.tool";
+		};
+		457B617E190A9C740021A442 /* Aliens - iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 457B61A0190A9C740021A442 /* Build configuration list for PBXNativeTarget "Aliens - iOS" */;
+			buildPhases = (
+				457B617B190A9C740021A442 /* Sources */,
+				457B617C190A9C740021A442 /* Frameworks */,
+				457B617D190A9C740021A442 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45692A02190C9AB8008438D6 /* PBXTargetDependency */,
+				45165A9F190C83B20066177B /* PBXTargetDependency */,
+				457B61FB190A9F2B0021A442 /* PBXTargetDependency */,
+			);
+			name = "Aliens - iOS";
+			productName = Aliens;
+			productReference = 457B617F190A9C740021A442 /* libEonilAliens.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		457B61A9190A9CA20021A442 /* Aliens - OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 457B61AB190A9CA20021A442 /* Build configuration list for PBXNativeTarget "Aliens - OSX" */;
+			buildPhases = (
+				457B61A6190A9CA20021A442 /* Sources */,
+				457B61A7190A9CA20021A442 /* Frameworks */,
+				457B61A8190A9CA20021A442 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45646DBA190C99FC00C2FACB /* PBXTargetDependency */,
+				45165A9D190C83AF0066177B /* PBXTargetDependency */,
+				457B61F9190A9F280021A442 /* PBXTargetDependency */,
+			);
+			name = "Aliens - OSX";
+			productName = "Aliens - OSX";
+			productReference = 457B61AA190A9CA20021A442 /* libEonilAliens.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		457B616B190A9C010021A442 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 457B616E190A9C010021A442 /* Build configuration list for PBXProject "Aliens" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 457B616A190A9C010021A442;
+			productRefGroup = 457B6180190A9C740021A442 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 450C7D98190C265F0088D506 /* Products */;
+					ProjectRef = 450C7D97190C265F0088D506 /* Discount.xcodeproj */;
+				},
+				{
+					ProductGroup = 451C78A3192BBCE1005CCB00 /* Products */;
+					ProjectRef = 451C78A2192BBCE1005CCB00 /* FreeType.xcodeproj */;
+				},
+				{
+					ProductGroup = 457B6179190A9C0F0021A442 /* Products */;
+					ProjectRef = 457B6178190A9C0F0021A442 /* LodePNG.xcodeproj */;
+				},
+				{
+					ProductGroup = 45165AB9190C93820066177B /* Products */;
+					ProjectRef = 45165AB8190C93820066177B /* PugiXML.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				457B617E190A9C740021A442 /* Aliens - iOS */,
+				457B61A9190A9CA20021A442 /* Aliens - OSX */,
+				45165A8F190C832B0066177B /* Aliens - Test - OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		450C7E80190C280F0088D506 /* libDiscount.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDiscount.a;
+			remoteRef = 450C7E7F190C280F0088D506 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450C7E82190C280F0088D506 /* libDiscount.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libDiscount.a;
+			remoteRef = 450C7E81190C280F0088D506 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		452BC59419362CA000DDBED0 /* libFreeType.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFreeType.a;
+			remoteRef = 452BC59319362CA000DDBED0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		452BC59619362CA000DDBED0 /* libFreeType.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFreeType.a;
+			remoteRef = 452BC59519362CA000DDBED0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		457B61F0190A9EAB0021A442 /* libLodePNG.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLodePNG.a;
+			remoteRef = 457B61EF190A9EAB0021A442 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		457B61F2190A9EAB0021A442 /* libLodePNG.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLodePNG.a;
+			remoteRef = 457B61F1190A9EAB0021A442 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45849EA4190C974700DF5E42 /* libPugiXML.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPugiXML.a;
+			remoteRef = 45849EA3190C974700DF5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45849EA6190C974700DF5E42 /* libPugiXML.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPugiXML.a;
+			remoteRef = 45849EA5190C974700DF5E42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45165A8C190C832B0066177B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45165A93190C832B0066177B /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457B617B190A9C740021A442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				457B6219190AA13C0021A442 /* Common.cpp in Sources */,
+				45165A8A190C75A00066177B /* Markdown.cpp in Sources */,
+				457B6214190AA11A0021A442 /* PNG.cpp in Sources */,
+				45165ABE190C951E0066177B /* XML.cpp in Sources */,
+				457B620A190AA0FA0021A442 /* Aliens.cpp in Sources */,
+				457B620F190AA1050021A442 /* All.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457B61A6190A9CA20021A442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				457B621A190AA13C0021A442 /* Common.cpp in Sources */,
+				45165A8B190C75A30066177B /* Markdown.cpp in Sources */,
+				457B6215190AA11A0021A442 /* PNG.cpp in Sources */,
+				45165ABF190C951E0066177B /* XML.cpp in Sources */,
+				457B620B190AA0FA0021A442 /* Aliens.cpp in Sources */,
+				457B6210190AA1050021A442 /* All.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45165A9B190C83A20066177B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 457B61A9190A9CA20021A442 /* Aliens - OSX */;
+			targetProxy = 45165A9A190C83A20066177B /* PBXContainerItemProxy */;
+		};
+		45165A9D190C83AF0066177B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - Discount - OSX";
+			targetProxy = 45165A9C190C83AF0066177B /* PBXContainerItemProxy */;
+		};
+		45165A9F190C83B20066177B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - Discount - iOS";
+			targetProxy = 45165A9E190C83B20066177B /* PBXContainerItemProxy */;
+		};
+		45646DBA190C99FC00C2FACB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - PugiXML - OSX";
+			targetProxy = 45646DB9190C99FC00C2FACB /* PBXContainerItemProxy */;
+		};
+		45692A02190C9AB8008438D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Aliens - PugiXML - iOS";
+			targetProxy = 45692A01190C9AB8008438D6 /* PBXContainerItemProxy */;
+		};
+		457B61F9190A9F280021A442 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LodePNG - OSX";
+			targetProxy = 457B61F8190A9F280021A442 /* PBXContainerItemProxy */;
+		};
+		457B61FB190A9F2B0021A442 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LodePNG - iOS";
+			targetProxy = 457B61FA190A9F2B0021A442 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45165A97190C832B0066177B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		45165A98190C832B0066177B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		457B616F190A9C010021A442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				PRODUCT_NAME = "Eonil$(PROJECT_NAME)";
+			};
+			name = Debug;
+		};
+		457B6170190A9C010021A442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				PRODUCT_NAME = "Eonil$(PROJECT_NAME)";
+			};
+			name = Release;
+		};
+		457B61A1190A9C740021A442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/Aliens.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		457B61A2190A9C740021A442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/Aliens.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		457B61AC190A9CA20021A442 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		457B61AD190A9CA20021A442 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45165A96190C832B0066177B /* Build configuration list for PBXNativeTarget "Aliens - Test - OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45165A97190C832B0066177B /* Debug */,
+				45165A98190C832B0066177B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		457B616E190A9C010021A442 /* Build configuration list for PBXProject "Aliens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				457B616F190A9C010021A442 /* Debug */,
+				457B6170190A9C010021A442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		457B61A0190A9C740021A442 /* Build configuration list for PBXNativeTarget "Aliens - iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				457B61A1190A9C740021A442 /* Debug */,
+				457B61A2190A9C740021A442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		457B61AB190A9CA20021A442 /* Build configuration list for PBXNativeTarget "Aliens - OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				457B61AC190A9CA20021A442 /* Debug */,
+				457B61AD190A9CA20021A442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 457B616B190A9C010021A442 /* Project object */;
+}
