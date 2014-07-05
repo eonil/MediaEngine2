@@ -7,22 +7,21 @@
 //
 
 #include "OSX.h"
-
 #import <OpenGL/OpenGL.h>
 #import <AppKit/AppKit.h>
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+namespace
+Platforms
+{
 	
-	namespace
-	Platforms
+	bool 
+	OSX::hasCurrentGLContext()
 	{
-		
-		bool 
-		OSX::hasCurrentGLContext()
-		{
-			return	[NSOpenGLContext currentContext] != nil;
-		}
-		
+		return	[NSOpenGLContext currentContext] != nil;
 	}
 	
-}}}}
+}
+
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
+

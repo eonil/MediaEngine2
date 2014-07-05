@@ -10,7 +10,7 @@
 //#define __Graphics__Aliases__
 //
 //
-//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 //	
 //	namespace
 //	Rendering

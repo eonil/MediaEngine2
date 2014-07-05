@@ -7,19 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4504CEDE192B47B400F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
 		4504CEEB192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
 		4504CEEC192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
 		4504CEED192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
 		4504CEEE192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
 		4504CEEF192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
 		4504CEF0192B4C3C00F3FC8B /* TestCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */; };
-		4504CEF1192B4EF300F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
-		4504CEF2192B4EF900F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
-		4504CEF3192B4F1300F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
-		4504CEF4192B4F1800F3FC8B /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
-		4504CF04192B4F5B00F3FC8B /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */; };
-		4504CF05192B4F6400F3FC8B /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */; };
 		450A21E818FE9F6F009B2E5D /* Platform_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */; };
 		450A21E918FE9F6F009B2E5D /* Platform_OSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */; };
 		450A21EA18FE9F6F009B2E5D /* Platform_OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 450A21E718FE9F6F009B2E5D /* Platform_OSX.h */; };
@@ -28,13 +21,17 @@
 		450E0D7C18BDE3BC003D51E0 /* Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */; };
 		450E0D7D18BDE3BC003D51E0 /* Bundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */; };
 		450E0D7E18BDE3BC003D51E0 /* Bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 450E0D7B18BDE3BC003D51E0 /* Bundle.h */; };
-		450E0D8418BDE85A003D51E0 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
+		450E0D8418BDE85A003D51E0 /* libEonilMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilMediaEngineApplication.a */; };
+		450E0F7D1966B60500D1F2A2 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7FA41962F43300CB53E0 /* libEonilAliens.a */; };
+		450E0F7E1966B60500D1F2A2 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */; };
+		450E0F7F1966B60500D1F2A2 /* libEonilMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */; };
+		450E0F851966B61900D1F2A2 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */; };
 		4525EA8B18B6BD2C00B05C1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96818B6A70D0078033C /* Foundation.framework */; };
 		4525EA8C18B6BD2C00B05C1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EA5D18B6BD1700B05C1D /* CoreGraphics.framework */; };
 		4525EA9318B6BD2C00B05C1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4525EA9118B6BD2C00B05C1D /* InfoPlist.strings */; };
 		4525EA9518B6BD2C00B05C1D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4525EA9418B6BD2C00B05C1D /* main.mm */; };
 		4525EA9B18B6BD2C00B05C1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4525EA9A18B6BD2C00B05C1D /* Images.xcassets */; };
-		4525EAB418B6BE2E00B05C1D /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
+		4525EAB418B6BE2E00B05C1D /* libEonilMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilMediaEngineApplication.a */; };
 		4525EAC218B6BE9100B05C1D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC118B6BE9100B05C1D /* QuartzCore.framework */; };
 		4525EAC418B6BE9800B05C1D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC318B6BE9800B05C1D /* OpenGLES.framework */; };
 		4525EAC618B6BE9E00B05C1D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC518B6BE9E00B05C1D /* ImageIO.framework */; };
@@ -57,10 +54,7 @@
 		453F1DEB18C30957000C25CC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC118B6BE9100B05C1D /* QuartzCore.framework */; };
 		453F1DEC18C30957000C25CC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51618B8A444004A5C14 /* GLKit.framework */; };
 		453F1DED18C30957000C25CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51418B8A438004A5C14 /* UIKit.framework */; };
-		453F1DEE18C30961000C25CC /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
-		453F1DF018C30961000C25CC /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		453F1DF118C30961000C25CC /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
-		453F1DF218C30961000C25CC /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
+		453F1DEE18C30961000C25CC /* libEonilMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilMediaEngineApplication.a */; };
 		453F1DF618C309A0000C25CC /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		453F1DF718C309A0000C25CC /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
 		45485FAB18B97535005981DA /* Stepping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45485FA918B97535005981DA /* Stepping.cpp */; };
@@ -70,6 +64,7 @@
 		455D706C18CE1E6700040198 /* Platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 455D706918CE1E6700040198 /* Platform.h */; };
 		455D707A18CE1EAC00040198 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455D707918CE1EAC00040198 /* Platform.cpp */; };
 		455D707B18CE1EAC00040198 /* Platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455D707918CE1EAC00040198 /* Platform.cpp */; };
+		456085021964CC4900E8C26E /* libEonilMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilMediaEngineApplication.a */; };
 		4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98D18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4529053A18B6A65100FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m */; };
 		4577C98F18B6ABC10078033C /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4529053C18B6A65F00FCFCBD /* ____EonilImprovisationsMediaEngineApplicationController.mm */; };
@@ -90,10 +85,7 @@
 		4584024218DCE92800AAE1A2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
 		4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E8D18B726C100544108 /* OpenGL.framework */; };
 		4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4E718B8A2D9004A5C14 /* GLKit.framework */; };
-		4584024518DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
-		4584024718DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		4584024818DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
-		4584024918DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
+		4584024518DCE94000AAE1A2 /* libEonilMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilMediaEngineApplication.a */; };
 		4584024C18DDC15D00AAE1A2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4584022518DCE7DA00AAE1A2 /* MainMenu.xib */; };
 		4584024D18DDC19700AAE1A2 /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		4584024E18DDC19700AAE1A2 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
@@ -103,17 +95,12 @@
 		4595B3DD18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4595B3DA18BDF0E900179293 /* Bundle_Apple_iOS_Impl.mm */; };
 		459CF4E618B8A1DE004A5C14 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459CF4E518B8A1DE004A5C14 /* MainMenu.xib */; };
 		459CF4E818B8A2D9004A5C14 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4E718B8A2D9004A5C14 /* GLKit.framework */; };
-		459CF51118B8A412004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F518B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		459CF51218B8A412004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51018B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
-		459CF51318B8A412004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50318B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
 		459CF51518B8A438004A5C14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51418B8A438004A5C14 /* UIKit.framework */; };
 		459CF51718B8A444004A5C14 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF51618B8A444004A5C14 /* GLKit.framework */; };
-		459CF52618B8A4D5004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		459CF52718B8A4D5004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
-		459CF52818B8A4D5004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
-		459F7F711962F19F00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7F111962ED6500CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */; };
 		45A28B5818BF2084005DECF5 /* TestRendering1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9518B75A6100544108 /* TestRendering1.cpp */; };
 		45A28B6518BF2085005DECF5 /* TestRendering1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9518B75A6100544108 /* TestRendering1.cpp */; };
+		45A5D54019645663003DD722 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45A5D53F19645663003DD722 /* Common.cpp */; };
+		45A5D54119645663003DD722 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45A5D53F19645663003DD722 /* Common.cpp */; };
 		45C49E8E18B726C100544108 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E8D18B726C100544108 /* OpenGL.framework */; };
 		45C49E9118B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E8F18B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h */; };
 		45C49E9218B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
@@ -121,7 +108,6 @@
 		45C49E9418B734C300544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */; };
 		45C49E9918B75A6100544108 /* TestRendering1.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C49E9618B75A6100544108 /* TestRendering1.h */; };
 		45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
-		45C6C582192B8D8400649FB9 /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */; };
 		45D7B2BE1928E99C00279F43 /* DraggingGesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */; };
 		45D7B2BF1928E99C00279F43 /* DraggingGesture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B2B01928E99C00279F43 /* DraggingGesture.cpp */; };
 		45D7B2C01928E99C00279F43 /* DraggingGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B2B11928E99C00279F43 /* DraggingGesture.h */; };
@@ -150,10 +136,6 @@
 		45D7B3091928F27D00279F43 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E8D18B726C100544108 /* OpenGL.framework */; };
 		45D7B30A1928F27D00279F43 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C49E9A18B82B4200544108 /* QuartzCore.framework */; };
 		45D7B30B1928F27D00279F43 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4584021018DCE7DA00AAE1A2 /* Cocoa.framework */; };
-		45D7B30C1928F27D00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
-		45D7B30E1928F27D00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		45D7B30F1928F27D00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
-		45D7B3101928F27D00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
 		45D7B3161928F27D00279F43 /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		45D7B3171928F27D00279F43 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
 		45D7B35D1928F4AF00279F43 /* Controlling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B35B1928F4AF00279F43 /* Controlling.cpp */; };
@@ -161,10 +143,7 @@
 		45D7B35F1928F4AF00279F43 /* Controlling.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D7B35C1928F4AF00279F43 /* Controlling.h */; };
 		45D7B3631928F62900279F43 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B3621928F62900279F43 /* main.mm */; };
 		45D7B3651928F65000279F43 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D7B3641928F65000279F43 /* MainMenu.xib */; };
-		45D7B473192918AE00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */; };
-		45D7B475192918AE00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */; };
-		45D7B476192918AE00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */; };
-		45D7B477192918AE00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */; };
+		45D7B473192918AE00279F43 /* libEonilMediaEngineApplication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96618B6A70D0078033C /* libEonilMediaEngineApplication.a */; };
 		45D7B478192918AE00279F43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EA5D18B6BD1700B05C1D /* CoreGraphics.framework */; };
 		45D7B479192918AE00279F43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4577C96818B6A70D0078033C /* Foundation.framework */; };
 		45D7B47A192918AE00279F43 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4525EAC518B6BE9E00B05C1D /* ImageIO.framework */; };
@@ -177,155 +156,148 @@
 		45D7B482192918AE00279F43 /* PIA14415_clip_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */; };
 		45D7B483192918AE00279F43 /* TEX_TEST.png in Resources */ = {isa = PBXBuildFile; fileRef = 450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */; };
 		45D7B49D192918F300279F43 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D7B49C192918F300279F43 /* main.mm */; };
+		45F13D8E19687A4600F7B630 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */; };
+		45F13D8F19687A4600F7B630 /* libEonilMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */; };
+		45F13D9019687A4600F7B630 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */; };
+		45F13D9119687A5400F7B630 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7FA41962F43300CB53E0 /* libEonilAliens.a */; };
+		45F13D9219687A8A00F7B630 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7FA41962F43300CB53E0 /* libEonilAliens.a */; };
+		45F13D9319687A8A00F7B630 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */; };
+		45F13D9419687A8A00F7B630 /* libEonilMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */; };
+		45F13D9519687A8A00F7B630 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */; };
+		45F13D9619687AA700F7B630 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7FA41962F43300CB53E0 /* libEonilAliens.a */; };
+		45F13D9719687AA700F7B630 /* libEonilMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */; };
+		45F13D9819687AA700F7B630 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */; };
+		45F13D9919687AA700F7B630 /* libFoundation_LEGACY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48F19642E180084F220 /* libFoundation_LEGACY.a */; };
+		45F13D9A19687AB100F7B630 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */; };
+		45F65AFC1965A76C0043BF32 /* libEonilMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */; };
+		45F65AFD1965A76C0043BF32 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */; };
+		45F65B0D1965A7B20043BF32 /* libEonilMediaEngineGraphics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */; };
+		45F65B0E1965A7B20043BF32 /* libEonilMediaEngineMathematics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */; };
+		45F65B0F1965A7C00043BF32 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */; };
+		45F65B101965A83E0043BF32 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7FA61962F43300CB53E0 /* libEonilAliens.a */; };
+		45F65B111965A8630043BF32 /* libEonilAliens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F7FA41962F43300CB53E0 /* libEonilAliens.a */; };
+		45F65B121965A8780043BF32 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4504CEC9192B472900F3FC8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4504CE96192B462100F3FC8B;
-			remoteInfo = "Foundation_LEGACY - iOS";
-		};
-		4504CECB192B472900F3FC8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4504CEBE192B463500F3FC8B;
-			remoteInfo = "Foundation_LEGACY - OSX";
-		};
-		4504CEFB192B4F4600F3FC8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 457B617F190A9C740021A442;
-			remoteInfo = "Aliens - iOS";
-		};
-		4504CEFD192B4F4600F3FC8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 457B61AA190A9CA20021A442;
-			remoteInfo = "Aliens - OSX";
-		};
-		4504CEFF192B4F4600F3FC8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45165A90190C832B0066177B;
-			remoteInfo = "Aliens - Test - OSX";
-		};
-		451E26A118FDB2520003B8A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4561326A18E238F30057EB03;
-			remoteInfo = "GraphicsLegacyFeatures - OSX Static Library";
-		};
-		451E26A318FDB2520003B8A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4561327218E239070057EB03;
-			remoteInfo = "GraphicsLegacyFeatures - iOS Static Library";
-		};
-		459CF4F218B8A3F1004A5C14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45F0374C175C359E00C469FD;
-			remoteInfo = "Foundation - OSX Static Library";
-		};
-		459CF4F418B8A3F1004A5C14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45F03729175C353F00C469FD;
-			remoteInfo = "Foundation - iOS Static Library";
-		};
-		459CF4F618B8A3F1004A5C14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 453BFBFA18A2424D007E514B;
-			remoteInfo = "OSX Test";
-		};
-		459CF50018B8A3FC004A5C14 /* PBXContainerItemProxy */ = {
+		4528A47919642E180084F220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45150A2618A69EB40007BE6B;
 			remoteInfo = "Mathematics - Static Library - OSX";
 		};
-		459CF50218B8A3FC004A5C14 /* PBXContainerItemProxy */ = {
+		4528A47B19642E180084F220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 451509FB18A69EAA0007BE6B;
 			remoteInfo = "Mathematics - Static Library - iOS";
 		};
-		459CF50418B8A3FC004A5C14 /* PBXContainerItemProxy */ = {
+		4528A47D19642E180084F220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45150A6A18A69EE80007BE6B;
 			remoteInfo = "Mathematics - Running Test - OSX";
 		};
-		459CF50618B8A3FC004A5C14 /* PBXContainerItemProxy */ = {
+		4528A47F19642E180084F220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45150A3B18A69EDE0007BE6B;
 			remoteInfo = "Mathematics - Running Test - iOS";
 		};
-		459CF50D18B8A401004A5C14 /* PBXContainerItemProxy */ = {
+		4528A48819642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 453BFBFA18A2424D007E514B;
+			remoteInfo = "OSX Test";
+		};
+		4528A48A19642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45F0374C175C359E00C469FD;
+			remoteInfo = "Foundation - OSX Static Library";
+		};
+		4528A48C19642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45F03729175C353F00C469FD;
+			remoteInfo = "Foundation - iOS Static Library";
+		};
+		4528A48E19642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CE96192B462100F3FC8B;
+			remoteInfo = "Foundation_LEGACY - iOS";
+		};
+		4528A49019642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4504CEBE192B463500F3FC8B;
+			remoteInfo = "Foundation_LEGACY - OSX";
+		};
+		4528A4A319642E180084F220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45D3CB79173BC83E0011D992;
 			remoteInfo = "Graphics - OSX Static Library";
 		};
-		459CF50F18B8A401004A5C14 /* PBXContainerItemProxy */ = {
+		4528A4A519642E180084F220 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45D3CB66173BC8280011D992;
 			remoteInfo = "Graphics - iOS Static Library";
 		};
-		459F7F101962ED6500CB53E0 /* PBXContainerItemProxy */ = {
+		4528A4A719642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4561326A18E238F30057EB03;
+			remoteInfo = "GraphicsLegacyFeatures - OSX Static Library";
+		};
+		4528A4A919642E180084F220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4561327218E239070057EB03;
+			remoteInfo = "GraphicsLegacyFeatures - iOS Static Library";
+		};
+		454EB22D19642E7B00E33EE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459F7F061962ED6400CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45FC6FAC190EB7290018BC59;
 			remoteInfo = "CommonRealtimeGameAlgorithms - iOS";
 		};
-		459F7F121962ED6500CB53E0 /* PBXContainerItemProxy */ = {
+		454EB22F19642E7B00E33EE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459F7F061962ED6400CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45FC7001190EB7AF0018BC59;
 			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
 		};
-		459F7F141962ED6500CB53E0 /* PBXContainerItemProxy */ = {
+		454EB23119642E7B00E33EE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459F7F061962ED6400CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 450EF2A6190EBD6E00FC3FE3;
 			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - OSX";
 		};
-		459F7F161962ED6500CB53E0 /* PBXContainerItemProxy */ = {
+		454EB23319642E7B00E33EE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 459F7F061962ED6400CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 455B126D19106740007997D8;
 			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - iOS";
-		};
-		459F7F731962F1AA00CB53E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 459F7F061962ED6400CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45FC7000190EB7AF0018BC59;
-			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
 		};
 		459F7FA31962F43300CB53E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -365,7 +337,6 @@
 /* Begin PBXFileReference section */
 		4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestCommon.cpp; sourceTree = "<group>"; };
 		4504CEEA192B4C3C00F3FC8B /* TestCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCommon.h; sourceTree = "<group>"; };
-		4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Aliens.xcodeproj; path = ../../../Aliens/Aliens.xcodeproj; sourceTree = "<group>"; };
 		4504CF01192B4F4D00F3FC8B /* libDiscount.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDiscount.a; path = "../../../../../../Volumes/Temporaries/Xcode/DerivedData/MediaEngine-gevcctxxrsvtrdgtwpxqfejpaogc/Build/Products/Debug/libDiscount.a"; sourceTree = "<group>"; };
 		450A21E618FE9F6F009B2E5D /* Platform_OSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Platform_OSX.mm; sourceTree = "<group>"; };
 		450A21E718FE9F6F009B2E5D /* Platform_OSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform_OSX.h; sourceTree = "<group>"; };
@@ -418,8 +389,8 @@
 		455D704B18CE102C00040198 /* Platform_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform_iOS.h; sourceTree = "<group>"; };
 		455D706918CE1E6700040198 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 		455D707918CE1EAC00040198 /* Platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Platform.cpp; sourceTree = "<group>"; };
-		4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilImprovisationsMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4577C95E18B6A7060078033C /* libEonilMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4577C96618B6A70D0078033C /* libEonilMediaEngineApplication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilMediaEngineApplication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4577C96818B6A70D0078033C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		457A6C1A18C985DD007BD4D6 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		457A6C1B18C985DD007BD4D6 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
@@ -464,6 +435,8 @@
 		459F7F5D1962F0AE00CB53E0 /* AATestStatus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AATestStatus.cpp; sourceTree = "<group>"; };
 		459F7F5E1962F0AE00CB53E0 /* AATestStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AATestStatus.h; sourceTree = "<group>"; };
 		459F7F991962F43300CB53E0 /* Aliens.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Aliens.xcodeproj; path = ../../Aliens/Aliens.xcodeproj; sourceTree = "<group>"; };
+		45A5D53F19645663003DD722 /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		45A5D54219645670003DD722 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		45C49E8D18B726C100544108 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		45C49E8F18B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "____EonilImprovisationsMediaEngineMainWindowController.h"; sourceTree = "<group>"; };
 		45C49E9018B7299E00544108 /* ____EonilImprovisationsMediaEngineMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "____EonilImprovisationsMediaEngineMainWindowController.m"; sourceTree = "<group>"; };
@@ -504,8 +477,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4504CF04192B4F5B00F3FC8B /* libEonilAliens.a in Frameworks */,
-				4504CEF2192B4EF900F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
+				45F13D9A19687AB100F7B630 /* libEonilMediaEngineFoundation.a in Frameworks */,
+				45F13D9619687AA700F7B630 /* libEonilAliens.a in Frameworks */,
+				45F13D9719687AA700F7B630 /* libEonilMediaEngineGraphics.a in Frameworks */,
+				45F13D9819687AA700F7B630 /* libEonilMediaEngineMathematics.a in Frameworks */,
+				45F13D9919687AA700F7B630 /* libFoundation_LEGACY.a in Frameworks */,
 				4525EA8B18B6BD2C00B05C1D /* Foundation.framework in Frameworks */,
 				4525EA8C18B6BD2C00B05C1D /* CoreGraphics.framework in Frameworks */,
 				4525EAC218B6BE9100B05C1D /* QuartzCore.framework in Frameworks */,
@@ -513,10 +489,7 @@
 				4525EAC418B6BE9800B05C1D /* OpenGLES.framework in Frameworks */,
 				459CF51718B8A444004A5C14 /* GLKit.framework in Frameworks */,
 				4525EAC618B6BE9E00B05C1D /* ImageIO.framework in Frameworks */,
-				459CF51118B8A412004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
-				459CF51318B8A412004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
-				459CF51218B8A412004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
-				4525EAB418B6BE2E00B05C1D /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
+				4525EAB418B6BE2E00B05C1D /* libEonilMediaEngineApplication.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,16 +497,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4504CF05192B4F6400F3FC8B /* libEonilAliens.a in Frameworks */,
-				4504CEF1192B4EF300F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
+				45F65B101965A83E0043BF32 /* libEonilAliens.a in Frameworks */,
+				45F65B0F1965A7C00043BF32 /* libEonilMediaEngineFoundation.a in Frameworks */,
+				45F65B0D1965A7B20043BF32 /* libEonilMediaEngineGraphics.a in Frameworks */,
+				45F65B0E1965A7B20043BF32 /* libEonilMediaEngineMathematics.a in Frameworks */,
 				45C49E9B18B82B4200544108 /* QuartzCore.framework in Frameworks */,
 				45C49E8E18B726C100544108 /* OpenGL.framework in Frameworks */,
 				4525EACD18B6C0E500B05C1D /* Cocoa.framework in Frameworks */,
 				459CF4E818B8A2D9004A5C14 /* GLKit.framework in Frameworks */,
-				459CF52618B8A4D5004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
-				459CF52818B8A4D5004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
-				459CF52718B8A4D5004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
-				450E0D8418BDE85A003D51E0 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
+				450E0D8418BDE85A003D51E0 /* libEonilMediaEngineApplication.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,11 +513,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4504CEF4192B4F1800F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
-				453F1DEE18C30961000C25CC /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
-				453F1DF018C30961000C25CC /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
-				453F1DF118C30961000C25CC /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
-				453F1DF218C30961000C25CC /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+				45F13D9219687A8A00F7B630 /* libEonilAliens.a in Frameworks */,
+				45F13D9319687A8A00F7B630 /* libEonilMediaEngineFoundation.a in Frameworks */,
+				45F13D9419687A8A00F7B630 /* libEonilMediaEngineGraphics.a in Frameworks */,
+				45F13D9519687A8A00F7B630 /* libEonilMediaEngineMathematics.a in Frameworks */,
+				453F1DEE18C30961000C25CC /* libEonilMediaEngineApplication.a in Frameworks */,
 				453F1DE718C30957000C25CC /* CoreGraphics.framework in Frameworks */,
 				453F1DE818C30957000C25CC /* Foundation.framework in Frameworks */,
 				453F1DE918C30957000C25CC /* ImageIO.framework in Frameworks */,
@@ -574,15 +546,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4504CEF3192B4F1300F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
+				45F13D9119687A5400F7B630 /* libEonilAliens.a in Frameworks */,
+				45F13D8E19687A4600F7B630 /* libEonilMediaEngineFoundation.a in Frameworks */,
+				45F13D8F19687A4600F7B630 /* libEonilMediaEngineGraphics.a in Frameworks */,
+				45F13D9019687A4600F7B630 /* libEonilMediaEngineMathematics.a in Frameworks */,
 				4584024418DCE93000AAE1A2 /* GLKit.framework in Frameworks */,
 				4584024318DCE92C00AAE1A2 /* OpenGL.framework in Frameworks */,
 				4584024218DCE92800AAE1A2 /* QuartzCore.framework in Frameworks */,
 				4584021118DCE7DA00AAE1A2 /* Cocoa.framework in Frameworks */,
-				4584024518DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
-				4584024718DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
-				4584024818DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
-				4584024918DCE94000AAE1A2 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+				4584024518DCE94000AAE1A2 /* libEonilMediaEngineApplication.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,16 +562,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				459F7F711962F19F00CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a in Frameworks */,
-				45C6C582192B8D8400649FB9 /* libFoundation_LEGACY.a in Frameworks */,
+				45F65B121965A8780043BF32 /* libEonilMediaEngineFoundation.a in Frameworks */,
+				45F65B111965A8630043BF32 /* libEonilAliens.a in Frameworks */,
+				45F65AFC1965A76C0043BF32 /* libEonilMediaEngineGraphics.a in Frameworks */,
+				45F65AFD1965A76C0043BF32 /* libEonilMediaEngineMathematics.a in Frameworks */,
+				456085021964CC4900E8C26E /* libEonilMediaEngineApplication.a in Frameworks */,
 				45D7B3081928F27D00279F43 /* GLKit.framework in Frameworks */,
 				45D7B3091928F27D00279F43 /* OpenGL.framework in Frameworks */,
 				45D7B30A1928F27D00279F43 /* QuartzCore.framework in Frameworks */,
 				45D7B30B1928F27D00279F43 /* Cocoa.framework in Frameworks */,
-				45D7B30C1928F27D00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
-				45D7B30E1928F27D00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
-				45D7B30F1928F27D00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
-				45D7B3101928F27D00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,11 +578,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4504CEDE192B47B400F3FC8B /* libFoundation_LEGACY.a in Frameworks */,
-				45D7B473192918AE00279F43 /* libEonilImprovisationsMediaEngineApplication.a in Frameworks */,
-				45D7B475192918AE00279F43 /* libEonilImprovisationsMediaEngineFoundation.a in Frameworks */,
-				45D7B476192918AE00279F43 /* libEonilImprovisationsMediaEngineGraphics.a in Frameworks */,
-				45D7B477192918AE00279F43 /* libEonilImprovisationsMediaEngineMathematics.a in Frameworks */,
+				450E0F7D1966B60500D1F2A2 /* libEonilAliens.a in Frameworks */,
+				450E0F851966B61900D1F2A2 /* libEonilMediaEngineMathematics.a in Frameworks */,
+				450E0F7E1966B60500D1F2A2 /* libEonilMediaEngineFoundation.a in Frameworks */,
+				450E0F7F1966B60500D1F2A2 /* libEonilMediaEngineGraphics.a in Frameworks */,
+				45D7B473192918AE00279F43 /* libEonilMediaEngineApplication.a in Frameworks */,
 				45D7B478192918AE00279F43 /* CoreGraphics.framework in Frameworks */,
 				45D7B479192918AE00279F43 /* Foundation.framework in Frameworks */,
 				45D7B47A192918AE00279F43 /* ImageIO.framework in Frameworks */,
@@ -625,16 +596,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4504CEF6192B4F4600F3FC8B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */,
-				4504CEFE192B4F4600F3FC8B /* libEonilAliens.a */,
-				4504CF00192B4F4600F3FC8B /* Aliens - Test - OSX */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4525EA8E18B6BD2C00B05C1D /* iOS Test Runner */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +638,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4528A47319642E180084F220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */,
+				4528A47C19642E180084F220 /* libEonilMediaEngineMathematics.a */,
+				4528A47E19642E180084F220 /* Mathematics - Running Test - OSX */,
+				4528A48019642E180084F220 /* Mathematics - Running Test - iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4528A48119642E180084F220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4528A48919642E180084F220 /* OSX Test */,
+				4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */,
+				4528A48D19642E180084F220 /* libEonilMediaEngineFoundation.a */,
+				4528A48F19642E180084F220 /* libFoundation_LEGACY.a */,
+				4528A49119642E180084F220 /* libFoundation_LEGACY.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4528A49D19642E180084F220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */,
+				4528A4A619642E180084F220 /* libEonilMediaEngineGraphics.a */,
+				4528A4A819642E180084F220 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
+				4528A4AA19642E180084F220 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4529051D18B6A50400FCFCBD = {
 			isa = PBXGroup;
 			children = (
@@ -709,19 +704,18 @@
 		4529052818B6A53400FCFCBD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				459F7F991962F43300CB53E0 /* Aliens.xcodeproj */,
 				453F1D8F18C3080C000C25CC /* PIA14415_clip_1024.png */,
 				450E0D6B18BDE35E003D51E0 /* TEX_TEST.png */,
 				4504CEE9192B4C3B00F3FC8B /* TestCommon.cpp */,
 				4504CEEA192B4C3C00F3FC8B /* TestCommon.h */,
-				45C49E9518B75A6100544108 /* TestRendering1.cpp */,
 				45C49E9618B75A6100544108 /* TestRendering1.h */,
-				453F1D9218C3086F000C25CC /* TestRendering2.mm */,
+				45C49E9518B75A6100544108 /* TestRendering1.cpp */,
 				453F1D9318C3086F000C25CC /* TestRendering2.h */,
-				4538D52418CD26D200066D7E /* TestRendering3.mm */,
+				453F1D9218C3086F000C25CC /* TestRendering2.mm */,
 				4538D52518CD26D200066D7E /* TestRendering3.h */,
-				45D7B2FC1928F21600279F43 /* TestAll.mm */,
+				4538D52418CD26D200066D7E /* TestRendering3.mm */,
 				45D7B2FD1928F21600279F43 /* TestAll.h */,
+				45D7B2FC1928F21600279F43 /* TestAll.mm */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -746,17 +740,19 @@
 		4529052D18B6A55700FCFCBD /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				45485FA918B97535005981DA /* Stepping.cpp */,
+				45A5D54219645670003DD722 /* Common.h */,
+				45A5D53F19645663003DD722 /* Common.cpp */,
 				45485FAA18B97535005981DA /* Stepping.h */,
-				450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */,
+				45485FA918B97535005981DA /* Stepping.cpp */,
 				450E0D7B18BDE3BC003D51E0 /* Bundle.h */,
-				455D707918CE1EAC00040198 /* Platform.cpp */,
+				450E0D7A18BDE3BC003D51E0 /* Bundle.cpp */,
 				455D706918CE1E6700040198 /* Platform.h */,
-				4529052E18B6A56000FCFCBD /* run.cpp */,
+				455D707918CE1EAC00040198 /* Platform.cpp */,
 				4529052F18B6A56000FCFCBD /* run.h */,
+				4529052E18B6A56000FCFCBD /* run.cpp */,
 				4529053018B6A57C00FCFCBD /* Apple */,
-				457A6C1A18C985DD007BD4D6 /* Application.cpp */,
 				457A6C1B18C985DD007BD4D6 /* Application.h */,
+				457A6C1A18C985DD007BD4D6 /* Application.cpp */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -821,11 +817,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		454EB22119642E7B00E33EE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				454EB22E19642E7B00E33EE1 /* libEonilCommonRealtimeGameAlgorithms.a */,
+				454EB23019642E7B00E33EE1 /* libEonilCommonRealtimeGameAlgorithms.a */,
+				454EB23219642E7B00E33EE1 /* CommonRealtimeGameAlgorithms - Tester - OSX */,
+				454EB23419642E7B00E33EE1 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4577C95618B6A6E90078033C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */,
-				4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */,
+				4577C95E18B6A7060078033C /* libEonilMediaEngineApplication.a */,
+				4577C96618B6A70D0078033C /* libEonilMediaEngineApplication.a */,
 				4525EA8A18B6BD2C00B05C1D /* Application - iOS - Test Runner 1.app */,
 				4525EACB18B6C0E500B05C1D /* Application - OSX - Test Runner 1.app */,
 				453F1DB818C308D3000C25CC /* Application - iOS - Test Runner 2.app */,
@@ -894,7 +901,7 @@
 				459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */,
 				459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */,
 				459CF50818B8A401004A5C14 /* Graphics.xcodeproj */,
-				4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */,
+				459F7F991962F43300CB53E0 /* Aliens.xcodeproj */,
 				459CF4EA18B8A390004A5C14 /* iOS */,
 				459CF4EB18B8A390004A5C14 /* OSX */,
 			);
@@ -924,51 +931,6 @@
 				45C49E8D18B726C100544108 /* OpenGL.framework */,
 			);
 			path = OSX;
-			sourceTree = "<group>";
-		};
-		459CF4ED18B8A3F1004A5C14 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				459CF4F718B8A3F1004A5C14 /* OSX Test */,
-				459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				459CF4F518B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */,
-				4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */,
-				4504CECC192B472900F3FC8B /* libFoundation_LEGACY.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		459CF4F918B8A3FB004A5C14 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */,
-				459CF50318B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */,
-				459CF50518B8A3FC004A5C14 /* Mathematics - Running Test - OSX */,
-				459CF50718B8A3FC004A5C14 /* Mathematics - Running Test - iOS.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		459CF50918B8A401004A5C14 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */,
-				459CF51018B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */,
-				451E26A218FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
-				451E26A418FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		459F7F071962ED6400CB53E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				459F7F111962ED6500CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */,
-				459F7F131962ED6500CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */,
-				459F7F151962ED6500CB53E0 /* CommonRealtimeGameAlgorithms - Tester - OSX */,
-				459F7F171962ED6500CB53E0 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		459F7F4F1962F0AD00CB53E0 /* Tests-Prototype */ = {
@@ -1172,7 +1134,7 @@
 			);
 			name = "Application - OSX";
 			productName = "OSX Static Library";
-			productReference = 4577C95E18B6A7060078033C /* libEonilImprovisationsMediaEngineApplication.a */;
+			productReference = 4577C95E18B6A7060078033C /* libEonilMediaEngineApplication.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		4577C96518B6A70D0078033C /* Application - iOS */ = {
@@ -1189,7 +1151,7 @@
 			);
 			name = "Application - iOS";
 			productName = "iOS Static Library";
-			productReference = 4577C96618B6A70D0078033C /* libEonilImprovisationsMediaEngineApplication.a */;
+			productReference = 4577C96618B6A70D0078033C /* libEonilMediaEngineApplication.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		4584020D18DCE7DA00AAE1A2 /* Application - OSX - Test Runner 2 */ = {
@@ -1220,7 +1182,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				459F7F741962F1AA00CB53E0 /* PBXTargetDependency */,
 			);
 			name = "Application - Test All Runner - OSX";
 			productName = "OSX Test Runner 2";
@@ -1250,7 +1211,7 @@
 		4529051E18B6A50400FCFCBD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 4529052118B6A50400FCFCBD /* Build configuration list for PBXProject "Application" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1265,27 +1226,23 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4504CEF6192B4F4600F3FC8B /* Products */;
-					ProjectRef = 4504CEF5192B4F4600F3FC8B /* Aliens.xcodeproj */;
-				},
-				{
 					ProductGroup = 459F7F9A1962F43300CB53E0 /* Products */;
 					ProjectRef = 459F7F991962F43300CB53E0 /* Aliens.xcodeproj */;
 				},
 				{
-					ProductGroup = 459F7F071962ED6400CB53E0 /* Products */;
+					ProductGroup = 454EB22119642E7B00E33EE1 /* Products */;
 					ProjectRef = 459F7F061962ED6400CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
 				},
 				{
-					ProductGroup = 459CF4ED18B8A3F1004A5C14 /* Products */;
+					ProductGroup = 4528A48119642E180084F220 /* Products */;
 					ProjectRef = 459CF4EC18B8A3F1004A5C14 /* Foundation.xcodeproj */;
 				},
 				{
-					ProductGroup = 459CF50918B8A401004A5C14 /* Products */;
+					ProductGroup = 4528A49D19642E180084F220 /* Products */;
 					ProjectRef = 459CF50818B8A401004A5C14 /* Graphics.xcodeproj */;
 				},
 				{
-					ProductGroup = 459CF4F918B8A3FB004A5C14 /* Products */;
+					ProductGroup = 4528A47319642E180084F220 /* Products */;
 					ProjectRef = 459CF4F818B8A3FB004A5C14 /* Mathematics.xcodeproj */;
 				},
 			);
@@ -1304,144 +1261,123 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4504CECA192B472900F3FC8B /* libFoundation_LEGACY.a */ = {
+		4528A47A19642E180084F220 /* libEonilMediaEngineMathematics.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libFoundation_LEGACY.a;
-			remoteRef = 4504CEC9192B472900F3FC8B /* PBXContainerItemProxy */;
+			path = libEonilMediaEngineMathematics.a;
+			remoteRef = 4528A47919642E180084F220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4504CECC192B472900F3FC8B /* libFoundation_LEGACY.a */ = {
+		4528A47C19642E180084F220 /* libEonilMediaEngineMathematics.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libFoundation_LEGACY.a;
-			remoteRef = 4504CECB192B472900F3FC8B /* PBXContainerItemProxy */;
+			path = libEonilMediaEngineMathematics.a;
+			remoteRef = 4528A47B19642E180084F220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4504CEFC192B4F4600F3FC8B /* libEonilAliens.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilAliens.a;
-			remoteRef = 4504CEFB192B4F4600F3FC8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4504CEFE192B4F4600F3FC8B /* libEonilAliens.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilAliens.a;
-			remoteRef = 4504CEFD192B4F4600F3FC8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4504CF00192B4F4600F3FC8B /* Aliens - Test - OSX */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "Aliens - Test - OSX";
-			remoteRef = 4504CEFF192B4F4600F3FC8B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		451E26A218FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
-			remoteRef = 451E26A118FDB2520003B8A1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		451E26A418FDB2520003B8A1 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
-			remoteRef = 451E26A318FDB2520003B8A1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459CF4F318B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineFoundation.a;
-			remoteRef = 459CF4F218B8A3F1004A5C14 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459CF4F518B8A3F1004A5C14 /* libEonilImprovisationsMediaEngineFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineFoundation.a;
-			remoteRef = 459CF4F418B8A3F1004A5C14 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459CF4F718B8A3F1004A5C14 /* OSX Test */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "OSX Test";
-			remoteRef = 459CF4F618B8A3F1004A5C14 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459CF50118B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineMathematics.a;
-			remoteRef = 459CF50018B8A3FC004A5C14 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459CF50318B8A3FC004A5C14 /* libEonilImprovisationsMediaEngineMathematics.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineMathematics.a;
-			remoteRef = 459CF50218B8A3FC004A5C14 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		459CF50518B8A3FC004A5C14 /* Mathematics - Running Test - OSX */ = {
+		4528A47E19642E180084F220 /* Mathematics - Running Test - OSX */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Mathematics - Running Test - OSX";
-			remoteRef = 459CF50418B8A3FC004A5C14 /* PBXContainerItemProxy */;
+			remoteRef = 4528A47D19642E180084F220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459CF50718B8A3FC004A5C14 /* Mathematics - Running Test - iOS.app */ = {
+		4528A48019642E180084F220 /* Mathematics - Running Test - iOS.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "Mathematics - Running Test - iOS.app";
-			remoteRef = 459CF50618B8A3FC004A5C14 /* PBXContainerItemProxy */;
+			remoteRef = 4528A47F19642E180084F220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459CF50E18B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */ = {
+		4528A48919642E180084F220 /* OSX Test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "OSX Test";
+			remoteRef = 4528A48819642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4528A48B19642E180084F220 /* libEonilMediaEngineFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineGraphics.a;
-			remoteRef = 459CF50D18B8A401004A5C14 /* PBXContainerItemProxy */;
+			path = libEonilMediaEngineFoundation.a;
+			remoteRef = 4528A48A19642E180084F220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459CF51018B8A401004A5C14 /* libEonilImprovisationsMediaEngineGraphics.a */ = {
+		4528A48D19642E180084F220 /* libEonilMediaEngineFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libEonilImprovisationsMediaEngineGraphics.a;
-			remoteRef = 459CF50F18B8A401004A5C14 /* PBXContainerItemProxy */;
+			path = libEonilMediaEngineFoundation.a;
+			remoteRef = 4528A48C19642E180084F220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459F7F111962ED6500CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
+		4528A48F19642E180084F220 /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 4528A48E19642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4528A49119642E180084F220 /* libFoundation_LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundation_LEGACY.a;
+			remoteRef = 4528A49019642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4528A4A419642E180084F220 /* libEonilMediaEngineGraphics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilMediaEngineGraphics.a;
+			remoteRef = 4528A4A319642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4528A4A619642E180084F220 /* libEonilMediaEngineGraphics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilMediaEngineGraphics.a;
+			remoteRef = 4528A4A519642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4528A4A819642E180084F220 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
+			remoteRef = 4528A4A719642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4528A4AA19642E180084F220 /* libEonilImprovisationsMediaEngineGraphics-LEGACY.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libEonilImprovisationsMediaEngineGraphics-LEGACY.a";
+			remoteRef = 4528A4A919642E180084F220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		454EB22E19642E7B00E33EE1 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libEonilCommonRealtimeGameAlgorithms.a;
-			remoteRef = 459F7F101962ED6500CB53E0 /* PBXContainerItemProxy */;
+			remoteRef = 454EB22D19642E7B00E33EE1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459F7F131962ED6500CB53E0 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
+		454EB23019642E7B00E33EE1 /* libEonilCommonRealtimeGameAlgorithms.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libEonilCommonRealtimeGameAlgorithms.a;
-			remoteRef = 459F7F121962ED6500CB53E0 /* PBXContainerItemProxy */;
+			remoteRef = 454EB22F19642E7B00E33EE1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459F7F151962ED6500CB53E0 /* CommonRealtimeGameAlgorithms - Tester - OSX */ = {
+		454EB23219642E7B00E33EE1 /* CommonRealtimeGameAlgorithms - Tester - OSX */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "CommonRealtimeGameAlgorithms - Tester - OSX";
-			remoteRef = 459F7F141962ED6500CB53E0 /* PBXContainerItemProxy */;
+			remoteRef = 454EB23119642E7B00E33EE1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		459F7F171962ED6500CB53E0 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */ = {
+		454EB23419642E7B00E33EE1 /* CommonRealtimeGameAlgorithms - Tester - iOS.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "CommonRealtimeGameAlgorithms - Tester - iOS.app";
-			remoteRef = 459F7F161962ED6500CB53E0 /* PBXContainerItemProxy */;
+			remoteRef = 454EB23319642E7B00E33EE1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		459F7FA41962F43300CB53E0 /* libEonilAliens.a */ = {
@@ -1586,6 +1522,7 @@
 				4577C99518B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				45D7B2E31928E9E500279F43 /* Common.cpp in Sources */,
 				45D7B2BE1928E99C00279F43 /* DraggingGesture.cpp in Sources */,
+				45A5D54019645663003DD722 /* Common.cpp in Sources */,
 				4577C99418B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				4577C98C18B6ABBF0078033C /* ____EonilImprovisationsMediaEngineApplicationController_iOS.m in Sources */,
 				4595B3D718BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
@@ -1624,6 +1561,7 @@
 				45C49E9318B734BD00544108 /* ____EonilImprovisationsMediaEngineApplicationController.mm in Sources */,
 				4577C99318B6ABCB0078033C /* ApplicationController.mm in Sources */,
 				45D7B2C31928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS.mm in Sources */,
+				45A5D54119645663003DD722 /* Common.cpp in Sources */,
 				45D7B2C61928E99C00279F43 /* ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX.mm in Sources */,
 				4595B3D818BDF09D00179293 /* Bundle_Apple_OSX_Impl.mm in Sources */,
 				45485FAC18B97535005981DA /* Stepping.cpp in Sources */,
@@ -1658,14 +1596,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		459F7F741962F1AA00CB53E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CommonRealtimeGameAlgorithms - OSX";
-			targetProxy = 459F7F731962F1AA00CB53E0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4525EA9118B6BD2C00B05C1D /* InfoPlist.strings */ = {
@@ -1920,10 +1850,12 @@
 					"$(inherited)",
 					"DEBUG=1",
 					"EONIL_DEBUG_MODE=1",
+					"EONIL_COMMON_REALTIME_GAME_ALGORITHMS_DEBUG_MODE=1",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$SRCROOT\"/../Common/CommonStuffsForC++",
 					"\"$(SRCROOT)\"/../CommonRealtimeGameAlgorithms",
 					"\"$SRCROOT\"/../Foundation/Sources",
 					"\"$SRCROOT\"/../Graphics/Sources",
@@ -1933,7 +1865,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = EonilImprovisationsMediaEngine$PROJECT_NAME;
+				PRODUCT_NAME = EonilMediaEngine$PROJECT_NAME;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1941,10 +1873,14 @@
 		4529052318B6A50400FCFCBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = "EONIL_DEBUG_MODE=0";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"EONIL_DEBUG_MODE=0",
+					"EONIL_COMMON_REALTIME_GAME_ALGORITHMS_DEBUG_MODE=0",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$SRCROOT\"/../Common/CommonStuffsForC++",
 					"\"$(SRCROOT)\"/../CommonRealtimeGameAlgorithms",
 					"\"$SRCROOT\"/../Foundation/Sources",
 					"\"$SRCROOT\"/../Graphics/Sources",
@@ -1953,7 +1889,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = EonilImprovisationsMediaEngine$PROJECT_NAME;
+				PRODUCT_NAME = EonilMediaEngine$PROJECT_NAME;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2064,6 +2000,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2096,6 +2033,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

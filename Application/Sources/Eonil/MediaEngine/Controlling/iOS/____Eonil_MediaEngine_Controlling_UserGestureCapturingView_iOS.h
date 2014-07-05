@@ -19,7 +19,7 @@
 
 #if	__cplusplus
 #include "../TouchGestureCapturing.h"
-using namespace	Eonil::Improvisations::MediaEngine::Controlling;
+using namespace	Eonil::MediaEngine::Controlling;
 #else
 typedef	struct	TouchGestureCapturing	TouchGestureCapturing;
 #endif

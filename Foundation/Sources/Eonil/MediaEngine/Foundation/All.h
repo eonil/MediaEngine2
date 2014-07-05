@@ -29,7 +29,9 @@
 
 #include	"D2014R1/GenericMemoryRange.h"
 #include	"D2014R1/GenericMemoryBlock.h"
+#include	"D2014R1/GenericIndexingRange.h"
 #include	"D2014R1/ObjectOwnershipTracking.h"
+#include	"D2014R1/ObjectInstanceAddressTracker.h"
 
 #endif
 

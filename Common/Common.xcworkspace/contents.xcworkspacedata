@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:CommonStuffsForC++/CommonStuffsForC++.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FoundationExtras/FoundationExtras.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AppKitSanitizer/AppKitSanitizer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DemonstraionTest/DemonstraionTest.xcodeproj">
+   </FileRef>
+</Workspace>

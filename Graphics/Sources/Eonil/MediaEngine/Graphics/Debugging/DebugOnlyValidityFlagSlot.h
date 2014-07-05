@@ -6,60 +6,61 @@
 //
 //
 
-#ifndef __Graphics__DebugOnlyValidityFlagSlot__
-#define __Graphics__DebugOnlyValidityFlagSlot__
-
+#pragma once
 #include "../Common.h"
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+namespace
+Debugging
+{
 	
-	namespace
-	Debugging
+	
+	
+	class
+	DebugOnlyValidityFlagSlotV1
 	{
-		
-		
-		
-		class
-		DebugOnlyValidityFlagSlotV1
-		{
 #if	EONIL_MEDIA_ENGINE_DEBUG_MODE
-			bool	f	{false};
+		bool	f	{false};
 #endif
-			
-		public:
-			auto
-			should_be_on_now() const -> void
-			{
-				EONIL_DEBUG_ASSERT(f == true);
-			}
-			auto
-			should_be_off_now() const -> void
-			{
-				EONIL_DEBUG_ASSERT(f == false);
-			}
-			auto
-			set_on() -> void
-			{
-				EONIL_DEBUG_ASSERT(f == false);
-				EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN
-				({
-					f	=	true;
-				});
-			}
-			auto
-			set_off() -> void
-			{
-				EONIL_DEBUG_ASSERT(f == true);
-				EONIL_MEDIA_ENGINE_DEBUG_ONLY_RUN
-				({
-					f	=	false;
-				});
-			}
-		};
 		
-
-	}
+	public:
+		auto
+		should_be_on_now() const -> void
+		{
+			if (USE_DEBUGGING_ASSERTIONS)
+			{
+				err9_converted_legacy_assertion(f == true);
+			}
+		}
+		auto
+		should_be_off_now() const -> void
+		{
+			if (USE_DEBUGGING_ASSERTIONS)
+			{
+				err9_converted_legacy_assertion(f == false);
+			}
+		}
+		auto
+		set_on() -> void
+		{
+			if (USE_DEBUGGING_ASSERTIONS)
+			{
+				err9_converted_legacy_assertion(f == false);
+				f	=	true;
+			}
+		}
+		auto
+		set_off() -> void
+		{
+			if (USE_DEBUGGING_ASSERTIONS)
+			{
+				err9_converted_legacy_assertion(f == true);
+				f	=	false;
+			}
+		}
+	};
 	
-}}}}
 
-#endif /* defined(__Graphics__DebugOnlyValidityFlagSlot__) */
+}
+
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END

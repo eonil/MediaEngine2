@@ -27,13 +27,13 @@
 //#include "../../../Common.h"
 //#include "../../../Stub/GL.h"
 //
-//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 //	
 //	namespace
 //	Aliens
 //	{
 //
-//		using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
+//		using namespace	Eonil::MediaEngine::Graphics::Stub;
 //		
 //		
 //		

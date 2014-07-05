@@ -13,12 +13,12 @@
 #include <Eonil/MediaEngine/Graphics_DEV.h>
 
 using namespace Eonil;
-using namespace Eonil::Improvisations::MediaEngine::Graphics;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Stub;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Server;
-//using namespace Eonil::Improvisations::MediaEngine::Graphics::Resources;
-//using namespace Eonil::Improvisations::MediaEngine::Graphics::Transcoding;
+using namespace Eonil::MediaEngine::Graphics;
+using namespace Eonil::MediaEngine::Graphics::Value;
+using namespace Eonil::MediaEngine::Graphics::Stub;
+using namespace Eonil::MediaEngine::Graphics::Server;
+//using namespace Eonil::MediaEngine::Graphics::Resources;
+//using namespace Eonil::MediaEngine::Graphics::Transcoding;
 
 
 

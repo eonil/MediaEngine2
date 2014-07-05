@@ -22,7 +22,7 @@
 #include "../Stub/GL.h"
 
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	_DEV_
@@ -110,7 +110,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		_SkinnedForm::_renderOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_SkinnedForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 worldToFrameTransform)
+		_SkinnedForm::_renderOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_SkinnedForm> &fs, const Matrix4 worldToFrameTransform)
 		{
 			using namespace Stub;
 			using namespace Server::Machinery;

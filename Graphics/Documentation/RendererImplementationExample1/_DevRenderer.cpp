@@ -11,13 +11,13 @@
 #include "../Server/Machine.h"
 #include "../Stub/GL.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	_DEV_
 	{
 		void
-		_DevRenderer::render(const Eonil::Improvisations::MediaEngine::Graphics::_DEV_::_DevRenderer::_DevScene scene)
+		_DevRenderer::render(const _DEV_::_DevRenderer::_DevScene scene)
 		{
 			Doctor::assertCameraValidity(scene.camera);
 			

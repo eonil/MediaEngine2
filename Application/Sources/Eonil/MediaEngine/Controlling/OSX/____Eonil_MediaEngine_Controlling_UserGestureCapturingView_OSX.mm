@@ -11,7 +11,7 @@
 #if		EONIL_MEDIA_ENGINE_TARGET_OSX
 #include "../TouchGestureCapturing.h"
 #include "Common.h"
-using namespace	Eonil::Improvisations::MediaEngine::Controlling;
+using namespace	Eonil::MediaEngine::Controlling;
 
 
 @implementation ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX

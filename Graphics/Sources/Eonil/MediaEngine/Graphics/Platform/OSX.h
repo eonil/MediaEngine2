@@ -6,23 +6,18 @@
 //
 //
 
-#ifndef __EonilGraphics__OSX__
-#define __EonilGraphics__OSX__
+#pragma once
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
-	namespace
-	Platforms
+namespace
+Platforms
+{
+	class
+	OSX
 	{
-		class
-		OSX
-		{
-		public:
-			static bool	hasCurrentGLContext();
-		};
-	}
-	
-}}}}
+	public:
+		static bool	hasCurrentGLContext();
+	};
+}
 
-#endif /* defined(__EonilGraphics__OSX__) */
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END

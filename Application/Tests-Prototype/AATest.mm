@@ -18,7 +18,7 @@
 #include <glm/ext.hpp>
 
 #include <Eonil/MediaEngine/Graphics.h>
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
+using namespace Eonil::MediaEngine::Graphics::Value;
 
 
 
@@ -149,7 +149,7 @@ tassertEqual(CONV4 const a, CONV4 const b)
 
 
 
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
+using namespace Eonil::MediaEngine::Graphics::Value;
 
 void
 TestVector()

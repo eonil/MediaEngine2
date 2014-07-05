@@ -12,7 +12,7 @@
 #include "../../Common.h"
 #include "../../Server/Declarations.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	namespace
 	Rendering
@@ -94,8 +94,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 				{
 	//					static _LineMeshForm const		box(
 					
-					static _LineMeshForm const		quadraticGrid(Size const halfWidth, Size const halfHeight, Scalar const unitLength, Vector4 const centerColor, Vector4 const borderColor, Vector4 const otherColor);
-					static _LineMeshForm const		cubicGrid(Size const halfWidth, Size const halfHeight, Size const halfDepth, Scalar const unitLength, Vector4 const centerColor, Vector4 const borderColor, Vector4 const otherColor);
+					static _LineMeshForm const		quadraticGrid(sz const halfWidth, sz const halfHeight, Scalar const unitLength, Vector4 const centerColor, Vector4 const borderColor, Vector4 const otherColor);
+					static _LineMeshForm const		cubicGrid(sz const halfWidth, sz const halfHeight, sz const halfDepth, Scalar const unitLength, Vector4 const centerColor, Vector4 const borderColor, Vector4 const otherColor);
 					static _LineMeshForm const		cubicCross(Vector3 const halfLength, Vector4 const xColor, Vector4 const yColor, Vector4 const zColor);
 				};
 				

@@ -12,7 +12,7 @@
 #include "Scene.h"
 #include "../Resource/Model.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	/*!
 	 A renderer just performs single frame rendering.

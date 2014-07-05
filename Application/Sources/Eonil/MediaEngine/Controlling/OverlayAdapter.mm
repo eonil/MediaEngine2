@@ -12,7 +12,6 @@
 
 namespace
 {
-	
 }
 
 #define CURRENT_PLATFORM_IS_OK		0
@@ -26,16 +25,16 @@ namespace
 namespace
 {
 	static inline auto
-	init(Eonil::Improvisations::MediaEngine::Controlling::TouchGestureCapturing& touchCapturing) -> void
+	init(Eonil::MediaEngine::Controlling::TouchGestureCapturing& touchCapturing) -> void
 	{
 		auto*	con1	=	[[____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS alloc] init];
 		con1.touchCpaturing						=	&touchCapturing;
-		Eonil::Improvisations::MediaEngine::Application::Platform::current().setOverlayView(con1);
+		Eonil::MediaEngine::Application::Platform::current().setOverlayView(con1);
 	}
 	static inline auto
 	term() -> void
 	{
-		Eonil::Improvisations::MediaEngine::Application::Platform::current().unsetOverlayView();
+		Eonil::MediaEngine::Application::Platform::current().unsetOverlayView();
 	}
 }
 #undef	CURRENT_PLATFORM_IS_OK
@@ -55,12 +54,12 @@ namespace
 	{
 		auto*	con1	=	[[____Eonil_MediaEngine_Controlling_UserGestureCapturingView_OSX alloc] init];
 		con1.touchCpaturing						=	&touchCapturing;
-		Eonil::Improvisations::MediaEngine::Application::Platform::current().setOverlayView(con1);
+		Eonil::MediaEngine::Application::Platform::current().setOverlayView(con1);
 	}
 	static inline auto
 	term() -> void
 	{
-		Eonil::Improvisations::MediaEngine::Application::Platform::current().unsetOverlayView();
+		Eonil::MediaEngine::Application::Platform::current().unsetOverlayView();
 	}
 }
 #undef	CURRENT_PLATFORM_IS_OK
@@ -126,7 +125,7 @@ OverlayAdapter::dragging() const -> DraggingGesture const&
 	return	_core->_dragging;
 }
 auto
-OverlayAdapter::step(const Eonil::Improvisations::MediaEngine::Application::Stepping &s) -> void
+OverlayAdapter::step(const Application::Stepping &s) -> void
 {
 	_core->_touch_gest_capt.step(0);
 	
@@ -145,7 +144,13 @@ OverlayAdapter::step(const Eonil::Improvisations::MediaEngine::Application::Step
 	
 	for (auto const& t: _core->_touch_gest_capt.touches())
 	{
-		EONIL_DEBUG_ASSERT(t.code != Touch::CODE::NONE);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(t.code != Touch::CODE::NONE);
+		}
+		
+		////
+		
 		switch (t.code)
 		{
 			case
@@ -156,28 +161,52 @@ OverlayAdapter::step(const Eonil::Improvisations::MediaEngine::Application::Step
 			case
 			Touch::CODE::BEGIN:
 			{
-				EONIL_DEBUG_ASSERT(_core->_dragging.phase() == DraggingGesture::PHASE::NONE or _core->_dragging.phase() == DraggingGesture::PHASE::END or _core->_dragging.phase() == DraggingGesture::PHASE::CANCEL);
+				if (USE_DEBUGGING_ASSERTIONS)
+				{
+					err9_converted_legacy_assertion(_core->_dragging.phase() == DraggingGesture::PHASE::NONE or _core->_dragging.phase() == DraggingGesture::PHASE::END or _core->_dragging.phase() == DraggingGesture::PHASE::CANCEL);
+				}
+				
+				////
+				
 				_core->_dragging.setBegin(t.coordinate);
 				break;
 			}
 			case
 			Touch::CODE::CONTINUE:
 			{
-				EONIL_DEBUG_ASSERT(_core->_dragging.phase() == DraggingGesture::PHASE::BEGIN or _core->_dragging.phase() == DraggingGesture::PHASE::CONTINUE);
+				if (USE_DEBUGGING_ASSERTIONS)
+				{
+					err9_converted_legacy_assertion(_core->_dragging.phase() == DraggingGesture::PHASE::BEGIN or _core->_dragging.phase() == DraggingGesture::PHASE::CONTINUE);
+				}
+				
+				////
+
 				_core->_dragging.setContinue(t.coordinate);
 				break;
 			}
 			case
 			Touch::CODE::END:
 			{
-				EONIL_DEBUG_ASSERT(_core->_dragging.phase() == DraggingGesture::PHASE::BEGIN or _core->_dragging.phase() == DraggingGesture::PHASE::CONTINUE);
+				if (USE_DEBUGGING_ASSERTIONS)
+				{
+					err9_converted_legacy_assertion(_core->_dragging.phase() == DraggingGesture::PHASE::BEGIN or _core->_dragging.phase() == DraggingGesture::PHASE::CONTINUE);
+				}
+				
+				////
+				
 				_core->_dragging.setEnd(t.coordinate);
 				break;
 			}
 			case
 			Touch::CODE::CANCEL:
 			{
-				EONIL_DEBUG_ASSERT(_core->_dragging.phase() == DraggingGesture::PHASE::CONTINUE);
+				if (USE_DEBUGGING_ASSERTIONS)
+				{
+					err9_converted_legacy_assertion(_core->_dragging.phase() == DraggingGesture::PHASE::CONTINUE);
+				}
+				
+				////
+				
 				_core->_dragging.setCancel();
 				break;
 			}

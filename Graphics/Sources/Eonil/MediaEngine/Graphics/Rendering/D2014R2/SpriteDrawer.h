@@ -6,29 +6,25 @@
 //
 //
 
-#ifndef __Graphics__SpriteDrawer__
-#define __Graphics__SpriteDrawer__
-
-#include "../../Common.h"
+#pragma once
+#include "RenderingD2014R2Common.h"
 #include "CPUTransformSpriteDrawer.h"
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
+namespace
+Rendering
+{
 	namespace
-	Rendering
+	D2014R2
 	{
-		namespace
-		D2014R2
-		{
-			
-			using	SpriteDrawer	=	CPUTransformSpriteDrawer;
-			
-			
-			
-			
-		}
+		
+		using	SpriteDrawer	=	CPUTransformSpriteDrawer;
+		
+		
+		
+		
 	}
-	
-}}}}
+}
 
-#endif /* defined(__Graphics__SpriteDrawer__) */
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
+

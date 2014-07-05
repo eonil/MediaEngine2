@@ -46,7 +46,12 @@ TouchGestureCapturing::touches() const -> TOUCH_STACK const&
 auto
 TouchGestureCapturing::push(Touch &&touch) -> void
 {
-	EONIL_DEBUG_ASSERT_WITH_MESSAGE(_core->future.size() < _core->future.capacity(), "Too many touch events are queued. You need to call `step` method at proper location. This error happens only in debug mode, and any further events all will be lost in release mode.");
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion(_core->future.size() < _core->future.capacity(), "Too many touch events are queued. You need to call `step` method at proper location. This error happens only in debug mode, and any further events all will be lost in release mode.");
+	}
+	
+	////
 	
 	if (_core->future.size() < _core->future.capacity())
 	{
@@ -54,7 +59,7 @@ TouchGestureCapturing::push(Touch &&touch) -> void
 	}
 }
 auto
-TouchGestureCapturing::step(const Size &tick) -> void
+TouchGestureCapturing::step(const sz &tick) -> void
 {
 	std::swap(_core->current, _core->future);
 	_core->future.clear();

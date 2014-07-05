@@ -12,8 +12,8 @@
 
 int main(int argc, const char * argv[])
 {
-	using namespace	Eonil::Improvisations::MediaEngine::Application;
+	using namespace	Eonil::MediaEngine::Application;
 	
-	Eonil::Improvisations::MediaEngine::Application::run<TestRendering2>(argc, argv);
+	Eonil::MediaEngine::Application::run<TestRendering2>(argc, argv);
 }
 

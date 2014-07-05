@@ -18,11 +18,16 @@ EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
 
 auto
-PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::AssemblyInstance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::AssemblyInstance> &instances, const Scalar &radius, const Vector4 &color) const -> void
 {
 	for (auto const& inst0: instances)
 	{
-		EONIL_DEBUG_ASSERT_WITH_MESSAGE(inst0.passages.size() == 0, "Poly-line point must be at least 2.");
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(inst0.passages.size() == 0, "Poly-line point must be at least 2.");
+		}
+		
+		////
 
 		vec<Vector3>	copy1	=	{};
 		copy1.reserve(inst0.passages.size() + 2);
@@ -33,7 +38,7 @@ PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Impr
 	}
 }
 auto
-PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::StrokeInstance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Rendering::D2014R2::PolylineDrawer_RefImplOnCPU::StrokeInstance> &instances, const Scalar &radius, const Vector4 &color) const -> void
 {
 	for (auto const& inst0: instances)
 	{
@@ -46,7 +51,10 @@ PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Impr
 			}
 			case 1:
 			{
-				EONIL_DEBUG_ASSERT_WITH_MESSAGE(false, "Poly-line point must be at least 2.");
+				if (USE_DEBUGGING_ASSERTIONS)
+				{
+					err9_converted_legacy_assertion(false, "Poly-line point must be at least 2.");
+				}
 				break;
 			}
 //			case 2:
@@ -118,9 +126,12 @@ PolylineDrawer_RefImplOnCPU::draw(Matrix4 const& RSSToNDC, const vec<Eonil::Impr
  Must contain handle points (to adjust ending shape) on each end.
  */
 auto
-PolylineDrawer_RefImplOnCPU::_draw_single_stroke_in_context(Matrix4 const& RSSToNDC, const vec<Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3> &points, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+PolylineDrawer_RefImplOnCPU::_draw_single_stroke_in_context(Matrix4 const& RSSToNDC, const vec<Vector3> &points, const Scalar &radius, const Vector4 &color) const -> void
 {
-	EONIL_DEBUG_ASSERT(points.size() >= 4);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion(points.size() >= 4);
+	}
 
 	
 	
@@ -176,9 +187,9 @@ PolylineDrawer_RefImplOnCPU::_draw_single_stroke_in_context(Matrix4 const& RSSTo
 	 @endcode
 	 */
 	
-	Size const	num_segs	=	points.size() - 2 - 1;
+	sz const	num_segs	=	points.size() - 2 - 1;
 	
-	for (Size i=0; i<num_segs; i++)
+	for (sz i=0; i<num_segs; i++)
 	{
 		auto const&	p0	=	points.at(i+0);
 		auto const&	p1	=	points.at(i+1);

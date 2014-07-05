@@ -20,7 +20,7 @@
 //
 //
 //auto
-//PolylineDrawer_OptImplOnGPU::draw(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 &transform, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_OptImplOnGPU::Instance> &instances, const Scalar &radius, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+//PolylineDrawer_OptImplOnGPU::draw(const Matrix4 &transform, const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_OptImplOnGPU::Instance> &instances, const Scalar &radius, const Vector4 &color) const -> void
 //{
 //	
 //	for (auto const& inst0: instances)
@@ -67,7 +67,7 @@
 //
 //
 //auto
-//PolylineDrawer_OptImplOnGPU::_draw_one_in_context(const Matrix4 &transform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::PolylineDrawer_OptImplOnGPU::Instance &polyline, Scalar const& radius, Vector4 const& color) const -> void
+//PolylineDrawer_OptImplOnGPU::_draw_one_in_context(const Matrix4 &transform, const Rendering::D2014R2::PolylineDrawer_OptImplOnGPU::Instance &polyline, Scalar const& radius, Vector4 const& color) const -> void
 //{
 //	EONIL_DEBUG_ASSERT(polyline.points.size() >= 4);
 //	

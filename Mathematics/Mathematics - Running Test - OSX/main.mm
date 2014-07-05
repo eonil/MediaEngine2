@@ -15,7 +15,7 @@
 //
 //namespace
 //{
-//	using namespace	Eonil::Improvisations::MediaEngine::Mathematics::Value;
+//	using namespace	Eonil::MediaEngine::Mathematics::Value;
 //	
 //	using	Size	=	size_t;
 //	using	Scalar	=	float_t;

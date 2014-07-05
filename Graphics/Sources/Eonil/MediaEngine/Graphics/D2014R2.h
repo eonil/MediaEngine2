@@ -16,6 +16,7 @@
 #ifdef	__cplusplus
 #include "Common.h"
 #include "Rendering/D2014R2/DisplayScreenFrame.h"
+#include "Rendering/D2014R2/PlanarTexture.h"
 #include "Rendering/D2014R2/DebuggingInformationOverlayDrawer.h"
 #include "Rendering/D2014R2/CPUTransformTriangleDrawer.h"
 #include "Rendering/D2014R2/PolylineDrawer.h"

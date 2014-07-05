@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		451240CE195E9E0400B6198A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451240CD195E9E0400B6198A /* Cocoa.framework */; };
+		451240D8195E9E0400B6198A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 451240D6195E9E0400B6198A /* InfoPlist.strings */; };
+		451240DC195E9E0400B6198A /* FoundationExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240DB195E9E0400B6198A /* FoundationExtras.m */; };
+		45124106195E9E2800B6198A /* All.h in Headers */ = {isa = PBXBuildFile; fileRef = 451240F8195E9E2800B6198A /* All.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45124107195E9E2800B6198A /* All.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240F9195E9E2800B6198A /* All.m */; };
+		45124108195E9E2800B6198A /* BasicObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 451240FA195E9E2800B6198A /* BasicObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45124109195E9E2800B6198A /* BasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240FB195E9E2800B6198A /* BasicObject.m */; };
+		4512410A195E9E2800B6198A /* NSObject+Universe.h in Headers */ = {isa = PBXBuildFile; fileRef = 451240FC195E9E2800B6198A /* NSObject+Universe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4512410B195E9E2800B6198A /* NSObject+Universe.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240FD195E9E2800B6198A /* NSObject+Universe.m */; };
+		4512410C195E9E2800B6198A /* StringUtil1.h in Headers */ = {isa = PBXBuildFile; fileRef = 451240FE195E9E2800B6198A /* StringUtil1.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4512410D195E9E2800B6198A /* StringUtil1.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240FF195E9E2800B6198A /* StringUtil1.m */; };
+		4512410E195E9E2800B6198A /* UniverseCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 45124100195E9E2800B6198A /* UniverseCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4512410F195E9E2800B6198A /* UniverseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 45124101195E9E2800B6198A /* UniverseCommon.m */; };
+		45124110195E9E2800B6198A /* UniverseDoctor.h in Headers */ = {isa = PBXBuildFile; fileRef = 45124102195E9E2800B6198A /* UniverseDoctor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45124111195E9E2800B6198A /* UniverseDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45124103195E9E2800B6198A /* UniverseDoctor.m */; };
+		45124112195E9E2800B6198A /* URLList.h in Headers */ = {isa = PBXBuildFile; fileRef = 45124104195E9E2800B6198A /* URLList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45124114195E9E9900B6198A /* URLList.m in Sources */ = {isa = PBXBuildFile; fileRef = 45124105195E9E2800B6198A /* URLList.m */; };
+		4512411D195E9F3400B6198A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4512411C195E9F3400B6198A /* Foundation.framework */; };
+		4512418D195EA0DC00B6198A /* FoundationExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 451240DA195E9E0400B6198A /* FoundationExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4512418E195EA10200B6198A /* URLList.m in Sources */ = {isa = PBXBuildFile; fileRef = 45124105195E9E2800B6198A /* URLList.m */; };
+		4512418F195EA11300B6198A /* FoundationExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240DB195E9E0400B6198A /* FoundationExtras.m */; };
+		45124190195EA11300B6198A /* All.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240F9195E9E2800B6198A /* All.m */; };
+		45124191195EA11300B6198A /* UniverseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 45124101195E9E2800B6198A /* UniverseCommon.m */; };
+		45124192195EA11300B6198A /* UniverseDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45124103195E9E2800B6198A /* UniverseDoctor.m */; };
+		45124193195EA11300B6198A /* BasicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240FB195E9E2800B6198A /* BasicObject.m */; };
+		45124194195EA11300B6198A /* NSObject+Universe.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240FD195E9E2800B6198A /* NSObject+Universe.m */; };
+		45124195195EA11300B6198A /* StringUtil1.m in Sources */ = {isa = PBXBuildFile; fileRef = 451240FF195E9E2800B6198A /* StringUtil1.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45124119195E9F3400B6198A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		451240CA195E9E0400B6198A /* FoundationExtras.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoundationExtras.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		451240CD195E9E0400B6198A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		451240D0195E9E0400B6198A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		451240D1195E9E0400B6198A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		451240D2195E9E0400B6198A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		451240D5195E9E0400B6198A /* FoundationExtras-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FoundationExtras-Info.plist"; sourceTree = "<group>"; };
+		451240D7195E9E0400B6198A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		451240D9195E9E0400B6198A /* FoundationExtras-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoundationExtras-Prefix.pch"; sourceTree = "<group>"; };
+		451240DA195E9E0400B6198A /* FoundationExtras.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationExtras.h; sourceTree = "<group>"; };
+		451240DB195E9E0400B6198A /* FoundationExtras.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundationExtras.m; sourceTree = "<group>"; };
+		451240E2195E9E0400B6198A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		451240F8195E9E2800B6198A /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
+		451240F9195E9E2800B6198A /* All.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = All.m; sourceTree = "<group>"; };
+		451240FA195E9E2800B6198A /* BasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicObject.h; sourceTree = "<group>"; };
+		451240FB195E9E2800B6198A /* BasicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicObject.m; sourceTree = "<group>"; };
+		451240FC195E9E2800B6198A /* NSObject+Universe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Universe.h"; sourceTree = "<group>"; };
+		451240FD195E9E2800B6198A /* NSObject+Universe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Universe.m"; sourceTree = "<group>"; };
+		451240FE195E9E2800B6198A /* StringUtil1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtil1.h; sourceTree = "<group>"; };
+		451240FF195E9E2800B6198A /* StringUtil1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtil1.m; sourceTree = "<group>"; };
+		45124100195E9E2800B6198A /* UniverseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniverseCommon.h; sourceTree = "<group>"; };
+		45124101195E9E2800B6198A /* UniverseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniverseCommon.m; sourceTree = "<group>"; };
+		45124102195E9E2800B6198A /* UniverseDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniverseDoctor.h; sourceTree = "<group>"; };
+		45124103195E9E2800B6198A /* UniverseDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniverseDoctor.m; sourceTree = "<group>"; };
+		45124104195E9E2800B6198A /* URLList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLList.h; sourceTree = "<group>"; };
+		45124105195E9E2800B6198A /* URLList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLList.m; sourceTree = "<group>"; };
+		4512411B195E9F3400B6198A /* libFoundationExtras - iOS - Static Library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFoundationExtras - iOS - Static Library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4512411C195E9F3400B6198A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		45124120195E9F3400B6198A /* FoundationExtras - iOS - Static Library-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoundationExtras - iOS - Static Library-Prefix.pch"; sourceTree = "<group>"; };
+		4512412C195E9F3400B6198A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		451240C6195E9E0400B6198A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451240CE195E9E0400B6198A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45124118195E9F3400B6198A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4512411D195E9F3400B6198A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		451240C0195E9E0400B6198A = {
+			isa = PBXGroup;
+			children = (
+				451240D3195E9E0400B6198A /* FoundationExtras */,
+				4512411E195E9F3400B6198A /* FoundationExtras - iOS - Static Library */,
+				451240CC195E9E0400B6198A /* Frameworks */,
+				451240CB195E9E0400B6198A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		451240CB195E9E0400B6198A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				451240CA195E9E0400B6198A /* FoundationExtras.framework */,
+				4512411B195E9F3400B6198A /* libFoundationExtras - iOS - Static Library.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		451240CC195E9E0400B6198A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				451240CD195E9E0400B6198A /* Cocoa.framework */,
+				451240E2195E9E0400B6198A /* XCTest.framework */,
+				4512411C195E9F3400B6198A /* Foundation.framework */,
+				4512412C195E9F3400B6198A /* UIKit.framework */,
+				451240CF195E9E0400B6198A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		451240CF195E9E0400B6198A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				451240D0195E9E0400B6198A /* Foundation.framework */,
+				451240D1195E9E0400B6198A /* CoreData.framework */,
+				451240D2195E9E0400B6198A /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		451240D3195E9E0400B6198A /* FoundationExtras */ = {
+			isa = PBXGroup;
+			children = (
+				451240DA195E9E0400B6198A /* FoundationExtras.h */,
+				451240DB195E9E0400B6198A /* FoundationExtras.m */,
+				451240F8195E9E2800B6198A /* All.h */,
+				451240F9195E9E2800B6198A /* All.m */,
+				45124100195E9E2800B6198A /* UniverseCommon.h */,
+				45124101195E9E2800B6198A /* UniverseCommon.m */,
+				45124102195E9E2800B6198A /* UniverseDoctor.h */,
+				45124103195E9E2800B6198A /* UniverseDoctor.m */,
+				451240FA195E9E2800B6198A /* BasicObject.h */,
+				451240FB195E9E2800B6198A /* BasicObject.m */,
+				451240FC195E9E2800B6198A /* NSObject+Universe.h */,
+				451240FD195E9E2800B6198A /* NSObject+Universe.m */,
+				451240FE195E9E2800B6198A /* StringUtil1.h */,
+				451240FF195E9E2800B6198A /* StringUtil1.m */,
+				45124104195E9E2800B6198A /* URLList.h */,
+				45124105195E9E2800B6198A /* URLList.m */,
+				451240D4195E9E0400B6198A /* Supporting Files */,
+			);
+			path = FoundationExtras;
+			sourceTree = "<group>";
+		};
+		451240D4195E9E0400B6198A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				451240D5195E9E0400B6198A /* FoundationExtras-Info.plist */,
+				451240D6195E9E0400B6198A /* InfoPlist.strings */,
+				451240D9195E9E0400B6198A /* FoundationExtras-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4512411E195E9F3400B6198A /* FoundationExtras - iOS - Static Library */ = {
+			isa = PBXGroup;
+			children = (
+				4512411F195E9F3400B6198A /* Supporting Files */,
+			);
+			path = "FoundationExtras - iOS - Static Library";
+			sourceTree = "<group>";
+		};
+		4512411F195E9F3400B6198A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45124120195E9F3400B6198A /* FoundationExtras - iOS - Static Library-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		451240C7195E9E0400B6198A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4512418D195EA0DC00B6198A /* FoundationExtras.h in Headers */,
+				45124110195E9E2800B6198A /* UniverseDoctor.h in Headers */,
+				45124108195E9E2800B6198A /* BasicObject.h in Headers */,
+				4512410E195E9E2800B6198A /* UniverseCommon.h in Headers */,
+				45124106195E9E2800B6198A /* All.h in Headers */,
+				4512410A195E9E2800B6198A /* NSObject+Universe.h in Headers */,
+				45124112195E9E2800B6198A /* URLList.h in Headers */,
+				4512410C195E9E2800B6198A /* StringUtil1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		451240C9195E9E0400B6198A /* FoundationExtras */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 451240F2195E9E0500B6198A /* Build configuration list for PBXNativeTarget "FoundationExtras" */;
+			buildPhases = (
+				451240C5195E9E0400B6198A /* Sources */,
+				451240C6195E9E0400B6198A /* Frameworks */,
+				451240C7195E9E0400B6198A /* Headers */,
+				451240C8195E9E0400B6198A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoundationExtras;
+			productName = FoundationExtras;
+			productReference = 451240CA195E9E0400B6198A /* FoundationExtras.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4512411A195E9F3400B6198A /* FoundationExtras - iOS - Static Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45124139195E9F3400B6198A /* Build configuration list for PBXNativeTarget "FoundationExtras - iOS - Static Library" */;
+			buildPhases = (
+				45124117195E9F3400B6198A /* Sources */,
+				45124118195E9F3400B6198A /* Frameworks */,
+				45124119195E9F3400B6198A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FoundationExtras - iOS - Static Library";
+			productName = "FoundationExtras - iOS - Static Library";
+			productReference = 4512411B195E9F3400B6198A /* libFoundationExtras - iOS - Static Library.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		451240C1195E9E0400B6198A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Eonil;
+			};
+			buildConfigurationList = 451240C4195E9E0400B6198A /* Build configuration list for PBXProject "FoundationExtras" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 451240C0195E9E0400B6198A;
+			productRefGroup = 451240CB195E9E0400B6198A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				451240C9195E9E0400B6198A /* FoundationExtras */,
+				4512411A195E9F3400B6198A /* FoundationExtras - iOS - Static Library */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		451240C8195E9E0400B6198A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451240D8195E9E0400B6198A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		451240C5195E9E0400B6198A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451240DC195E9E0400B6198A /* FoundationExtras.m in Sources */,
+				45124109195E9E2800B6198A /* BasicObject.m in Sources */,
+				45124111195E9E2800B6198A /* UniverseDoctor.m in Sources */,
+				45124114195E9E9900B6198A /* URLList.m in Sources */,
+				4512410B195E9E2800B6198A /* NSObject+Universe.m in Sources */,
+				4512410F195E9E2800B6198A /* UniverseCommon.m in Sources */,
+				45124107195E9E2800B6198A /* All.m in Sources */,
+				4512410D195E9E2800B6198A /* StringUtil1.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45124117195E9F3400B6198A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45124192195EA11300B6198A /* UniverseDoctor.m in Sources */,
+				45124193195EA11300B6198A /* BasicObject.m in Sources */,
+				45124190195EA11300B6198A /* All.m in Sources */,
+				45124191195EA11300B6198A /* UniverseCommon.m in Sources */,
+				4512418E195EA10200B6198A /* URLList.m in Sources */,
+				4512418F195EA11300B6198A /* FoundationExtras.m in Sources */,
+				45124195195EA11300B6198A /* StringUtil1.m in Sources */,
+				45124194195EA11300B6198A /* NSObject+Universe.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		451240D6195E9E0400B6198A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				451240D7195E9E0400B6198A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		451240F0195E9E0500B6198A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		451240F1195E9E0500B6198A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		451240F3195E9E0500B6198A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FoundationExtras/FoundationExtras-Prefix.pch";
+				INFOPLIST_FILE = "FoundationExtras/FoundationExtras-Info.plist";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		451240F4195E9E0500B6198A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FoundationExtras/FoundationExtras-Prefix.pch";
+				INFOPLIST_FILE = "FoundationExtras/FoundationExtras-Info.plist";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		4512413A195E9F3400B6198A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = "/tmp/FoundationExtras___iOS___Static_Library.dst";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FoundationExtras - iOS - Static Library/FoundationExtras - iOS - Static Library-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4512413B195E9F3400B6198A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = "/tmp/FoundationExtras___iOS___Static_Library.dst";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FoundationExtras - iOS - Static Library/FoundationExtras - iOS - Static Library-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		451240C4195E9E0400B6198A /* Build configuration list for PBXProject "FoundationExtras" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				451240F0195E9E0500B6198A /* Debug */,
+				451240F1195E9E0500B6198A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		451240F2195E9E0500B6198A /* Build configuration list for PBXNativeTarget "FoundationExtras" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				451240F3195E9E0500B6198A /* Debug */,
+				451240F4195E9E0500B6198A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45124139195E9F3400B6198A /* Build configuration list for PBXNativeTarget "FoundationExtras - iOS - Static Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4512413A195E9F3400B6198A /* Debug */,
+				4512413B195E9F3400B6198A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 451240C1195E9E0400B6198A /* Project object */;
+}

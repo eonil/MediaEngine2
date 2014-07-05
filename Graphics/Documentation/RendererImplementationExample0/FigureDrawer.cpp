@@ -13,7 +13,7 @@
 
 
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	using namespace	Server;
 	
@@ -115,7 +115,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	
 	
 	void
-	FigureDrawer::drawFigureUsingCamera(const Eonil::Improvisations::MediaEngine::Graphics::Form::Figure figure, const Eonil::Improvisations::MediaEngine::Graphics::Camera camera) const
+	FigureDrawer::drawFigureUsingCamera(const Form::Figure figure, const Camera camera) const
 	{
 //			DeformingMesh const&		mesh	=	figure.model.mesh();
 //			Size const
@@ -123,7 +123,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //			Machine::current().setVertexSourcingParameters(VertexSourcingWithServerBuffer(mesh.vertexes()));
 		
 //			Machine::current().drawArrays(DrawingMode::TRIANGLES, 0, <#const Size count#>)
-//			Machine::current().drawElementsUsingServerBuffer(DrawingMode::TRIANGLE_STRIP, unit_count, Machine::IndexType::CODE::UINT16, <#const Eonil::Improvisations::MediaEngine::Graphics::Server::ElementArrayBuffer buffer#>, <#const Size offset#>)
+//			Machine::current().drawElementsUsingServerBuffer(DrawingMode::TRIANGLE_STRIP, unit_count, Machine::IndexType::CODE::UINT16, <#const Server::ElementArrayBuffer buffer#>, <#const Size offset#>)
 	}
 	
 	

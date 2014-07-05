@@ -49,11 +49,17 @@ public:
 	LocalCopyingAutomaticStorePointer() = default;
 	LocalCopyingAutomaticStorePointer(T const& value) : _local_copy_data(value)
 	{
-		EONIL_DEBUG_ASSERT(&value != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&value != nullptr);
+		}
 	}
 	LocalCopyingAutomaticStorePointer(T&& value) : _local_copy_data(value)
 	{
-		EONIL_DEBUG_ASSERT(&value != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&value != nullptr);
+		}
 	}
 
 	
@@ -61,32 +67,62 @@ public:
 	operator
 	T*() const
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	&_local_copy_data;
 	}
 	
 	auto
 	operator*() const -> T const&
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	_local_copy_data;
 	}
 	auto
 	operator*() -> T&
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	_local_copy_data;
 	}
 	auto
 	operator->() const -> T*
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	&_local_copy_data;
 	}
 	auto
 	operator->() -> T*
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	&_local_copy_data;
 	}
 	
@@ -97,13 +133,25 @@ public:
 	auto
 	operator==(LocalCopyingAutomaticStorePointer const& p) const -> bool const
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	&_local_copy_data == &p;
 	}
 	auto
 	operator!=(LocalCopyingAutomaticStorePointer const& p) const -> bool const
 	{
-		EONIL_DEBUG_ASSERT(&_local_copy_data != nullptr);
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(&_local_copy_data != nullptr);
+		}
+		
+		////
+		
 		return	&_local_copy_data != &p;
 	}
 };

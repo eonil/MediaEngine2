@@ -10,7 +10,7 @@
 
 #include "../Debugging/Doctor.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	namespace
 	_DEV_
@@ -19,14 +19,14 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		void
-		_ScreenSpaceMeshForm::addFaceTriangle(const Eonil::Improvisations::MediaEngine::Graphics::_DEV_::_ScreenSpaceMeshForm::FaceTriangle face)
+		_ScreenSpaceMeshForm::addFaceTriangle(const _DEV_::_ScreenSpaceMeshForm::FaceTriangle face)
 		{
 			vertexes.push_back(face.points[0]);
 			vertexes.push_back(face.points[1]);
 			vertexes.push_back(face.points[2]);
 		}
 		void
-		_ScreenSpaceMeshForm::addBox(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 minimum, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 maximum, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 color)
+		_ScreenSpaceMeshForm::addBox(const Vector2 minimum, const Vector2 maximum, const Vector4 color)
 		{
 			FaceTriangle	f0	=
 			{
@@ -158,7 +158,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		void
-		_ScreenSpaceMeshForm::_drawOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_ScreenSpaceMeshForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 screenAspectRatioMatrix)
+		_ScreenSpaceMeshForm::_drawOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_ScreenSpaceMeshForm> &fs, const Matrix4 screenAspectRatioMatrix)
 		{
 			
 			//	Draw screen overlays.

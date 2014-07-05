@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#include "../RenderingCommon.h"
+#include "RenderingD2014R2Common.h"
 #include "CPUTransformTriangleDrawer.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
@@ -106,10 +106,15 @@ public:
 	static inline auto
 	resolve_stepping_edge(point const& p0, point const& p1, point const& p2, Scalar const& radius) -> VolumeQuad::SteppingEdge
 	{
-		EONIL_DEBUG_ASSERT(p0 != p1);
-		EONIL_DEBUG_ASSERT(p1 != p2);
-		EONIL_DEBUG_ASSERT(p2 != p0);
-
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(p0 != p1);
+			err9_converted_legacy_assertion(p1 != p2);
+			err9_converted_legacy_assertion(p2 != p0);
+		}
+		
+		////
+		
 		/*!
 		 
              p4             p2

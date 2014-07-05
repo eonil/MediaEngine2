@@ -25,7 +25,7 @@
 //
 //
 //
-//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 //	
 //	namespace
 //	Rendering
@@ -202,7 +202,7 @@
 //			}
 //			
 //			auto CPUTransformRegularPolygonDrawer::
-//			draw(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformRegularPolygonDrawer::VaryingInstance> &instances, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 &worldToScreenTransform, const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::DisplayScreenFrame &frame) const -> void
+//			draw(const vec<Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformRegularPolygonDrawer::VaryingInstance> &instances, const Matrix4 &worldToScreenTransform, const Rendering::D2014R2::DisplayScreenFrame &frame) const -> void
 //			{
 //				EONIL_DEBUG_ASSERT_WITH_MESSAGE(instances.size() > 0, "You must pass at least one or more instances. No instance cannot be rendered.");
 //				

@@ -23,7 +23,7 @@ DraggingGesture final
 	
 public:
 	enum class
-	PHASE : Size
+	PHASE : sz
 	{
 		NONE,
 		BEGIN,

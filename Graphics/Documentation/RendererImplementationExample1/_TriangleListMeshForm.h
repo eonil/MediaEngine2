@@ -13,7 +13,7 @@
 #include "../Server/Machine.h"
 #include "../Server/Texture.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	_DEV_

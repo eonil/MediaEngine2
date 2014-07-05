@@ -8,78 +8,78 @@
 
 #include "NativeImage.h"
 #include <CoreGraphics/CoreGraphics.h>
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
+namespace
+Platform
+{
 	namespace
-	Platform
+	D2014R1
 	{
-		namespace
-		D2014R1
+
+
+
+
+
+
+
+
+		struct
+		NativeImage::Core
 		{
+			void*	ptr;
+			
+			Core(void* ptr);
+			~Core();
+		};
 
-
-
-
-
-
-
-
-			struct
-			NativeImage::Core
-			{
-				void*	ptr;
-				
-				Core(void* ptr);
-				~Core();
-			};
-
-			
-			
-			NativeImage::Core::Core(void* const ptr) : ptr(ptr)
-			{
-				CGImageRef	imgptr	=	(CGImageRef)ptr;
-				CGImageRetain(imgptr);
-			}
-			NativeImage::Core::~Core()
-			{
-				CGImageRef	imgptr	=	(CGImageRef)ptr;
-				CGImageRelease(imgptr);
-			}
-			
-			void* const
-			NativeImage::platformObject() const
-			{
-				return	_core == nullptr ? NULL : _core->ptr;
-			}
-			
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
-
-			NativeImage::NativeImage(void* const platformObject) : _core(new Core(platformObject))
-			{
-			}
-	
-			
-			
-			
-			
-			
-			
+		
+		
+		NativeImage::Core::Core(void* const ptr) : ptr(ptr)
+		{
+			CGImageRef	imgptr	=	(CGImageRef)ptr;
+			CGImageRetain(imgptr);
 		}
+		NativeImage::Core::~Core()
+		{
+			CGImageRef	imgptr	=	(CGImageRef)ptr;
+			CGImageRelease(imgptr);
+		}
+		
+		void* const
+		NativeImage::platformObject() const
+		{
+			return	_core == nullptr ? NULL : _core->ptr;
+		}
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+		NativeImage::NativeImage(void* const platformObject) : _core(new Core(platformObject))
+		{
+		}
+
+		
+		
+		
+		
+		
+		
 	}
-	
-}}}}
+}
+
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
+
 
 

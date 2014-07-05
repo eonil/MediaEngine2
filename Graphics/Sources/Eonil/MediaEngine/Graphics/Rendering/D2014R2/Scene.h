@@ -16,7 +16,7 @@
 //#include "../D2014R1/_Viewport_v1.h"
 //#include "../D2014R1/_Camera_v1.h"
 //
-//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 //	
 //	namespace
 //	Rendering

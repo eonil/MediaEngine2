@@ -16,7 +16,7 @@
 
 #include 	"Renderer.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	using namespace Debugging;
 	using namespace	Server;
@@ -78,7 +78,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	}
 	
 	void
-	Renderer::render(const Eonil::Improvisations::MediaEngine::Graphics::Scene scene)
+	Renderer::render(const Scene scene)
 	{
 //			for (Figure const& f : scene.figures)
 //			{		

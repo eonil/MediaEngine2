@@ -9,7 +9,7 @@
 #ifndef __EonilGraphics__State__
 #define __EonilGraphics__State__
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	/*!
 	 Abstracts various graphics rendering state.

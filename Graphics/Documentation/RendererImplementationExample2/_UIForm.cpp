@@ -21,7 +21,7 @@
 #include "../Stub/GL.h"
 
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	_DEV_
@@ -131,7 +131,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 		
 		_UIForm const
-		_UIForm::Utility::boxWithColor(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 color)
+		_UIForm::Utility::boxWithColor(const Vector2 min, const Vector2 max, const Vector4 color)
 		{
 			_UIForm::Mesh	m;
 			
@@ -204,7 +204,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		_UIForm const
-		_UIForm::Utility::boxWithTextureMapping(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 min, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 max, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 minST, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector2 maxST)
+		_UIForm::Utility::boxWithTextureMapping(const Vector2 min, const Vector2 max, const Vector2 minST, const Vector2 maxST)
 		{
 			_UIForm::Mesh	m;
 			
@@ -306,7 +306,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		}
 		
 		void
-		_UIForm::_renderOnMachine(Server::Machine &m, CommonResource &r, const std::vector<_UIForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 worldToFrameTransform)
+		_UIForm::_renderOnMachine(Server::Machine &m, CommonResource &r, const std::vector<_UIForm> &fs, const Matrix4 worldToFrameTransform)
 		{
 			using namespace Stub;
 			using namespace Server::Machinery;

@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#include "../RenderingCommon.h"
+#include "RenderingD2014R2Common.h"
 #include "PolylineDrawer.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 

@@ -26,6 +26,10 @@
 		453BFC0618A2427D007E514B /* Entrance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 453BFC0418A2427D007E514B /* Entrance.cpp */; };
 		45478E561929B438009E72B8 /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478E541929B438009E72B8 /* Foundation.cpp */; };
 		45478E571929B438009E72B8 /* Foundation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45478E541929B438009E72B8 /* Foundation.cpp */; };
+		455E357E19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455E357C19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp */; };
+		455E357F19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455E357C19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp */; };
+		455E359219631E1D00C31806 /* GenericIndexingRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455E359019631E1D00C31806 /* GenericIndexingRange.cpp */; };
+		455E359319631E1D00C31806 /* GenericIndexingRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 455E359019631E1D00C31806 /* GenericIndexingRange.cpp */; };
 		456404E118A246C10068EC12 /* libEonilMediaEngineFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */; };
 		459F7EF31962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */; };
 		459F7EF41962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */; };
@@ -94,6 +98,10 @@
 		453BFC0518A2427D007E514B /* Entrance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entrance.h; sourceTree = "<group>"; };
 		45478E541929B438009E72B8 /* Foundation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Foundation.cpp; sourceTree = "<group>"; };
 		45478E551929B438009E72B8 /* Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foundation.h; sourceTree = "<group>"; };
+		455E357C19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectInstanceAddressTracker.cpp; sourceTree = "<group>"; };
+		455E357D19631C5E00C31806 /* ObjectInstanceAddressTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectInstanceAddressTracker.h; sourceTree = "<group>"; };
+		455E359019631E1D00C31806 /* GenericIndexingRange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GenericIndexingRange.cpp; sourceTree = "<group>"; };
+		455E359119631E1D00C31806 /* GenericIndexingRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericIndexingRange.h; sourceTree = "<group>"; };
 		459F7EF11962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocalCopyingAutomaticStorePointer.cpp; sourceTree = "<group>"; };
 		459F7EF21962E93400CB53E0 /* LocalCopyingAutomaticStorePointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalCopyingAutomaticStorePointer.h; sourceTree = "<group>"; };
 		459F7F4C1962F04200CB53E0 /* TestTrackingPointerSlot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTrackingPointerSlot.cpp; sourceTree = "<group>"; };
@@ -105,7 +113,7 @@
 		459F7FC81963012B00CB53E0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F0372C175C353F00C469FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libEonilImprovisationsMediaEngineFoundation.a; path = libEonilMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F0374C175C359E00C469FD /* libEonilMediaEngineFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilMediaEngineFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F6F8D118A13F9A00A41EAB /* Trash */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Trash; sourceTree = "<group>"; };
 		45F6F8D718A13FCA00A41EAB /* All.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = All.cpp; sourceTree = "<group>"; };
 		45F6F8D818A13FCA00A41EAB /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
@@ -158,8 +166,8 @@
 		453A736A18A21FAA00C01AAC /* _Legacy2013 */ = {
 			isa = PBXGroup;
 			children = (
-				453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */,
 				453A736C18A21FB200C01AAC /* LEGACY_Memory.h */,
+				453A736B18A21FB200C01AAC /* LEGACY_Memory.cpp */,
 			);
 			path = _Legacy2013;
 			sourceTree = "<group>";
@@ -173,8 +181,12 @@
 				453423C118A35E490074B957 /* GenericMemoryRange.cpp */,
 				453423C718A361C30074B957 /* GenericMemoryBlock.h */,
 				453423C618A361C30074B957 /* GenericMemoryBlock.cpp */,
+				455E359119631E1D00C31806 /* GenericIndexingRange.h */,
+				455E359019631E1D00C31806 /* GenericIndexingRange.cpp */,
 				453423F218A395050074B957 /* ObjectOwnershipTracking.h */,
 				453423F118A395050074B957 /* ObjectOwnershipTracking.cpp */,
+				455E357D19631C5E00C31806 /* ObjectInstanceAddressTracker.h */,
+				455E357C19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp */,
 			);
 			path = D2014R1;
 			sourceTree = "<group>";
@@ -235,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				45F03729175C353F00C469FD /* libEonilMediaEngineFoundation.a */,
-				45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */,
+				45F0374C175C359E00C469FD /* libEonilMediaEngineFoundation.a */,
 				453BFBFA18A2424D007E514B /* OSX Test */,
 				4504CE96192B462100F3FC8B /* libFoundation_LEGACY.a */,
 				4504CEBE192B463500F3FC8B /* libFoundation_LEGACY.a */,
@@ -399,7 +411,7 @@
 			);
 			name = "Foundation - OSX Static Library";
 			productName = "OSX Static Library";
-			productReference = 45F0374C175C359E00C469FD /* libEonilImprovisationsMediaEngineFoundation.a */;
+			productReference = 45F0374C175C359E00C469FD /* libEonilMediaEngineFoundation.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -408,7 +420,7 @@
 		45F0371F175C353100C469FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 45F03722175C353100C469FD /* Build configuration list for PBXProject "Foundation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -486,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450D40E8191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
+				455E359319631E1D00C31806 /* GenericIndexingRange.cpp in Sources */,
 				453423C818A361C30074B957 /* GenericMemoryBlock.cpp in Sources */,
 				453423C318A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
 				45478E571929B438009E72B8 /* Foundation.cpp in Sources */,
@@ -495,6 +508,7 @@
 				45F6F8E018A13FF700A41EAB /* Targets.cpp in Sources */,
 				4506CB67196307E4007F2C9A /* Prelude.cpp in Sources */,
 				4506CB6B19630D12007F2C9A /* TestHelperMacros.cpp in Sources */,
+				455E357F19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp in Sources */,
 				453423F318A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450D40E7191F251B004F8901 /* ConstantEvaluationUtility.cpp in Sources */,
+				455E359219631E1D00C31806 /* GenericIndexingRange.cpp in Sources */,
 				453423C418A35E490074B957 /* GenericMemoryRange.cpp in Sources */,
 				45F6F8DA18A13FCA00A41EAB /* All.cpp in Sources */,
 				45478E561929B438009E72B8 /* Foundation.cpp in Sources */,
@@ -513,6 +528,7 @@
 				45F6F8E118A13FF700A41EAB /* Targets.cpp in Sources */,
 				4506CB66196307E4007F2C9A /* Prelude.cpp in Sources */,
 				4506CB6A19630D12007F2C9A /* TestHelperMacros.cpp in Sources */,
+				455E357E19631C5E00C31806 /* ObjectInstanceAddressTracker.cpp in Sources */,
 				453423F418A395050074B957 /* ObjectOwnershipTracking.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +623,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -644,6 +661,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

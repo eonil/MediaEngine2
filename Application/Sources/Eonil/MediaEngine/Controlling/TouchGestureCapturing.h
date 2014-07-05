@@ -37,7 +37,7 @@ EONIL_MEDIA_ENGINE_CONTROLLING_NAMESPACE_BEGIN
 class
 TouchGestureCapturing final
 {
-	static Size const	BUFFER_PER_STEP	=	16;
+	static sz const	BUFFER_PER_STEP	=	16;
 	
 	using	TOUCH_STACK	=	StaticStableListStack<Touch, BUFFER_PER_STEP>;
 	
@@ -50,7 +50,7 @@ public:
 	
 	auto	touches() const -> TOUCH_STACK const&;
 	auto	push(Touch&& touch) -> void;
-	auto	step(Size const& tick) -> void;					//!	Purges current touch list, and brings queued touch events.
+	auto	step(sz const& tick) -> void;					//!	Purges current touch list, and brings queued touch events.
 };
 
 

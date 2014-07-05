@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		450AC2581949AB1B005B7904 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450AC2571949AB1B005B7904 /* Cocoa.framework */; };
+		450AC2621949AB1B005B7904 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 450AC2601949AB1B005B7904 /* InfoPlist.strings */; };
+		450AC2661949AB1B005B7904 /* AppKitSanitizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2651949AB1B005B7904 /* AppKitSanitizer.m */; };
+		450AC26D1949AB1B005B7904 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450AC26C1949AB1B005B7904 /* XCTest.framework */; };
+		450AC26E1949AB1B005B7904 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450AC2571949AB1B005B7904 /* Cocoa.framework */; };
+		450AC2711949AB1B005B7904 /* AppKitSanitizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450AC2541949AB1B005B7904 /* AppKitSanitizer.framework */; };
+		450AC2771949AB1B005B7904 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 450AC2751949AB1B005B7904 /* InfoPlist.strings */; };
+		450AC2791949AB1B005B7904 /* AppKitSanitizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2781949AB1B005B7904 /* AppKitSanitizerTests.m */; };
+		450AC29A1949B0A1005B7904 /* BasicDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC2881949B0A1005B7904 /* BasicDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC29B1949B0A1005B7904 /* BasicDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2891949B0A1005B7904 /* BasicDocument.m */; };
+		450AC29C1949B0A1005B7904 /* BasicWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC28A1949B0A1005B7904 /* BasicWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC29D1949B0A1005B7904 /* BasicWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC28B1949B0A1005B7904 /* BasicWindow.m */; };
+		450AC29E1949B0A1005B7904 /* BasicWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC28C1949B0A1005B7904 /* BasicWindowController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC29F1949B0A1005B7904 /* BasicWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC28D1949B0A1005B7904 /* BasicWindowController.m */; };
+		450AC2A01949B0A1005B7904 /* BasicPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC28E1949B0A1005B7904 /* BasicPanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC2A11949B0A1005B7904 /* BasicPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC28F1949B0A1005B7904 /* BasicPanel.m */; };
+		450AC2A21949B0A1005B7904 /* BasicPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC2901949B0A1005B7904 /* BasicPanelController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC2A31949B0A1005B7904 /* BasicPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2911949B0A1005B7904 /* BasicPanelController.m */; };
+		450AC2A41949B0A1005B7904 /* BasicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC2921949B0A1005B7904 /* BasicView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC2A51949B0A1005B7904 /* BasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2931949B0A1005B7904 /* BasicView.m */; };
+		450AC2A61949B0A1005B7904 /* BasicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC2941949B0A1005B7904 /* BasicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC2A71949B0A1005B7904 /* BasicColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2951949B0A1005B7904 /* BasicColor.m */; };
+		450AC2A81949B0A1005B7904 /* BasicViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC2961949B0A1005B7904 /* BasicViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		450AC2A91949B0A1005B7904 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450AC2971949B0A1005B7904 /* BasicViewController.m */; };
+		4512418C195EA01000B6198A /* FoundationExtras.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45124189195EA00C00B6198A /* FoundationExtras.framework */; };
+		45124196195EA13600B6198A /* AppKitSanitizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 450AC2641949AB1B005B7904 /* AppKitSanitizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451241C8195ECC4A00B6198A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 451241C7195ECC4A00B6198A /* README.md */; };
+		45E7A0C01949CB9300A463CF /* BasicTriplePaneSplitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E7A0BE1949CB9300A463CF /* BasicTriplePaneSplitViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45E7A0C11949CB9300A463CF /* BasicTriplePaneSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0BF1949CB9300A463CF /* BasicTriplePaneSplitViewController.m */; };
+		45E7A0C91949CBFF00A463CF /* UniverseLayoutFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E7A0C71949CBFF00A463CF /* UniverseLayoutFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45E7A0CA1949CBFF00A463CF /* UniverseLayoutFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0C81949CBFF00A463CF /* UniverseLayoutFactory.m */; };
+		45E7A0CD1949CC3E00A463CF /* UniverseViewHierarchyQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E7A0CB1949CC3E00A463CF /* UniverseViewHierarchyQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45E7A0CE1949CC3E00A463CF /* UniverseViewHierarchyQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0CC1949CC3E00A463CF /* UniverseViewHierarchyQuery.m */; };
+		45E7A0D11949CDD800A463CF /* UniverseViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E7A0CF1949CDD800A463CF /* UniverseViewFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45E7A0D21949CDD800A463CF /* UniverseViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0D01949CDD800A463CF /* UniverseViewFactory.m */; };
+		45E7A0D51949CDE400A463CF /* UniversePseudoRandomNumberFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E7A0D31949CDE400A463CF /* UniversePseudoRandomNumberFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45E7A0D61949CDE400A463CF /* UniversePseudoRandomNumberFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E7A0D41949CDE400A463CF /* UniversePseudoRandomNumberFactory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		450AC26F1949AB1B005B7904 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 450AC24B1949AB1B005B7904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 450AC2531949AB1B005B7904;
+			remoteInfo = AppKitSanitizer;
+		};
+		45124184195EA00C00B6198A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459D8F95194D5D2000643BAE /* FoundationExtras.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 451240C9195E9E0400B6198A;
+			remoteInfo = FoundationExtras;
+		};
+		45124188195EA00C00B6198A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459D8F95194D5D2000643BAE /* FoundationExtras.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 451240CA195E9E0400B6198A;
+			remoteInfo = FoundationExtras;
+		};
+		4512418A195EA00C00B6198A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459D8F95194D5D2000643BAE /* FoundationExtras.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4512411B195E9F3400B6198A;
+			remoteInfo = "FoundationExtras - iOS - Static Library";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		450AC2541949AB1B005B7904 /* AppKitSanitizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppKitSanitizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		450AC2571949AB1B005B7904 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		450AC25A1949AB1B005B7904 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		450AC25B1949AB1B005B7904 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		450AC25C1949AB1B005B7904 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		450AC25F1949AB1B005B7904 /* AppKitSanitizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppKitSanitizer-Info.plist"; sourceTree = "<group>"; };
+		450AC2611949AB1B005B7904 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		450AC2631949AB1B005B7904 /* AppKitSanitizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppKitSanitizer-Prefix.pch"; sourceTree = "<group>"; };
+		450AC2641949AB1B005B7904 /* AppKitSanitizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitSanitizer.h; sourceTree = "<group>"; };
+		450AC2651949AB1B005B7904 /* AppKitSanitizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKitSanitizer.m; sourceTree = "<group>"; };
+		450AC26B1949AB1B005B7904 /* AppKitSanitizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppKitSanitizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		450AC26C1949AB1B005B7904 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		450AC2741949AB1B005B7904 /* AppKitSanitizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppKitSanitizerTests-Info.plist"; sourceTree = "<group>"; };
+		450AC2761949AB1B005B7904 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		450AC2781949AB1B005B7904 /* AppKitSanitizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKitSanitizerTests.m; sourceTree = "<group>"; };
+		450AC2881949B0A1005B7904 /* BasicDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDocument.h; sourceTree = "<group>"; };
+		450AC2891949B0A1005B7904 /* BasicDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDocument.m; sourceTree = "<group>"; };
+		450AC28A1949B0A1005B7904 /* BasicWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindow.h; sourceTree = "<group>"; };
+		450AC28B1949B0A1005B7904 /* BasicWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindow.m; sourceTree = "<group>"; };
+		450AC28C1949B0A1005B7904 /* BasicWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicWindowController.h; sourceTree = "<group>"; };
+		450AC28D1949B0A1005B7904 /* BasicWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicWindowController.m; sourceTree = "<group>"; };
+		450AC28E1949B0A1005B7904 /* BasicPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPanel.h; sourceTree = "<group>"; };
+		450AC28F1949B0A1005B7904 /* BasicPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicPanel.m; sourceTree = "<group>"; };
+		450AC2901949B0A1005B7904 /* BasicPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPanelController.h; sourceTree = "<group>"; };
+		450AC2911949B0A1005B7904 /* BasicPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicPanelController.m; sourceTree = "<group>"; };
+		450AC2921949B0A1005B7904 /* BasicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicView.h; sourceTree = "<group>"; };
+		450AC2931949B0A1005B7904 /* BasicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicView.m; sourceTree = "<group>"; };
+		450AC2941949B0A1005B7904 /* BasicColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicColor.h; sourceTree = "<group>"; };
+		450AC2951949B0A1005B7904 /* BasicColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicColor.m; sourceTree = "<group>"; };
+		450AC2961949B0A1005B7904 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
+		450AC2971949B0A1005B7904 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		451241C7195ECC4A00B6198A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		459D8F95194D5D2000643BAE /* FoundationExtras.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FoundationExtras.xcodeproj; path = ../FoundationExtras/FoundationExtras.xcodeproj; sourceTree = "<group>"; };
+		45E7A0BE1949CB9300A463CF /* BasicTriplePaneSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTriplePaneSplitViewController.h; sourceTree = "<group>"; };
+		45E7A0BF1949CB9300A463CF /* BasicTriplePaneSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTriplePaneSplitViewController.m; sourceTree = "<group>"; };
+		45E7A0C71949CBFF00A463CF /* UniverseLayoutFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniverseLayoutFactory.h; sourceTree = "<group>"; };
+		45E7A0C81949CBFF00A463CF /* UniverseLayoutFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniverseLayoutFactory.m; sourceTree = "<group>"; };
+		45E7A0CB1949CC3E00A463CF /* UniverseViewHierarchyQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniverseViewHierarchyQuery.h; sourceTree = "<group>"; };
+		45E7A0CC1949CC3E00A463CF /* UniverseViewHierarchyQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniverseViewHierarchyQuery.m; sourceTree = "<group>"; };
+		45E7A0CF1949CDD800A463CF /* UniverseViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniverseViewFactory.h; sourceTree = "<group>"; };
+		45E7A0D01949CDD800A463CF /* UniverseViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniverseViewFactory.m; sourceTree = "<group>"; };
+		45E7A0D31949CDE400A463CF /* UniversePseudoRandomNumberFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversePseudoRandomNumberFactory.h; sourceTree = "<group>"; };
+		45E7A0D41949CDE400A463CF /* UniversePseudoRandomNumberFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversePseudoRandomNumberFactory.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		450AC2501949AB1B005B7904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4512418C195EA01000B6198A /* FoundationExtras.framework in Frameworks */,
+				450AC2581949AB1B005B7904 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		450AC2681949AB1B005B7904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450AC26E1949AB1B005B7904 /* Cocoa.framework in Frameworks */,
+				450AC2711949AB1B005B7904 /* AppKitSanitizer.framework in Frameworks */,
+				450AC26D1949AB1B005B7904 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		450AC24A1949AB1B005B7904 = {
+			isa = PBXGroup;
+			children = (
+				451241C7195ECC4A00B6198A /* README.md */,
+				459D8F95194D5D2000643BAE /* FoundationExtras.xcodeproj */,
+				450AC25D1949AB1B005B7904 /* AppKitSanitizer */,
+				450AC2721949AB1B005B7904 /* AppKitSanitizerTests */,
+				450AC2561949AB1B005B7904 /* Frameworks */,
+				450AC2551949AB1B005B7904 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		450AC2551949AB1B005B7904 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				450AC2541949AB1B005B7904 /* AppKitSanitizer.framework */,
+				450AC26B1949AB1B005B7904 /* AppKitSanitizerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		450AC2561949AB1B005B7904 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				450AC2571949AB1B005B7904 /* Cocoa.framework */,
+				450AC26C1949AB1B005B7904 /* XCTest.framework */,
+				450AC2591949AB1B005B7904 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		450AC2591949AB1B005B7904 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				450AC25A1949AB1B005B7904 /* Foundation.framework */,
+				450AC25B1949AB1B005B7904 /* CoreData.framework */,
+				450AC25C1949AB1B005B7904 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		450AC25D1949AB1B005B7904 /* AppKitSanitizer */ = {
+			isa = PBXGroup;
+			children = (
+				450AC2641949AB1B005B7904 /* AppKitSanitizer.h */,
+				450AC2651949AB1B005B7904 /* AppKitSanitizer.m */,
+				450AC2881949B0A1005B7904 /* BasicDocument.h */,
+				450AC2891949B0A1005B7904 /* BasicDocument.m */,
+				450AC28A1949B0A1005B7904 /* BasicWindow.h */,
+				450AC28B1949B0A1005B7904 /* BasicWindow.m */,
+				450AC28C1949B0A1005B7904 /* BasicWindowController.h */,
+				450AC28D1949B0A1005B7904 /* BasicWindowController.m */,
+				450AC28E1949B0A1005B7904 /* BasicPanel.h */,
+				450AC28F1949B0A1005B7904 /* BasicPanel.m */,
+				450AC2901949B0A1005B7904 /* BasicPanelController.h */,
+				450AC2911949B0A1005B7904 /* BasicPanelController.m */,
+				450AC2921949B0A1005B7904 /* BasicView.h */,
+				450AC2931949B0A1005B7904 /* BasicView.m */,
+				450AC2941949B0A1005B7904 /* BasicColor.h */,
+				450AC2951949B0A1005B7904 /* BasicColor.m */,
+				450AC2961949B0A1005B7904 /* BasicViewController.h */,
+				450AC2971949B0A1005B7904 /* BasicViewController.m */,
+				45E7A0BE1949CB9300A463CF /* BasicTriplePaneSplitViewController.h */,
+				45E7A0BF1949CB9300A463CF /* BasicTriplePaneSplitViewController.m */,
+				45E7A0D71949CDEC00A463CF /* factories & query utilities */,
+				450AC25E1949AB1B005B7904 /* Supporting Files */,
+			);
+			path = AppKitSanitizer;
+			sourceTree = "<group>";
+		};
+		450AC25E1949AB1B005B7904 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				450AC25F1949AB1B005B7904 /* AppKitSanitizer-Info.plist */,
+				450AC2601949AB1B005B7904 /* InfoPlist.strings */,
+				450AC2631949AB1B005B7904 /* AppKitSanitizer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		450AC2721949AB1B005B7904 /* AppKitSanitizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				450AC2781949AB1B005B7904 /* AppKitSanitizerTests.m */,
+				450AC2731949AB1B005B7904 /* Supporting Files */,
+			);
+			path = AppKitSanitizerTests;
+			sourceTree = "<group>";
+		};
+		450AC2731949AB1B005B7904 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				450AC2741949AB1B005B7904 /* AppKitSanitizerTests-Info.plist */,
+				450AC2751949AB1B005B7904 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		459D8F96194D5D2000643BAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45124189195EA00C00B6198A /* FoundationExtras.framework */,
+				4512418B195EA00C00B6198A /* libFoundationExtras - iOS - Static Library.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45E7A0D71949CDEC00A463CF /* factories & query utilities */ = {
+			isa = PBXGroup;
+			children = (
+				45E7A0C71949CBFF00A463CF /* UniverseLayoutFactory.h */,
+				45E7A0C81949CBFF00A463CF /* UniverseLayoutFactory.m */,
+				45E7A0CB1949CC3E00A463CF /* UniverseViewHierarchyQuery.h */,
+				45E7A0CC1949CC3E00A463CF /* UniverseViewHierarchyQuery.m */,
+				45E7A0CF1949CDD800A463CF /* UniverseViewFactory.h */,
+				45E7A0D01949CDD800A463CF /* UniverseViewFactory.m */,
+				45E7A0D31949CDE400A463CF /* UniversePseudoRandomNumberFactory.h */,
+				45E7A0D41949CDE400A463CF /* UniversePseudoRandomNumberFactory.m */,
+			);
+			name = "factories & query utilities";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		450AC2511949AB1B005B7904 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450AC29E1949B0A1005B7904 /* BasicWindowController.h in Headers */,
+				450AC29C1949B0A1005B7904 /* BasicWindow.h in Headers */,
+				450AC29A1949B0A1005B7904 /* BasicDocument.h in Headers */,
+				45E7A0D51949CDE400A463CF /* UniversePseudoRandomNumberFactory.h in Headers */,
+				450AC2A01949B0A1005B7904 /* BasicPanel.h in Headers */,
+				450AC2A21949B0A1005B7904 /* BasicPanelController.h in Headers */,
+				45E7A0CD1949CC3E00A463CF /* UniverseViewHierarchyQuery.h in Headers */,
+				45124196195EA13600B6198A /* AppKitSanitizer.h in Headers */,
+				45E7A0C01949CB9300A463CF /* BasicTriplePaneSplitViewController.h in Headers */,
+				450AC2A41949B0A1005B7904 /* BasicView.h in Headers */,
+				450AC2A81949B0A1005B7904 /* BasicViewController.h in Headers */,
+				45E7A0C91949CBFF00A463CF /* UniverseLayoutFactory.h in Headers */,
+				450AC2A61949B0A1005B7904 /* BasicColor.h in Headers */,
+				45E7A0D11949CDD800A463CF /* UniverseViewFactory.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		450AC2531949AB1B005B7904 /* AppKitSanitizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 450AC27C1949AB1B005B7904 /* Build configuration list for PBXNativeTarget "AppKitSanitizer" */;
+			buildPhases = (
+				450AC24F1949AB1B005B7904 /* Sources */,
+				450AC2501949AB1B005B7904 /* Frameworks */,
+				450AC2511949AB1B005B7904 /* Headers */,
+				450AC2521949AB1B005B7904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45124185195EA00C00B6198A /* PBXTargetDependency */,
+			);
+			name = AppKitSanitizer;
+			productName = AppKitSanitizer;
+			productReference = 450AC2541949AB1B005B7904 /* AppKitSanitizer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		450AC26A1949AB1B005B7904 /* AppKitSanitizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 450AC27F1949AB1B005B7904 /* Build configuration list for PBXNativeTarget "AppKitSanitizerTests" */;
+			buildPhases = (
+				450AC2671949AB1B005B7904 /* Sources */,
+				450AC2681949AB1B005B7904 /* Frameworks */,
+				450AC2691949AB1B005B7904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				450AC2701949AB1B005B7904 /* PBXTargetDependency */,
+			);
+			name = AppKitSanitizerTests;
+			productName = AppKitSanitizerTests;
+			productReference = 450AC26B1949AB1B005B7904 /* AppKitSanitizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		450AC24B1949AB1B005B7904 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Eonil;
+				TargetAttributes = {
+					450AC26A1949AB1B005B7904 = {
+						TestTargetID = 450AC2531949AB1B005B7904;
+					};
+				};
+			};
+			buildConfigurationList = 450AC24E1949AB1B005B7904 /* Build configuration list for PBXProject "AppKitSanitizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 450AC24A1949AB1B005B7904;
+			productRefGroup = 450AC2551949AB1B005B7904 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 459D8F96194D5D2000643BAE /* Products */;
+					ProjectRef = 459D8F95194D5D2000643BAE /* FoundationExtras.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				450AC2531949AB1B005B7904 /* AppKitSanitizer */,
+				450AC26A1949AB1B005B7904 /* AppKitSanitizerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		45124189195EA00C00B6198A /* FoundationExtras.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FoundationExtras.framework;
+			remoteRef = 45124188195EA00C00B6198A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4512418B195EA00C00B6198A /* libFoundationExtras - iOS - Static Library.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFoundationExtras - iOS - Static Library.a";
+			remoteRef = 4512418A195EA00C00B6198A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		450AC2521949AB1B005B7904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451241C8195ECC4A00B6198A /* README.md in Resources */,
+				450AC2621949AB1B005B7904 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		450AC2691949AB1B005B7904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450AC2771949AB1B005B7904 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		450AC24F1949AB1B005B7904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450AC29F1949B0A1005B7904 /* BasicWindowController.m in Sources */,
+				450AC2661949AB1B005B7904 /* AppKitSanitizer.m in Sources */,
+				450AC2A51949B0A1005B7904 /* BasicView.m in Sources */,
+				45E7A0CE1949CC3E00A463CF /* UniverseViewHierarchyQuery.m in Sources */,
+				45E7A0C11949CB9300A463CF /* BasicTriplePaneSplitViewController.m in Sources */,
+				450AC29D1949B0A1005B7904 /* BasicWindow.m in Sources */,
+				450AC2A11949B0A1005B7904 /* BasicPanel.m in Sources */,
+				45E7A0D21949CDD800A463CF /* UniverseViewFactory.m in Sources */,
+				45E7A0CA1949CBFF00A463CF /* UniverseLayoutFactory.m in Sources */,
+				450AC29B1949B0A1005B7904 /* BasicDocument.m in Sources */,
+				450AC2A71949B0A1005B7904 /* BasicColor.m in Sources */,
+				450AC2A91949B0A1005B7904 /* BasicViewController.m in Sources */,
+				450AC2A31949B0A1005B7904 /* BasicPanelController.m in Sources */,
+				45E7A0D61949CDE400A463CF /* UniversePseudoRandomNumberFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		450AC2671949AB1B005B7904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450AC2791949AB1B005B7904 /* AppKitSanitizerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		450AC2701949AB1B005B7904 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 450AC2531949AB1B005B7904 /* AppKitSanitizer */;
+			targetProxy = 450AC26F1949AB1B005B7904 /* PBXContainerItemProxy */;
+		};
+		45124185195EA00C00B6198A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FoundationExtras;
+			targetProxy = 45124184195EA00C00B6198A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		450AC2601949AB1B005B7904 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				450AC2611949AB1B005B7904 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		450AC2751949AB1B005B7904 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				450AC2761949AB1B005B7904 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		450AC27A1949AB1B005B7904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"EONIL_DEBUG_MODE=1",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$SRCROOT\"/../FoundationExtras",
+				);
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		450AC27B1949AB1B005B7904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "EONIL_DEBUG_MODE=0";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$SRCROOT\"/../FoundationExtras",
+				);
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		450AC27D1949AB1B005B7904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppKitSanitizer/AppKitSanitizer-Prefix.pch";
+				INFOPLIST_FILE = "AppKitSanitizer/AppKitSanitizer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		450AC27E1949AB1B005B7904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppKitSanitizer/AppKitSanitizer-Prefix.pch";
+				INFOPLIST_FILE = "AppKitSanitizer/AppKitSanitizer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		450AC2801949AB1B005B7904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AppKitSanitizer.framework/Versions/A/AppKitSanitizer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppKitSanitizer/AppKitSanitizer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AppKitSanitizerTests/AppKitSanitizerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		450AC2811949AB1B005B7904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AppKitSanitizer.framework/Versions/A/AppKitSanitizer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppKitSanitizer/AppKitSanitizer-Prefix.pch";
+				INFOPLIST_FILE = "AppKitSanitizerTests/AppKitSanitizerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		450AC24E1949AB1B005B7904 /* Build configuration list for PBXProject "AppKitSanitizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				450AC27A1949AB1B005B7904 /* Debug */,
+				450AC27B1949AB1B005B7904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		450AC27C1949AB1B005B7904 /* Build configuration list for PBXNativeTarget "AppKitSanitizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				450AC27D1949AB1B005B7904 /* Debug */,
+				450AC27E1949AB1B005B7904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		450AC27F1949AB1B005B7904 /* Build configuration list for PBXNativeTarget "AppKitSanitizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				450AC2801949AB1B005B7904 /* Debug */,
+				450AC2811949AB1B005B7904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 450AC24B1949AB1B005B7904 /* Project object */;
+}

@@ -86,6 +86,7 @@
 		45D97628190F1AD90093F471 /* StaticUnstableOrderlessSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D97626190F1AD90093F471 /* StaticUnstableOrderlessSet.cpp */; };
 		45D97629190F1AD90093F471 /* StaticUnstableOrderlessSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45D97626190F1AD90093F471 /* StaticUnstableOrderlessSet.cpp */; };
 		45D9762A190F1AD90093F471 /* StaticUnstableOrderlessSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D97627190F1AD90093F471 /* StaticUnstableOrderlessSet.h */; };
+		45F13D4C196870E000F7B630 /* IterationRange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45F13D4A196870E000F7B630 /* IterationRange.cpp */; };
 		45FC7007190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45FC7005190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.cpp */; };
 		45FC7008190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45FC7005190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.cpp */; };
 		45FC7009190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 45FC7006190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.h */; };
@@ -212,6 +213,8 @@
 		45D97622190F17F50093F471 /* StaticStableOrderlessSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticStableOrderlessSet.h; sourceTree = "<group>"; };
 		45D97626190F1AD90093F471 /* StaticUnstableOrderlessSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StaticUnstableOrderlessSet.cpp; sourceTree = "<group>"; };
 		45D97627190F1AD90093F471 /* StaticUnstableOrderlessSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticUnstableOrderlessSet.h; sourceTree = "<group>"; };
+		45F13D4A196870E000F7B630 /* IterationRange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IterationRange.cpp; sourceTree = "<group>"; };
+		45F13D4B196870E000F7B630 /* IterationRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterationRange.h; sourceTree = "<group>"; };
 		45FC6FAC190EB7290018BC59 /* libEonilCommonRealtimeGameAlgorithms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilCommonRealtimeGameAlgorithms.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FC7001190EB7AF0018BC59 /* libEonilCommonRealtimeGameAlgorithms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEonilCommonRealtimeGameAlgorithms.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FC7005190EB8380018BC59 /* CommonRealtimeGameAlgorithmsCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonRealtimeGameAlgorithmsCommon.cpp; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 			children = (
 				455B1207190F55F3007997D8 /* Range.cpp */,
 				455B1208190F55F3007997D8 /* Range.h */,
+				45F13D4A196870E000F7B630 /* IterationRange.cpp */,
+				45F13D4B196870E000F7B630 /* IterationRange.h */,
 			);
 			path = GenericUtilities;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				450EF2D2190ED65A00FC3FE3 /* StaticStableListStack.cpp in Sources */,
 				457604131914E28A002D3E7A /* TreeNode.cpp in Sources */,
 				450D4106191F5E03004F8901 /* ObjectSlot.cpp in Sources */,
+				45F13D4C196870E000F7B630 /* IterationRange.cpp in Sources */,
 				45D56103191496CC00E76437 /* TreeNode.cpp in Sources */,
 				45D9761E190F0B570093F471 /* ListAtomSlotIterator.cpp in Sources */,
 				45D97619190EF5830093F471 /* StaticStableListMap.cpp in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#include "../RenderingCommon.h"
+#include "RenderingD2014R2Common.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
 
@@ -36,13 +36,9 @@ class
 CPUTransformTriangleDrawer
 {
 	struct	Core;
-	
 	uptr<Core>		_core_ptr	{};
 
-public:
-	using	tex2d	=	Server::PlanarTexture;
-	
-public:
+	public:
 	struct
 	Triangle
 	{
@@ -55,7 +51,7 @@ public:
 //		vec<Vector3>	points	=	{};
 //	};
 	
-public:
+	public:
 	CPUTransformTriangleDrawer();
 	~CPUTransformTriangleDrawer();
 	

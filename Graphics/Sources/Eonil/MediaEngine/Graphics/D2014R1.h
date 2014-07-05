@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#pragma	clang system_header
+//#pragma	clang system_header
 
 
 #include	<Eonil/MediaEngine/Foundation.h>
@@ -18,13 +18,13 @@
 #include "Common.h"
 
 #include "LEGACY_Transform.h"
-#include "Resources/Model.h"
-#include "Resources/Mesh.h"
-#include "Resources/Material.h"
+//#include "Resources/Model.h"
+//#include "Resources/Mesh.h"
+//#include "Resources/Material.h"
 //#include "Form/Figure.h"
 //#include "Form/Cluster.h"
 //#include "Form/Cloud.h"
-#include "Transcoding/VertexTranscoder.h"
+//#include "Transcoding/VertexTranscoder.h"
 
 #include "Rendering/D2014R1/Aliases.h"
 #include "Rendering/D2014R1/_Display_v1.h"

@@ -6,97 +6,89 @@
 //  Copyright (c) 2013 Eonil. All rights reserved.
 //
 
-#ifndef __EonilGraphics__Doctor__
-#define __EonilGraphics__Doctor__
-
+#pragma once
 #include "../Common.h"
-
 #include <unordered_map>
 #include <unordered_set>
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+struct	_Transform_V1;
 
-
-	struct	_Transform_V1;
-
+namespace
+Rendering
+{
 	namespace
-	Rendering
+	D2014R1
 	{
-		namespace
-		D2014R1
-		{
-			struct	_DevCamera;
-			struct	_Camera_v1;
-		}
+		struct	_DevCamera;
+		struct	_Camera_v1;
 	}
-	
-	namespace
-	Debugging
-	{
-		using namespace	Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R1;
-		
-		
-		
+}
 
-		class
-		Doctor
-		{	
-		public:
-			typedef	std::map<GLenum,std::string>		GLErrorMessageMap;
-			
-		public:
-			static std::string const	stringWithCFormat(char const * const format, ...) __attribute__ ((format (printf, 1, 2)));
-			
-			static bool const			isDebugMode();
-			static bool const			useLogging();
-			
-			static bool const			useStateValidation();		//	If this is `true`, library will perform state validation by querying current GL device state.
-			static bool const			useResourceCleansing();		//	If this is `true`, library will perform unnecessary resource cleansing at proper time to ensure specific device state.
-			static bool const			keepServerResourcesLocallyForDebugging();
-			
-			static bool const			doesPlatformSupportShaderPrecision();
-			
-			static void					log(std::string const message);
-			static void					logWithFormat(char const * const format, ...) __attribute__ ((format (printf, 1, 2)));
-			
-			static void					exceptWithReason(std::string const reason) __attribute__((noreturn));
-			
-			static void					assertWithReason(bool const condition, std::string const reason = "Dynamic assertion failure.");			//!	@note	Depends on `useStateValidation()`.
-			static void					assertCurrentGLContextExistence();																			//!	All calles to GL needs proper current context which is platform specific. This check that platform specific GL context existence.
-			static void					assertNoGLError();						//	Depends on `useStateValidation()`.
-			static void					assertNoGLErrorWithMessageDesignations(std::map<GLenum,std::string> const messageMap);						//!	@note	Depends on `useStateValidation()`.
-			static void					assertForZeroOrNormal(float const v);
+namespace
+Debugging
+{
+	using namespace	Eonil::MediaEngine::Graphics::Rendering::D2014R1;
+	
+	
+	
+
+	class
+	Doctor
+	{	
+	public:
+		typedef	std::map<GLenum,std::string>		GLErrorMessageMap;
+		
+	public:
+		static std::string const	stringWithCFormat(char const * const format, ...) __attribute__ ((format (printf, 1, 2)));
+		
+		static bool const			isDebugMode();
+		static bool const			useLogging();
+		
+		static bool const			useStateValidation();		//	If this is `true`, library will perform state validation by querying current GL device state.
+		static bool const			useResourceCleansing();		//	If this is `true`, library will perform unnecessary resource cleansing at proper time to ensure specific device state.
+		static bool const			keepServerResourcesLocallyForDebugging();
+		
+		static bool const			doesPlatformSupportShaderPrecision();
+		
+		static void					log(std::string const message);
+		static void					logWithFormat(char const * const format, ...) __attribute__ ((format (printf, 1, 2)));
+		
+		static void					exceptWithReason(std::string const reason) __attribute__((noreturn));
+		
+		static void					assertWithReason(bool const condition, std::string const reason = "Dynamic assertion failure.");			//!	@note	Depends on `useStateValidation()`.
+		static void					assertForZeroOrNormal(float const v);
 //			static void					assertNonZeroMatrix4(Value::Matrix4 const v);
-			static void					assertVector4Validity(Vector4 const v);
-			static void					assertMatrix4Validity(Matrix4 const v);
-			
-			
-			template<typename originT, typename destinationT>
-			static void					assertForSignedNumericRange(originT const value);
-			template<typename originT, typename destinationT>
-			static void					assertForUnsignedNumericRange(originT const value);
-			
+		static void					assertVector4Validity(Vector4 const v);
+		static void					assertMatrix4Validity(Matrix4 const v);
+		
+		
+		template<typename originT, typename destinationT>
+		static void					assertForSignedNumericRange(originT const value);
+		template<typename originT, typename destinationT>
+		static void					assertForUnsignedNumericRange(originT const value);
+		
 //			static void					assertCameraValidity(_DevCamera const v);
-			EONIL_MEDIA_ENGINE_DEPRECATE() static void					assertCameraValidity(_Camera_v1 const v);
-			EONIL_MEDIA_ENGINE_DEPRECATE() static void					assertTransformValidity(_Transform_V1 const v);
-			
-			
-			
-		public:
-			static Size const			sizeOfGLType(GLenum const type);
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		public:
-			
+		EONIL_MEDIA_ENGINE_DEPRECATE() static void					assertCameraValidity(_Camera_v1 const v);
+		EONIL_MEDIA_ENGINE_DEPRECATE() static void					assertTransformValidity(_Transform_V1 const v);
+		
+		
+		
+	public:
+		static sz const				sizeOfGLType(GLenum const type);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	public:
+		
 //			/*!
 //			 External registry for debugging/profiling or anything else then essential running information.
 //			 
@@ -130,37 +122,35 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 //				static std::unordered_map<OBJ const*, EXAM const*>&	_map();
 //				static std::unordered_map<EXAM const*, OBJ const*>&	_inverse_map();		//	For duplication check and inverse resolution.
 //			};
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		public:
-			/*!
-			 Creates a description for an object.
-			 This is shortcut to `Describer<T>` class.
-			 */
-			template<typename T>
-			static std::string const	describe(T const& object);
-			
-			template<typename T>
-			static std::string const	describeVector(std::vector<T> const& vector);
-			
-			template<typename T>
-			static std::string const	describeCollection(T const& object);
-			
-			template<typename T>
-			static std::string const	describeTable(T const& object);
-		};
-	}
-	
-	
-	
-}}}}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	public:
+		/*!
+		 Creates a description for an object.
+		 This is shortcut to `Describer<T>` class.
+		 */
+		template<typename T>
+		static std::string const	describe(T const& object);
+		
+		template<typename T>
+		static std::string const	describeVector(std::vector<T> const& vector);
+		
+		template<typename T>
+		static std::string const	describeCollection(T const& object);
+		
+		template<typename T>
+		static std::string const	describeTable(T const& object);
+	};
+}
+
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
 
 
 
@@ -190,41 +180,37 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 
 #pragma mark	-	Numeric Range Assertions
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
-	namespace
-	Debugging
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
+namespace
+Debugging
+{
+	template<typename originT, typename destinationT>
+	void
+	Doctor::assertForSignedNumericRange(const originT value)
 	{
-		template<typename originT, typename destinationT>
-		void
-		Doctor::assertForSignedNumericRange(const originT value)
+		static_assert(std::is_signed<originT>::value, "Only for signed types.");
+		if (useStateValidation())
 		{
-			static_assert(std::is_signed<originT>::value, "Only for signed types.");
-			if (useStateValidation())
-			{
 //#pragma clang diagnostic push
 //#pragma clang diagnostic ignored	"-Wtype-limits"
-				assertWithReason(value >= std::numeric_limits<destinationT>::min());
-				assertWithReason(value <= std::numeric_limits<destinationT>::max());
+			assertWithReason(value >= std::numeric_limits<destinationT>::min());
+			assertWithReason(value <= std::numeric_limits<destinationT>::max());
 //#pragma clang diagnostic pop
-			}
-		}
-		
-		template<typename originT, typename destinationT>
-		void
-		Doctor::assertForUnsignedNumericRange(const originT value)
-		{
-			static_assert(std::is_unsigned<originT>::value, "Only for unsigned types.");
-			if (useStateValidation())
-			{
-				assertWithReason(value <= std::numeric_limits<destinationT>::max());
-			}
 		}
 	}
-
-
-
-}}}}
+	
+	template<typename originT, typename destinationT>
+	void
+	Doctor::assertForUnsignedNumericRange(const originT value)
+	{
+		static_assert(std::is_unsigned<originT>::value, "Only for unsigned types.");
+		if (useStateValidation())
+		{
+			assertWithReason(value <= std::numeric_limits<destinationT>::max());
+		}
+	}
+}
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
 
 
 
@@ -234,7 +220,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 //
 //#pragma mark	-	Examination Implementation
-//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 //	
 //	namespace
 //	Debugging
@@ -403,43 +389,35 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 
 
-#pragma mark	-	Description Implementation
-#include "../Server/Program.h"
-#include "../Server/ProgramSlotV1.h"
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
-	namespace
-	Debugging
-	{
-		template<typename T>
-		std::string const
-		Doctor::describe(const T &object)
-		{
-			return	stringWithCFormat("(???? (address 0x%llx))", uint64_t(uintptr_t(&object)));
-		}
-		template<typename T>
-		std::string const
-		Doctor::describeVector(const std::vector<T> &vector)
-		{
-			std::string	str	=	"";
-			for (T const& v : vector)
-			{
-				str			+=	"\t";
-				str			+=	describe<T>(v);
-				str			+=	"\n";
-			}
-			return	stringWithCFormat("(std::vector<?> (address 0x%llx) (\n%s\n))", uint64_t(uintptr_t(&vector)), str.c_str());
-		}
-	}
-
-
-
-
-
-
-	
-	
-}}}}
+//#pragma mark	-	Description Implementation
+//#include "../Server/Program.h"
+//#include "../Server/ProgramSlotV1.h"
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
+//namespace
+//Debugging
+//{
+//	template<typename T>
+//	std::string const
+//	Doctor::describe(const T &object)
+//	{
+//		return	stringWithCFormat("(???? (address 0x%llx))", uint64_t(uintptr_t(&object)));
+//	}
+//	template<typename T>
+//	std::string const
+//	Doctor::describeVector(const std::vector<T> &vector)
+//	{
+//		std::string	str	=	"";
+//		for (T const& v : vector)
+//		{
+//			str			+=	"\t";
+//			str			+=	describe<T>(v);
+//			str			+=	"\n";
+//		}
+//		return	stringWithCFormat("(std::vector<?> (address 0x%llx) (\n%s\n))", uint64_t(uintptr_t(&vector)), str.c_str());
+//	}
+//}
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
+//	
 
 
 
@@ -447,4 +425,3 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 
 
 
-#endif /* defined(__EonilGraphics__Doctor__) */

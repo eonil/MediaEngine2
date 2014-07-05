@@ -11,90 +11,66 @@
 
 #if	EONIL_MEDIA_ENGINE_TARGET_OSX
 
-
-
-
-
-
-
-
-
-
 #import "____EonilImprovisationsMediaEngineApplicationController.h"
 #import <Eonil/MediaEngine/Mathematics.h>
 #import <Eonil/MediaEngine/Graphics.h>
 
-using namespace	Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
-using namespace	Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2;
+using namespace	Eonil::MediaEngine::Mathematics::Geometry;
+using namespace	Eonil::MediaEngine::Graphics::Rendering::D2014R2;
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Application {
-	
-	
-	
-	
-	
-	auto
-	run(int argc, char const *argv[], std::function<void(Stepping const&)> const& step) -> int
+EONIL_MEDIA_ENGINE_APPLICATION_NAMESPACE_BEGIN
+
+
+
+
+
+auto
+run(int argc, char const *argv[], std::function<void(Stepping const&)> const& step) -> int
+{
+	return
+	run(argc, argv, []{}, []{}, step);
+}
+
+
+
+
+
+auto
+run(int argc, char const *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
+{	
+	@autoreleasepool
 	{
 		return
-		run(argc, argv, []{}, []{}, step);
-	}
-	
-	
-	
-	
-	
-	auto
-	run(int argc, char const *argv[], PROC const& prepare, PROC const& cleanup, STEP const& step) -> int
-	{	
-		@autoreleasepool
+		[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv
+		prepare:^(____EonilImprovisationsMediaEngineMainWindowController* mwc)
 		{
-			return
-			[____EonilImprovisationsMediaEngineApplicationController runWithArgc:argc argv:argv
-			prepare:^(____EonilImprovisationsMediaEngineMainWindowController* mwc)
-			{
-				/*!
-				 On desktop, multisampling will be always on.
-				 */
-				glEnable(GL_MULTISAMPLE);
-				Platform::_init(mwc);
-				prepare();
-			}
-			cleanup:^
-			{
-				cleanup();
-			}
-			step:^(CGRect bounds)
-			{
-				Scalar	minx	{Scalar(CGRectGetMinX(bounds))};
-				Scalar	maxx	{Scalar(CGRectGetMaxX(bounds))};
-				Scalar	miny	{Scalar(CGRectGetMinY(bounds))};
-				Scalar	maxy	{Scalar(CGRectGetMaxY(bounds))};
-				
-				Bounds2				b	{minx, miny, maxx, maxy};
-				DisplayScreenFrame	f	{b};
-				
-				{
-					step({f});
-				}
-			}];
+			/*!
+			 On desktop, multisampling will be always on.
+			 */
+			glEnable(GL_MULTISAMPLE);
+			Platform::_init(mwc);
+			prepare();
 		}
+		cleanup:^
+		{
+			cleanup();
+		}
+		step:^(CGRect bounds)
+		{
+			Scalar	minx	{Scalar(CGRectGetMinX(bounds))};
+			Scalar	maxx	{Scalar(CGRectGetMaxX(bounds))};
+			Scalar	miny	{Scalar(CGRectGetMinY(bounds))};
+			Scalar	maxy	{Scalar(CGRectGetMaxY(bounds))};
+			
+			Bounds2				b	{minx, miny, maxx, maxy};
+			DisplayScreenFrame	f	{b};
+			
+			{
+				step({f});
+			}
+		}];
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}}}}
+}
 
 
 
@@ -107,13 +83,6 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace A
 
 
 
-
-
-
-
-
-
-
-
+EONIL_MEDIA_ENGINE_APPLICATION_NAMESPACE_END
 #endif
 

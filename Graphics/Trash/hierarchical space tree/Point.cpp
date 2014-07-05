@@ -16,7 +16,7 @@
 //	namespace
 //	Graphics
 //	{
-//		using namespace	Eonil::Improvisations::MediaEngine::Graphics::Debug;
+//		using namespace	Eonil::MediaEngine::Graphics::Debug;
 //		
 //		
 //		
@@ -36,7 +36,7 @@
 //		}
 //		
 //		void
-//		Point::setTransform(const Eonil::Improvisations::MediaEngine::Graphics::Transform t)
+//		Point::setTransform(const Transform t)
 //		{
 //			_t	=	t;
 //		}

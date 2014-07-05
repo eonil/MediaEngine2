@@ -8,12 +8,9 @@
 
 
 #if	EONIL_MEDIA_ENGINE_TARGET_IOS
-
-#include "iOS.h"
-
 #import <OpenGLES/EAGL.h>
-
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+#include "iOS.h"
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	namespace
 	Platforms
@@ -52,6 +49,5 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 	
 	
 	
-}}}}
-
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
 #endif

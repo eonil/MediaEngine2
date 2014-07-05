@@ -10,7 +10,7 @@
 
 #if		EONIL_MEDIA_ENGINE_TARGET_IOS
 #include "../TouchGestureCapturing.h"
-using namespace	Eonil::Improvisations::MediaEngine::Controlling;
+using namespace	Eonil::MediaEngine::Controlling;
 
 @implementation ____Eonil_MediaEngine_Controlling_UserGestureCapturingView_iOS
 {

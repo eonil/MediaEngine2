@@ -11,17 +11,17 @@
 
 #include <Eonil/MediaEngine/Graphics.h>
 #include <Eonil/MediaEngine/Graphics_DEV.h>
-#include <Eonil/MediaEngine/Graphics/Server/Utility/Functions.h>
+#include <Eonil/MediaEngine/Graphics/____internal_impl_of_opengl_es_2_0_driver____/driver_all.h>
 
 #include "run.h"
 #include "Bundle.h"
 #include "Platform.h"
 
-using namespace Eonil::Improvisations::MediaEngine::Mathematics;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
-using namespace Eonil::Improvisations::MediaEngine::Graphics;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Rendering;
-using namespace Eonil::Improvisations::MediaEngine::Application;
+using namespace Eonil::MediaEngine::Mathematics;
+using namespace Eonil::MediaEngine::Mathematics::Geometry;
+using namespace Eonil::MediaEngine::Graphics;
+using namespace Eonil::MediaEngine::Graphics::Rendering;
+using namespace Eonil::MediaEngine::Application;
 
 
 

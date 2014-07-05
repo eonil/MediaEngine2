@@ -19,18 +19,19 @@
 
 //#include "BridgingController.h"
 
-//using namespace Eonil::Improvisations::MediaEngine::Graphics::Platform::iOS;
+//using namespace Eonil::MediaEngine::Graphics::Platform::iOS;
 
-#include "../../Stub/GL-Common.h"
-//#include "../../Stub/GL-Buffer.h"
-#include "../../Stub/GL-Framebuffer.h"
-#include "../../Stub/GL-Renderbuffer.h"
-#include "../../Server/ServerObjectProxy.h"
-#include "../../Server/Framebuffer.h"
+#include "../../____internal_impl_of_opengl_es_2_0_driver____/driver_all.h"
+//#include "../../Stub/GL-Common.h"
+////#include "../../Stub/GL-Buffer.h"
+//#include "../../Stub/GL-Framebuffer.h"
+//#include "../../Stub/GL-Renderbuffer.h"
+//#include "../../Server/ServerObjectProxy.h"
+//#include "../../Server/Framebuffer.h"
 
-using namespace	Eonil::Improvisations::MediaEngine::Graphics;
-using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
-using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
+using namespace	Eonil::MediaEngine::Graphics;
+using namespace	Eonil::MediaEngine::Graphics::____internal_impl_of_opengl_es_2_0_driver____::Stub;
+using namespace	Eonil::MediaEngine::Graphics::____internal_impl_of_opengl_es_2_0_driver____::Server;
 
 
 
@@ -169,24 +170,39 @@ using namespace	Eonil::Improvisations::MediaEngine::Graphics::Server;
 }
 - (void)prepareGraphicsContext
 {
-	EONIL_DEBUG_ASSERT_WITH_MESSAGE([self.window isKindOfClass:[NSWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to configure OpenGL rendering surface properly.");
-	EONIL_DEBUG_ASSERT(_gl_ctx != nil);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion([self.window isKindOfClass:[NSWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to configure OpenGL rendering surface properly.");
+		err9_converted_legacy_assertion(_gl_ctx != nil);
+	}
+	
+	////
 	
 	[_gl_ctx setView:self];
 	[_gl_ctx makeCurrentContext];
 }
 - (void)cleanupGraphicsContext
 {
-	EONIL_DEBUG_ASSERT_WITH_MESSAGE([self.window isKindOfClass:[NSWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to be matched with `prepareGraphicsContext` method.");
-	EONIL_DEBUG_ASSERT(_gl_ctx != nil);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion([self.window isKindOfClass:[NSWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to be matched with `prepareGraphicsContext` method.");
+		err9_converted_legacy_assertion(_gl_ctx != nil);
+	}
+	
+	////
 	
 	[_gl_ctx setView:nil];
 	[NSOpenGLContext clearCurrentContext];
 }
 - (void)presentRenderbuffer
 {
-	EONIL_DEBUG_ASSERT([_gl_ctx view] == self);
-	EONIL_DEBUG_ASSERT([_gl_ctx isEqual:[NSOpenGLContext currentContext]]);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion([_gl_ctx view] == self);
+		err9_converted_legacy_assertion([_gl_ctx isEqual:[NSOpenGLContext currentContext]]);
+	}
+	
+	////
 	
 	[_gl_ctx flushBuffer];
 }

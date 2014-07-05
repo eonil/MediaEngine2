@@ -22,7 +22,7 @@ Touch
 {
 public:
 	enum class
-	CODE : Size
+	CODE : sz
 	{
 		NONE		=	0,
 		BEGIN,
@@ -32,12 +32,12 @@ public:
 	};
 	
 	CODE	code		{CODE::NONE};
-	Size	identifier	{0};
-	Size	tick		{0};
+	sz		identifier	{0};
+	sz		tick		{0};
 	Vector2	coordinate	{0,0};
 	
 	Touch() = default;
-	Touch(CODE const& code, Size const& identifier, Size const& tick, Vector2 const& coordinate) : identifier(identifier), code(code), tick(tick), coordinate(coordinate) {}
+	Touch(CODE const& code, sz const& identifier, sz const& tick, Vector2 const& coordinate) : identifier(identifier), code(code), tick(tick), coordinate(coordinate) {}
 };
 
 

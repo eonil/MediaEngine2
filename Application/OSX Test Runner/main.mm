@@ -11,7 +11,7 @@
 
 int main(int argc, char const* argv[])
 {
-	using namespace	Eonil::Improvisations::MediaEngine::Application;
+	using namespace	Eonil::MediaEngine::Application;
 
 	TestRendering1	r1{};
 	
@@ -21,5 +21,5 @@ int main(int argc, char const* argv[])
 		r1.render(s);
 	};
 	
-	Eonil::Improvisations::MediaEngine::Application::run(argc, argv, step);
+	Eonil::MediaEngine::Application::run(argc, argv, step);
 }

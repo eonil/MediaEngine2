@@ -16,14 +16,14 @@
 
 
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	Transcoding
 	{
-		using namespace	Eonil::Improvisations::MediaEngine::Graphics;
-		using namespace	Eonil::Improvisations::MediaEngine::Graphics::_DEV_;
-		using namespace	Eonil::Improvisations::MediaEngine::Graphics::Value;
+		using namespace	Eonil::MediaEngine::Graphics;
+		using namespace	Eonil::MediaEngine::Graphics::_DEV_;
+		using namespace	Eonil::MediaEngine::Graphics::Value;
 		
 		
 //		struct

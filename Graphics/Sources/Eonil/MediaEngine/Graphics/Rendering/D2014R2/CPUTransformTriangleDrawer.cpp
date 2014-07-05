@@ -7,15 +7,7 @@
 //
 
 #include "CPUTransformTriangleDrawer.h"
-#include "../../Server/Symbols.h"
-#include "../../Server/Texture.h"
-#include "../../Server/Shader.h"
-#include "../../Server/Program.h"
-#include "../../Server/Machine.h"
-#include "../../Server/Machinery/VertexAttributeChannel.h"
-#include "../../Server/Utility/VertexLayoutDescriptor.h"
-#include "../../Server/Utility/UniformProgramParameter.h"
-#include "../../Server/Utility/GeometryRendering.h"
+#include "RenderingD2014R2____internal____.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 using namespace	Server;
 using namespace	Server::Utility;
@@ -30,6 +22,7 @@ using namespace	Server::Utility;
 
 namespace
 {
+	using	tex2d	=	Server::Texture2D;
 	
 	static constexpr char const
 	VERTEX_SHADER_CODE[]	=
@@ -68,7 +61,7 @@ namespace
 	}
 	
 	enum
-	VERTEX_CHANNEL_INDEXES : Size
+	VERTEX_CHANNEL_INDEXES : sz
 	{
 		POSITION_COORDINATE		=	0,
 //		COLOR_COORDINATE		=	1,
@@ -138,7 +131,7 @@ CPUTransformTriangleDrawer::~CPUTransformTriangleDrawer()
 
 
 //auto CPUTransformTriangleDrawer::
-//drawTriangleList(const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformTriangleDrawer::CounterClockwiseWindingPointList &triangles, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+//drawTriangleList(const Rendering::D2014R2::CPUTransformTriangleDrawer::CounterClockwiseWindingPointList &triangles, const Vector4 &color) const -> void
 //{
 //	EONIL_DEBUG_ASSERT_WITH_MESSAGE(triangles.points.size() > 0, "Empty list is not supported.");
 //	EONIL_DEBUG_ASSERT_WITH_MESSAGE(triangles.points.size() % 3 == 0, "The list must contain at exactly 3N points.");
@@ -158,7 +151,7 @@ CPUTransformTriangleDrawer::~CPUTransformTriangleDrawer()
 
 auto
 CPUTransformTriangleDrawer::
-drawTriangleList(const GenericMemoryRange<const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformTriangleDrawer::Triangle> &triangles, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 &color) const -> void
+drawTriangleList(const GenericMemoryRange<const Rendering::D2014R2::CPUTransformTriangleDrawer::Triangle> &triangles, const Vector4 &color) const -> void
 {
 	if (triangles.size() == 0)
 	{
@@ -172,7 +165,7 @@ drawTriangleList(const GenericMemoryRange<const Eonil::Improvisations::MediaEngi
 		GenericMemoryRange<void const>	mem1	=	triangles.reinterpretAs<void const>();
 		ClientMemoryVertexProvisioning	verts1	=	{mem1, _core_ptr->channeling};
 		GeometryProvisioning			gp1		=	{&verts1};
-		Size							num_v	=	triangles.size() * 3;
+		sz								num_v	=	triangles.size() * 3;
 		
 		_core_ptr->colorUniformSlot->setValue(color);
 		{
@@ -185,7 +178,7 @@ drawTriangleList(const GenericMemoryRange<const Eonil::Improvisations::MediaEngi
 
 auto
 CPUTransformTriangleDrawer::
-drawTriangleList(const GenericMemoryRange<const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R2::CPUTransformTriangleDrawer::Triangle> &triangles) const -> void
+drawTriangleList(const GenericMemoryRange<const Rendering::D2014R2::CPUTransformTriangleDrawer::Triangle> &triangles) const -> void
 {
 	drawTriangleList(triangles, {1,1,1,1});
 }
@@ -218,3 +211,4 @@ drawTriangleList(const GenericMemoryRange<const Eonil::Improvisations::MediaEngi
 
 
 EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_END
+

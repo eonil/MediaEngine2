@@ -21,7 +21,7 @@
 
 
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	namespace
 	Rendering
@@ -32,8 +32,8 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		
 			
 			
-			using namespace	Eonil::Improvisations::MediaEngine::Graphics::Debugging;
-			using namespace	Eonil::Improvisations::MediaEngine::Graphics::Transcoding;
+			using namespace	Eonil::MediaEngine::Graphics::Debugging;
+			using namespace	Eonil::MediaEngine::Graphics::Transcoding;
 			
 			
 			
@@ -327,7 +327,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			void
-			_ModelDrawingGenerator_v2::addToList(const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R1::_ModelDrawingGenerator_v2::Moment moment, std::vector<_SkinnedForm_v2> &list)
+			_ModelDrawingGenerator_v2::addToList(const Rendering::D2014R1::_ModelDrawingGenerator_v2::Moment moment, std::vector<_SkinnedForm_v2> &list)
 			{
 				_Model_v2 const&	model	=	*(moment.model);
 				

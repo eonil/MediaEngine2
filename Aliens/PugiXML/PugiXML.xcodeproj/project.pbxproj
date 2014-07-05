@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45165ACD190C95730066177B /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45165AC2190C954D0066177B /* pugixml.cpp */; };
+		45646DC2190C9A2A00C2FACB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45646DC1190C9A2A00C2FACB /* Foundation.framework */; };
+		45646DC7190C9A2A00C2FACB /* PugiXML.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45646DC6190C9A2A00C2FACB /* PugiXML.h */; };
+		45646DC9190C9A2A00C2FACB /* PugiXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 45646DC8190C9A2A00C2FACB /* PugiXML.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45646DBD190C9A2A00C2FACB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				45646DC7190C9A2A00C2FACB /* PugiXML.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		45165AC1190C954D0066177B /* pugiconfig.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = pugiconfig.hpp; path = "pugixml-1.4/src/pugiconfig.hpp"; sourceTree = SOURCE_ROOT; };
+		45165AC2190C954D0066177B /* pugixml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = pugixml.cpp; path = "pugixml-1.4/src/pugixml.cpp"; sourceTree = SOURCE_ROOT; };
+		45165AC3190C954D0066177B /* pugixml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = pugixml.hpp; path = "pugixml-1.4/src/pugixml.hpp"; sourceTree = SOURCE_ROOT; };
+		45165AC8190C95600066177B /* libPugiXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPugiXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45646DBF190C9A2A00C2FACB /* libPugiXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPugiXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45646DC1190C9A2A00C2FACB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		45646DC5190C9A2A00C2FACB /* PugiXML-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PugiXML-Prefix.pch"; sourceTree = "<group>"; };
+		45646DC6190C9A2A00C2FACB /* PugiXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PugiXML.h; sourceTree = "<group>"; };
+		45646DC8190C9A2A00C2FACB /* PugiXML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PugiXML.m; sourceTree = "<group>"; };
+		45646DCF190C9A2B00C2FACB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		45646DD2190C9A2B00C2FACB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		45646DD9190C9A2B00C2FACB /* PugiXMLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PugiXMLTests-Info.plist"; sourceTree = "<group>"; };
+		45646DDB190C9A2B00C2FACB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		45646DDD190C9A2B00C2FACB /* PugiXMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PugiXMLTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45165AC5190C95600066177B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45646DBC190C9A2A00C2FACB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45646DC2190C9A2A00C2FACB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45165AB1190C93820066177B = {
+			isa = PBXGroup;
+			children = (
+				45165ABB190C93F90066177B /* Sources */,
+				45646DC3190C9A2A00C2FACB /* PugiXML */,
+				45646DD7190C9A2B00C2FACB /* PugiXMLTests */,
+				45646DC0190C9A2A00C2FACB /* Frameworks */,
+				45165AC9190C95600066177B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45165ABB190C93F90066177B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				45165AC1190C954D0066177B /* pugiconfig.hpp */,
+				45165AC2190C954D0066177B /* pugixml.cpp */,
+				45165AC3190C954D0066177B /* pugixml.hpp */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		45165AC9190C95600066177B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45165AC8190C95600066177B /* libPugiXML.a */,
+				45646DBF190C9A2A00C2FACB /* libPugiXML.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45646DC0190C9A2A00C2FACB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45646DC1190C9A2A00C2FACB /* Foundation.framework */,
+				45646DCF190C9A2B00C2FACB /* XCTest.framework */,
+				45646DD2190C9A2B00C2FACB /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45646DC3190C9A2A00C2FACB /* PugiXML */ = {
+			isa = PBXGroup;
+			children = (
+				45646DC6190C9A2A00C2FACB /* PugiXML.h */,
+				45646DC8190C9A2A00C2FACB /* PugiXML.m */,
+				45646DC4190C9A2A00C2FACB /* Supporting Files */,
+			);
+			path = PugiXML;
+			sourceTree = "<group>";
+		};
+		45646DC4190C9A2A00C2FACB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45646DC5190C9A2A00C2FACB /* PugiXML-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45646DD7190C9A2B00C2FACB /* PugiXMLTests */ = {
+			isa = PBXGroup;
+			children = (
+				45646DDD190C9A2B00C2FACB /* PugiXMLTests.m */,
+				45646DD8190C9A2B00C2FACB /* Supporting Files */,
+			);
+			path = PugiXMLTests;
+			sourceTree = "<group>";
+		};
+		45646DD8190C9A2B00C2FACB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45646DD9190C9A2B00C2FACB /* PugiXMLTests-Info.plist */,
+				45646DDA190C9A2B00C2FACB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		45165AC6190C95600066177B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		45165AC7190C95600066177B /* Aliens - PugiXML - OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45165ACA190C95600066177B /* Build configuration list for PBXNativeTarget "Aliens - PugiXML - OSX" */;
+			buildPhases = (
+				45165AC4190C95600066177B /* Sources */,
+				45165AC5190C95600066177B /* Frameworks */,
+				45165AC6190C95600066177B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aliens - PugiXML - OSX";
+			productName = PugiXML;
+			productReference = 45165AC8190C95600066177B /* libPugiXML.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		45646DBE190C9A2A00C2FACB /* Aliens - PugiXML - iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45646DDF190C9A2B00C2FACB /* Build configuration list for PBXNativeTarget "Aliens - PugiXML - iOS" */;
+			buildPhases = (
+				45646DBB190C9A2A00C2FACB /* Sources */,
+				45646DBC190C9A2A00C2FACB /* Frameworks */,
+				45646DBD190C9A2A00C2FACB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aliens - PugiXML - iOS";
+			productName = PugiXML;
+			productReference = 45646DBF190C9A2A00C2FACB /* libPugiXML.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45165AB2190C93820066177B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 45165AB5190C93820066177B /* Build configuration list for PBXProject "PugiXML" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 45165AB1190C93820066177B;
+			productRefGroup = 45165AC9190C95600066177B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45165AC7190C95600066177B /* Aliens - PugiXML - OSX */,
+				45646DBE190C9A2A00C2FACB /* Aliens - PugiXML - iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45165AC4190C95600066177B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45165ACD190C95730066177B /* pugixml.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45646DBB190C9A2A00C2FACB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45646DC9190C9A2A00C2FACB /* PugiXML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		45646DDA190C9A2B00C2FACB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45646DDB190C9A2B00C2FACB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45165AB6190C93820066177B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				PRODUCT_NAME = $PROJECT_NAME;
+			};
+			name = Debug;
+		};
+		45165AB7190C93820066177B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				PRODUCT_NAME = $PROJECT_NAME;
+			};
+			name = Release;
+		};
+		45165ACB190C95600066177B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		45165ACC190C95600066177B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		45646DE0190C9A2B00C2FACB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/PugiXML.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PugiXML/PugiXML-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		45646DE1190C9A2B00C2FACB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/PugiXML.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PugiXML/PugiXML-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45165AB5190C93820066177B /* Build configuration list for PBXProject "PugiXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45165AB6190C93820066177B /* Debug */,
+				45165AB7190C93820066177B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45165ACA190C95600066177B /* Build configuration list for PBXNativeTarget "Aliens - PugiXML - OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45165ACB190C95600066177B /* Debug */,
+				45165ACC190C95600066177B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45646DDF190C9A2B00C2FACB /* Build configuration list for PBXNativeTarget "Aliens - PugiXML - iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45646DE0190C9A2B00C2FACB /* Debug */,
+				45646DE1190C9A2B00C2FACB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45165AB2190C93820066177B /* Project object */;
+}

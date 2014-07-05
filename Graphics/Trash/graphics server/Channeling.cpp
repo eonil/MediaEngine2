@@ -23,7 +23,7 @@
 //			}
 //			
 //			IndexChanneling::FromServerBuffer const
-//			IndexChanneling::Utility::channelingFromServerWithType(const Type::CODE type, const Eonil::Improvisations::MediaEngine::Graphics::Server::ElementArrayBuffer buffer, const Size offset)
+//			IndexChanneling::Utility::channelingFromServerWithType(const Type::CODE type, const Server::ElementArrayBuffer buffer, const Size offset)
 //			{
 //				IndexChanneling::FromServerBuffer	ch(buffer);
 //				ch.elementTypecode	=	type;

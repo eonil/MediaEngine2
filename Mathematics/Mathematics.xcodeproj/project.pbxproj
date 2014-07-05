@@ -126,6 +126,34 @@
 			remoteGlobalIDString = 4504CEBE192B463500F3FC8B;
 			remoteInfo = "Foundation_LEGACY - OSX";
 		};
+		4506CBCB196317BC007F2C9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45FC6FAC190EB7290018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - iOS";
+		};
+		4506CBCD196317BC007F2C9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45FC7001190EB7AF0018BC59;
+			remoteInfo = "CommonRealtimeGameAlgorithms - OSX";
+		};
+		4506CBCF196317BC007F2C9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 450EF2A6190EBD6E00FC3FE3;
+			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - OSX";
+		};
+		4506CBD1196317BC007F2C9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 455B126D19106740007997D8;
+			remoteInfo = "CommonRealtimeGameAlgorithms - Tester - iOS";
+		};
 		45F2AFC6192F869600258DFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 451509F118A69E8E0007BE6B /* Project object */;
@@ -286,10 +314,21 @@
 			isa = PBXGroup;
 			children = (
 				4506CBAC1963178D007F2C9A /* OSX Test */,
-				4506CBAE1963178D007F2C9A /* libEonilImprovisationsMediaEngineFoundation.a */,
+				4506CBAE1963178D007F2C9A /* libEonilMediaEngineFoundation.a */,
 				4506CBB01963178D007F2C9A /* libEonilMediaEngineFoundation.a */,
 				4506CBB21963178D007F2C9A /* libFoundation_LEGACY.a */,
 				4506CBB41963178D007F2C9A /* libFoundation_LEGACY.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4506CBC5196317BC007F2C9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4506CBCC196317BC007F2C9A /* libEonilCommonRealtimeGameAlgorithms.a */,
+				4506CBCE196317BC007F2C9A /* libEonilCommonRealtimeGameAlgorithms.a */,
+				4506CBD0196317BC007F2C9A /* CommonRealtimeGameAlgorithms - Tester - OSX */,
+				4506CBD2196317BC007F2C9A /* CommonRealtimeGameAlgorithms - Tester - iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -605,7 +644,7 @@
 		451509F118A69E8E0007BE6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 451509F418A69E8E0007BE6B /* Build configuration list for PBXProject "Mathematics" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -618,6 +657,10 @@
 			productRefGroup = 451509FC18A69EAA0007BE6B /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 4506CBC5196317BC007F2C9A /* Products */;
+					ProjectRef = 459F7F621962F17E00CB53E0 /* CommonRealtimeGameAlgorithms.xcodeproj */;
+				},
 				{
 					ProductGroup = 4506CBA41963178D007F2C9A /* Products */;
 					ProjectRef = 4585170218AE57B50074DBC1 /* Foundation.xcodeproj */;
@@ -641,10 +684,9 @@
 			remoteRef = 4506CBAB1963178D007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4506CBAE1963178D007F2C9A /* libEonilImprovisationsMediaEngineFoundation.a */ = {
+		4506CBAE1963178D007F2C9A /* libEonilMediaEngineFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = libEonilImprovisationsMediaEngineFoundation.a;
 			path = libEonilMediaEngineFoundation.a;
 			remoteRef = 4506CBAD1963178D007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -668,6 +710,34 @@
 			fileType = archive.ar;
 			path = libFoundation_LEGACY.a;
 			remoteRef = 4506CBB31963178D007F2C9A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4506CBCC196317BC007F2C9A /* libEonilCommonRealtimeGameAlgorithms.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilCommonRealtimeGameAlgorithms.a;
+			remoteRef = 4506CBCB196317BC007F2C9A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4506CBCE196317BC007F2C9A /* libEonilCommonRealtimeGameAlgorithms.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEonilCommonRealtimeGameAlgorithms.a;
+			remoteRef = 4506CBCD196317BC007F2C9A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4506CBD0196317BC007F2C9A /* CommonRealtimeGameAlgorithms - Tester - OSX */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "CommonRealtimeGameAlgorithms - Tester - OSX";
+			remoteRef = 4506CBCF196317BC007F2C9A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4506CBD2196317BC007F2C9A /* CommonRealtimeGameAlgorithms - Tester - iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "CommonRealtimeGameAlgorithms - Tester - iOS.app";
+			remoteRef = 4506CBD1196317BC007F2C9A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -926,6 +996,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -957,6 +1028,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

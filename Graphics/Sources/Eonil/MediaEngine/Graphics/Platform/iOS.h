@@ -6,40 +6,23 @@
 //  Copyright (c) 2013 Eonil. All rights reserved.
 //
 
-#ifndef __EonilGraphics__iOS__
-#define __EonilGraphics__iOS__
-
-#if	EONIL_MEDIA_ENGINE_TARGET_IOS
-
+#pragma once
 #include "../Common.h"
+#if	EONIL_MEDIA_ENGINE_TARGET_IOS
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-
-
-
-
-
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
-	namespace
-	Platforms
+namespace
+Platforms
+{
+	class
+	iOS
 	{
-		class
-		iOS
-		{
-		public:
-			static bool const	hasCurrentGLContext();
-			
+	public:
+		static bool const	hasCurrentGLContext();
+		
 //			static auto	fullscreenNativeDrawableSurface() -> Utility::NativeDrawableSurface;
-		};
-	}
-	
-	
-}}}}
+	};
+}
 
-
-
-
-
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
 #endif
-
-#endif /* defined(__EonilGraphics__iOS__) */

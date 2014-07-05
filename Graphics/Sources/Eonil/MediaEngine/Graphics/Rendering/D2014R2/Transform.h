@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#include "../../Common.h"
+#include "RenderingD2014R2Common.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN
 
 

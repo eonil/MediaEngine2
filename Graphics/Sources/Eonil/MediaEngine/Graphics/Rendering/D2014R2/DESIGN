@@ -5,10 +5,33 @@ Design of Graphics Rendering - D2014R2
 
 
 
+
+
+
+
+
+
+An abstraction layer to actually perform rendering.
+This will become a fully abstracted layer, and will fully hide
+underlying driver implementations. Then, no OpenGL specific 
+features can be exposed.
+
+
+
+
+
+
+
+
+
+
+
+
+
 Drawable Shape Classification
 ------------------------------
 
-A *shape* is a set of triangle in 3D space.
+A *shape* is a set of triangles in 3D space.
 
 A *sprite* is a textured quad.
 

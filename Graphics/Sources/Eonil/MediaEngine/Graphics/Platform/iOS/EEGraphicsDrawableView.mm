@@ -19,21 +19,22 @@
 
 //#include "BridgingController.h"
 
-//using namespace Eonil::Improvisations::MediaEngine::Graphics::Platform::iOS;
+//using namespace Eonil::MediaEngine::Graphics::Platform::iOS;
 
 
 
 //#import <OpenGLES/EAGL.h>
+#include "../../____internal_impl_of_opengl_es_2_0_driver____/driver_all.h"
+//#include "../../Stub/GL-Common.h"
+////#include "../../Stub/GL-Get.h"
+////#include "../../Stub/GL-Buffer.h"
+//#include "../../Stub/GL-Framebuffer.h"
+//#include "../../Stub/GL-Renderbuffer.h"
+//#include "../../Server/ServerObjectProxy.h"
 
-#include "../../Stub/GL-Common.h"
-//#include "../../Stub/GL-Get.h"
-//#include "../../Stub/GL-Buffer.h"
-#include "../../Stub/GL-Framebuffer.h"
-#include "../../Stub/GL-Renderbuffer.h"
-#include "../../Server/ServerObjectProxy.h"
-
-using namespace	Eonil::Improvisations::MediaEngine::Graphics;
-using namespace	Eonil::Improvisations::MediaEngine::Graphics::Stub;
+using namespace	Eonil::MediaEngine::Graphics;
+using namespace	Eonil::MediaEngine::Graphics::____internal_impl_of_opengl_es_2_0_driver____;
+using namespace	Eonil::MediaEngine::Graphics::____internal_impl_of_opengl_es_2_0_driver____::Stub;
 
 
 namespace
@@ -302,13 +303,21 @@ namespace
 }
 - (void)dealloc
 {
-	EONIL_DEBUG_ASSERT_WITH_MESSAGE(_glman == nullptr, "`cleanupGraphicsContext` method must be called before killing this object.");
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion(_glman == nullptr, "`cleanupGraphicsContext` method must be called before killing this object.");
+	}
 }
 
 - (void)prepareGraphicsContext
 {
-	EONIL_DEBUG_ASSERT_WITH_MESSAGE([self.window isKindOfClass:[UIWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to configure OpenGL rendering surface properly.");
-	EONIL_DEBUG_ASSERT(_glman == nullptr);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion([self.window isKindOfClass:[UIWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to configure OpenGL rendering surface properly.");
+		err9_converted_legacy_assertion(_glman == nullptr);
+	}
+	
+	////
 	
 	CAEAGLLayer*	_layer2	=	(id)self.layer;
 	[_layer2 setContentsScale:self.window.screen.scale];
@@ -326,12 +335,22 @@ namespace
 	syscall.init	=	[self, &_layer2]()
 	{
 		BOOL	ok	=	[_ctx renderbufferStorage:GL_RENDERBUFFER fromDrawable:_layer2];
-		EONIL_DEBUG_ASSERT_WITH_MESSAGE(ok, "Cannot initialize system-provided OpenGL ES 2.0 render-buffer storage.");
+		
+		////
+		
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(ok, "Cannot initialize system-provided OpenGL ES 2.0 render-buffer storage.");
+		}
 	};
 	syscall.term	=	[self]()
 	{
 		BOOL	ok	=	[_ctx renderbufferStorage:GL_RENDERBUFFER fromDrawable:nil];
-		EONIL_DEBUG_ASSERT_WITH_MESSAGE(ok, "Cannot cleanup system-provided OpenGL ES 2.0 render-buffer storage.");
+		
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(ok, "Cannot cleanup system-provided OpenGL ES 2.0 render-buffer storage.");
+		}
 	};
 	syscall.step	=	[self]()
 	{
@@ -341,8 +360,13 @@ namespace
 }
 - (void)cleanupGraphicsContext
 {
-	EONIL_DEBUG_ASSERT_WITH_MESSAGE([self.window isKindOfClass:[UIWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to be matched with `prepareGraphicsContext` method.");
-	EONIL_DEBUG_ASSERT(_glman != nullptr);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion([self.window isKindOfClass:[UIWindow class]], "This method must be called while this view is placed on a visible `UIWindow` to be matched with `prepareGraphicsContext` method.");
+		err9_converted_legacy_assertion(_glman != nullptr);
+	}
+	
+	////
 	
 	_glman	=	nullptr;
 	
@@ -352,7 +376,12 @@ namespace
 }
 - (void)presentRenderbuffer
 {
-	EONIL_DEBUG_ASSERT(_glman != nullptr);
+	if (USE_DEBUGGING_ASSERTIONS)
+	{
+		err9_converted_legacy_assertion(_glman != nullptr);
+	}
+	
+	////
 	
 	_glman->present();
 }

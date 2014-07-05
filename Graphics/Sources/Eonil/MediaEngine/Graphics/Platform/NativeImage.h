@@ -6,67 +6,61 @@
 //
 //
 
-#ifndef __EonilGraphics__PlatformImage__
-#define __EonilGraphics__PlatformImage__
-
+#pragma once
 #include "../Common.h"
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-
+namespace
+Platform
+{
 	namespace
-	Platform
+	D2014R1
 	{
-		namespace
-		D2014R1
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*!
+		 Represents platform-native image object.
+		 
+		 @classdesign
+		 
+		 @discussion
+		 This class is designed to provide access to platform-specific
+		 
+		 @note
+		 DEPRECATED.
+		 Switch to `Aliens::PlanarRGBAImageProxy` class ASAP.
+		 */
+		class
+		NativeImage
 		{
-
+			struct	Core;
+			std::shared_ptr<Core>	_core;
 			
+		public:
+			NativeImage(void* const platformObject) __attribute__((deprecated));
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			/*!
-			 Represents platform-native image object.
-			 
-			 @classdesign
-			 
-			 @discussion
-			 This class is designed to provide access to platform-specific
-			 
-			 @note
-			 DEPRECATED.
-			 Switch to `Aliens::PlanarRGBAImageProxy` class ASAP.
-			 */
-			class
-			NativeImage
-			{
-				struct	Core;
-				std::shared_ptr<Core>	_core;
-				
-			public:
-				NativeImage(void* const platformObject) __attribute__((deprecated));
-				
-				void* const	platformObject() const __attribute__((deprecated));		//!	Gets stored platform image object. You shoudn't manage ownership of this object is managed by this class.
-			};
-			
-			
+			void* const	platformObject() const __attribute__((deprecated));		//!	Gets stored platform image object. You shoudn't manage ownership of this object is managed by this class.
+		};
+		
+		
 
 
-			
-			
-			
-			
-			
-			
-		}
+		
+		
+		
+		
+		
+		
 	}
-	
-}}}}
+}
 
-
-#endif /* defined(__EonilGraphics__PlatformImage__) */
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END

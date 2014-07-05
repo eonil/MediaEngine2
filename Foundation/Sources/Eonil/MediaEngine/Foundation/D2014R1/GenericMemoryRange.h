@@ -181,7 +181,12 @@ D2014R1			//	Distribution 2014, revision 1.
 	template <typename T> auto GenericMemoryRange<T>::
 	at(sz const& location) const -> T const&
 	{
-		EONIL_DEBUG_ASSERT(location < size());
+		if (USE_DEBUGGING_ASSERTIONS)
+		{
+			err9_converted_legacy_assertion(location < size());
+		}
+		
+		////
 		
 		return	*(BASE::begin() + location);
 	}

@@ -21,7 +21,7 @@
 //
 //
 //
-//namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+//EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 //	
 //	namespace
 //	Rendering
@@ -324,7 +324,7 @@
 //		
 //		
 //		void
-//		_ModelRendererA::addToList(const Eonil::Improvisations::MediaEngine::Graphics::Rendering::_ModelRendererA::Moment moment, std::vector<_DEV_::_SkinnedForm> &list)
+//		_ModelRendererA::addToList(const Rendering::_ModelRendererA::Moment moment, std::vector<_DEV_::_SkinnedForm> &list)
 //		{
 //			_ModelA const&	model	=	*(moment.model);
 //			
@@ -373,7 +373,7 @@
 //		void
 //		_ModelRendererA::draw(const Value::Bounds2 bounds, const _DEV_::_DevCamera camera, const Moment moment)
 //		{
-//			using namespace Eonil::Improvisations::MediaEngine::Graphics::_DEV_;
+//			using namespace Eonil::MediaEngine::Graphics::_DEV_;
 //			
 //			Bounds2		vpb1	=	bounds;
 //			_Regulator	vp		=	_Regulator(vpb1, 0.5);

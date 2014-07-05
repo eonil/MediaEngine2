@@ -7,26 +7,25 @@
 //
 
 #include "Stepping.h"
+EONIL_MEDIA_ENGINE_APPLICATION_NAMESPACE_BEGIN
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Application {
-	
-	
-	
-	Stepping::Stepping(DisplayScreenFrame const& frame) : _frame(&frame)
-	{
-	}
-	
-	auto Stepping::
-	frame() const -> DisplayScreenFrame const&
-	{
-		return	*_frame;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-}}}}
+
+
+Stepping::Stepping(DisplayScreenFrame const& frame) : _frame(&frame)
+{
+}
+
+auto Stepping::
+frame() const -> DisplayScreenFrame const&
+{
+	return	*_frame;
+}
+
+
+
+
+
+
+
+
+EONIL_MEDIA_ENGINE_APPLICATION_NAMESPACE_END

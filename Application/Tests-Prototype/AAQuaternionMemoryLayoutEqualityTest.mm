@@ -12,7 +12,7 @@
 
 #include <Eonil/MediaEngine/Graphics.h>
 
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Value;
+using namespace Eonil::MediaEngine::Graphics::Value;
 
 
 void

@@ -7,9 +7,9 @@
 //
 
 #include "Stub2.h"
-#include "../../Graphics/Stub/GL.h"
+#include "../../Graphics/____internal_impl_of_opengl_es_2_0_driver____/Stub/GL.h"
 EONIL_MEDIA_ENGINE_GRAPHICS_STUB2_NAMESPACE_BEGIN
-using namespace Stub;
+using namespace ____internal_impl_of_opengl_es_2_0_driver____::Stub;
 
 
 

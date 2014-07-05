@@ -13,12 +13,12 @@
 #include "../Server/Program.h"
 #include "../Server/Machinery/VertexAttributeChannel.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	_DEV_
 	{
-		using namespace	Eonil::Improvisations::MediaEngine::Graphics::Value;
+		using namespace	Eonil::MediaEngine::Graphics::Value;
 		
 		
 		

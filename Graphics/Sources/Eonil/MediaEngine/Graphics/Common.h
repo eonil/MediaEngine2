@@ -8,22 +8,18 @@
 
 #pragma once
 
-#include	<Eonil/Improvisations/CommonUtility/CommonUtility.h>
-#include	<Eonil/MediaEngine/Foundation.h>
-#include	<Eonil/MediaEngine/Mathematics.h>
+#include <Eonil/Common/age2/age2.h>
+#include <Eonil/CommonRealtimeGameAlgorithms/CommonRealtimeGameAlgorithmsCommon.h>
+#include <Eonil/MediaEngine/Foundation.h>
+#include <Eonil/MediaEngine/Mathematics.h>
 
 
-#define		EEGL_ASSERT(condexpr)							{ if(Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::useStateValidation()) { Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::assertWithReason(condexpr); }}
-#define		EEGL_ASSERT_WITH_REASON(condexpr,reason)		{ if(Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::useStateValidation()) { Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::assertWithReason(condexpr,reason); }}
+#define	EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN			namespace Eonil { namespace MediaEngine { namespace Graphics {
+#define	EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END			} } }
 
-#define		EEGL_ASSERT_NO_GL_ERROR()						{ if(Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::useStateValidation()) { Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::assertNoGLError(); }}
-#define		EEGL_RUN_AS_ASSERTION(stmt)						{ if(Eonil::Improvisations::MediaEngine::Graphics::Debugging::Doctor::useStateValidation()) { stmt; } }
 
-#define	EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_BEGIN				namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics { namespace Resources {
-#define	EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_END					} } } } }
-
-#define	EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_BEGIN		namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics { namespace Rendering { namespace D2014R2 {
-#define	EONIL_MEDIA_ENGINE_GRAPHICS_RENDERING_D2014R2_NAMESPACE_END			} } } } } }
+//#define	EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_BEGIN				namespace Eonil { namespace MediaEngine { namespace Graphics { namespace Resources {
+//#define	EONIL_MEDIA_ENGINE_GRAPHICS_RESOURCES_NAMESPACE_END					} } } }
 
 
 
@@ -69,158 +65,47 @@
 
 
 
+#include <unordered_map>
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
-	
-//	struct
-//	NoCopyNoMoveObject
-//	{
-//		NoCopyNoMoveObject() = default;
-//		
-//		NoCopyNoMoveObject(NoCopyNoMoveObject const&) = delete;
-//		NoCopyNoMoveObject(NoCopyNoMoveObject&) = delete;
-//		NoCopyNoMoveObject(NoCopyNoMoveObject const&&) = delete;
-//		NoCopyNoMoveObject(NoCopyNoMoveObject&&) = delete;
-//	};
-	
-	struct
-	NoCopyButMoveObject
-	{
-		NoCopyButMoveObject() {};
-		
-		NoCopyButMoveObject(NoCopyButMoveObject const&) = delete;
-//		NoCopyButMoveObject(NoCopyButMoveObject&) = delete;
-		
-//		NoCopyButMoveObject(NoCopyButMoveObject const&&) = delete;
-		NoCopyButMoveObject(NoCopyButMoveObject&&) = default;
-		
-		auto	operator=(NoCopyButMoveObject const&) -> NoCopyButMoveObject& = delete;
-		auto	operator=(NoCopyButMoveObject&&) -> NoCopyButMoveObject& = default;
-	};
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
-	
-	
-	
-	
-//	/*!
-//	 Dense, sequential, contiguous array of element T.
-//	 All the elements will be default-constructed at first. So T must 
-//	 be default constructible.
-//	 
-//	 No copy or move operations are used.
-//	 */
-//	template <typename T>
-//	class
-//	DynamicArray final
-//	{
-//		T*		_elements	{nullptr};
-//		Size	_count		{0};
-//		
-//	public:
-//		DynamicArray() = default;
-//		DynamicArray(Size const count) : _elements(new T[count])
-//		{
-//		}
-//		~DynamicArray()
-//		{
-//			delete[]	_elements;
-//		}
-//		
-//		auto
-//		size() const -> Size
-//		{
-//			return	_count;
-//		}
-//		auto
-//		at(Size index) const -> T const&
-//		{
-//			EONIL_DEBUG_ASSERTION(index < _count);
-//			return	_elements[index];
-//		}
-//		auto
-//		at(Size index) -> T&
-//		{
-//			EONIL_DEBUG_ASSERTION(index < _count);
-//			return	_elements[index];
-//		}
-//	};
-	
-}}}}
+using namespace	Eonil::Common::age2;
+using namespace	Eonil::MediaEngine::Foundation;
+using namespace	Eonil::MediaEngine::Foundation::D2014R1;
+using namespace Eonil::MediaEngine::Mathematics;
+using namespace Eonil::MediaEngine::Mathematics::Geometry;
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+template<typename K, typename V>	using	map		=	std::map<K,V>;
+template<typename K, typename V>	using	umap	=	std::unordered_map<K,V>;
 
-	using		Size				=	Eonil::Improvisations::MediaEngine::Foundation::Size;
-//	using		Memory				=	Eonil::Improvisations::MediaEngine::Foundation::_Legacy2013::SharedMemory;
-//	using		UniqueByteMemoryBlock				=	Foundation::D2014R1::UniqueByteMemoryBlock;
-	
-	
-	using namespace Eonil::Improvisations::CommonUtility;
-	using namespace	Eonil::Improvisations::MediaEngine::Foundation;
-	using namespace	Eonil::Improvisations::MediaEngine::Foundation::D2014R1;
-	using namespace Eonil::Improvisations::MediaEngine::Mathematics;
-	using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+namespace
+Rendering
+{
 	namespace
-	Rendering
+	D2014R2
 	{
-		namespace
-		D2014R2
-		{
-			class	DisplayScreenFrame;
-		}
-		
-//		class	FrameChannelImage;
-//		class	RenderingFrame;
-//		class	ColorDepthStencilRenderingPass;
-//		class	BloomEffectPass;
+		class	DisplayScreenFrame;
 	}
 	
-	
-	namespace
-	Utility
+	//		class	FrameChannelImage;
+	//		class	RenderingFrame;
+	//		class	ColorDepthStencilRenderingPass;
+	//		class	BloomEffectPass;
+}
+
+namespace
+Utility
+{
+	inline namespace
+	D2014R1
 	{
-		inline namespace
-		D2014R1
-		{
-			class	NativeDrawableSurface;
-		}
-		
-//		using namespace	D2014R1;
+		class	NativeDrawableSurface;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}}}}
+	//		using namespace	D2014R1;
+}
 
-
-
-
-
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_END
 
 
 

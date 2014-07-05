@@ -8,9 +8,11 @@
 
 #pragma once
 
+#include <Eonil/Common/age2/age2.h>
+#include <Eonil/MediaEngine/Foundation.h>
 #include <Eonil/MediaEngine/Graphics.h>
-#include <Eonil/MediaEngine/Graphics_DEV.h>
-#include <Eonil/MediaEngine/Graphics/Server/Utility/Functions.h>
+#include <Eonil/MediaEngine/Graphics/____internal_impl_of_opengl_es_2_0_driver____/driver_all.h>
+#include <Eonil/MediaEngine/Graphics/____internal_impl_of_opengl_es_2_0_driver____/Server/Utility/Functions.h>
 #include "../Eonil/MediaEngine/Application/Application.h"
 #include "../Eonil/MediaEngine/Controlling/Controlling.h"
 #include <Eonil/Aliens.h>
@@ -18,12 +20,17 @@
 #include "run.h"
 #include "Bundle.h"
 
-using namespace Eonil::Improvisations::MediaEngine::Mathematics;
-using namespace Eonil::Improvisations::MediaEngine::Mathematics::Geometry;
-using namespace Eonil::Improvisations::MediaEngine::Graphics;
-using namespace Eonil::Improvisations::MediaEngine::Graphics::Rendering;
-using namespace Eonil::Improvisations::MediaEngine::Application;
-using namespace Eonil::Improvisations::MediaEngine::Controlling;
+using namespace Eonil::Common;
+using namespace Eonil::Common::age2;
+using namespace Eonil::MediaEngine::Foundation;
+using namespace Eonil::MediaEngine::Mathematics;
+using namespace Eonil::MediaEngine::Mathematics::Geometry;
+using namespace Eonil::MediaEngine::Graphics;
+using namespace Eonil::MediaEngine::Graphics::____internal_impl_of_opengl_es_2_0_driver____;
+using namespace Eonil::MediaEngine::Graphics::____internal_impl_of_opengl_es_2_0_driver____::Server;
+using namespace Eonil::MediaEngine::Graphics::Rendering;
+using namespace Eonil::MediaEngine::Application;
+using namespace Eonil::MediaEngine::Controlling;
 
 
 
@@ -61,9 +68,14 @@ namespace
 
 
 
+using namespace Eonil::Common;
+using namespace Eonil::Common::age2;
+
 class
 TestAll
 {
+	Eonil::Common::age2::uptr<PlanarTexture>	_tt{};
+	
 	Scalar				r1	=	0;
 	
 	D2014R2::DebuggingInformationOverlayDrawer	_dbgd{};
@@ -133,6 +145,7 @@ public:
 		Matrix4 const		world_to_screen_transform	=	Matrix4::Utility::scaleWithUniformScalar(2) * s.frame().regulationTransformMatrix();
 		
 		////
+		
 		
 		Server::Utility::clear({0, 0.5, 1, 1});
 		

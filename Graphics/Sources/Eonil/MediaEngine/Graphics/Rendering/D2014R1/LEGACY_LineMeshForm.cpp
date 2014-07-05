@@ -14,7 +14,7 @@
 #include "../../Server/Shader.h"
 #include "../../Server/Program.h"
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 	
 	namespace
 	Rendering
@@ -53,7 +53,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			_LineMeshForm const
-			_LineMeshForm::lineMeshWithTransform(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 m) const
+			_LineMeshForm::lineMeshWithTransform(const Matrix4 m) const
 			{
 				_LineMeshForm	f1;
 				for (Line l : lines())
@@ -77,17 +77,17 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			void
-			_LineMeshForm::setTransform(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 m)
+			_LineMeshForm::setTransform(const Matrix4 m)
 			{
 				_tm	=	m;
 			}
 			void
-			_LineMeshForm::addLine(const Eonil::Improvisations::MediaEngine::Graphics::Rendering::D2014R1::_LineMeshForm::Line l)
+			_LineMeshForm::addLine(const Rendering::D2014R1::_LineMeshForm::Line l)
 			{
 				_ls.push_back(l);
 			}
 			void
-			_LineMeshForm::addLine(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 from, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 to, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 color)
+			_LineMeshForm::addLine(const Vector4 from, const Vector4 to, const Vector4 color)
 			{
 				Line	l;
 				l.from.location	=	from;
@@ -116,12 +116,12 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			
 			
 			_LineMeshForm const
-			_LineMeshForm::Utility::quadraticGrid(const Size halfWidth, const Size halfHeight, const Scalar unitLength, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 centerColor, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 borderColor, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 otherColor)
+			_LineMeshForm::Utility::quadraticGrid(const Size halfWidth, const Size halfHeight, const Scalar unitLength, const Vector4 centerColor, const Vector4 borderColor, const Vector4 otherColor)
 			{
 				return	cubicGrid(halfWidth, halfHeight, 0, unitLength, centerColor, borderColor, otherColor);
 			}
 			_LineMeshForm const
-			_LineMeshForm::Utility::cubicGrid(const Size halfWidth, const Size halfHeight, const Size halfDepth, const Scalar unitLength, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 centerColor, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 borderColor, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 otherColor)
+			_LineMeshForm::Utility::cubicGrid(const Size halfWidth, const Size halfHeight, const Size halfDepth, const Scalar unitLength, const Vector4 centerColor, const Vector4 borderColor, const Vector4 otherColor)
 			{
 				EEGL_ASSERT(isnormal(unitLength));
 				EEGL_ASSERT(unitLength >= 0.0f);
@@ -167,7 +167,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			_LineMeshForm const
-			_LineMeshForm::Utility::cubicCross(const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector3 halfLength, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 xColor, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 yColor, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Vector4 zColor)
+			_LineMeshForm::Utility::cubicCross(const Vector3 halfLength, const Vector4 xColor, const Vector4 yColor, const Vector4 zColor)
 			{
 				Debugging::Doctor::assertForZeroOrNormal(halfLength.x);
 				Debugging::Doctor::assertForZeroOrNormal(halfLength.y);
@@ -259,7 +259,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 			}
 			
 			void
-			_LineMeshForm::_renderOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_LineMeshForm> &fs, const Eonil::Improvisations::MediaEngine::Mathematics::Geometry::Matrix4 worldToFrameTransform)
+			_LineMeshForm::_renderOnMachine(Server::Machine &m, Server::_Legacy2013_SharingBox<Server::Program> &p, const std::vector<_LineMeshForm> &fs, const Matrix4 worldToFrameTransform)
 			{
 				using namespace Stub;
 				using namespace Server::Machinery;

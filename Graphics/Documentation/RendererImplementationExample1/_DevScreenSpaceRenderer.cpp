@@ -15,7 +15,7 @@
 #include "../Stub/GL.h"
 
 
-namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace Graphics {
+EONIL_MEDIA_ENGINE_GRAPHICS_NAMESPACE_BEGIN
 
 	namespace
 	_DEV_
@@ -25,7 +25,7 @@ namespace Eonil { namespace Improvisations { namespace MediaEngine { namespace G
 		using namespace Server::Machinery;
 		
 		void
-		_DevScreenSpaceRenderer::render(const Eonil::Improvisations::MediaEngine::Graphics::_DEV_::_DevScreenSpaceRenderer::Scene scene)
+		_DevScreenSpaceRenderer::render(const _DEV_::_DevScreenSpaceRenderer::Scene scene)
 		{
 			EEGL_ASSERT(eeglIsEnabled(GL_DEPTH_TEST) == GL_FALSE);
 			
